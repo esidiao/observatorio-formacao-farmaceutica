@@ -34,11 +34,27 @@
   <div style="display:flex;align-items:center;gap:8px;margin-left:auto">
     <label style="font-size:0.875rem;font-weight:600">Indicador:</label>
     <select id="sel-ind" onchange="atualizarGraficos()" style="font-size:0.875rem">
-      <option value="ICT">ICT — Concentração Territorial (↓ melhor)</option>
-      <option value="IAF">IAF — Adequação Formativa (↑ melhor)</option>
-      <option value="ICON">ICON — Cobertura Assistencial</option>
-      <option value="HHI">HHI — Concentração por IES</option>
-      <option value="vagas_total">Vagas totais</option>
+      <optgroup label="Território & equidade">
+        <option value="ICT">ICT — Concentração Territorial (↓ melhor)</option>
+        <option value="E">E — Equidade (↑ melhor)</option>
+        <option value="ICON">ICON — Cobertura Assistencial (↑)</option>
+        <option value="ICON_adj">ICON-deserto — FP em desertos (↑)</option>
+        <option value="vagas_por_100k">Vagas / 100 mil hab.</option>
+        <option value="ead_polos_municipios">Municípios c/ polo EaD</option>
+      </optgroup>
+      <optgroup label="Qualidade (ENADE/CPC 2023)">
+        <option value="IAF">IAF — Adequação Formativa (↑ melhor)</option>
+        <option value="IDD">IDD — Valor agregado (↑ melhor)</option>
+        <option value="CPC_cont">CPC — Conceito Preliminar (↑ melhor)</option>
+      </optgroup>
+      <optgroup label="Capacidade & mercado">
+        <option value="vagas_total_real">Vagas totais (pres + EaD)</option>
+        <option value="vagas_total">Vagas presenciais</option>
+        <option value="pct_ead">% EaD da capacidade (↓ melhor)</option>
+        <option value="taxa_retencao">Taxa de conclusão (↑)</option>
+        <option value="HHI">HHI — por IES (↓ melhor)</option>
+        <option value="HHI_mantenedora">HHI — por mantenedora (↓ melhor)</option>
+      </optgroup>
     </select>
   </div>
 </div>
@@ -56,15 +72,18 @@
     <thead>
       <tr>
         <th>UF</th>
-        <th>Vagas</th>
+        <th title="Vagas totais: presenciais + EaD (sede da mantenedora)">Vagas totais</th>
+        <th title="Vagas por 100 mil habitantes (IBGE)">/100k</th>
+        <th title="% das vagas em EaD">% EaD</th>
         <th>ICT ↓</th>
-        <th>IAF ↑</th>
-        <th>ICON</th>
         <th>E</th>
-        <th>HHI</th>
-        <th>Mun. c/ oferta</th>
+        <th>IAF ↑</th>
+        <th title="IDD — valor agregado pelo curso (ENADE/CPC 2023)">IDD ↑</th>
+        <th title="Taxa de conclusão (concluintes/matrículas)">Concl. %</th>
+        <th title="ICON-deserto — Farmácia Popular em desertos">ICON-d</th>
+        <th title="HHI por mantenedora">HHI-m</th>
+        <th title="Municípios c/ polo EaD">Polos</th>
         <th>Desertos</th>
-        <th>IES</th>
       </tr>
     </thead>
     <tbody id="tbody-comp"></tbody>
@@ -168,13 +187,14 @@ function atualizarGraficos() {
           callbacks: {
             label: ctx => {
               const v = ctx.raw;
-              return v !== null ? `${indicador}: ${Number(v).toFixed(3)}` : 'sem dados';
+              const m = INDICADOR_META[indicador] || { label: indicador };
+              return v !== null ? `${m.label}: ${fmtIndicador(indicador, v)}` : 'sem dados';
             }
           }
         }
       },
       scales: {
-        y: { beginAtZero: indicador !== 'IAF' }
+        y: { beginAtZero: indicador !== 'IAF' && indicador !== 'IDD' && indicador !== 'CPC_cont' }
       }
     }
   });
@@ -187,15 +207,18 @@ function atualizarGraficos() {
     const tr = document.createElement('tr');
     tr.innerHTML = `
       <td><a href="uf/${sigla}.html"><span class="uf-tag">${sigla}</span></a></td>
-      <td>${(d.vagas_total ?? 0).toLocaleString('pt-BR')}</td>
-      <td class="${valClass('ICT', d.ICT)}">${d.ICT !== null && d.ICT !== undefined ? Number(d.ICT).toFixed(3) : '<span class="nodata-cell">—</span>'}</td>
-      <td class="${valClass('IAF', d.IAF)}">${d.IAF !== null && d.IAF !== undefined ? Number(d.IAF).toFixed(1) : '<span class="nodata-cell">—</span>'}</td>
-      <td>${d.ICON !== null && d.ICON !== undefined ? Number(d.ICON).toFixed(1) : '—'}</td>
-      <td>${d.E !== null && d.E !== undefined ? Number(d.E).toFixed(3) : '—'}</td>
-      <td>${d.HHI !== null && d.HHI !== undefined ? Number(d.HHI).toFixed(4) : '—'}</td>
-      <td>${d.municipios_oferta ?? '—'}</td>
+      <td><strong>${fmtIndicador('vagas_total_real', d.vagas_total_real ?? d.vagas_total)}</strong></td>
+      <td>${fmtIndicador('vagas_por_100k', d.vagas_por_100k)}</td>
+      <td>${d.pct_ead != null ? fmtIndicador('pct_ead', d.pct_ead) + '%' : '—'}</td>
+      <td class="${valClass('ICT', d.ICT)}">${fmtIndicador('ICT', d.ICT)}</td>
+      <td>${fmtIndicador('E', d.E)}</td>
+      <td class="${valClass('IAF', d.IAF)}">${fmtIndicador('IAF', d.IAF)}</td>
+      <td>${fmtIndicador('IDD', d.IDD)}</td>
+      <td>${fmtIndicador('taxa_retencao', d.taxa_retencao)}</td>
+      <td>${fmtIndicador('ICON_adj', d.ICON_adj)}</td>
+      <td>${fmtIndicador('HHI_mantenedora', d.HHI_mantenedora)}</td>
+      <td>${d.ead_polos_municipios ?? '—'}</td>
       <td>${d.municipios_deserto ?? '—'}</td>
-      <td>${d.n_ies ?? '—'}</td>
     `;
     tbody.appendChild(tr);
   });
@@ -210,17 +233,20 @@ function atualizarGraficos() {
   radarChart = new Chart(ctxRadar, {
     type: 'radar',
     data: {
-      labels: ['ICT (inv)', 'IAF/100', 'ICON/15', '1-HHI', 'E'],
+      labels: ['ICT (inv)', 'IAF/100', 'IDD/5', 'ICON/15', '1-HHI mant.', 'E', 'Concl./20'],
       datasets: ufsRadar.map((sigla, i) => {
         const d = TODOS_DADOS[sigla] || {};
+        const num = v => (v !== null && v !== undefined) ? v : null;
         return {
           label: sigla,
           data: [
-            d.ICT !== null && d.ICT !== undefined ? 1 - d.ICT : null,   // ICT invertido: maior = melhor
-            d.IAF !== null && d.IAF !== undefined ? d.IAF / 100 : null,
-            d.ICON !== null && d.ICON !== undefined ? Math.min(d.ICON / 15, 1) : null,
-            d.HHI !== null && d.HHI !== undefined ? 1 - d.HHI : null,
-            d.E !== null && d.E !== undefined ? d.E : null,
+            d.ICT != null ? 1 - d.ICT : null,                          // ICT invertido: maior = melhor
+            d.IAF != null ? d.IAF / 100 : null,
+            d.IDD != null ? Math.min(d.IDD / 5, 1) : null,
+            d.ICON != null ? Math.min(d.ICON / 15, 1) : null,
+            d.HHI_mantenedora != null ? 1 - d.HHI_mantenedora : null,
+            num(d.E),
+            d.taxa_retencao != null ? Math.min(d.taxa_retencao / 20, 1) : null,
           ],
           borderColor: PALETA[i % PALETA.length],
           backgroundColor: PALETA[i % PALETA.length] + '22',

@@ -31,13 +31,54 @@ function corICON(val) {
   return RDBU[idx];
 }
 
+/* Metadados dos indicadores: rótulo, casas decimais, escala p/ cor e direção
+   (maiorMelhor=true → valor alto é bom). Direção null = sem juízo normativo. */
+const INDICADOR_META = {
+  ICT:                  { label: 'ICT',                dec: 3, min: 0,   max: 1,   maiorMelhor: false },
+  IAF:                  { label: 'IAF',                dec: 1, min: 0,   max: 100, maiorMelhor: true  },
+  ICON:                 { label: 'ICON',               dec: 1, min: 0,   max: 15,  maiorMelhor: true  },
+  ICON_adj:             { label: 'ICON-deserto',       dec: 3, min: 0,   max: 1,   maiorMelhor: true  },
+  E:                    { label: 'E (Equidade)',       dec: 3, min: 0,   max: 1,   maiorMelhor: true  },
+  HHI:                  { label: 'HHI (IES)',          dec: 4, min: 0,   max: 1,   maiorMelhor: false },
+  HHI_mantenedora:      { label: 'HHI (mantenedora)',  dec: 4, min: 0,   max: 1,   maiorMelhor: false },
+  vagas_total:          { label: 'Vagas presenciais',  dec: 0, min: null, max: null, maiorMelhor: null },
+  vagas_total_real:     { label: 'Vagas totais',       dec: 0, min: null, max: null, maiorMelhor: null },
+  vagas_ead:            { label: 'Vagas EaD',          dec: 0, min: null, max: null, maiorMelhor: null },
+  pct_ead:              { label: '% EaD',              dec: 1, min: 0,   max: 100, maiorMelhor: false },
+  vagas_por_100k:       { label: 'Vagas / 100k hab.',  dec: 1, min: null, max: null, maiorMelhor: null },
+  taxa_retencao:        { label: 'Conclusão %',        dec: 1, min: 0,   max: 20,  maiorMelhor: true  },
+  IDD:                  { label: 'IDD',                dec: 2, min: 0,   max: 5,   maiorMelhor: true  },
+  CPC_cont:             { label: 'CPC',                dec: 2, min: 0,   max: 5,   maiorMelhor: true  },
+  ead_polos_municipios: { label: 'Municípios c/ polo', dec: 0, min: null, max: null, maiorMelhor: null },
+};
+
+/* Cor diverging RdBu genérica para qualquer indicador com escala+direção. */
+function corGenerica(val, min, max, maiorMelhor) {
+  if (val === null || val === undefined || min === null || max === null) return NODATA_COLOR;
+  if (maiorMelhor === null) return '#2E5496'; // sem juízo: azul neutro
+  let norm = (val - min) / (max - min);
+  norm = Math.max(0, Math.min(1, norm));
+  if (maiorMelhor) norm = 1 - norm;           // inverte: alto=bom → azul
+  return RDBU[Math.min(8, Math.floor(norm * 9))];
+}
+
+/* Formata valor conforme o indicador (decimais + milhar pt-BR). */
+function fmtIndicador(indicador, val) {
+  if (val === null || val === undefined) return '—';
+  const m = INDICADOR_META[indicador] || { dec: 3 };
+  if (m.dec === 0) return Number(val).toLocaleString('pt-BR');
+  return Number(val).toFixed(m.dec);
+}
+
 function getCor(indicador, val) {
   switch (indicador) {
     case 'ICT':  return corICT(val);
     case 'IAF':  return corIAF(val);
     case 'ICON': return corICON(val);
-    default:     return corICT(val);
   }
+  const m = INDICADOR_META[indicador];
+  if (m) return corGenerica(val, m.min, m.max, m.maiorMelhor);
+  return corICT(val);
 }
 
 function fmt(val, dec = 3) {
