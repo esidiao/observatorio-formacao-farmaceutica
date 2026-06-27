@@ -1,0 +1,132 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Início — Observatório Nacional da Formação Farmacêutica{% endblock %}
+
+{% block content %}
+
+<!-- Barra de atualização -->
+<div class="update-bar" aria-live="polite">
+  <span class="dot"></span>
+  Última extração de dados: {{ meta.data_extracao }} &nbsp;·&nbsp;
+  Censo {{ meta.versao_censo }} / ENADE {{ meta.versao_censo }} / Farmácia Popular
+  <span style="flex:1"></span>
+  <button class="btn outline" onclick="exportarCSV(DADOS_UFS, 'observatorio_nacional.csv')" style="font-size:0.78rem;padding:5px 10px">
+    ↓ CSV
+  </button>
+  <button class="btn outline" onclick="exportarJSON(DADOS_UFS, 'observatorio_nacional.json')" style="font-size:0.78rem;padding:5px 10px;margin-left:6px">
+    ↓ JSON
+  </button>
+</div>
+
+<!-- KPIs nacionais -->
+<h2 class="section-title">Panorama Nacional — {{ n_ufs }} UFs</h2>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "{:,}".format(total_vagas).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas totais</div>
+    <div class="kpi-fonte" title="Fonte: INEP/Censo {{ meta.versao_censo }}">INEP Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ n_ies }}</div>
+    <div class="kpi-label">IES com Farmácia</div>
+    <div class="kpi-fonte" title="Fonte: INEP/Censo {{ meta.versao_censo }}">INEP Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ mun_com_oferta }}</div>
+    <div class="kpi-label">Municípios com oferta</div>
+    <div class="kpi-fonte" title="Fonte: INEP/Censo {{ meta.versao_censo }}">INEP Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card critico">
+    <div class="kpi-valor">{{ mun_deserto }}</div>
+    <div class="kpi-label">Desertos farmacêuticos</div>
+    <div class="kpi-fonte" title="Municípios sem nenhuma IES com curso de Farmácia em operação">INEP Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.3f"|format(ict_mediana) }}</div>
+    <div class="kpi-label">ICT mediana nacional</div>
+    <div class="kpi-fonte" title="Índice de Concentração Territorial (↓ melhor)">Calculado</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(iaf_mediana) }}</div>
+    <div class="kpi-label">IAF mediana nacional</div>
+    <div class="kpi-fonte" title="Índice de Adequação Formativa (↑ melhor, 0–100)">ENADE + Censo</div>
+  </div>
+</div>
+
+<!-- Seletor de indicador + Mapa -->
+<h2 class="section-title">Mapa Nacional por Indicador</h2>
+<div class="toolbar">
+  <label for="sel-indicador">Colorir por:</label>
+  <select id="sel-indicador" onchange="atualizarCorMapa(this.value)">
+    <option value="ICT" selected>ICT — Concentração Territorial (↓ melhor)</option>
+    <option value="IAF">IAF — Adequação Formativa (↑ melhor)</option>
+    <option value="ICON">ICON — Cobertura Assistencial (↑ melhor)</option>
+  </select>
+  <div style="flex:1"></div>
+  <div class="mapa-legenda" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
+    <div class="mapa-legenda-item">
+      <div class="mapa-legenda-cor" style="background:#2166AC"></div> Melhor
+    </div>
+    <div class="mapa-legenda-item">
+      <div class="mapa-legenda-cor" style="background:#F7F7F7;border:1px solid #ccc"></div> Médio
+    </div>
+    <div class="mapa-legenda-item">
+      <div class="mapa-legenda-cor" style="background:#B2182B"></div> Pior
+    </div>
+    <div class="mapa-legenda-item">
+      <div class="mapa-legenda-cor" style="background:#C9CDD2"></div> Sem dados
+    </div>
+  </div>
+</div>
+
+<div id="mapa-nacional" aria-label="Mapa coroplético das 27 UFs"></div>
+
+<!-- Tabela comparativa -->
+<h2 class="section-title">Comparação entre UFs</h2>
+<div class="tabela-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>UF</th>
+        <th title="Vagas totais em operação (Censo {{ meta.versao_censo }})">Vagas</th>
+        <th title="Índice de Concentração Territorial (↓ melhor)">ICT ↓</th>
+        <th title="Índice de Adequação Formativa (↑ melhor, 0–100)">IAF ↑</th>
+        <th title="Índice de Cobertura Assistencial (Farmácia Popular / municípios com oferta)">ICON</th>
+        <th title="Municípios com pelo menos uma IES com Farmácia">Mun. c/ oferta</th>
+        <th title="Municípios sem nenhuma IES com Farmácia">Desertos</th>
+        <th title="Índice Herfindahl-Hirschman de concentração por IES">HHI</th>
+      </tr>
+    </thead>
+    <tbody id="tbody-ufs">
+      {% for sigla, d in ufs_ordenados %}
+      <tr onclick="window.location='uf/{{ sigla }}.html'" style="cursor:pointer">
+        <td><a href="uf/{{ sigla }}.html"><span class="uf-tag">{{ sigla }}</span></a></td>
+        <td>{{ "{:,}".format(d.vagas_total or 0).replace(',','.') }}</td>
+        <td class="{{ 'val-bom' if d.ICT is not none and d.ICT < 0.5 else ('val-medio' if d.ICT is not none and d.ICT < 0.75 else 'val-ruim') }}">
+          {% if d.ICT is not none %}{{ "%.3f"|format(d.ICT) }}{% else %}<span class="nodata-cell">sem dados</span>{% endif %}
+        </td>
+        <td class="{{ 'val-bom' if d.IAF is not none and d.IAF >= 40 else ('val-medio' if d.IAF is not none and d.IAF >= 25 else 'val-ruim') }}">
+          {% if d.IAF is not none %}{{ "%.1f"|format(d.IAF) }}{% else %}<span class="nodata-cell">sem dados</span>{% endif %}
+        </td>
+        <td>{% if d.ICON is not none %}{{ "%.1f"|format(d.ICON) }}{% else %}<span class="nodata-cell">sem dados</span>{% endif %}</td>
+        <td>{{ d.municipios_oferta or '–' }}</td>
+        <td>{{ d.municipios_deserto or '–' }}</td>
+        <td>{% if d.HHI is not none %}{{ "%.4f"|format(d.HHI) }}{% else %}–{% endif %}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+const DADOS_UFS = {{ dados_ufs_json }};
+const META = {{ meta_json }};
+
+document.addEventListener('DOMContentLoaded', () => {
+  iniciarMapaNacional(DADOS_UFS);
+});
+</script>
+{% endblock %}

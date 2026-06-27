@@ -1,0 +1,228 @@
+{% extends "base.html.j2" %}
+
+{% block title %}{{ sigla }} — Observatório Nacional da Formação Farmacêutica{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ depth }}index.html">Início</a>
+<span class="sep">›</span>
+<span class="active">{{ sigla }}</span>
+{% endblock %}
+
+{% block content %}
+
+<!-- Cabeçalho da UF -->
+<div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap">
+  <h2 style="font-size:1.5rem;color:var(--navy)">{{ nome_uf }}</h2>
+  <span class="uf-tag" style="font-size:1rem;padding:4px 12px">{{ sigla }}</span>
+  <span style="flex:1"></span>
+  <button class="btn outline" onclick="exportarJSON(DADOS_UF, 'observatorio_{{ sigla }}.json')" style="font-size:0.8rem;padding:6px 12px">↓ JSON</button>
+  <button class="btn outline" style="font-size:0.8rem;padding:6px 12px" onclick="exportarUFCSV()">↓ CSV</button>
+</div>
+
+<!-- KPIs -->
+<h2 class="section-title">Indicadores principais</h2>
+<div class="kpi-grid">
+
+  <div class="kpi-card {% if d.ICT is not none %}{% if d.ICT < 0.5 %}bom{% elif d.ICT >= 0.75 %}critico{% endif %}{% else %}nodata{% endif %}">
+    <div class="kpi-valor">{% if d.ICT is not none %}{{ "%.3f"|format(d.ICT) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">ICT ↓</div>
+    <div class="kpi-fonte" title="Índice de Concentração Territorial. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+
+  <div class="kpi-card {% if d.IAF is not none %}{% if d.IAF >= 40 %}bom{% elif d.IAF < 25 %}critico{% endif %}{% else %}nodata{% endif %}">
+    <div class="kpi-valor">{% if d.IAF is not none %}{{ "%.1f"|format(d.IAF) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">IAF ↑ (0–100)</div>
+    <div class="kpi-fonte" title="Índice de Adequação Formativa. Fonte: ENADE {{ meta.versao_censo }}.">ENADE {{ meta.versao_censo }}</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.ICON is not none %}{{ "%.1f"|format(d.ICON) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">ICON ↑</div>
+    <div class="kpi-fonte" title="Índice de Cobertura Assistencial = municípios com Farmácia Popular / municípios com oferta. Fonte: Min. Saúde.">Farmácia Popular</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.E is not none %}{{ "%.3f"|format(d.E) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">E (Equidade) ↑</div>
+    <div class="kpi-fonte" title="E = 1 − ICT. Mede distribuição territorial.">Calculado</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "{:,}".format(d.vagas_total or 0).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas (operante)</div>
+    <div class="kpi-fonte" title="Vagas anuais em funcionamento. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.n_ies or '—' }}</div>
+    <div class="kpi-label">IES com Farmácia</div>
+    <div class="kpi-fonte" title="Número de Instituições de Ensino Superior. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.municipios_oferta or '—' }}</div>
+    <div class="kpi-label">Municípios c/ oferta</div>
+    <div class="kpi-fonte" title="Municípios com ao menos 1 IES operante.">Censo {{ meta.versao_censo }}</div>
+  </div>
+
+  <div class="kpi-card critico">
+    <div class="kpi-valor">{{ d.municipios_deserto or '—' }}</div>
+    <div class="kpi-label">Desertos (de {{ d.municipios_total }})</div>
+    <div class="kpi-fonte" title="Municípios sem nenhuma IES com Farmácia.">Censo {{ meta.versao_censo }}</div>
+  </div>
+
+</div>
+
+<!-- Concentração de mercado -->
+<h2 class="section-title">Estrutura de mercado</h2>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.HHI is not none %}{{ "%.4f"|format(d.HHI) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">HHI</div>
+    <div class="kpi-fonte" title="Herfindahl-Hirschman Index. 0=perfeita dispersão, 1=monopólio.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.CR2 is not none %}{{ "%.1f"|format(d.CR2 * 100) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">CR2 (2 maiores IES)</div>
+    <div class="kpi-fonte" title="Fatia de vagas das 2 maiores IES.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.CR10 is not none %}{{ "%.1f"|format(d.CR10 * 100) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">CR10 (10 maiores IES)</div>
+    <div class="kpi-fonte" title="Fatia de vagas das 10 maiores IES.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  {% if d.CC is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.2f"|format(d.CC) }}</div>
+    <div class="kpi-label">CC (Conc. do Curso)</div>
+    <div class="kpi-fonte" title="Conceito do Curso — média dos cursos avaliados no ENADE.">ENADE {{ meta.versao_censo }}</div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Qualidade ENADE -->
+{% if d.CC is not none or d.ENADE is not none %}
+<h2 class="section-title">Qualidade (ENADE {{ meta.versao_censo }})</h2>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.2f"|format(d.CC) if d.CC is not none else '—' }}</div>
+    <div class="kpi-label">CC (média UF)</div>
+    <div class="kpi-fonte" title="Conceito do Curso ENADE, escala 1–5.">ENADE</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.2f"|format(d.ENADE) if d.ENADE is not none else '—' }}</div>
+    <div class="kpi-label">ENADE (média UF)</div>
+    <div class="kpi-fonte">ENADE</div>
+  </div>
+  <div class="kpi-card {% if d.IDD is none %}nodata{% endif %}">
+    <div class="kpi-valor">{{ "%.2f"|format(d.IDD) if d.IDD is not none else '—' }}</div>
+    <div class="kpi-label">IDD (média UF)</div>
+    <div class="kpi-fonte" title="Indicador de Diferença entre Desempenhos — requer linkagem ENEM/INEP não disponível nesta versão.">{% if d.IDD is none %}Não disponível{% else %}ENADE{% endif %}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.vagas_avaliadas or '—' }}</div>
+    <div class="kpi-label">Vagas avaliadas</div>
+    <div class="kpi-fonte" title="Vagas em cursos que participaram do ENADE.">ENADE</div>
+  </div>
+</div>
+{% endif %}
+
+<!-- Mapa municipal -->
+<h2 class="section-title">Mapa Municipal — {{ sigla }}</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
+  <span style="display:inline-block;width:14px;height:14px;background:#2E5496;border-radius:2px;vertical-align:middle;margin-right:4px"></span> Com oferta formativa &nbsp;
+  <span style="display:inline-block;width:14px;height:14px;background:#C9CDD2;border-radius:2px;vertical-align:middle;margin-right:4px"></span> Deserto farmacêutico
+</p>
+<div id="mapa-uf" aria-label="Mapa dos municípios de {{ sigla }}"></div>
+
+<!-- Lista de municípios -->
+<h2 class="section-title">Municípios com oferta formativa ({{ d.municipios_oferta }})</h2>
+<div class="tabela-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        <th>Município</th>
+        <th>Status</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for mun in municipios_com_oferta %}
+      <tr>
+        <td style="color:var(--text-muted);width:40px">{{ loop.index }}</td>
+        <td>{{ mun | title }}</td>
+        <td><span style="color:var(--swot-strength);font-weight:600">✓ Com oferta</span></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<!-- SWOT (gerado por regras baseadas nos indicadores) -->
+<h2 class="section-title">Análise SWOT — {{ sigla }}</h2>
+<div class="swot-grid">
+  <div class="swot-card swot-strength">
+    <h3>Forças</h3>
+    <ul>
+      {% for item in swot.forcas %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="swot-card swot-weakness">
+    <h3>Fraquezas</h3>
+    <ul>
+      {% for item in swot.fraquezas %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="swot-card swot-opportunity">
+    <h3>Oportunidades</h3>
+    <ul>
+      {% for item in swot.oportunidades %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+  <div class="swot-card swot-threat">
+    <h3>Ameaças</h3>
+    <ul>
+      {% for item in swot.ameacas %}<li>{{ item }}</li>{% endfor %}
+    </ul>
+  </div>
+</div>
+
+<!-- Proveniência completa -->
+<details style="margin-bottom:24px">
+  <summary style="cursor:pointer;font-size:0.875rem;color:var(--blue);padding:8px 0">
+    Proveniência dos dados — {{ sigla }}
+  </summary>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-top:8px;font-size:0.8rem">
+    <table style="font-size:0.8rem">
+      <tr><th style="padding:4px 8px;text-align:left">Indicador</th><th style="padding:4px 8px;text-align:left">Fonte</th><th style="padding:4px 8px;text-align:left">Extração</th></tr>
+      <tr><td style="padding:4px 8px">ICT, vagas, municípios</td><td>INEP/Censo {{ meta.versao_censo }}</td><td>{{ meta.data_extracao }}</td></tr>
+      <tr><td style="padding:4px 8px">CC, ENADE, IDD, vagas avaliadas</td><td>INEP/ENADE {{ meta.versao_censo }}</td><td>{{ meta.data_extracao }}</td></tr>
+      <tr><td style="padding:4px 8px">Farmácia Popular (municípios_fp)</td><td>Min. Saúde / dados.gov.br</td><td>{{ meta.data_extracao }}</td></tr>
+      {% if d.IDD is none %}
+      <tr><td style="padding:4px 8px;color:var(--nodata)">IDD</td><td colspan="2" style="color:var(--nodata)">Não disponível — requer linkagem microdados ENEM/INEP (etapa futura)</td></tr>
+      {% endif %}
+    </table>
+  </div>
+</details>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+const DADOS_UF = {{ dados_uf_json }};
+const META = {{ meta_json }};
+const MUNICIPIOS_COM_OFERTA = {{ municipios_com_oferta_json }};
+const CODIGO_IBGE_UF = "{{ codigo_ibge }}";
+
+document.addEventListener('DOMContentLoaded', () => {
+  iniciarMapaUF(CODIGO_IBGE_UF, MUNICIPIOS_COM_OFERTA);
+});
+
+function exportarUFCSV() {
+  const cols = ['UF','vagas_total','vagas_capital','municipios_oferta','municipios_deserto',
+                 'ICT','IAF','ICON','E','HHI','CR2','CR10','CC','ENADE','IDD'];
+  const linha = cols.map(c => c === 'UF' ? '{{ sigla }}' : (DADOS_UF[c] ?? '')).join(';');
+  baixarArquivo(cols.join(';') + '\n' + linha, 'observatorio_{{ sigla }}.csv', 'text/csv;charset=utf-8');
+}
+</script>
+{% endblock %}

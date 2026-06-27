@@ -1,0 +1,31 @@
+{
+  "versao_censo": "2023",
+  "data_extracao_censo": "2025-01-01",
+  "data_extracao_enade": "2025-01-01",
+  "data_extracao_fp": "2025-01-01",
+  "fontes": {
+    "censo": {
+      "nome": "Microdados do Censo da Educação Superior",
+      "orgao": "INEP/MEC",
+      "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados",
+      "ano": 2023,
+      "arquivo": "MICRODADOS_CADASTRO_CURSOS_2023.CSV",
+      "data_publicacao": "2024-10-01"
+    },
+    "enade": {
+      "nome": "Microdados do ENADE",
+      "orgao": "INEP/MEC",
+      "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados",
+      "ano": 2023,
+      "data_publicacao": "2024-07-01"
+    },
+    "farmacia_popular": {
+      "nome": "Programa Farmácia Popular do Brasil — Beneficiários",
+      "orgao": "Ministério da Saúde",
+      "url": "https://dados.gov.br/dados/conjuntos-dados/beneficiarios-do-programa-farmacia-popular-do-brasil",
+      "data_publicacao": "2024-12-01"
+    }
+  },
+  "proxima_verificacao": "2026-01-05",
+  "nota": "Dados extraídos dos microdados oficiais. Indicadores nulos = ausência de fonte, nunca estimativa."
+}

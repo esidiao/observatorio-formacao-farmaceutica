@@ -1,0 +1,24 @@
+# Site gerado
+site/dist/
+
+# Microdados (muito grandes para o repositório)
+etl/dados/
+etl/*.CSV
+etl/*.csv.bak
+etl/pfpb*.csv
+data/observatorio_nacional_dados.json
+data/final_novo.json
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+*.tmp

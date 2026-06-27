@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}Observatório Nacional da Formação Farmacêutica{% endblock %}</title>
+  <meta name="description" content="Indicadores de acesso e qualidade da formação farmacêutica no Brasil, por UF e município.">
+  <link rel="stylesheet" href="{{ depth }}static/css/style.css">
+  <!-- Leaflet -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  {% block head_extra %}{% endblock %}
+</head>
+<body>
+
+<header class="site-header" role="banner">
+  <div>
+    <h1>Observatório Nacional da Formação Farmacêutica</h1>
+    <p>Indicadores de acesso territorial, qualidade e cobertura assistencial · Censo INEP {{ meta.versao_censo }}</p>
+  </div>
+  <span class="badge">ENCCF 2025</span>
+</header>
+
+<nav class="navbar" aria-label="Navegação">
+  {% block breadcrumb %}
+  <a href="{{ depth }}index.html">Início</a>
+  {% endblock %}
+  <div style="flex:1"></div>
+  <span style="font-size:0.78rem;color:var(--text-muted)">
+    Dados: {{ meta.data_extracao | default('2025-01-01') }}
+  </span>
+</nav>
+
+<main>
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer">
+  <p>Observatório Nacional da Formação Farmacêutica · Dados: INEP/Censo {{ meta.versao_censo }}, ENADE {{ meta.versao_censo }}, Farmácia Popular</p>
+  <p style="margin-top:6px">Nenhum indicador é estimado. Campos sem fonte oficial aparecem como "sem dados".</p>
+</footer>
+
+<script src="{{ depth }}static/js/app.js"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

@@ -1,0 +1,113 @@
+name: CI — Validação e Build
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+  schedule:
+    # Toda segunda-feira às 06:00 UTC — verifica se fontes mudaram
+    - cron: '0 6 * * 1'
+  workflow_dispatch:
+    inputs:
+      forcar_atualizacao:
+        description: 'Forçar re-extração mesmo sem mudança nas fontes'
+        required: false
+        default: 'false'
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  # ────────────────────────────────────────────────────────────────
+  # JOB 1: Portão de qualidade + Build do site
+  # ────────────────────────────────────────────────────────────────
+  validar-e-construir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install jinja2 pandas
+
+      - name: "🔒 Portão de qualidade — GO canônico"
+        run: |
+          echo "Verificando fórmulas: ICT 0.840 / IAF 29.0 / ICON 11.3"
+          python etl/indices_observatorio.py --autoteste
+
+      - name: "🧪 Testes de integridade"
+        run: python tests/test_validacao.py
+
+      - name: "🏗️ Gerar site estático"
+        run: python site/build.py
+
+      - name: Verificar arquivos gerados
+        run: |
+          echo "Arquivos em site/dist/:"
+          find site/dist -name "*.html" | head -40
+          echo "Total UFs: $(ls site/dist/uf/*.html | wc -l)"
+
+      - name: Upload artifact para Pages
+        if: github.ref == 'refs/heads/main'
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: site/dist
+
+  # ────────────────────────────────────────────────────────────────
+  # JOB 2: Deploy para GitHub Pages (só na main, após CI passar)
+  # ────────────────────────────────────────────────────────────────
+  deploy:
+    needs: validar-e-construir
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy para GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+
+  # ────────────────────────────────────────────────────────────────
+  # JOB 3: Verificação de versões das fontes (schedule semanal)
+  # ────────────────────────────────────────────────────────────────
+  verificar-fontes:
+    runs-on: ubuntu-latest
+    if: github.event_name == 'schedule' || github.event.inputs.forcar_atualizacao == 'true'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+
+      - name: Instalar dependências
+        run: pip install requests jinja2 pandas
+
+      - name: Verificar versões das fontes
+        id: check
+        run: |
+          python etl/pipeline.py --check-only
+        continue-on-error: true
+
+      - name: Criar issue se fontes atualizadas
+        if: steps.check.outputs.fontes_novas == 'true'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: '🔄 Fontes atualizadas — re-extração necessária',
+              body: 'O pipeline detectou novas versões dos dados. Rode `python etl/pipeline.py` para atualizar.',
+              labels: ['atualização-dados']
+            })
