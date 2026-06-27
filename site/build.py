@@ -75,6 +75,9 @@ def _gerar_swot(sigla, d):
         forcas.append("Mercado descentralizado (HHI baixo)")
     if cobertura >= 0.3:
         forcas.append(f"{mun_oferta} municípios com oferta ({cobertura:.0%} do total)")
+    idd = d.get("IDD")
+    if idd is not None and idd >= 2.7:
+        forcas.append(f"Alto valor agregado pelo curso (IDD = {idd:.2f})")
 
     if not forcas:
         forcas.append("Presença de oferta formativa no estado")
@@ -89,8 +92,12 @@ def _gerar_swot(sigla, d):
         fraquezas.append(f"{mun_deserto} municípios sem oferta ({pct:.0%} do total)")
     if hhi is not None and hhi >= 0.25:
         fraquezas.append("Mercado altamente concentrado (HHI elevado)")
-    if d.get("IDD") is None:
-        fraquezas.append("IDD não disponível (requer linkagem microdados ENEM/INEP)")
+    idd = d.get("IDD")
+    if idd is not None and idd < 2.0:
+        fraquezas.append(f"Baixo valor agregado pelo curso (IDD = {idd:.2f}, abaixo do esperado)")
+    pct_ead = d.get("pct_ead")
+    if pct_ead is not None and pct_ead >= 70:
+        fraquezas.append(f"Capacidade dominada por EaD ({pct_ead:.0f}% das vagas) — risco para práticas presenciais")
 
     if not fraquezas:
         fraquezas.append("Nenhuma fraqueza crítica identificada com os dados disponíveis")
@@ -169,6 +176,8 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     total_vagas_pres = sum(d.get("vagas_presencial") or 0 for d in ufs.values())
     total_vagas_ead  = sum(d.get("vagas_ead") or 0 for d in ufs.values())
     total_ies   = sum(d.get("n_ies") or 0 for d in ufs.values())
+    total_pop   = sum(d.get("populacao") or 0 for d in ufs.values())
+    vagas_100k_nac = round(total_vagas_real / total_pop * 100000, 1) if total_pop else None
     mun_oferta  = sum(d.get("municipios_oferta") or 0 for d in ufs.values())
     mun_deserto = sum(d.get("municipios_deserto") or 0 for d in ufs.values())
     ict_values  = [d.get("ICT") for d in ufs.values() if d.get("ICT") is not None]
@@ -187,6 +196,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         total_vagas_pres=total_vagas_pres,
         total_vagas_ead=total_vagas_ead,
         pct_ead_nacional=round(total_vagas_ead / total_vagas_real * 100, 1) if total_vagas_real else 0,
+        vagas_100k_nac=vagas_100k_nac,
         n_ies=total_ies,
         mun_com_oferta=mun_oferta,
         mun_deserto=mun_deserto,

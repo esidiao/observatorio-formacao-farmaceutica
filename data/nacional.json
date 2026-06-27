@@ -52,7 +52,7 @@
       "CR10": 1.0,
       "CC": 1.5,
       "ENADE": 1.5,
-      "IDD": null,
+      "IDD": 1.242,
       "vagas_avaliadas": 43,
       "municipios_fp": 7,
       "ICT": 0.6591,
@@ -70,7 +70,14 @@
       "n_mantenedoras": 3,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 3,
-      "vagas_total_real": 1429
+      "vagas_total_real": 1429,
+      "CPC_cont": 1.862,
+      "n_cursos_idd": 2,
+      "populacao": 884372,
+      "pop_ano": "2025",
+      "vagas_por_100k": 161.6,
+      "ead_polos_municipios": 15,
+      "ead_polos_registros": 50
     },
     "AL": {
       "vagas_total": 1636,
@@ -115,7 +122,7 @@
       "CR10": 1.0,
       "CC": 2.6,
       "ENADE": 2.6,
-      "IDD": null,
+      "IDD": 2.777,
       "vagas_avaliadas": 217,
       "municipios_fp": 72,
       "ICT": 0.7035,
@@ -133,7 +140,14 @@
       "n_mantenedoras": 6,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 7,
-      "vagas_total_real": 1636
+      "vagas_total_real": 1636,
+      "CPC_cont": 2.962,
+      "n_cursos_idd": 5,
+      "populacao": 3220848,
+      "pop_ano": "2025",
+      "vagas_por_100k": 50.8,
+      "ead_polos_municipios": 29,
+      "ead_polos_registros": 78
     },
     "AM": {
       "vagas_total": 3887,
@@ -188,7 +202,7 @@
       "CR10": 1.0,
       "CC": 2.0,
       "ENADE": 2.0,
-      "IDD": null,
+      "IDD": 1.455,
       "vagas_avaliadas": 554,
       "municipios_fp": 8,
       "ICT": 0.6533,
@@ -206,7 +220,14 @@
       "n_mantenedoras": 8,
       "n_cursos_ead": 2,
       "n_cursos_presencial": 12,
-      "vagas_total_real": 8188
+      "vagas_total_real": 8188,
+      "CPC_cont": 2.336,
+      "n_cursos_idd": 8,
+      "populacao": 4321616,
+      "pop_ano": "2025",
+      "vagas_por_100k": 189.5,
+      "ead_polos_municipios": 39,
+      "ead_polos_registros": 95
     },
     "AP": {
       "vagas_total": 679,
@@ -230,7 +251,7 @@
       "CR10": 1.0,
       "CC": 3.0,
       "ENADE": 3.0,
-      "IDD": null,
+      "IDD": 1.393,
       "vagas_avaliadas": 71,
       "municipios_fp": 4,
       "ICT": 0.75,
@@ -248,7 +269,14 @@
       "n_mantenedoras": 4,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 4,
-      "vagas_total_real": 679
+      "vagas_total_real": 679,
+      "CPC_cont": 2.433,
+      "n_cursos_idd": 3,
+      "populacao": 806517,
+      "pop_ano": "2025",
+      "vagas_por_100k": 84.2,
+      "ead_polos_municipios": 8,
+      "ead_polos_registros": 25
     },
     "BA": {
       "vagas_total": 8356,
@@ -411,7 +439,7 @@
       "CR10": 0.5592,
       "CC": 2.88,
       "ENADE": 2.88,
-      "IDD": null,
+      "IDD": 2.387,
       "vagas_avaliadas": 1336,
       "municipios_fp": 317,
       "ICT": 0.5482,
@@ -429,7 +457,14 @@
       "n_mantenedoras": 41,
       "n_cursos_ead": 7,
       "n_cursos_presencial": 52,
-      "vagas_total_real": 11882
+      "vagas_total_real": 11882,
+      "CPC_cont": 2.788,
+      "n_cursos_idd": 42,
+      "populacao": 14870907,
+      "pop_ano": "2025",
+      "vagas_por_100k": 79.9,
+      "ead_polos_municipios": 147,
+      "ead_polos_registros": 402
     },
     "CE": {
       "vagas_total": 6550,
@@ -544,7 +579,7 @@
       "CR10": 0.7656,
       "CC": 2.89,
       "ENADE": 2.89,
-      "IDD": null,
+      "IDD": 2.554,
       "vagas_avaliadas": 643,
       "municipios_fp": 158,
       "ICT": 0.5356,
@@ -562,7 +597,14 @@
       "n_mantenedoras": 23,
       "n_cursos_ead": 6,
       "n_cursos_presencial": 27,
-      "vagas_total_real": 25285
+      "vagas_total_real": 25285,
+      "CPC_cont": 2.952,
+      "n_cursos_idd": 18,
+      "populacao": 9268836,
+      "pop_ano": "2025",
+      "vagas_por_100k": 272.8,
+      "ead_polos_municipios": 99,
+      "ead_polos_registros": 265
     },
     "DF": {
       "vagas_total": 3921,
@@ -579,7 +621,7 @@
       "CR10": 0.8985,
       "CC": 3.18,
       "ENADE": 3.18,
-      "IDD": null,
+      "IDD": 2.273,
       "vagas_avaliadas": 558,
       "municipios_fp": 1,
       "ICT": 0.5,
@@ -597,7 +639,14 @@
       "n_mantenedoras": 17,
       "n_cursos_ead": 8,
       "n_cursos_presencial": 18,
-      "vagas_total_real": 15050
+      "vagas_total_real": 15050,
+      "CPC_cont": 3.011,
+      "n_cursos_idd": 17,
+      "populacao": 2996899,
+      "pop_ano": "2025",
+      "vagas_por_100k": 502.2,
+      "ead_polos_municipios": 1,
+      "ead_polos_registros": 33
     },
     "ES": {
       "vagas_total": 2119,
@@ -648,7 +697,7 @@
       "CR10": 0.7919,
       "CC": 4.27,
       "ENADE": 4.27,
-      "IDD": null,
+      "IDD": 2.897,
       "vagas_avaliadas": 362,
       "municipios_fp": 76,
       "ICT": 0.4104,
@@ -666,7 +715,14 @@
       "n_mantenedoras": 16,
       "n_cursos_ead": 3,
       "n_cursos_presencial": 19,
-      "vagas_total_real": 3536
+      "vagas_total_real": 3536,
+      "CPC_cont": 3.34,
+      "n_cursos_idd": 15,
+      "populacao": 4126854,
+      "pop_ano": "2025",
+      "vagas_por_100k": 85.7,
+      "ead_polos_municipios": 34,
+      "ead_polos_registros": 107
     },
     "GO": {
       "vagas_total": 7247,
@@ -757,7 +813,7 @@
       "CR10": 0.5906,
       "CC": 2.48,
       "ENADE": 2.48,
-      "IDD": null,
+      "IDD": 2.011,
       "vagas_avaliadas": 831,
       "municipios_fp": 205,
       "ICT": 0.586,
@@ -775,7 +831,14 @@
       "n_mantenedoras": 35,
       "n_cursos_ead": 5,
       "n_cursos_presencial": 38,
-      "vagas_total_real": 8887
+      "vagas_total_real": 8887,
+      "CPC_cont": 2.69,
+      "n_cursos_idd": 28,
+      "populacao": 7423629,
+      "pop_ano": "2025",
+      "vagas_por_100k": 119.7,
+      "ead_polos_municipios": 75,
+      "ead_polos_registros": 239
     },
     "MA": {
       "vagas_total": 4595,
@@ -875,7 +938,7 @@
       "CR10": 0.9171,
       "CC": 2.09,
       "ENADE": 2.09,
-      "IDD": null,
+      "IDD": 1.905,
       "vagas_avaliadas": 488,
       "municipios_fp": 115,
       "ICT": 0.6567,
@@ -893,7 +956,14 @@
       "n_mantenedoras": 15,
       "n_cursos_ead": 3,
       "n_cursos_presencial": 15,
-      "vagas_total_real": 7021
+      "vagas_total_real": 7021,
+      "CPC_cont": 2.581,
+      "n_cursos_idd": 11,
+      "populacao": 7018211,
+      "pop_ano": "2025",
+      "vagas_por_100k": 100.0,
+      "ead_polos_municipios": 84,
+      "ead_polos_registros": 218
     },
     "MG": {
       "vagas_total": 8189,
@@ -1172,7 +1242,7 @@
       "CR10": 0.3795,
       "CC": 3.47,
       "ENADE": 3.47,
-      "IDD": null,
+      "IDD": 2.757,
       "vagas_avaliadas": 1896,
       "municipios_fp": 768,
       "ICT": 0.4523,
@@ -1190,7 +1260,14 @@
       "n_mantenedoras": 50,
       "n_cursos_ead": 5,
       "n_cursos_presencial": 66,
-      "vagas_total_real": 10718
+      "vagas_total_real": 10718,
+      "CPC_cont": 3.266,
+      "n_cursos_idd": 59,
+      "populacao": 21393441,
+      "pop_ano": "2025",
+      "vagas_por_100k": 50.1,
+      "ead_polos_municipios": 261,
+      "ead_polos_registros": 712
     },
     "MS": {
       "vagas_total": 952,
@@ -1243,7 +1320,7 @@
       "CR10": 1.0,
       "CC": 2.62,
       "ENADE": 2.62,
-      "IDD": null,
+      "IDD": 2.651,
       "vagas_avaliadas": 105,
       "municipios_fp": 58,
       "ICT": 0.6718,
@@ -1261,7 +1338,14 @@
       "n_mantenedoras": 7,
       "n_cursos_ead": 3,
       "n_cursos_presencial": 8,
-      "vagas_total_real": 10480
+      "vagas_total_real": 10480,
+      "CPC_cont": 3.262,
+      "n_cursos_idd": 7,
+      "populacao": 2924631,
+      "pop_ano": "2025",
+      "vagas_por_100k": 358.3,
+      "ead_polos_municipios": 37,
+      "ead_polos_registros": 113
     },
     "MT": {
       "vagas_total": 2606,
@@ -1332,7 +1416,7 @@
       "CR10": 0.7916,
       "CC": 2.21,
       "ENADE": 2.21,
-      "IDD": null,
+      "IDD": 2.024,
       "vagas_avaliadas": 206,
       "municipios_fp": 77,
       "ICT": 0.3647,
@@ -1350,7 +1434,14 @@
       "n_mantenedoras": 12,
       "n_cursos_ead": 1,
       "n_cursos_presencial": 20,
-      "vagas_total_real": 4606
+      "vagas_total_real": 4606,
+      "CPC_cont": 2.533,
+      "n_cursos_idd": 14,
+      "populacao": 3893659,
+      "pop_ano": "2025",
+      "vagas_por_100k": 118.3,
+      "ead_polos_municipios": 53,
+      "ead_polos_registros": 159
     },
     "PA": {
       "vagas_total": 5484,
@@ -1460,7 +1551,7 @@
       "CR10": 0.7954,
       "CC": 2.12,
       "ENADE": 2.12,
-      "IDD": null,
+      "IDD": 1.454,
       "vagas_avaliadas": 873,
       "municipios_fp": 76,
       "ICT": 0.4196,
@@ -1478,7 +1569,14 @@
       "n_mantenedoras": 17,
       "n_cursos_ead": 1,
       "n_cursos_presencial": 23,
-      "vagas_total_real": 6067
+      "vagas_total_real": 6067,
+      "CPC_cont": 2.258,
+      "n_cursos_idd": 17,
+      "populacao": 8711196,
+      "pop_ano": "2025",
+      "vagas_por_100k": 69.6,
+      "ead_polos_municipios": 94,
+      "ead_polos_registros": 338
     },
     "PB": {
       "vagas_total": 2915,
@@ -1527,7 +1625,7 @@
       "CR10": 0.799,
       "CC": 2.79,
       "ENADE": 2.79,
-      "IDD": null,
+      "IDD": 2.459,
       "vagas_avaliadas": 628,
       "municipios_fp": 194,
       "ICT": 0.6631,
@@ -1545,7 +1643,14 @@
       "n_mantenedoras": 16,
       "n_cursos_ead": 1,
       "n_cursos_presencial": 17,
-      "vagas_total_real": 3166
+      "vagas_total_real": 3166,
+      "CPC_cont": 2.894,
+      "n_cursos_idd": 14,
+      "populacao": 4164468,
+      "pop_ano": "2025",
+      "vagas_por_100k": 76.0,
+      "ead_polos_municipios": 33,
+      "ead_polos_registros": 106
     },
     "PE": {
       "vagas_total": 9623,
@@ -1641,7 +1746,7 @@
       "CR10": 0.7058,
       "CC": 2.11,
       "ENADE": 2.11,
-      "IDD": null,
+      "IDD": 1.492,
       "vagas_avaliadas": 1575,
       "municipios_fp": 148,
       "ICT": 0.4968,
@@ -1659,7 +1764,14 @@
       "n_mantenedoras": 25,
       "n_cursos_ead": 5,
       "n_cursos_presencial": 33,
-      "vagas_total_real": 34739
+      "vagas_total_real": 34739,
+      "CPC_cont": 2.2,
+      "n_cursos_idd": 27,
+      "populacao": 9562007,
+      "pop_ano": "2025",
+      "vagas_por_100k": 363.3,
+      "ead_polos_municipios": 79,
+      "ead_polos_registros": 255
     },
     "PI": {
       "vagas_total": 2256,
@@ -1710,7 +1822,7 @@
       "CR10": 0.9557,
       "CC": 2.22,
       "ENADE": 2.22,
-      "IDD": null,
+      "IDD": 2.244,
       "vagas_avaliadas": 349,
       "municipios_fp": 131,
       "ICT": 0.7862,
@@ -1728,7 +1840,14 @@
       "n_mantenedoras": 11,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 12,
-      "vagas_total_real": 2256
+      "vagas_total_real": 2256,
+      "CPC_cont": 2.657,
+      "n_cursos_idd": 9,
+      "populacao": 3384547,
+      "pop_ano": "2025",
+      "vagas_por_100k": 66.7,
+      "ead_polos_municipios": 35,
+      "ead_polos_registros": 98
     },
     "PR": {
       "vagas_total": 4730,
@@ -1941,7 +2060,7 @@
       "CR10": 0.4837,
       "CC": 3.59,
       "ENADE": 3.59,
-      "IDD": null,
+      "IDD": 2.449,
       "vagas_avaliadas": 2051,
       "municipios_fp": 350,
       "ICT": 0.411,
@@ -1959,7 +2078,14 @@
       "n_mantenedoras": 41,
       "n_cursos_ead": 17,
       "n_cursos_presencial": 50,
-      "vagas_total_real": 36200
+      "vagas_total_real": 36200,
+      "CPC_cont": 2.88,
+      "n_cursos_idd": 40,
+      "populacao": 11890517,
+      "pop_ano": "2025",
+      "vagas_por_100k": 304.4,
+      "ead_polos_municipios": 197,
+      "ead_polos_registros": 618
     },
     "RJ": {
       "vagas_total": 11867,
@@ -2054,7 +2180,7 @@
       "CR10": 0.8988,
       "CC": 2.82,
       "ENADE": 2.82,
-      "IDD": null,
+      "IDD": 1.772,
       "vagas_avaliadas": 2140,
       "municipios_fp": 84,
       "ICT": 0.2475,
@@ -2072,7 +2198,14 @@
       "n_mantenedoras": 27,
       "n_cursos_ead": 9,
       "n_cursos_presencial": 42,
-      "vagas_total_real": 65521
+      "vagas_total_real": 65521,
+      "CPC_cont": 2.61,
+      "n_cursos_idd": 34,
+      "populacao": 17223547,
+      "pop_ano": "2025",
+      "vagas_por_100k": 380.4,
+      "ead_polos_municipios": 79,
+      "ead_polos_registros": 330
     },
     "RN": {
       "vagas_total": 1360,
@@ -2116,7 +2249,7 @@
       "CR10": 1.0,
       "CC": 3.0,
       "ENADE": 3.0,
-      "IDD": null,
+      "IDD": 2.444,
       "vagas_avaliadas": 348,
       "municipios_fp": 133,
       "ICT": 0.7408,
@@ -2134,7 +2267,14 @@
       "n_mantenedoras": 6,
       "n_cursos_ead": 1,
       "n_cursos_presencial": 9,
-      "vagas_total_real": 1465
+      "vagas_total_real": 1465,
+      "CPC_cont": 2.866,
+      "n_cursos_idd": 8,
+      "populacao": 3455236,
+      "pop_ano": "2025",
+      "vagas_por_100k": 42.4,
+      "ead_polos_municipios": 28,
+      "ead_polos_registros": 85
     },
     "RO": {
       "vagas_total": 2942,
@@ -2173,7 +2313,7 @@
       "CR10": 0.8793,
       "CC": 2.18,
       "ENADE": 2.18,
-      "IDD": null,
+      "IDD": 1.911,
       "vagas_avaliadas": 288,
       "municipios_fp": 42,
       "ICT": 0.4323,
@@ -2191,7 +2331,14 @@
       "n_mantenedoras": 12,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 14,
-      "vagas_total_real": 2942
+      "vagas_total_real": 2942,
+      "CPC_cont": 2.489,
+      "n_cursos_idd": 11,
+      "populacao": 1751950,
+      "pop_ano": "2025",
+      "vagas_por_100k": 167.9,
+      "ead_polos_municipios": 23,
+      "ead_polos_registros": 80
     },
     "RR": {
       "vagas_total": 1079,
@@ -2215,7 +2362,7 @@
       "CR10": 1.0,
       "CC": 1.0,
       "ENADE": 1.0,
-      "IDD": null,
+      "IDD": 1.153,
       "vagas_avaliadas": 44,
       "municipios_fp": 3,
       "ICT": 0.7333,
@@ -2233,7 +2380,14 @@
       "n_mantenedoras": 3,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 3,
-      "vagas_total_real": 1079
+      "vagas_total_real": 1079,
+      "CPC_cont": 2.178,
+      "n_cursos_idd": 1,
+      "populacao": 738772,
+      "pop_ano": "2025",
+      "vagas_por_100k": 146.1,
+      "ead_polos_municipios": 8,
+      "ead_polos_registros": 25
     },
     "RS": {
       "vagas_total": 3047,
@@ -2393,7 +2547,7 @@
       "CR10": 0.6016,
       "CC": 3.67,
       "ENADE": 3.67,
-      "IDD": null,
+      "IDD": 2.872,
       "vagas_avaliadas": 684,
       "municipios_fp": 429,
       "ICT": 0.4065,
@@ -2411,7 +2565,14 @@
       "n_mantenedoras": 29,
       "n_cursos_ead": 3,
       "n_cursos_presencial": 36,
-      "vagas_total_real": 4190
+      "vagas_total_real": 4190,
+      "CPC_cont": 3.341,
+      "n_cursos_idd": 31,
+      "populacao": 11233263,
+      "pop_ano": "2025",
+      "vagas_por_100k": 37.3,
+      "ead_polos_municipios": 142,
+      "ead_polos_registros": 427
     },
     "SC": {
       "vagas_total": 2868,
@@ -2520,7 +2681,7 @@
       "CR10": 0.8285,
       "CC": 3.89,
       "ENADE": 3.89,
-      "IDD": null,
+      "IDD": 2.836,
       "vagas_avaliadas": 509,
       "municipios_fp": 261,
       "ICT": 0.3739,
@@ -2538,7 +2699,14 @@
       "n_mantenedoras": 21,
       "n_cursos_ead": 7,
       "n_cursos_presencial": 28,
-      "vagas_total_real": 17355
+      "vagas_total_real": 17355,
+      "CPC_cont": 3.202,
+      "n_cursos_idd": 19,
+      "populacao": 8187029,
+      "pop_ano": "2025",
+      "vagas_por_100k": 212.0,
+      "ead_polos_municipios": 92,
+      "ead_polos_registros": 312
     },
     "SE": {
       "vagas_total": 1375,
@@ -2577,7 +2745,7 @@
       "CR10": 1.0,
       "CC": 3.2,
       "ENADE": 3.2,
-      "IDD": null,
+      "IDD": 2.251,
       "vagas_avaliadas": 257,
       "municipios_fp": 48,
       "ICT": 0.7638,
@@ -2595,7 +2763,14 @@
       "n_mantenedoras": 6,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 7,
-      "vagas_total_real": 1375
+      "vagas_total_real": 1375,
+      "CPC_cont": 2.854,
+      "n_cursos_idd": 5,
+      "populacao": 2299425,
+      "pop_ano": "2025",
+      "vagas_por_100k": 59.8,
+      "ead_polos_municipios": 23,
+      "ead_polos_registros": 58
     },
     "SP": {
       "vagas_total": 27627,
@@ -2875,7 +3050,7 @@
       "CR10": 0.5676,
       "CC": 3.11,
       "ENADE": 3.11,
-      "IDD": null,
+      "IDD": 2.265,
       "vagas_avaliadas": 6109,
       "municipios_fp": 597,
       "ICT": 0.4924,
@@ -2893,7 +3068,14 @@
       "n_mantenedoras": 102,
       "n_cursos_ead": 23,
       "n_cursos_presencial": 153,
-      "vagas_total_real": 130447
+      "vagas_total_real": 130447,
+      "CPC_cont": 2.732,
+      "n_cursos_idd": 114,
+      "populacao": 46081801,
+      "pop_ano": "2025",
+      "vagas_por_100k": 283.1,
+      "ead_polos_municipios": 263,
+      "ead_polos_registros": 1187
     },
     "TO": {
       "vagas_total": 811,
@@ -2930,7 +3112,7 @@
       "CR10": 1.0,
       "CC": 2.25,
       "ENADE": 2.25,
-      "IDD": null,
+      "IDD": 1.454,
       "vagas_avaliadas": 164,
       "municipios_fp": 71,
       "ICT": 0.7124,
@@ -2948,7 +3130,14 @@
       "n_mantenedoras": 6,
       "n_cursos_ead": 0,
       "n_cursos_presencial": 6,
-      "vagas_total_real": 811
+      "vagas_total_real": 811,
+      "CPC_cont": 2.056,
+      "n_cursos_idd": 4,
+      "populacao": 1586859,
+      "pop_ano": "2025",
+      "vagas_por_100k": 51.1,
+      "ead_polos_municipios": 21,
+      "ead_polos_registros": 62
     }
   }
 }

@@ -51,6 +51,13 @@
     <div class="kpi-label">IAF mediana nacional</div>
     <div class="kpi-fonte" title="Índice de Adequação Formativa (↑ melhor, 0–100)">ENADE + Censo</div>
   </div>
+  {% if vagas_100k_nac is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(vagas_100k_nac) }}</div>
+    <div class="kpi-label">Vagas / 100 mil hab.</div>
+    <div class="kpi-fonte" title="Vagas totais (pres + EaD) por 100 mil habitantes. População: estimativa IBGE.">Censo + IBGE</div>
+  </div>
+  {% endif %}
 </div>
 
 <!-- Seletor de indicador + Mapa -->

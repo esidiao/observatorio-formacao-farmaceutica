@@ -139,6 +139,38 @@
 </div>
 {% endif %}
 
+<!-- Densidade e alcance territorial -->
+{% if d.vagas_por_100k is not none or d.ead_polos_municipios is not none %}
+<h2 class="section-title">Densidade e alcance territorial</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
+  A densidade por habitante normaliza a capacidade pela população. O alcance da EaD
+  conta os <strong>municípios-polo</strong> onde há entrega presencial de cursos a
+  distância — revelando a penetração territorial que a contagem de vagas na sede esconde.
+</p>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.vagas_por_100k is not none %}{{ "%.1f"|format(d.vagas_por_100k) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">Vagas / 100 mil hab.</div>
+    <div class="kpi-fonte" title="Vagas totais (pres + EaD) por 100 mil habitantes. População: estimativa IBGE {{ d.pop_ano }}.">IBGE {{ d.pop_ano }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.populacao %}{{ "{:,}".format(d.populacao).replace(',','.') }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">População</div>
+    <div class="kpi-fonte" title="Estimativa populacional IBGE.">IBGE {{ d.pop_ano }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.ead_polos_municipios if d.ead_polos_municipios is not none else '—' }}</div>
+    <div class="kpi-label">Municípios c/ polo EaD</div>
+    <div class="kpi-fonte" title="Municípios do estado que recebem oferta EaD de Farmácia via polo (independente da sede da mantenedora).">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.ead_polos_registros if d.ead_polos_registros is not none else '—' }}</div>
+    <div class="kpi-label">Polos EaD (registros)</div>
+    <div class="kpi-fonte" title="Total de registros de polo EaD de Farmácia no estado.">Censo {{ meta.versao_censo }}</div>
+  </div>
+</div>
+{% endif %}
+
 <!-- Concentração de mercado -->
 <h2 class="section-title">Estrutura de mercado</h2>
 <div class="kpi-grid">
@@ -173,7 +205,12 @@
 
 <!-- Qualidade ENADE -->
 {% if d.CC is not none or d.ENADE is not none %}
-<h2 class="section-title">Qualidade (ENADE {{ meta.versao_censo }})</h2>
+<h2 class="section-title">Qualidade (ENADE 2023)
+  <span style="display:inline-block;font-size:0.68rem;font-weight:600;color:#8a5a00;background:#fff3cd;border:1px solid #ffe08a;border-radius:10px;padding:2px 8px;vertical-align:middle;margin-left:8px"
+        title="O ciclo ENADE de Farmácia é trienal. O resultado mais recente é de 2023 (publicado em abr/2025); o próximo ciclo ainda não foi divulgado. Os indicadores CC, ENADE, IDD e CPC referem-se a 2023, enquanto vagas/municípios são do Censo {{ meta.versao_censo }}.">
+    ⚠ Ciclo 2023 (trienal) — não sincronizado com o Censo {{ meta.versao_censo }}
+  </span>
+</h2>
 <div class="kpi-grid">
   <div class="kpi-card">
     <div class="kpi-valor">{{ "%.2f"|format(d.CC) if d.CC is not none else '—' }}</div>
@@ -185,15 +222,20 @@
     <div class="kpi-label">ENADE (média UF)</div>
     <div class="kpi-fonte">ENADE</div>
   </div>
-  <div class="kpi-card {% if d.IDD is none %}nodata{% endif %}">
+  <div class="kpi-card {% if d.IDD is not none %}{% if d.IDD >= 2.7 %}bom{% elif d.IDD < 2.0 %}critico{% endif %}{% else %}nodata{% endif %}">
     <div class="kpi-valor">{{ "%.2f"|format(d.IDD) if d.IDD is not none else '—' }}</div>
     <div class="kpi-label">IDD (média UF)</div>
-    <div class="kpi-fonte" title="Indicador de Diferença entre Desempenhos — requer linkagem ENEM/INEP não disponível nesta versão.">{% if d.IDD is none %}Não disponível{% else %}ENADE{% endif %}</div>
+    <div class="kpi-fonte" title="Indicador de Diferença entre Desempenhos Esperado e Observado (escala contínua 0–5). Mede o valor agregado pelo curso, controlando o perfil de ingresso. Média ponderada por concluintes. Fonte: INEP, CPC 2023.">CPC INEP 2023</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.2f"|format(d.CPC_cont) if d.CPC_cont is not none else '—' }}</div>
+    <div class="kpi-label">CPC (média UF)</div>
+    <div class="kpi-fonte" title="Conceito Preliminar de Curso contínuo (0–5) — combina ENADE, IDD, corpo docente e infraestrutura. Fonte: INEP, CPC 2023.">CPC INEP 2023</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-valor">{{ d.vagas_avaliadas or '—' }}</div>
     <div class="kpi-label">Vagas avaliadas</div>
-    <div class="kpi-fonte" title="Vagas em cursos que participaram do ENADE.">ENADE</div>
+    <div class="kpi-fonte" title="Vagas em cursos que participaram do ENADE.">ENADE 2023</div>
   </div>
 </div>
 {% endif %}
@@ -280,11 +322,11 @@
     <table style="font-size:0.8rem">
       <tr><th style="padding:4px 8px;text-align:left">Indicador</th><th style="padding:4px 8px;text-align:left">Fonte</th><th style="padding:4px 8px;text-align:left">Extração</th></tr>
       <tr><td style="padding:4px 8px">ICT, vagas, municípios</td><td>INEP/Censo {{ meta.versao_censo }}</td><td>{{ meta.data_extracao }}</td></tr>
-      <tr><td style="padding:4px 8px">CC, ENADE, IDD, vagas avaliadas</td><td>INEP/ENADE {{ meta.versao_censo }}</td><td>{{ meta.data_extracao }}</td></tr>
+      <tr><td style="padding:4px 8px">CC, ENADE</td><td>INEP/ENADE 2023</td><td>{{ meta.data_extracao }}</td></tr>
+      <tr><td style="padding:4px 8px">IDD, CPC, vagas avaliadas</td><td>INEP/CPC 2023 (CPC_2023.xlsx)</td><td>2025-04-11</td></tr>
+      <tr><td style="padding:4px 8px">População, vagas/100k</td><td>IBGE — estimativa {{ d.pop_ano }} (API agregados 6579)</td><td>{{ meta.data_extracao }}</td></tr>
+      <tr><td style="padding:4px 8px">Alcance EaD (polos)</td><td>INEP/Censo {{ meta.versao_censo }} (registros de polo)</td><td>{{ meta.data_extracao }}</td></tr>
       <tr><td style="padding:4px 8px">Farmácia Popular (municípios_fp)</td><td>Min. Saúde / dados.gov.br</td><td>{{ meta.data_extracao }}</td></tr>
-      {% if d.IDD is none %}
-      <tr><td style="padding:4px 8px;color:var(--nodata)">IDD</td><td colspan="2" style="color:var(--nodata)">Não disponível — requer linkagem microdados ENEM/INEP (etapa futura)</td></tr>
-      {% endif %}
     </table>
   </div>
 </details>
