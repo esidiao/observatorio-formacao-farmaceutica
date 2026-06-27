@@ -1,0 +1,238 @@
+{
+  "LARANJAL DO JARI": {
+    "nome_original": "Laranjal do Jari",
+    "cod_municipio": "1600279",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 19,
+    "ingressos": 12,
+    "concluintes": 0,
+    "n_cursos": 3,
+    "n_ies": 3,
+    "cursos": [
+      {
+        "cod_ies": "163",
+        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "vagas": 0,
+        "matriculas": 16,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "MACAPA": {
+    "nome_original": "Macapá",
+    "cod_municipio": "1600303",
+    "vagas_total": 734,
+    "vagas_presencial": 734,
+    "vagas_ead": 0,
+    "matriculas": 1051,
+    "ingressos": 507,
+    "concluintes": 105,
+    "n_cursos": 12,
+    "n_ies": 12,
+    "cursos": [
+      {
+        "cod_ies": "1591",
+        "nome_ies": "FACULDADE ESTÁCIO MACAPÁ - ESTÁCIO MACAPÁ",
+        "vagas": 440,
+        "matriculas": 21,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "2773",
+        "nome_ies": "FACULDADE ANHANGUERA DE MACAPÁ",
+        "vagas": 108,
+        "matriculas": 152,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "2469",
+        "nome_ies": "INSTITUTO MACAPAENSE DE ENSINO SUPERIOR",
+        "vagas": 100,
+        "matriculas": 92,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "830",
+        "nome_ies": "UNIVERSIDADE FEDERAL DO AMAPÁ",
+        "vagas": 86,
+        "matriculas": 267,
+        "modalidade": "Presencial",
+        "categoria": "Pública Federal",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 116,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 112,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "UNIVERSIDADE PAULISTA",
+        "vagas": 0,
+        "matriculas": 237,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "383",
+        "nome_ies": "UNIVERSIDADE DA AMAZÔNIA",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1205",
+        "nome_ies": "CENTRO UNIVERSITÁRIO FAEL",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "vagas": 0,
+        "matriculas": 44,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "SANTANA": {
+    "nome_original": "Santana",
+    "cod_municipio": "1600600",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 16,
+    "ingressos": 9,
+    "concluintes": 0,
+    "n_cursos": 4,
+    "n_ies": 4,
+    "cursos": [
+      {
+        "cod_ies": "163",
+        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1205",
+        "nome_ies": "CENTRO UNIVERSITÁRIO FAEL",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "vagas": 0,
+        "matriculas": 12,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "TARTARUGALZINHO": {
+    "nome_original": "Tartarugalzinho",
+    "cod_municipio": "1600709",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 0,
+    "ingressos": 0,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "163",
+        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      }
+    ]
+  }
+}

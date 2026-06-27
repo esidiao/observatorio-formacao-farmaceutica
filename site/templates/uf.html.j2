@@ -137,6 +137,11 @@
 
 <!-- Lista de municípios -->
 <h2 class="section-title">Municípios com oferta formativa ({{ d.municipios_oferta }})</h2>
+{% if tem_drill %}
+<p style="font-size:0.82rem;color:var(--text-muted);margin-bottom:10px">
+  Clique no município para ver cursos, IES e vagas detalhados.
+</p>
+{% endif %}
 <div class="tabela-wrap">
   <table>
     <thead>
@@ -148,9 +153,17 @@
     </thead>
     <tbody>
       {% for mun in municipios_com_oferta %}
-      <tr>
+      <tr {% if tem_drill %}onclick="window.location='{{ depth }}municipio/{{ sigla }}/{{ mun | upper | replace(' ','_') | replace('/','_') }}.html'" style="cursor:pointer"{% endif %}>
         <td style="color:var(--text-muted);width:40px">{{ loop.index }}</td>
-        <td>{{ mun | title }}</td>
+        <td>
+          {% if tem_drill %}
+          <a href="{{ depth }}municipio/{{ sigla }}/{{ mun | upper | replace(' ','_') | replace('/','_') }}.html">
+            {{ mun | title }}
+          </a>
+          {% else %}
+          {{ mun | title }}
+          {% endif %}
+        </td>
         <td><span style="color:var(--swot-strength);font-weight:600">✓ Com oferta</span></td>
       </tr>
       {% endfor %}

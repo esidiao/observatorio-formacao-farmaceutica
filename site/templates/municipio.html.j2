@@ -1,0 +1,126 @@
+{% extends "base.html.j2" %}
+
+{% block title %}{{ nome_municipio | title }} ({{ sigla }}) — Observatório Nacional{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ depth }}../index.html">Início</a>
+<span class="sep">›</span>
+<a href="{{ depth }}../uf/{{ sigla }}.html">{{ sigla }}</a>
+<span class="sep">›</span>
+<span class="active">{{ nome_municipio | title }}</span>
+{% endblock %}
+
+{% block content %}
+
+<div style="display:flex;align-items:center;gap:12px;margin-bottom:24px;flex-wrap:wrap">
+  <h2 style="font-size:1.4rem;color:var(--navy)">{{ nome_municipio | title }}</h2>
+  <span class="uf-tag">{{ sigla }}</span>
+  {% if d.cod_municipio %}
+  <span style="font-size:0.75rem;color:var(--text-muted);font-family:var(--font-mono)">IBGE {{ d.cod_municipio }}</span>
+  {% endif %}
+  <span style="flex:1"></span>
+  <button class="btn outline" onclick="exportarJSON(DADOS_MUN, 'municipio_{{ sigla }}_{{ nome_municipio }}.json')" style="font-size:0.8rem;padding:6px 12px">↓ JSON</button>
+</div>
+
+<!-- KPIs do município -->
+<h2 class="section-title">Formação farmacêutica — {{ nome_municipio | title }}</h2>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "{:,}".format(d.vagas_total or 0).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas totais</div>
+    <div class="kpi-fonte" title="Fonte: INEP/Censo {{ meta.versao_censo }}">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.vagas_presencial or 0 }}</div>
+    <div class="kpi-label">Vagas presenciais</div>
+    <div class="kpi-fonte">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.vagas_ead or 0 }}</div>
+    <div class="kpi-label">Vagas EaD</div>
+    <div class="kpi-fonte">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.n_ies or '—' }}</div>
+    <div class="kpi-label">IES</div>
+    <div class="kpi-fonte">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.n_cursos or '—' }}</div>
+    <div class="kpi-label">Cursos cadastrados</div>
+    <div class="kpi-fonte">Censo {{ meta.versao_censo }}</div>
+  </div>
+  {% if d.matriculas is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "{:,}".format(d.matriculas).replace(',','.') }}</div>
+    <div class="kpi-label">Matriculados</div>
+    <div class="kpi-fonte">Censo {{ meta.versao_censo }}</div>
+  </div>
+  {% endif %}
+</div>
+
+<!-- Tabela de cursos/IES -->
+<h2 class="section-title">Cursos por IES</h2>
+<div class="tabela-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>#</th>
+        {% if tem_nome_ies %}<th>IES</th>{% endif %}
+        <th>Modalidade</th>
+        <th>Categoria</th>
+        <th>Organização</th>
+        <th title="Vagas anuais autorizadas em operação">Vagas</th>
+        {% if tem_matriculas %}<th title="Alunos matriculados">Matrículas</th>{% endif %}
+      </tr>
+    </thead>
+    <tbody>
+      {% for c in d.cursos %}
+      <tr>
+        <td style="color:var(--text-muted);width:36px">{{ loop.index }}</td>
+        {% if tem_nome_ies %}<td>{{ c.nome_ies or '—' }}</td>{% endif %}
+        <td>
+          {% if c.modalidade == 'Presencial' %}
+            <span style="color:var(--swot-strength);font-weight:600">Presencial</span>
+          {% elif c.modalidade == 'EaD' %}
+            <span style="color:var(--blue)">EaD</span>
+          {% elif c.modalidade == 'Semipresencial' %}
+            <span style="color:var(--gold)">Semipresencial</span>
+          {% else %}
+            {{ c.modalidade or '—' }}
+          {% endif %}
+        </td>
+        <td>{{ c.categoria or '—' }}</td>
+        <td>{{ c.organizacao or '—' }}</td>
+        <td><b>{{ c.vagas }}</b></td>
+        {% if tem_matriculas %}<td>{{ c.matriculas or '—' }}</td>{% endif %}
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<div style="margin-top:12px;margin-bottom:28px">
+  <a href="{{ depth }}../uf/{{ sigla }}.html" class="btn outline" style="font-size:0.85rem">
+    ← Voltar para {{ sigla }}
+  </a>
+</div>
+
+<!-- Proveniência -->
+<details>
+  <summary style="cursor:pointer;font-size:0.875rem;color:var(--blue);padding:8px 0">Proveniência dos dados</summary>
+  <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:14px;margin-top:8px;font-size:0.8rem">
+    Todos os dados deste município provêm do <b>Censo da Educação Superior {{ meta.versao_censo }}</b> (INEP/MEC),
+    extraídos em {{ meta.data_extracao }}. Nenhum dado é estimado.
+    Vagas = vagas anuais em funcionamento (QT_VG_TOTAL).
+    Matrículas = alunos matriculados (QT_MAT).
+  </div>
+</details>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+const DADOS_MUN = {{ dados_mun_json }};
+</script>
+{% endblock %}

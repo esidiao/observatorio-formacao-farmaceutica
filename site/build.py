@@ -169,9 +169,15 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
 
     # ── Render páginas de UF ───────────────────────────────────────────────────
     tmpl_uf = env.get_template("uf.html.j2")
+    municipios_dir = path_dados.parent / "municipios"
+
     for sigla, d in ufs.items():
         sigla = sigla.upper()
         municipios = d.get("municipios_com_oferta_lista", [])
+
+        # Carregar dados detalhados de municípios, se disponível
+        mun_json_path = municipios_dir / f"{sigla}.json"
+        tem_drill = mun_json_path.exists()
 
         html_uf = tmpl_uf.render(
             depth="../",
@@ -185,10 +191,62 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
             dados_uf_json=json.dumps(d, ensure_ascii=False),
             codigo_ibge=IBGE_UF.get(sigla, ""),
             swot=_gerar_swot(sigla, d),
+            tem_drill=tem_drill,
         )
         (path_out / "uf" / f"{sigla}.html").write_text(html_uf, encoding="utf-8")
 
     print(f"[OK] {len(ufs)} páginas de UF geradas")
+
+    # ── Render páginas de município ────────────────────────────────────────────
+    tmpl_mun = env.get_template("municipio.html.j2") if (templates_dir / "municipio.html.j2").exists() else None
+    n_mun_pages = 0
+    if tmpl_mun and municipios_dir.exists():
+        for mun_file in sorted(municipios_dir.glob("*.json")):
+            sigla = mun_file.stem.upper()
+            if sigla not in ufs:
+                continue
+            with open(mun_file, encoding="utf-8") as f:
+                dados_mun = json.load(f)
+
+            out_dir = path_out / "municipio" / sigla
+            out_dir.mkdir(parents=True, exist_ok=True)
+
+            for nome_norm, d_mun in dados_mun.items():
+                # Verifica se há nome_ies em algum curso
+                tem_nome_ies = any(c.get("nome_ies") for c in d_mun.get("cursos", []))
+                tem_matriculas = any(c.get("matriculas") is not None for c in d_mun.get("cursos", []))
+
+                html_mun = tmpl_mun.render(
+                    depth="../../",
+                    meta=meta,
+                    meta_json=json.dumps(meta, ensure_ascii=False),
+                    sigla=sigla,
+                    nome_municipio=d_mun.get("nome_original", nome_norm),
+                    d=d_mun,
+                    dados_mun_json=json.dumps(d_mun, ensure_ascii=False),
+                    tem_nome_ies=tem_nome_ies,
+                    tem_matriculas=tem_matriculas,
+                )
+                slug = nome_norm.replace(" ", "_").replace("/", "-")
+                (out_dir / f"{slug}.html").write_text(html_mun, encoding="utf-8")
+                n_mun_pages += 1
+
+    if n_mun_pages:
+        print(f"[OK] {n_mun_pages} páginas de município geradas")
+
+    # ── Render página de comparação ────────────────────────────────────────────
+    tmpl_comp = env.get_template("comparar.html.j2") if (templates_dir / "comparar.html.j2").exists() else None
+    if tmpl_comp:
+        html_comp = tmpl_comp.render(
+            depth="",
+            meta=meta,
+            meta_json=json.dumps(meta, ensure_ascii=False),
+            todas_ufs=sorted(ufs.keys()),
+            dados_ufs_json=json.dumps(ufs, ensure_ascii=False),
+        )
+        (path_out / "comparar.html").write_text(html_comp, encoding="utf-8")
+        print(f"[OK] comparar.html")
+
     print(f"\n[BUILD] Site gerado em: {path_out.resolve()}")
     print(f"  Abra {path_out / 'index.html'} no browser para visualizar localmente.")
 
