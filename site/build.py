@@ -234,6 +234,17 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     if n_mun_pages:
         print(f"[OK] {n_mun_pages} páginas de município geradas")
 
+    # ── Render página do autor ─────────────────────────────────────────────────
+    tmpl_autor = env.get_template("autor.html.j2") if (templates_dir / "autor.html.j2").exists() else None
+    if tmpl_autor:
+        html_autor = tmpl_autor.render(
+            depth="",
+            meta=meta,
+            meta_json=json.dumps(meta, ensure_ascii=False),
+        )
+        (path_out / "autor.html").write_text(html_autor, encoding="utf-8")
+        print(f"[OK] autor.html")
+
     # ── Render página de comparação ────────────────────────────────────────────
     tmpl_comp = env.get_template("comparar.html.j2") if (templates_dir / "comparar.html.j2").exists() else None
     if tmpl_comp:

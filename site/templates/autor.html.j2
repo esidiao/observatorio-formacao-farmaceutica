@@ -1,0 +1,309 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Sobre o Autor — Observatório Nacional da Formação Farmacêutica{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ depth }}index.html">Início</a>
+<span class="sep">›</span>
+<span class="active">Sobre o Autor</span>
+{% endblock %}
+
+{% block head_extra %}
+<style>
+.autor-hero {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+.autor-foto {
+  flex-shrink: 0;
+  width: 220px;
+}
+.autor-foto img {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  border: 4px solid var(--blue);
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15);
+  display: block;
+}
+.autor-foto .lattes-link {
+  display: block;
+  text-align: center;
+  margin-top: 14px;
+  font-size: 0.8rem;
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.autor-foto .lattes-link:hover { text-decoration: underline; }
+.autor-info { flex: 1; min-width: 260px; }
+.autor-info h2 {
+  font-size: 1.6rem;
+  color: var(--navy);
+  margin-bottom: 4px;
+  font-family: var(--font-display, 'Segoe UI', sans-serif);
+}
+.autor-info .titulo {
+  font-size: 0.95rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.autor-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 22px;
+}
+.autor-tag {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 4px 14px;
+  font-size: 0.78rem;
+  color: var(--navy);
+  font-weight: 600;
+}
+.autor-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-bottom: 8px;
+}
+.autor-stat { text-align: center; }
+.autor-stat .num {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--blue);
+  display: block;
+  line-height: 1;
+}
+.autor-stat .leg {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+.bio-section { margin-bottom: 28px; }
+.bio-section p {
+  font-size: 0.92rem;
+  line-height: 1.75;
+  color: var(--text);
+  margin-bottom: 14px;
+  text-align: justify;
+}
+
+.areas-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.area-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--blue);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.area-card h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.area-card ul {
+  margin: 0;
+  padding-left: 18px;
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="autor-hero">
+  <div class="autor-foto">
+    <img src="{{ depth }}static/img/autor.jpg" alt="Foto de Edson Sidião de Souza Júnior">
+    <a class="lattes-link" href="https://lattes.cnpq.br/9464330669014306" target="_blank" rel="noopener">
+      ↗ Currículo Lattes
+    </a>
+  </div>
+
+  <div class="autor-info">
+    <h2>Edson Sidião de Souza Júnior</h2>
+    <div class="titulo">
+      Farmacêutico · Mestre e Doutor em Medicina Tropical (UFG)<br>
+      Avaliador ad hoc INEP/MEC · Consultor em Gestão Educacional
+    </div>
+
+    <div class="autor-tags">
+      <span class="autor-tag">Farmácia</span>
+      <span class="autor-tag">Medicina Tropical</span>
+      <span class="autor-tag">Gestão Educacional</span>
+      <span class="autor-tag">SINAES / MEC</span>
+      <span class="autor-tag">Data Science</span>
+      <span class="autor-tag">Parasitologia</span>
+      <span class="autor-tag">EaD</span>
+    </div>
+
+    <div class="autor-stats">
+      <div class="autor-stat">
+        <span class="num">22</span>
+        <span class="leg">Artigos científicos</span>
+      </div>
+      <div class="autor-stat">
+        <span class="num">2</span>
+        <span class="leg">Livros</span>
+      </div>
+      <div class="autor-stat">
+        <span class="num">80+</span>
+        <span class="leg">Trabalhos em anais</span>
+      </div>
+      <div class="autor-stat">
+        <span class="num">78</span>
+        <span class="leg">Citações</span>
+      </div>
+      <div class="autor-stat">
+        <span class="num">15+</span>
+        <span class="leg">Anos INEP/MEC</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Biografia completa -->
+<h2 class="section-title">Perfil profissional</h2>
+
+<div class="bio-section">
+  <p>
+    Edson Sidião de Souza Júnior é Farmacêutico (UFG, 2000), Mestre (2004) e Doutor (2008)
+    em Medicina Tropical pela Universidade Federal de Goiás. Complementa sua formação com as
+    especializações em Gestão da Assistência Farmacêutica (UFSC) e em Comunicação em Mídias
+    Digitais (Estácio de Sá), além de cursar atualmente a especialização em Inteligência
+    Artificial e Data Science para Líderes (Mackenzie) — trajetória que articula rigor
+    científico, gestão educacional e domínio das tecnologias emergentes aplicadas ao ensino
+    superior.
+  </p>
+
+  <p>
+    Atua há mais de quinze anos como avaliador <em>ad hoc</em> do INEP/MEC, conduzindo
+    avaliações <em>in loco</em> de autorização, reconhecimento e renovação de reconhecimento
+    de cursos de graduação em Farmácia em instituições de todas as regiões do país. É também
+    avaliador do Conselho Estadual de Educação de Goiás para o Ensino Superior e
+    Técnico-profissional e membro do Grupo Técnico de Ensino do Conselho Regional de Farmácia
+    de Goiás (CRF-GO), contribuindo para a formulação de diretrizes sobre a formação
+    farmacêutica no estado. Fundador e proprietário da <strong>I9 Educar — Consultoria em
+    Gestão Educacional</strong>, dedica-se à concepção, revisão e qualificação de Projetos
+    Pedagógicos de Curso (PPC), Planos de Desenvolvimento Institucional (PDI), ementários e
+    processos regulatórios junto ao MEC, com fluência no marco normativo do SINAES, nas
+    Diretrizes Curriculares Nacionais e na transição regulatória da Educação a Distância.
+  </p>
+
+  <p>
+    Na docência e na gestão acadêmica, é coordenador acadêmico e docente do Centro
+    Universitário Sul-Americano (UNIFASAM) e coordenador acadêmico das Faculdades Integradas
+    da América do Sul (INTEGRA). Ao longo da carreira, foi Diretor Acadêmico da Faculdade
+    Estácio de Sá de Goiás — onde também presidiu o Colegiado e a CPA e coordenou o curso de
+    Farmácia — e Diretor Acadêmico da Faculdade ITH, na qual coordenou os cursos de
+    pós-graduação em Farmácia Clínica, Hospitalar e Atenção Farmacêutica e a graduação em
+    Gestão Hospitalar. Coordenou ainda o curso de Farmácia do Centro Universitário UNIVERSO
+    Goiânia e atuou em instituições como UFG, PUC-GO, Universidade Paulista, Faculdades
+    Objetivo, Faculdade Cambury, Faculdade Sensu e Faculdade de Indiara. Ministrou
+    disciplinas das áreas da saúde em cursos de Biomedicina, Farmácia, Medicina, Enfermagem,
+    Fisioterapia, Odontologia, Terapia Ocupacional, Biologia e Psicologia, na graduação e na
+    pós-graduação.
+  </p>
+
+  <p>
+    Pesquisador nas áreas de Parasitologia e Medicina Tropical, é autor de 22 artigos
+    publicados em periódicos, 2 livros e mais de 80 trabalhos em anais de eventos, reunindo
+    78 citações. Sua produção é reconhecida pelo pioneirismo no estudo dos protozoários
+    emergentes e oportunistas e das microsporidioses humanas no estado de Goiás, com emprego
+    de ferramentas biomoleculares no diagnóstico. Mais recentemente, dedicou-se à investigação
+    sobre a aplicação biotecnológica de peptaibols e enzimas quitinolíticas de
+    <em>Trichoderma asperellum</em> no controle do <em>Aedes aegypti</em>, vetor de arboviroses
+    de relevância em saúde pública. Coordena ligas acadêmicas, projetos de extensão e de
+    educação continuada em saúde, com destaque para iniciativas junto ao programa Telessaúde Goiás.
+  </p>
+
+  <p>
+    Reúne sólida experiência em orientação de trabalhos de conclusão de curso, participação
+    em bancas examinadoras, formação pedagógica de docentes do ensino superior e
+    desenvolvimento de materiais didáticos e instrucionais. Possui domínio dos idiomas inglês
+    e espanhol, o que amplia seu acesso à literatura científica internacional. Em 2023, foi
+    homenageado como <strong>Colaborador Benemérito da Polícia Militar de Goiás</strong>. Sua
+    atuação combina a perspectiva do pesquisador, do gestor educacional e do avaliador,
+    sempre comprometida com a qualidade, a inovação e a excelência na formação em saúde.
+  </p>
+</div>
+
+<!-- Áreas de atuação -->
+<h2 class="section-title">Áreas de atuação</h2>
+<div class="areas-grid">
+  <div class="area-card">
+    <h4>Avaliação e regulação MEC</h4>
+    <ul>
+      <li>Avaliador <em>ad hoc</em> INEP/MEC (15+ anos)</li>
+      <li>Avaliador CEE-GO (Ensino Superior e Técnico)</li>
+      <li>Autorização, reconhecimento e renovação de cursos</li>
+      <li>SINAES, DCN, Enade</li>
+    </ul>
+  </div>
+  <div class="area-card">
+    <h4>Consultoria educacional</h4>
+    <ul>
+      <li>PPC e PDI</li>
+      <li>Processos regulatórios MEC</li>
+      <li>Transição regulatória EaD</li>
+      <li>I9 Educar — Gestão Educacional</li>
+    </ul>
+  </div>
+  <div class="area-card">
+    <h4>Gestão acadêmica</h4>
+    <ul>
+      <li>Direção Acadêmica (Estácio, ITH)</li>
+      <li>Coordenação de cursos de Farmácia</li>
+      <li>Coordenação de pós-graduação</li>
+      <li>CPA, Colegiado de Curso</li>
+    </ul>
+  </div>
+  <div class="area-card">
+    <h4>Pesquisa científica</h4>
+    <ul>
+      <li>Parasitologia e Medicina Tropical</li>
+      <li>Microsporidioses humanas (Goiás)</li>
+      <li>Controle biológico de <em>Aedes aegypti</em></li>
+      <li>Biomolecular e diagnóstico</li>
+    </ul>
+  </div>
+  <div class="area-card">
+    <h4>Docência</h4>
+    <ul>
+      <li>Saúde: Farmácia, Medicina, Enfermagem, Biomedicina…</li>
+      <li>Graduação e pós-graduação</li>
+      <li>Formação pedagógica de docentes</li>
+      <li>Telessaúde Goiás</li>
+    </ul>
+  </div>
+  <div class="area-card">
+    <h4>Tecnologia e dados</h4>
+    <ul>
+      <li>Especialização IA & Data Science (Mackenzie)</li>
+      <li>Mídias digitais e comunicação</li>
+      <li>Observatório Nacional da Formação Farmacêutica</li>
+    </ul>
+  </div>
+</div>
+
+{% endblock %}
