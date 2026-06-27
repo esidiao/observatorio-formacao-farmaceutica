@@ -81,14 +81,22 @@ function iniciarMapaNacional(dadosUFs) {
 }
 
 async function carregarEstados(dadosUFs) {
-  const url = 'https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?resolucao=2&formato=application/vnd.geo%2Bjson';
+  // Tenta local primeiro; fallback para IBGE API
+  const urlLocal = (window._GEO_BASE || '') + 'static/geo/brasil.json';
+  const urlIBGE = 'https://servicodados.ibge.gov.br/api/v3/malhas/paises/BR?resolucao=2&formato=application/vnd.geo%2Bjson';
   let geo;
   try {
-    const r = await fetch(url);
+    const r = await fetch(urlLocal, {cache: 'no-cache'});
+    if (!r.ok) throw new Error('local indisponível');
     geo = await r.json();
-  } catch (e) {
-    console.warn('IBGE API indisponível — mapa sem geometrias:', e);
-    return;
+  } catch (_) {
+    try {
+      const r = await fetch(urlIBGE);
+      geo = await r.json();
+    } catch (e) {
+      console.warn('IBGE API indisponível — mapa sem geometrias:', e);
+      return;
+    }
   }
 
   // Injetar dados do observatório em cada feature
@@ -155,14 +163,21 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta) {
     maxZoom: 14,
   }).addTo(mapaUF);
 
-  const url = `https://servicodados.ibge.gov.br/api/v3/malhas/estados/${codigoIBGE}?resolucao=5&formato=application/vnd.geo%2Bjson`;
+  const urlLocal = (window._GEO_BASE || '') + `static/geo/estados/${codigoIBGE}.json`;
+  const urlIBGE = `https://servicodados.ibge.gov.br/api/v3/malhas/estados/${codigoIBGE}?resolucao=5&formato=application/vnd.geo%2Bjson`;
   let geo;
   try {
-    const r = await fetch(url);
+    const r = await fetch(urlLocal, {cache: 'no-cache'});
+    if (!r.ok) throw new Error('local indisponível');
     geo = await r.json();
-  } catch (e) {
-    console.warn('IBGE API indisponível para municípios:', e);
-    return;
+  } catch (_) {
+    try {
+      const r = await fetch(urlIBGE);
+      geo = await r.json();
+    } catch (e) {
+      console.warn('IBGE API indisponível para municípios:', e);
+      return;
+    }
   }
 
   // Normaliza nomes para match (sem acento, maiúsculo)
