@@ -22,9 +22,9 @@
 <h2 class="section-title">Panorama Nacional — {{ n_ufs }} UFs</h2>
 <div class="kpi-grid">
   <div class="kpi-card">
-    <div class="kpi-valor">{{ "{:,}".format(total_vagas).replace(',','.') }}</div>
-    <div class="kpi-label">Vagas totais</div>
-    <div class="kpi-fonte" title="Fonte: INEP/Censo {{ meta.versao_censo }}">INEP Censo {{ meta.versao_censo }}</div>
+    <div class="kpi-valor">{{ "{:,}".format(total_vagas_real).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas totais (pres + EaD)</div>
+    <div class="kpi-fonte" title="Presencial {{ "{:,}".format(total_vagas_pres).replace(',','.') }} + EaD {{ "{:,}".format(total_vagas_ead).replace(',','.') }} ({{ pct_ead_nacional }}% EaD). Fonte: INEP/Censo {{ meta.versao_censo }}.">{{ pct_ead_nacional }}% EaD · Censo {{ meta.versao_censo }}</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-valor">{{ n_ies }}</div>

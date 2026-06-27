@@ -10,6 +10,20 @@
 
 {% block content %}
 
+{# Macro: seta de variação 2023→2024 a partir do historico.json #}
+{% macro delta(ind, casas=3) %}
+  {%- set h = hist.get(ind) -%}
+  {%- if h and h.delta is not none -%}
+    {%- set t = h.tendencia -%}
+    {%- set cor = 'var(--swot-strength)' if t == 'melhora' else ('var(--swot-threat)' if t == 'piora' else 'var(--text-muted)') -%}
+    {%- set seta = '▲' if h.delta > 0 else ('▼' if h.delta < 0 else '▬') -%}
+    <div class="kpi-delta" style="font-size:0.72rem;font-weight:600;color:{{ cor }};margin-top:2px"
+         title="2023: {{ h['2023'] }} → 2024: {{ h['2024'] }} ({{ t }})">
+      {{ seta }} {{ "%+.*f"|format(casas, h.delta) }} vs 2023
+    </div>
+  {%- endif -%}
+{% endmacro %}
+
 <!-- Cabeçalho da UF -->
 <div style="display:flex;align-items:center;gap:16px;margin-bottom:24px;flex-wrap:wrap">
   <h2 style="font-size:1.5rem;color:var(--navy)">{{ nome_uf }}</h2>
@@ -26,24 +40,34 @@
   <div class="kpi-card {% if d.ICT is not none %}{% if d.ICT < 0.5 %}bom{% elif d.ICT >= 0.75 %}critico{% endif %}{% else %}nodata{% endif %}">
     <div class="kpi-valor">{% if d.ICT is not none %}{{ "%.3f"|format(d.ICT) }}{% else %}—{% endif %}</div>
     <div class="kpi-label">ICT ↓</div>
+    {{ delta('ICT', 3) }}
     <div class="kpi-fonte" title="Índice de Concentração Territorial. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
   </div>
 
   <div class="kpi-card {% if d.IAF is not none %}{% if d.IAF >= 40 %}bom{% elif d.IAF < 25 %}critico{% endif %}{% else %}nodata{% endif %}">
     <div class="kpi-valor">{% if d.IAF is not none %}{{ "%.1f"|format(d.IAF) }}{% else %}—{% endif %}</div>
     <div class="kpi-label">IAF ↑ (0–100)</div>
+    {{ delta('IAF', 1) }}
     <div class="kpi-fonte" title="Índice de Adequação Formativa. Fonte: ENADE {{ meta.versao_censo }}.">ENADE {{ meta.versao_censo }}</div>
   </div>
 
   <div class="kpi-card">
     <div class="kpi-valor">{% if d.ICON is not none %}{{ "%.1f"|format(d.ICON) }}{% else %}—{% endif %}</div>
     <div class="kpi-label">ICON ↑</div>
+    {{ delta('ICON', 3) }}
     <div class="kpi-fonte" title="Índice de Cobertura Assistencial = municípios com Farmácia Popular / municípios com oferta. Fonte: Min. Saúde.">Farmácia Popular</div>
+  </div>
+
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.ICON_adj is not none %}{{ "%.3f"|format(d.ICON_adj) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">ICON-deserto ↑</div>
+    <div class="kpi-fonte" title="Fração estimada de desertos farmacêuticos com Farmácia Popular (limite inferior). Mede potencial de ancoragem de práticas/estágios onde NÃO há curso. Difere do ICON, que mede FP onde já há oferta.">FP em desertos</div>
   </div>
 
   <div class="kpi-card">
     <div class="kpi-valor">{% if d.E is not none %}{{ "%.3f"|format(d.E) }}{% else %}—{% endif %}</div>
     <div class="kpi-label">E (Equidade) ↑</div>
+    {{ delta('E', 3) }}
     <div class="kpi-fonte" title="E = 1 − ICT. Mede distribuição territorial.">Calculado</div>
   </div>
 
@@ -73,13 +97,60 @@
 
 </div>
 
+<!-- Capacidade real: presencial vs EaD -->
+{% if d.vagas_total_real is not none %}
+<h2 class="section-title">Capacidade formativa real — presencial vs EaD</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
+  Vagas EaD são atribuídas ao estado-sede da mantenedora (join Censo→Cadastro IES).
+  O indicador "Vagas (operante)" acima reflete apenas a oferta <strong>presencial</strong>;
+  a capacidade total inclui a EaD.
+</p>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "{:,}".format(d.vagas_total_real or 0).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas totais (pres + EaD)</div>
+    <div class="kpi-fonte" title="Soma de vagas presenciais e EaD (sede da mantenedora).">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "{:,}".format(d.vagas_presencial or 0).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas presenciais</div>
+    <div class="kpi-fonte">{{ d.n_cursos_presencial or 0 }} cursos presenciais</div>
+  </div>
+  <div class="kpi-card {% if d.pct_ead is not none and d.pct_ead >= 70 %}critico{% endif %}">
+    <div class="kpi-valor">{{ "{:,}".format(d.vagas_ead or 0).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas EaD</div>
+    <div class="kpi-fonte">{{ d.n_cursos_ead or 0 }} cursos EaD (sede no estado)</div>
+  </div>
+  <div class="kpi-card {% if d.pct_ead is not none and d.pct_ead >= 70 %}critico{% endif %}">
+    <div class="kpi-valor">{% if d.pct_ead is not none %}{{ "%.1f"|format(d.pct_ead) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">% EaD da capacidade</div>
+    <div class="kpi-fonte" title="Fatia de vagas em modalidade a distância.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ d.mun_ead_only if d.mun_ead_only is not none else '—' }}</div>
+    <div class="kpi-label">Municípios só com EaD</div>
+    <div class="kpi-fonte" title="Municípios com polo EaD mas sem nenhum curso presencial.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card {% if d.taxa_retencao is not none and d.taxa_retencao < 9 %}critico{% endif %}">
+    <div class="kpi-valor">{% if d.taxa_retencao is not none %}{{ "%.1f"|format(d.taxa_retencao) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Conclusão (conc./matríc.)</div>
+    <div class="kpi-fonte" title="Concluintes ÷ matriculados no ano (proxy de retenção pontual, não de coorte). Benchmark nacional ≈ 10%.">Censo {{ meta.versao_censo }}</div>
+  </div>
+</div>
+{% endif %}
+
 <!-- Concentração de mercado -->
 <h2 class="section-title">Estrutura de mercado</h2>
 <div class="kpi-grid">
   <div class="kpi-card">
     <div class="kpi-valor">{% if d.HHI is not none %}{{ "%.4f"|format(d.HHI) }}{% else %}—{% endif %}</div>
-    <div class="kpi-label">HHI</div>
-    <div class="kpi-fonte" title="Herfindahl-Hirschman Index. 0=perfeita dispersão, 1=monopólio.">Censo {{ meta.versao_censo }}</div>
+    <div class="kpi-label">HHI (por IES)</div>
+    <div class="kpi-fonte" title="Herfindahl-Hirschman Index por IES. 0=perfeita dispersão, 1=monopólio.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card {% if d.HHI_mantenedora is not none and d.HHI_mantenedora >= 0.25 %}critico{% endif %}">
+    <div class="kpi-valor">{% if d.HHI_mantenedora is not none %}{{ "%.4f"|format(d.HHI_mantenedora) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">HHI (por mantenedora)</div>
+    <div class="kpi-fonte" title="HHI por grupo mantenedor (CO_MANTENEDORA) — captura conglomerados que controlam várias IES. {{ d.n_mantenedoras or 0 }} mantenedoras.">Censo {{ meta.versao_censo }}</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-valor">{% if d.CR2 is not none %}{{ "%.1f"|format(d.CR2 * 100) }}%{% else %}—{% endif %}</div>

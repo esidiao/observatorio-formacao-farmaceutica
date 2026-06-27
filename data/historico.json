@@ -1,0 +1,1520 @@
+{
+  "series": [
+    "2023",
+    "2024"
+  ],
+  "ufs": {
+    "AC": {
+      "ICT": {
+        "2023": 0.6818,
+        "2024": 0.6591,
+        "delta": -0.0227,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 15.4,
+        "2024": 16.5,
+        "delta": 1.1,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 0.5,
+        "2024": 0.5,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.3182,
+        "2024": 0.3409,
+        "delta": 0.0227,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.3618,
+        "2024": 0.4009,
+        "delta": 0.0391,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 2221,
+        "2024": 1429,
+        "delta": -792,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 14,
+        "2024": 15,
+        "delta": 1,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 8,
+        "2024": 7,
+        "delta": -1,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 22,
+        "2024": 24,
+        "delta": 2,
+        "tendencia": "melhora"
+      }
+    },
+    "AL": {
+      "ICT": {
+        "2023": 0.6635,
+        "2024": 0.7035,
+        "delta": 0.04,
+        "tendencia": "piora"
+      },
+      "IAF": {
+        "2023": 28.8,
+        "2024": 27.6,
+        "delta": -1.2,
+        "tendencia": "piora"
+      },
+      "ICON": {
+        "2023": 3.0,
+        "2024": 2.5,
+        "delta": -0.5,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.3365,
+        "2024": 0.2965,
+        "delta": -0.04,
+        "tendencia": "piora"
+      },
+      "HHI": {
+        "2023": 0.184,
+        "2024": 0.2189,
+        "delta": 0.0349,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 1691,
+        "2024": 1636,
+        "delta": -55,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 24,
+        "2024": 29,
+        "delta": 5,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 78,
+        "2024": 73,
+        "delta": -5,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 29,
+        "2024": 31,
+        "delta": 2,
+        "tendencia": "melhora"
+      }
+    },
+    "AM": {
+      "ICT": {
+        "2023": 0.6743,
+        "2024": 0.6533,
+        "delta": -0.021,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 24.4,
+        "2024": 24.6,
+        "delta": 0.2,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 0.2,
+        "2024": 0.2,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.3257,
+        "2024": 0.3467,
+        "delta": 0.021,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.1699,
+        "2024": 0.1591,
+        "delta": -0.0108,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 3529,
+        "2024": 3887,
+        "delta": 358,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 36,
+        "2024": 39,
+        "delta": 3,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 26,
+        "2024": 23,
+        "delta": -3,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 29,
+        "2024": 34,
+        "delta": 5,
+        "tendencia": "melhora"
+      }
+    },
+    "AP": {
+      "ICT": {
+        "2023": 0.875,
+        "2024": 0.75,
+        "delta": -0.125,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 24.1,
+        "2024": 28.5,
+        "delta": 4.4,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 1.0,
+        "2024": 0.5,
+        "delta": -0.5,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.125,
+        "2024": 0.25,
+        "delta": 0.125,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.4133,
+        "2024": 0.4224,
+        "delta": 0.0091,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 734,
+        "2024": 679,
+        "delta": -55,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 4,
+        "2024": 8,
+        "delta": 4,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 12,
+        "2024": 8,
+        "delta": -4,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 13,
+        "2024": 18,
+        "delta": 5,
+        "tendencia": "melhora"
+      }
+    },
+    "BA": {
+      "ICT": {
+        "2023": 0.5449,
+        "2024": 0.5482,
+        "delta": 0.0033,
+        "tendencia": "piora"
+      },
+      "IAF": {
+        "2023": 36.3,
+        "2024": 36.1,
+        "delta": -0.2,
+        "tendencia": "piora"
+      },
+      "ICON": {
+        "2023": 2.4,
+        "2024": 2.2,
+        "delta": -0.2,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.4551,
+        "2024": 0.4518,
+        "delta": -0.0033,
+        "tendencia": "piora"
+      },
+      "HHI": {
+        "2023": 0.0361,
+        "2024": 0.0475,
+        "delta": 0.0114,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 8150,
+        "2024": 8356,
+        "delta": 206,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 133,
+        "2024": 147,
+        "delta": 14,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 284,
+        "2024": 270,
+        "delta": -14,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 75,
+        "2024": 81,
+        "delta": 6,
+        "tendencia": "melhora"
+      }
+    },
+    "CE": {
+      "ICT": {
+        "2023": 0.5545,
+        "2024": 0.5356,
+        "delta": -0.0189,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 33.8,
+        "2024": 34.5,
+        "delta": 0.7,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 1.7,
+        "2024": 1.6,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.4455,
+        "2024": 0.4644,
+        "delta": 0.0189,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.133,
+        "2024": 0.1303,
+        "delta": -0.0027,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 6616,
+        "2024": 6550,
+        "delta": -66,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 92,
+        "2024": 99,
+        "delta": 7,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 92,
+        "2024": 85,
+        "delta": -7,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 46,
+        "2024": 52,
+        "delta": 6,
+        "tendencia": "melhora"
+      }
+    },
+    "DF": {
+      "ICT": {
+        "2023": 0.5,
+        "2024": 0.5,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "IAF": {
+        "2023": 39.3,
+        "2024": 39.6,
+        "delta": 0.3,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 1.0,
+        "2024": 1.0,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.5,
+        "2024": 0.5,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "HHI": {
+        "2023": 0.1198,
+        "2024": 0.1292,
+        "delta": 0.0094,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 4163,
+        "2024": 3921,
+        "delta": -242,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 1,
+        "2024": 1,
+        "delta": 0,
+        "tendencia": "estavel"
+      },
+      "municipios_deserto": {
+        "2023": 0,
+        "2024": 0,
+        "delta": 0,
+        "tendencia": "estavel"
+      },
+      "n_ies": {
+        "2023": 34,
+        "2024": 41,
+        "delta": 7,
+        "tendencia": "melhora"
+      }
+    },
+    "ES": {
+      "ICT": {
+        "2023": 0.4545,
+        "2024": 0.4104,
+        "delta": -0.0441,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 50.4,
+        "2024": 52.6,
+        "delta": 2.2,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 2.2,
+        "2024": 2.2,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.5455,
+        "2024": 0.5896,
+        "delta": 0.0441,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.0949,
+        "2024": 0.0742,
+        "delta": -0.0207,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 2444,
+        "2024": 2119,
+        "delta": -325,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 34,
+        "2024": 35,
+        "delta": 1,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 44,
+        "2024": 43,
+        "delta": -1,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 35,
+        "2024": 38,
+        "delta": 3,
+        "tendencia": "melhora"
+      }
+    },
+    "GO": {
+      "ICT": {
+        "2023": 0.6419,
+        "2024": 0.586,
+        "delta": -0.0559,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 27.6,
+        "2024": 30.0,
+        "delta": 2.4,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 2.8,
+        "2024": 2.7,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.3581,
+        "2024": 0.414,
+        "delta": 0.0559,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.0629,
+        "2024": 0.062,
+        "delta": -0.0009,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 8406,
+        "2024": 7247,
+        "delta": -1159,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 74,
+        "2024": 75,
+        "delta": 1,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 172,
+        "2024": 171,
+        "delta": -1,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 63,
+        "2024": 67,
+        "delta": 4,
+        "tendencia": "melhora"
+      }
+    },
+    "MA": {
+      "ICT": {
+        "2023": 0.639,
+        "2024": 0.6567,
+        "delta": 0.0177,
+        "tendencia": "piora"
+      },
+      "IAF": {
+        "2023": 25.6,
+        "2024": 24.1,
+        "delta": -1.5,
+        "tendencia": "piora"
+      },
+      "ICON": {
+        "2023": 1.4,
+        "2024": 1.4,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.361,
+        "2024": 0.3433,
+        "delta": -0.0177,
+        "tendencia": "piora"
+      },
+      "HHI": {
+        "2023": 0.1258,
+        "2024": 0.1343,
+        "delta": 0.0085,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 3587,
+        "2024": 4595,
+        "delta": 1008,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 82,
+        "2024": 84,
+        "delta": 2,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 135,
+        "2024": 133,
+        "delta": -2,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 40,
+        "2024": 42,
+        "delta": 2,
+        "tendencia": "melhora"
+      }
+    },
+    "MG": {
+      "ICT": {
+        "2023": 0.4441,
+        "2024": 0.4523,
+        "delta": 0.0082,
+        "tendencia": "piora"
+      },
+      "IAF": {
+        "2023": 47.6,
+        "2024": 46.6,
+        "delta": -1.0,
+        "tendencia": "piora"
+      },
+      "ICON": {
+        "2023": 3.1,
+        "2024": 2.9,
+        "delta": -0.2,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.5559,
+        "2024": 0.5477,
+        "delta": -0.0082,
+        "tendencia": "piora"
+      },
+      "HHI": {
+        "2023": 0.022,
+        "2024": 0.025,
+        "delta": 0.003,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 7429,
+        "2024": 8189,
+        "delta": 760,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 245,
+        "2024": 263,
+        "delta": 18,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 608,
+        "2024": 590,
+        "delta": -18,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 94,
+        "2024": 98,
+        "delta": 4,
+        "tendencia": "melhora"
+      }
+    },
+    "MS": {
+      "ICT": {
+        "2023": 0.705,
+        "2024": 0.6718,
+        "delta": -0.0332,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 27.6,
+        "2024": 28.1,
+        "delta": 0.5,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 1.6,
+        "2024": 1.6,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.295,
+        "2024": 0.3282,
+        "delta": 0.0332,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.3356,
+        "2024": 0.3453,
+        "delta": 0.0097,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 819,
+        "2024": 952,
+        "delta": 133,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 36,
+        "2024": 37,
+        "delta": 1,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 43,
+        "2024": 42,
+        "delta": -1,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 26,
+        "2024": 28,
+        "delta": 2,
+        "tendencia": "melhora"
+      }
+    },
+    "MT": {
+      "ICT": {
+        "2023": 0.3695,
+        "2024": 0.3647,
+        "delta": -0.0048,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 34.3,
+        "2024": 33.9,
+        "delta": -0.4,
+        "tendencia": "piora"
+      },
+      "ICON": {
+        "2023": 1.5,
+        "2024": 1.4,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.6305,
+        "2024": 0.6353,
+        "delta": 0.0048,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.1083,
+        "2024": 0.0896,
+        "delta": -0.0187,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 2174,
+        "2024": 2606,
+        "delta": 432,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 53,
+        "2024": 55,
+        "delta": 2,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 89,
+        "2024": 87,
+        "delta": -2,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 37,
+        "2024": 41,
+        "delta": 4,
+        "tendencia": "melhora"
+      }
+    },
+    "PA": {
+      "ICT": {
+        "2023": 0.5022,
+        "2024": 0.4196,
+        "delta": -0.0826,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 30.4,
+        "2024": 34.0,
+        "delta": 3.6,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 0.8,
+        "2024": 0.8,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.4978,
+        "2024": 0.5804,
+        "delta": 0.0826,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.2353,
+        "2024": 0.1206,
+        "delta": -0.1147,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 6438,
+        "2024": 5484,
+        "delta": -954,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 91,
+        "2024": 94,
+        "delta": 3,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 53,
+        "2024": 50,
+        "delta": -3,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 48,
+        "2024": 53,
+        "delta": 5,
+        "tendencia": "melhora"
+      }
+    },
+    "PB": {
+      "ICT": {
+        "2023": 0.6732,
+        "2024": 0.6631,
+        "delta": -0.0101,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 32.6,
+        "2024": 33.3,
+        "delta": 0.7,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 6.9,
+        "2024": 5.9,
+        "delta": -1.0,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.3268,
+        "2024": 0.3369,
+        "delta": 0.0101,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.0805,
+        "2024": 0.0897,
+        "delta": 0.0092,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 3094,
+        "2024": 2915,
+        "delta": -179,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 28,
+        "2024": 33,
+        "delta": 5,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 195,
+        "2024": 190,
+        "delta": -5,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 37,
+        "2024": 39,
+        "delta": 2,
+        "tendencia": "melhora"
+      }
+    },
+    "PE": {
+      "ICT": {
+        "2023": 0.5285,
+        "2024": 0.4968,
+        "delta": -0.0317,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 30.4,
+        "2024": 31.5,
+        "delta": 1.1,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 2.0,
+        "2024": 1.9,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.4715,
+        "2024": 0.5032,
+        "delta": 0.0317,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.0677,
+        "2024": 0.0769,
+        "delta": 0.0092,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 9737,
+        "2024": 9623,
+        "delta": -114,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 74,
+        "2024": 80,
+        "delta": 6,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 111,
+        "2024": 105,
+        "delta": -6,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 52,
+        "2024": 56,
+        "delta": 4,
+        "tendencia": "melhora"
+      }
+    },
+    "PI": {
+      "ICT": {
+        "2023": 0.7948,
+        "2024": 0.7862,
+        "delta": -0.0086,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 21.7,
+        "2024": 22.4,
+        "delta": 0.7,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 4.5,
+        "2024": 3.7,
+        "delta": -0.8,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.2052,
+        "2024": 0.2138,
+        "delta": 0.0086,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.1304,
+        "2024": 0.1164,
+        "delta": -0.014,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 2484,
+        "2024": 2256,
+        "delta": -228,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 29,
+        "2024": 35,
+        "delta": 6,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 195,
+        "2024": 189,
+        "delta": -6,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 30,
+        "2024": 35,
+        "delta": 5,
+        "tendencia": "melhora"
+      }
+    },
+    "PR": {
+      "ICT": {
+        "2023": 0.4037,
+        "2024": 0.411,
+        "delta": 0.0073,
+        "tendencia": "piora"
+      },
+      "IAF": {
+        "2023": 55.5,
+        "2024": 55.7,
+        "delta": 0.2,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 1.8,
+        "2024": 1.8,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.5963,
+        "2024": 0.589,
+        "delta": -0.0073,
+        "tendencia": "piora"
+      },
+      "HHI": {
+        "2023": 0.0429,
+        "2024": 0.0399,
+        "delta": -0.003,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 4877,
+        "2024": 4730,
+        "delta": -147,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 194,
+        "2024": 197,
+        "delta": 3,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 205,
+        "2024": 202,
+        "delta": -3,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 62,
+        "2024": 68,
+        "delta": 6,
+        "tendencia": "melhora"
+      }
+    },
+    "RJ": {
+      "ICT": {
+        "2023": 0.2734,
+        "2024": 0.2475,
+        "delta": -0.0259,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 45.8,
+        "2024": 46.3,
+        "delta": 0.5,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 1.1,
+        "2024": 1.1,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.7266,
+        "2024": 0.7525,
+        "delta": 0.0259,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.2317,
+        "2024": 0.2708,
+        "delta": 0.0391,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 11113,
+        "2024": 11867,
+        "delta": 754,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 75,
+        "2024": 79,
+        "delta": 4,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 17,
+        "2024": 13,
+        "delta": -4,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 50,
+        "2024": 53,
+        "delta": 3,
+        "tendencia": "melhora"
+      }
+    },
+    "RN": {
+      "ICT": {
+        "2023": 0.7797,
+        "2024": 0.7408,
+        "delta": -0.0389,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 31.6,
+        "2024": 33.8,
+        "delta": 2.2,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 4.9,
+        "2024": 4.8,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.2203,
+        "2024": 0.2592,
+        "delta": 0.0389,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.1535,
+        "2024": 0.2012,
+        "delta": 0.0477,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 1531,
+        "2024": 1360,
+        "delta": -171,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 27,
+        "2024": 28,
+        "delta": 1,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 140,
+        "2024": 139,
+        "delta": -1,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 30,
+        "2024": 31,
+        "delta": 1,
+        "tendencia": "melhora"
+      }
+    },
+    "RO": {
+      "ICT": {
+        "2023": 0.389,
+        "2024": 0.4323,
+        "delta": 0.0433,
+        "tendencia": "piora"
+      },
+      "IAF": {
+        "2023": 33.9,
+        "2024": 32.0,
+        "delta": -1.9,
+        "tendencia": "piora"
+      },
+      "ICON": {
+        "2023": 1.8,
+        "2024": 1.8,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.611,
+        "2024": 0.5677,
+        "delta": -0.0433,
+        "tendencia": "piora"
+      },
+      "HHI": {
+        "2023": 0.0995,
+        "2024": 0.1244,
+        "delta": 0.0249,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 2560,
+        "2024": 2942,
+        "delta": 382,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 23,
+        "2024": 23,
+        "delta": 0,
+        "tendencia": "estavel"
+      },
+      "municipios_deserto": {
+        "2023": 29,
+        "2024": 29,
+        "delta": 0,
+        "tendencia": "estavel"
+      },
+      "n_ies": {
+        "2023": 35,
+        "2024": 35,
+        "delta": 0,
+        "tendencia": "estavel"
+      }
+    },
+    "RR": {
+      "ICT": {
+        "2023": 0.8,
+        "2024": 0.7333,
+        "delta": -0.0667,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 8.2,
+        "2024": 10.2,
+        "delta": 2.0,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 0.5,
+        "2024": 0.4,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.2,
+        "2024": 0.2667,
+        "delta": 0.0667,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.414,
+        "2024": 0.4273,
+        "delta": 0.0133,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 985,
+        "2024": 1079,
+        "delta": 94,
+        "tendencia": "melhora"
+      },
+      "municipios_oferta": {
+        "2023": 6,
+        "2024": 8,
+        "delta": 2,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 9,
+        "2024": 7,
+        "delta": -2,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 17,
+        "2024": 20,
+        "delta": 3,
+        "tendencia": "melhora"
+      }
+    },
+    "RS": {
+      "ICT": {
+        "2023": 0.4206,
+        "2024": 0.4065,
+        "delta": -0.0141,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 48.4,
+        "2024": 49.5,
+        "delta": 1.1,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 3.1,
+        "2024": 3.0,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.5794,
+        "2024": 0.5935,
+        "delta": 0.0141,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.0482,
+        "2024": 0.0487,
+        "delta": 0.0005,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 3315,
+        "2024": 3047,
+        "delta": -268,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 139,
+        "2024": 144,
+        "delta": 5,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 358,
+        "2024": 353,
+        "delta": -5,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 54,
+        "2024": 60,
+        "delta": 6,
+        "tendencia": "melhora"
+      }
+    },
+    "SC": {
+      "ICT": {
+        "2023": 0.385,
+        "2024": 0.3739,
+        "delta": -0.0111,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 50.4,
+        "2024": 50.9,
+        "delta": 0.5,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 3.0,
+        "2024": 2.8,
+        "delta": -0.2,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.615,
+        "2024": 0.6261,
+        "delta": 0.0111,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.0861,
+        "2024": 0.0957,
+        "delta": 0.0096,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 2925,
+        "2024": 2868,
+        "delta": -57,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 86,
+        "2024": 93,
+        "delta": 7,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 209,
+        "2024": 202,
+        "delta": -7,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 44,
+        "2024": 49,
+        "delta": 5,
+        "tendencia": "melhora"
+      }
+    },
+    "SE": {
+      "ICT": {
+        "2023": 0.8118,
+        "2024": 0.7638,
+        "delta": -0.048,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 30.1,
+        "2024": 32.4,
+        "delta": 2.3,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 2.3,
+        "2024": 2.1,
+        "delta": -0.2,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.1882,
+        "2024": 0.2362,
+        "delta": 0.048,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.2322,
+        "2024": 0.2831,
+        "delta": 0.0509,
+        "tendencia": "piora"
+      },
+      "vagas_total": {
+        "2023": 1555,
+        "2024": 1375,
+        "delta": -180,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 21,
+        "2024": 23,
+        "delta": 2,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 54,
+        "2024": 52,
+        "delta": -2,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 24,
+        "2024": 27,
+        "delta": 3,
+        "tendencia": "melhora"
+      }
+    },
+    "SP": {
+      "ICT": {
+        "2023": 0.4961,
+        "2024": 0.4924,
+        "delta": -0.0037,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 41.3,
+        "2024": 41.9,
+        "delta": 0.6,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 2.3,
+        "2024": 2.3,
+        "delta": 0.0,
+        "tendencia": "estavel"
+      },
+      "E": {
+        "2023": 0.5039,
+        "2024": 0.5076,
+        "delta": 0.0037,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.0655,
+        "2024": 0.0619,
+        "delta": -0.0036,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 29252,
+        "2024": 27627,
+        "delta": -1625,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 259,
+        "2024": 264,
+        "delta": 5,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 386,
+        "2024": 381,
+        "delta": -5,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 132,
+        "2024": 134,
+        "delta": 2,
+        "tendencia": "melhora"
+      }
+    },
+    "TO": {
+      "ICT": {
+        "2023": 0.7166,
+        "2024": 0.7124,
+        "delta": -0.0042,
+        "tendencia": "melhora"
+      },
+      "IAF": {
+        "2023": 25.9,
+        "2024": 26.7,
+        "delta": 0.8,
+        "tendencia": "melhora"
+      },
+      "ICON": {
+        "2023": 3.5,
+        "2024": 3.4,
+        "delta": -0.1,
+        "tendencia": "piora"
+      },
+      "E": {
+        "2023": 0.2834,
+        "2024": 0.2876,
+        "delta": 0.0042,
+        "tendencia": "melhora"
+      },
+      "HHI": {
+        "2023": 0.2013,
+        "2024": 0.1996,
+        "delta": -0.0017,
+        "tendencia": "melhora"
+      },
+      "vagas_total": {
+        "2023": 901,
+        "2024": 811,
+        "delta": -90,
+        "tendencia": "piora"
+      },
+      "municipios_oferta": {
+        "2023": 20,
+        "2024": 21,
+        "delta": 1,
+        "tendencia": "melhora"
+      },
+      "municipios_deserto": {
+        "2023": 119,
+        "2024": 118,
+        "delta": -1,
+        "tendencia": "piora"
+      },
+      "n_ies": {
+        "2023": 25,
+        "2024": 26,
+        "delta": 1,
+        "tendencia": "melhora"
+      }
+    }
+  }
+}

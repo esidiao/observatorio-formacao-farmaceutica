@@ -113,6 +113,20 @@ def _gerar_swot(sigla, d):
     return dict(forcas=forcas, fraquezas=fraquezas, oportunidades=oportunidades, ameacas=ameacas)
 
 
+def _icon_adj(d):
+    """ICON ajustado: fração de DESERTOS farmacêuticos cobertos por Farmácia Popular.
+    Estimativa conservadora (limite inferior): assume que todos os municípios com
+    oferta possuem FP, atribuindo o excedente de FP aos desertos.
+    Difere do ICON original, que mede FP em municípios que JÁ têm oferta."""
+    fp = d.get("municipios_fp")
+    deserto = d.get("municipios_deserto")
+    oferta = d.get("municipios_oferta") or 0
+    if fp is None or not deserto:
+        return None
+    fp_em_deserto = max(0, fp - oferta)
+    return round(min(1.0, fp_em_deserto / deserto), 3)
+
+
 def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     # ── Carregar dados ─────────────────────────────────────────────────────────
     with open(path_dados, encoding="utf-8") as f:
@@ -120,6 +134,17 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
 
     meta = nacional.get("metadados", {})
     ufs = nacional.get("ufs", nacional)  # suporte a final.json sem wrapper
+
+    # Série histórica (deltas 2023→2024), opcional
+    hist_path = path_dados.parent / "historico.json"
+    historico = {}
+    if hist_path.exists():
+        with open(hist_path, encoding="utf-8") as f:
+            historico = json.load(f).get("ufs", {})
+
+    # ICON ajustado (cobertura de desertos) — derivado em tempo de build
+    for sigla, d in ufs.items():
+        d["ICON_adj"] = _icon_adj(d)
 
     # ── Preparar diretórios de saída ───────────────────────────────────────────
     path_out.mkdir(parents=True, exist_ok=True)
@@ -139,7 +164,10 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     )
 
     # ── KPIs nacionais ─────────────────────────────────────────────────────────
-    total_vagas = sum(d.get("vagas_total") or 0 for d in ufs.values())
+    total_vagas      = sum(d.get("vagas_total") or 0 for d in ufs.values())
+    total_vagas_real = sum(d.get("vagas_total_real") or d.get("vagas_total") or 0 for d in ufs.values())
+    total_vagas_pres = sum(d.get("vagas_presencial") or 0 for d in ufs.values())
+    total_vagas_ead  = sum(d.get("vagas_ead") or 0 for d in ufs.values())
     total_ies   = sum(d.get("n_ies") or 0 for d in ufs.values())
     mun_oferta  = sum(d.get("municipios_oferta") or 0 for d in ufs.values())
     mun_deserto = sum(d.get("municipios_deserto") or 0 for d in ufs.values())
@@ -155,6 +183,10 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         meta=meta,
         n_ufs=len(ufs),
         total_vagas=total_vagas,
+        total_vagas_real=total_vagas_real,
+        total_vagas_pres=total_vagas_pres,
+        total_vagas_ead=total_vagas_ead,
+        pct_ead_nacional=round(total_vagas_ead / total_vagas_real * 100, 1) if total_vagas_real else 0,
         n_ies=total_ies,
         mun_com_oferta=mun_oferta,
         mun_deserto=mun_deserto,
@@ -192,6 +224,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
             codigo_ibge=IBGE_UF.get(sigla, ""),
             swot=_gerar_swot(sigla, d),
             tem_drill=tem_drill,
+            hist=historico.get(sigla, {}),
         )
         (path_out / "uf" / f"{sigla}.html").write_text(html_uf, encoding="utf-8")
 
