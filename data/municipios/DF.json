@@ -2,47 +2,20 @@
   "BRASILIA": {
     "nome_original": "Brasília",
     "cod_municipio": "5300108",
-    "vagas_total": 4163,
-    "vagas_presencial": 4163,
+    "vagas_total": 3921,
+    "vagas_presencial": 3921,
     "vagas_ead": 0,
-    "matriculas": 5330,
-    "ingressos": 2053,
-    "concluintes": 766,
-    "n_cursos": 44,
-    "n_ies": 34,
+    "matriculas": 5624,
+    "ingressos": 2399,
+    "concluintes": 696,
+    "n_cursos": 51,
+    "n_ies": 41,
     "cursos": [
       {
         "cod_ies": "1660",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
-        "vagas": 908,
-        "matriculas": 182,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "5439",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO PLANALTO CENTRAL APPARECIDO DOS SANTOS",
-        "vagas": 406,
-        "matriculas": 81,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "3396",
-        "nome_ies": "Centro Universitário LS",
-        "vagas": 400,
-        "matriculas": 346,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1060",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO INSTITUTO DE EDUCAÇÃO SUPERIOR DE BRASÍLIA - IESB",
-        "vagas": 382,
-        "matriculas": 73,
+        "vagas": 1040,
+        "matriculas": 161,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -50,8 +23,17 @@
       {
         "cod_ies": "518",
         "nome_ies": "CENTRO UNIVERSITÁRIO DO DISTRITO FEDERAL",
-        "vagas": 376,
-        "matriculas": 540,
+        "vagas": 362,
+        "matriculas": 569,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "3396",
+        "nome_ies": "Centro Universitário LS",
+        "vagas": 340,
+        "matriculas": 273,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -59,8 +41,80 @@
       {
         "cod_ies": "1060",
         "nome_ies": "CENTRO UNIVERSITÁRIO DO INSTITUTO DE EDUCAÇÃO SUPERIOR DE BRASÍLIA - IESB",
-        "vagas": 310,
-        "matriculas": 160,
+        "vagas": 308,
+        "matriculas": 106,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DO INSTITUTO DE EDUCAÇÃO SUPERIOR DE BRASÍLIA - IESB",
+        "vagas": 298,
+        "matriculas": 170,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1173",
+        "nome_ies": "FACULDADE ANHANGUERA DE BRASÍLIA",
+        "vagas": 221,
+        "matriculas": 175,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "4068",
+        "nome_ies": "FACULDADE ICESP",
+        "vagas": 200,
+        "matriculas": 27,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "403",
+        "nome_ies": "UNIVERSIDADE CATÓLICA DE BRASÍLIA",
+        "vagas": 167,
+        "matriculas": 196,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "UNIVERSIDADE PAULISTA",
+        "vagas": 151,
+        "matriculas": 43,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "19219",
+        "nome_ies": "FACULDADE FASIPE DF",
+        "vagas": 150,
+        "matriculas": 3,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "5439",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DO PLANALTO CENTRAL APPARECIDO DOS SANTOS",
+        "vagas": 130,
+        "matriculas": 42,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1446",
+        "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
+        "vagas": 120,
+        "matriculas": 6,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -68,26 +122,8 @@
       {
         "cod_ies": "404",
         "nome_ies": "FACULDADES INTEGRADAS DA UPIS",
-        "vagas": 290,
-        "matriculas": 51,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Faculdade"
-      },
-      {
-        "cod_ies": "322",
-        "nome_ies": "UNIVERSIDADE PAULISTA",
-        "vagas": 234,
-        "matriculas": 72,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "1173",
-        "nome_ies": "FACULDADE ANHANGUERA DE BRASÍLIA",
-        "vagas": 224,
-        "matriculas": 230,
+        "vagas": 120,
+        "matriculas": 42,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -95,53 +131,26 @@
       {
         "cod_ies": "2",
         "nome_ies": "UNIVERSIDADE DE BRASÍLIA",
-        "vagas": 122,
-        "matriculas": 590,
+        "vagas": 116,
+        "matriculas": 570,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "1446",
-        "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
-        "vagas": 121,
-        "matriculas": 28,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "4068",
-        "nome_ies": "FACULDADE ICESP",
-        "vagas": 101,
-        "matriculas": 70,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Faculdade"
-      },
-      {
         "cod_ies": "2",
         "nome_ies": "UNIVERSIDADE DE BRASÍLIA",
-        "vagas": 98,
-        "matriculas": 475,
+        "vagas": 100,
+        "matriculas": 473,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "403",
-        "nome_ies": "UNIVERSIDADE CATÓLICA DE BRASÍLIA",
-        "vagas": 85,
-        "matriculas": 113,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
         "cod_ies": "2",
         "nome_ies": "UNIVERSIDADE DE BRASÍLIA",
-        "vagas": 72,
-        "matriculas": 319,
+        "vagas": 70,
+        "matriculas": 325,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
@@ -149,8 +158,8 @@
       {
         "cod_ies": "1113",
         "nome_ies": "CENTRO UNIVERSITÁRIO EURO-AMERICANO",
-        "vagas": 34,
-        "matriculas": 84,
+        "vagas": 27,
+        "matriculas": 68,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -158,8 +167,8 @@
       {
         "cod_ies": "1113",
         "nome_ies": "CENTRO UNIVERSITÁRIO EURO-AMERICANO",
-        "vagas": 0,
-        "matriculas": 24,
+        "vagas": 1,
+        "matriculas": 16,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -168,7 +177,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 99,
+        "matriculas": 78,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -177,7 +186,7 @@
         "cod_ies": "221",
         "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
         "vagas": 0,
-        "matriculas": 444,
+        "matriculas": 545,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -186,7 +195,7 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 126,
+        "matriculas": 179,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -195,7 +204,7 @@
         "cod_ies": "322",
         "nome_ies": "UNIVERSIDADE PAULISTA",
         "vagas": 0,
-        "matriculas": 81,
+        "matriculas": 65,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -204,7 +213,7 @@
         "cod_ies": "417",
         "nome_ies": "UNIVERSIDADE CIDADE DE SÃO PAULO",
         "vagas": 0,
-        "matriculas": 15,
+        "matriculas": 12,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -213,7 +222,7 @@
         "cod_ies": "466",
         "nome_ies": "UNIVERSIDADE ANHEMBI MORUMBI",
         "vagas": 0,
-        "matriculas": 5,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -222,7 +231,7 @@
         "cod_ies": "496",
         "nome_ies": "UNIVERSIDADE DE FRANCA",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 6,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -240,7 +249,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 143,
+        "matriculas": 172,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -249,7 +258,7 @@
         "cod_ies": "823",
         "nome_ies": "UNIVERSIDADE CEUMA",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -258,16 +267,34 @@
         "cod_ies": "403",
         "nome_ies": "UNIVERSIDADE CATÓLICA DE BRASÍLIA",
         "vagas": 0,
-        "matriculas": 83,
+        "matriculas": 185,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
+        "cod_ies": "515",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Niterói",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "926",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Campo Grande",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
         "cod_ies": "1060",
         "nome_ies": "CENTRO UNIVERSITÁRIO DO INSTITUTO DE EDUCAÇÃO SUPERIOR DE BRASÍLIA - IESB",
         "vagas": 0,
-        "matriculas": 156,
+        "matriculas": 279,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -276,7 +303,7 @@
         "cod_ies": "1205",
         "nome_ies": "CENTRO UNIVERSITÁRIO FAEL",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 6,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -285,7 +312,7 @@
         "cod_ies": "1270",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
         "vagas": 0,
-        "matriculas": 62,
+        "matriculas": 67,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -294,7 +321,7 @@
         "cod_ies": "1446",
         "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
         "vagas": 0,
-        "matriculas": 148,
+        "matriculas": 117,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -303,7 +330,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 130,
+        "matriculas": 62,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -312,7 +339,7 @@
         "cod_ies": "1487",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIDOM - BOSCO",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -321,7 +348,7 @@
         "cod_ies": "1491",
         "nome_ies": "CENTRO UNIVERSITÁRIO INTERNACIONAL",
         "vagas": 0,
-        "matriculas": 31,
+        "matriculas": 34,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -330,7 +357,16 @@
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 48,
+        "matriculas": 39,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
+        "vagas": 0,
+        "matriculas": 6,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -339,7 +375,7 @@
         "cod_ies": "1660",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
         "vagas": 0,
-        "matriculas": 20,
+        "matriculas": 49,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -348,7 +384,25 @@
         "cod_ies": "1853",
         "nome_ies": "Centro Universitário UNIBTA",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 5,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2222",
+        "nome_ies": "Centro Universitário do Rio São Francisco Unirios",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2625",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UFBRA",
+        "vagas": 0,
+        "matriculas": 9,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -357,7 +411,16 @@
         "cod_ies": "2835",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
         "vagas": 0,
-        "matriculas": 17,
+        "matriculas": 29,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "3610",
+        "nome_ies": "Centro Universitário ICESP",
+        "vagas": 0,
+        "matriculas": 15,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -366,7 +429,7 @@
         "cod_ies": "3867",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAUÁ DE BRASÍLIA",
         "vagas": 0,
-        "matriculas": 5,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -375,7 +438,7 @@
         "cod_ies": "4153",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU DERBY",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -384,7 +447,7 @@
         "cod_ies": "4751",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
         "vagas": 0,
-        "matriculas": 10,
+        "matriculas": 15,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -393,7 +456,7 @@
         "cod_ies": "5439",
         "nome_ies": "CENTRO UNIVERSITÁRIO DO PLANALTO CENTRAL APPARECIDO DOS SANTOS",
         "vagas": 0,
-        "matriculas": 104,
+        "matriculas": 194,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -402,7 +465,7 @@
         "cod_ies": "1538",
         "nome_ies": "CENTRO UNIVERSITARIO PROJEÇÃO",
         "vagas": 0,
-        "matriculas": 154,
+        "matriculas": 179,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"

@@ -5,8 +5,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 10,
-    "ingressos": 9,
+    "matriculas": 12,
+    "ingressos": 4,
     "concluintes": 0,
     "n_cursos": 2,
     "n_ies": 2,
@@ -15,7 +15,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 6,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -24,7 +24,7 @@
         "cod_ies": "2835",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 7,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -37,8 +37,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 1,
-    "ingressos": 3,
+    "matriculas": 2,
+    "ingressos": 1,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -47,7 +47,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -61,7 +61,7 @@
     "vagas_presencial": 0,
     "vagas_ead": 0,
     "matriculas": 1,
-    "ingressos": 0,
+    "ingressos": 1,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -83,8 +83,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 29,
-    "ingressos": 6,
+    "matriculas": 33,
+    "ingressos": 8,
     "concluintes": 0,
     "n_cursos": 6,
     "n_ies": 6,
@@ -93,7 +93,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -102,7 +102,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -111,7 +111,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -129,7 +129,7 @@
         "cod_ies": "2835",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
         "vagas": 0,
-        "matriculas": 20,
+        "matriculas": 28,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -151,8 +151,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 4,
-    "ingressos": 8,
+    "matriculas": 2,
+    "ingressos": 1,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -161,7 +161,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -174,15 +174,24 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 55,
-    "ingressos": 49,
+    "matriculas": 82,
+    "ingressos": 71,
     "concluintes": 0,
-    "n_cursos": 2,
-    "n_ies": 2,
+    "n_cursos": 4,
+    "n_ies": 4,
     "cursos": [
       {
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
         "matriculas": 0,
         "modalidade": "Semipresencial",
@@ -193,7 +202,48 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 55,
+        "matriculas": 79,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "CAMPO MAIOR": {
+    "nome_original": "Campo Maior",
+    "cod_municipio": "2202208",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 13,
+    "ingressos": 20,
+    "concluintes": 0,
+    "n_cursos": 2,
+    "n_ies": 2,
+    "cursos": [
+      {
+        "cod_ies": "163",
+        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 10,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -206,8 +256,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 19,
-    "ingressos": 15,
+    "matriculas": 16,
+    "ingressos": 2,
     "concluintes": 0,
     "n_cursos": 2,
     "n_ies": 2,
@@ -216,7 +266,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 18,
+        "matriculas": 15,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -238,11 +288,11 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 0,
+    "matriculas": 2,
     "ingressos": 1,
     "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "163",
@@ -252,6 +302,15 @@
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
       }
     ]
   },
@@ -284,8 +343,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 71,
-    "ingressos": 64,
+    "matriculas": 85,
+    "ingressos": 20,
     "concluintes": 0,
     "n_cursos": 4,
     "n_ies": 4,
@@ -294,7 +353,7 @@
         "cod_ies": "221",
         "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -303,7 +362,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 7,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -321,7 +380,7 @@
         "cod_ies": "2835",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
         "vagas": 0,
-        "matriculas": 60,
+        "matriculas": 80,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -334,26 +393,26 @@
     "vagas_total": 100,
     "vagas_presencial": 100,
     "vagas_ead": 0,
-    "matriculas": 189,
-    "ingressos": 67,
-    "concluintes": 22,
-    "n_cursos": 6,
-    "n_ies": 6,
+    "matriculas": 197,
+    "ingressos": 96,
+    "concluintes": 19,
+    "n_cursos": 7,
+    "n_ies": 7,
     "cursos": [
       {
         "cod_ies": "2413",
-        "nome_ies": "FACULDADE DE ENSINO SUPERIOR DE FLORIANO",
+        "nome_ies": "Centro Universitário Faesf",
         "vagas": 100,
-        "matriculas": 88,
+        "matriculas": 67,
         "modalidade": "Presencial",
         "categoria": "Privada",
-        "organizacao": "Faculdade"
+        "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -362,7 +421,7 @@
         "cod_ies": "221",
         "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -380,16 +439,48 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "1853",
-        "nome_ies": "Centro Universitário UNIBTA",
+        "cod_ies": "1658",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 36,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2625",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UFBRA",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "FRONTEIRAS": {
+    "nome_original": "Fronteiras",
+    "cod_municipio": "2204303",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 5,
+    "ingressos": 6,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "4751",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
+        "vagas": 0,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -403,7 +494,7 @@
     "vagas_presencial": 0,
     "vagas_ead": 0,
     "matriculas": 4,
-    "ingressos": 4,
+    "ingressos": 3,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -419,14 +510,37 @@
       }
     ]
   },
+  "GUADALUPE": {
+    "nome_original": "Guadalupe",
+    "cod_municipio": "2204501",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 1,
+    "ingressos": 1,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "221",
+        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      }
+    ]
+  },
   "JAICOS": {
     "nome_original": "Jaicós",
     "cod_municipio": "2205201",
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 0,
-    "ingressos": 0,
+    "matriculas": 2,
+    "ingressos": 2,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -435,7 +549,30 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      }
+    ]
+  },
+  "MIGUEL ALVES": {
+    "nome_original": "Miguel Alves",
+    "cod_municipio": "2206209",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 1,
+    "ingressos": 1,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "221",
+        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -450,7 +587,7 @@
     "vagas_ead": 0,
     "matriculas": 3,
     "ingressos": 0,
-    "concluintes": 0,
+    "concluintes": 1,
     "n_cursos": 1,
     "n_ies": 1,
     "cursos": [
@@ -471,17 +608,17 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 11,
+    "matriculas": 9,
     "ingressos": 8,
     "concluintes": 0,
-    "n_cursos": 3,
-    "n_ies": 3,
+    "n_cursos": 5,
+    "n_ies": 5,
     "cursos": [
       {
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 6,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -499,7 +636,25 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário UNIBTA",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -509,20 +664,20 @@
   "PARNAIBA": {
     "nome_original": "Parnaíba",
     "cod_municipio": "2207702",
-    "vagas_total": 498,
-    "vagas_presencial": 498,
+    "vagas_total": 412,
+    "vagas_presencial": 412,
     "vagas_ead": 0,
-    "matriculas": 389,
-    "ingressos": 178,
-    "concluintes": 32,
+    "matriculas": 457,
+    "ingressos": 138,
+    "concluintes": 26,
     "n_cursos": 7,
     "n_ies": 7,
     "cursos": [
       {
         "cod_ies": "1552",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU DE PARNAÍBA",
-        "vagas": 498,
-        "matriculas": 234,
+        "vagas": 412,
+        "matriculas": 253,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -531,7 +686,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 6,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -540,7 +695,16 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 18,
+        "matriculas": 20,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
+        "vagas": 0,
+        "matriculas": 19,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -549,7 +713,7 @@
         "cod_ies": "1660",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
         "vagas": 0,
-        "matriculas": 5,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -558,7 +722,7 @@
         "cod_ies": "2076",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIRB",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -567,7 +731,48 @@
         "cod_ies": "2835",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
         "vagas": 0,
-        "matriculas": 122,
+        "matriculas": 157,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "PAULISTANA": {
+    "nome_original": "Paulistana",
+    "cod_municipio": "2207801",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 8,
+    "ingressos": 8,
+    "concluintes": 0,
+    "n_cursos": 4,
+    "n_ies": 4,
+    "cursos": [
+      {
+        "cod_ies": "221",
+        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1660",
+        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário UNIBTA",
+        "vagas": 0,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -583,41 +788,32 @@
       }
     ]
   },
-  "PAULISTANA": {
-    "nome_original": "Paulistana",
-    "cod_municipio": "2207801",
+  "PEDRO II": {
+    "nome_original": "Pedro II",
+    "cod_municipio": "2207900",
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 17,
+    "matriculas": 4,
     "ingressos": 5,
     "concluintes": 0,
-    "n_cursos": 3,
-    "n_ies": 3,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "221",
         "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "1853",
-        "nome_ies": "Centro Universitário UNIBTA",
+        "cod_ies": "4751",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
         "vagas": 0,
-        "matriculas": 2,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "2111",
-        "nome_ies": "CENTRO UNIVERSITÁRIO INTA",
-        "vagas": 0,
-        "matriculas": 13,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -630,17 +826,17 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 188,
-    "ingressos": 84,
-    "concluintes": 0,
-    "n_cursos": 5,
-    "n_ies": 5,
+    "matriculas": 272,
+    "ingressos": 132,
+    "concluintes": 31,
+    "n_cursos": 6,
+    "n_ies": 6,
     "cursos": [
       {
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 142,
+        "matriculas": 211,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -658,7 +854,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 32,
+        "matriculas": 29,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -668,6 +864,15 @@
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
         "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
+        "vagas": 0,
+        "matriculas": 18,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -689,8 +894,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 5,
-    "ingressos": 5,
+    "matriculas": 4,
+    "ingressos": 3,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -699,7 +904,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 5,
+        "matriculas": 4,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -712,8 +917,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 10,
-    "ingressos": 43,
+    "matriculas": 22,
+    "ingressos": 62,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -722,7 +927,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 10,
+        "matriculas": 22,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -735,35 +940,26 @@
     "vagas_total": 100,
     "vagas_presencial": 100,
     "vagas_ead": 0,
-    "matriculas": 163,
-    "ingressos": 84,
-    "concluintes": 18,
-    "n_cursos": 4,
-    "n_ies": 4,
+    "matriculas": 181,
+    "ingressos": 53,
+    "concluintes": 27,
+    "n_cursos": 3,
+    "n_ies": 3,
     "cursos": [
       {
         "cod_ies": "3042",
         "nome_ies": "CHRISTUS FACULDADE DO PIAUÍ",
         "vagas": 100,
-        "matriculas": 80,
+        "matriculas": 77,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
       },
       {
-        "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "221",
-        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
-        "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -772,7 +968,30 @@
         "cod_ies": "1446",
         "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
         "vagas": 0,
-        "matriculas": 81,
+        "matriculas": 104,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "SEBASTIAO LEAL": {
+    "nome_original": "Sebastião Leal",
+    "cod_municipio": "2210631",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 0,
+    "ingressos": 2,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "1510",
+        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
+        "vagas": 0,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -785,26 +1004,17 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 3,
-    "ingressos": 3,
+    "matriculas": 1,
+    "ingressos": 0,
     "concluintes": 0,
-    "n_cursos": 2,
-    "n_ies": 2,
+    "n_cursos": 1,
+    "n_ies": 1,
     "cursos": [
-      {
-        "cod_ies": "1510",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
-        "vagas": 0,
-        "matriculas": 3,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
       {
         "cod_ies": "3840",
         "nome_ies": "CENTRO UNIVERSITÁRIO FACVEST",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -817,8 +1027,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 8,
-    "ingressos": 7,
+    "matriculas": 7,
+    "ingressos": 1,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -827,7 +1037,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 8,
+        "matriculas": 7,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -840,8 +1050,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 31,
-    "ingressos": 8,
+    "matriculas": 86,
+    "ingressos": 54,
     "concluintes": 0,
     "n_cursos": 3,
     "n_ies": 3,
@@ -850,7 +1060,7 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 8,
+        "matriculas": 18,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -859,7 +1069,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 14,
+        "matriculas": 11,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -868,7 +1078,7 @@
         "cod_ies": "2835",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 57,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -878,56 +1088,56 @@
   "TERESINA": {
     "nome_original": "Teresina",
     "cod_municipio": "2211001",
-    "vagas_total": 1786,
-    "vagas_presencial": 1786,
+    "vagas_total": 1644,
+    "vagas_presencial": 1644,
     "vagas_ead": 0,
-    "matriculas": 2233,
-    "ingressos": 791,
-    "concluintes": 338,
-    "n_cursos": 24,
-    "n_ies": 24,
+    "matriculas": 2300,
+    "ingressos": 761,
+    "concluintes": 254,
+    "n_cursos": 29,
+    "n_ies": 29,
     "cursos": [
-      {
-        "cod_ies": "4197",
-        "nome_ies": "Centro Universitário Maurício de Nassau Aliança",
-        "vagas": 512,
-        "matriculas": 240,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1563",
-        "nome_ies": "CENTRO UNIVERSITÁRIO UNINOVAFAPI",
-        "vagas": 294,
-        "matriculas": 36,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
       {
         "cod_ies": "1734",
         "nome_ies": "Centro Universitário Facid Wyden",
-        "vagas": 276,
-        "matriculas": 319,
+        "vagas": 404,
+        "matriculas": 261,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "21240",
-        "nome_ies": "FACULDADE UNIRB - PIAUÍ",
-        "vagas": 200,
-        "matriculas": 0,
+        "cod_ies": "4197",
+        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU TERESINA SUL",
+        "vagas": 262,
+        "matriculas": 254,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "916",
+        "nome_ies": "FACULDADE ESTÁCIO DE TERESINA",
+        "vagas": 240,
+        "matriculas": 19,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
       },
       {
+        "cod_ies": "1563",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UNINOVAFAPI",
+        "vagas": 205,
+        "matriculas": 61,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
         "cod_ies": "1131",
         "nome_ies": "CENTRO UNIVERSITÁRIO SANTO AGOSTINHO",
-        "vagas": 182,
-        "matriculas": 240,
+        "vagas": 180,
+        "matriculas": 223,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -936,7 +1146,7 @@
         "cod_ies": "3337",
         "nome_ies": "FACULDADE DE TECNOLOGIA DE TERESINA",
         "vagas": 150,
-        "matriculas": 323,
+        "matriculas": 261,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -944,8 +1154,8 @@
       {
         "cod_ies": "1656",
         "nome_ies": "INSTITUTO DE ENSINO SUPERIOR DE TERESINA",
-        "vagas": 112,
-        "matriculas": 363,
+        "vagas": 103,
+        "matriculas": 340,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -953,17 +1163,26 @@
       {
         "cod_ies": "5",
         "nome_ies": "UNIVERSIDADE FEDERAL DO PIAUÍ",
-        "vagas": 60,
-        "matriculas": 235,
+        "vagas": 70,
+        "matriculas": 230,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       },
       {
+        "cod_ies": "21240",
+        "nome_ies": "FACULDADE UNIRB - PIAUÍ",
+        "vagas": 30,
+        "matriculas": 3,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 138,
+        "matriculas": 140,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -972,7 +1191,7 @@
         "cod_ies": "221",
         "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
         "vagas": 0,
-        "matriculas": 20,
+        "matriculas": 33,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -981,7 +1200,7 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 11,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -999,16 +1218,25 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 26,
+        "matriculas": 10,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
+        "cod_ies": "515",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Niterói",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
         "cod_ies": "1205",
         "nome_ies": "CENTRO UNIVERSITÁRIO FAEL",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1017,7 +1245,7 @@
         "cod_ies": "1270",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 12,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1026,7 +1254,16 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 58,
+        "matriculas": 34,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1491",
+        "nome_ies": "CENTRO UNIVERSITÁRIO INTERNACIONAL",
+        "vagas": 0,
+        "matriculas": 8,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1035,7 +1272,16 @@
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 12,
+        "matriculas": 16,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
+        "vagas": 0,
+        "matriculas": 60,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1044,7 +1290,7 @@
         "cod_ies": "1660",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1053,7 +1299,7 @@
         "cod_ies": "1775",
         "nome_ies": "Centro Universitário Favip Wyden",
         "vagas": 0,
-        "matriculas": 26,
+        "matriculas": 41,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1062,7 +1308,7 @@
         "cod_ies": "1853",
         "nome_ies": "Centro Universitário UNIBTA",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 10,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1071,7 +1317,16 @@
         "cod_ies": "2076",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIRB",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2625",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UFBRA",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1080,7 +1335,7 @@
         "cod_ies": "2835",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
         "vagas": 0,
-        "matriculas": 140,
+        "matriculas": 221,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1089,7 +1344,7 @@
         "cod_ies": "4153",
         "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU DERBY",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 44,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1098,7 +1353,7 @@
         "cod_ies": "4751",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
         "vagas": 0,
-        "matriculas": 22,
+        "matriculas": 12,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1111,17 +1366,26 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 3,
-    "ingressos": 1,
+    "matriculas": 2,
+    "ingressos": 7,
     "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 3,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "vagas": 0,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1134,8 +1398,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 15,
-    "ingressos": 12,
+    "matriculas": 20,
+    "ingressos": 11,
     "concluintes": 0,
     "n_cursos": 2,
     "n_ies": 2,
@@ -1144,7 +1408,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 5,
+        "matriculas": 7,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1153,7 +1417,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 10,
+        "matriculas": 13,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1166,26 +1430,17 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 5,
-    "ingressos": 4,
+    "matriculas": 2,
+    "ingressos": 2,
     "concluintes": 0,
-    "n_cursos": 2,
-    "n_ies": 2,
+    "n_cursos": 1,
+    "n_ies": 1,
     "cursos": [
       {
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 4,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1853",
-        "nome_ies": "Centro Universitário UNIBTA",
-        "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1198,8 +1453,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 4,
-    "ingressos": 2,
+    "matriculas": 5,
+    "ingressos": 4,
     "concluintes": 0,
     "n_cursos": 2,
     "n_ies": 2,
@@ -1217,7 +1472,7 @@
         "cod_ies": "1660",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"

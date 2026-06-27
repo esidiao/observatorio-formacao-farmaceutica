@@ -25,20 +25,20 @@
   "ALEGRE": {
     "nome_original": "Alegre",
     "cod_municipio": "3200201",
-    "vagas_total": 59,
-    "vagas_presencial": 59,
+    "vagas_total": 54,
+    "vagas_presencial": 54,
     "vagas_ead": 0,
-    "matriculas": 189,
-    "ingressos": 33,
-    "concluintes": 30,
+    "matriculas": 192,
+    "ingressos": 49,
+    "concluintes": 22,
     "n_cursos": 1,
     "n_ies": 1,
     "cursos": [
       {
         "cod_ies": "573",
         "nome_ies": "UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO",
-        "vagas": 59,
-        "matriculas": 189,
+        "vagas": 54,
+        "matriculas": 192,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
@@ -74,17 +74,26 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 62,
-    "ingressos": 72,
+    "matriculas": 55,
+    "ingressos": 38,
     "concluintes": 0,
-    "n_cursos": 4,
-    "n_ies": 4,
+    "n_cursos": 5,
+    "n_ies": 5,
     "cursos": [
+      {
+        "cod_ies": "221",
+        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
       {
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 48,
+        "matriculas": 40,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -93,7 +102,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 7,
+        "matriculas": 6,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -102,7 +111,7 @@
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 5,
+        "matriculas": 6,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -124,8 +133,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 2,
-    "ingressos": 2,
+    "matriculas": 4,
+    "ingressos": 3,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -134,7 +143,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 4,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -147,85 +156,17 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 41,
-    "ingressos": 29,
+    "matriculas": 67,
+    "ingressos": 40,
     "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
+    "n_cursos": 3,
+    "n_ies": 3,
     "cursos": [
       {
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 41,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      }
-    ]
-  },
-  "CACHOEIRO DE ITAPEMIRIM": {
-    "nome_original": "Cachoeiro de Itapemirim",
-    "cod_municipio": "3201209",
-    "vagas_total": 401,
-    "vagas_presencial": 401,
-    "vagas_ead": 0,
-    "matriculas": 705,
-    "ingressos": 424,
-    "concluintes": 44,
-    "n_cursos": 9,
-    "n_ies": 9,
-    "cursos": [
-      {
-        "cod_ies": "1970",
-        "nome_ies": "Faculdade Multivix de Cachoeiro",
-        "vagas": 301,
-        "matriculas": 372,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Faculdade"
-      },
-      {
-        "cod_ies": "739",
-        "nome_ies": "CENTRO UNIVERSITÁRIO SÃO CAMILO - ESPÍRITO SANTO",
-        "vagas": 100,
-        "matriculas": 98,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
-        "vagas": 0,
-        "matriculas": 5,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "298",
-        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
-        "vagas": 0,
-        "matriculas": 97,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "322",
-        "nome_ies": "UNIVERSIDADE PAULISTA",
-        "vagas": 0,
-        "matriculas": 24,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
-        "vagas": 0,
-        "matriculas": 17,
+        "matriculas": 64,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -234,7 +175,125 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 16,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1660",
+        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "BREJETUBA": {
+    "nome_original": "Brejetuba",
+    "cod_municipio": "3201159",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 1,
+    "ingressos": 1,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "3294",
+        "nome_ies": "CENTRO UNIVERSITÁRIO FAVENI",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "CACHOEIRO DE ITAPEMIRIM": {
+    "nome_original": "Cachoeiro de Itapemirim",
+    "cod_municipio": "3201209",
+    "vagas_total": 242,
+    "vagas_presencial": 242,
+    "vagas_ead": 0,
+    "matriculas": 559,
+    "ingressos": 321,
+    "concluintes": 78,
+    "n_cursos": 10,
+    "n_ies": 10,
+    "cursos": [
+      {
+        "cod_ies": "1970",
+        "nome_ies": "Faculdade Multivix de Cachoeiro",
+        "vagas": 142,
+        "matriculas": 163,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "739",
+        "nome_ies": "CENTRO UNIVERSITÁRIO SÃO CAMILO - ESPÍRITO SANTO",
+        "vagas": 100,
+        "matriculas": 61,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 120,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "UNIVERSIDADE PAULISTA",
+        "vagas": 0,
+        "matriculas": 46,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "496",
+        "nome_ies": "UNIVERSIDADE DE FRANCA",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "vagas": 0,
+        "matriculas": 14,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "vagas": 0,
+        "matriculas": 7,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -243,7 +302,7 @@
         "cod_ies": "4751",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -252,7 +311,7 @@
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
         "vagas": 0,
-        "matriculas": 75,
+        "matriculas": 141,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -262,20 +321,20 @@
   "CARIACICA": {
     "nome_original": "Cariacica",
     "cod_municipio": "3201308",
-    "vagas_total": 139,
-    "vagas_presencial": 139,
+    "vagas_total": 171,
+    "vagas_presencial": 171,
     "vagas_ead": 0,
-    "matriculas": 328,
-    "ingressos": 174,
-    "concluintes": 14,
-    "n_cursos": 6,
-    "n_ies": 6,
+    "matriculas": 363,
+    "ingressos": 165,
+    "concluintes": 42,
+    "n_cursos": 7,
+    "n_ies": 7,
     "cursos": [
       {
         "cod_ies": "2537",
         "nome_ies": "Faculdade Multivix Cariacica",
-        "vagas": 139,
-        "matriculas": 235,
+        "vagas": 171,
+        "matriculas": 244,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -293,7 +352,7 @@
         "cod_ies": "221",
         "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
         "vagas": 0,
-        "matriculas": 3,
+        "matriculas": 4,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -302,7 +361,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 23,
+        "matriculas": 16,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -311,7 +370,16 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 14,
+        "matriculas": 13,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário UNIBTA",
+        "vagas": 0,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -320,7 +388,7 @@
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
         "vagas": 0,
-        "matriculas": 27,
+        "matriculas": 60,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -334,14 +402,23 @@
     "vagas_presencial": 0,
     "vagas_ead": 0,
     "matriculas": 0,
-    "ingressos": 0,
+    "ingressos": 2,
     "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "496",
+        "nome_ies": "UNIVERSIDADE DE FRANCA",
         "vagas": 0,
         "matriculas": 0,
         "modalidade": "Semipresencial",
@@ -353,29 +430,29 @@
   "COLATINA": {
     "nome_original": "Colatina",
     "cod_municipio": "3201506",
-    "vagas_total": 149,
-    "vagas_presencial": 149,
+    "vagas_total": 116,
+    "vagas_presencial": 116,
     "vagas_ead": 0,
-    "matriculas": 156,
-    "ingressos": 60,
-    "concluintes": 17,
+    "matriculas": 172,
+    "ingressos": 67,
+    "concluintes": 22,
     "n_cursos": 4,
     "n_ies": 4,
     "cursos": [
       {
-        "cod_ies": "1559",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO ESPÍRITO SANTO",
-        "vagas": 87,
-        "matriculas": 94,
+        "cod_ies": "1840",
+        "nome_ies": "CENTRO UNIVERSITÁRIO CASTELO BRANCO",
+        "vagas": 60,
+        "matriculas": 55,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "1840",
-        "nome_ies": "CENTRO UNIVERSITÁRIO CASTELO BRANCO",
-        "vagas": 62,
-        "matriculas": 38,
+        "cod_ies": "1559",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DO ESPÍRITO SANTO UNESC",
+        "vagas": 56,
+        "matriculas": 97,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -393,7 +470,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -406,7 +483,7 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 1,
+    "matriculas": 0,
     "ingressos": 0,
     "concluintes": 0,
     "n_cursos": 1,
@@ -416,7 +493,7 @@
         "cod_ies": "1270",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -429,8 +506,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 17,
-    "ingressos": 11,
+    "matriculas": 13,
+    "ingressos": 6,
     "concluintes": 0,
     "n_cursos": 2,
     "n_ies": 2,
@@ -439,7 +516,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 16,
+        "matriculas": 12,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -455,46 +532,23 @@
       }
     ]
   },
-  "ECOPORANGA": {
-    "nome_original": "Ecoporanga",
-    "cod_municipio": "3202108",
-    "vagas_total": 0,
-    "vagas_presencial": 0,
-    "vagas_ead": 0,
-    "matriculas": 1,
-    "ingressos": 1,
-    "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
-    "cursos": [
-      {
-        "cod_ies": "17854",
-        "nome_ies": "Centro Universitário Unifecaf",
-        "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      }
-    ]
-  },
   "GUARAPARI": {
     "nome_original": "Guarapari",
     "cod_municipio": "3202405",
-    "vagas_total": 111,
-    "vagas_presencial": 111,
+    "vagas_total": 76,
+    "vagas_presencial": 76,
     "vagas_ead": 0,
-    "matriculas": 265,
-    "ingressos": 131,
-    "concluintes": 49,
+    "matriculas": 244,
+    "ingressos": 88,
+    "concluintes": 37,
     "n_cursos": 3,
     "n_ies": 3,
     "cursos": [
       {
         "cod_ies": "2576",
         "nome_ies": "FACULDADE ANHANGUERA UNIDADE GUARAPARI",
-        "vagas": 111,
-        "matriculas": 230,
+        "vagas": 76,
+        "matriculas": 218,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -512,7 +566,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 14,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -525,8 +579,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 0,
-    "ingressos": 4,
+    "matriculas": 1,
+    "ingressos": 1,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -535,7 +589,7 @@
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -571,8 +625,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 4,
-    "ingressos": 3,
+    "matriculas": 5,
+    "ingressos": 4,
     "concluintes": 0,
     "n_cursos": 2,
     "n_ies": 2,
@@ -581,7 +635,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -590,7 +644,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -623,20 +677,20 @@
   "LINHARES": {
     "nome_original": "Linhares",
     "cod_municipio": "3203205",
-    "vagas_total": 55,
-    "vagas_presencial": 55,
+    "vagas_total": 49,
+    "vagas_presencial": 49,
     "vagas_ead": 0,
-    "matriculas": 249,
-    "ingressos": 138,
-    "concluintes": 23,
+    "matriculas": 281,
+    "ingressos": 140,
+    "concluintes": 34,
     "n_cursos": 5,
     "n_ies": 5,
     "cursos": [
       {
         "cod_ies": "736",
         "nome_ies": "FACULDADE ANHANGUERA DE LINHARES",
-        "vagas": 55,
-        "matriculas": 127,
+        "vagas": 49,
+        "matriculas": 123,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -645,16 +699,16 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 112,
+        "matriculas": 146,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "466",
-        "nome_ies": "UNIVERSIDADE ANHEMBI MORUMBI",
+        "cod_ies": "496",
+        "nome_ies": "UNIVERSIDADE DE FRANCA",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -663,7 +717,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 8,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -672,7 +726,7 @@
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 8,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -685,17 +739,26 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 9,
-    "ingressos": 7,
+    "matriculas": 14,
+    "ingressos": 12,
     "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 14,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -709,7 +772,7 @@
     "vagas_presencial": 0,
     "vagas_ead": 0,
     "matriculas": 1,
-    "ingressos": 1,
+    "ingressos": 0,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -717,6 +780,52 @@
       {
         "cod_ies": "1270",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "MONTANHA": {
+    "nome_original": "Montanha",
+    "cod_municipio": "3203502",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 1,
+    "ingressos": 1,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "1660",
+        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "MUQUI": {
+    "nome_original": "Muqui",
+    "cod_municipio": "3203809",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 1,
+    "ingressos": 1,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário UNIBTA",
         "vagas": 0,
         "matriculas": 1,
         "modalidade": "Semipresencial",
@@ -728,20 +837,20 @@
   "NOVA VENECIA": {
     "nome_original": "Nova Venécia",
     "cod_municipio": "3203908",
-    "vagas_total": 22,
-    "vagas_presencial": 22,
+    "vagas_total": 170,
+    "vagas_presencial": 170,
     "vagas_ead": 0,
-    "matriculas": 184,
-    "ingressos": 70,
-    "concluintes": 5,
+    "matriculas": 217,
+    "ingressos": 131,
+    "concluintes": 13,
     "n_cursos": 3,
     "n_ies": 3,
     "cursos": [
       {
         "cod_ies": "1359",
         "nome_ies": "Faculdade Multivix Nova Venécia",
-        "vagas": 22,
-        "matriculas": 104,
+        "vagas": 170,
+        "matriculas": 120,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -750,7 +859,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 27,
+        "matriculas": 25,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -759,62 +868,16 @@
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
         "vagas": 0,
-        "matriculas": 53,
+        "matriculas": 72,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
     ]
   },
-  "PINHEIROS": {
-    "nome_original": "Pinheiros",
-    "cod_municipio": "3204104",
-    "vagas_total": 0,
-    "vagas_presencial": 0,
-    "vagas_ead": 0,
-    "matriculas": 2,
-    "ingressos": 0,
-    "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
-    "cursos": [
-      {
-        "cod_ies": "1510",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
-        "vagas": 0,
-        "matriculas": 2,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      }
-    ]
-  },
-  "PIUMA": {
-    "nome_original": "Piúma",
-    "cod_municipio": "3204203",
-    "vagas_total": 0,
-    "vagas_presencial": 0,
-    "vagas_ead": 0,
-    "matriculas": 0,
-    "ingressos": 0,
-    "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
-    "cursos": [
-      {
-        "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
-        "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      }
-    ]
-  },
-  "RIO NOVO DO SUL": {
-    "nome_original": "Rio Novo do Sul",
-    "cod_municipio": "3204401",
+  "PANCAS": {
+    "nome_original": "Pancas",
+    "cod_municipio": "3204005",
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
@@ -825,10 +888,56 @@
     "n_ies": 1,
     "cursos": [
       {
+        "cod_ies": "1510",
+        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "PEDRO CANARIO": {
+    "nome_original": "Pedro Canário",
+    "cod_municipio": "3204054",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 2,
+    "ingressos": 2,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
+        "cod_ies": "1660",
+        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ]
+  },
+  "RIO NOVO DO SUL": {
+    "nome_original": "Rio Novo do Sul",
+    "cod_municipio": "3204401",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 0,
+    "ingressos": 0,
+    "concluintes": 0,
+    "n_cursos": 1,
+    "n_ies": 1,
+    "cursos": [
+      {
         "cod_ies": "1270",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -841,9 +950,9 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 6,
-    "ingressos": 5,
-    "concluintes": 0,
+    "matriculas": 9,
+    "ingressos": 9,
+    "concluintes": 1,
     "n_cursos": 2,
     "n_ies": 2,
     "cursos": [
@@ -851,7 +960,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 4,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -860,7 +969,7 @@
         "cod_ies": "1660",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 6,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -870,20 +979,20 @@
   "SERRA": {
     "nome_original": "Serra",
     "cod_municipio": "3205002",
-    "vagas_total": 142,
-    "vagas_presencial": 142,
+    "vagas_total": 169,
+    "vagas_presencial": 169,
     "vagas_ead": 0,
-    "matriculas": 336,
-    "ingressos": 203,
-    "concluintes": 13,
-    "n_cursos": 12,
-    "n_ies": 11,
+    "matriculas": 418,
+    "ingressos": 404,
+    "concluintes": 19,
+    "n_cursos": 14,
+    "n_ies": 13,
     "cursos": [
       {
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
-        "vagas": 142,
-        "matriculas": 177,
+        "vagas": 169,
+        "matriculas": 199,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -892,7 +1001,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 34,
+        "matriculas": 46,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -901,7 +1010,7 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 21,
+        "matriculas": 26,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -910,7 +1019,7 @@
         "cod_ies": "322",
         "nome_ies": "UNIVERSIDADE PAULISTA",
         "vagas": 0,
-        "matriculas": 3,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -925,28 +1034,28 @@
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "1042",
-        "nome_ies": "UNIVERSIDADE POSITIVO",
+        "cod_ies": "1196",
+        "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "cod_ies": "515",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Niterói",
         "vagas": 0,
-        "matriculas": 1,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
-        "organizacao": "Universidade"
+        "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 19,
+        "matriculas": 10,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -955,7 +1064,7 @@
         "cod_ies": "1491",
         "nome_ies": "CENTRO UNIVERSITÁRIO INTERNACIONAL",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 9,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -964,7 +1073,16 @@
         "cod_ies": "1853",
         "nome_ies": "Centro Universitário UNIBTA",
         "vagas": 0,
-        "matriculas": 6,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2625",
+        "nome_ies": "CENTRO UNIVERSITÁRIO UFBRA",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -982,33 +1100,19 @@
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
         "vagas": 0,
-        "matriculas": 70,
+        "matriculas": 108,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
-      }
-    ]
-  },
-  "SOORETAMA": {
-    "nome_original": "Sooretama",
-    "cod_municipio": "3205010",
-    "vagas_total": 0,
-    "vagas_presencial": 0,
-    "vagas_ead": 0,
-    "matriculas": 0,
-    "ingressos": 0,
-    "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
-    "cursos": [
+      },
       {
-        "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "cod_ies": "1908",
+        "nome_ies": "FACULDADE BRASILEIRA CRISTÃ",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 9,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
-        "organizacao": "Centro Universitário"
+        "organizacao": "Faculdade"
       }
     ]
   },
@@ -1018,8 +1122,8 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 3,
-    "ingressos": 2,
+    "matriculas": 5,
+    "ingressos": 4,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
@@ -1028,7 +1132,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 3,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1038,20 +1142,20 @@
   "SAO MATEUS": {
     "nome_original": "São Mateus",
     "cod_municipio": "3204906",
-    "vagas_total": 198,
-    "vagas_presencial": 198,
+    "vagas_total": 205,
+    "vagas_presencial": 205,
     "vagas_ead": 0,
-    "matriculas": 274,
-    "ingressos": 80,
-    "concluintes": 35,
+    "matriculas": 266,
+    "ingressos": 107,
+    "concluintes": 26,
     "n_cursos": 6,
     "n_ies": 6,
     "cursos": [
       {
         "cod_ies": "10685",
         "nome_ies": "Faculdade Multivix São Mateus",
-        "vagas": 124,
-        "matriculas": 11,
+        "vagas": 125,
+        "matriculas": 25,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -1059,8 +1163,8 @@
       {
         "cod_ies": "573",
         "nome_ies": "UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO",
-        "vagas": 63,
-        "matriculas": 196,
+        "vagas": 80,
+        "matriculas": 181,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
@@ -1068,8 +1172,8 @@
       {
         "cod_ies": "1514",
         "nome_ies": "CENTRO UNIVERSITÁRIO VALE DO CRICARÉ",
-        "vagas": 11,
-        "matriculas": 30,
+        "vagas": 0,
+        "matriculas": 26,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1078,7 +1182,7 @@
         "cod_ies": "1270",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1087,7 +1191,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 7,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1096,7 +1200,7 @@
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
         "vagas": 0,
-        "matriculas": 21,
+        "matriculas": 24,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -1109,9 +1213,9 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 57,
-    "ingressos": 3,
-    "concluintes": 13,
+    "matriculas": 3,
+    "ingressos": 2,
+    "concluintes": 1,
     "n_cursos": 4,
     "n_ies": 4,
     "cursos": [
@@ -1128,7 +1232,7 @@
         "cod_ies": "322",
         "nome_ies": "UNIVERSIDADE PAULISTA",
         "vagas": 0,
-        "matriculas": 54,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1146,7 +1250,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1159,26 +1263,17 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 4,
-    "ingressos": 5,
+    "matriculas": 1,
+    "ingressos": 0,
     "concluintes": 0,
-    "n_cursos": 3,
-    "n_ies": 3,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
-        "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1187,7 +1282,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1197,20 +1292,20 @@
   "VILA VELHA": {
     "nome_original": "Vila Velha",
     "cod_municipio": "3205200",
-    "vagas_total": 325,
-    "vagas_presencial": 325,
+    "vagas_total": 296,
+    "vagas_presencial": 296,
     "vagas_ead": 0,
-    "matriculas": 710,
-    "ingressos": 260,
-    "concluintes": 57,
+    "matriculas": 719,
+    "ingressos": 341,
+    "concluintes": 97,
     "n_cursos": 14,
     "n_ies": 13,
     "cursos": [
       {
         "cod_ies": "18979",
         "nome_ies": "Faculdade Multivix Vila Velha",
-        "vagas": 240,
-        "matriculas": 272,
+        "vagas": 181,
+        "matriculas": 262,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -1218,8 +1313,8 @@
       {
         "cod_ies": "664",
         "nome_ies": "UNIVERSIDADE VILA VELHA",
-        "vagas": 85,
-        "matriculas": 230,
+        "vagas": 115,
+        "matriculas": 219,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1228,7 +1323,7 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 52,
+        "matriculas": 46,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1237,7 +1332,7 @@
         "cod_ies": "221",
         "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
         "vagas": 0,
-        "matriculas": 3,
+        "matriculas": 4,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1246,7 +1341,7 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1255,7 +1350,7 @@
         "cod_ies": "322",
         "nome_ies": "UNIVERSIDADE PAULISTA",
         "vagas": 0,
-        "matriculas": 35,
+        "matriculas": 26,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1273,7 +1368,7 @@
         "cod_ies": "664",
         "nome_ies": "UNIVERSIDADE VILA VELHA",
         "vagas": 0,
-        "matriculas": 11,
+        "matriculas": 0,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1282,7 +1377,7 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 2,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1291,7 +1386,7 @@
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 16,
+        "matriculas": 9,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1309,7 +1404,7 @@
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 12,
+        "matriculas": 9,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1318,7 +1413,7 @@
         "cod_ies": "4751",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
         "vagas": 0,
-        "matriculas": 7,
+        "matriculas": 5,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1327,7 +1422,7 @@
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
         "vagas": 0,
-        "matriculas": 70,
+        "matriculas": 133,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -1337,20 +1432,20 @@
   "VITORIA": {
     "nome_original": "Vitória",
     "cod_municipio": "3205309",
-    "vagas_total": 843,
-    "vagas_presencial": 843,
+    "vagas_total": 571,
+    "vagas_presencial": 571,
     "vagas_ead": 0,
-    "matriculas": 1326,
-    "ingressos": 621,
-    "concluintes": 109,
-    "n_cursos": 14,
-    "n_ies": 13,
+    "matriculas": 1096,
+    "ingressos": 458,
+    "concluintes": 126,
+    "n_cursos": 20,
+    "n_ies": 19,
     "cursos": [
       {
         "cod_ies": "1244",
         "nome_ies": "Centro Universitário Multivix Vitória",
-        "vagas": 488,
-        "matriculas": 508,
+        "vagas": 271,
+        "matriculas": 299,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1358,8 +1453,8 @@
       {
         "cod_ies": "1494",
         "nome_ies": "Centro Universitário Salesiano",
-        "vagas": 203,
-        "matriculas": 169,
+        "vagas": 149,
+        "matriculas": 164,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1367,8 +1462,8 @@
       {
         "cod_ies": "1498",
         "nome_ies": "INSTITUTO DE ENSINO SUPERIOR E FORMAÇÃO AVANÇADA DE VITÓRIA",
-        "vagas": 101,
-        "matriculas": 118,
+        "vagas": 100,
+        "matriculas": 92,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -1377,7 +1472,7 @@
         "cod_ies": "573",
         "nome_ies": "UNIVERSIDADE FEDERAL DO ESPÍRITO SANTO",
         "vagas": 51,
-        "matriculas": 238,
+        "matriculas": 255,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
@@ -1386,7 +1481,25 @@
         "cod_ies": "163",
         "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
         "vagas": 0,
-        "matriculas": 36,
+        "matriculas": 32,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1395,7 +1508,7 @@
         "cod_ies": "322",
         "nome_ies": "UNIVERSIDADE PAULISTA",
         "vagas": 0,
-        "matriculas": 132,
+        "matriculas": 80,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -1413,16 +1526,34 @@
         "cod_ies": "1196",
         "nome_ies": "UNIVERSIDADE CESUMAR",
         "vagas": 0,
-        "matriculas": 28,
+        "matriculas": 20,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
+        "cod_ies": "515",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Niterói",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "926",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Campo Grande",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
         "cod_ies": "1472",
         "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
         "vagas": 0,
-        "matriculas": 14,
+        "matriculas": 11,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1431,7 +1562,25 @@
         "cod_ies": "1510",
         "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
         "vagas": 0,
-        "matriculas": 18,
+        "matriculas": 14,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
+        "vagas": 0,
+        "matriculas": 25,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário UNIBTA",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1440,7 +1589,7 @@
         "cod_ies": "3294",
         "nome_ies": "CENTRO UNIVERSITÁRIO FAVENI",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1449,7 +1598,7 @@
         "cod_ies": "4751",
         "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
         "vagas": 0,
-        "matriculas": 9,
+        "matriculas": 4,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1458,7 +1607,7 @@
         "cod_ies": "1494",
         "nome_ies": "Centro Universitário Salesiano",
         "vagas": 0,
-        "matriculas": 19,
+        "matriculas": 29,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
@@ -1467,7 +1616,7 @@
         "cod_ies": "1326",
         "nome_ies": "Faculdade Multivix Serra",
         "vagas": 0,
-        "matriculas": 35,
+        "matriculas": 64,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
