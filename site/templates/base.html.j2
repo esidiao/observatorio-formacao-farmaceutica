@@ -6,11 +6,11 @@
   <title>{% block title %}Observatório Nacional da Formação Farmacêutica{% endblock %}</title>
   <meta name="description" content="Indicadores de acesso e qualidade da formação farmacêutica no Brasil, por UF e município.">
   <link rel="stylesheet" href="{{ depth }}static/css/style.css">
-  <!-- Leaflet -->
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.3/dist/chart.umd.min.js"></script>
+  <!-- Leaflet (hospedado localmente — sem dependência de CDN externo) -->
+  <link rel="stylesheet" href="{{ depth }}static/vendor/leaflet/leaflet.css">
+  <script src="{{ depth }}static/vendor/leaflet/leaflet.js"></script>
+  <!-- Chart.js (local) -->
+  <script src="{{ depth }}static/vendor/chart.umd.min.js"></script>
   {% block head_extra %}{% endblock %}
 </head>
 <body>
