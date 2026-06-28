@@ -462,7 +462,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 84.6,
+    "pct_doc_doutores": 30.8,
+    "pct_doc_regime": 100.0
   },
   "FRONTEIRAS": {
     "nome_original": "Fronteiras",
@@ -736,7 +739,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.2,
+    "pct_doc_doutores": 40.7,
+    "pct_doc_regime": 85.2
   },
   "PAULISTANA": {
     "nome_original": "Paulistana",
@@ -973,7 +979,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 57.1,
+    "pct_doc_regime": 100.0
   },
   "SEBASTIAO LEAL": {
     "nome_original": "Sebastião Leal",
@@ -1358,7 +1367,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.8,
+    "pct_doc_doutores": 52.4,
+    "pct_doc_regime": 77.4
   },
   "UNIAO": {
     "nome_original": "União",

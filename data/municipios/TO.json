@@ -147,7 +147,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 72.7,
+    "pct_doc_regime": 100.0
   },
   "AUGUSTINOPOLIS": {
     "nome_original": "Augustinópolis",
@@ -448,7 +451,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 45.7,
+    "pct_doc_doutores": 17.1,
+    "pct_doc_regime": 71.4
   },
   "MIRACEMA DO TOCANTINS": {
     "nome_original": "Miracema do Tocantins",
@@ -647,7 +653,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 24.9,
+    "pct_doc_regime": 85.9
   },
   "PARAISO DO TOCANTINS": {
     "nome_original": "Paraíso do Tocantins",

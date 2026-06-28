@@ -470,6 +470,9 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 96.5,
+    "pct_doc_doutores": 70.4,
+    "pct_doc_regime": 89.2
   }
 }

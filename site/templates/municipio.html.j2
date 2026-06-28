@@ -57,6 +57,23 @@
     <div class="kpi-fonte">Censo {{ meta.versao_censo }}</div>
   </div>
   {% endif %}
+  {% if d.pct_doc_doutores is defined and d.pct_doc_doutores is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(d.pct_doc_doutores) }}%</div>
+    <div class="kpi-label">Docentes doutores</div>
+    <div class="kpi-fonte" title="% de docentes com doutorado nos cursos avaliados. Fonte: INEP, CPC 2023.">CPC INEP 2023</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(d.pct_doc_mestres) }}%</div>
+    <div class="kpi-label">Mestres ou mais</div>
+    <div class="kpi-fonte" title="% de docentes com titulação mínima de mestre. Fonte: INEP, CPC 2023.">CPC INEP 2023</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(d.pct_doc_regime) }}%</div>
+    <div class="kpi-label">Regime integral/parcial</div>
+    <div class="kpi-fonte" title="% de docentes em regime integral ou parcial (não horista). Fonte: INEP, CPC 2023.">CPC INEP 2023</div>
+  </div>
+  {% endif %}
 </div>
 
 <!-- Tabela de cursos/IES -->

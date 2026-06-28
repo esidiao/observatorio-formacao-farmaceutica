@@ -384,7 +384,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.0,
+    "pct_doc_doutores": 90.9,
+    "pct_doc_regime": 90.9
   },
   "ARAPOTI": {
     "nome_original": "Arapoti",
@@ -1231,7 +1234,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 83.3,
+    "pct_doc_regime": 100.0
   },
   "CANDOI": {
     "nome_original": "Candói",
@@ -1499,7 +1505,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.9,
+    "pct_doc_doutores": 69.9,
+    "pct_doc_regime": 100.0
   },
   "CASTRO": {
     "nome_original": "Castro",
@@ -2090,7 +2099,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 50.0,
+    "pct_doc_doutores": 37.5,
+    "pct_doc_regime": 100.0
   },
   "CORONEL DOMINGOS SOARES": {
     "nome_original": "Coronel Domingos Soares",
@@ -2565,7 +2577,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.8,
+    "pct_doc_doutores": 63.2,
+    "pct_doc_regime": 89.4
   },
   "CURIUVA": {
     "nome_original": "Curiúva",
@@ -3125,7 +3140,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 91.1,
+    "pct_doc_doutores": 48.9,
+    "pct_doc_regime": 98.7
   },
   "FRANCISCO ALVES": {
     "nome_original": "Francisco Alves",
@@ -3252,7 +3270,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 82.6,
+    "pct_doc_doutores": 67.5,
+    "pct_doc_regime": 59.4
   },
   "GOIOERE": {
     "nome_original": "Goioerê",
@@ -3420,7 +3441,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 79.6,
+    "pct_doc_regime": 100.0
   },
   "GUARATUBA": {
     "nome_original": "Guaratuba",
@@ -4667,7 +4691,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.7,
+    "pct_doc_doutores": 66.9,
+    "pct_doc_regime": 98.9
   },
   "MALLET": {
     "nome_original": "Mallet",
@@ -5195,7 +5222,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.8,
+    "pct_doc_doutores": 80.1,
+    "pct_doc_regime": 99.9
   },
   "MARIOPOLIS": {
     "nome_original": "Mariópolis",
@@ -5697,7 +5727,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.7,
+    "pct_doc_doutores": 28.6,
+    "pct_doc_regime": 100.0
   },
   "PALMEIRA": {
     "nome_original": "Palmeira",
@@ -5974,7 +6007,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 100.0
   },
   "PARAISO DO NORTE": {
     "nome_original": "Paraíso do Norte",
@@ -6591,7 +6627,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 86.2,
+    "pct_doc_regime": 93.9
   },
   "PONTAL DO PARANA": {
     "nome_original": "Pontal do Paraná",
@@ -8357,7 +8396,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 100.0
   },
   "TRES BARRAS DO PARANA": {
     "nome_original": "Três Barras do Paraná",
@@ -8621,7 +8663,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 97.4,
+    "pct_doc_regime": 100.0
   },
   "UNIAO DA VITORIA": {
     "nome_original": "União da Vitória",
@@ -8689,7 +8734,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 91.7,
+    "pct_doc_doutores": 25.0,
+    "pct_doc_regime": 100.0
   },
   "URAI": {
     "nome_original": "Uraí",

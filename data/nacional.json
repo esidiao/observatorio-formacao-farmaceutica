@@ -77,7 +77,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 161.6,
       "ead_polos_municipios": 15,
-      "ead_polos_registros": 50
+      "ead_polos_registros": 50,
+      "pct_doc_mestres": 80.8,
+      "pct_doc_doutores": 15.9,
+      "pct_doc_regime": 92.4,
+      "n_cursos_docente": 2
     },
     "AL": {
       "vagas_total": 1636,
@@ -147,7 +151,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 50.8,
       "ead_polos_municipios": 29,
-      "ead_polos_registros": 78
+      "ead_polos_registros": 78,
+      "pct_doc_mestres": 94.2,
+      "pct_doc_doutores": 62.5,
+      "pct_doc_regime": 78.5,
+      "n_cursos_docente": 6
     },
     "AM": {
       "vagas_total": 3887,
@@ -227,7 +235,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 189.5,
       "ead_polos_municipios": 39,
-      "ead_polos_registros": 95
+      "ead_polos_registros": 95,
+      "pct_doc_mestres": 93.8,
+      "pct_doc_doutores": 63.4,
+      "pct_doc_regime": 88.2,
+      "n_cursos_docente": 8
     },
     "AP": {
       "vagas_total": 679,
@@ -276,7 +288,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 84.2,
       "ead_polos_municipios": 8,
-      "ead_polos_registros": 25
+      "ead_polos_registros": 25,
+      "pct_doc_mestres": 93.8,
+      "pct_doc_doutores": 76.0,
+      "pct_doc_regime": 92.5,
+      "n_cursos_docente": 3
     },
     "BA": {
       "vagas_total": 8356,
@@ -464,7 +480,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 79.9,
       "ead_polos_municipios": 147,
-      "ead_polos_registros": 402
+      "ead_polos_registros": 402,
+      "pct_doc_mestres": 91.1,
+      "pct_doc_doutores": 62.3,
+      "pct_doc_regime": 93.2,
+      "n_cursos_docente": 44
     },
     "CE": {
       "vagas_total": 6550,
@@ -604,7 +624,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 272.8,
       "ead_polos_municipios": 99,
-      "ead_polos_registros": 265
+      "ead_polos_registros": 265,
+      "pct_doc_mestres": 91.8,
+      "pct_doc_doutores": 57.0,
+      "pct_doc_regime": 89.7,
+      "n_cursos_docente": 19
     },
     "DF": {
       "vagas_total": 3921,
@@ -646,7 +670,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 502.2,
       "ead_polos_municipios": 1,
-      "ead_polos_registros": 33
+      "ead_polos_registros": 33,
+      "pct_doc_mestres": 96.5,
+      "pct_doc_doutores": 70.4,
+      "pct_doc_regime": 89.2,
+      "n_cursos_docente": 17
     },
     "ES": {
       "vagas_total": 2119,
@@ -722,7 +750,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 85.7,
       "ead_polos_municipios": 34,
-      "ead_polos_registros": 107
+      "ead_polos_registros": 107,
+      "pct_doc_mestres": 92.6,
+      "pct_doc_doutores": 75.1,
+      "pct_doc_regime": 95.1,
+      "n_cursos_docente": 15
     },
     "GO": {
       "vagas_total": 7247,
@@ -838,7 +870,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 119.7,
       "ead_polos_municipios": 75,
-      "ead_polos_registros": 239
+      "ead_polos_registros": 239,
+      "pct_doc_mestres": 93.2,
+      "pct_doc_doutores": 62.6,
+      "pct_doc_regime": 95.2,
+      "n_cursos_docente": 29
     },
     "MA": {
       "vagas_total": 4595,
@@ -963,7 +999,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 100.0,
       "ead_polos_municipios": 84,
-      "ead_polos_registros": 218
+      "ead_polos_registros": 218,
+      "pct_doc_mestres": 85.5,
+      "pct_doc_doutores": 59.6,
+      "pct_doc_regime": 91.8,
+      "n_cursos_docente": 11
     },
     "MG": {
       "vagas_total": 8189,
@@ -1267,7 +1307,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 50.1,
       "ead_polos_municipios": 261,
-      "ead_polos_registros": 712
+      "ead_polos_registros": 712,
+      "pct_doc_mestres": 94.9,
+      "pct_doc_doutores": 74.2,
+      "pct_doc_regime": 91.8,
+      "n_cursos_docente": 60
     },
     "MS": {
       "vagas_total": 952,
@@ -1345,7 +1389,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 358.3,
       "ead_polos_municipios": 37,
-      "ead_polos_registros": 113
+      "ead_polos_registros": 113,
+      "pct_doc_mestres": 98.6,
+      "pct_doc_doutores": 82.5,
+      "pct_doc_regime": 92.1,
+      "n_cursos_docente": 8
     },
     "MT": {
       "vagas_total": 2606,
@@ -1441,7 +1489,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 118.3,
       "ead_polos_municipios": 53,
-      "ead_polos_registros": 159
+      "ead_polos_registros": 159,
+      "pct_doc_mestres": 90.6,
+      "pct_doc_doutores": 59.3,
+      "pct_doc_regime": 93.4,
+      "n_cursos_docente": 16
     },
     "PA": {
       "vagas_total": 5484,
@@ -1576,7 +1628,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 69.6,
       "ead_polos_municipios": 94,
-      "ead_polos_registros": 338
+      "ead_polos_registros": 338,
+      "pct_doc_mestres": 92.9,
+      "pct_doc_doutores": 47.0,
+      "pct_doc_regime": 85.4,
+      "n_cursos_docente": 17
     },
     "PB": {
       "vagas_total": 2915,
@@ -1650,7 +1706,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 76.0,
       "ead_polos_municipios": 33,
-      "ead_polos_registros": 106
+      "ead_polos_registros": 106,
+      "pct_doc_mestres": 92.6,
+      "pct_doc_doutores": 65.5,
+      "pct_doc_regime": 82.3,
+      "n_cursos_docente": 14
     },
     "PE": {
       "vagas_total": 9623,
@@ -1771,7 +1831,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 363.3,
       "ead_polos_municipios": 79,
-      "ead_polos_registros": 255
+      "ead_polos_registros": 255,
+      "pct_doc_mestres": 87.9,
+      "pct_doc_doutores": 49.6,
+      "pct_doc_regime": 80.3,
+      "n_cursos_docente": 28
     },
     "PI": {
       "vagas_total": 2256,
@@ -1847,7 +1911,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 66.7,
       "ead_polos_municipios": 35,
-      "ead_polos_registros": 98
+      "ead_polos_registros": 98,
+      "pct_doc_mestres": 92.8,
+      "pct_doc_doutores": 50.2,
+      "pct_doc_regime": 80.9,
+      "n_cursos_docente": 9
     },
     "PR": {
       "vagas_total": 4730,
@@ -2085,7 +2153,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 304.4,
       "ead_polos_municipios": 197,
-      "ead_polos_registros": 618
+      "ead_polos_registros": 618,
+      "pct_doc_mestres": 95.3,
+      "pct_doc_doutores": 68.5,
+      "pct_doc_regime": 96.4,
+      "n_cursos_docente": 42
     },
     "RJ": {
       "vagas_total": 11867,
@@ -2205,7 +2277,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 380.4,
       "ead_polos_municipios": 79,
-      "ead_polos_registros": 330
+      "ead_polos_registros": 330,
+      "pct_doc_mestres": 94.3,
+      "pct_doc_doutores": 68.7,
+      "pct_doc_regime": 86.9,
+      "n_cursos_docente": 36
     },
     "RN": {
       "vagas_total": 1360,
@@ -2274,7 +2350,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 42.4,
       "ead_polos_municipios": 28,
-      "ead_polos_registros": 85
+      "ead_polos_registros": 85,
+      "pct_doc_mestres": 94.9,
+      "pct_doc_doutores": 67.3,
+      "pct_doc_regime": 95.9,
+      "n_cursos_docente": 8
     },
     "RO": {
       "vagas_total": 2942,
@@ -2338,7 +2418,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 167.9,
       "ead_polos_municipios": 23,
-      "ead_polos_registros": 80
+      "ead_polos_registros": 80,
+      "pct_doc_mestres": 85.4,
+      "pct_doc_doutores": 43.0,
+      "pct_doc_regime": 97.4,
+      "n_cursos_docente": 11
     },
     "RR": {
       "vagas_total": 1079,
@@ -2387,7 +2471,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 146.1,
       "ead_polos_municipios": 8,
-      "ead_polos_registros": 25
+      "ead_polos_registros": 25,
+      "pct_doc_mestres": 88.2,
+      "pct_doc_doutores": 29.4,
+      "pct_doc_regime": 100.0,
+      "n_cursos_docente": 2
     },
     "RS": {
       "vagas_total": 3047,
@@ -2572,7 +2660,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 37.3,
       "ead_polos_municipios": 142,
-      "ead_polos_registros": 427
+      "ead_polos_registros": 427,
+      "pct_doc_mestres": 99.4,
+      "pct_doc_doutores": 75.8,
+      "pct_doc_regime": 87.8,
+      "n_cursos_docente": 33
     },
     "SC": {
       "vagas_total": 2868,
@@ -2706,7 +2798,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 212.0,
       "ead_polos_municipios": 92,
-      "ead_polos_registros": 312
+      "ead_polos_registros": 312,
+      "pct_doc_mestres": 98.1,
+      "pct_doc_doutores": 73.0,
+      "pct_doc_regime": 88.8,
+      "n_cursos_docente": 19
     },
     "SE": {
       "vagas_total": 1375,
@@ -2770,7 +2866,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 59.8,
       "ead_polos_municipios": 23,
-      "ead_polos_registros": 58
+      "ead_polos_registros": 58,
+      "pct_doc_mestres": 97.4,
+      "pct_doc_doutores": 76.5,
+      "pct_doc_regime": 86.3,
+      "n_cursos_docente": 5
     },
     "SP": {
       "vagas_total": 27627,
@@ -3075,7 +3175,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 283.1,
       "ead_polos_municipios": 263,
-      "ead_polos_registros": 1187
+      "ead_polos_registros": 1187,
+      "pct_doc_mestres": 96.2,
+      "pct_doc_doutores": 67.4,
+      "pct_doc_regime": 81.3,
+      "n_cursos_docente": 124
     },
     "TO": {
       "vagas_total": 811,
@@ -3137,7 +3241,11 @@
       "pop_ano": "2025",
       "vagas_por_100k": 51.1,
       "ead_polos_municipios": 21,
-      "ead_polos_registros": 62
+      "ead_polos_registros": 62,
+      "pct_doc_mestres": 80.5,
+      "pct_doc_doutores": 34.1,
+      "pct_doc_regime": 84.2,
+      "n_cursos_docente": 4
     }
   }
 }

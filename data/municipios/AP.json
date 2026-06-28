@@ -205,7 +205,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.8,
+    "pct_doc_doutores": 76.0,
+    "pct_doc_regime": 92.5
   },
   "OIAPOQUE": {
     "nome_original": "Oiapoque",

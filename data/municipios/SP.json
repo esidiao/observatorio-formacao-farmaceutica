@@ -188,7 +188,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 86.7,
+    "pct_doc_doutores": 53.3,
+    "pct_doc_regime": 66.7
   },
   "AMPARO": {
     "nome_original": "Amparo",
@@ -510,7 +513,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 99.7,
+    "pct_doc_doutores": 94.8,
+    "pct_doc_regime": 86.9
   },
   "ARARAS": {
     "nome_original": "Araras",
@@ -578,7 +584,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 89.7,
+    "pct_doc_doutores": 43.1,
+    "pct_doc_regime": 55.2
   },
   "ARACARIGUAMA": {
     "nome_original": "Araçariguama",
@@ -723,7 +732,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.8,
+    "pct_doc_doutores": 49.7,
+    "pct_doc_regime": 78.5
   },
   "ARACOIABA DA SERRA": {
     "nome_original": "Araçoiaba da Serra",
@@ -932,7 +944,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 66.7,
+    "pct_doc_regime": 41.7
   },
   "ATIBAIA": {
     "nome_original": "Atibaia",
@@ -1086,7 +1101,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.5,
+    "pct_doc_doutores": 77.3,
+    "pct_doc_regime": 90.9
   },
   "BANANAL": {
     "nome_original": "Bananal",
@@ -1278,7 +1296,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 57.1,
+    "pct_doc_regime": 92.9
   },
   "BARUERI": {
     "nome_original": "Barueri",
@@ -1613,7 +1634,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.5,
+    "pct_doc_doutores": 69.3,
+    "pct_doc_regime": 90.7
   },
   "BEBEDOURO": {
     "nome_original": "Bebedouro",
@@ -2108,7 +2132,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 91.9,
+    "pct_doc_doutores": 54.1,
+    "pct_doc_regime": 97.3
   },
   "BRODOWSKI": {
     "nome_original": "Brodowski",
@@ -2698,7 +2725,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.8,
+    "pct_doc_doutores": 75.2,
+    "pct_doc_regime": 88.4
   },
   "CAMPO LIMPO PAULISTA": {
     "nome_original": "Campo Limpo Paulista",
@@ -2748,7 +2778,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 53.3,
+    "pct_doc_doutores": 40.0,
+    "pct_doc_regime": 53.3
   },
   "CAMPOS DO JORDAO": {
     "nome_original": "Campos do Jordão",
@@ -3129,7 +3162,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 75.0,
+    "pct_doc_doutores": 31.2,
+    "pct_doc_regime": 37.5
   },
   "CASA BRANCA": {
     "nome_original": "Casa Branca",
@@ -3238,7 +3274,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.9,
+    "pct_doc_doutores": 71.4,
+    "pct_doc_regime": 100.0
   },
   "CATIGUA": {
     "nome_original": "Catiguá",
@@ -3338,7 +3377,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 71.4,
+    "pct_doc_regime": 0.0
   },
   "CERQUEIRA CESAR": {
     "nome_original": "Cerqueira César",
@@ -3912,7 +3954,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 100.0
   },
   "DRACENA": {
     "nome_original": "Dracena",
@@ -4185,7 +4230,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 53.8,
+    "pct_doc_regime": 69.2
   },
   "ESPIRITO SANTO DO PINHAL": {
     "nome_original": "Espírito Santo do Pinhal",
@@ -4217,7 +4265,10 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.9,
+    "pct_doc_doutores": 42.9,
+    "pct_doc_regime": 35.7
   },
   "EUCLIDES DA CUNHA PAULISTA": {
     "nome_original": "Euclides da Cunha Paulista",
@@ -4331,7 +4382,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 87.8,
+    "pct_doc_doutores": 44.2,
+    "pct_doc_regime": 79.9
   },
   "FERRAZ DE VASCONCELOS": {
     "nome_original": "Ferraz de Vasconcelos",
@@ -4521,7 +4575,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 68.8,
+    "pct_doc_regime": 80.5
   },
   "FRANCISCO MORATO": {
     "nome_original": "Francisco Morato",
@@ -5201,7 +5258,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 86.7,
+    "pct_doc_doutores": 45.3,
+    "pct_doc_regime": 89.3
   },
   "GUARA": {
     "nome_original": "Guará",
@@ -5657,7 +5717,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.0,
+    "pct_doc_doutores": 45.0,
+    "pct_doc_regime": 55.0
   },
   "IPERO": {
     "nome_original": "Iperó",
@@ -5925,7 +5988,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.9,
+    "pct_doc_doutores": 28.6,
+    "pct_doc_regime": 100.0
   },
   "ITAPEVA": {
     "nome_original": "Itapeva",
@@ -5984,7 +6050,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.3,
+    "pct_doc_doutores": 38.5,
+    "pct_doc_regime": 100.0
   },
   "ITAPEVI": {
     "nome_original": "Itapevi",
@@ -6129,7 +6198,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 69.2,
+    "pct_doc_doutores": 30.8,
+    "pct_doc_regime": 100.0
   },
   "ITAPIRAPUA PAULISTA": {
     "nome_original": "Itapirapuã Paulista",
@@ -6488,7 +6560,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 64.3,
+    "pct_doc_regime": 57.1
   },
   "ITUPEVA": {
     "nome_original": "Itupeva",
@@ -6815,7 +6890,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 89.5,
+    "pct_doc_doutores": 57.9,
+    "pct_doc_regime": 57.9
   },
   "JALES": {
     "nome_original": "Jales",
@@ -7051,7 +7129,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 73.3,
+    "pct_doc_regime": 46.7
   },
   "JOSE BONIFACIO": {
     "nome_original": "José Bonifácio",
@@ -7268,7 +7349,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.9,
+    "pct_doc_doutores": 68.7,
+    "pct_doc_regime": 67.4
   },
   "JUNQUEIROPOLIS": {
     "nome_original": "Junqueirópolis",
@@ -7573,7 +7657,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 66.7,
+    "pct_doc_regime": 66.7
   },
   "LINS": {
     "nome_original": "Lins",
@@ -7641,7 +7728,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 83.3,
+    "pct_doc_doutores": 58.3,
+    "pct_doc_regime": 83.3
   },
   "LORENA": {
     "nome_original": "Lorena",
@@ -7718,7 +7808,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 50.0,
+    "pct_doc_regime": 40.0
   },
   "LOUVEIRA": {
     "nome_original": "Louveira",
@@ -7945,7 +8038,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 53.6,
+    "pct_doc_regime": 100.0
   },
   "MATAO": {
     "nome_original": "Matão",
@@ -8345,7 +8441,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 56.2,
+    "pct_doc_regime": 100.0
   },
   "MOGI MIRIM": {
     "nome_original": "Mogi Mirim",
@@ -8535,7 +8634,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.7,
+    "pct_doc_doutores": 52.2,
+    "pct_doc_regime": 79.1
   },
   "MONGAGUA": {
     "nome_original": "Mongaguá",
@@ -9071,7 +9173,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 82.6,
+    "pct_doc_doutores": 57.5,
+    "pct_doc_regime": 85.9
   },
   "OSVALDO CRUZ": {
     "nome_original": "Osvaldo Cruz",
@@ -9216,7 +9321,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 60.0,
+    "pct_doc_regime": 95.0
   },
   "PALMITAL": {
     "nome_original": "Palmital",
@@ -9449,7 +9557,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 81.8,
+    "pct_doc_doutores": 54.5,
+    "pct_doc_regime": 45.5
   },
   "PEDERNEIRAS": {
     "nome_original": "Pederneiras",
@@ -9795,7 +9906,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.0,
+    "pct_doc_doutores": 55.0,
+    "pct_doc_regime": 95.0
   },
   "PIRACICABA": {
     "nome_original": "Piracicaba",
@@ -10540,7 +10654,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 72.5,
+    "pct_doc_regime": 100.0
   },
   "PRESIDENTE VENCESLAU": {
     "nome_original": "Presidente Venceslau",
@@ -10795,7 +10912,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 77.8,
+    "pct_doc_doutores": 33.3,
+    "pct_doc_regime": 44.4
   },
   "RIBEIRAO PIRES": {
     "nome_original": "Ribeirão Pires",
@@ -11048,7 +11168,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.4,
+    "pct_doc_doutores": 74.9,
+    "pct_doc_regime": 83.0
   },
   "RIO CLARO": {
     "nome_original": "Rio Claro",
@@ -11143,7 +11266,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 71.4,
+    "pct_doc_regime": 57.1
   },
   "RIO GRANDE DA SERRA": {
     "nome_original": "Rio Grande da Serra",
@@ -11744,7 +11870,10 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 50.0,
+    "pct_doc_regime": 92.9
   },
   "SANTO ANASTACIO": {
     "nome_original": "Santo Anastácio",
@@ -11943,7 +12072,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.4,
+    "pct_doc_doutores": 66.2,
+    "pct_doc_regime": 96.9
   },
   "SANTOS": {
     "nome_original": "Santos",
@@ -12110,7 +12242,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 96.1,
+    "pct_doc_doutores": 66.9,
+    "pct_doc_regime": 90.6
   },
   "SERRA NEGRA": {
     "nome_original": "Serra Negra",
@@ -12468,7 +12603,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.6,
+    "pct_doc_doutores": 52.5,
+    "pct_doc_regime": 73.4
   },
   "SUMARE": {
     "nome_original": "Sumaré",
@@ -12933,7 +13071,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.7,
+    "pct_doc_doutores": 65.2,
+    "pct_doc_regime": 95.7
   },
   "SAO CAETANO DO SUL": {
     "nome_original": "São Caetano do Sul",
@@ -13037,7 +13178,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 65.8,
+    "pct_doc_regime": 55.3
   },
   "SAO CARLOS": {
     "nome_original": "São Carlos",
@@ -13141,7 +13285,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 85.0,
+    "pct_doc_regime": 90.0
   },
   "SAO JOAQUIM DA BARRA": {
     "nome_original": "São Joaquim da Barra",
@@ -13259,7 +13406,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 30.0,
+    "pct_doc_regime": 80.0
   },
   "SAO JOSE DO RIO PRETO": {
     "nome_original": "São José do Rio Preto",
@@ -13444,7 +13594,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.9,
+    "pct_doc_doutores": 46.2,
+    "pct_doc_regime": 77.5
   },
   "SAO JOSE DOS CAMPOS": {
     "nome_original": "São José dos Campos",
@@ -13665,7 +13818,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.9,
+    "pct_doc_doutores": 52.2,
+    "pct_doc_regime": 83.1
   },
   "SAO JOAO DA BOA VISTA": {
     "nome_original": "São João da Boa Vista",
@@ -13742,7 +13898,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 60.1,
+    "pct_doc_regime": 100.0
   },
   "SAO MANUEL": {
     "nome_original": "São Manuel",
@@ -13783,7 +13942,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 85.7,
+    "pct_doc_regime": 85.7
   },
   "SAO MIGUEL ARCANJO": {
     "nome_original": "São Miguel Arcanjo",
@@ -14486,7 +14648,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.2,
+    "pct_doc_doutores": 69.6,
+    "pct_doc_regime": 80.8
   },
   "SAO ROQUE": {
     "nome_original": "São Roque",
@@ -14880,7 +15045,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 90.9,
+    "pct_doc_regime": 100.0
   },
   "TAQUARITINGA": {
     "nome_original": "Taquaritinga",
@@ -15139,7 +15307,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 87.9,
+    "pct_doc_doutores": 43.2,
+    "pct_doc_regime": 54.2
   },
   "TEODORO SAMPAIO": {
     "nome_original": "Teodoro Sampaio",
@@ -15666,7 +15837,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 47.6,
+    "pct_doc_regime": 85.7
   },
   "VARZEA PAULISTA": {
     "nome_original": "Várzea Paulista",

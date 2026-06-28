@@ -254,6 +254,9 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
                     "concluintes": dm.get("concluintes", 0),
                     "n_cursos": dm.get("n_cursos", 0),
                     "n_ies": dm.get("n_ies", 0),
+                    "pct_doc_doutores": dm.get("pct_doc_doutores"),
+                    "pct_doc_mestres": dm.get("pct_doc_mestres"),
+                    "pct_doc_regime": dm.get("pct_doc_regime"),
                     "oferta": tem_oferta,
                 }
 

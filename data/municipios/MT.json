@@ -270,7 +270,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 76.9,
+    "pct_doc_doutores": 30.8,
+    "pct_doc_regime": 92.3
   },
   "BOM JESUS DO ARAGUAIA": {
     "nome_original": "Bom Jesus do Araguaia",
@@ -631,7 +634,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 75.0,
+    "pct_doc_doutores": 0.0,
+    "pct_doc_regime": 50.0
   },
   "COMODORO": {
     "nome_original": "Comodoro",
@@ -871,7 +877,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.5,
+    "pct_doc_doutores": 65.1,
+    "pct_doc_regime": 97.3
   },
   "CACERES": {
     "nome_original": "Cáceres",
@@ -912,7 +921,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 66.7,
+    "pct_doc_regime": 66.7
   },
   "DIAMANTINO": {
     "nome_original": "Diamantino",
@@ -967,7 +979,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 88.2,
+    "pct_doc_doutores": 35.3,
+    "pct_doc_regime": 94.1
   },
   "JACIARA": {
     "nome_original": "Jaciara",
@@ -1122,7 +1137,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 83.3,
+    "pct_doc_doutores": 41.7,
+    "pct_doc_regime": 75.0
   },
   "LUCAS DO RIO VERDE": {
     "nome_original": "Lucas do Rio Verde",
@@ -1583,7 +1601,10 @@
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.0,
+    "pct_doc_doutores": 90.0,
+    "pct_doc_regime": 100.0
   },
   "PONTES E LACERDA": {
     "nome_original": "Pontes e Lacerda",
@@ -1724,7 +1745,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 86.1,
+    "pct_doc_doutores": 72.2,
+    "pct_doc_regime": 94.4
   },
   "QUERENCIA": {
     "nome_original": "Querência",
@@ -1874,7 +1898,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 80.5,
+    "pct_doc_doutores": 68.3,
+    "pct_doc_regime": 95.1
   },
   "SAPEZAL": {
     "nome_original": "Sapezal",
@@ -2046,7 +2073,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.1,
+    "pct_doc_doutores": 66.3,
+    "pct_doc_regime": 98.6
   },
   "SORRISO": {
     "nome_original": "Sorriso",
@@ -2160,7 +2190,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 80.0,
+    "pct_doc_regime": 100.0
   },
   "TANGARA DA SERRA": {
     "nome_original": "Tangará da Serra",
@@ -2237,7 +2270,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.3,
+    "pct_doc_doutores": 79.4,
+    "pct_doc_regime": 94.1
   },
   "TERRA NOVA DO NORTE": {
     "nome_original": "Terra Nova do Norte",
@@ -2346,7 +2382,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 93.3,
+    "pct_doc_regime": 93.3
   },
   "AGUA BOA": {
     "nome_original": "Água Boa",

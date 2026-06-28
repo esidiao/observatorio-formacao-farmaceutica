@@ -106,7 +106,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 86.0,
+    "pct_doc_doutores": 57.8,
+    "pct_doc_regime": 79.0
   },
   "AMARGOSA": {
     "nome_original": "Amargosa",
@@ -493,7 +496,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.8,
+    "pct_doc_doutores": 64.2,
+    "pct_doc_regime": 100.0
   },
   "BELO CAMPO": {
     "nome_original": "Belo Campo",
@@ -1072,7 +1078,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 81.8,
+    "pct_doc_doutores": 27.3,
+    "pct_doc_regime": 100.0
   },
   "CASA NOVA": {
     "nome_original": "Casa Nova",
@@ -1396,7 +1405,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 53.7,
+    "pct_doc_regime": 100.0
   },
   "CICERO DANTAS": {
     "nome_original": "Cícero Dantas",
@@ -1881,7 +1893,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 99.4,
+    "pct_doc_doutores": 74.6,
+    "pct_doc_regime": 91.5
   },
   "FATIMA": {
     "nome_original": "Fátima",
@@ -2027,7 +2042,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 53.8,
+    "pct_doc_regime": 100.0
   },
   "GUARATINGA": {
     "nome_original": "Guaratinga",
@@ -2251,7 +2269,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 69.0,
+    "pct_doc_doutores": 27.6,
+    "pct_doc_regime": 93.1
   },
   "IPIAU": {
     "nome_original": "Ipiaú",
@@ -2451,7 +2472,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 59.1,
+    "pct_doc_doutores": 22.7,
+    "pct_doc_regime": 54.5
   },
   "ITABERABA": {
     "nome_original": "Itaberaba",
@@ -2587,7 +2611,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.7,
+    "pct_doc_doutores": 77.8,
+    "pct_doc_regime": 99.4
   },
   "ITAMARAJU": {
     "nome_original": "Itamaraju",
@@ -2628,7 +2655,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 42.1,
+    "pct_doc_regime": 100.0
   },
   "ITAMBE": {
     "nome_original": "Itambé",
@@ -2857,7 +2887,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 80.0,
+    "pct_doc_regime": 100.0
   },
   "JAGUAQUARA": {
     "nome_original": "Jaguaquara",
@@ -2984,7 +3017,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.1,
+    "pct_doc_doutores": 77.4,
+    "pct_doc_regime": 100.0
   },
   "JEREMOABO": {
     "nome_original": "Jeremoabo",
@@ -3111,7 +3147,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 75.0,
+    "pct_doc_regime": 100.0
   },
   "LAURO DE FREITAS": {
     "nome_original": "Lauro de Freitas",
@@ -3233,7 +3272,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 89.1,
+    "pct_doc_doutores": 69.6,
+    "pct_doc_regime": 95.7
   },
   "LIVRAMENTO DE NOSSA SENHORA": {
     "nome_original": "Livramento de Nossa Senhora",
@@ -3916,7 +3958,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 81.8,
+    "pct_doc_regime": 90.9
   },
   "PAULO AFONSO": {
     "nome_original": "Paulo Afonso",
@@ -4367,7 +4412,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 50.0,
+    "pct_doc_doutores": 10.0,
+    "pct_doc_regime": 100.0
   },
   "RIO REAL": {
     "nome_original": "Rio Real",
@@ -4819,7 +4867,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.5,
+    "pct_doc_doutores": 62.9,
+    "pct_doc_regime": 92.0
   },
   "SANTA BARBARA": {
     "nome_original": "Santa Bárbara",
@@ -5772,7 +5823,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 74.4,
+    "pct_doc_doutores": 69.2,
+    "pct_doc_regime": 97.4
   },
   "TERRA NOVA": {
     "nome_original": "Terra Nova",
@@ -5914,7 +5968,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.7,
+    "pct_doc_doutores": 42.9,
+    "pct_doc_regime": 100.0
   },
   "VERA CRUZ": {
     "nome_original": "Vera Cruz",
@@ -6077,7 +6134,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.5,
+    "pct_doc_doutores": 59.9,
+    "pct_doc_regime": 94.0
   },
   "VARZEA DA ROCA": {
     "nome_original": "Várzea da Roça",

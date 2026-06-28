@@ -302,7 +302,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.7,
+    "pct_doc_doutores": 55.3,
+    "pct_doc_regime": 74.8
   },
   "CAMPINA GRANDE": {
     "nome_original": "Campina Grande",
@@ -451,7 +454,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 88.8,
+    "pct_doc_doutores": 55.1,
+    "pct_doc_regime": 82.3
   },
   "CATOLE DO ROCHA": {
     "nome_original": "Catolé do Rocha",
@@ -538,7 +544,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.5,
+    "pct_doc_doutores": 90.9,
+    "pct_doc_regime": 100.0
   },
   "ESPERANCA": {
     "nome_original": "Esperança",
@@ -620,7 +629,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 86.7,
+    "pct_doc_doutores": 46.7,
+    "pct_doc_regime": 100.0
   },
   "ITABAIANA": {
     "nome_original": "Itabaiana",
@@ -896,7 +908,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.6,
+    "pct_doc_doutores": 76.4,
+    "pct_doc_regime": 81.9
   },
   "JURU": {
     "nome_original": "Juru",
@@ -1132,7 +1147,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 52.9,
+    "pct_doc_regime": 58.8
   },
   "PICUI": {
     "nome_original": "Picuí",

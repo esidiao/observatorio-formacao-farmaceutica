@@ -312,7 +312,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 50.0,
+    "pct_doc_regime": 70.0
   },
   "BARRA DO RIBEIRO": {
     "nome_original": "Barra do Ribeiro",
@@ -385,7 +388,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 68.9,
+    "pct_doc_regime": 80.0
   },
   "BOA VISTA DO BURICA": {
     "nome_original": "Boa Vista do Buricá",
@@ -921,7 +927,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 55.1,
+    "pct_doc_regime": 100.0
   },
   "CAPAO DA CANOA": {
     "nome_original": "Capão da Canoa",
@@ -1003,7 +1012,10 @@
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 98.1,
+    "pct_doc_regime": 100.0
   },
   "CARAZINHO": {
     "nome_original": "Carazinho",
@@ -1198,7 +1210,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 99.4,
+    "pct_doc_doutores": 64.5,
+    "pct_doc_regime": 82.3
   },
   "CACAPAVA DO SUL": {
     "nome_original": "Caçapava do Sul",
@@ -1468,7 +1483,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 63.6,
+    "pct_doc_regime": 72.7
   },
   "DOIS IRMAOS": {
     "nome_original": "Dois Irmãos",
@@ -1696,7 +1714,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 80.0,
+    "pct_doc_regime": 60.0
   },
   "ERVAL SECO": {
     "nome_original": "Erval Seco",
@@ -2024,7 +2045,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 55.6,
+    "pct_doc_regime": 50.0
   },
   "GARIBALDI": {
     "nome_original": "Garibaldi",
@@ -2070,7 +2094,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 75.0,
+    "pct_doc_regime": 100.0
   },
   "GRAMADO": {
     "nome_original": "Gramado",
@@ -2448,7 +2475,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.4,
+    "pct_doc_doutores": 49.2,
+    "pct_doc_regime": 81.0
   },
   "ITAQUI": {
     "nome_original": "Itaqui",
@@ -2594,7 +2624,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 78.8,
+    "pct_doc_regime": 100.0
   },
   "LAVRAS DO SUL": {
     "nome_original": "Lavras do Sul",
@@ -2977,7 +3010,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 67.7,
+    "pct_doc_regime": 96.8
   },
   "NAO-ME-TOQUE": {
     "nome_original": "Não-Me-Toque",
@@ -3059,7 +3095,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 85.7
   },
   "PALMARES DO SUL": {
     "nome_original": "Palmares do Sul",
@@ -3323,7 +3362,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 64.4,
+    "pct_doc_regime": 97.9
   },
   "PEDRO OSORIO": {
     "nome_original": "Pedro Osório",
@@ -3459,7 +3501,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.2,
+    "pct_doc_doutores": 73.5,
+    "pct_doc_regime": 98.9
   },
   "PINHEIRO MACHADO": {
     "nome_original": "Pinheiro Machado",
@@ -3798,7 +3843,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 88.0,
+    "pct_doc_regime": 93.2
   },
   "PORTO XAVIER": {
     "nome_original": "Porto Xavier",
@@ -4034,7 +4082,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.0,
+    "pct_doc_doutores": 90.9,
+    "pct_doc_regime": 97.0
   },
   "RIO PARDO": {
     "nome_original": "Rio Pardo",
@@ -4299,7 +4350,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 76.1,
+    "pct_doc_regime": 73.9
   },
   "SANTA MARIA": {
     "nome_original": "Santa Maria",
@@ -4412,7 +4466,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 95.2,
+    "pct_doc_regime": 99.6
   },
   "SANTA ROSA": {
     "nome_original": "Santa Rosa",
@@ -4557,7 +4614,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.9,
+    "pct_doc_doutores": 35.7,
+    "pct_doc_regime": 42.9
   },
   "SANTO ANTONIO DA PATRULHA": {
     "nome_original": "Santo Antônio da Patrulha",
@@ -4693,7 +4753,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 45.8,
+    "pct_doc_regime": 33.3
   },
   "SAPIRANGA": {
     "nome_original": "Sapiranga",
@@ -5249,7 +5312,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 87.0,
+    "pct_doc_regime": 94.6
   },
   "SAO LOURENCO DO SUL": {
     "nome_original": "São Lourenço do Sul",
@@ -5948,7 +6014,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 88.2,
+    "pct_doc_regime": 100.0
   },
   "VACARIA": {
     "nome_original": "Vacaria",

@@ -248,7 +248,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 62.5,
+    "pct_doc_doutores": 37.5,
+    "pct_doc_regime": 100.0
   },
   "ARACOIABA": {
     "nome_original": "Aracoiaba",
@@ -1558,7 +1561,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.5,
+    "pct_doc_doutores": 66.2,
+    "pct_doc_regime": 88.6
   },
   "GRANJA": {
     "nome_original": "Granja",
@@ -1859,7 +1865,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 82.0,
+    "pct_doc_doutores": 11.3,
+    "pct_doc_regime": 48.6
   },
   "INDEPENDENCIA": {
     "nome_original": "Independência",
@@ -2360,7 +2369,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 77.9,
+    "pct_doc_doutores": 38.0,
+    "pct_doc_regime": 83.2
   },
   "JUCAS": {
     "nome_original": "Jucás",
@@ -2560,7 +2572,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 45.0,
+    "pct_doc_regime": 80.0
   },
   "MARANGUAPE": {
     "nome_original": "Maranguape",
@@ -3250,7 +3265,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.7,
+    "pct_doc_doutores": 69.6,
+    "pct_doc_regime": 100.0
   },
   "QUIXERAMOBIM": {
     "nome_original": "Quixeramobim",
@@ -3309,7 +3327,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 77.8,
+    "pct_doc_doutores": 22.2,
+    "pct_doc_regime": 100.0
   },
   "REDENCAO": {
     "nome_original": "Redenção",
@@ -3591,7 +3612,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 53.6,
+    "pct_doc_regime": 100.0
   },
   "SOLONOPOLE": {
     "nome_original": "Solonópole",

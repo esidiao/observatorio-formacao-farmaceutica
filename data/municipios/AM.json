@@ -633,7 +633,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 77.1,
+    "pct_doc_doutores": 68.6,
+    "pct_doc_regime": 100.0
   },
   "JURUA": {
     "nome_original": "Juruá",
@@ -1108,7 +1111,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.3,
+    "pct_doc_doutores": 63.2,
+    "pct_doc_regime": 87.8
   },
   "MANICORE": {
     "nome_original": "Manicoré",

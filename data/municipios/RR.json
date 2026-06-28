@@ -196,7 +196,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 88.2,
+    "pct_doc_doutores": 29.4,
+    "pct_doc_regime": 100.0
   },
   "CARACARAI": {
     "nome_original": "Caracaraí",

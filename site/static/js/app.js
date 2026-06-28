@@ -49,6 +49,9 @@ const INDICADOR_META = {
   taxa_retencao:        { label: 'Conclusão %',        dec: 1, min: 0,   max: 20,  maiorMelhor: true  },
   IDD:                  { label: 'IDD',                dec: 2, min: 0,   max: 5,   maiorMelhor: true  },
   CPC_cont:             { label: 'CPC',                dec: 2, min: 0,   max: 5,   maiorMelhor: true  },
+  pct_doc_doutores:     { label: '% Doutores',         dec: 1, min: 0,   max: 100, maiorMelhor: true  },
+  pct_doc_mestres:      { label: '% Mestres+',         dec: 1, min: 0,   max: 100, maiorMelhor: true  },
+  pct_doc_regime:       { label: '% Regime int./parc.',dec: 1, min: 0,   max: 100, maiorMelhor: true  },
   ead_polos_municipios: { label: 'Municípios c/ polo', dec: 0, min: null, max: null, maiorMelhor: null },
 };
 
@@ -343,6 +346,8 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCo
         if (info.matriculas)  linhas.push(`Matrículas: <b>${nf(info.matriculas)}</b>`);
         if (info.ingressos)   linhas.push(`Ingressantes: <b>${nf(info.ingressos)}</b>`);
         if (info.concluintes) linhas.push(`Concluintes: <b>${nf(info.concluintes)}</b>`);
+        if (info.pct_doc_doutores != null)
+          linhas.push(`Docentes: <b>${info.pct_doc_doutores}%</b> doutores · <b>${info.pct_doc_mestres}%</b> mestres+`);
         html += `<br><span style="font-size:0.85em;line-height:1.55">${linhas.join('<br>')}</span>`;
         html += `<br><span style="font-size:0.8em;color:#cdd8ea">clique para ver cursos e IES ↗</span>`;
       } else {

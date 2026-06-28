@@ -339,7 +339,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 75.7,
+    "pct_doc_doutores": 70.3,
+    "pct_doc_regime": 100.0
   },
   "BACABEIRA": {
     "nome_original": "Bacabeira",
@@ -881,7 +884,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 82.4,
+    "pct_doc_doutores": 47.1,
+    "pct_doc_regime": 94.1
   },
   "CHAPADINHA": {
     "nome_original": "Chapadinha",
@@ -1495,7 +1501,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 76.8,
+    "pct_doc_doutores": 51.5,
+    "pct_doc_regime": 90.1
   },
   "ITAIPAVA DO GRAJAU": {
     "nome_original": "Itaipava do Grajaú",
@@ -2872,7 +2881,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.6,
+    "pct_doc_doutores": 62.9,
+    "pct_doc_regime": 90.9
   },
   "SAO MATEUS DO MARANHAO": {
     "nome_original": "São Mateus do Maranhão",

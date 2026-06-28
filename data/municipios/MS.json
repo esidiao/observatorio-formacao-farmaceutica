@@ -497,7 +497,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.1,
+    "pct_doc_doutores": 82.3,
+    "pct_doc_regime": 93.1
   },
   "CASSILANDIA": {
     "nome_original": "Cassilândia",
@@ -815,7 +818,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 86.2,
+    "pct_doc_regime": 86.2
   },
   "ELDORADO": {
     "nome_original": "Eldorado",
@@ -1581,7 +1587,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 75.0,
+    "pct_doc_regime": 100.0
   },
   "AGUA CLARA": {
     "nome_original": "Água Clara",

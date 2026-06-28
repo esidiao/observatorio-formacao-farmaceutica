@@ -621,7 +621,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.5,
+    "pct_doc_doutores": 57.0,
+    "pct_doc_regime": 93.9
   },
   "NATAL": {
     "nome_original": "Natal",
@@ -860,7 +863,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.7,
+    "pct_doc_doutores": 71.2,
+    "pct_doc_regime": 96.6
   },
   "NOVA CRUZ": {
     "nome_original": "Nova Cruz",

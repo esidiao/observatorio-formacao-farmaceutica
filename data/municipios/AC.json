@@ -556,7 +556,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 80.8,
+    "pct_doc_doutores": 15.9,
+    "pct_doc_regime": 92.4
   },
   "RODRIGUES ALVES": {
     "nome_original": "Rodrigues Alves",

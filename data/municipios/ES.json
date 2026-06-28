@@ -43,7 +43,10 @@
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 96.3,
+    "pct_doc_regime": 100.0
   },
   "ANCHIETA": {
     "nome_original": "Anchieta",
@@ -316,7 +319,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 91.5,
+    "pct_doc_doutores": 59.9,
+    "pct_doc_regime": 92.3
   },
   "CARIACICA": {
     "nome_original": "Cariacica",
@@ -393,7 +399,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.1,
+    "pct_doc_doutores": 82.4,
+    "pct_doc_regime": 100.0
   },
   "CASTELO": {
     "nome_original": "Castelo",
@@ -475,7 +484,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.9,
+    "pct_doc_doutores": 45.5,
+    "pct_doc_regime": 81.8
   },
   "CONCEICAO DA BARRA": {
     "nome_original": "Conceição da Barra",
@@ -571,7 +583,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 91.9,
+    "pct_doc_doutores": 78.4,
+    "pct_doc_regime": 91.9
   },
   "GUACUI": {
     "nome_original": "Guaçuí",
@@ -731,7 +746,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 82.9,
+    "pct_doc_doutores": 65.9,
+    "pct_doc_regime": 90.2
   },
   "MARATAIZES": {
     "nome_original": "Marataízes",
@@ -1114,7 +1132,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.7,
+    "pct_doc_doutores": 89.5,
+    "pct_doc_regime": 100.0
   },
   "SAO GABRIEL DA PALHA": {
     "nome_original": "São Gabriel da Palha",
@@ -1205,7 +1226,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 96.0,
+    "pct_doc_regime": 100.0
   },
   "VENDA NOVA DO IMIGRANTE": {
     "nome_original": "Venda Nova do Imigrante",
@@ -1427,7 +1451,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.9,
+    "pct_doc_doutores": 90.0,
+    "pct_doc_regime": 100.0
   },
   "VITORIA": {
     "nome_original": "Vitória",
@@ -1621,6 +1648,9 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 88.3,
+    "pct_doc_doutores": 64.2,
+    "pct_doc_regime": 94.6
   }
 }

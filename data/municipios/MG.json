@@ -61,7 +61,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 100.0
   },
   "ALFENAS": {
     "nome_original": "Alfenas",
@@ -156,7 +159,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 98.9,
+    "pct_doc_regime": 100.0
   },
   "ALMENARA": {
     "nome_original": "Almenara",
@@ -206,7 +212,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 85.7,
+    "pct_doc_regime": 100.0
   },
   "ALPINOPOLIS": {
     "nome_original": "Alpinópolis",
@@ -740,7 +749,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 88.2,
+    "pct_doc_doutores": 47.1,
+    "pct_doc_regime": 100.0
   },
   "BARAO DE COCAIS": {
     "nome_original": "Barão de Cocais",
@@ -1092,7 +1104,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.4,
+    "pct_doc_doutores": 84.8,
+    "pct_doc_regime": 95.0
   },
   "BELO ORIENTE": {
     "nome_original": "Belo Oriente",
@@ -1210,7 +1225,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.2,
+    "pct_doc_doutores": 69.2,
+    "pct_doc_regime": 82.7
   },
   "BICAS": {
     "nome_original": "Bicas",
@@ -1356,7 +1374,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 85.7,
+    "pct_doc_regime": 85.7
   },
   "BOM SUCESSO": {
     "nome_original": "Bom Sucesso",
@@ -1832,7 +1853,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 60.0,
+    "pct_doc_regime": 90.0
   },
   "CAPELINHA": {
     "nome_original": "Capelinha",
@@ -2074,7 +2098,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.8,
+    "pct_doc_doutores": 45.8,
+    "pct_doc_regime": 100.0
   },
   "CARBONITA": {
     "nome_original": "Carbonita",
@@ -2723,7 +2750,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 60.0,
+    "pct_doc_regime": 90.0
   },
   "CONSELHEIRO PENA": {
     "nome_original": "Conselheiro Pena",
@@ -2877,7 +2907,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 62.5,
+    "pct_doc_doutores": 37.5,
+    "pct_doc_regime": 100.0
   },
   "CORACAO DE JESUS": {
     "nome_original": "Coração de Jesus",
@@ -3165,7 +3198,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 100.0
   },
   "DIVINO": {
     "nome_original": "Divino",
@@ -3301,7 +3337,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 99.5,
+    "pct_doc_doutores": 94.9,
+    "pct_doc_regime": 99.5
   },
   "DORES DE CAMPOS": {
     "nome_original": "Dores de Campos",
@@ -3862,7 +3901,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 72.7,
+    "pct_doc_regime": 94.5
   },
   "GRAO MOGOL": {
     "nome_original": "Grão Mogol",
@@ -4363,7 +4405,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 72.3,
+    "pct_doc_doutores": 49.0,
+    "pct_doc_regime": 78.0
   },
   "ITABIRA": {
     "nome_original": "Itabira",
@@ -4586,7 +4631,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 78.6,
+    "pct_doc_regime": 100.0
   },
   "ITAMARANDIBA": {
     "nome_original": "Itamarandiba",
@@ -4851,7 +4899,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.3,
+    "pct_doc_doutores": 53.8,
+    "pct_doc_regime": 100.0
   },
   "ITURAMA": {
     "nome_original": "Iturama",
@@ -5401,7 +5452,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.1,
+    "pct_doc_doutores": 73.6,
+    "pct_doc_regime": 81.9
   },
   "LAGOA GRANDE": {
     "nome_original": "Lagoa Grande",
@@ -5656,7 +5710,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 47.6,
+    "pct_doc_regime": 76.2
   },
   "LEOPOLDINA": {
     "nome_original": "Leopoldina",
@@ -5752,7 +5809,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 60.0,
+    "pct_doc_regime": 100.0
   },
   "MACHADO": {
     "nome_original": "Machado",
@@ -5866,7 +5926,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 66.7,
+    "pct_doc_doutores": 40.0,
+    "pct_doc_regime": 0.0
   },
   "MANHUMIRIM": {
     "nome_original": "Manhumirim",
@@ -6072,7 +6135,10 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.8,
+    "pct_doc_doutores": 50.0,
+    "pct_doc_regime": 100.0
   },
   "MATO VERDE": {
     "nome_original": "Mato Verde",
@@ -6432,7 +6498,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.4,
+    "pct_doc_doutores": 49.7,
+    "pct_doc_regime": 100.0
   },
   "MONTEZUMA": {
     "nome_original": "Montezuma",
@@ -6505,7 +6574,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 96.0,
+    "pct_doc_doutores": 84.0,
+    "pct_doc_regime": 92.0
   },
   "MUTUM": {
     "nome_original": "Mutum",
@@ -6610,7 +6682,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.4,
+    "pct_doc_doutores": 46.3,
+    "pct_doc_regime": 92.7
   },
   "NAZARENO": {
     "nome_original": "Nazareno",
@@ -6947,7 +7022,10 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 98.4,
+    "pct_doc_regime": 100.0
   },
   "PADRE PARAISO": {
     "nome_original": "Padre Paraíso",
@@ -7011,7 +7089,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 91.7,
+    "pct_doc_doutores": 50.0,
+    "pct_doc_regime": 100.0
   },
   "PARAISOPOLIS": {
     "nome_original": "Paraisópolis",
@@ -7257,7 +7338,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 84.2,
+    "pct_doc_regime": 100.0
   },
   "PATROCINIO": {
     "nome_original": "Patrocínio",
@@ -7749,7 +7833,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 40.0,
+    "pct_doc_regime": 85.0
   },
   "PORTEIRINHA": {
     "nome_original": "Porteirinha",
@@ -7926,7 +8013,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 60.0,
+    "pct_doc_regime": 83.3
   },
   "POCOS DE CALDAS": {
     "nome_original": "Poços de Caldas",
@@ -8030,7 +8120,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 91.7,
+    "pct_doc_doutores": 77.8,
+    "pct_doc_regime": 94.4
   },
   "PRATA": {
     "nome_original": "Prata",
@@ -8911,7 +9004,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 60.0,
+    "pct_doc_regime": 20.0
   },
   "SAO FRANCISCO": {
     "nome_original": "São Francisco",
@@ -9595,7 +9691,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.5,
+    "pct_doc_doutores": 62.9,
+    "pct_doc_regime": 100.0
   },
   "TIMOTEO": {
     "nome_original": "Timóteo",
@@ -9686,7 +9785,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.5,
+    "pct_doc_doutores": 42.9,
+    "pct_doc_regime": 76.2
   },
   "TRES MARIAS": {
     "nome_original": "Três Marias",
@@ -9900,7 +10002,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 84.4,
+    "pct_doc_doutores": 37.5,
+    "pct_doc_regime": 81.2
   },
   "UBERLANDIA": {
     "nome_original": "Uberlândia",
@@ -10094,7 +10199,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.3,
+    "pct_doc_doutores": 52.9,
+    "pct_doc_regime": 85.5
   },
   "UBA": {
     "nome_original": "Ubá",
@@ -10180,7 +10288,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 83.3,
+    "pct_doc_doutores": 50.0,
+    "pct_doc_regime": 83.3
   },
   "UNAI": {
     "nome_original": "Unaí",
@@ -10248,7 +10359,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 77.8,
+    "pct_doc_doutores": 11.1,
+    "pct_doc_regime": 100.0
   },
   "VARGINHA": {
     "nome_original": "Varginha",
@@ -10580,7 +10694,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 85.7,
+    "pct_doc_regime": 100.0
   },
   "VARZEA DA PALMA": {
     "nome_original": "Várzea da Palma",

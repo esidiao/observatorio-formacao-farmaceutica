@@ -271,6 +271,32 @@
 </div>
 {% endif %}
 
+<!-- Corpo docente (CPC 2023) -->
+{% if d.pct_doc_doutores is not none or d.pct_doc_mestres is not none %}
+<h2 class="section-title">Qualificação do corpo docente (CPC 2023)</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
+  Proporções reais extraídas da Planilha de Divulgação do CPC do INEP, ponderadas
+  por concluintes participantes nos {{ d.n_cursos_docente or 0 }} cursos avaliados em {{ nome_uf }}.
+</p>
+<div class="kpi-grid">
+  <div class="kpi-card {% if d.pct_doc_doutores is not none %}{% if d.pct_doc_doutores >= 60 %}bom{% elif d.pct_doc_doutores < 40 %}critico{% endif %}{% endif %}">
+    <div class="kpi-valor">{% if d.pct_doc_doutores is not none %}{{ "%.1f"|format(d.pct_doc_doutores) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Doutores</div>
+    <div class="kpi-fonte" title="% de docentes com doutorado. Fonte: INEP, CPC 2023 (Nota Bruta - Doutores).">CPC INEP 2023</div>
+  </div>
+  <div class="kpi-card {% if d.pct_doc_mestres is not none and d.pct_doc_mestres >= 90 %}bom{% endif %}">
+    <div class="kpi-valor">{% if d.pct_doc_mestres is not none %}{{ "%.1f"|format(d.pct_doc_mestres) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Mestres ou mais</div>
+    <div class="kpi-fonte" title="% de docentes com titulação mínima de mestre (inclui doutores). Fonte: INEP, CPC 2023.">CPC INEP 2023</div>
+  </div>
+  <div class="kpi-card {% if d.pct_doc_regime is not none and d.pct_doc_regime >= 90 %}bom{% endif %}">
+    <div class="kpi-valor">{% if d.pct_doc_regime is not none %}{{ "%.1f"|format(d.pct_doc_regime) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Regime integral/parcial</div>
+    <div class="kpi-fonte" title="% de docentes em regime de trabalho integral ou parcial (não horista). Fonte: INEP, CPC 2023 (Nota Bruta - Regime de Trabalho).">CPC INEP 2023</div>
+  </div>
+</div>
+{% endif %}
+
 <!-- Mapa municipal -->
 <h2 class="section-title">Mapa Municipal — {{ sigla }}</h2>
 <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">

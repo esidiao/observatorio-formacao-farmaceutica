@@ -214,7 +214,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.8,
+    "pct_doc_doutores": 64.6,
+    "pct_doc_regime": 73.9
   },
   "BARRA DOS COQUEIROS": {
     "nome_original": "Barra dos Coqueiros",
@@ -524,7 +527,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 96.7,
+    "pct_doc_doutores": 85.2,
+    "pct_doc_regime": 100.0
   },
   "NEOPOLIS": {
     "nome_original": "Neópolis",
@@ -831,7 +837,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.2,
+    "pct_doc_doutores": 92.2,
+    "pct_doc_regime": 100.0
   },
   "TOBIAS BARRETO": {
     "nome_original": "Tobias Barreto",

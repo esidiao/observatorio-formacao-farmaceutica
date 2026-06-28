@@ -155,7 +155,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 71.4,
+    "pct_doc_doutores": 33.3,
+    "pct_doc_regime": 76.2
   },
   "BATALHA": {
     "nome_original": "Batalha",
@@ -573,7 +576,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 96.7,
+    "pct_doc_doutores": 65.8,
+    "pct_doc_regime": 78.8
   },
   "MARAGOGI": {
     "nome_original": "Maragogi",

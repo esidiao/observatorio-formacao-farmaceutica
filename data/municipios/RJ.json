@@ -293,7 +293,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.1,
+    "pct_doc_doutores": 35.3,
+    "pct_doc_regime": 100.0
   },
   "BARRA DO PIRAI": {
     "nome_original": "Barra do Piraí",
@@ -456,7 +459,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 62.5,
+    "pct_doc_regime": 87.5
   },
   "BOM JARDIM": {
     "nome_original": "Bom Jardim",
@@ -633,7 +639,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 82.1,
+    "pct_doc_regime": 82.2
   },
   "CACHOEIRAS DE MACACU": {
     "nome_original": "Cachoeiras de Macacu",
@@ -778,7 +787,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 75.0,
+    "pct_doc_doutores": 43.8,
+    "pct_doc_regime": 87.5
   },
   "CANTAGALO": {
     "nome_original": "Cantagalo",
@@ -1141,7 +1153,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.0,
+    "pct_doc_doutores": 55.0,
+    "pct_doc_regime": 100.0
   },
   "GUAPIMIRIM": {
     "nome_original": "Guapimirim",
@@ -1500,7 +1515,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.2,
+    "pct_doc_doutores": 47.3,
+    "pct_doc_regime": 90.8
   },
   "ITATIAIA": {
     "nome_original": "Itatiaia",
@@ -1668,7 +1686,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.2,
+    "pct_doc_doutores": 89.9,
+    "pct_doc_regime": 100.0
   },
   "MAGE": {
     "nome_original": "Magé",
@@ -2276,7 +2297,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.9,
+    "pct_doc_doutores": 92.1,
+    "pct_doc_regime": 92.9
   },
   "NOVA FRIBURGO": {
     "nome_original": "Nova Friburgo",
@@ -2353,7 +2377,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 64.7
   },
   "NOVA IGUACU": {
     "nome_original": "Nova Iguaçu",
@@ -2484,7 +2511,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.7,
+    "pct_doc_doutores": 51.8,
+    "pct_doc_regime": 96.1
   },
   "PARACAMBI": {
     "nome_original": "Paracambi",
@@ -2698,7 +2728,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 91.7,
+    "pct_doc_regime": 83.3
   },
   "PINHEIRAL": {
     "nome_original": "Pinheiral",
@@ -3523,7 +3556,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.3,
+    "pct_doc_doutores": 67.3,
+    "pct_doc_regime": 82.4
   },
   "SANTA MARIA MADALENA": {
     "nome_original": "Santa Maria Madalena",
@@ -3710,7 +3746,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 99.2,
+    "pct_doc_doutores": 90.1,
+    "pct_doc_regime": 100.0
   },
   "SILVA JARDIM": {
     "nome_original": "Silva Jardim",
@@ -3960,7 +3999,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.3,
+    "pct_doc_doutores": 57.7,
+    "pct_doc_regime": 76.9
   },
   "SAO JOSE DO VALE DO RIO PRETO": {
     "nome_original": "São José do Vale do Rio Preto",
@@ -4242,7 +4284,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 90.0,
+    "pct_doc_regime": 100.0
   },
   "TRES RIOS": {
     "nome_original": "Três Rios",
@@ -4301,7 +4346,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 73.3,
+    "pct_doc_doutores": 13.3,
+    "pct_doc_regime": 100.0
   },
   "VALENCA": {
     "nome_original": "Valença",
@@ -4451,6 +4499,9 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 73.7,
+    "pct_doc_regime": 94.7
   }
 }

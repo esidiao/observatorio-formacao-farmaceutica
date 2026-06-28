@@ -619,7 +619,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.4,
+    "pct_doc_doutores": 76.3,
+    "pct_doc_regime": 62.2
   },
   "BOMBINHAS": {
     "nome_original": "Bombinhas",
@@ -1137,7 +1140,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 69.2,
+    "pct_doc_regime": 100.0
   },
   "CONCORDIA": {
     "nome_original": "Concórdia",
@@ -1300,7 +1306,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 93.2,
+    "pct_doc_doutores": 47.7,
+    "pct_doc_regime": 81.8
   },
   "CURITIBANOS": {
     "nome_original": "Curitibanos",
@@ -1558,7 +1567,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 98.0,
+    "pct_doc_regime": 100.0
   },
   "FORQUILHINHA": {
     "nome_original": "Forquilhinha",
@@ -2023,7 +2035,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 96.7,
+    "pct_doc_doutores": 63.9,
+    "pct_doc_regime": 93.4
   },
   "ITAPEMA": {
     "nome_original": "Itapema",
@@ -2319,7 +2334,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 71.4,
+    "pct_doc_regime": 100.0
   },
   "JOACABA": {
     "nome_original": "Joaçaba",
@@ -2554,7 +2572,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.9,
+    "pct_doc_doutores": 79.9,
+    "pct_doc_regime": 94.6
   },
   "LAGES": {
     "nome_original": "Lages",
@@ -2613,7 +2634,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 98.3,
+    "pct_doc_regime": 100.0
   },
   "LAGUNA": {
     "nome_original": "Laguna",
@@ -2759,7 +2783,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 87.5,
+    "pct_doc_doutores": 12.5,
+    "pct_doc_regime": 87.5
   },
   "MARAVILHA": {
     "nome_original": "Maravilha",
@@ -2905,7 +2932,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 87.0,
+    "pct_doc_doutores": 39.1,
+    "pct_doc_regime": 30.4
   },
   "OTACILIO COSTA": {
     "nome_original": "Otacílio Costa",
@@ -3059,7 +3089,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 86.7,
+    "pct_doc_regime": 93.3
   },
   "PASSO DE TORRES": {
     "nome_original": "Passo de Torres",
@@ -3848,7 +3881,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 62.5,
+    "pct_doc_regime": 62.5
   },
   "SAO JOAO BATISTA": {
     "nome_original": "São João Batista",
@@ -3976,7 +4012,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 80.0,
+    "pct_doc_regime": 100.0
   },
   "TAIO": {
     "nome_original": "Taió",
@@ -4190,7 +4229,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 86.7,
+    "pct_doc_regime": 93.3
   },
   "URUSSANGA": {
     "nome_original": "Urussanga",
@@ -4286,7 +4328,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 68.8,
+    "pct_doc_regime": 93.8
   },
   "XANXERE": {
     "nome_original": "Xanxerê",
@@ -4336,7 +4381,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 45.8,
+    "pct_doc_regime": 91.7
   },
   "XAXIM": {
     "nome_original": "Xaxim",

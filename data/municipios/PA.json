@@ -83,7 +83,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 66.7,
+    "pct_doc_doutores": 4.8,
+    "pct_doc_regime": 76.2
   },
   "ACARA": {
     "nome_original": "Acará",
@@ -500,7 +503,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.8,
+    "pct_doc_doutores": 39.0,
+    "pct_doc_regime": 86.9
   },
   "ANAPU": {
     "nome_original": "Anapu",
@@ -1035,7 +1041,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 97.0,
+    "pct_doc_doutores": 57.6,
+    "pct_doc_regime": 92.3
   },
   "BENEVIDES": {
     "nome_original": "Benevides",
@@ -1724,7 +1733,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 82.8,
+    "pct_doc_doutores": 37.9,
+    "pct_doc_regime": 58.6
   },
   "COLARES": {
     "nome_original": "Colares",
@@ -2227,7 +2239,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 35.0,
+    "pct_doc_doutores": 5.0,
+    "pct_doc_regime": 85.0
   },
   "JACAREACANGA": {
     "nome_original": "Jacareacanga",
@@ -3432,7 +3447,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 94.1,
+    "pct_doc_doutores": 58.8,
+    "pct_doc_regime": 100.0
   },
   "RONDON DO PARA": {
     "nome_original": "Rondon do Pará",
@@ -3782,7 +3800,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 89.3,
+    "pct_doc_doutores": 48.0,
+    "pct_doc_regime": 69.7
   },
   "SANTO ANTONIO DO TAUA": {
     "nome_original": "Santo Antônio do Tauá",

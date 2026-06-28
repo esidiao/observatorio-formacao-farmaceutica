@@ -274,7 +274,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 89.9,
+    "pct_doc_doutores": 56.8,
+    "pct_doc_regime": 96.1
   },
   "APARECIDA DE GOIANIA": {
     "nome_original": "Aparecida de Goiânia",
@@ -387,7 +390,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 85.0,
+    "pct_doc_doutores": 35.0,
+    "pct_doc_regime": 100.0
   },
   "ARUANA": {
     "nome_original": "Aruanã",
@@ -761,7 +767,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 70.6,
+    "pct_doc_regime": 100.0
   },
   "CIDADE OCIDENTAL": {
     "nome_original": "Cidade Ocidental",
@@ -1573,7 +1582,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 98.4,
+    "pct_doc_doutores": 65.6,
+    "pct_doc_regime": 89.7
   },
   "GUAPO": {
     "nome_original": "Guapó",
@@ -1687,7 +1699,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 90.0,
+    "pct_doc_doutores": 20.0,
+    "pct_doc_regime": 100.0
   },
   "IPAMERI": {
     "nome_original": "Ipameri",
@@ -1742,7 +1757,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 71.4,
+    "pct_doc_doutores": 28.6,
+    "pct_doc_regime": 100.0
   },
   "ITABERAI": {
     "nome_original": "Itaberaí",
@@ -1915,7 +1933,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 83.3,
+    "pct_doc_doutores": 73.3,
+    "pct_doc_regime": 100.0
   },
   "JARAGUA": {
     "nome_original": "Jaraguá",
@@ -2097,7 +2118,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.3,
+    "pct_doc_doutores": 46.2,
+    "pct_doc_regime": 100.0
   },
   "MAMBAI": {
     "nome_original": "Mambaí",
@@ -2193,7 +2217,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 66.7,
+    "pct_doc_doutores": 19.0,
+    "pct_doc_regime": 100.0
   },
   "MORRINHOS": {
     "nome_original": "Morrinhos",
@@ -2704,7 +2731,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 80.0,
+    "pct_doc_regime": 100.0
   },
   "POSSE": {
     "nome_original": "Posse",
@@ -2795,7 +2825,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 20.0,
+    "pct_doc_doutores": 0.0,
+    "pct_doc_regime": 100.0
   },
   "RIO VERDE": {
     "nome_original": "Rio Verde",
@@ -2881,7 +2914,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 100.0,
+    "pct_doc_regime": 100.0
   },
   "SANTA HELENA DE GOIAS": {
     "nome_original": "Santa Helena de Goiás",
@@ -3141,7 +3177,10 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 83.3,
+    "pct_doc_regime": 100.0
   },
   "SAO MIGUEL DO ARAGUAIA": {
     "nome_original": "São Miguel do Araguaia",
@@ -3241,7 +3280,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 86.7,
+    "pct_doc_doutores": 53.3,
+    "pct_doc_regime": 100.0
   },
   "URUACU": {
     "nome_original": "Uruaçu",
@@ -3300,7 +3342,10 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_doc_mestres": 92.9,
+    "pct_doc_doutores": 42.9,
+    "pct_doc_regime": 100.0
   },
   "VALPARAISO DE GOIAS": {
     "nome_original": "Valparaíso de Goiás",
@@ -3440,7 +3485,10 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_doc_mestres": 95.1,
+    "pct_doc_doutores": 76.0,
+    "pct_doc_regime": 96.5
   },
   "VIANOPOLIS": {
     "nome_original": "Vianópolis",
