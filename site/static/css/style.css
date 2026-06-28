@@ -508,10 +508,41 @@ tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-a
 @media (max-width: 768px) {
   main { padding: 16px; }
   .site-header { padding: 14px 16px; }
-  .navbar { padding: 8px 16px; }
-  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .site-header h1 { font-size: 1.1rem; }
+  .navbar { padding: 8px 16px; gap: 10px; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .kpi-card { padding: 14px 10px; }
+  .kpi-card .kpi-valor { font-size: 1.5rem; }
   .swot-grid { grid-template-columns: 1fr; }
   #mapa-nacional, #mapa-uf { height: 320px; }
+
+  /* Selects e toolbars não devem estourar a largura */
+  select { max-width: 100%; }
+  .toolbar { gap: 8px; }
+  .toolbar select, .toolbar > div { max-width: 100%; }
+
+  /* Tabelas largas: 1ª coluna fixa para manter contexto ao rolar na horizontal */
+  .tabela-wrap { position: relative; -webkit-overflow-scrolling: touch; }
+  table th:first-child, table td:first-child {
+    position: sticky; left: 0; z-index: 2;
+  }
+  thead th:first-child { background: var(--navy); }
+  tbody td:first-child { background: var(--surface); box-shadow: 1px 0 0 var(--border); }
+  tbody tr:nth-child(even) td:first-child { background: #F8F9FB; }
+
+  /* Dica de rolagem (inserida por JS em tabelas que transbordam) */
+  .scroll-hint {
+    font-size: 0.76rem; color: var(--text-muted);
+    margin: -18px 0 10px; display: flex; align-items: center; gap: 6px;
+  }
+  .scroll-hint::before { content: '⇆'; font-size: 1rem; color: var(--blue); }
+
+  /* Cartões do glossário e contato em coluna única */
+  .glossario-cards { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 380px) {
+  .kpi-grid { grid-template-columns: 1fr; }
 }
 
 /* ============================================================

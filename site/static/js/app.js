@@ -330,3 +330,24 @@ function renderTabelaNacional(dadosUFs, tbody, indicadorDestaque) {
     tbody.appendChild(tr);
   });
 }
+
+/* Dica de rolagem horizontal em tabelas largas (mobile) */
+function inserirDicasDeRolagem() {
+  const ehMobile = window.matchMedia('(max-width: 768px)').matches;
+  document.querySelectorAll('.tabela-wrap').forEach(wrap => {
+    let hint = wrap.previousElementSibling;
+    const temHint = hint && hint.classList && hint.classList.contains('scroll-hint');
+    const transborda = wrap.scrollWidth > wrap.clientWidth + 4;
+    if (ehMobile && transborda && !temHint) {
+      const dica = document.createElement('div');
+      dica.className = 'scroll-hint';
+      dica.textContent = 'Deslize a tabela para ver todos os indicadores';
+      wrap.parentNode.insertBefore(dica, wrap);
+    } else if ((!ehMobile || !transborda) && temHint) {
+      hint.remove();
+    }
+  });
+}
+
+document.addEventListener('DOMContentLoaded', inserirDicasDeRolagem);
+window.addEventListener('resize', inserirDicasDeRolagem);
