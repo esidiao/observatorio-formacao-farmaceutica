@@ -415,6 +415,18 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         (path_out / "correlacoes.html").write_text(html_corr, encoding="utf-8")
         print(f"[OK] correlacoes.html")
 
+    # ── Render página do índice sintético ──────────────────────────────────────
+    tmpl_idx = env.get_template("indice.html.j2") if (templates_dir / "indice.html.j2").exists() else None
+    if tmpl_idx:
+        html_idx = tmpl_idx.render(
+            depth="",
+            meta=meta,
+            meta_json=json.dumps(meta, ensure_ascii=False),
+            dados_ufs_json=json.dumps(ufs, ensure_ascii=False),
+        )
+        (path_out / "indice.html").write_text(html_idx, encoding="utf-8")
+        print(f"[OK] indice.html")
+
     # ── SEO: robots.txt + sitemap.xml ──────────────────────────────────────────
     site_url = (meta.get("site_url") or "https://esidiao.github.io/observatorio-formacao-farmaceutica").rstrip("/")
     data_mod = meta.get("data_extracao") or ""
