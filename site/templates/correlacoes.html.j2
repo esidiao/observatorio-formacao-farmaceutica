@@ -30,8 +30,14 @@
     <button class="modc-btn btn outline" data-mod="presencial" onclick="setModCorr('presencial')" style="font-size:0.8rem;padding:4px 12px">Presencial</button>
     <button class="modc-btn btn outline" data-mod="ead" onclick="setModCorr('ead')" style="font-size:0.8rem;padding:4px 12px">EaD</button>
   </div>
-  <span id="modc-nota" style="font-size:0.78rem;color:var(--text-muted)"></span>
+  <span style="flex:1"></span>
+  <label style="font-weight:600;color:var(--navy);font-size:0.875rem">Método:</label>
+  <div style="display:flex;gap:6px">
+    <button class="met-btn btn outline" data-met="pearson" onclick="setMetodo('pearson')" style="font-size:0.8rem;padding:4px 12px" title="Mede relação linear; sensível a outliers">Pearson (r)</button>
+    <button class="met-btn btn outline" data-met="spearman" onclick="setMetodo('spearman')" style="font-size:0.8rem;padding:4px 12px" title="Correlação por postos (ranks); robusta a outliers e relações monotônicas não-lineares">Spearman (ρ)</button>
+  </div>
 </div>
+<div id="modc-nota" style="font-size:0.78rem;color:var(--text-muted);margin:-8px 0 12px"></div>
 
 <!-- Dispersão -->
 <div class="toolbar" style="gap:12px;flex-wrap:wrap;margin-bottom:12px">
@@ -61,6 +67,34 @@
 <div class="tabela-wrap">
   <table id="matriz-corr" style="font-size:0.8rem"></table>
 </div>
+
+<!-- Regressão múltipla -->
+<h2 class="section-title" style="margin-top:32px">Regressão múltipla</h2>
+<p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:12px;max-width:82ch">
+  Diferente da correlação (que olha um par por vez), a regressão estima o efeito de cada preditor
+  sobre a variável-alvo <strong>controlando todos os outros ao mesmo tempo</strong>. Os coeficientes
+  são <strong>padronizados (β)</strong> — comparáveis entre si; |β| maior = preditor mais influente.
+</p>
+<div class="toolbar" style="gap:12px;flex-wrap:wrap;margin-bottom:10px;align-items:flex-start">
+  <div style="display:flex;align-items:center;gap:8px">
+    <label style="font-size:0.875rem;font-weight:600">Variável-alvo:</label>
+    <select id="reg-y" onchange="renderRegressao()" style="font-size:0.85rem"></select>
+  </div>
+  <div style="flex:1;min-width:100%"></div>
+  <div>
+    <label style="font-size:0.82rem;font-weight:600;display:block;margin-bottom:4px">Preditores:</label>
+    <div id="reg-preditores" style="display:flex;flex-wrap:wrap;gap:6px"></div>
+  </div>
+</div>
+<div id="reg-resultado" style="margin-bottom:12px;font-size:0.9rem"></div>
+<div class="tabela-wrap" style="max-width:640px">
+  <table id="reg-tbl" style="font-size:0.85rem"></table>
+</div>
+<p style="font-size:0.78rem;color:var(--text-muted);margin-top:10px;max-width:82ch">
+  ⚠ Mínimos quadrados sobre variáveis padronizadas (z-score), exclusão por lista (só UFs com todos os
+  campos). Com n ≈ 27 e preditores correlacionados entre si (multicolinearidade), os β individuais são
+  <strong>exploratórios</strong>. R² alto pode refletir sobreajuste — observe o R² ajustado.
+</p>
 
 {% endblock %}
 
@@ -170,6 +204,33 @@ function pearson(p) {
   p.forEach(a => { sxy += (a[0] - mx) * (a[1] - my); sxx += (a[0] - mx) ** 2; syy += (a[1] - my) ** 2; });
   return (sxx && syy) ? sxy / Math.sqrt(sxx * syy) : null;
 }
+// Postos com média em empates
+function postos(vals) {
+  const idx = vals.map((v, i) => [v, i]).sort((a, b) => a[0] - b[0]);
+  const r = new Array(vals.length); let i = 0;
+  while (i < idx.length) {
+    let j = i; while (j + 1 < idx.length && idx[j + 1][0] === idx[i][0]) j++;
+    const avg = (i + j) / 2 + 1;
+    for (let k = i; k <= j; k++) r[idx[k][1]] = avg;
+    i = j + 1;
+  }
+  return r;
+}
+function spearman(p) {
+  if (p.length < 4) return null;
+  const rx = postos(p.map(a => a[0])), ry = postos(p.map(a => a[1]));
+  return pearson(p.map((a, i) => [rx[i], ry[i]]));
+}
+let metodo = 'pearson';
+function coef(p) { return metodo === 'spearman' ? spearman(p) : pearson(p); }
+function setMetodo(m) {
+  metodo = m;
+  document.querySelectorAll('.met-btn').forEach(b => {
+    const on = b.dataset.met === m;
+    b.style.background = on ? 'var(--blue)' : ''; b.style.color = on ? '#fff' : '';
+  });
+  renderScatter(); renderMatriz();
+}
 function corCorr(r) {
   if (r == null) return '#eee';
   const a = Math.min(1, Math.abs(r));
@@ -208,7 +269,8 @@ function trocarEixos() {
 function renderScatter() {
   const kx = document.getElementById('sel-x').value, ky = document.getElementById('sel-y').value;
   const p = pares(kx, ky);
-  const r = pearson(p);
+  const r = coef(p);
+  const simb = metodo === 'spearman' ? 'ρ' : 'r';
   const nx = (INFO[kx] || {}).nome || kx, ny = (INFO[ky] || {}).nome || ky;
 
   // resumo textual
@@ -221,7 +283,7 @@ function renderScatter() {
     const pTxt = pv == null ? '' : (pv < 0.001 ? 'p < 0,001' : 'p = ' + pv.toFixed(3).replace('.', ','));
     const signif = pv != null && pv < 0.05;
     resumo.innerHTML = `Correlação <strong style="color:${cor}">${dir} ${forca(r)}</strong> · `
-      + `<strong>r = ${r.toFixed(2)}${st}</strong> (n = ${p.length}). `
+      + `<strong>${simb} = ${r.toFixed(2)}${st}</strong> (n = ${p.length}). `
       + `<span style="color:${signif ? 'var(--swot-strength)' : 'var(--swot-threat)'}">${pTxt}${signif ? ' — significativa' : ' — não significativa (p ≥ 0,05)'}</span> · `
       + (ci ? `<span style="color:var(--text-muted)">IC 95%: [${ci[0].toFixed(2)}; ${ci[1].toFixed(2)}] · </span>` : '')
       + `<span style="color:var(--text-muted)">r² = ${(r * r).toFixed(2)}.</span>`;
@@ -282,7 +344,7 @@ function renderMatriz() {
     html += `<tr><th style="text-align:left;padding:4px 8px;white-space:nowrap;font-size:0.72rem" title="${(INFO[kr] || {}).nome}">${sig(kr)}</th>`;
     MATRIZ_KEYS.forEach(kc => {
       if (kr === kc) { html += `<td style="background:#16304F"></td>`; return; }
-      const pr = pares(kr, kc), r = pearson(pr);
+      const pr = pares(kr, kc), r = coef(pr);
       const pv = r == null ? null : pPearson(r, pr.length);
       const signif = pv != null && pv < 0.05;
       const txt = r == null ? '' : r.toFixed(2).replace('0.', '.').replace('-0.', '-.') + estrelas(pv);
@@ -305,9 +367,89 @@ function abrirPar(kx, ky) {
   document.getElementById('grafico-scatter').scrollIntoView({ behavior: 'smooth', block: 'center' });
 }
 
+/* ===================== Regressão múltipla ===================== */
+const REG_CANDIDATOS = ['pct_doc_doutores', 'cpc_infraestrutura', 'E', 'taxa_retencao',
+  'HHI_mantenedora', 'pct_ead', 'pct_ppi', 'vagas_por_100k', 'pct_financiamento'];
+let regY = 'IDD';
+let regX = new Set(['pct_doc_doutores', 'cpc_infraestrutura', 'HHI_mantenedora', 'pct_ead']);
+
+function zscore(arr) {
+  const n = arr.length, m = arr.reduce((s, v) => s + v, 0) / n;
+  const sd = Math.sqrt(arr.reduce((s, v) => s + (v - m) ** 2, 0) / (n - 1)) || 1;
+  return arr.map(v => (v - m) / sd);
+}
+// Inversa por Gauss-Jordan
+function inversa(A) {
+  const n = A.length, M = A.map((r, i) => [...r, ...Array.from({ length: n }, (_, j) => i === j ? 1 : 0)]);
+  for (let i = 0; i < n; i++) {
+    let piv = i; for (let r = i + 1; r < n; r++) if (Math.abs(M[r][i]) > Math.abs(M[piv][i])) piv = r;
+    if (Math.abs(M[piv][i]) < 1e-12) return null;
+    [M[i], M[piv]] = [M[piv], M[i]];
+    const d = M[i][i]; for (let j = 0; j < 2 * n; j++) M[i][j] /= d;
+    for (let r = 0; r < n; r++) if (r !== i) { const f = M[r][i]; for (let j = 0; j < 2 * n; j++) M[r][j] -= f * M[i][j]; }
+  }
+  return M.map(r => r.slice(n));
+}
+function renderRegPreditores() {
+  document.getElementById('reg-preditores').innerHTML = REG_CANDIDATOS.filter(k => k !== regY).map(k => {
+    const on = regX.has(k);
+    return `<button class="btn outline" onclick="toggleRegX('${k}')" style="padding:3px 9px;font-size:0.76rem;${on ? 'background:var(--blue);color:#fff' : ''}">${(INFO[k] || {}).sigla || k}</button>`;
+  }).join('');
+}
+function toggleRegX(k) { regX.has(k) ? regX.delete(k) : regX.add(k); renderRegPreditores(); renderRegressao(); }
+
+function renderRegressao() {
+  renderRegPreditores();
+  const preds = [...regX].filter(k => k !== regY);
+  const res = document.getElementById('reg-resultado'), tbl = document.getElementById('reg-tbl');
+  if (preds.length < 1) { res.innerHTML = 'Selecione ao menos um preditor.'; tbl.innerHTML = ''; return; }
+  // exclusão por lista
+  const linhas = UFS.filter(u => DADOS[u]?.[regY] != null && preds.every(k => DADOS[u]?.[k] != null));
+  const n = linhas.length, k = preds.length;
+  if (n < k + 2) { res.innerHTML = `Amostra insuficiente (n = ${n}) para ${k} preditores.`; tbl.innerHTML = ''; return; }
+  const y = zscore(linhas.map(u => +DADOS[u][regY]));
+  const cols = preds.map(p => zscore(linhas.map(u => +DADOS[u][p])));
+  // X'X e X'y (sem intercepto: variáveis padronizadas)
+  const XtX = preds.map((_, a) => preds.map((_, b) => cols[a].reduce((s, _, i) => s + cols[a][i] * cols[b][i], 0)));
+  const Xty = preds.map((_, a) => cols[a].reduce((s, _, i) => s + cols[a][i] * y[i], 0));
+  const inv = inversa(XtX);
+  if (!inv) { res.innerHTML = 'Não foi possível estimar (preditores colineares demais).'; tbl.innerHTML = ''; return; }
+  const beta = inv.map(row => row.reduce((s, v, j) => s + v * Xty[j], 0));
+  // R² e ajustado
+  const yhat = y.map((_, i) => preds.reduce((s, _, a) => s + beta[a] * cols[a][i], 0));
+  const ssr = y.reduce((s, v, i) => s + (v - yhat[i]) ** 2, 0);
+  const sst = y.reduce((s, v) => s + v * v, 0);
+  const r2 = 1 - ssr / sst, r2adj = 1 - (1 - r2) * (n - 1) / (n - k - 1);
+  res.innerHTML = `<strong>${(INFO[regY] || {}).nome || regY}</strong> explicado por ${k} preditores · `
+    + `n = ${n} · <strong>R² = ${r2.toFixed(2)}</strong> (ajustado ${r2adj.toFixed(2)}) — `
+    + `${(r2 * 100).toFixed(0)}% da variação explicada pelo modelo.`;
+  const ord = preds.map((p, a) => ({ p, b: beta[a] })).sort((x, z) => Math.abs(z.b) - Math.abs(x.b));
+  let html = `<thead><tr><th>Preditor</th><th>β padronizado</th><th>Influência</th></tr></thead><tbody>`;
+  const maxb = Math.max(...ord.map(o => Math.abs(o.b))) || 1;
+  ord.forEach(o => {
+    const w = Math.round(Math.abs(o.b) / maxb * 100);
+    const cor = o.b >= 0 ? 'var(--blue)' : 'var(--swot-weakness)';
+    html += `<tr><td>${(INFO[o.p] || {}).nome || o.p}</td>`
+      + `<td style="font-weight:700;color:${cor}">${o.b >= 0 ? '+' : ''}${o.b.toFixed(2)}</td>`
+      + `<td><div style="background:${cor};height:12px;width:${w}%;border-radius:3px;min-width:2px"></div></td></tr>`;
+  });
+  tbl.innerHTML = html + '</tbody>';
+}
+
+function popularRegY() {
+  const alvos = ['IDD', 'CPC_cont', 'taxa_retencao', 'pct_doc_doutores', 'cpc_infraestrutura', 'ICT'].filter(k => INFO[k]);
+  document.getElementById('reg-y').innerHTML = alvos.map(k => `<option value="${k}">${(INFO[k] || {}).nome || k}</option>`).join('');
+  document.getElementById('reg-y').value = 'IDD';
+  document.getElementById('reg-y').addEventListener('change', e => { regY = e.target.value; renderRegressao(); });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   popularSelects();
+  popularRegY();
+  document.querySelector('.met-btn[data-met="pearson"]').style.background = 'var(--blue)';
+  document.querySelector('.met-btn[data-met="pearson"]').style.color = '#fff';
   setModCorr('todas');   // destaca botão + renderiza scatter e matriz
+  renderRegressao();
 });
 </script>
 {% endblock %}

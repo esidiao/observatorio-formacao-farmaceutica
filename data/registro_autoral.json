@@ -2,11 +2,11 @@
   "obra": "Observatório Nacional da Formação Farmacêutica",
   "autor": "Edson Sidião de Souza Júnior",
   "tipo": "Registro de Anterioridade e Integridade (prova de existência)",
-  "selado_em_utc": "2026-06-28T21:37:01+00:00",
+  "selado_em_utc": "2026-06-28T21:44:57+00:00",
   "algoritmo": "SHA-256",
   "n_arquivos": 56,
-  "hash_raiz": "792122afb2fdd64a875acac040466eb17d3cf03be5dc81a6fe70d76ff93acea4",
-  "git_commit_ancora": "14b97fc489f49fc44b7b59d043ef2bfd78023525",
+  "hash_raiz": "cf822ed51b4b57222686acba3d46e80d9f94bb5d4c22e8771393b78f29299227",
+  "git_commit_ancora": "1bd8d2dfbb1a5f6cbcd975068359a82075235779",
   "fundamento": "Lei 9.610/1998 e Lei 9.609/1998. O hash-raiz é impressão digital única do conjunto; o commit Git ancora a data de forma imutável.",
   "como_verificar": [
     "1. Baixe os arquivos listados em 'arquivos'.",
@@ -223,7 +223,7 @@
     },
     {
       "caminho": "site/templates/correlacoes.html.j2",
-      "sha256": "289a6d6c9106bd77df661d4ee38aa647aeefaa183b7c6469a08bddd11c7c7924"
+      "sha256": "787375915735ae368820c7f6625f9db815186746546c337cf18ba56a87652833"
     },
     {
       "caminho": "site/templates/index.html.j2",
