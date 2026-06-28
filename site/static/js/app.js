@@ -251,8 +251,9 @@ function atualizarCorMapa(indicador) {
 
 let mapaUF = null;
 
-async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCods) {
+async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCods, municipiosMapa, siglaUF) {
   if (mapaUF) return;
+  municipiosMapa = municipiosMapa || {};
 
   mapaUF = L.map('mapa-uf', { scrollWheelZoom: false });
 
@@ -300,14 +301,38 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCo
     }),
     onEachFeature: (feature, layer) => {
       const props = feature.properties || {};
+      const cod = props?.codarea != null ? String(props.codarea) : null;
+      const info = (cod && municipiosMapa[cod]) || null;
       const oferta = temOfertaFeature(props);
-      const nome = props.NM_MUN || props.nome || ('Município ' + (props.codarea || '?'));
-      layer.bindTooltip(
-        `<b>${nome}</b><br>${oferta ? '✓ Com oferta formativa' : '○ Deserto farmacêutico'}`,
-        { sticky: true }
-      );
+      const nome = (info && info.nome) || props.NM_MUN || props.nome || ('Município ' + (cod || '?'));
+
+      let html = `<b>${nome}</b>`;
+      if (info && oferta) {
+        const linhas = [];
+        linhas.push(`<span style="color:#9be3b4">✓ Com oferta formativa</span>`);
+        if (info.n_ies)     linhas.push(`IES: <b>${info.n_ies}</b> · Cursos: <b>${info.n_cursos}</b>`);
+        if (info.vagas_total) {
+          let v = `Vagas: <b>${Number(info.vagas_total).toLocaleString('pt-BR')}</b>`;
+          if (info.vagas_ead) v += ` <span style="opacity:.8">(${Number(info.vagas_presencial).toLocaleString('pt-BR')} pres. + ${Number(info.vagas_ead).toLocaleString('pt-BR')} EaD)</span>`;
+          linhas.push(v);
+        }
+        if (info.matriculas)  linhas.push(`Matrículas: <b>${Number(info.matriculas).toLocaleString('pt-BR')}</b>`);
+        if (info.concluintes) linhas.push(`Concluintes: <b>${Number(info.concluintes).toLocaleString('pt-BR')}</b>`);
+        html += `<br><span style="font-size:0.85em;line-height:1.5">${linhas.join('<br>')}</span>`;
+        html += `<br><span style="font-size:0.8em;color:#cdd8ea">clique para detalhes ↗</span>`;
+      } else {
+        html += `<br><span style="color:#d9b48a">○ Deserto farmacêutico</span>`;
+      }
+      layer.bindTooltip(html, { sticky: true });
+
       layer.on('mouseover', () => layer.setStyle({ weight: 1.5, fillOpacity: 0.9 }));
       layer.on('mouseout', () => camada.resetStyle(layer));
+      // Clique → página de detalhe do município (drill-down), se houver oferta
+      if (info && oferta && info.slug && siglaUF) {
+        layer.on('click', () => {
+          window.location.href = `${window._GEO_BASE || ''}municipio/${siglaUF}/${info.slug}.html`;
+        });
+      }
     },
   }).addTo(mapaUF);
 

@@ -339,10 +339,13 @@ const DADOS_UF = {{ dados_uf_json }};
 const META = {{ meta_json }};
 const MUNICIPIOS_COM_OFERTA = {{ municipios_com_oferta_json }};
 const MUNICIPIOS_OFERTA_CODS = {{ municipios_oferta_cods_json }};
+const MUNICIPIOS_MAPA = {{ municipios_mapa_json }};
 const CODIGO_IBGE_UF = "{{ codigo_ibge }}";
+const SIGLA_UF = "{{ sigla }}";
+const GEO_BASE = window._GEO_BASE || '';
 
 document.addEventListener('DOMContentLoaded', () => {
-  iniciarMapaUF(CODIGO_IBGE_UF, MUNICIPIOS_COM_OFERTA, MUNICIPIOS_OFERTA_CODS);
+  iniciarMapaUF(CODIGO_IBGE_UF, MUNICIPIOS_COM_OFERTA, MUNICIPIOS_OFERTA_CODS, MUNICIPIOS_MAPA, SIGLA_UF);
 });
 
 function exportarUFCSV() {

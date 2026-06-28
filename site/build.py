@@ -223,15 +223,34 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
 
         # Códigos IBGE (7 dígitos) dos municípios com oferta — para colorir o mapa
         # municipal por código (a malha IBGE traz codarea, não o nome).
+        # municipios_mapa: cod → resumo (para tooltip rico e clique no mapa).
         cods_oferta = []
+        municipios_mapa = {}
         if mun_json_path.exists():
             with open(mun_json_path, encoding="utf-8") as f:
                 dados_mun_uf = json.load(f)
             offer_norm = {str(m).upper() for m in municipios}
             for nome_norm, dm in dados_mun_uf.items():
                 cod = dm.get("cod_municipio")
-                if cod and str(nome_norm).upper() in offer_norm:
-                    cods_oferta.append(str(cod))
+                if not cod:
+                    continue
+                cod = str(cod)
+                tem_oferta = str(nome_norm).upper() in offer_norm
+                if tem_oferta:
+                    cods_oferta.append(cod)
+                slug = str(nome_norm).replace(" ", "_").replace("/", "-")
+                municipios_mapa[cod] = {
+                    "nome": dm.get("nome_original", nome_norm),
+                    "slug": slug,
+                    "vagas_total": dm.get("vagas_total", 0),
+                    "vagas_presencial": dm.get("vagas_presencial", 0),
+                    "vagas_ead": dm.get("vagas_ead", 0),
+                    "matriculas": dm.get("matriculas", 0),
+                    "concluintes": dm.get("concluintes", 0),
+                    "n_cursos": dm.get("n_cursos", 0),
+                    "n_ies": dm.get("n_ies", 0),
+                    "oferta": tem_oferta,
+                }
 
         html_uf = tmpl_uf.render(
             depth="../",
@@ -243,6 +262,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
             municipios_com_oferta=municipios,
             municipios_com_oferta_json=json.dumps(municipios, ensure_ascii=False),
             municipios_oferta_cods_json=json.dumps(cods_oferta, ensure_ascii=False),
+            municipios_mapa_json=json.dumps(municipios_mapa, ensure_ascii=False),
             dados_uf_json=json.dumps(d, ensure_ascii=False),
             codigo_ibge=IBGE_UF.get(sigla, ""),
             swot=_gerar_swot(sigla, d),
