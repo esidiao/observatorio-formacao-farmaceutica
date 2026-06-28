@@ -505,17 +505,8 @@ tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-a
 /* ============================================================
    RESPONSIVIDADE
    ============================================================ */
-@media (max-width: 768px) {
-  main { padding: 16px; }
-  .site-header { padding: 14px 16px; }
-  .site-header h1 { font-size: 1.1rem; }
-  .navbar { padding: 8px 16px; gap: 10px; }
-  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-  .kpi-card { padding: 14px 10px; }
-  .kpi-card .kpi-valor { font-size: 1.5rem; }
-  .swot-grid { grid-template-columns: 1fr; }
-  #mapa-nacional, #mapa-uf { height: 320px; }
-
+/* ── Tablet e abaixo (≤ 1024px): tabelas largas e toolbars ─────────────────── */
+@media (max-width: 1024px) {
   /* Selects e toolbars não devem estourar a largura */
   select { max-width: 100%; }
   .toolbar { gap: 8px; }
@@ -536,11 +527,28 @@ tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-a
     margin: -18px 0 10px; display: flex; align-items: center; gap: 6px;
   }
   .scroll-hint::before { content: '⇆'; font-size: 1rem; color: var(--blue); }
-
-  /* Cartões do glossário e contato em coluna única */
-  .glossario-cards { grid-template-columns: 1fr; }
 }
 
+/* ── Tablet (≤ 768px): paddings e mapa; KPIs mantêm fluxo auto-fill (3–4 cols) ─ */
+@media (max-width: 768px) {
+  main { padding: 16px; }
+  .site-header { padding: 14px 20px; }
+  .site-header h1 { font-size: 1.15rem; }
+  .navbar { padding: 8px 16px; gap: 10px; }
+  #mapa-nacional, #mapa-uf { height: 380px; }
+}
+
+/* ── Celular (≤ 600px): layout compacto em 2 colunas ──────────────────────── */
+@media (max-width: 600px) {
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .kpi-card { padding: 14px 10px; }
+  .kpi-card .kpi-valor { font-size: 1.5rem; }
+  .swot-grid { grid-template-columns: 1fr; }
+  .glossario-cards { grid-template-columns: 1fr; }
+  #mapa-nacional, #mapa-uf { height: 320px; }
+}
+
+/* ── Celular pequeno (≤ 380px): uma coluna ────────────────────────────────── */
 @media (max-width: 380px) {
   .kpi-grid { grid-template-columns: 1fr; }
 }
