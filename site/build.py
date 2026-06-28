@@ -288,6 +288,19 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         (path_out / "autor.html").write_text(html_autor, encoding="utf-8")
         print(f"[OK] autor.html")
 
+    # ── Render página de aviso legal / direitos autorais ───────────────────────
+    ano_corrente = (meta.get("data_extracao") or "2026")[:4]
+    tmpl_legal = env.get_template("aviso-legal.html.j2") if (templates_dir / "aviso-legal.html.j2").exists() else None
+    if tmpl_legal:
+        html_legal = tmpl_legal.render(
+            depth="",
+            meta=meta,
+            meta_json=json.dumps(meta, ensure_ascii=False),
+            ano_corrente=ano_corrente,
+        )
+        (path_out / "aviso-legal.html").write_text(html_legal, encoding="utf-8")
+        print(f"[OK] aviso-legal.html")
+
     # ── Render página de comparação ────────────────────────────────────────────
     tmpl_comp = env.get_template("comparar.html.j2") if (templates_dir / "comparar.html.j2").exists() else None
     if tmpl_comp:

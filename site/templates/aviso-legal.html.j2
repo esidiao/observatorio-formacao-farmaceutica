@@ -1,0 +1,160 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Direitos Autorais e Condições de Uso — Observatório Nacional da Formação Farmacêutica{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ depth }}index.html">Início</a>
+<span class="sep">›</span>
+<span class="active">Direitos Autorais</span>
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .legal-wrap { max-width: 860px; }
+  .legal-wrap h2.section-title { margin-top: 30px; }
+  .legal-wrap p, .legal-wrap li { font-size: 0.92rem; line-height: 1.7; color: var(--text); }
+  .legal-wrap p { margin-bottom: 12px; }
+  .legal-wrap ul, .legal-wrap ol { padding-left: 22px; margin-bottom: 12px; }
+  .legal-wrap li { margin-bottom: 6px; }
+  .legal-callout {
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--gold); border-radius: 8px;
+    padding: 16px 18px; margin: 18px 0; font-size: 0.9rem;
+  }
+  .legal-callout strong { color: var(--navy); }
+  .legal-cite {
+    background: #0f1d2e; color: #e8edf5; border-radius: 8px;
+    padding: 16px; font-family: var(--font-mono); font-size: 0.82rem;
+    line-height: 1.6; overflow-x: auto; white-space: pre-wrap;
+  }
+  .legal-lei { font-style: italic; color: var(--text-muted); font-size: 0.85rem; }
+  .legal-sello {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 10px;
+    padding: 12px 18px; font-size: 0.85rem; margin-top: 8px;
+  }
+  .legal-sello .sello-c { font-size: 1.6rem; color: var(--navy); font-weight: 700; }
+</style>
+
+<div class="legal-wrap">
+
+<h1 style="font-size:1.5rem;color:var(--navy);margin-bottom:4px">Direitos Autorais e Condições de Uso</h1>
+<p style="color:var(--text-muted);font-size:0.88rem;margin-bottom:8px">
+  Instrumento de proteção da obra intelectual · Última revisão: {{ meta.data_extracao }}
+</p>
+
+<div class="legal-sello">
+  <span class="sello-c">©</span>
+  <span>
+    <strong>{{ ano_corrente }} — Edson Sidião de Souza Júnior.</strong> Todos os direitos reservados.<br>
+    Obra protegida pelas Leis nº 9.610/1998 e nº 9.609/1998.
+  </span>
+</div>
+
+<h2 class="section-title">1. Titularidade e autoria</h2>
+<p>
+  O <strong>Observatório Nacional da Formação Farmacêutica</strong> (doravante "a Obra") — incluindo seu
+  conteúdo, estrutura, metodologia, indicadores, textos analíticos, identidade visual e código-fonte — é de
+  autoria e titularidade exclusiva de <strong>Edson Sidião de Souza Júnior</strong>, farmacêutico, mestre e
+  pesquisador, doravante "o Autor".
+</p>
+<p>
+  Nos termos do art. 11 da Lei nº 9.610/1998 (Lei de Direitos Autorais — LDA), a condição de autor é reconhecida
+  à pessoa física criadora da obra intelectual. Ao Autor são assegurados, de forma originária, os
+  <strong>direitos morais</strong> (inalienáveis e irrenunciáveis, art. 27) e os <strong>direitos patrimoniais</strong>
+  (art. 28) sobre a Obra.
+</p>
+
+<h2 class="section-title">2. Objeto da proteção</h2>
+<p>A proteção autoral recai sobre as criações intelectuais originais que compõem a Obra, notadamente:</p>
+<ul>
+  <li><strong>A metodologia e os indicadores autorais</strong> — concepção, fórmulas e parametrização dos índices
+      <em>ICT</em> (Concentração Territorial), <em>IAF</em> (Adequação Formativa), <em>ICON</em> e
+      <em>ICON-deserto</em> (Cobertura Assistencial), <em>E</em> (Equidade) e demais métricas derivadas;</li>
+  <li><strong>Os textos analíticos</strong> — análises SWOT, interpretações, glossário e redação técnica;</li>
+  <li><strong>A organização, seleção e arranjo dos dados</strong> — protegidos como obra de natureza
+      compilatória (art. 7º, XIII, da LDA), pela originalidade na curadoria, no tratamento e na disposição;</li>
+  <li><strong>A identidade visual e o design</strong> — layout, paleta, cartografia temática e elementos gráficos;</li>
+  <li><strong>O código-fonte</strong> — programas de computador que geram o site e processam os dados,
+      protegidos pela Lei nº 9.609/1998 (Lei do Software).</li>
+</ul>
+
+<div class="legal-callout">
+  <strong>Distinção essencial quanto aos dados públicos.</strong> Os dados primários utilizados são de origem
+  governamental e acesso público — <strong>INEP/MEC</strong> (Censo da Educação Superior e ENADE/CPC),
+  <strong>IBGE</strong> (estimativas populacionais) e <strong>Ministério da Saúde</strong> (Farmácia Popular).
+  Esses dados, isoladamente, constituem atos oficiais e informações de uso comum, não sujeitos à proteção autoral
+  (art. 8º, II e IV, da LDA). <strong>A proteção desta Obra não alcança os dados brutos</strong>, mas sim o
+  trabalho intelectual original de seleção, tratamento, cálculo de indicadores, análise, visualização e
+  apresentação que sobre eles foi construído.
+</div>
+
+<h2 class="section-title">3. Condições de uso autorizadas</h2>
+<p>O Autor licencia o acesso e o uso da Obra ao público sob as seguintes condições, de forma gratuita e não exclusiva:</p>
+<ul>
+  <li><strong>Uso acadêmico e educacional</strong> — consulta, leitura, citação e referência em trabalhos
+      científicos, acadêmicos, jornalísticos ou de políticas públicas são permitidos, <strong>desde que com
+      atribuição clara da autoria</strong> (art. 46, III, da LDA);</li>
+  <li><strong>Citação de trechos</strong> — admitida na medida justificada para fins de estudo, crítica ou
+      polêmica, com indicação da fonte e do nome do Autor;</li>
+  <li><strong>Compartilhamento do endereço</strong> — a divulgação do link para a Obra é livre e incentivada.</li>
+</ul>
+
+<h2 class="section-title">4. Vedações</h2>
+<p>Independem de tolerância e dependem de <strong>autorização prévia e expressa do Autor</strong>:</p>
+<ul>
+  <li>A reprodução total ou parcial substancial da Obra, de seus textos, indicadores ou código, para
+      republicação em outro veículo ou plataforma;</li>
+  <li>A <strong>exploração comercial</strong> da Obra ou de partes dela, direta ou indiretamente;</li>
+  <li>A criação de <strong>obras derivadas</strong> (adaptações, modificações, traduções, integração a outros
+      sistemas) sem licença específica;</li>
+  <li>A supressão, alteração ou ocultação dos créditos de autoria, da fonte ou deste aviso (violação de direito
+      moral, art. 24, I e II, da LDA);</li>
+  <li>O uso que sugira, falsamente, endosso, vínculo ou coautoria com o Autor.</li>
+</ul>
+
+<div class="legal-callout">
+  <strong>Licença recomendada.</strong> Para fins de clareza internacional, a Obra é disponibilizada sob os termos
+  equivalentes à licença <strong>Creative Commons Atribuição-NãoComercial-SemDerivações 4.0 Internacional
+  (CC BY-NC-ND 4.0)</strong>: é permitido compartilhar com atribuição, vedado o uso comercial e a criação de
+  derivações. Usos fora desse escopo requerem autorização do Autor.
+</div>
+
+<h2 class="section-title">5. Como citar esta Obra</h2>
+<p>Ao referenciar o Observatório em trabalhos, utilize o formato (norma ABNT NBR 6023):</p>
+<div class="legal-cite">SOUZA JÚNIOR, Edson Sidião de. Observatório Nacional da Formação Farmacêutica: indicadores de acesso territorial, qualidade e cobertura assistencial. {{ ano_corrente }}. Disponível em: [endereço de acesso]. Acesso em: [data].</div>
+
+<h2 class="section-title">6. Isenção de responsabilidade</h2>
+<p>
+  A Obra tem finalidade informativa, científica e de apoio à formulação de políticas públicas. Embora elaborada
+  com rigor metodológico e a partir de fontes oficiais, os indicadores são <strong>estimativas analíticas</strong>
+  e não substituem os dados oficiais primários nem constituem aconselhamento profissional, regulatório ou
+  decisório vinculante. O Autor não responde por decisões tomadas com base exclusiva no conteúdo aqui apresentado.
+</p>
+
+<h2 class="section-title">7. Vigência, foro e contato</h2>
+<p>
+  Este instrumento vigora a partir de sua publicação e aplica-se a todo o conteúdo da Obra. As relações dele
+  decorrentes regem-se pela legislação brasileira, elegendo-se o foro da comarca de domicílio do Autor para
+  dirimir eventuais controvérsias, com renúncia a qualquer outro.
+</p>
+<p>
+  Solicitações de autorização, licenciamento ou parcerias devem ser dirigidas ao Autor.
+  Saiba mais em <a href="{{ depth }}autor.html">Sobre o Autor</a>.
+</p>
+
+<p class="legal-lei" style="margin-top:24px">
+  Fundamentos legais: Constituição Federal, art. 5º, XXVII e XXVIII; Lei nº 9.610, de 19/02/1998 (Direitos
+  Autorais); Lei nº 9.609, de 19/02/1998 (Proteção de Programas de Computador).
+</p>
+
+<p style="font-size:0.82rem;color:var(--text-muted);margin-top:20px;border-top:1px solid var(--border);padding-top:14px">
+  Este texto constitui aviso de direitos e condições de uso redigido com base na legislação autoral brasileira.
+  Para efeitos contratuais específicos (cessões, licenças onerosas, registro da obra junto à Biblioteca Nacional
+  ou ao INPI quanto ao software), recomenda-se a formalização com assessoria jurídica dedicada.
+</p>
+
+</div>
+
+{% endblock %}
