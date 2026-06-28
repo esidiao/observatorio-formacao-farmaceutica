@@ -151,9 +151,9 @@ function renderGlossario() {
           <div class="gloss-body">
             <p>${g.oque}</p>
             <div class="gloss-meta">
-              <span title="Escala / unidade">\u{1F4CF} ${g.escala}</span>
+              <span title="Escala / unidade"><svg class="ic"><use href="#i-ruler"/></svg> ${g.escala}</span>
               <span style="color:${dm.cor}" title="Direção desejável">${dm.icon} ${dm.txt}</span>
-              <span title="Fonte oficial">\u{1F3DB}️ ${g.fonte}</span>
+              <span title="Fonte oficial"><svg class="ic"><use href="#i-source"/></svg> ${g.fonte}</span>
             </div>
           </div>
         </div>`;

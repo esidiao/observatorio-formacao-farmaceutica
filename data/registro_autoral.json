@@ -2,11 +2,11 @@
   "obra": "Observatório Nacional da Formação Farmacêutica",
   "autor": "Edson Sidião de Souza Júnior",
   "tipo": "Registro de Anterioridade e Integridade (prova de existência)",
-  "selado_em_utc": "2026-06-28T22:18:16+00:00",
+  "selado_em_utc": "2026-06-28T22:28:09+00:00",
   "algoritmo": "SHA-256",
   "n_arquivos": 56,
-  "hash_raiz": "e084e5c8663f187ea075f83120af8848265f166e183233bc98452586237876de",
-  "git_commit_ancora": "5414b41e3ca7a67adf65f1676c2685a29efeeda3",
+  "hash_raiz": "309dd3690b27ce2f4dfae028626ad18d6aa51f86cbe58af8ead5169face23227",
+  "git_commit_ancora": "5ae79429fffd704bf30071c7196a5b7e057848c5",
   "fundamento": "Lei 9.610/1998 e Lei 9.609/1998. O hash-raiz é impressão digital única do conjunto; o commit Git ancora a data de forma imutável.",
   "como_verificar": [
     "1. Baixe os arquivos listados em 'arquivos'.",
@@ -195,7 +195,7 @@
     },
     {
       "caminho": "site/static/css/style.css",
-      "sha256": "68c626579234fa42063ebb7136e8fa8df983707f0f05daa2a3cd0870dbc4b31a"
+      "sha256": "f011fc9a4707ef3e158e5126abab2355d386151c231900c5d2238be5300fa61f"
     },
     {
       "caminho": "site/static/js/app.js",
@@ -203,11 +203,11 @@
     },
     {
       "caminho": "site/static/js/glossario.js",
-      "sha256": "47c724789e08a24781c277bf88ad49347bfd3ed137ec700e9fdd82fd6c4764aa"
+      "sha256": "cf7a53c4a051c415681a03f670d2d79b0f232cf238176680d5e777136fa2d108"
     },
     {
       "caminho": "site/templates/autor.html.j2",
-      "sha256": "373995af09319b17d9760a5ae101b681849d480cacb7bfa5617e2f2ba51073d4"
+      "sha256": "d5ad1c76b105e48e8db3154cd4ee28add323abaff96d90d36e0932fb747beea2"
     },
     {
       "caminho": "site/templates/aviso-legal.html.j2",
@@ -215,7 +215,7 @@
     },
     {
       "caminho": "site/templates/base.html.j2",
-      "sha256": "9bf1c9505789e521cfa5e6496cde240dbcd560dc46c313937a83d8ae223d3758"
+      "sha256": "980a716714a7b82e888d8334a00f64e8c1620c0f46a72f62620aba95b88e8568"
     },
     {
       "caminho": "site/templates/comparar.html.j2",

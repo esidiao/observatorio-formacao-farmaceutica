@@ -312,21 +312,21 @@
 </p>
 <div class="contato-grid">
   <a class="contato-card" href="tel:+5562998044822">
-    <span class="contato-icone">📱</span>
+    <span class="contato-icone"><svg class="ic"><use href="#i-phone"/></svg></span>
     <span>
       <span class="contato-rotulo">Telefone / WhatsApp</span>
       <span class="contato-valor">(62) 99804-4822</span>
     </span>
   </a>
   <a class="contato-card" href="mailto:sidiao@i9educar.com">
-    <span class="contato-icone">✉️</span>
+    <span class="contato-icone"><svg class="ic"><use href="#i-mail"/></svg></span>
     <span>
       <span class="contato-rotulo">E-mail</span>
       <span class="contato-valor">sidiao@i9educar.com</span>
     </span>
   </a>
   <a class="contato-card" href="https://lattes.cnpq.br/9464330669014306" target="_blank" rel="noopener">
-    <span class="contato-icone">🎓</span>
+    <span class="contato-icone"><svg class="ic"><use href="#i-cap"/></svg></span>
     <span>
       <span class="contato-rotulo">Currículo</span>
       <span class="contato-valor">Plataforma Lattes ↗</span>
@@ -352,7 +352,8 @@
     transform: translateY(-2px); text-decoration: none;
     box-shadow: 0 6px 18px rgba(22,48,79,0.12); border-color: var(--blue);
   }
-  .contato-icone { font-size: 1.6rem; line-height: 1; }
+  .contato-icone { line-height: 1; color: var(--accent); display: inline-flex; }
+  .contato-icone .ic { width: 1.5rem; height: 1.5rem; }
   .contato-rotulo {
     display: block; font-size: 0.72rem; text-transform: uppercase;
     letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 2px;
