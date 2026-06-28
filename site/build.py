@@ -189,6 +189,13 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
 
     ufs_ordenados = sorted(ufs.items(), key=lambda kv: kv[1].get("ICT") or 1.0)
 
+    # ── Série histórica nacional (2015–2024) ───────────────────────────────────
+    serie_path = path_dados.parent / "serie_historica.json"
+    serie_historica = {}
+    if serie_path.exists():
+        with open(serie_path, encoding="utf-8") as f:
+            serie_historica = json.load(f)
+
     # ── Contexto de mercado por região (oferta × demanda) ──────────────────────
     contexto_path = path_dados.parent / "contexto_mercado.json"
     contexto_regioes = []
@@ -238,6 +245,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         iaf_mediana=_mediana(iaf_values) or 0,
         contexto_regioes=contexto_regioes,
         contexto_meta=contexto_meta,
+        serie_historica_json=json.dumps(serie_historica, ensure_ascii=False),
         ufs_ordenados=ufs_ordenados,
         dados_ufs_json=json.dumps(ufs, ensure_ascii=False),
         meta_json=json.dumps(meta, ensure_ascii=False),

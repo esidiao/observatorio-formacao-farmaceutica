@@ -86,6 +86,18 @@
   {% endif %}
 </div>
 
+<!-- Evolução histórica 2015–2024 -->
+<h2 class="section-title">Evolução da formação (2015–2024)</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px;max-width:82ch">
+  Série dos microdados do Censo INEP. As barras mostram as vagas anuais (presencial + EaD);
+  a linha mostra os concluintes. Revela a <strong>explosão da EaD</strong> e o descolamento entre
+  capacidade ofertada e formandos efetivos.
+</p>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:14px">
+  <canvas id="grafico-historico" height="110"></canvas>
+</div>
+<div class="kpi-grid" id="hist-kpis" style="margin-bottom:28px"></div>
+
 <!-- Seletor de indicador + Mapa -->
 <h2 class="section-title">Mapa Nacional por Indicador</h2>
 <div class="toolbar">
@@ -221,9 +233,58 @@
 <script>
 const DADOS_UFS = {{ dados_ufs_json }};
 const META = {{ meta_json }};
+const SERIE = {{ serie_historica_json }};
+
+function renderHistorico() {
+  if (!SERIE || !SERIE.nacional || !SERIE.nacional.length) return;
+  const s = SERIE.nacional;
+  const anos = s.map(r => r.ano);
+  const nf = n => Number(n || 0).toLocaleString('pt-BR');
+  const ctx = document.getElementById('grafico-historico').getContext('2d');
+  new Chart(ctx, {
+    data: {
+      labels: anos,
+      datasets: [
+        { type: 'bar', label: 'Vagas presenciais', data: s.map(r => r.vagas_presencial),
+          backgroundColor: '#2E5496', stack: 'vagas', yAxisID: 'y' },
+        { type: 'bar', label: 'Vagas EaD', data: s.map(r => r.vagas_ead),
+          backgroundColor: '#B07D22', stack: 'vagas', yAxisID: 'y' },
+        { type: 'line', label: 'Concluintes', data: s.map(r => r.concluintes),
+          borderColor: '#B23A2E', backgroundColor: '#B23A2E', borderWidth: 2.5,
+          pointRadius: 3, yAxisID: 'y2', tension: 0.25 },
+      ]
+    },
+    options: {
+      responsive: true,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 11 } } },
+        tooltip: { callbacks: { footer: items => {
+          const r = s[items[0].dataIndex];
+          return `EaD: ${r.pct_ead}% das vagas`;
+        } } }
+      },
+      scales: {
+        y:  { stacked: true, position: 'left', title: { display: true, text: 'Vagas/ano', font: { size: 10 } } },
+        y2: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Concluintes', font: { size: 10 } } },
+        x:  { stacked: true }
+      }
+    }
+  });
+  // KPIs de variação 2015→2024
+  const a = s[0], b = s[s.length - 1];
+  const card = (val, lab, fonte) => `<div class="kpi-card"><div class="kpi-valor">${val}</div><div class="kpi-label">${lab}</div><div class="kpi-fonte">${fonte}</div></div>`;
+  const mult = (x, y) => (y / x).toFixed(1) + '×';
+  document.getElementById('hist-kpis').innerHTML =
+    card(mult(a.vagas_total, b.vagas_total), 'Crescimento das vagas', `${nf(a.vagas_total)} → ${nf(b.vagas_total)} (2015→2024)`) +
+    card((b.pct_ead - a.pct_ead).toFixed(0) + ' p.p.', 'Avanço da EaD', `${a.pct_ead}% → ${b.pct_ead}% das vagas`) +
+    card(mult(a.concluintes, b.concluintes), 'Crescimento dos concluintes', `${nf(a.concluintes)} → ${nf(b.concluintes)}`) +
+    card(mult(a.matriculas, b.matriculas), 'Crescimento das matrículas', `${nf(a.matriculas)} → ${nf(b.matriculas)}`);
+}
 
 document.addEventListener('DOMContentLoaded', () => {
   iniciarMapaNacional(DADOS_UFS);
+  renderHistorico();
 });
 </script>
 {% endblock %}

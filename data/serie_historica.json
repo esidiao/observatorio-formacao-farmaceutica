@@ -1,0 +1,128 @@
+{
+  "series": [
+    2015,
+    2016,
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024
+  ],
+  "nacional": [
+    {
+      "ano": 2015,
+      "n_cursos": 450,
+      "vagas_total": 100227,
+      "vagas_presencial": 100227,
+      "vagas_ead": 0,
+      "matriculas": 109943,
+      "ingressos": 33719,
+      "concluintes": 14540,
+      "pct_ead": 0.0
+    },
+    {
+      "ano": 2016,
+      "n_cursos": 499,
+      "vagas_total": 107516,
+      "vagas_presencial": 107516,
+      "vagas_ead": 0,
+      "matriculas": 115080,
+      "ingressos": 36557,
+      "concluintes": 14327,
+      "pct_ead": 0.0
+    },
+    {
+      "ano": 2017,
+      "n_cursos": 540,
+      "vagas_total": 117573,
+      "vagas_presencial": 113701,
+      "vagas_ead": 3872,
+      "matriculas": 127107,
+      "ingressos": 44635,
+      "concluintes": 15786,
+      "pct_ead": 3.3
+    },
+    {
+      "ano": 2018,
+      "n_cursos": 578,
+      "vagas_total": 173097,
+      "vagas_presencial": 121797,
+      "vagas_ead": 51300,
+      "matriculas": 136254,
+      "ingressos": 46612,
+      "concluintes": 17743,
+      "pct_ead": 29.6
+    },
+    {
+      "ano": 2019,
+      "n_cursos": 641,
+      "vagas_total": 287617,
+      "vagas_presencial": 125834,
+      "vagas_ead": 161783,
+      "matriculas": 142633,
+      "ingressos": 51857,
+      "concluintes": 17329,
+      "pct_ead": 56.2
+    },
+    {
+      "ano": 2020,
+      "n_cursos": 679,
+      "vagas_total": 318379,
+      "vagas_presencial": 131951,
+      "vagas_ead": 186428,
+      "matriculas": 155824,
+      "ingressos": 60517,
+      "concluintes": 19057,
+      "pct_ead": 58.6
+    },
+    {
+      "ano": 2021,
+      "n_cursos": 717,
+      "vagas_total": 417021,
+      "vagas_presencial": 136515,
+      "vagas_ead": 280506,
+      "matriculas": 176866,
+      "ingressos": 73491,
+      "concluintes": 23056,
+      "pct_ead": 67.3
+    },
+    {
+      "ano": 2022,
+      "n_cursos": 770,
+      "vagas_total": 417346,
+      "vagas_presencial": 137491,
+      "vagas_ead": 279855,
+      "matriculas": 192080,
+      "ingressos": 87341,
+      "concluintes": 23495,
+      "pct_ead": 67.1
+    },
+    {
+      "ano": 2023,
+      "n_cursos": 793,
+      "vagas_total": 389302,
+      "vagas_presencial": 132730,
+      "vagas_ead": 256572,
+      "matriculas": 213257,
+      "ingressos": 98660,
+      "concluintes": 23361,
+      "pct_ead": 65.9
+    },
+    {
+      "ano": 2024,
+      "n_cursos": 817,
+      "vagas_total": 417010,
+      "vagas_presencial": 130150,
+      "vagas_ead": 286860,
+      "matriculas": 226992,
+      "ingressos": 96369,
+      "concluintes": 24144,
+      "pct_ead": 68.8
+    }
+  ],
+  "fonte": "INEP — Microdados do Censo da Educação Superior (2015–2024)",
+  "nota_modalidade": "EaD = TP_MODALIDADE 3 (2015–2023) e 2 (2024); presencial = 1. Vagas EaD registradas na sede."
+}
