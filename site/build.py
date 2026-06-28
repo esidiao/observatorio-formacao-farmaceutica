@@ -290,6 +290,11 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
 
     # ── Render página de aviso legal / direitos autorais ───────────────────────
     ano_corrente = (meta.get("data_extracao") or "2026")[:4]
+    registro_path = path_dados.parent / "registro_autoral.json"
+    registro = None
+    if registro_path.exists():
+        with open(registro_path, encoding="utf-8") as f:
+            registro = json.load(f)
     tmpl_legal = env.get_template("aviso-legal.html.j2") if (templates_dir / "aviso-legal.html.j2").exists() else None
     if tmpl_legal:
         html_legal = tmpl_legal.render(
@@ -297,9 +302,12 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
             meta=meta,
             meta_json=json.dumps(meta, ensure_ascii=False),
             ano_corrente=ano_corrente,
+            registro=registro,
         )
         (path_out / "aviso-legal.html").write_text(html_legal, encoding="utf-8")
         print(f"[OK] aviso-legal.html")
+    if registro is not None:
+        shutil.copy2(registro_path, path_out / "registro_autoral.json")
 
     # ── Render página de comparação ────────────────────────────────────────────
     tmpl_comp = env.get_template("comparar.html.j2") if (templates_dir / "comparar.html.j2").exists() else None

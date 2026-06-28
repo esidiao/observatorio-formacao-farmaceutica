@@ -1,0 +1,217 @@
+{
+  "obra": "Observatório Nacional da Formação Farmacêutica",
+  "autor": "Edson Sidião de Souza Júnior",
+  "tipo": "Registro de Anterioridade e Integridade (prova de existência)",
+  "selado_em_utc": "2026-06-28T00:02:41+00:00",
+  "algoritmo": "SHA-256",
+  "n_arquivos": 49,
+  "hash_raiz": "d62f320e22e79998edc5027d5e017d3abf5ac108c956de2bc69a99f7aca95fa4",
+  "git_commit_ancora": "e565083a2ed5ddbecfa9457b932c3df902af9654",
+  "fundamento": "Lei 9.610/1998 e Lei 9.609/1998. O hash-raiz é impressão digital única do conjunto; o commit Git ancora a data de forma imutável.",
+  "como_verificar": [
+    "1. Baixe os arquivos listados em 'arquivos'.",
+    "2. Calcule o SHA-256 de cada um (ex.: sha256sum, ou Get-FileHash no Windows).",
+    "3. Monte as linhas 'caminho:hash' em ordem alfabética de caminho, unidas por \\n.",
+    "4. Calcule o SHA-256 dessa string: deve ser igual a 'hash_raiz'.",
+    "5. O commit Git ('git_commit_ancora') comprova a data no histórico versionado.",
+    "6. (Opcional) Ancore 'hash_raiz' no blockchain via OpenTimestamps: ots stamp."
+  ],
+  "arquivos": [
+    {
+      "caminho": "data/_proveniencia.json",
+      "sha256": "d82d6081df53a78d0a587dbdd548e3655162fc8c2c0bfd4042d8ab7f88b96b90"
+    },
+    {
+      "caminho": "data/historico.json",
+      "sha256": "7a4fb2e256a531116a42504ad932f1f899a9ce88651a7d8cce244dc6544b03aa"
+    },
+    {
+      "caminho": "data/municipios/AC.json",
+      "sha256": "6fdf4422caff50dfcc30c94ef0cd40e1fbc25dbc993ea7f625aa32a599a637e9"
+    },
+    {
+      "caminho": "data/municipios/AL.json",
+      "sha256": "d1ddfafad6445a4d4516e9606c4464f3e5e9ce0c748383c2557f7c41dd767326"
+    },
+    {
+      "caminho": "data/municipios/AM.json",
+      "sha256": "e3a8656f33b6976003d733185696524128ed966a07dfc6a038373e6a6a0864ad"
+    },
+    {
+      "caminho": "data/municipios/AP.json",
+      "sha256": "efb6418d7fbeadcd9d1b9f5020f28240d8e268376283dcacb38648e159558560"
+    },
+    {
+      "caminho": "data/municipios/BA.json",
+      "sha256": "5440862327a00f8035b3b6957f5eddca3c99927a79981d0442955ec10e20a7ac"
+    },
+    {
+      "caminho": "data/municipios/CE.json",
+      "sha256": "58ee196550651859108bde7ce9fe4b64b4c67798a773962fff9328ff06553848"
+    },
+    {
+      "caminho": "data/municipios/DF.json",
+      "sha256": "15dbb0a5b91434a84a02be365e22bc85d5d5993b8c1552730e6c94af25fca23e"
+    },
+    {
+      "caminho": "data/municipios/ES.json",
+      "sha256": "368381a4e2e113c31ee1438d6c01ca14288d7a8c152796ed9568de7bfe53a0ce"
+    },
+    {
+      "caminho": "data/municipios/GO.json",
+      "sha256": "267e3fbdb24ffaf24ad58b4e2cc573b7be16fbbd93e2cf699bd8822e71d0bd4e"
+    },
+    {
+      "caminho": "data/municipios/MA.json",
+      "sha256": "e99c712fa2e21ea1c6a7112f6ba587a44111fe67e62003b72c3b4c42e0df886c"
+    },
+    {
+      "caminho": "data/municipios/MG.json",
+      "sha256": "8da8422835e035112d7223fdc729fe18afaeb7bd09acb2d8a13b3bce9cd06256"
+    },
+    {
+      "caminho": "data/municipios/MS.json",
+      "sha256": "ac47f7df3f85859ba6ff20f4b372365158f60daa7fd48e0463b30a2ed51d96d5"
+    },
+    {
+      "caminho": "data/municipios/MT.json",
+      "sha256": "5b5f381f55d8f074d4d5ee001e14b4069219f83769b638f7658d108e81464550"
+    },
+    {
+      "caminho": "data/municipios/PA.json",
+      "sha256": "4557869179069d882e5fd706d13daf97edf55c981bf04f57c68e3aca32075c23"
+    },
+    {
+      "caminho": "data/municipios/PB.json",
+      "sha256": "9aa6870dda4f3d2c02475d1a5abc5c0a2582e70398f5115839af46105ffbf607"
+    },
+    {
+      "caminho": "data/municipios/PE.json",
+      "sha256": "5fba29c19a3c4937e4ec7df4bec8ab4e9a6eb1aa79999966bd650a6b2ddcc119"
+    },
+    {
+      "caminho": "data/municipios/PI.json",
+      "sha256": "08d30b72cfdd6d9c9d918733ced0c3b8f3f45e2c4d232a1f7298fa030d85b2bb"
+    },
+    {
+      "caminho": "data/municipios/PR.json",
+      "sha256": "ca6d773c0f7b990c1d4e84bd1be31a50d2ee40b72582ac9b5d4b30ef5e2af1e0"
+    },
+    {
+      "caminho": "data/municipios/RJ.json",
+      "sha256": "c852f51a8b857064c182910b3be6e746f69d61f629bf2c2def685cbfaca17fe2"
+    },
+    {
+      "caminho": "data/municipios/RN.json",
+      "sha256": "2db6480265dc0e7b0ba18e9254d0594c66bf149805d9bb569ac2d2ea612c69ba"
+    },
+    {
+      "caminho": "data/municipios/RO.json",
+      "sha256": "3e88a97ee0cef7d585d75d67ad21d2e3a485676839f8908b3fec96211bae3f47"
+    },
+    {
+      "caminho": "data/municipios/RR.json",
+      "sha256": "ab7265aae0b7772a50009329a5489440b790088b8ff9a9063875f4ad96fabceb"
+    },
+    {
+      "caminho": "data/municipios/RS.json",
+      "sha256": "941a4ec363a4537d714080365ff7e2b2c6883d80e10f566c17e6c6539ff2861b"
+    },
+    {
+      "caminho": "data/municipios/SC.json",
+      "sha256": "a12f06ee1f2a15686681497d24508a1ea6f0959f3398a9c37272225a4bd7d030"
+    },
+    {
+      "caminho": "data/municipios/SE.json",
+      "sha256": "60495f9a82e376a469c2c2f75e274be6e63543e4b3c49fcb219411dad0af5fbc"
+    },
+    {
+      "caminho": "data/municipios/SP.json",
+      "sha256": "882817d0333c5691e86ad56d05fbc0bdf405686f306038e0cfc428a402907114"
+    },
+    {
+      "caminho": "data/municipios/TO.json",
+      "sha256": "db589e1d93db2a101654584081dbdc03741ddfd937808282cd15f7b1953f53b5"
+    },
+    {
+      "caminho": "data/nacional.json",
+      "sha256": "20d34bab0dc33894a434d7725fee5c17539f74406a4c844b1600be532eb4e353"
+    },
+    {
+      "caminho": "etl/baixar_geo.py",
+      "sha256": "50b27c93e1543e25d1df158729915e472bd687e106073f204ef27eeb505b8a3a"
+    },
+    {
+      "caminho": "etl/basedosdados_observatorio.py",
+      "sha256": "7a94df3774a219f251e8b152142a432b680f7726bc5c08cd2a72131de261fb0a"
+    },
+    {
+      "caminho": "etl/emec_cadastro_autorizada.py",
+      "sha256": "2df26d9555d295fda299cd3da12a93f24abbbfd1ac341b595260f0794d530de4"
+    },
+    {
+      "caminho": "etl/indices_observatorio.py",
+      "sha256": "7648bedd2edebca13ea37aa566deecb1b57ede5d5fef89b65277ee37af5534c9"
+    },
+    {
+      "caminho": "etl/ingestao_observatorio_nacional.py",
+      "sha256": "57f01f6cae2155901e41b534e617fb4057906cdc48dd8ca908127fdb61cc05ca"
+    },
+    {
+      "caminho": "etl/municipios_etl.py",
+      "sha256": "a4eae6ff40478b8f513d705cb639221a2c38f6c3037acf2853bc76634a65fecf"
+    },
+    {
+      "caminho": "etl/pipeline.py",
+      "sha256": "00b8a5c29f608401881bb371653d969f3af1660ae64fb0347d2fc6917e8ca682"
+    },
+    {
+      "caminho": "etl/registro_autoral.py",
+      "sha256": "1d7cbc2b29823e2e0b3a8756500084591f9c23fcad62148f8194e3d922bcb524"
+    },
+    {
+      "caminho": "site/build.py",
+      "sha256": "d6184b220766e586e1d08656b5290786839fef6c1837301f2f351788619a9957"
+    },
+    {
+      "caminho": "site/static/css/style.css",
+      "sha256": "49fd38557234c31ee8b1c366bfc8973300d4e40268a056735bd08cdf09ee9e97"
+    },
+    {
+      "caminho": "site/static/js/app.js",
+      "sha256": "93f3ba5c5850c5b46a5318273ca45fb936e72a4609d5568c1cac4c76150cfa2b"
+    },
+    {
+      "caminho": "site/static/js/glossario.js",
+      "sha256": "71e044c60494d8a15aa606e4d4387939d1ed30ace7c6983f21d858395b74bfdb"
+    },
+    {
+      "caminho": "site/templates/autor.html.j2",
+      "sha256": "8c3c5a525cab573982c095a6efb4fbe5de9c6a906f5e861633b71ab4ef6816e6"
+    },
+    {
+      "caminho": "site/templates/aviso-legal.html.j2",
+      "sha256": "11744d6480b93740c59fcbe47544d9abe52fa47f0364a0ee2ea434867d3e0155"
+    },
+    {
+      "caminho": "site/templates/base.html.j2",
+      "sha256": "ca788246b6308097b551c256a4c1ea83986fb2a31492b25d25e0812756bb535d"
+    },
+    {
+      "caminho": "site/templates/comparar.html.j2",
+      "sha256": "3ed0f40b53ae5e7e2ae5818f0b90472898da0f6f5a4af20d5400bbbdc6240d60"
+    },
+    {
+      "caminho": "site/templates/index.html.j2",
+      "sha256": "7a37aaa95bdec44d692a6919a22f512359c21a7d8161b01568b6ec7e69815067"
+    },
+    {
+      "caminho": "site/templates/municipio.html.j2",
+      "sha256": "427c38467ea51822e06de5f7693bf2d2cd54ac01849e6382731ce023941775e1"
+    },
+    {
+      "caminho": "site/templates/uf.html.j2",
+      "sha256": "949c7cae25f560ab0a8c001bc72da3958fa72db664db26b340a11b4215fc4db6"
+    }
+  ]
+}

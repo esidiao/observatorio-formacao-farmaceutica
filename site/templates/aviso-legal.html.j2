@@ -133,7 +133,47 @@
   decisório vinculante. O Autor não responde por decisões tomadas com base exclusiva no conteúdo aqui apresentado.
 </p>
 
+{% if registro %}
+<h2 class="section-title">7. Registro de anterioridade e integridade</h2>
+<p>
+  Para constituir <strong>prova de existência e anterioridade</strong> da Obra, foi gerada uma
+  <strong>impressão digital criptográfica</strong> (SHA-256) do conjunto de arquivos que a compõem. Qualquer
+  alteração de um único byte em qualquer arquivo modifica o hash-raiz abaixo — o que torna a Obra
+  <strong>verificável e à prova de adulteração</strong>.
+</p>
+<div class="legal-callout" style="border-left-color:var(--blue)">
+  <div style="display:grid;grid-template-columns:auto 1fr;gap:6px 14px;font-size:0.86rem">
+    <strong>Obra:</strong><span>{{ registro.obra }}</span>
+    <strong>Autor:</strong><span>{{ registro.autor }}</span>
+    <strong>Selado em (UTC):</strong><span>{{ registro.selado_em_utc }}</span>
+    <strong>Algoritmo:</strong><span>{{ registro.algoritmo }} · {{ registro.n_arquivos }} arquivos</span>
+  </div>
+  <div style="margin-top:12px">
+    <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:3px">Hash-raiz (impressão digital única da Obra):</div>
+    <code style="display:block;background:#0f1d2e;color:#7fe0a8;padding:10px 12px;border-radius:6px;font-size:0.74rem;word-break:break-all">{{ registro.hash_raiz }}</code>
+  </div>
+  {% if registro.git_commit_ancora %}
+  <div style="margin-top:10px">
+    <div style="font-size:0.78rem;color:var(--text-muted);margin-bottom:3px">Âncora temporal (commit Git — registro datado e imutável):</div>
+    <code style="display:block;background:#0f1d2e;color:#cdd8ea;padding:10px 12px;border-radius:6px;font-size:0.74rem;word-break:break-all">{{ registro.git_commit_ancora }}</code>
+  </div>
+  {% endif %}
+</div>
+<p style="font-size:0.86rem">A integridade pode ser verificada de forma independente por qualquer pessoa:</p>
+<ol style="font-size:0.86rem">
+  {% for passo in registro.como_verificar %}<li>{{ passo[3:] if passo[1:3] == '. ' else passo }}</li>{% endfor %}
+</ol>
+<p class="legal-lei">
+  O manifesto completo, com o hash individual de cada arquivo, está disponível em
+  <a href="{{ depth }}registro_autoral.json">registro_autoral.json</a> e no repositório versionado da Obra. O histórico Git fornece a cadeia
+  datada de commits; opcionalmente, o hash-raiz pode ser ancorado em blockchain via OpenTimestamps, agregando
+  prova de existência independente de terceiros.
+</p>
+
+<h2 class="section-title">8. Vigência, foro e contato</h2>
+{% else %}
 <h2 class="section-title">7. Vigência, foro e contato</h2>
+{% endif %}
 <p>
   Este instrumento vigora a partir de sua publicação e aplica-se a todo o conteúdo da Obra. As relações dele
   decorrentes regem-se pela legislação brasileira, elegendo-se o foro da comarca de domicílio do Autor para
