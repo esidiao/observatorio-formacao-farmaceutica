@@ -306,4 +306,59 @@
   </div>
 </div>
 
+<!-- Contato -->
+<h2 class="section-title">Contato</h2>
+<p style="font-size:0.9rem;color:var(--text-muted);margin-bottom:14px">
+  Para solicitações de autorização de uso, licenciamento, consultoria ou parcerias acadêmicas:
+</p>
+<div class="contato-grid">
+  <a class="contato-card" href="tel:+5562998044822">
+    <span class="contato-icone">📱</span>
+    <span>
+      <span class="contato-rotulo">Telefone / WhatsApp</span>
+      <span class="contato-valor">(62) 99804-4822</span>
+    </span>
+  </a>
+  <a class="contato-card" href="mailto:sidiao@i9educar.com">
+    <span class="contato-icone">✉️</span>
+    <span>
+      <span class="contato-rotulo">E-mail</span>
+      <span class="contato-valor">sidiao@i9educar.com</span>
+    </span>
+  </a>
+  <a class="contato-card" href="https://lattes.cnpq.br/9464330669014306" target="_blank" rel="noopener">
+    <span class="contato-icone">🎓</span>
+    <span>
+      <span class="contato-rotulo">Currículo</span>
+      <span class="contato-valor">Plataforma Lattes ↗</span>
+    </span>
+  </a>
+</div>
+
+<style>
+  .contato-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 14px;
+    margin-bottom: 28px;
+  }
+  .contato-card {
+    display: flex; align-items: center; gap: 14px;
+    background: var(--surface); border: 1px solid var(--border);
+    border-left: 4px solid var(--blue); border-radius: 10px;
+    padding: 16px 18px; text-decoration: none; color: var(--text);
+    transition: transform 0.12s, box-shadow 0.12s, border-color 0.12s;
+  }
+  .contato-card:hover {
+    transform: translateY(-2px); text-decoration: none;
+    box-shadow: 0 6px 18px rgba(22,48,79,0.12); border-color: var(--blue);
+  }
+  .contato-icone { font-size: 1.6rem; line-height: 1; }
+  .contato-rotulo {
+    display: block; font-size: 0.72rem; text-transform: uppercase;
+    letter-spacing: 0.05em; color: var(--text-muted); margin-bottom: 2px;
+  }
+  .contato-valor { display: block; font-size: 1rem; font-weight: 700; color: var(--navy); }
+</style>
+
 {% endblock %}

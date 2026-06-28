@@ -70,20 +70,20 @@
 <div class="tabela-wrap">
   <table id="tabela-comp">
     <thead>
-      <tr>
-        <th>UF</th>
-        <th title="Vagas totais: presenciais + EaD (sede da mantenedora)">Vagas totais</th>
-        <th title="Vagas por 100 mil habitantes (IBGE)">/100k</th>
-        <th title="% das vagas em EaD">% EaD</th>
-        <th>ICT ↓</th>
-        <th>E</th>
-        <th>IAF ↑</th>
-        <th title="IDD — valor agregado pelo curso (ENADE/CPC 2023)">IDD ↑</th>
-        <th title="Taxa de conclusão (concluintes/matrículas)">Concl. %</th>
-        <th title="ICON-deserto — Farmácia Popular em desertos">ICON-d</th>
-        <th title="HHI por mantenedora">HHI-m</th>
-        <th title="Municípios c/ polo EaD">Polos</th>
-        <th>Desertos</th>
+      <tr id="comp-thead-row">
+        <th data-key="sigla" onclick="ordenarPor('sigla')" title="Ordenar por UF">UF</th>
+        <th data-key="vagas_total_real" onclick="ordenarPor('vagas_total_real')" title="Vagas totais: presenciais + EaD (sede da mantenedora). Clique para ordenar.">Vagas totais</th>
+        <th data-key="vagas_por_100k" onclick="ordenarPor('vagas_por_100k')" title="Vagas por 100 mil habitantes (IBGE). Clique para ordenar.">/100k</th>
+        <th data-key="pct_ead" onclick="ordenarPor('pct_ead')" title="% das vagas em EaD. Clique para ordenar.">% EaD</th>
+        <th data-key="ICT" onclick="ordenarPor('ICT')" title="ICT — menor é melhor. Clique para ordenar.">ICT ↓</th>
+        <th data-key="E" onclick="ordenarPor('E')" title="Equidade. Clique para ordenar.">E</th>
+        <th data-key="IAF" onclick="ordenarPor('IAF')" title="IAF — maior é melhor. Clique para ordenar.">IAF ↑</th>
+        <th data-key="IDD" onclick="ordenarPor('IDD')" title="IDD — valor agregado pelo curso (ENADE/CPC 2023). Clique para ordenar.">IDD ↑</th>
+        <th data-key="taxa_retencao" onclick="ordenarPor('taxa_retencao')" title="Taxa de conclusão (concluintes/matrículas). Clique para ordenar.">Concl. %</th>
+        <th data-key="ICON_adj" onclick="ordenarPor('ICON_adj')" title="ICON-deserto — Farmácia Popular em desertos. Clique para ordenar.">ICON-d</th>
+        <th data-key="HHI_mantenedora" onclick="ordenarPor('HHI_mantenedora')" title="HHI por mantenedora. Clique para ordenar.">HHI-m</th>
+        <th data-key="ead_polos_municipios" onclick="ordenarPor('ead_polos_municipios')" title="Municípios c/ polo EaD. Clique para ordenar.">Polos</th>
+        <th data-key="municipios_deserto" onclick="ordenarPor('municipios_deserto')" title="Desertos farmacêuticos. Clique para ordenar.">Desertos</th>
       </tr>
     </thead>
     <tbody id="tbody-comp"></tbody>
@@ -109,6 +109,51 @@ let selecionados = new Set(['GO', 'SP', 'MG', 'RJ', 'PR']); // padrão inicial
 
 let barChart = null;
 let radarChart = null;
+
+// Estado de ordenação da tabela
+let sortKey = null;       // null = ordem alfabética (UF)
+let sortDir = 'desc';     // 'asc' | 'desc'
+
+function ordenarPor(key) {
+  if (sortKey === key) {
+    sortDir = (sortDir === 'desc') ? 'asc' : 'desc';
+  } else {
+    sortKey = key;
+    sortDir = (key === 'sigla') ? 'asc' : 'desc'; // siglas: A→Z; números: maior→menor
+  }
+  atualizarGraficos();
+}
+
+function ordenarUFs(ufs) {
+  const arr = [...ufs];
+  if (!sortKey) return arr.sort();
+  arr.sort((a, b) => {
+    let va = (sortKey === 'sigla') ? a : (TODOS_DADOS[a]?.[sortKey]);
+    let vb = (sortKey === 'sigla') ? b : (TODOS_DADOS[b]?.[sortKey]);
+    // valores ausentes vão sempre para o fim
+    const na = (va === null || va === undefined), nb = (vb === null || vb === undefined);
+    if (na && nb) return 0;
+    if (na) return 1;
+    if (nb) return -1;
+    let cmp;
+    if (typeof va === 'string' || typeof vb === 'string') cmp = String(va).localeCompare(String(vb), 'pt-BR');
+    else cmp = va - vb;
+    return sortDir === 'asc' ? cmp : -cmp;
+  });
+  return arr;
+}
+
+function atualizarSetasOrdenacao() {
+  document.querySelectorAll('#comp-thead-row th').forEach(th => {
+    const base = th.textContent.replace(/[▲▼]\s*$/, '').trim();
+    const k = th.dataset.key;
+    th.innerHTML = base + (k === sortKey ? ` <span style="font-size:0.7rem">${sortDir === 'asc' ? '▲' : '▼'}</span>` : '');
+    th.style.cursor = 'pointer';
+    th.style.userSelect = 'none';
+    if (k === sortKey) th.style.background = 'var(--blue)';
+    else th.style.background = '';
+  });
+}
 
 function toggleUF(sigla) {
   if (selecionados.has(sigla)) {
@@ -199,10 +244,11 @@ function atualizarGraficos() {
     }
   });
 
-  // Tabela
+  // Tabela (respeita a ordenação por KPI)
   const tbody = document.getElementById('tbody-comp');
   tbody.innerHTML = '';
-  ufs.forEach(sigla => {
+  atualizarSetasOrdenacao();
+  ordenarUFs(ufs).forEach(sigla => {
     const d = TODOS_DADOS[sigla] || {};
     const tr = document.createElement('tr');
     tr.innerHTML = `
