@@ -1,0 +1,217 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Correlações — Observatório Nacional da Formação Farmacêutica{% endblock %}
+{% block meta_description %}Correlações entre indicadores da formação farmacêutica nos 27 estados: matriz de correlação e gráficos de dispersão interativos (qualificação docente, IDD, EaD, equidade).{% endblock %}
+
+{% block breadcrumb %}
+<a href="{{ depth }}index.html">Início</a>
+<span class="sep">›</span>
+<span class="active">Correlações</span>
+{% endblock %}
+
+{% block content %}
+
+<h2 class="section-title" style="margin-bottom:6px">Correlações entre indicadores</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:8px;max-width:80ch">
+  Explore como os indicadores se relacionam entre as 27 UFs. Escolha dois indicadores para o
+  gráfico de dispersão (cada ponto é um estado) ou clique numa célula da matriz.
+</p>
+<div class="legal-callout" style="background:var(--surface);border:1px solid var(--border);border-left:4px solid var(--gold);border-radius:8px;padding:12px 16px;margin-bottom:20px;font-size:0.83rem;max-width:80ch">
+  <strong>Como ler com cuidado:</strong> correlação <strong>não é causalidade</strong>. A análise é
+  por <strong>estado</strong> (n = 27) — relações no agregado podem não valer para cada curso
+  (falácia ecológica). Use como <strong>exploração de hipóteses</strong>, não como prova.
+</div>
+
+<!-- Dispersão -->
+<div class="toolbar" style="gap:12px;flex-wrap:wrap;margin-bottom:12px">
+  <div style="display:flex;align-items:center;gap:8px">
+    <label style="font-size:0.875rem;font-weight:600">Eixo X:</label>
+    <select id="sel-x" onchange="renderScatter()" style="font-size:0.85rem"></select>
+  </div>
+  <div style="display:flex;align-items:center;gap:8px">
+    <label style="font-size:0.875rem;font-weight:600">Eixo Y:</label>
+    <select id="sel-y" onchange="renderScatter()" style="font-size:0.85rem"></select>
+  </div>
+  <button class="btn outline" onclick="trocarEixos()" style="font-size:0.8rem">⇄ Trocar</button>
+</div>
+<div id="corr-resumo" style="font-size:0.92rem;margin-bottom:10px"></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:32px">
+  <canvas id="grafico-scatter" height="120"></canvas>
+</div>
+
+<!-- Matriz -->
+<h2 class="section-title">Matriz de correlação (Pearson)</h2>
+<p style="font-size:0.83rem;color:var(--text-muted);margin-bottom:12px">
+  Azul = correlação positiva · vermelho = negativa · tom mais forte = relação mais intensa.
+  Clique numa célula para ver a dispersão.
+</p>
+<div class="tabela-wrap">
+  <table id="matriz-corr" style="font-size:0.8rem"></table>
+</div>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+const DADOS = {{ dados_ufs_json }};
+const UFS = Object.keys(DADOS);
+
+// Catálogo: reaproveita o GLOSSARIO; só indicadores numéricos presentes
+const CAT = (typeof GLOSSARIO !== 'undefined' ? GLOSSARIO : [])
+  .filter(g => UFS.some(u => DADOS[u] && DADOS[u][g.key] != null && !isNaN(Number(DADOS[u][g.key]))));
+const INFO = Object.fromEntries(CAT.map(g => [g.key, g]));
+
+// Indicadores-chave para a matriz
+const MATRIZ_KEYS = ['IDD', 'CPC_cont', 'pct_doc_doutores', 'cpc_infraestrutura', 'taxa_retencao',
+  'ICT', 'HHI_mantenedora', 'pct_ead', 'vagas_por_100k', 'pct_ppi', 'pct_financiamento', 'pct_mulheres']
+  .filter(k => INFO[k]);
+
+const NOMES_UF = (typeof NOMES_UF_MAPA !== 'undefined') ? NOMES_UF_MAPA : {};
+
+function pares(kx, ky) {
+  const p = [];
+  UFS.forEach(u => {
+    const x = DADOS[u]?.[kx], y = DADOS[u]?.[ky];
+    if (x != null && y != null && !isNaN(x) && !isNaN(y)) p.push([+x, +y, u]);
+  });
+  return p;
+}
+function pearson(p) {
+  const n = p.length; if (n < 4) return null;
+  const mx = p.reduce((s, a) => s + a[0], 0) / n, my = p.reduce((s, a) => s + a[1], 0) / n;
+  let sxy = 0, sxx = 0, syy = 0;
+  p.forEach(a => { sxy += (a[0] - mx) * (a[1] - my); sxx += (a[0] - mx) ** 2; syy += (a[1] - my) ** 2; });
+  return (sxx && syy) ? sxy / Math.sqrt(sxx * syy) : null;
+}
+function corCorr(r) {
+  if (r == null) return '#eee';
+  const a = Math.min(1, Math.abs(r));
+  const base = r >= 0 ? [33, 102, 172] : [178, 24, 43];   // azul / vermelho
+  const mix = base.map(c => Math.round(255 - (255 - c) * a));
+  return `rgb(${mix.join(',')})`;
+}
+function forca(r) {
+  const a = Math.abs(r);
+  return a >= 0.6 ? 'forte' : a >= 0.3 ? 'moderada' : 'fraca';
+}
+
+let scatter = null;
+
+function popularSelects() {
+  const opt = k => `<option value="${k}">${(INFO[k] || {}).nome || k}</option>`;
+  const grupos = {};
+  CAT.forEach(g => { (grupos[g.cat] = grupos[g.cat] || []).push(g.key); });
+  let html = '';
+  ['Território', 'Qualidade', 'Capacidade', 'Acesso & equidade', 'Mercado'].forEach(cat => {
+    if (!grupos[cat]) return;
+    html += `<optgroup label="${cat}">` + grupos[cat].map(opt).join('') + `</optgroup>`;
+  });
+  document.getElementById('sel-x').innerHTML = html;
+  document.getElementById('sel-y').innerHTML = html;
+  document.getElementById('sel-x').value = 'pct_doc_doutores';
+  document.getElementById('sel-y').value = 'IDD';
+}
+
+function trocarEixos() {
+  const x = document.getElementById('sel-x'), y = document.getElementById('sel-y');
+  [x.value, y.value] = [y.value, x.value];
+  renderScatter();
+}
+
+function renderScatter() {
+  const kx = document.getElementById('sel-x').value, ky = document.getElementById('sel-y').value;
+  const p = pares(kx, ky);
+  const r = pearson(p);
+  const nx = (INFO[kx] || {}).nome || kx, ny = (INFO[ky] || {}).nome || ky;
+
+  // resumo textual
+  const resumo = document.getElementById('corr-resumo');
+  if (r == null) { resumo.innerHTML = 'Dados insuficientes para correlacionar.'; }
+  else {
+    const dir = r >= 0 ? 'positiva' : 'negativa';
+    const cor = Math.abs(r) >= 0.6 ? 'var(--swot-strength)' : (Math.abs(r) >= 0.3 ? 'var(--gold)' : 'var(--text-muted)');
+    resumo.innerHTML = `Correlação <strong style="color:${cor}">${dir} ${forca(r)}</strong> · `
+      + `<strong>r = ${r.toFixed(2)}</strong> (n = ${p.length} UFs). `
+      + `<span style="color:var(--text-muted)">r² = ${(r * r).toFixed(2)} — ${(r * r * 100).toFixed(0)}% da variação compartilhada.</span>`;
+  }
+
+  // reta de tendência (mínimos quadrados)
+  let linha = [];
+  if (p.length >= 2) {
+    const n = p.length, mx = p.reduce((s, a) => s + a[0], 0) / n, my = p.reduce((s, a) => s + a[1], 0) / n;
+    let sxx = 0, sxy = 0;
+    p.forEach(a => { sxx += (a[0] - mx) ** 2; sxy += (a[0] - mx) * (a[1] - my); });
+    const b = sxx ? sxy / sxx : 0, a0 = my - b * mx;
+    const xs = p.map(a => a[0]); const x0 = Math.min(...xs), x1 = Math.max(...xs);
+    linha = [{ x: x0, y: a0 + b * x0 }, { x: x1, y: a0 + b * x1 }];
+  }
+
+  const ctx = document.getElementById('grafico-scatter').getContext('2d');
+  if (scatter) scatter.destroy();
+  scatter = new Chart(ctx, {
+    data: {
+      datasets: [
+        { type: 'scatter', label: 'UFs', data: p.map(a => ({ x: a[0], y: a[1], uf: a[2] })),
+          backgroundColor: '#2E5496', pointRadius: 5, pointHoverRadius: 7 },
+        { type: 'line', label: 'tendência', data: linha, borderColor: '#B07D22',
+          borderDash: [6, 4], borderWidth: 2, pointRadius: 0, fill: false }
+      ]
+    },
+    options: {
+      responsive: true,
+      plugins: {
+        legend: { display: false },
+        tooltip: { callbacks: { label: c => c.raw.uf ? `${NOMES_UF[c.raw.uf] || c.raw.uf}: ${nx} ${fmtIndicador(kx, c.raw.x)} · ${ny} ${fmtIndicador(ky, c.raw.y)}` : '' } }
+      },
+      scales: {
+        x: { title: { display: true, text: nx, font: { size: 11 } } },
+        y: { title: { display: true, text: ny, font: { size: 11 } } }
+      }
+    },
+    plugins: [{
+      id: 'ufLabels',
+      afterDatasetsDraw(chart) {
+        const ctx = chart.ctx; ctx.save();
+        ctx.font = '10px sans-serif'; ctx.fillStyle = '#16304F';
+        chart.getDatasetMeta(0).data.forEach((pt, i) => {
+          ctx.fillText(chart.data.datasets[0].data[i].uf, pt.x + 6, pt.y - 4);
+        });
+        ctx.restore();
+      }
+    }]
+  });
+}
+
+function renderMatriz() {
+  const tbl = document.getElementById('matriz-corr');
+  const sig = k => (INFO[k] || {}).sigla || k;
+  let html = '<thead><tr><th></th>' + MATRIZ_KEYS.map(k => `<th title="${(INFO[k] || {}).nome}" style="writing-mode:vertical-rl;transform:rotate(180deg);padding:4px;font-size:0.72rem">${sig(k)}</th>`).join('') + '</tr></thead><tbody>';
+  MATRIZ_KEYS.forEach(kr => {
+    html += `<tr><th style="text-align:left;padding:4px 8px;white-space:nowrap;font-size:0.72rem" title="${(INFO[kr] || {}).nome}">${sig(kr)}</th>`;
+    MATRIZ_KEYS.forEach(kc => {
+      if (kr === kc) { html += `<td style="background:#16304F"></td>`; return; }
+      const r = pearson(pares(kr, kc));
+      const txt = r == null ? '' : r.toFixed(2).replace('0.', '.').replace('-0.', '-.');
+      const escuro = r != null && Math.abs(r) >= 0.55;
+      html += `<td onclick="abrirPar('${kc}','${kr}')" title="${sig(kr)} × ${sig(kc)}: r=${r == null ? 's/d' : r.toFixed(2)}" `
+        + `style="cursor:pointer;text-align:center;padding:5px;background:${corCorr(r)};color:${escuro ? '#fff' : '#222'};font-size:0.72rem">${txt}</td>`;
+    });
+    html += '</tr>';
+  });
+  tbl.innerHTML = html + '</tbody>';
+}
+
+function abrirPar(kx, ky) {
+  document.getElementById('sel-x').value = kx;
+  document.getElementById('sel-y').value = ky;
+  renderScatter();
+  document.getElementById('grafico-scatter').scrollIntoView({ behavior: 'smooth', block: 'center' });
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  popularSelects();
+  renderScatter();
+  renderMatriz();
+});
+</script>
+{% endblock %}

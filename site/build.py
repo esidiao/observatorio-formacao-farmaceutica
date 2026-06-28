@@ -363,6 +363,18 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         (path_out / "comparar.html").write_text(html_comp, encoding="utf-8")
         print(f"[OK] comparar.html")
 
+    # ── Render página de correlações ───────────────────────────────────────────
+    tmpl_corr = env.get_template("correlacoes.html.j2") if (templates_dir / "correlacoes.html.j2").exists() else None
+    if tmpl_corr:
+        html_corr = tmpl_corr.render(
+            depth="",
+            meta=meta,
+            meta_json=json.dumps(meta, ensure_ascii=False),
+            dados_ufs_json=json.dumps(ufs, ensure_ascii=False),
+        )
+        (path_out / "correlacoes.html").write_text(html_corr, encoding="utf-8")
+        print(f"[OK] correlacoes.html")
+
     # ── SEO: robots.txt + sitemap.xml ──────────────────────────────────────────
     site_url = (meta.get("site_url") or "https://esidiao.github.io/observatorio-formacao-farmaceutica").rstrip("/")
     data_mod = meta.get("data_extracao") or ""
