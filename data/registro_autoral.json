@@ -2,11 +2,11 @@
   "obra": "Observatório Nacional da Formação Farmacêutica",
   "autor": "Edson Sidião de Souza Júnior",
   "tipo": "Registro de Anterioridade e Integridade (prova de existência)",
-  "selado_em_utc": "2026-06-28T21:51:46+00:00",
+  "selado_em_utc": "2026-06-28T22:05:18+00:00",
   "algoritmo": "SHA-256",
   "n_arquivos": 56,
-  "hash_raiz": "3af21db8b3e9df2bb80f711b8d319e6d620b00ffdc3f591820545861e3d75299",
-  "git_commit_ancora": "eb4d4abfc946805ff0ecfe8445846bd9c2993796",
+  "hash_raiz": "91d5b51c20f475c70a67ae2d757f1be74edf634ebd6da999af3d4a52a1154ed6",
+  "git_commit_ancora": "a00c0acc46419ce3a529a418f7b609a491fd6d72",
   "fundamento": "Lei 9.610/1998 e Lei 9.609/1998. O hash-raiz é impressão digital única do conjunto; o commit Git ancora a data de forma imutável.",
   "como_verificar": [
     "1. Baixe os arquivos listados em 'arquivos'.",
@@ -195,7 +195,7 @@
     },
     {
       "caminho": "site/static/css/style.css",
-      "sha256": "e731fd2806ae00743324f2ffbfa86423dac7e50e0df2339b33b4a406a863eb34"
+      "sha256": "3eb779249c913a421160b630ce2845f5d87b3d1dd2ba5e4aadf1ee83cb9731cb"
     },
     {
       "caminho": "site/static/js/app.js",
@@ -207,23 +207,23 @@
     },
     {
       "caminho": "site/templates/autor.html.j2",
-      "sha256": "d9494bba177f459a358cad5f1ffd397d6ccad85b7a875ca6f8abf7322195aa87"
+      "sha256": "373995af09319b17d9760a5ae101b681849d480cacb7bfa5617e2f2ba51073d4"
     },
     {
       "caminho": "site/templates/aviso-legal.html.j2",
-      "sha256": "5bb28e9b16e364b03e98a0be5e915e5b5ecd29bc4ef76a00b915d81abf2e0a93"
+      "sha256": "67388bbad84e35f8851c0d82b3f3053e3397cda21c6b0a8ccc6e0e9869e111ec"
     },
     {
       "caminho": "site/templates/base.html.j2",
-      "sha256": "7b55bbd529fc339da1961c1ea468e48d49777b35e0d5e0d51f42ac0e8ed54e7c"
+      "sha256": "39ab2f03840ab8b0018676fdfecb529d3d3187ec73d763d9b947301031e0c96a"
     },
     {
       "caminho": "site/templates/comparar.html.j2",
-      "sha256": "bfd3d228e05bb092445637b5d1c31ba0ae8ab14d1183124dedb8cb28cbd959c6"
+      "sha256": "00c673be727850641644ec0c6a1f99ead1b7c5ab6825fcb966a2b53f71cc9555"
     },
     {
       "caminho": "site/templates/correlacoes.html.j2",
-      "sha256": "787375915735ae368820c7f6625f9db815186746546c337cf18ba56a87652833"
+      "sha256": "66ac88947104d4af83c1c30b5ea652237df2a6463000e0a6aa29fc1a2a6b089b"
     },
     {
       "caminho": "site/templates/index.html.j2",
@@ -231,15 +231,15 @@
     },
     {
       "caminho": "site/templates/indice.html.j2",
-      "sha256": "ec6139edf4171d0bc4ceb427a12210fbaf8d590976812f359ce69391b43abc6c"
+      "sha256": "873ce4390cebe505a1375027af392abbe79a4256c502bf5fb23261c7d9b4a493"
     },
     {
       "caminho": "site/templates/municipio.html.j2",
-      "sha256": "f9a40178e34911902e01f14a246b9b7bc3beeff48f8bdef0f5dab3644e51edac"
+      "sha256": "9557b302f2bdf1d78f5896d117632d78dad26136c2f779eb0e0b41ebb5b1dd38"
     },
     {
       "caminho": "site/templates/uf.html.j2",
-      "sha256": "e488b0fb0757ec30bc9b7a3152620f9a4a9e56b594eccf3da50b71b272704472"
+      "sha256": "820a415b07e99d5b9459707f135cad9d9fd057c08d29093a7dd861c8ba8089d3"
     }
   ]
 }
