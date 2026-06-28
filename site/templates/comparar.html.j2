@@ -55,11 +55,18 @@
   <span id="mod-nota" style="font-size:0.78rem;color:var(--text-muted)"></span>
 </div>
 
-<!-- Gráfico de barras (um indicador) -->
-<h2 class="section-title">Gráfico de barras — um indicador</h2>
-<div class="toolbar" style="margin-bottom:10px">
-  <label style="font-size:0.875rem;font-weight:600">Indicador no gráfico:</label>
-  <select id="sel-ind" onchange="renderTudo()" style="font-size:0.875rem"></select>
+<!-- Gráfico de barras -->
+<h2 class="section-title">Gráfico de barras</h2>
+<div class="toolbar" style="margin-bottom:10px;gap:10px;flex-wrap:wrap;align-items:center">
+  <div style="display:flex;gap:6px">
+    <button class="barmodo-btn btn outline" data-modo="single" onclick="setBarModo('single')" style="font-size:0.8rem;padding:4px 12px">1 indicador</button>
+    <button class="barmodo-btn btn outline" data-modo="multi" onclick="setBarModo('multi')" style="font-size:0.8rem;padding:4px 12px">Vários indicadores</button>
+  </div>
+  <div id="bar-single-ctrl" style="display:flex;align-items:center;gap:8px">
+    <label style="font-size:0.875rem;font-weight:600">Indicador:</label>
+    <select id="sel-ind" onchange="renderBarra()" style="font-size:0.875rem"></select>
+  </div>
+  <span id="bar-multi-nota" style="font-size:0.78rem;color:var(--text-muted);display:none">Barras normalizadas (0 = pior · 1 = melhor) — os KPIs selecionados acima. Passe o mouse para ver o valor real.</span>
 </div>
 <div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:28px">
   <canvas id="grafico-barras" height="100"></canvas>
@@ -96,6 +103,7 @@ const TODOS_DADOS = {{ dados_ufs_json }};
 let selecionados = new Set(['GO', 'SP', 'MG', 'RJ', 'PR']);
 let kpisSelecionados = new Set(['ICT', 'IAF', 'IDD', 'vagas_por_100k', 'pct_doc_doutores', 'taxa_retencao']);
 let modalidade = 'todas';   // 'todas' | 'presencial' | 'ead'
+let barModo = 'single';     // 'single' | 'multi'
 
 let barChart = null, radarChart = null;
 let sortKey = null, sortDir = 'desc';
@@ -241,16 +249,68 @@ function renderTudo() {
   renderBarra(); renderTabela(); renderRadar();
 }
 
+function setBarModo(m) {
+  barModo = m;
+  document.querySelectorAll('.barmodo-btn').forEach(b => {
+    const on = b.dataset.modo === m;
+    b.style.background = on ? 'var(--blue)' : '';
+    b.style.color = on ? '#fff' : '';
+  });
+  document.getElementById('bar-single-ctrl').style.display = (m === 'single') ? 'flex' : 'none';
+  document.getElementById('bar-multi-nota').style.display = (m === 'multi') ? '' : 'none';
+  renderBarra();
+}
+
 function renderBarra() {
   const ufs = [...selecionados].sort();
-  const indicador = document.getElementById('sel-ind').value;
   const ctx = document.getElementById('grafico-barras').getContext('2d');
   if (barChart) barChart.destroy();
-  if (!ufs.length || !indicador) return;
+  if (!ufs.length) return;
+  const sufMod = modalidade !== 'todas' ? ` — ${modalidade === 'ead' ? 'EaD' : 'Presencial'}` : '';
+  const PALETA = ['#2E5496', '#B07D22', '#3F6B2E', '#B23A2E', '#8B5CF6', '#06B6D4', '#F59E0B', '#10B981', '#EC4899', '#14B8A6'];
+
+  if (barModo === 'multi') {
+    // Vários indicadores: barras agrupadas, normalizadas 0-1 (maior = melhor)
+    const keys = [...kpisSelecionados];
+    if (!keys.length) return;
+    const datasets = keys.map((k, i) => ({
+      label: (CAT_INFO[k] || {}).sigla || k,
+      data: ufs.map(u => normKPI(k, V(u, k), ufs)),
+      backgroundColor: PALETA[i % PALETA.length],
+      borderWidth: 0,
+      _key: k,  // guardamos a chave p/ o tooltip mostrar o valor real
+    }));
+    barChart = new Chart(ctx, {
+      type: 'bar',
+      data: { labels: ufs, datasets },
+      options: {
+        responsive: true,
+        plugins: {
+          legend: { position: 'bottom', labels: { font: { size: 11 } } },
+          title: { display: true, text: 'Indicadores comparados (normalizado)' + sufMod, font: { size: 13 } },
+          tooltip: {
+            callbacks: {
+              label: c => {
+                const k = c.dataset._key, uf = c.label;
+                const real = V(uf, k);
+                const nome = (CAT_INFO[k] || {}).nome || k;
+                return real == null ? `${nome}: sem dado` : `${nome}: ${fmtIndicador(k, real)}  (norm. ${c.raw == null ? '—' : c.raw.toFixed(2)})`;
+              }
+            }
+          }
+        },
+        scales: { y: { min: 0, max: 1, title: { display: true, text: 'normalizado (maior = melhor)', font: { size: 10 } } } }
+      }
+    });
+    return;
+  }
+
+  // Modo 1 indicador: valores reais
+  const indicador = document.getElementById('sel-ind').value;
+  if (!indicador) return;
   const valores = ufs.map(u => V(u, indicador) ?? null);
   const cores = ufs.map(u => getCor(indicador, V(u, indicador)));
   const m = INDICADOR_META[indicador] || { label: indicador };
-  const sufMod = modalidade !== 'todas' ? ` — ${modalidade === 'ead' ? 'EaD' : 'Presencial'}` : '';
   barChart = new Chart(ctx, {
     type: 'bar',
     data: { labels: ufs, datasets: [{ label: m.label, data: valores, backgroundColor: cores, borderWidth: 1 }] },
@@ -336,6 +396,8 @@ document.addEventListener('DOMContentLoaded', () => {
   renderKpiChips();
   renderSelectBarra();
   atualizarChips();
+  document.querySelector('.barmodo-btn[data-modo="single"]').style.background = 'var(--blue)';
+  document.querySelector('.barmodo-btn[data-modo="single"]').style.color = '#fff';
   setModalidade('todas');   // destaca botão e renderiza tudo
 });
 </script>
