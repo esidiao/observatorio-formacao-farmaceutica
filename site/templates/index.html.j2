@@ -65,25 +65,31 @@
 <div class="toolbar">
   <label for="sel-indicador">Colorir por:</label>
   <select id="sel-indicador" onchange="atualizarCorMapa(this.value)">
-    <option value="ICT" selected>ICT — Concentração Territorial (↓ melhor)</option>
-    <option value="IAF">IAF — Adequação Formativa (↑ melhor)</option>
-    <option value="ICON">ICON — Cobertura Assistencial (↑ melhor)</option>
+    <optgroup label="Território &amp; equidade">
+      <option value="ICT" selected>ICT — Concentração Territorial (↓ melhor)</option>
+      <option value="E">E — Equidade Territorial (↑ melhor)</option>
+      <option value="ICON">ICON — Cobertura Assistencial (↑ melhor)</option>
+      <option value="ICON_adj">ICON-deserto — FP em desertos (↑ melhor)</option>
+    </optgroup>
+    <optgroup label="Qualidade (ENADE/CPC 2023)">
+      <option value="IAF">IAF — Adequação Formativa (↑ melhor)</option>
+      <option value="IDD">IDD — Valor agregado pelo curso (↑ melhor)</option>
+      <option value="CPC_cont">CPC — Conceito Preliminar (↑ melhor)</option>
+    </optgroup>
+    <optgroup label="Mercado">
+      <option value="HHI">HHI por IES (↓ melhor)</option>
+      <option value="HHI_mantenedora">HHI por mantenedora (↓ melhor)</option>
+    </optgroup>
+    <optgroup label="Capacidade (magnitude)">
+      <option value="vagas_total_real">Vagas totais (pres + EaD)</option>
+      <option value="vagas_por_100k">Vagas / 100 mil hab.</option>
+      <option value="pct_ead">% EaD da capacidade (↓ melhor)</option>
+      <option value="taxa_retencao">Taxa de conclusão (↑ melhor)</option>
+      <option value="ead_polos_municipios">Municípios c/ polo EaD</option>
+    </optgroup>
   </select>
   <div style="flex:1"></div>
-  <div class="mapa-legenda" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap">
-    <div class="mapa-legenda-item">
-      <div class="mapa-legenda-cor" style="background:#2166AC"></div> Melhor
-    </div>
-    <div class="mapa-legenda-item">
-      <div class="mapa-legenda-cor" style="background:#F7F7F7;border:1px solid #ccc"></div> Médio
-    </div>
-    <div class="mapa-legenda-item">
-      <div class="mapa-legenda-cor" style="background:#B2182B"></div> Pior
-    </div>
-    <div class="mapa-legenda-item">
-      <div class="mapa-legenda-cor" style="background:#C9CDD2"></div> Sem dados
-    </div>
-  </div>
+  <div id="mapa-legenda-nacional" class="mapa-legenda" style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"></div>
 </div>
 
 <div id="mapa-nacional" aria-label="Mapa coroplético das 27 UFs"></div>

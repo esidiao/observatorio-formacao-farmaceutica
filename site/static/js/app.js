@@ -102,6 +102,56 @@ function valClass(indicador, val) {
 let mapaNacional = null;
 let camadaEstados = null;
 let indicadorAtual = 'ICT';
+let _dadosUFsNac = null;        // dados das UFs para recalcular escalas
+const _rangeCache = {};        // {indicador: {min,max}}
+
+// Escala sequencial (claro→escuro) para indicadores de magnitude (sem direção)
+const BLUES = ['#EAF0F9','#C6D9F0','#9CBFE3','#6699D1','#3F73B8','#2E5496','#1B3A6B'];
+
+function _rangeIndicador(indicador) {
+  if (_rangeCache[indicador]) return _rangeCache[indicador];
+  const vals = Object.values(_dadosUFsNac || {})
+    .map(d => d?.[indicador])
+    .filter(v => v !== null && v !== undefined && !isNaN(v));
+  const r = vals.length ? { min: Math.min(...vals), max: Math.max(...vals) } : { min: 0, max: 1 };
+  _rangeCache[indicador] = r;
+  return r;
+}
+
+// Cor do mapa nacional: RdBu (indicadores com direção) ou sequencial (magnitude)
+function corMapaNacional(indicador, val) {
+  if (val === null || val === undefined || isNaN(val)) return NODATA_COLOR;
+  const meta = INDICADOR_META[indicador];
+  if (meta && meta.maiorMelhor === null) {        // magnitude → escala sequencial pelos dados
+    const { min, max } = _rangeIndicador(indicador);
+    const norm = max > min ? (val - min) / (max - min) : 0.5;
+    return BLUES[Math.min(BLUES.length - 1, Math.floor(norm * BLUES.length))];
+  }
+  return getCor(indicador, val);                  // direção → diverging RdBu
+}
+
+function renderLegendaNacional(indicador) {
+  const el = document.getElementById('mapa-legenda-nacional');
+  if (!el) return;
+  const meta = INDICADOR_META[indicador] || {};
+  const semDados = `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:#C9CDD2"></div> Sem dados</div>`;
+  if (meta.maiorMelhor === null) {                // magnitude: gradiente menor→maior
+    const { min, max } = _rangeIndicador(indicador);
+    const fmtv = v => fmtIndicador(indicador, v);
+    const grad = `linear-gradient(90deg, ${BLUES[0]}, ${BLUES[BLUES.length-1]})`;
+    el.innerHTML =
+      `<span style="font-size:0.74rem;color:var(--text-muted)">${fmtv(min)}</span>` +
+      `<div style="width:120px;height:14px;border-radius:3px;border:1px solid #ccc;background:${grad}"></div>` +
+      `<span style="font-size:0.74rem;color:var(--text-muted)">${fmtv(max)}</span>` +
+      `<span style="font-size:0.74rem;color:var(--text-muted);margin-left:4px">(menor → maior)</span>` + semDados;
+  } else {                                        // direção: melhor/médio/pior
+    const melhorAzul = '#2166AC', piorVerm = '#B2182B';
+    el.innerHTML =
+      `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:${melhorAzul}"></div> Melhor</div>` +
+      `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:#F7F7F7;border:1px solid #ccc"></div> Médio</div>` +
+      `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:${piorVerm}"></div> Pior</div>` + semDados;
+  }
+}
 
 function iniciarMapaNacional(dadosUFs) {
   if (mapaNacional) return;
@@ -140,7 +190,8 @@ async function carregarEstados(dadosUFs) {
     }
   }
 
-  // Injetar dados do observatório em cada feature
+  // Guarda dados e injeta em cada feature
+  _dadosUFsNac = dadosUFs;
   geo.features.forEach(f => {
     const sigla = f.properties?.codarea ? codigoParaSigla(f.properties.codarea) : null;
     f.properties._sigla = sigla;
@@ -149,7 +200,7 @@ async function carregarEstados(dadosUFs) {
 
   camadaEstados = L.geoJSON(geo, {
     style: feature => ({
-      fillColor: getCor(indicadorAtual, feature.properties._dados?.[indicadorAtual]),
+      fillColor: corMapaNacional(indicadorAtual, feature.properties._dados?.[indicadorAtual]),
       fillOpacity: 0.78,
       color: '#fff',
       weight: 1,
@@ -157,12 +208,7 @@ async function carregarEstados(dadosUFs) {
     onEachFeature: (feature, layer) => {
       const d = feature.properties._dados;
       const sigla = feature.properties._sigla || '?';
-
-      const popup = d
-        ? `<b>${sigla}</b><br>ICT: ${fmt(d.ICT, 3)}<br>IAF: ${fmt(d.IAF, 1)}<br>ICON: ${fmt(d.ICON, 1)}`
-        : `<b>${sigla}</b><br><i>sem dados</i>`;
-
-      layer.bindTooltip(popup, { sticky: true });
+      layer.bindTooltip(tooltipUF(d, sigla, indicadorAtual), { sticky: true });
 
       layer.on('click', () => {
         const pagina = `uf/${sigla}.html`;
@@ -175,18 +221,30 @@ async function carregarEstados(dadosUFs) {
   }).addTo(mapaNacional);
 
   mapaNacional.fitBounds(camadaEstados.getBounds(), { padding: [10, 10] });
+  renderLegendaNacional(indicadorAtual);
+}
+
+// Tooltip da UF destacando o indicador selecionado
+function tooltipUF(d, sigla, indicador) {
+  if (!d) return `<b>${sigla}</b><br><i>sem dados</i>`;
+  const meta = INDICADOR_META[indicador] || { label: indicador };
+  const destaque = `<b>${sigla}</b> — ${meta.label}: <b>${fmtIndicador(indicador, d[indicador])}</b>`;
+  const resumo = `ICT ${fmt(d.ICT, 3)} · IAF ${fmt(d.IAF, 1)} · IDD ${fmt(d.IDD, 2)}`;
+  return `${destaque}<br><span style="font-size:0.82em;color:#cdd8ea">${resumo}</span>`;
 }
 
 function atualizarCorMapa(indicador) {
   indicadorAtual = indicador;
   if (!camadaEstados) return;
   camadaEstados.eachLayer(layer => {
-    const val = layer.feature.properties._dados?.[indicador];
+    const d = layer.feature.properties._dados;
     layer.setStyle({
-      fillColor: getCor(indicador, val),
+      fillColor: corMapaNacional(indicador, d?.[indicador]),
       fillOpacity: 0.78,
     });
+    layer.setTooltipContent(tooltipUF(d, layer.feature.properties._sigla || '?', indicador));
   });
+  renderLegendaNacional(indicador);
 }
 
 /* ── Mapa UF (municípios) ────────────────────────────────── */
