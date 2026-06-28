@@ -3,9 +3,9 @@
 {% block title %}{{ nome_municipio | title }} ({{ sigla }}) — Observatório Nacional{% endblock %}
 
 {% block breadcrumb %}
-<a href="{{ depth }}../index.html">Início</a>
+<a href="{{ depth }}index.html">Início</a>
 <span class="sep">›</span>
-<a href="{{ depth }}../uf/{{ sigla }}.html">{{ sigla }}</a>
+<a href="{{ depth }}uf/{{ sigla }}.html">{{ sigla }}</a>
 <span class="sep">›</span>
 <span class="active">{{ nome_municipio | title }}</span>
 {% endblock %}
@@ -101,7 +101,7 @@
 </div>
 
 <div style="margin-top:12px;margin-bottom:28px">
-  <a href="{{ depth }}../uf/{{ sigla }}.html" class="btn outline" style="font-size:0.85rem">
+  <a href="{{ depth }}uf/{{ sigla }}.html" class="btn outline" style="font-size:0.85rem">
     ← Voltar para {{ sigla }}
   </a>
 </div>

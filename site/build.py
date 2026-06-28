@@ -154,14 +154,17 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         d["ICON_adj"] = _icon_adj(d)
 
     # ── Preparar diretórios de saída ───────────────────────────────────────────
+    # Limpa o dist inteiro para não deixar páginas órfãs de builds anteriores
+    # (ex.: municípios que saíram dos dados ao reprocessar o Censo). Sem isso,
+    # arquivos antigos persistem com links/quebrados desatualizados.
+    if path_out.exists():
+        shutil.rmtree(path_out)
     path_out.mkdir(parents=True, exist_ok=True)
     (path_out / "uf").mkdir(exist_ok=True)
 
     # Copiar arquivos estáticos
     static_src = templates_dir.parent / "static"
     static_dst = path_out / "static"
-    if static_dst.exists():
-        shutil.rmtree(static_dst)
     shutil.copytree(static_src, static_dst)
 
     # ── Jinja2 ─────────────────────────────────────────────────────────────────
