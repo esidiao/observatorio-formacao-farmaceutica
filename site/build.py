@@ -246,6 +246,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
                     "vagas_presencial": dm.get("vagas_presencial", 0),
                     "vagas_ead": dm.get("vagas_ead", 0),
                     "matriculas": dm.get("matriculas", 0),
+                    "ingressos": dm.get("ingressos", 0),
                     "concluintes": dm.get("concluintes", 0),
                     "n_cursos": dm.get("n_cursos", 0),
                     "n_ies": dm.get("n_ies", 0),

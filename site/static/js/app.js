@@ -224,13 +224,30 @@ async function carregarEstados(dadosUFs) {
   renderLegendaNacional(indicadorAtual);
 }
 
-// Tooltip da UF destacando o indicador selecionado
+// Tooltip do estado: destaca o indicador selecionado + resumo rico de KPIs
 function tooltipUF(d, sigla, indicador) {
   if (!d) return `<b>${sigla}</b><br><i>sem dados</i>`;
+  const nf = n => Number(n || 0).toLocaleString('pt-BR');
   const meta = INDICADOR_META[indicador] || { label: indicador };
-  const destaque = `<b>${sigla}</b> — ${meta.label}: <b>${fmtIndicador(indicador, d[indicador])}</b>`;
-  const resumo = `ICT ${fmt(d.ICT, 3)} · IAF ${fmt(d.IAF, 1)} · IDD ${fmt(d.IDD, 2)}`;
-  return `${destaque}<br><span style="font-size:0.82em;color:#cdd8ea">${resumo}</span>`;
+  const nomeUF = (typeof NOMES_UF_MAPA !== 'undefined' && NOMES_UF_MAPA[sigla]) || sigla;
+
+  const destaque = `<b>${nomeUF} (${sigla})</b><br>` +
+    `<span style="color:#9be3b4">${meta.label}: <b>${fmtIndicador(indicador, d[indicador])}</b></span>`;
+
+  const L = [];
+  const vagas = d.vagas_total_real != null ? d.vagas_total_real : d.vagas_total;
+  if (vagas != null) {
+    let v = `Vagas/ano: <b>${nf(vagas)}</b>`;
+    if (d.pct_ead != null) v += ` <span style="opacity:.85">(${fmtIndicador('pct_ead', d.pct_ead)}% EaD)</span>`;
+    L.push(v);
+  }
+  if (d.vagas_por_100k != null) L.push(`Densidade: <b>${fmtIndicador('vagas_por_100k', d.vagas_por_100k)}</b>/100 mil hab.`);
+  if (d.n_ies != null) L.push(`IES: <b>${d.n_ies}</b> &nbsp;·&nbsp; Mun. c/ oferta: <b>${nf(d.municipios_oferta)}</b>`);
+  if (d.municipios_deserto != null) L.push(`Desertos: <b>${nf(d.municipios_deserto)}</b> de ${nf(d.municipios_total)}`);
+  L.push(`ICT <b>${fmt(d.ICT,3)}</b> · IAF <b>${fmt(d.IAF,1)}</b> · IDD <b>${fmt(d.IDD,2)}</b>`);
+
+  return `${destaque}<br><span style="font-size:0.84em;line-height:1.55">${L.join('<br>')}</span>` +
+    `<br><span style="font-size:0.8em;color:#cdd8ea">clique para abrir o estado ↗</span>`;
 }
 
 function atualizarCorMapa(indicador) {
@@ -306,22 +323,31 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCo
       const oferta = temOfertaFeature(props);
       const nome = (info && info.nome) || props.NM_MUN || props.nome || ('Município ' + (cod || '?'));
 
+      const nf = n => Number(n || 0).toLocaleString('pt-BR');
       let html = `<b>${nome}</b>`;
       if (info && oferta) {
-        const linhas = [];
-        linhas.push(`<span style="color:#9be3b4">✓ Com oferta formativa</span>`);
-        if (info.n_ies)     linhas.push(`IES: <b>${info.n_ies}</b> · Cursos: <b>${info.n_cursos}</b>`);
+        // Modalidade predominante pela divisão de vagas
+        let modal = '';
         if (info.vagas_total) {
-          let v = `Vagas: <b>${Number(info.vagas_total).toLocaleString('pt-BR')}</b>`;
-          if (info.vagas_ead) v += ` <span style="opacity:.8">(${Number(info.vagas_presencial).toLocaleString('pt-BR')} pres. + ${Number(info.vagas_ead).toLocaleString('pt-BR')} EaD)</span>`;
+          const pe = info.vagas_ead / info.vagas_total;
+          modal = pe >= 0.6 ? ' · predominante EaD' : (pe <= 0.05 ? ' · presencial' : ' · misto');
+        }
+        const linhas = [];
+        linhas.push(`<span style="color:#9be3b4">✓ Com oferta formativa${modal}</span>`);
+        if (info.n_ies)     linhas.push(`IES: <b>${info.n_ies}</b> &nbsp;·&nbsp; Cursos: <b>${info.n_cursos}</b>`);
+        if (info.vagas_total) {
+          let v = `Vagas/ano: <b>${nf(info.vagas_total)}</b>`;
+          if (info.vagas_ead) v += `<br><span style="opacity:.85">&nbsp;&nbsp;${nf(info.vagas_presencial)} presenciais + ${nf(info.vagas_ead)} EaD</span>`;
           linhas.push(v);
         }
-        if (info.matriculas)  linhas.push(`Matrículas: <b>${Number(info.matriculas).toLocaleString('pt-BR')}</b>`);
-        if (info.concluintes) linhas.push(`Concluintes: <b>${Number(info.concluintes).toLocaleString('pt-BR')}</b>`);
-        html += `<br><span style="font-size:0.85em;line-height:1.5">${linhas.join('<br>')}</span>`;
-        html += `<br><span style="font-size:0.8em;color:#cdd8ea">clique para detalhes ↗</span>`;
+        if (info.matriculas)  linhas.push(`Matrículas: <b>${nf(info.matriculas)}</b>`);
+        if (info.ingressos)   linhas.push(`Ingressantes: <b>${nf(info.ingressos)}</b>`);
+        if (info.concluintes) linhas.push(`Concluintes: <b>${nf(info.concluintes)}</b>`);
+        html += `<br><span style="font-size:0.85em;line-height:1.55">${linhas.join('<br>')}</span>`;
+        html += `<br><span style="font-size:0.8em;color:#cdd8ea">clique para ver cursos e IES ↗</span>`;
       } else {
-        html += `<br><span style="color:#d9b48a">○ Deserto farmacêutico</span>`;
+        html += `<br><span style="color:#d9b48a">○ Deserto farmacêutico</span>` +
+                `<br><span style="font-size:0.8em;opacity:.8">Nenhum curso de Farmácia</span>`;
       }
       layer.bindTooltip(html, { sticky: true });
 
@@ -349,6 +375,16 @@ function normalizar(s) {
     .toUpperCase()
     .trim();
 }
+
+// Nomes das UFs (para tooltips)
+const NOMES_UF_MAPA = {
+  AC:'Acre', AL:'Alagoas', AM:'Amazonas', AP:'Amapá', BA:'Bahia', CE:'Ceará',
+  DF:'Distrito Federal', ES:'Espírito Santo', GO:'Goiás', MA:'Maranhão',
+  MG:'Minas Gerais', MS:'Mato Grosso do Sul', MT:'Mato Grosso', PA:'Pará',
+  PB:'Paraíba', PE:'Pernambuco', PI:'Piauí', PR:'Paraná', RJ:'Rio de Janeiro',
+  RN:'Rio Grande do Norte', RO:'Rondônia', RR:'Roraima', RS:'Rio Grande do Sul',
+  SC:'Santa Catarina', SE:'Sergipe', SP:'São Paulo', TO:'Tocantins',
+};
 
 // Mapa código IBGE → sigla UF
 const COD_PARA_SIGLA = {
