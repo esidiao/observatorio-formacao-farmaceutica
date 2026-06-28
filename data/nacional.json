@@ -89,7 +89,26 @@
       "pct_ppi": 59.7,
       "pct_financiamento": 3.7,
       "pct_noturno": 83.2,
-      "pct_rede_publica": 0.0
+      "pct_rede_publica": 0.0,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.24,
+          "CC": 1.33,
+          "CPC_cont": 1.86,
+          "pct_doc_doutores": 15.9,
+          "pct_doc_mestres": 80.8,
+          "pct_doc_regime": 92.4,
+          "cpc_org_didatico": 5.52,
+          "cpc_infraestrutura": 5.45,
+          "cpc_oportunidade": 4.63,
+          "n_cursos": 3,
+          "vagas_total_real": 1429
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     },
     "AL": {
       "vagas_total": 1636,
@@ -171,7 +190,26 @@
       "pct_ppi": 39.7,
       "pct_financiamento": 5.3,
       "pct_noturno": 49.9,
-      "pct_rede_publica": 3.8
+      "pct_rede_publica": 3.8,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.78,
+          "CC": 2.08,
+          "CPC_cont": 2.96,
+          "pct_doc_doutores": 62.5,
+          "pct_doc_mestres": 94.2,
+          "pct_doc_regime": 78.5,
+          "cpc_org_didatico": 5.56,
+          "cpc_infraestrutura": 5.38,
+          "cpc_oportunidade": 4.87,
+          "n_cursos": 7,
+          "vagas_total_real": 1636
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     },
     "AM": {
       "vagas_total": 3887,
@@ -263,7 +301,26 @@
       "pct_ppi": 65.2,
       "pct_financiamento": 5.6,
       "pct_noturno": 50.9,
-      "pct_rede_publica": 2.4
+      "pct_rede_publica": 2.4,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.45,
+          "CC": 1.29,
+          "CPC_cont": 2.34,
+          "pct_doc_doutores": 63.4,
+          "pct_doc_mestres": 93.8,
+          "pct_doc_regime": 88.2,
+          "cpc_org_didatico": 5.43,
+          "cpc_infraestrutura": 5.23,
+          "cpc_oportunidade": 4.73,
+          "n_cursos": 12,
+          "vagas_total_real": 3887
+        },
+        "ead": {
+          "vagas_total_real": 4301,
+          "n_cursos": 2
+        }
+      }
     },
     "AP": {
       "vagas_total": 679,
@@ -324,7 +381,26 @@
       "pct_ppi": 73.1,
       "pct_financiamento": 4.8,
       "pct_noturno": 53.0,
-      "pct_rede_publica": 7.4
+      "pct_rede_publica": 7.4,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.39,
+          "CC": 2.25,
+          "CPC_cont": 2.43,
+          "pct_doc_doutores": 76.0,
+          "pct_doc_mestres": 93.8,
+          "pct_doc_regime": 92.5,
+          "cpc_org_didatico": 5.09,
+          "cpc_infraestrutura": 4.6,
+          "cpc_oportunidade": 4.09,
+          "n_cursos": 4,
+          "vagas_total_real": 679
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     },
     "BA": {
       "vagas_total": 8356,
@@ -524,7 +600,35 @@
       "pct_ppi": 68.2,
       "pct_financiamento": 7.0,
       "pct_noturno": 63.2,
-      "pct_rede_publica": 6.5
+      "pct_rede_publica": 6.5,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.43,
+          "CC": 2.25,
+          "CPC_cont": 2.82,
+          "pct_doc_doutores": 62.9,
+          "pct_doc_mestres": 92.0,
+          "pct_doc_regime": 93.0,
+          "cpc_org_didatico": 5.33,
+          "cpc_infraestrutura": 5.07,
+          "cpc_oportunidade": 4.51,
+          "n_cursos": 52,
+          "vagas_total_real": 8356
+        },
+        "ead": {
+          "IDD": 0.38,
+          "CC": 1.0,
+          "CPC_cont": 1.36,
+          "pct_doc_doutores": 33.3,
+          "pct_doc_mestres": 50.0,
+          "pct_doc_regime": 100.0,
+          "cpc_org_didatico": 5.34,
+          "cpc_infraestrutura": 5.09,
+          "cpc_oportunidade": 4.4,
+          "n_cursos": 7,
+          "vagas_total_real": 3526
+        }
+      }
     },
     "CE": {
       "vagas_total": 6550,
@@ -676,7 +780,26 @@
       "pct_ppi": 48.5,
       "pct_financiamento": 9.8,
       "pct_noturno": 53.8,
-      "pct_rede_publica": 2.8
+      "pct_rede_publica": 2.8,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.55,
+          "CC": 2.53,
+          "CPC_cont": 2.95,
+          "pct_doc_doutores": 57.0,
+          "pct_doc_mestres": 91.8,
+          "pct_doc_regime": 89.7,
+          "cpc_org_didatico": 5.5,
+          "cpc_infraestrutura": 5.42,
+          "cpc_oportunidade": 4.89,
+          "n_cursos": 27,
+          "vagas_total_real": 6550
+        },
+        "ead": {
+          "vagas_total_real": 18735,
+          "n_cursos": 6
+        }
+      }
     },
     "DF": {
       "vagas_total": 3921,
@@ -730,7 +853,35 @@
       "pct_ppi": 58.1,
       "pct_financiamento": 4.9,
       "pct_noturno": 48.5,
-      "pct_rede_publica": 7.3
+      "pct_rede_publica": 7.3,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.34,
+          "CC": 2.59,
+          "CPC_cont": 3.07,
+          "pct_doc_doutores": 71.3,
+          "pct_doc_mestres": 96.3,
+          "pct_doc_regime": 91.6,
+          "cpc_org_didatico": 5.55,
+          "cpc_infraestrutura": 5.42,
+          "cpc_oportunidade": 5.06,
+          "n_cursos": 18,
+          "vagas_total_real": 3921
+        },
+        "ead": {
+          "IDD": 1.11,
+          "CC": 1.09,
+          "CPC_cont": 1.97,
+          "pct_doc_doutores": 54.5,
+          "pct_doc_mestres": 100.0,
+          "pct_doc_regime": 45.5,
+          "cpc_org_didatico": 5.41,
+          "cpc_infraestrutura": 5.39,
+          "cpc_oportunidade": 4.78,
+          "n_cursos": 8,
+          "vagas_total_real": 11129
+        }
+      }
     },
     "ES": {
       "vagas_total": 2119,
@@ -818,7 +969,26 @@
       "pct_ppi": 54.6,
       "pct_financiamento": 7.1,
       "pct_noturno": 72.2,
-      "pct_rede_publica": 8.7
+      "pct_rede_publica": 8.7,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.9,
+          "CC": 3.12,
+          "CPC_cont": 3.34,
+          "pct_doc_doutores": 75.1,
+          "pct_doc_mestres": 92.6,
+          "pct_doc_regime": 95.1,
+          "cpc_org_didatico": 5.45,
+          "cpc_infraestrutura": 5.34,
+          "cpc_oportunidade": 4.86,
+          "n_cursos": 19,
+          "vagas_total_real": 2119
+        },
+        "ead": {
+          "vagas_total_real": 1417,
+          "n_cursos": 3
+        }
+      }
     },
     "GO": {
       "vagas_total": 7247,
@@ -946,7 +1116,26 @@
       "pct_ppi": 53.8,
       "pct_financiamento": 5.6,
       "pct_noturno": 61.0,
-      "pct_rede_publica": 6.9
+      "pct_rede_publica": 6.9,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.01,
+          "CC": 1.97,
+          "CPC_cont": 2.69,
+          "pct_doc_doutores": 62.6,
+          "pct_doc_mestres": 93.2,
+          "pct_doc_regime": 95.2,
+          "cpc_org_didatico": 5.46,
+          "cpc_infraestrutura": 5.19,
+          "cpc_oportunidade": 4.67,
+          "n_cursos": 38,
+          "vagas_total_real": 7247
+        },
+        "ead": {
+          "vagas_total_real": 1640,
+          "n_cursos": 5
+        }
+      }
     },
     "MA": {
       "vagas_total": 4595,
@@ -1083,7 +1272,26 @@
       "pct_ppi": 66.8,
       "pct_financiamento": 6.6,
       "pct_noturno": 47.2,
-      "pct_rede_publica": 1.8
+      "pct_rede_publica": 1.8,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.9,
+          "CC": 1.71,
+          "CPC_cont": 2.58,
+          "pct_doc_doutores": 59.6,
+          "pct_doc_mestres": 85.5,
+          "pct_doc_regime": 91.8,
+          "cpc_org_didatico": 5.62,
+          "cpc_infraestrutura": 5.45,
+          "cpc_oportunidade": 5.1,
+          "n_cursos": 15,
+          "vagas_total_real": 4595
+        },
+        "ead": {
+          "vagas_total_real": 2426,
+          "n_cursos": 3
+        }
+      }
     },
     "MG": {
       "vagas_total": 8189,
@@ -1399,7 +1607,35 @@
       "pct_ppi": 48.3,
       "pct_financiamento": 4.0,
       "pct_noturno": 70.7,
-      "pct_rede_publica": 12.4
+      "pct_rede_publica": 12.4,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.77,
+          "CC": 3.01,
+          "CPC_cont": 3.29,
+          "pct_doc_doutores": 75.1,
+          "pct_doc_mestres": 94.9,
+          "pct_doc_regime": 91.6,
+          "cpc_org_didatico": 5.48,
+          "cpc_infraestrutura": 5.35,
+          "cpc_oportunidade": 4.87,
+          "n_cursos": 66,
+          "vagas_total_real": 8189
+        },
+        "ead": {
+          "IDD": 2.45,
+          "CC": 1.95,
+          "CPC_cont": 2.78,
+          "pct_doc_doutores": 56.1,
+          "pct_doc_mestres": 94.6,
+          "pct_doc_regime": 94.7,
+          "cpc_org_didatico": 5.37,
+          "cpc_infraestrutura": 5.22,
+          "cpc_oportunidade": 4.52,
+          "n_cursos": 5,
+          "vagas_total_real": 2529
+        }
+      }
     },
     "MS": {
       "vagas_total": 952,
@@ -1489,7 +1725,26 @@
       "pct_ppi": 40.7,
       "pct_financiamento": 1.8,
       "pct_noturno": 64.5,
-      "pct_rede_publica": 6.4
+      "pct_rede_publica": 6.4,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.65,
+          "CC": 2.54,
+          "CPC_cont": 3.26,
+          "pct_doc_doutores": 82.5,
+          "pct_doc_mestres": 98.6,
+          "pct_doc_regime": 92.1,
+          "cpc_org_didatico": 5.56,
+          "cpc_infraestrutura": 5.4,
+          "cpc_oportunidade": 4.95,
+          "n_cursos": 8,
+          "vagas_total_real": 952
+        },
+        "ead": {
+          "vagas_total_real": 9528,
+          "n_cursos": 3
+        }
+      }
     },
     "MT": {
       "vagas_total": 2606,
@@ -1597,7 +1852,26 @@
       "pct_ppi": 56.5,
       "pct_financiamento": 2.3,
       "pct_noturno": 81.8,
-      "pct_rede_publica": 9.8
+      "pct_rede_publica": 9.8,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.02,
+          "CC": 1.57,
+          "CPC_cont": 2.53,
+          "pct_doc_doutores": 59.3,
+          "pct_doc_mestres": 90.6,
+          "pct_doc_regime": 93.4,
+          "cpc_org_didatico": 5.4,
+          "cpc_infraestrutura": 5.11,
+          "cpc_oportunidade": 4.65,
+          "n_cursos": 20,
+          "vagas_total_real": 2606
+        },
+        "ead": {
+          "vagas_total_real": 2000,
+          "n_cursos": 1
+        }
+      }
     },
     "PA": {
       "vagas_total": 5484,
@@ -1744,7 +2018,35 @@
       "pct_ppi": 55.7,
       "pct_financiamento": 5.2,
       "pct_noturno": 53.9,
-      "pct_rede_publica": 2.3
+      "pct_rede_publica": 2.3,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.47,
+          "CC": 1.48,
+          "CPC_cont": 2.28,
+          "pct_doc_doutores": 47.5,
+          "pct_doc_mestres": 93.2,
+          "pct_doc_regime": 85.4,
+          "cpc_org_didatico": 5.52,
+          "cpc_infraestrutura": 5.27,
+          "cpc_oportunidade": 4.88,
+          "n_cursos": 23,
+          "vagas_total_real": 5484
+        },
+        "ead": {
+          "IDD": 0.98,
+          "CC": 0.89,
+          "CPC_cont": 1.75,
+          "pct_doc_doutores": 35.4,
+          "pct_doc_mestres": 85.4,
+          "pct_doc_regime": 85.4,
+          "cpc_org_didatico": 5.34,
+          "cpc_infraestrutura": 5.19,
+          "cpc_oportunidade": 4.5,
+          "n_cursos": 1,
+          "vagas_total_real": 583
+        }
+      }
     },
     "PB": {
       "vagas_total": 2915,
@@ -1830,7 +2132,26 @@
       "pct_ppi": 48.6,
       "pct_financiamento": 11.3,
       "pct_noturno": 59.7,
-      "pct_rede_publica": 13.2
+      "pct_rede_publica": 13.2,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.46,
+          "CC": 2.28,
+          "CPC_cont": 2.89,
+          "pct_doc_doutores": 65.5,
+          "pct_doc_mestres": 92.6,
+          "pct_doc_regime": 82.3,
+          "cpc_org_didatico": 5.48,
+          "cpc_infraestrutura": 5.33,
+          "cpc_oportunidade": 4.76,
+          "n_cursos": 17,
+          "vagas_total_real": 2915
+        },
+        "ead": {
+          "vagas_total_real": 251,
+          "n_cursos": 1
+        }
+      }
     },
     "PE": {
       "vagas_total": 9623,
@@ -1963,7 +2284,35 @@
       "pct_ppi": 40.0,
       "pct_financiamento": 7.1,
       "pct_noturno": 53.7,
-      "pct_rede_publica": 4.1
+      "pct_rede_publica": 4.1,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.67,
+          "CC": 1.73,
+          "CPC_cont": 2.31,
+          "pct_doc_doutores": 52.9,
+          "pct_doc_mestres": 88.2,
+          "pct_doc_regime": 79.0,
+          "cpc_org_didatico": 5.41,
+          "cpc_infraestrutura": 5.17,
+          "cpc_oportunidade": 4.73,
+          "n_cursos": 33,
+          "vagas_total_real": 9623
+        },
+        "ead": {
+          "IDD": 0.86,
+          "CC": 1.06,
+          "CPC_cont": 1.78,
+          "pct_doc_doutores": 37.7,
+          "pct_doc_mestres": 86.8,
+          "pct_doc_regime": 84.9,
+          "cpc_org_didatico": 5.36,
+          "cpc_infraestrutura": 5.26,
+          "cpc_oportunidade": 4.51,
+          "n_cursos": 5,
+          "vagas_total_real": 25116
+        }
+      }
     },
     "PI": {
       "vagas_total": 2256,
@@ -2051,7 +2400,26 @@
       "pct_ppi": 44.8,
       "pct_financiamento": 8.8,
       "pct_noturno": 19.3,
-      "pct_rede_publica": 3.1
+      "pct_rede_publica": 3.1,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.24,
+          "CC": 1.82,
+          "CPC_cont": 2.66,
+          "pct_doc_doutores": 50.2,
+          "pct_doc_mestres": 92.8,
+          "pct_doc_regime": 80.9,
+          "cpc_org_didatico": 5.6,
+          "cpc_infraestrutura": 5.46,
+          "cpc_oportunidade": 5.04,
+          "n_cursos": 12,
+          "vagas_total_real": 2256
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     },
     "PR": {
       "vagas_total": 4730,
@@ -2301,7 +2669,35 @@
       "pct_ppi": 24.6,
       "pct_financiamento": 3.8,
       "pct_noturno": 66.0,
-      "pct_rede_publica": 10.4
+      "pct_rede_publica": 10.4,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 3.05,
+          "CC": 2.93,
+          "CPC_cont": 3.29,
+          "pct_doc_doutores": 65.4,
+          "pct_doc_mestres": 92.8,
+          "pct_doc_regime": 93.3,
+          "cpc_org_didatico": 5.51,
+          "cpc_infraestrutura": 5.29,
+          "cpc_oportunidade": 4.91,
+          "n_cursos": 50,
+          "vagas_total_real": 4730
+        },
+        "ead": {
+          "IDD": 1.28,
+          "CC": 1.08,
+          "CPC_cont": 2.4,
+          "pct_doc_doutores": 72.1,
+          "pct_doc_mestres": 98.2,
+          "pct_doc_regime": 99.9,
+          "cpc_org_didatico": 5.49,
+          "cpc_infraestrutura": 5.4,
+          "cpc_oportunidade": 4.69,
+          "n_cursos": 17,
+          "vagas_total_real": 31470
+        }
+      }
     },
     "RJ": {
       "vagas_total": 11867,
@@ -2433,7 +2829,35 @@
       "pct_ppi": 53.0,
       "pct_financiamento": 3.0,
       "pct_noturno": 67.6,
-      "pct_rede_publica": 7.8
+      "pct_rede_publica": 7.8,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.97,
+          "CC": 2.51,
+          "CPC_cont": 2.8,
+          "pct_doc_doutores": 70.4,
+          "pct_doc_mestres": 96.3,
+          "pct_doc_regime": 91.7,
+          "cpc_org_didatico": 5.34,
+          "cpc_infraestrutura": 5.0,
+          "cpc_oportunidade": 4.74,
+          "n_cursos": 42,
+          "vagas_total_real": 11867
+        },
+        "ead": {
+          "IDD": 0.77,
+          "CC": 1.19,
+          "CPC_cont": 1.63,
+          "pct_doc_doutores": 60.0,
+          "pct_doc_mestres": 84.3,
+          "pct_doc_regime": 62.9,
+          "cpc_org_didatico": 4.97,
+          "cpc_infraestrutura": 4.88,
+          "cpc_oportunidade": 3.76,
+          "n_cursos": 9,
+          "vagas_total_real": 53654
+        }
+      }
     },
     "RN": {
       "vagas_total": 1360,
@@ -2514,7 +2938,26 @@
       "pct_ppi": 40.5,
       "pct_financiamento": 4.6,
       "pct_noturno": 56.2,
-      "pct_rede_publica": 14.4
+      "pct_rede_publica": 14.4,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.44,
+          "CC": 2.4,
+          "CPC_cont": 2.87,
+          "pct_doc_doutores": 67.3,
+          "pct_doc_mestres": 94.9,
+          "pct_doc_regime": 95.9,
+          "cpc_org_didatico": 5.18,
+          "cpc_infraestrutura": 4.96,
+          "cpc_oportunidade": 4.29,
+          "n_cursos": 9,
+          "vagas_total_real": 1360
+        },
+        "ead": {
+          "vagas_total_real": 105,
+          "n_cursos": 1
+        }
+      }
     },
     "RO": {
       "vagas_total": 2942,
@@ -2590,7 +3033,26 @@
       "pct_ppi": 50.9,
       "pct_financiamento": 4.4,
       "pct_noturno": 88.6,
-      "pct_rede_publica": 0.0
+      "pct_rede_publica": 0.0,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.91,
+          "CC": 1.58,
+          "CPC_cont": 2.49,
+          "pct_doc_doutores": 43.0,
+          "pct_doc_mestres": 85.4,
+          "pct_doc_regime": 97.4,
+          "cpc_org_didatico": 5.64,
+          "cpc_infraestrutura": 5.53,
+          "cpc_oportunidade": 5.2,
+          "n_cursos": 14,
+          "vagas_total_real": 2942
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     },
     "RR": {
       "vagas_total": 1079,
@@ -2651,7 +3113,26 @@
       "pct_ppi": 60.5,
       "pct_financiamento": 4.1,
       "pct_noturno": 69.5,
-      "pct_rede_publica": 0.0
+      "pct_rede_publica": 0.0,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.15,
+          "CC": 0.82,
+          "CPC_cont": 2.18,
+          "pct_doc_doutores": 29.4,
+          "pct_doc_mestres": 88.2,
+          "pct_doc_regime": 100.0,
+          "cpc_org_didatico": 6.0,
+          "cpc_infraestrutura": 5.99,
+          "cpc_oportunidade": 5.99,
+          "n_cursos": 3,
+          "vagas_total_real": 1079
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     },
     "RS": {
       "vagas_total": 3047,
@@ -2848,7 +3329,35 @@
       "pct_ppi": 19.6,
       "pct_financiamento": 3.4,
       "pct_noturno": 63.4,
-      "pct_rede_publica": 14.9
+      "pct_rede_publica": 14.9,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.92,
+          "CC": 2.92,
+          "CPC_cont": 3.38,
+          "pct_doc_doutores": 76.7,
+          "pct_doc_mestres": 99.3,
+          "pct_doc_regime": 88.4,
+          "cpc_org_didatico": 5.5,
+          "cpc_infraestrutura": 5.38,
+          "cpc_oportunidade": 5.12,
+          "n_cursos": 36,
+          "vagas_total_real": 3047
+        },
+        "ead": {
+          "IDD": 1.6,
+          "CC": 1.24,
+          "CPC_cont": 2.38,
+          "pct_doc_doutores": 52.9,
+          "pct_doc_mestres": 100.0,
+          "pct_doc_regime": 70.6,
+          "cpc_org_didatico": 5.65,
+          "cpc_infraestrutura": 5.58,
+          "cpc_oportunidade": 5.02,
+          "n_cursos": 3,
+          "vagas_total_real": 1143
+        }
+      }
     },
     "SC": {
       "vagas_total": 2868,
@@ -2994,7 +3503,26 @@
       "pct_ppi": 23.1,
       "pct_financiamento": 4.6,
       "pct_noturno": 63.6,
-      "pct_rede_publica": 11.0
+      "pct_rede_publica": 11.0,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.84,
+          "CC": 2.91,
+          "CPC_cont": 3.2,
+          "pct_doc_doutores": 73.0,
+          "pct_doc_mestres": 98.1,
+          "pct_doc_regime": 88.8,
+          "cpc_org_didatico": 5.27,
+          "cpc_infraestrutura": 5.1,
+          "cpc_oportunidade": 4.79,
+          "n_cursos": 28,
+          "vagas_total_real": 2868
+        },
+        "ead": {
+          "vagas_total_real": 14487,
+          "n_cursos": 7
+        }
+      }
     },
     "SE": {
       "vagas_total": 1375,
@@ -3070,7 +3598,26 @@
       "pct_ppi": 47.7,
       "pct_financiamento": 9.2,
       "pct_noturno": 46.5,
-      "pct_rede_publica": 16.6
+      "pct_rede_publica": 16.6,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.25,
+          "CC": 2.5,
+          "CPC_cont": 2.85,
+          "pct_doc_doutores": 76.5,
+          "pct_doc_mestres": 97.4,
+          "pct_doc_regime": 86.3,
+          "cpc_org_didatico": 5.15,
+          "cpc_infraestrutura": 4.91,
+          "cpc_oportunidade": 4.38,
+          "n_cursos": 7,
+          "vagas_total_real": 1375
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     },
     "SP": {
       "vagas_total": 27627,
@@ -3387,7 +3934,35 @@
       "pct_ppi": 41.7,
       "pct_financiamento": 3.4,
       "pct_noturno": 63.7,
-      "pct_rede_publica": 3.1
+      "pct_rede_publica": 3.1,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 2.32,
+          "CC": 2.28,
+          "CPC_cont": 2.83,
+          "pct_doc_doutores": 69.8,
+          "pct_doc_mestres": 96.2,
+          "pct_doc_regime": 81.6,
+          "cpc_org_didatico": 5.33,
+          "cpc_infraestrutura": 5.15,
+          "cpc_oportunidade": 4.61,
+          "n_cursos": 153,
+          "vagas_total_real": 27627
+        },
+        "ead": {
+          "IDD": 1.18,
+          "CC": 1.32,
+          "CPC_cont": 2.14,
+          "pct_doc_doutores": 52.6,
+          "pct_doc_mestres": 96.8,
+          "pct_doc_regime": 79.9,
+          "cpc_org_didatico": 5.35,
+          "cpc_infraestrutura": 5.2,
+          "cpc_oportunidade": 4.39,
+          "n_cursos": 23,
+          "vagas_total_real": 102820
+        }
+      }
     },
     "TO": {
       "vagas_total": 811,
@@ -3461,7 +4036,26 @@
       "pct_ppi": 63.8,
       "pct_financiamento": 1.6,
       "pct_noturno": 100.0,
-      "pct_rede_publica": 22.2
+      "pct_rede_publica": 22.2,
+      "por_modalidade": {
+        "presencial": {
+          "IDD": 1.45,
+          "CC": 1.03,
+          "CPC_cont": 2.06,
+          "pct_doc_doutores": 34.1,
+          "pct_doc_mestres": 80.5,
+          "pct_doc_regime": 84.2,
+          "cpc_org_didatico": 5.62,
+          "cpc_infraestrutura": 5.47,
+          "cpc_oportunidade": 5.06,
+          "n_cursos": 6,
+          "vagas_total_real": 811
+        },
+        "ead": {
+          "vagas_total_real": 0,
+          "n_cursos": 0
+        }
+      }
     }
   }
 }

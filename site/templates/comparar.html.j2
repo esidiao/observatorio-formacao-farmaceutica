@@ -44,6 +44,17 @@
   <div id="kpi-chips"></div>
 </div>
 
+<!-- Seletor de modalidade -->
+<div class="toolbar" style="gap:10px;margin-bottom:8px;align-items:center;flex-wrap:wrap">
+  <label style="font-weight:600;color:var(--navy);font-size:0.875rem">Modalidade dos cursos:</label>
+  <div id="mod-toggle" style="display:flex;gap:6px">
+    <button class="mod-btn btn outline" data-mod="todas" onclick="setModalidade('todas')" style="font-size:0.8rem;padding:4px 12px">Todas</button>
+    <button class="mod-btn btn outline" data-mod="presencial" onclick="setModalidade('presencial')" style="font-size:0.8rem;padding:4px 12px">Presencial</button>
+    <button class="mod-btn btn outline" data-mod="ead" onclick="setModalidade('ead')" style="font-size:0.8rem;padding:4px 12px">EaD</button>
+  </div>
+  <span id="mod-nota" style="font-size:0.78rem;color:var(--text-muted)"></span>
+</div>
+
 <!-- Gráfico de barras (um indicador) -->
 <h2 class="section-title">Gráfico de barras — um indicador</h2>
 <div class="toolbar" style="margin-bottom:10px">
@@ -84,9 +95,48 @@
 const TODOS_DADOS = {{ dados_ufs_json }};
 let selecionados = new Set(['GO', 'SP', 'MG', 'RJ', 'PR']);
 let kpisSelecionados = new Set(['ICT', 'IAF', 'IDD', 'vagas_por_100k', 'pct_doc_doutores', 'taxa_retencao']);
+let modalidade = 'todas';   // 'todas' | 'presencial' | 'ead'
 
 let barChart = null, radarChart = null;
 let sortKey = null, sortDir = 'desc';
+
+/* Conjunto de chaves que possuem desdobramento por modalidade (memoizado). */
+const KEYS_MODALIDADE = (() => {
+  const s = new Set();
+  Object.values(TODOS_DADOS).forEach(d => {
+    const pm = d && d.por_modalidade;
+    if (pm) ['presencial', 'ead'].forEach(m => pm[m] && Object.keys(pm[m]).forEach(k => s.add(k)));
+  });
+  return s;
+})();
+function temModalidade(key) { return KEYS_MODALIDADE.has(key); }
+
+/* Valor de um KPI para uma UF, respeitando a modalidade selecionada.
+   - chave desdobrável: usa o valor da modalidade (null se a UF não tem essa
+     modalidade avaliada — evita exibir o total como se fosse da modalidade);
+   - chave não desdobrável (território/equidade): mostra o total. */
+function V(uf, key) {
+  const d = TODOS_DADOS[uf] || {};
+  if (modalidade !== 'todas' && temModalidade(key)) {
+    const pm = d.por_modalidade && d.por_modalidade[modalidade];
+    return (pm && key in pm && pm[key] != null) ? pm[key] : null;
+  }
+  return d[key];
+}
+
+function setModalidade(m) {
+  modalidade = m;
+  document.querySelectorAll('.mod-btn').forEach(b => {
+    const on = b.dataset.mod === m;
+    b.style.background = on ? 'var(--blue)' : '';
+    b.style.color = on ? '#fff' : '';
+  });
+  const nota = document.getElementById('mod-nota');
+  if (m === 'ead') nota.textContent = '⚠ Qualidade EaD avaliada em apenas 9 UFs (ENADE 2023); demais aparecem sem dado. Indicadores territoriais mostram o total.';
+  else if (m === 'presencial') nota.textContent = 'Indicadores sem versão por modalidade (território, equidade) mostram o total.';
+  else nota.textContent = '';
+  renderTudo();
+}
 
 // Catálogo de KPIs comparáveis: reaproveita o GLOSSARIO, filtrando aos campos
 // numéricos presentes nos dados das UFs.
@@ -156,8 +206,8 @@ function ordenarUFs(ufs) {
   const arr = [...ufs];
   if (!sortKey) return arr.sort();
   arr.sort((a, b) => {
-    let va = (sortKey === 'sigla') ? a : TODOS_DADOS[a]?.[sortKey];
-    let vb = (sortKey === 'sigla') ? b : TODOS_DADOS[b]?.[sortKey];
+    let va = (sortKey === 'sigla') ? a : V(a, sortKey);
+    let vb = (sortKey === 'sigla') ? b : V(b, sortKey);
     const na = va == null, nb = vb == null;
     if (na && nb) return 0; if (na) return 1; if (nb) return -1;
     const cmp = (typeof va === 'string' || typeof vb === 'string')
@@ -173,7 +223,7 @@ function normKPI(key, v, ufs) {
   const m = INDICADOR_META[key] || {};
   let min = m.min, max = m.max;
   if (min == null || max == null) {
-    const vals = ufs.map(u => TODOS_DADOS[u]?.[key]).filter(x => x != null && !isNaN(x));
+    const vals = ufs.map(u => V(u, key)).filter(x => x != null && !isNaN(x));
     if (!vals.length) return null;
     min = Math.min(...vals); max = Math.max(...vals);
   }
@@ -197,9 +247,10 @@ function renderBarra() {
   const ctx = document.getElementById('grafico-barras').getContext('2d');
   if (barChart) barChart.destroy();
   if (!ufs.length || !indicador) return;
-  const valores = ufs.map(u => TODOS_DADOS[u]?.[indicador] ?? null);
-  const cores = ufs.map(u => getCor(indicador, TODOS_DADOS[u]?.[indicador]));
+  const valores = ufs.map(u => V(u, indicador) ?? null);
+  const cores = ufs.map(u => getCor(indicador, V(u, indicador)));
   const m = INDICADOR_META[indicador] || { label: indicador };
+  const sufMod = modalidade !== 'todas' ? ` — ${modalidade === 'ead' ? 'EaD' : 'Presencial'}` : '';
   barChart = new Chart(ctx, {
     type: 'bar',
     data: { labels: ufs, datasets: [{ label: m.label, data: valores, backgroundColor: cores, borderWidth: 1 }] },
@@ -207,7 +258,7 @@ function renderBarra() {
       responsive: true,
       plugins: {
         legend: { display: false },
-        title: { display: true, text: (CAT_INFO[indicador] || {}).nome || indicador, font: { size: 13 } },
+        title: { display: true, text: ((CAT_INFO[indicador] || {}).nome || indicador) + sufMod, font: { size: 13 } },
         tooltip: { callbacks: { label: c => c.raw != null ? `${m.label}: ${fmtIndicador(indicador, c.raw)}` : 'sem dados' } }
       },
       scales: { y: { beginAtZero: !['IAF', 'IDD', 'CPC_cont', 'cpc_org_didatico', 'cpc_infraestrutura', 'cpc_oportunidade'].includes(indicador) } }
@@ -228,17 +279,18 @@ function renderTabela() {
     const g = CAT_INFO[k] || { sigla: k, nome: k };
     const seta = sortKey === k ? (sortDir === 'asc' ? ' ▲' : ' ▼') : '';
     const bg = sortKey === k ? 'background:var(--blue)' : '';
-    th += `<th data-key="${k}" onclick="ordenarPor('${k}')" title="${g.nome} — clique para ordenar" style="cursor:pointer;user-select:none;${bg}">${g.sigla}${seta}</th>`;
+    const mod = (modalidade !== 'todas' && temModalidade(k)) ? ' <span style="font-size:0.7em;opacity:0.85">●</span>' : '';
+    th += `<th data-key="${k}" onclick="ordenarPor('${k}')" title="${g.nome}${(modalidade!=='todas'&&temModalidade(k))?' (valor por modalidade)':''} — clique para ordenar" style="cursor:pointer;user-select:none;${bg}">${g.sigla}${mod}${seta}</th>`;
   });
   thead.innerHTML = th;
 
   tbody.innerHTML = '';
   ordenarUFs(ufs).forEach(sigla => {
-    const d = TODOS_DADOS[sigla] || {};
     let row = `<td><a href="uf/${sigla}.html"><span class="uf-tag">${sigla}</span></a></td>`;
     keys.forEach(k => {
-      const cls = (k === 'ICT' || k === 'IAF') ? valClass(k, d[k]) : '';
-      row += `<td class="${cls}">${fmtIndicador(k, d[k])}</td>`;
+      const val = V(sigla, k);
+      const cls = (k === 'ICT' || k === 'IAF') ? valClass(k, val) : '';
+      row += `<td class="${cls}">${fmtIndicador(k, val)}</td>`;
     });
     const tr = document.createElement('tr');
     tr.innerHTML = row;
@@ -266,7 +318,7 @@ function renderRadar() {
       labels,
       datasets: ufs.map((sigla, i) => ({
         label: sigla,
-        data: keys.map(k => normKPI(k, TODOS_DADOS[sigla]?.[k], ufs)),
+        data: keys.map(k => normKPI(k, V(sigla, k), ufs)),
         borderColor: PALETA[i % PALETA.length],
         backgroundColor: PALETA[i % PALETA.length] + '22',
         borderWidth: 2, pointRadius: 3,
@@ -284,7 +336,7 @@ document.addEventListener('DOMContentLoaded', () => {
   renderKpiChips();
   renderSelectBarra();
   atualizarChips();
-  renderTudo();
+  setModalidade('todas');   // destaca botão e renderiza tudo
 });
 </script>
 {% endblock %}
