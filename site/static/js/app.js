@@ -193,7 +193,7 @@ function atualizarCorMapa(indicador) {
 
 let mapaUF = null;
 
-async function iniciarMapaUF(codigoIBGE, municipiosComOferta) {
+async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCods) {
   if (mapaUF) return;
 
   mapaUF = L.map('mapa-uf', { scrollWheelZoom: false });
@@ -204,8 +204,9 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta) {
     maxZoom: 14,
   }).addTo(mapaUF);
 
+  // Malha municipal IBGE: cada feature tem codarea = código IBGE (7 dígitos).
   const urlLocal = (window._GEO_BASE || '') + `static/geo/estados/${codigoIBGE}.json`;
-  const urlIBGE = `https://servicodados.ibge.gov.br/api/v3/malhas/estados/${codigoIBGE}?resolucao=5&formato=application/vnd.geo%2Bjson`;
+  const urlIBGE = `https://servicodados.ibge.gov.br/api/v3/malhas/estados/${codigoIBGE}?intrarregiao=municipio&qualidade=intermediaria&formato=application/vnd.geo%2Bjson`;
   let geo;
   try {
     const r = await fetch(urlLocal, {cache: 'no-cache'});
@@ -221,31 +222,39 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta) {
     }
   }
 
-  // Normaliza nomes para match (sem acento, maiúsculo)
-  const ofertaSet = new Set(municipiosComOferta.map(normalizar));
+  // Conjunto de códigos com oferta (preferencial). Fallback: nomes.
+  const codSet = new Set((municipiosOfertaCods || []).map(c => String(c)));
+  const nomeSet = new Set((municipiosComOferta || []).map(normalizar));
 
-  L.geoJSON(geo, {
-    style: feature => {
-      const nome = normalizar(feature.properties?.NM_MUN || feature.properties?.nome || '');
-      const temOferta = ofertaSet.has(nome);
-      return {
-        fillColor: temOferta ? '#2E5496' : '#C9CDD2',
-        fillOpacity: 0.75,
-        color: '#fff',
-        weight: 0.5,
-      };
-    },
+  function temOfertaFeature(props) {
+    const cod = props?.codarea != null ? String(props.codarea) : null;
+    if (cod && codSet.size) return codSet.has(cod);
+    const nome = normalizar(props?.NM_MUN || props?.nome || '');
+    return nomeSet.has(nome);
+  }
+
+  const camada = L.geoJSON(geo, {
+    style: feature => ({
+      fillColor: temOfertaFeature(feature.properties) ? '#2E5496' : '#C9CDD2',
+      fillOpacity: 0.75,
+      color: '#fff',
+      weight: 0.5,
+    }),
     onEachFeature: (feature, layer) => {
-      const nome = feature.properties?.NM_MUN || feature.properties?.nome || '?';
-      const temOferta = ofertaSet.has(normalizar(nome));
+      const props = feature.properties || {};
+      const oferta = temOfertaFeature(props);
+      const nome = props.NM_MUN || props.nome || ('Município ' + (props.codarea || '?'));
       layer.bindTooltip(
-        `<b>${nome}</b><br>${temOferta ? '✓ Com oferta formativa' : '○ Deserto farmacêutico'}`,
+        `<b>${nome}</b><br>${oferta ? '✓ Com oferta formativa' : '○ Deserto farmacêutico'}`,
         { sticky: true }
       );
+      layer.on('mouseover', () => layer.setStyle({ weight: 1.5, fillOpacity: 0.9 }));
+      layer.on('mouseout', () => camada.resetStyle(layer));
     },
   }).addTo(mapaUF);
 
-  mapaUF.fitBounds(mapaUF.getBounds?.() ?? [[0,0],[0,0]], { padding: [8, 8] });
+  const bounds = camada.getBounds();
+  if (bounds.isValid()) mapaUF.fitBounds(bounds, { padding: [8, 8] });
 }
 
 /* ── Helpers ─────────────────────────────────────────────── */

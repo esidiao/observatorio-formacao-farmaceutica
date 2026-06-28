@@ -2,11 +2,11 @@
   "obra": "Observatório Nacional da Formação Farmacêutica",
   "autor": "Edson Sidião de Souza Júnior",
   "tipo": "Registro de Anterioridade e Integridade (prova de existência)",
-  "selado_em_utc": "2026-06-28T00:28:07+00:00",
+  "selado_em_utc": "2026-06-28T01:00:04+00:00",
   "algoritmo": "SHA-256",
   "n_arquivos": 49,
-  "hash_raiz": "7012570d733f28e42bdf32024b9e67b2bb985ae418168b817b31de27cf44b60c",
-  "git_commit_ancora": "b37af56f2bc80c7afe22e8b01d50b0639b016c1f",
+  "hash_raiz": "1a52bf0bdb96e62cff4c513afd3c36ea5ce011691deb2ce7634f8a764241edb8",
+  "git_commit_ancora": "0898ecb2a1c836a8572ec1dcd98e40fad0746bc9",
   "fundamento": "Lei 9.610/1998 e Lei 9.609/1998. O hash-raiz é impressão digital única do conjunto; o commit Git ancora a data de forma imutável.",
   "como_verificar": [
     "1. Baixe os arquivos listados em 'arquivos'.",
@@ -139,7 +139,7 @@
     },
     {
       "caminho": "etl/baixar_geo.py",
-      "sha256": "50b27c93e1543e25d1df158729915e472bd687e106073f204ef27eeb505b8a3a"
+      "sha256": "f3345a584541a9b5054b2fc9932cde846add2a1a3d4d895acd36efe5c8b89019"
     },
     {
       "caminho": "etl/basedosdados_observatorio.py",
@@ -171,7 +171,7 @@
     },
     {
       "caminho": "site/build.py",
-      "sha256": "13d223036e1d32317fc30bbf7571a7eab61211a6356326cafcfb1d690c4d078d"
+      "sha256": "9cfb15ecf5aa58da2d1f292561d06f0332ea65287ac7932a9f2ad599eebb7f3e"
     },
     {
       "caminho": "site/static/css/style.css",
@@ -179,7 +179,7 @@
     },
     {
       "caminho": "site/static/js/app.js",
-      "sha256": "9647e66a9312d7f8d529d6991a0fac5a5e7b666d00b3b9bbba9150dafcf44629"
+      "sha256": "ac68ebbdff227c368d1e59a6733317f350c6d3b85d19aa8dd668c465603b7c03"
     },
     {
       "caminho": "site/static/js/glossario.js",
@@ -211,7 +211,7 @@
     },
     {
       "caminho": "site/templates/uf.html.j2",
-      "sha256": "949c7cae25f560ab0a8c001bc72da3958fa72db664db26b340a11b4215fc4db6"
+      "sha256": "ac936d61b089353bb462a4ec02c3b0b639fd1c6a4593964b089b527ae1a19a91"
     }
   ]
 }

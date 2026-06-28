@@ -338,10 +338,11 @@
 const DADOS_UF = {{ dados_uf_json }};
 const META = {{ meta_json }};
 const MUNICIPIOS_COM_OFERTA = {{ municipios_com_oferta_json }};
+const MUNICIPIOS_OFERTA_CODS = {{ municipios_oferta_cods_json }};
 const CODIGO_IBGE_UF = "{{ codigo_ibge }}";
 
 document.addEventListener('DOMContentLoaded', () => {
-  iniciarMapaUF(CODIGO_IBGE_UF, MUNICIPIOS_COM_OFERTA);
+  iniciarMapaUF(CODIGO_IBGE_UF, MUNICIPIOS_COM_OFERTA, MUNICIPIOS_OFERTA_CODS);
 });
 
 function exportarUFCSV() {

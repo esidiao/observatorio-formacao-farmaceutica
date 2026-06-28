@@ -94,11 +94,17 @@ def main():
     print(f"\n[2/2] Municípios por UF ({len(IBGE_SIGLA)} arquivos)")
     ok = 0
     for cod, sigla in sorted(IBGE_SIGLA.items()):
+        # IMPORTANTE: intrarregiao=municipio → retorna os polígonos de TODOS os
+        # municípios da UF (cada feature com codarea = código IBGE 7 dígitos).
+        # Sem esse parâmetro, a API v3 devolve só o contorno do estado (1 feature).
         url_uf = (
             f"https://servicodados.ibge.gov.br/api/v3/malhas/estados/{cod}"
-            f"?resolucao=5&formato=application/vnd.geo%2Bjson"
+            f"?intrarregiao=municipio&qualidade=intermediaria"
+            f"&formato=application/vnd.geo%2Bjson"
         )
         dest = GEO_DIR / "estados" / f"{cod}.json"
+        if dest.exists():
+            dest.unlink()  # força re-download (corrige malhas antigas só com contorno)
         if baixar(url_uf, dest, f"{sigla} ({cod}.json)"):
             ok += 1
         time.sleep(0.4)  # respeita rate-limit IBGE

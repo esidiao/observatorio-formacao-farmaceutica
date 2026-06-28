@@ -221,6 +221,18 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         mun_json_path = municipios_dir / f"{sigla}.json"
         tem_drill = mun_json_path.exists()
 
+        # Códigos IBGE (7 dígitos) dos municípios com oferta — para colorir o mapa
+        # municipal por código (a malha IBGE traz codarea, não o nome).
+        cods_oferta = []
+        if mun_json_path.exists():
+            with open(mun_json_path, encoding="utf-8") as f:
+                dados_mun_uf = json.load(f)
+            offer_norm = {str(m).upper() for m in municipios}
+            for nome_norm, dm in dados_mun_uf.items():
+                cod = dm.get("cod_municipio")
+                if cod and str(nome_norm).upper() in offer_norm:
+                    cods_oferta.append(str(cod))
+
         html_uf = tmpl_uf.render(
             depth="../",
             meta=meta,
@@ -230,6 +242,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
             d=d,
             municipios_com_oferta=municipios,
             municipios_com_oferta_json=json.dumps(municipios, ensure_ascii=False),
+            municipios_oferta_cods_json=json.dumps(cods_oferta, ensure_ascii=False),
             dados_uf_json=json.dumps(d, ensure_ascii=False),
             codigo_ibge=IBGE_UF.get(sigla, ""),
             swot=_gerar_swot(sigla, d),
