@@ -4,7 +4,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>{% block title %}Observatório Nacional da Formação Farmacêutica{% endblock %}</title>
-  <meta name="description" content="Indicadores de acesso e qualidade da formação farmacêutica no Brasil, por UF e município.">
+  <meta name="description" content="{% block meta_description %}Indicadores de acesso territorial, qualidade e cobertura assistencial da formação farmacêutica no Brasil — 27 estados, dados oficiais INEP, IBGE e Ministério da Saúde.{% endblock %}">
+
+  <!-- Segurança: política de conteúdo e privacidade do referenciador -->
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.cartocdn.com https://servicodados.ibge.gov.br; connect-src 'self' https://servicodados.ibge.gov.br; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#16304F">
+
+  <!-- SEO / compartilhamento -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Observatório Nacional da Formação Farmacêutica">
+  <meta property="og:title" content="{% block og_title %}Observatório Nacional da Formação Farmacêutica{% endblock %}">
+  <meta property="og:description" content="Indicadores de acesso, qualidade e cobertura da formação farmacêutica nos 27 estados do Brasil.">
+  <meta property="og:locale" content="pt_BR">
+  <meta name="author" content="Edson Sidião de Souza Júnior">
   <link rel="stylesheet" href="{{ depth }}static/css/style.css">
   <!-- Leaflet (hospedado localmente — sem dependência de CDN externo) -->
   <link rel="stylesheet" href="{{ depth }}static/vendor/leaflet/leaflet.css">

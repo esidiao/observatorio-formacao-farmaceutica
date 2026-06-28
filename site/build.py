@@ -359,6 +359,41 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         (path_out / "comparar.html").write_text(html_comp, encoding="utf-8")
         print(f"[OK] comparar.html")
 
+    # ── SEO: robots.txt + sitemap.xml ──────────────────────────────────────────
+    site_url = (meta.get("site_url") or "https://esidiao.github.io/observatorio-formacao-farmaceutica").rstrip("/")
+    data_mod = meta.get("data_extracao") or ""
+
+    (path_out / "robots.txt").write_text(
+        "User-agent: *\nAllow: /\n\nSitemap: " + site_url + "/sitemap.xml\n",
+        encoding="utf-8",
+    )
+
+    # Prioridade maior para páginas-âncora; menor para detalhe municipal
+    urls = []
+    for f in sorted(path_out.rglob("*.html")):
+        rel = f.relative_to(path_out).as_posix()
+        loc = site_url + "/" + rel
+        if rel == "index.html":
+            loc, prio = site_url + "/", "1.0"
+        elif rel.startswith("uf/"):
+            prio = "0.8"
+        elif rel.startswith("municipio/"):
+            prio = "0.5"
+        else:
+            prio = "0.6"
+        urls.append((loc, prio))
+
+    sm = ['<?xml version="1.0" encoding="UTF-8"?>',
+          '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+    for loc, prio in urls:
+        loc_esc = loc.replace("&", "&amp;")
+        sm.append(f"  <url><loc>{loc_esc}</loc>" +
+                  (f"<lastmod>{data_mod}</lastmod>" if data_mod else "") +
+                  f"<priority>{prio}</priority></url>")
+    sm.append("</urlset>")
+    (path_out / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8")
+    print(f"[OK] robots.txt + sitemap.xml ({len(urls)} URLs)")
+
     print(f"\n[BUILD] Site gerado em: {path_out.resolve()}")
     print(f"  Abra {path_out / 'index.html'} no browser para visualizar localmente.")
 
