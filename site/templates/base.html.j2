@@ -21,6 +21,38 @@
   <meta property="og:locale" content="pt_BR">
   <meta name="author" content="Edson Sidião de Souza Júnior">
   <link rel="stylesheet" href="{{ depth }}static/css/style.css">
+
+  <!-- Dados estruturados (schema.org) — site e autor -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "{{ meta.site_url }}/#website",
+        "url": "{{ meta.site_url }}/",
+        "name": "Observatório Nacional da Formação Farmacêutica",
+        "description": "Indicadores de acesso territorial, qualidade e cobertura assistencial da formação farmacêutica nos 27 estados do Brasil.",
+        "inLanguage": "pt-BR",
+        "publisher": { "@id": "{{ meta.site_url }}/#autor" }
+      },
+      {
+        "@type": "Person",
+        "@id": "{{ meta.site_url }}/#autor",
+        "name": "Edson Sidião de Souza Júnior",
+        "jobTitle": "Farmacêutico · Avaliador ad hoc INEP/MEC · Consultor em Gestão Educacional",
+        "identifier": "CRF/GO 3686",
+        "url": "{{ meta.site_url }}/autor.html",
+        "email": "mailto:sidiao@i9educar.com",
+        "telephone": "+55-62-99804-4822",
+        "alumniOf": { "@type": "CollegeOrUniversity", "name": "Universidade Federal de Goiás" },
+        "knowsAbout": ["Farmácia", "Educação Superior", "Medicina Tropical", "Avaliação MEC/INEP", "Parasitologia"],
+        "sameAs": ["http://lattes.cnpq.br/9464330669014306"]
+      }
+    ]
+  }
+  </script>
+  {% block structured_data %}{% endblock %}
   <!-- Leaflet (hospedado localmente — sem dependência de CDN externo) -->
   <link rel="stylesheet" href="{{ depth }}static/vendor/leaflet/leaflet.css">
   <script src="{{ depth }}static/vendor/leaflet/leaflet.js"></script>

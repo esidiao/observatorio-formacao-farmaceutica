@@ -2,11 +2,11 @@
   "obra": "Observatório Nacional da Formação Farmacêutica",
   "autor": "Edson Sidião de Souza Júnior",
   "tipo": "Registro de Anterioridade e Integridade (prova de existência)",
-  "selado_em_utc": "2026-06-28T02:28:16+00:00",
+  "selado_em_utc": "2026-06-28T02:41:31+00:00",
   "algoritmo": "SHA-256",
   "n_arquivos": 49,
-  "hash_raiz": "22c6cee21832879449d98f4e8f9da956654282eb57eb8a72ec91356fafffcb97",
-  "git_commit_ancora": "d5f513d298a045cfc57bc69ddf24f162d390237b",
+  "hash_raiz": "bea4d56f03085022241bcb38f7681cf4f4d763fc66929aa5ff2aaa2f190d878d",
+  "git_commit_ancora": "41475e4b1e8b7a81ac579bc4698a32e91e55e68d",
   "fundamento": "Lei 9.610/1998 e Lei 9.609/1998. O hash-raiz é impressão digital única do conjunto; o commit Git ancora a data de forma imutável.",
   "como_verificar": [
     "1. Baixe os arquivos listados em 'arquivos'.",
@@ -171,7 +171,7 @@
     },
     {
       "caminho": "site/build.py",
-      "sha256": "1973224e142cb6f4f2f93b13b7871343a0006da3640854c93319a7e6b6167394"
+      "sha256": "152639dc73b5b94fd9cf24f29da8cc335b4c2c0b00cf590c0e8dcf51cbaa9ebe"
     },
     {
       "caminho": "site/static/css/style.css",
@@ -195,7 +195,7 @@
     },
     {
       "caminho": "site/templates/base.html.j2",
-      "sha256": "9a8e043d72630b11a9169ff676ec49b596ada5a373a33c03b96d58de02952586"
+      "sha256": "af67a7659b2b3ad7cdda51902ee711b7f68e8b5ef1972962d22109756d670c27"
     },
     {
       "caminho": "site/templates/comparar.html.j2",
@@ -203,7 +203,7 @@
     },
     {
       "caminho": "site/templates/index.html.j2",
-      "sha256": "f1587a5fc60b90de8dd2b6838da7eb0dbe00de08a789c3bad5b23c178f9cbe4c"
+      "sha256": "7b7afa359031155ad04eda4fea905e10d88c9d846f7678dce46b2738a2393ab7"
     },
     {
       "caminho": "site/templates/municipio.html.j2",
@@ -211,7 +211,7 @@
     },
     {
       "caminho": "site/templates/uf.html.j2",
-      "sha256": "fa5da0fc407c9b1c68fb553d5b3968c56be2099990a2ec97e71480aaea7ad80c"
+      "sha256": "2817d18d91318093354e88df4ca4e5a776eb46a2e5c598daa9f1c2338714dfd5"
     }
   ]
 }

@@ -1,6 +1,37 @@
 {% extends "base.html.j2" %}
 
 {% block title %}{{ sigla }} — Observatório Nacional da Formação Farmacêutica{% endblock %}
+{% block meta_description %}Farmácia em {{ nome_uf }}: {{ d.vagas_total_real or d.vagas_total or 0 }} vagas, {{ d.n_ies or 0 }} IES, {{ d.municipios_oferta or 0 }} municípios com oferta e {{ d.municipios_deserto or 0 }} desertos. Indicadores ICT, IAF, IDD e cobertura assistencial (Censo {{ meta.versao_censo }}/ENADE 2023).{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Formação farmacêutica em {{ nome_uf }} ({{ sigla }}) — indicadores",
+  "description": "Indicadores de Farmácia em {{ nome_uf }}: vagas (presencial e EaD), IES, municípios com oferta e desertos, concentração territorial (ICT), qualidade (ENADE/IDD/CPC) e cobertura assistencial.",
+  "url": "{{ meta.site_url }}/uf/{{ sigla }}.html",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true,
+  "license": "{{ meta.site_url }}/aviso-legal.html",
+  "temporalCoverage": "{{ meta.versao_censo }}",
+  "spatialCoverage": { "@type": "AdministrativeArea", "name": "{{ nome_uf }}, Brasil" },
+  "keywords": ["Farmácia", "{{ nome_uf }}", "educação superior", "INEP", "ENADE"],
+  "creator": { "@id": "{{ meta.site_url }}/#autor" },
+  "isPartOf": { "@id": "{{ meta.site_url }}/#website" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Início", "item": "{{ meta.site_url }}/" },
+    { "@type": "ListItem", "position": 2, "name": "{{ nome_uf }} ({{ sigla }})", "item": "{{ meta.site_url }}/uf/{{ sigla }}.html" }
+  ]
+}
+</script>
+{% endblock %}
 
 {% block breadcrumb %}
 <a href="{{ depth }}index.html">Início</a>

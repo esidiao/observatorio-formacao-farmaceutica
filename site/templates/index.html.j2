@@ -2,6 +2,32 @@
 
 {% block title %}Início — Observatório Nacional da Formação Farmacêutica{% endblock %}
 
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Dataset",
+  "name": "Observatório Nacional da Formação Farmacêutica — indicadores por UF",
+  "description": "Base de indicadores de acesso territorial (ICT, equidade), qualidade (ENADE, IDD, CPC), capacidade (vagas presenciais e EaD, densidade por habitante) e cobertura assistencial (Farmácia Popular) dos cursos de Farmácia nos 27 estados brasileiros, a partir de microdados oficiais.",
+  "url": "{{ meta.site_url }}/",
+  "inLanguage": "pt-BR",
+  "isAccessibleForFree": true,
+  "license": "{{ meta.site_url }}/aviso-legal.html",
+  "creativeWorkStatus": "Published",
+  "datePublished": "{{ meta.data_extracao }}",
+  "temporalCoverage": "{{ meta.versao_censo }}",
+  "spatialCoverage": { "@type": "Country", "name": "Brasil" },
+  "keywords": ["Farmácia", "educação superior", "INEP", "ENADE", "Censo da Educação Superior", "Farmácia Popular", "desertos farmacêuticos", "EaD"],
+  "creator": { "@id": "{{ meta.site_url }}/#autor" },
+  "publisher": { "@id": "{{ meta.site_url }}/#autor" },
+  "isBasedOn": ["INEP/MEC — Censo da Educação Superior e ENADE", "IBGE — estimativas populacionais", "Ministério da Saúde — Farmácia Popular"],
+  "distribution": [
+    { "@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "{{ meta.site_url }}/registro_autoral.json" }
+  ]
+}
+</script>
+{% endblock %}
+
 {% block content %}
 
 <!-- Barra de atualização -->

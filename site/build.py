@@ -140,6 +140,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         nacional = json.load(f)
 
     meta = nacional.get("metadados", {})
+    meta.setdefault("site_url", "https://esidiao.github.io/observatorio-formacao-farmaceutica")
     ufs = nacional.get("ufs", nacional)  # suporte a final.json sem wrapper
 
     # Série histórica (deltas 2023→2024), opcional
