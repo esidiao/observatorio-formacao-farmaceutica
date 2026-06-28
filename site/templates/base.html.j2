@@ -90,6 +90,22 @@
     Dados: {{ meta.data_extracao | default('2025-01-01') }}
   </span>
 </nav>
+<script>
+/* Remove do menu o link da página atual (já mostrada no breadcrumb), evitando duplicidade. */
+(function () {
+  var atual = (location.pathname.split('/').pop() || 'index.html');
+  document.querySelectorAll('.navbar a').forEach(function (a) {
+    var href = a.getAttribute('href') || '';
+    if (href.charAt(0) === '#') return;
+    var alvo = href.split('/').pop().split('#')[0].split('?')[0];
+    if (alvo === atual) {
+      var sep = a.previousElementSibling;
+      if (sep && sep.classList && sep.classList.contains('sep')) sep.remove();
+      a.remove();
+    }
+  });
+})();
+</script>
 
 <main>
   {% block content %}{% endblock %}
