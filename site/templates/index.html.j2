@@ -170,6 +170,51 @@
   </table>
 </div>
 
+{% if contexto_regioes %}
+<!-- Contexto de mercado por região (oferta × demanda) -->
+<h2 class="section-title">Contexto: formação × mercado (por região)</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:6px;max-width:82ch">
+  Confronto entre a <strong>oferta de formação</strong> (vagas) e o <strong>mercado</strong> (farmácias e drogarias).
+  ⚠️ Os dados de mercado só existem de forma aberta por <strong>região</strong> — não por UF; por isso esta leitura é regional,
+  sem estimar valores estaduais.
+</p>
+<div class="tabela-wrap">
+  <table>
+    <thead>
+      <tr>
+        <th>Região</th>
+        <th title="População residente (IBGE)">População</th>
+        <th title="Vagas de Farmácia/ano (pres + EaD)">Vagas/ano</th>
+        <th title="Vagas por 100 mil habitantes">Vagas/100k</th>
+        <th title="Farmácias e drogarias em atividade (2024)">Farmácias</th>
+        <th title="Farmácias por 100 mil habitantes">Farm./100k</th>
+        <th title="Novas vagas de formação por farmácia existente — proxy de pressão de oferta">Vagas/farmácia</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for r in contexto_regioes %}
+      <tr>
+        <td><strong>{{ r.regiao }}</strong></td>
+        <td>{{ "{:,}".format(r.populacao).replace(',','.') }}</td>
+        <td>{{ "{:,}".format(r.vagas).replace(',','.') }}</td>
+        <td>{{ "%.1f"|format(r.vagas_100k) if r.vagas_100k is not none else '–' }}</td>
+        <td>{{ "{:,}".format(r.farmacias).replace(',','.') if r.farmacias else '–' }}</td>
+        <td>{{ "%.1f"|format(r.farmacias_100k) if r.farmacias_100k is not none else '–' }}</td>
+        <td>{{ "%.2f"|format(r.vagas_por_farmacia) if r.vagas_por_farmacia is not none else '–' }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p style="font-size:0.78rem;color:var(--text-muted);margin-top:8px;max-width:82ch">
+  Brasil {{ contexto_meta.ano }}: <strong>{{ "{:,}".format(contexto_meta.total_farmaceuticos).replace(',','.') }}</strong> farmacêuticos e
+  <strong>{{ "{:,}".format(contexto_meta.total_farmacias).replace(',','.') }}</strong> farmácias/drogarias.
+  Fontes: {{ contexto_meta.fonte_farm }}; {{ contexto_meta.fonte_prof }}. População: IBGE.
+  <br>Leitura: "vagas por farmácia" aproxima a <em>pressão de formação</em> — quantas vagas novas de Farmácia são abertas por ano
+  para cada farmácia em operação; valores altos sugerem formação crescendo acima da base de mercado regional.
+</p>
+{% endif %}
+
 {% endblock %}
 
 {% block scripts %}

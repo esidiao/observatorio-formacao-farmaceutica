@@ -189,6 +189,36 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
 
     ufs_ordenados = sorted(ufs.items(), key=lambda kv: kv[1].get("ICT") or 1.0)
 
+    # ── Contexto de mercado por região (oferta × demanda) ──────────────────────
+    contexto_path = path_dados.parent / "contexto_mercado.json"
+    contexto_regioes = []
+    contexto_meta = {}
+    if contexto_path.exists():
+        with open(contexto_path, encoding="utf-8") as f:
+            ctx = json.load(f)
+        contexto_meta = {
+            "fonte_farm": ctx.get("farmacias_drogarias", {}).get("fonte"),
+            "fonte_prof": ctx.get("farmaceuticos", {}).get("fonte"),
+            "total_farmaceuticos": ctx.get("farmaceuticos", {}).get("total_brasil"),
+            "total_farmacias": ctx.get("farmacias_drogarias", {}).get("total_brasil"),
+            "ano": ctx.get("ano"),
+        }
+        farm_reg = ctx.get("farmacias_drogarias", {}).get("por_regiao", {})
+        for regiao, siglas in ctx.get("regioes", {}).items():
+            pop = sum(ufs.get(s, {}).get("populacao") or 0 for s in siglas)
+            vagas = sum(ufs.get(s, {}).get("vagas_total_real") or ufs.get(s, {}).get("vagas_total") or 0 for s in siglas)
+            farmacias = farm_reg.get(regiao)
+            contexto_regioes.append({
+                "regiao": regiao,
+                "populacao": pop,
+                "vagas": vagas,
+                "vagas_100k": round(vagas / pop * 100000, 1) if pop else None,
+                "farmacias": farmacias,
+                "farmacias_100k": round(farmacias / pop * 100000, 1) if (pop and farmacias) else None,
+                "vagas_por_farmacia": round(vagas / farmacias, 2) if (farmacias) else None,
+            })
+        contexto_regioes.sort(key=lambda r: -(r["vagas"] or 0))
+
     # ── Render home ────────────────────────────────────────────────────────────
     tmpl_index = env.get_template("index.html.j2")
     html = tmpl_index.render(
@@ -206,6 +236,8 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         mun_deserto=mun_deserto,
         ict_mediana=_mediana(ict_values) or 0,
         iaf_mediana=_mediana(iaf_values) or 0,
+        contexto_regioes=contexto_regioes,
+        contexto_meta=contexto_meta,
         ufs_ordenados=ufs_ordenados,
         dados_ufs_json=json.dumps(ufs, ensure_ascii=False),
         meta_json=json.dumps(meta, ensure_ascii=False),

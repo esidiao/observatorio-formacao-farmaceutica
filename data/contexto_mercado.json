@@ -1,0 +1,29 @@
+{
+  "_nota": "Dados de MERCADO/DEMANDA disponíveis apenas em nível REGIONAL (não há base aberta por UF). Usados como contexto, sem estimar valores por estado.",
+  "ano": 2024,
+  "farmacias_drogarias": {
+    "total_brasil": 93700,
+    "por_regiao": {
+      "Sudeste": 36700,
+      "Nordeste": 26200,
+      "Sul": 14900,
+      "Centro-Oeste": 8900,
+      "Norte": 6800
+    },
+    "fonte": "Conselho Federal de Farmácia (CFF) / Sebrae — fechamento de 2024",
+    "url": "https://site.cff.org.br/"
+  },
+  "farmaceuticos": {
+    "total_brasil": 221200,
+    "estabelecimentos_setor": 160600,
+    "fonte": "Conselho Federal de Farmácia (CFF) — Dia Nacional do Farmacêutico 2025",
+    "nota": "Total nacional; o CFF não publica série aberta desagregada por UF."
+  },
+  "regioes": {
+    "Norte": ["AC", "AP", "AM", "PA", "RO", "RR", "TO"],
+    "Nordeste": ["AL", "BA", "CE", "MA", "PB", "PE", "PI", "RN", "SE"],
+    "Centro-Oeste": ["GO", "MT", "MS", "DF"],
+    "Sudeste": ["ES", "MG", "RJ", "SP"],
+    "Sul": ["PR", "RS", "SC"]
+  }
+}
