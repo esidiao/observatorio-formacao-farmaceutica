@@ -17,12 +17,16 @@
   --swot-opportunity: #2E5496;
   --swot-threat:      #B07D22;
 
-  /* Superfícies */
-  --bg:        #F5F6FA;
+  /* Acento de identidade (editorial/científico) */
+  --accent:    #0E7C66;
+  --accent-soft: #E6F2EE;
+
+  /* Superfícies — tom papel quente (editorial) */
+  --bg:        #FBFAF8;
   --surface:   #FFFFFF;
-  --border:    #DDE1EA;
-  --text:      #1E2233;
-  --text-muted:#6B7489;
+  --border:    #E7E3DC;
+  --text:      #1B2530;
+  --text-muted:#6B7280;
 
   /* Escalas coroplético RdBu (ICT: azul=bom, vermelho=ruim) */
   --rdbu-1: #2166AC;
@@ -35,8 +39,9 @@
   --rdbu-8: #D6604D;
   --rdbu-9: #B2182B;
 
-  /* Tipografia */
-  --font: 'Segoe UI', Arial, sans-serif;
+  /* Tipografia — Inter (UI/dados) + Lora (títulos editoriais) */
+  --font: 'Inter', 'Segoe UI', system-ui, Arial, sans-serif;
+  --font-serif: 'Lora', Georgia, 'Times New Roman', serif;
   --font-mono: 'Cascadia Mono', 'Consolas', monospace;
 }
 
@@ -62,27 +67,40 @@ a:hover { text-decoration: underline; }
    HEADER
    ============================================================ */
 .site-header {
-  background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
-  color: #fff;
-  padding: 18px 32px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  color: var(--text);
+  padding: 16px 32px;
   display: flex;
   align-items: center;
   gap: 20px;
   flex-wrap: wrap;
 }
 
-.site-header h1 {
-  font-size: 1.25rem;
-  font-weight: 700;
-  line-height: 1.3;
-  flex: 1;
-  min-width: 200px;
+.brand { display: flex; align-items: center; gap: 13px; text-decoration: none; color: inherit; }
+.brand:hover { text-decoration: none; }
+.brand-mark { display: block; flex-shrink: 0; }
+.brand-text { display: flex; flex-direction: column; line-height: 1.12; }
+.brand-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.32rem;
+  color: var(--navy);
+  letter-spacing: -0.01em;
 }
-
-.site-header p {
+.brand-sub {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  font-size: 1.02rem;
+  color: var(--accent);
+}
+.header-tag {
   font-size: 0.8rem;
-  opacity: 0.82;
-  margin-top: 3px;
+  color: var(--text-muted);
+  margin-left: auto;
+  max-width: 360px;
+  text-align: right;
+  line-height: 1.4;
 }
 
 .badge {
@@ -133,12 +151,24 @@ a:hover { text-decoration: underline; }
 main { padding: 24px 32px; max-width: 1280px; margin: 0 auto; }
 
 .section-title {
-  font-size: 1.05rem;
-  font-weight: 700;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
   color: var(--navy);
-  margin-bottom: 14px;
-  padding-bottom: 6px;
-  border-bottom: 2px solid var(--blue);
+  margin-bottom: 16px;
+  margin-top: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0; bottom: -1px;
+  width: 44px; height: 3px;
+  background: var(--accent);
+  border-radius: 2px;
 }
 
 /* ============================================================
@@ -160,10 +190,13 @@ main { padding: 24px 32px; max-width: 1280px; margin: 0 auto; }
 }
 
 .kpi-card .kpi-valor {
-  font-size: 1.8rem;
-  font-weight: 700;
-  color: var(--blue);
+  font-family: var(--font-serif);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--navy);
   line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .kpi-card .kpi-label {

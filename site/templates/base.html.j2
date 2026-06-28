@@ -11,7 +11,9 @@
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.cartocdn.com https://servicodados.ibge.gov.br; connect-src 'self' https://servicodados.ibge.gov.br; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#16304F">
+  <meta name="theme-color" content="#15314F">
+  <link rel="icon" type="image/svg+xml" href="{{ depth }}static/img/favicon.svg">
+  <link rel="stylesheet" href="{{ depth }}static/fonts/fonts.css">
 
   <!-- SEO / compartilhamento -->
   <meta property="og:type" content="website">
@@ -63,10 +65,14 @@
 <body>
 
 <header class="site-header" role="banner">
-  <div>
-    <h1>Observatório Nacional da Formação Farmacêutica</h1>
-    <p>Indicadores de acesso territorial, qualidade e cobertura assistencial · Censo INEP {{ meta.versao_censo }}</p>
-  </div>
+  <a href="{{ depth }}index.html" class="brand" aria-label="Página inicial">
+    <img src="{{ depth }}static/img/logo-mark.svg" alt="" class="brand-mark" width="44" height="44">
+    <span class="brand-text">
+      <span class="brand-name">Observatório Nacional</span>
+      <span class="brand-sub">da Formação Farmacêutica</span>
+    </span>
+  </a>
+  <p class="header-tag">Indicadores de acesso territorial, qualidade e cobertura assistencial · Censo INEP {{ meta.versao_censo }}</p>
 </header>
 
 <nav class="navbar" aria-label="Navegação">

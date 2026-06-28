@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Observatório Nacional da Formação Farmacêutica">
+  <!-- barras de dados ascendentes (formação crescente) -->
+  <rect x="21" y="27" width="6" height="14" rx="2" fill="#15314F"/>
+  <rect x="29" y="21" width="6" height="20" rx="2" fill="#15314F"/>
+  <rect x="37" y="14" width="6" height="27" rx="2" fill="#0E7C66"/>
+  <!-- almofariz (mortar) -->
+  <path d="M14 41 h36 a2 2 0 0 1 2 2 v1 a20 20 0 0 1 -40 0 v-1 a2 2 0 0 1 2 -2 Z" fill="#15314F"/>
+  <!-- base -->
+  <rect x="22" y="54" width="20" height="5" rx="2.5" fill="#15314F"/>
+  <!-- pistilo (pestle) -->
+  <rect x="44" y="9" width="5" height="18" rx="2.5" transform="rotate(24 46 18)" fill="#0E7C66"/>
+</svg>
