@@ -86,7 +86,10 @@
     ],
     "pct_doc_mestres": 66.7,
     "pct_doc_doutores": 4.8,
-    "pct_doc_regime": 76.2
+    "pct_doc_regime": 76.2,
+    "cpc_org_didatico": 5.6,
+    "cpc_infraestrutura": 5.44,
+    "cpc_oportunidade": 5.1
   },
   "ACARA": {
     "nome_original": "Acará",
@@ -506,7 +509,10 @@
     ],
     "pct_doc_mestres": 98.8,
     "pct_doc_doutores": 39.0,
-    "pct_doc_regime": 86.9
+    "pct_doc_regime": 86.9,
+    "cpc_org_didatico": 5.37,
+    "cpc_infraestrutura": 4.94,
+    "cpc_oportunidade": 4.59
   },
   "ANAPU": {
     "nome_original": "Anapu",
@@ -1044,7 +1050,10 @@
     ],
     "pct_doc_mestres": 97.0,
     "pct_doc_doutores": 57.6,
-    "pct_doc_regime": 92.3
+    "pct_doc_regime": 92.3,
+    "cpc_org_didatico": 5.53,
+    "cpc_infraestrutura": 5.29,
+    "cpc_oportunidade": 4.83
   },
   "BENEVIDES": {
     "nome_original": "Benevides",
@@ -1736,7 +1745,10 @@
     ],
     "pct_doc_mestres": 82.8,
     "pct_doc_doutores": 37.9,
-    "pct_doc_regime": 58.6
+    "pct_doc_regime": 58.6,
+    "cpc_org_didatico": 5.46,
+    "cpc_infraestrutura": 5.42,
+    "cpc_oportunidade": 4.64
   },
   "COLARES": {
     "nome_original": "Colares",
@@ -2242,7 +2254,10 @@
     ],
     "pct_doc_mestres": 35.0,
     "pct_doc_doutores": 5.0,
-    "pct_doc_regime": 85.0
+    "pct_doc_regime": 85.0,
+    "cpc_org_didatico": 5.82,
+    "cpc_infraestrutura": 5.67,
+    "cpc_oportunidade": 5.67
   },
   "JACAREACANGA": {
     "nome_original": "Jacareacanga",
@@ -3450,7 +3465,10 @@
     ],
     "pct_doc_mestres": 94.1,
     "pct_doc_doutores": 58.8,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.74,
+    "cpc_infraestrutura": 5.7,
+    "cpc_oportunidade": 4.9
   },
   "RONDON DO PARA": {
     "nome_original": "Rondon do Pará",
@@ -3803,7 +3821,10 @@
     ],
     "pct_doc_mestres": 89.3,
     "pct_doc_doutores": 48.0,
-    "pct_doc_regime": 69.7
+    "pct_doc_regime": 69.7,
+    "cpc_org_didatico": 5.65,
+    "cpc_infraestrutura": 5.62,
+    "cpc_oportunidade": 5.59
   },
   "SANTO ANTONIO DO TAUA": {
     "nome_original": "Santo Antônio do Tauá",

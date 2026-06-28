@@ -277,7 +277,10 @@
     ],
     "pct_doc_mestres": 89.9,
     "pct_doc_doutores": 56.8,
-    "pct_doc_regime": 96.1
+    "pct_doc_regime": 96.1,
+    "cpc_org_didatico": 5.45,
+    "cpc_infraestrutura": 5.07,
+    "cpc_oportunidade": 4.78
   },
   "APARECIDA DE GOIANIA": {
     "nome_original": "Aparecida de Goiânia",
@@ -393,7 +396,10 @@
     ],
     "pct_doc_mestres": 85.0,
     "pct_doc_doutores": 35.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.94,
+    "cpc_infraestrutura": 5.96,
+    "cpc_oportunidade": 5.85
   },
   "ARUANA": {
     "nome_original": "Aruanã",
@@ -770,7 +776,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 70.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 6.0,
+    "cpc_infraestrutura": 6.0,
+    "cpc_oportunidade": 6.0
   },
   "CIDADE OCIDENTAL": {
     "nome_original": "Cidade Ocidental",
@@ -1585,7 +1594,10 @@
     ],
     "pct_doc_mestres": 98.4,
     "pct_doc_doutores": 65.6,
-    "pct_doc_regime": 89.7
+    "pct_doc_regime": 89.7,
+    "cpc_org_didatico": 5.4,
+    "cpc_infraestrutura": 5.17,
+    "cpc_oportunidade": 4.43
   },
   "GUAPO": {
     "nome_original": "Guapó",
@@ -1702,7 +1714,10 @@
     ],
     "pct_doc_mestres": 90.0,
     "pct_doc_doutores": 20.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.67,
+    "cpc_infraestrutura": 5.55,
+    "cpc_oportunidade": 4.78
   },
   "IPAMERI": {
     "nome_original": "Ipameri",
@@ -1760,7 +1775,10 @@
     ],
     "pct_doc_mestres": 71.4,
     "pct_doc_doutores": 28.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.39,
+    "cpc_infraestrutura": 4.96,
+    "cpc_oportunidade": 4.71
   },
   "ITABERAI": {
     "nome_original": "Itaberaí",
@@ -1936,7 +1954,10 @@
     ],
     "pct_doc_mestres": 83.3,
     "pct_doc_doutores": 73.3,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.42,
+    "cpc_infraestrutura": 5.02,
+    "cpc_oportunidade": 4.53
   },
   "JARAGUA": {
     "nome_original": "Jaraguá",
@@ -2121,7 +2142,10 @@
     ],
     "pct_doc_mestres": 92.3,
     "pct_doc_doutores": 46.2,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.24,
+    "cpc_infraestrutura": 4.65,
+    "cpc_oportunidade": 3.65
   },
   "MAMBAI": {
     "nome_original": "Mambaí",
@@ -2220,7 +2244,10 @@
     ],
     "pct_doc_mestres": 66.7,
     "pct_doc_doutores": 19.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.54,
+    "cpc_infraestrutura": 5.46,
+    "cpc_oportunidade": 4.87
   },
   "MORRINHOS": {
     "nome_original": "Morrinhos",
@@ -2734,7 +2761,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 80.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.31,
+    "cpc_infraestrutura": 4.94,
+    "cpc_oportunidade": 4.66
   },
   "POSSE": {
     "nome_original": "Posse",
@@ -2828,7 +2858,10 @@
     ],
     "pct_doc_mestres": 20.0,
     "pct_doc_doutores": 0.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.89,
+    "cpc_infraestrutura": 5.89,
+    "cpc_oportunidade": 5.89
   },
   "RIO VERDE": {
     "nome_original": "Rio Verde",
@@ -2917,7 +2950,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 100.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.74,
+    "cpc_infraestrutura": 5.62,
+    "cpc_oportunidade": 5.34
   },
   "SANTA HELENA DE GOIAS": {
     "nome_original": "Santa Helena de Goiás",
@@ -3180,7 +3216,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 83.3,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.07,
+    "cpc_infraestrutura": 4.56,
+    "cpc_oportunidade": 3.88
   },
   "SAO MIGUEL DO ARAGUAIA": {
     "nome_original": "São Miguel do Araguaia",
@@ -3283,7 +3322,10 @@
     ],
     "pct_doc_mestres": 86.7,
     "pct_doc_doutores": 53.3,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.44,
+    "cpc_infraestrutura": 5.28,
+    "cpc_oportunidade": 4.19
   },
   "URUACU": {
     "nome_original": "Uruaçu",
@@ -3345,7 +3387,10 @@
     ],
     "pct_doc_mestres": 92.9,
     "pct_doc_doutores": 42.9,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.18,
+    "cpc_infraestrutura": 5.26,
+    "cpc_oportunidade": 4.69
   },
   "VALPARAISO DE GOIAS": {
     "nome_original": "Valparaíso de Goiás",
@@ -3488,7 +3533,10 @@
     ],
     "pct_doc_mestres": 95.1,
     "pct_doc_doutores": 76.0,
-    "pct_doc_regime": 96.5
+    "pct_doc_regime": 96.5,
+    "cpc_org_didatico": 5.8,
+    "cpc_infraestrutura": 5.7,
+    "cpc_oportunidade": 5.36
   },
   "VIANOPOLIS": {
     "nome_original": "Vianópolis",

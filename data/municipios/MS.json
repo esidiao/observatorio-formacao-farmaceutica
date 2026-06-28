@@ -500,7 +500,10 @@
     ],
     "pct_doc_mestres": 98.1,
     "pct_doc_doutores": 82.3,
-    "pct_doc_regime": 93.1
+    "pct_doc_regime": 93.1,
+    "cpc_org_didatico": 5.42,
+    "cpc_infraestrutura": 5.23,
+    "cpc_oportunidade": 4.73
   },
   "CASSILANDIA": {
     "nome_original": "Cassilândia",
@@ -821,7 +824,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 86.2,
-    "pct_doc_regime": 86.2
+    "pct_doc_regime": 86.2,
+    "cpc_org_didatico": 5.84,
+    "cpc_infraestrutura": 5.71,
+    "cpc_oportunidade": 5.25
   },
   "ELDORADO": {
     "nome_original": "Eldorado",
@@ -1590,7 +1596,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 75.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 6.0,
+    "cpc_infraestrutura": 6.0,
+    "cpc_oportunidade": 6.0
   },
   "AGUA CLARA": {
     "nome_original": "Água Clara",

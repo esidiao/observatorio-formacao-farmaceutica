@@ -217,7 +217,10 @@
     ],
     "pct_doc_mestres": 97.8,
     "pct_doc_doutores": 64.6,
-    "pct_doc_regime": 73.9
+    "pct_doc_regime": 73.9,
+    "cpc_org_didatico": 5.21,
+    "cpc_infraestrutura": 4.94,
+    "cpc_oportunidade": 4.41
   },
   "BARRA DOS COQUEIROS": {
     "nome_original": "Barra dos Coqueiros",
@@ -530,7 +533,10 @@
     ],
     "pct_doc_mestres": 96.7,
     "pct_doc_doutores": 85.2,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.28,
+    "cpc_infraestrutura": 5.03,
+    "cpc_oportunidade": 4.34
   },
   "NEOPOLIS": {
     "nome_original": "Neópolis",
@@ -840,7 +846,10 @@
     ],
     "pct_doc_mestres": 97.2,
     "pct_doc_doutores": 92.2,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 4.96,
+    "cpc_infraestrutura": 4.78,
+    "cpc_oportunidade": 4.37
   },
   "TOBIAS BARRETO": {
     "nome_original": "Tobias Barreto",

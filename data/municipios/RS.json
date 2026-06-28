@@ -315,7 +315,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 50.0,
-    "pct_doc_regime": 70.0
+    "pct_doc_regime": 70.0,
+    "cpc_org_didatico": 5.43,
+    "cpc_infraestrutura": 4.9,
+    "cpc_oportunidade": 4.55
   },
   "BARRA DO RIBEIRO": {
     "nome_original": "Barra do Ribeiro",
@@ -391,7 +394,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 68.9,
-    "pct_doc_regime": 80.0
+    "pct_doc_regime": 80.0,
+    "cpc_org_didatico": 5.73,
+    "cpc_infraestrutura": 5.17,
+    "cpc_oportunidade": 5.32
   },
   "BOA VISTA DO BURICA": {
     "nome_original": "Boa Vista do Buricá",
@@ -930,7 +936,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 55.1,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.78,
+    "cpc_infraestrutura": 5.61,
+    "cpc_oportunidade": 5.34
   },
   "CAPAO DA CANOA": {
     "nome_original": "Capão da Canoa",
@@ -1015,7 +1024,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 98.1,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 4.95,
+    "cpc_infraestrutura": 4.52,
+    "cpc_oportunidade": 4.36
   },
   "CARAZINHO": {
     "nome_original": "Carazinho",
@@ -1213,7 +1225,10 @@
     ],
     "pct_doc_mestres": 99.4,
     "pct_doc_doutores": 64.5,
-    "pct_doc_regime": 82.3
+    "pct_doc_regime": 82.3,
+    "cpc_org_didatico": 5.5,
+    "cpc_infraestrutura": 5.44,
+    "cpc_oportunidade": 5.01
   },
   "CACAPAVA DO SUL": {
     "nome_original": "Caçapava do Sul",
@@ -1486,7 +1501,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 63.6,
-    "pct_doc_regime": 72.7
+    "pct_doc_regime": 72.7,
+    "cpc_org_didatico": 5.56,
+    "cpc_infraestrutura": 5.71,
+    "cpc_oportunidade": 5.56
   },
   "DOIS IRMAOS": {
     "nome_original": "Dois Irmãos",
@@ -1717,7 +1735,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 80.0,
-    "pct_doc_regime": 60.0
+    "pct_doc_regime": 60.0,
+    "cpc_org_didatico": 5.82,
+    "cpc_infraestrutura": 5.79,
+    "cpc_oportunidade": 5.46
   },
   "ERVAL SECO": {
     "nome_original": "Erval Seco",
@@ -2048,7 +2069,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 55.6,
-    "pct_doc_regime": 50.0
+    "pct_doc_regime": 50.0,
+    "cpc_org_didatico": 5.92,
+    "cpc_infraestrutura": 5.93,
+    "cpc_oportunidade": 5.78
   },
   "GARIBALDI": {
     "nome_original": "Garibaldi",
@@ -2097,7 +2121,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 75.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.57,
+    "cpc_infraestrutura": 5.58,
+    "cpc_oportunidade": 5.53
   },
   "GRAMADO": {
     "nome_original": "Gramado",
@@ -2478,7 +2505,10 @@
     ],
     "pct_doc_mestres": 98.4,
     "pct_doc_doutores": 49.2,
-    "pct_doc_regime": 81.0
+    "pct_doc_regime": 81.0,
+    "cpc_org_didatico": 5.98,
+    "cpc_infraestrutura": 5.97,
+    "cpc_oportunidade": 5.93
   },
   "ITAQUI": {
     "nome_original": "Itaqui",
@@ -2627,7 +2657,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 78.8,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.43,
+    "cpc_infraestrutura": 5.4,
+    "cpc_oportunidade": 5.5
   },
   "LAVRAS DO SUL": {
     "nome_original": "Lavras do Sul",
@@ -3013,7 +3046,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 67.7,
-    "pct_doc_regime": 96.8
+    "pct_doc_regime": 96.8,
+    "cpc_org_didatico": 5.85,
+    "cpc_infraestrutura": 5.9,
+    "cpc_oportunidade": 5.77
   },
   "NAO-ME-TOQUE": {
     "nome_original": "Não-Me-Toque",
@@ -3098,7 +3134,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 100.0,
-    "pct_doc_regime": 85.7
+    "pct_doc_regime": 85.7,
+    "cpc_org_didatico": 5.72,
+    "cpc_infraestrutura": 5.1,
+    "cpc_oportunidade": 4.9
   },
   "PALMARES DO SUL": {
     "nome_original": "Palmares do Sul",
@@ -3365,7 +3404,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 64.4,
-    "pct_doc_regime": 97.9
+    "pct_doc_regime": 97.9,
+    "cpc_org_didatico": 5.8,
+    "cpc_infraestrutura": 5.72,
+    "cpc_oportunidade": 5.59
   },
   "PEDRO OSORIO": {
     "nome_original": "Pedro Osório",
@@ -3504,7 +3546,10 @@
     ],
     "pct_doc_mestres": 94.2,
     "pct_doc_doutores": 73.5,
-    "pct_doc_regime": 98.9
+    "pct_doc_regime": 98.9,
+    "cpc_org_didatico": 5.82,
+    "cpc_infraestrutura": 5.83,
+    "cpc_oportunidade": 5.43
   },
   "PINHEIRO MACHADO": {
     "nome_original": "Pinheiro Machado",
@@ -3846,7 +3891,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 88.0,
-    "pct_doc_regime": 93.2
+    "pct_doc_regime": 93.2,
+    "cpc_org_didatico": 5.28,
+    "cpc_infraestrutura": 5.18,
+    "cpc_oportunidade": 4.72
   },
   "PORTO XAVIER": {
     "nome_original": "Porto Xavier",
@@ -4085,7 +4133,10 @@
     ],
     "pct_doc_mestres": 97.0,
     "pct_doc_doutores": 90.9,
-    "pct_doc_regime": 97.0
+    "pct_doc_regime": 97.0,
+    "cpc_org_didatico": 4.96,
+    "cpc_infraestrutura": 4.45,
+    "cpc_oportunidade": 4.12
   },
   "RIO PARDO": {
     "nome_original": "Rio Pardo",
@@ -4353,7 +4404,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 76.1,
-    "pct_doc_regime": 73.9
+    "pct_doc_regime": 73.9,
+    "cpc_org_didatico": 5.61,
+    "cpc_infraestrutura": 5.67,
+    "cpc_oportunidade": 5.83
   },
   "SANTA MARIA": {
     "nome_original": "Santa Maria",
@@ -4469,7 +4523,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 95.2,
-    "pct_doc_regime": 99.6
+    "pct_doc_regime": 99.6,
+    "cpc_org_didatico": 5.48,
+    "cpc_infraestrutura": 5.54,
+    "cpc_oportunidade": 5.19
   },
   "SANTA ROSA": {
     "nome_original": "Santa Rosa",
@@ -4617,7 +4674,10 @@
     ],
     "pct_doc_mestres": 92.9,
     "pct_doc_doutores": 35.7,
-    "pct_doc_regime": 42.9
+    "pct_doc_regime": 42.9,
+    "cpc_org_didatico": 5.94,
+    "cpc_infraestrutura": 5.92,
+    "cpc_oportunidade": 5.88
   },
   "SANTO ANTONIO DA PATRULHA": {
     "nome_original": "Santo Antônio da Patrulha",
@@ -4756,7 +4816,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 45.8,
-    "pct_doc_regime": 33.3
+    "pct_doc_regime": 33.3,
+    "cpc_org_didatico": 5.44,
+    "cpc_infraestrutura": 5.3,
+    "cpc_oportunidade": 5.22
   },
   "SAPIRANGA": {
     "nome_original": "Sapiranga",
@@ -5315,7 +5378,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 87.0,
-    "pct_doc_regime": 94.6
+    "pct_doc_regime": 94.6,
+    "cpc_org_didatico": 5.15,
+    "cpc_infraestrutura": 5.08,
+    "cpc_oportunidade": 3.89
   },
   "SAO LOURENCO DO SUL": {
     "nome_original": "São Lourenço do Sul",
@@ -6017,7 +6083,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 88.2,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.46,
+    "cpc_infraestrutura": 5.08,
+    "cpc_oportunidade": 4.87
   },
   "VACARIA": {
     "nome_original": "Vacaria",

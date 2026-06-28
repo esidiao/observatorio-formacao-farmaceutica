@@ -342,7 +342,10 @@
     ],
     "pct_doc_mestres": 75.7,
     "pct_doc_doutores": 70.3,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.36,
+    "cpc_infraestrutura": 5.08,
+    "cpc_oportunidade": 4.52
   },
   "BACABEIRA": {
     "nome_original": "Bacabeira",
@@ -887,7 +890,10 @@
     ],
     "pct_doc_mestres": 82.4,
     "pct_doc_doutores": 47.1,
-    "pct_doc_regime": 94.1
+    "pct_doc_regime": 94.1,
+    "cpc_org_didatico": 5.51,
+    "cpc_infraestrutura": 5.47,
+    "cpc_oportunidade": 4.74
   },
   "CHAPADINHA": {
     "nome_original": "Chapadinha",
@@ -1504,7 +1510,10 @@
     ],
     "pct_doc_mestres": 76.8,
     "pct_doc_doutores": 51.5,
-    "pct_doc_regime": 90.1
+    "pct_doc_regime": 90.1,
+    "cpc_org_didatico": 5.64,
+    "cpc_infraestrutura": 5.52,
+    "cpc_oportunidade": 5.03
   },
   "ITAIPAVA DO GRAJAU": {
     "nome_original": "Itaipava do Grajaú",
@@ -2884,7 +2893,10 @@
     ],
     "pct_doc_mestres": 92.6,
     "pct_doc_doutores": 62.9,
-    "pct_doc_regime": 90.9
+    "pct_doc_regime": 90.9,
+    "cpc_org_didatico": 5.67,
+    "cpc_infraestrutura": 5.49,
+    "cpc_oportunidade": 5.28
   },
   "SAO MATEUS DO MARANHAO": {
     "nome_original": "São Mateus do Maranhão",

@@ -473,6 +473,9 @@
     ],
     "pct_doc_mestres": 96.5,
     "pct_doc_doutores": 70.4,
-    "pct_doc_regime": 89.2
+    "pct_doc_regime": 89.2,
+    "cpc_org_didatico": 5.54,
+    "cpc_infraestrutura": 5.41,
+    "cpc_oportunidade": 5.04
   }
 }

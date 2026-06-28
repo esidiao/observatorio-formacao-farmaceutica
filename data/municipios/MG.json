@@ -64,7 +64,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 100.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.89,
+    "cpc_infraestrutura": 5.88,
+    "cpc_oportunidade": 5.8
   },
   "ALFENAS": {
     "nome_original": "Alfenas",
@@ -162,7 +165,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 98.9,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.53,
+    "cpc_infraestrutura": 5.44,
+    "cpc_oportunidade": 5.07
   },
   "ALMENARA": {
     "nome_original": "Almenara",
@@ -215,7 +221,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 85.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.49,
+    "cpc_infraestrutura": 5.4,
+    "cpc_oportunidade": 4.67
   },
   "ALPINOPOLIS": {
     "nome_original": "Alpinópolis",
@@ -752,7 +761,10 @@
     ],
     "pct_doc_mestres": 88.2,
     "pct_doc_doutores": 47.1,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.81,
+    "cpc_infraestrutura": 5.74,
+    "cpc_oportunidade": 4.92
   },
   "BARAO DE COCAIS": {
     "nome_original": "Barão de Cocais",
@@ -1107,7 +1119,10 @@
     ],
     "pct_doc_mestres": 97.4,
     "pct_doc_doutores": 84.8,
-    "pct_doc_regime": 95.0
+    "pct_doc_regime": 95.0,
+    "cpc_org_didatico": 5.36,
+    "cpc_infraestrutura": 5.27,
+    "cpc_oportunidade": 4.77
   },
   "BELO ORIENTE": {
     "nome_original": "Belo Oriente",
@@ -1228,7 +1243,10 @@
     ],
     "pct_doc_mestres": 94.2,
     "pct_doc_doutores": 69.2,
-    "pct_doc_regime": 82.7
+    "pct_doc_regime": 82.7,
+    "cpc_org_didatico": 5.47,
+    "cpc_infraestrutura": 5.36,
+    "cpc_oportunidade": 4.76
   },
   "BICAS": {
     "nome_original": "Bicas",
@@ -1377,7 +1395,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 85.7,
-    "pct_doc_regime": 85.7
+    "pct_doc_regime": 85.7,
+    "cpc_org_didatico": 4.97,
+    "cpc_infraestrutura": 4.69,
+    "cpc_oportunidade": 4.19
   },
   "BOM SUCESSO": {
     "nome_original": "Bom Sucesso",
@@ -1856,7 +1877,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 60.0,
-    "pct_doc_regime": 90.0
+    "pct_doc_regime": 90.0,
+    "cpc_org_didatico": 5.68,
+    "cpc_infraestrutura": 5.66,
+    "cpc_oportunidade": 4.68
   },
   "CAPELINHA": {
     "nome_original": "Capelinha",
@@ -2101,7 +2125,10 @@
     ],
     "pct_doc_mestres": 93.8,
     "pct_doc_doutores": 45.8,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.34,
+    "cpc_infraestrutura": 4.91,
+    "cpc_oportunidade": 3.86
   },
   "CARBONITA": {
     "nome_original": "Carbonita",
@@ -2753,7 +2780,10 @@
     ],
     "pct_doc_mestres": 90.0,
     "pct_doc_doutores": 60.0,
-    "pct_doc_regime": 90.0
+    "pct_doc_regime": 90.0,
+    "cpc_org_didatico": 5.53,
+    "cpc_infraestrutura": 5.28,
+    "cpc_oportunidade": 5.01
   },
   "CONSELHEIRO PENA": {
     "nome_original": "Conselheiro Pena",
@@ -2910,7 +2940,10 @@
     ],
     "pct_doc_mestres": 62.5,
     "pct_doc_doutores": 37.5,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.64,
+    "cpc_infraestrutura": 5.47,
+    "cpc_oportunidade": 5.01
   },
   "CORACAO DE JESUS": {
     "nome_original": "Coração de Jesus",
@@ -3201,7 +3234,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 100.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.24,
+    "cpc_infraestrutura": 4.84,
+    "cpc_oportunidade": 4.06
   },
   "DIVINO": {
     "nome_original": "Divino",
@@ -3340,7 +3376,10 @@
     ],
     "pct_doc_mestres": 99.5,
     "pct_doc_doutores": 94.9,
-    "pct_doc_regime": 99.5
+    "pct_doc_regime": 99.5,
+    "cpc_org_didatico": 5.46,
+    "cpc_infraestrutura": 5.32,
+    "cpc_oportunidade": 4.83
   },
   "DORES DE CAMPOS": {
     "nome_original": "Dores de Campos",
@@ -3904,7 +3943,10 @@
     ],
     "pct_doc_mestres": 90.0,
     "pct_doc_doutores": 72.7,
-    "pct_doc_regime": 94.5
+    "pct_doc_regime": 94.5,
+    "cpc_org_didatico": 5.44,
+    "cpc_infraestrutura": 5.06,
+    "cpc_oportunidade": 4.71
   },
   "GRAO MOGOL": {
     "nome_original": "Grão Mogol",
@@ -4408,7 +4450,10 @@
     ],
     "pct_doc_mestres": 72.3,
     "pct_doc_doutores": 49.0,
-    "pct_doc_regime": 78.0
+    "pct_doc_regime": 78.0,
+    "cpc_org_didatico": 5.35,
+    "cpc_infraestrutura": 4.94,
+    "cpc_oportunidade": 4.57
   },
   "ITABIRA": {
     "nome_original": "Itabira",
@@ -4634,7 +4679,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 78.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.86,
+    "cpc_infraestrutura": 5.87,
+    "cpc_oportunidade": 5.29
   },
   "ITAMARANDIBA": {
     "nome_original": "Itamarandiba",
@@ -4902,7 +4950,10 @@
     ],
     "pct_doc_mestres": 92.3,
     "pct_doc_doutores": 53.8,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.99,
+    "cpc_infraestrutura": 5.99,
+    "cpc_oportunidade": 5.94
   },
   "ITURAMA": {
     "nome_original": "Iturama",
@@ -5455,7 +5506,10 @@
     ],
     "pct_doc_mestres": 98.1,
     "pct_doc_doutores": 73.6,
-    "pct_doc_regime": 81.9
+    "pct_doc_regime": 81.9,
+    "cpc_org_didatico": 5.29,
+    "cpc_infraestrutura": 5.32,
+    "cpc_oportunidade": 4.66
   },
   "LAGOA GRANDE": {
     "nome_original": "Lagoa Grande",
@@ -5713,7 +5767,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 47.6,
-    "pct_doc_regime": 76.2
+    "pct_doc_regime": 76.2,
+    "cpc_org_didatico": 5.87,
+    "cpc_infraestrutura": 5.93,
+    "cpc_oportunidade": 5.46
   },
   "LEOPOLDINA": {
     "nome_original": "Leopoldina",
@@ -5812,7 +5869,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 60.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.29,
+    "cpc_infraestrutura": 5.11,
+    "cpc_oportunidade": 4.67
   },
   "MACHADO": {
     "nome_original": "Machado",
@@ -5929,7 +5989,10 @@
     ],
     "pct_doc_mestres": 66.7,
     "pct_doc_doutores": 40.0,
-    "pct_doc_regime": 0.0
+    "pct_doc_regime": 0.0,
+    "cpc_org_didatico": 5.97,
+    "cpc_infraestrutura": 5.93,
+    "cpc_oportunidade": 5.79
   },
   "MANHUMIRIM": {
     "nome_original": "Manhumirim",
@@ -6138,7 +6201,10 @@
     ],
     "pct_doc_mestres": 93.8,
     "pct_doc_doutores": 50.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.71,
+    "cpc_infraestrutura": 5.56,
+    "cpc_oportunidade": 5.25
   },
   "MATO VERDE": {
     "nome_original": "Mato Verde",
@@ -6501,7 +6567,10 @@
     ],
     "pct_doc_mestres": 95.4,
     "pct_doc_doutores": 49.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.49,
+    "cpc_infraestrutura": 5.36,
+    "cpc_oportunidade": 4.93
   },
   "MONTEZUMA": {
     "nome_original": "Montezuma",
@@ -6577,7 +6646,10 @@
     ],
     "pct_doc_mestres": 96.0,
     "pct_doc_doutores": 84.0,
-    "pct_doc_regime": 92.0
+    "pct_doc_regime": 92.0,
+    "cpc_org_didatico": 5.91,
+    "cpc_infraestrutura": 5.89,
+    "cpc_oportunidade": 5.78
   },
   "MUTUM": {
     "nome_original": "Mutum",
@@ -6685,7 +6757,10 @@
     ],
     "pct_doc_mestres": 85.4,
     "pct_doc_doutores": 46.3,
-    "pct_doc_regime": 92.7
+    "pct_doc_regime": 92.7,
+    "cpc_org_didatico": 5.28,
+    "cpc_infraestrutura": 4.92,
+    "cpc_oportunidade": 4.19
   },
   "NAZARENO": {
     "nome_original": "Nazareno",
@@ -7025,7 +7100,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 98.4,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.44,
+    "cpc_infraestrutura": 5.29,
+    "cpc_oportunidade": 5.22
   },
   "PADRE PARAISO": {
     "nome_original": "Padre Paraíso",
@@ -7092,7 +7170,10 @@
     ],
     "pct_doc_mestres": 91.7,
     "pct_doc_doutores": 50.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.81,
+    "cpc_infraestrutura": 5.85,
+    "cpc_oportunidade": 5.62
   },
   "PARAISOPOLIS": {
     "nome_original": "Paraisópolis",
@@ -7341,7 +7422,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 84.2,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.7,
+    "cpc_infraestrutura": 5.57,
+    "cpc_oportunidade": 5.04
   },
   "PATROCINIO": {
     "nome_original": "Patrocínio",
@@ -7836,7 +7920,10 @@
     ],
     "pct_doc_mestres": 90.0,
     "pct_doc_doutores": 40.0,
-    "pct_doc_regime": 85.0
+    "pct_doc_regime": 85.0,
+    "cpc_org_didatico": 5.98,
+    "cpc_infraestrutura": 5.92,
+    "cpc_oportunidade": 5.97
   },
   "PORTEIRINHA": {
     "nome_original": "Porteirinha",
@@ -8016,7 +8103,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 60.0,
-    "pct_doc_regime": 83.3
+    "pct_doc_regime": 83.3,
+    "cpc_org_didatico": 5.12,
+    "cpc_infraestrutura": 5.09,
+    "cpc_oportunidade": 4.06
   },
   "POCOS DE CALDAS": {
     "nome_original": "Poços de Caldas",
@@ -8123,7 +8213,10 @@
     ],
     "pct_doc_mestres": 91.7,
     "pct_doc_doutores": 77.8,
-    "pct_doc_regime": 94.4
+    "pct_doc_regime": 94.4,
+    "cpc_org_didatico": 5.45,
+    "cpc_infraestrutura": 5.13,
+    "cpc_oportunidade": 4.23
   },
   "PRATA": {
     "nome_original": "Prata",
@@ -9007,7 +9100,10 @@
     ],
     "pct_doc_mestres": 90.0,
     "pct_doc_doutores": 60.0,
-    "pct_doc_regime": 20.0
+    "pct_doc_regime": 20.0,
+    "cpc_org_didatico": 5.71,
+    "cpc_infraestrutura": 5.44,
+    "cpc_oportunidade": 4.82
   },
   "SAO FRANCISCO": {
     "nome_original": "São Francisco",
@@ -9694,7 +9790,10 @@
     ],
     "pct_doc_mestres": 94.5,
     "pct_doc_doutores": 62.9,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.56,
+    "cpc_infraestrutura": 5.4,
+    "cpc_oportunidade": 4.87
   },
   "TIMOTEO": {
     "nome_original": "Timóteo",
@@ -9788,7 +9887,10 @@
     ],
     "pct_doc_mestres": 90.5,
     "pct_doc_doutores": 42.9,
-    "pct_doc_regime": 76.2
+    "pct_doc_regime": 76.2,
+    "cpc_org_didatico": 5.64,
+    "cpc_infraestrutura": 5.6,
+    "cpc_oportunidade": 5.23
   },
   "TRES MARIAS": {
     "nome_original": "Três Marias",
@@ -10005,7 +10107,10 @@
     ],
     "pct_doc_mestres": 84.4,
     "pct_doc_doutores": 37.5,
-    "pct_doc_regime": 81.2
+    "pct_doc_regime": 81.2,
+    "cpc_org_didatico": 5.79,
+    "cpc_infraestrutura": 5.79,
+    "cpc_oportunidade": 5.6
   },
   "UBERLANDIA": {
     "nome_original": "Uberlândia",
@@ -10202,7 +10307,10 @@
     ],
     "pct_doc_mestres": 85.3,
     "pct_doc_doutores": 52.9,
-    "pct_doc_regime": 85.5
+    "pct_doc_regime": 85.5,
+    "cpc_org_didatico": 5.66,
+    "cpc_infraestrutura": 5.57,
+    "cpc_oportunidade": 4.83
   },
   "UBA": {
     "nome_original": "Ubá",
@@ -10291,7 +10399,10 @@
     ],
     "pct_doc_mestres": 83.3,
     "pct_doc_doutores": 50.0,
-    "pct_doc_regime": 83.3
+    "pct_doc_regime": 83.3,
+    "cpc_org_didatico": 6.0,
+    "cpc_infraestrutura": 6.0,
+    "cpc_oportunidade": 5.95
   },
   "UNAI": {
     "nome_original": "Unaí",
@@ -10362,7 +10473,10 @@
     ],
     "pct_doc_mestres": 77.8,
     "pct_doc_doutores": 11.1,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.49,
+    "cpc_infraestrutura": 5.26,
+    "cpc_oportunidade": 4.74
   },
   "VARGINHA": {
     "nome_original": "Varginha",
@@ -10697,7 +10811,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 85.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.99,
+    "cpc_infraestrutura": 5.99,
+    "cpc_oportunidade": 6.0
   },
   "VARZEA DA PALMA": {
     "nome_original": "Várzea da Palma",

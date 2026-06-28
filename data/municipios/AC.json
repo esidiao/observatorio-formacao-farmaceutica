@@ -559,7 +559,10 @@
     ],
     "pct_doc_mestres": 80.8,
     "pct_doc_doutores": 15.9,
-    "pct_doc_regime": 92.4
+    "pct_doc_regime": 92.4,
+    "cpc_org_didatico": 5.52,
+    "cpc_infraestrutura": 5.45,
+    "cpc_oportunidade": 4.63
   },
   "RODRIGUES ALVES": {
     "nome_original": "Rodrigues Alves",

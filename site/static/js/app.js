@@ -52,6 +52,9 @@ const INDICADOR_META = {
   pct_doc_doutores:     { label: '% Doutores',         dec: 1, min: 0,   max: 100, maiorMelhor: true  },
   pct_doc_mestres:      { label: '% Mestres+',         dec: 1, min: 0,   max: 100, maiorMelhor: true  },
   pct_doc_regime:       { label: '% Regime int./parc.',dec: 1, min: 0,   max: 100, maiorMelhor: true  },
+  cpc_org_didatico:     { label: 'Org. didático-ped.', dec: 2, min: 1,   max: 6,   maiorMelhor: true  },
+  cpc_infraestrutura:   { label: 'Infraestrutura',     dec: 2, min: 1,   max: 6,   maiorMelhor: true  },
+  cpc_oportunidade:     { label: 'Oport. ampliação',   dec: 2, min: 1,   max: 6,   maiorMelhor: true  },
   ead_polos_municipios: { label: 'Municípios c/ polo', dec: 0, min: null, max: null, maiorMelhor: null },
 };
 

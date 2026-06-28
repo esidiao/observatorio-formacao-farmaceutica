@@ -150,7 +150,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 72.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.76,
+    "cpc_infraestrutura": 5.77,
+    "cpc_oportunidade": 5.52
   },
   "AUGUSTINOPOLIS": {
     "nome_original": "Augustinópolis",
@@ -454,7 +457,10 @@
     ],
     "pct_doc_mestres": 45.7,
     "pct_doc_doutores": 17.1,
-    "pct_doc_regime": 71.4
+    "pct_doc_regime": 71.4,
+    "cpc_org_didatico": 5.55,
+    "cpc_infraestrutura": 5.43,
+    "cpc_oportunidade": 4.98
   },
   "MIRACEMA DO TOCANTINS": {
     "nome_original": "Miracema do Tocantins",
@@ -656,7 +662,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 24.9,
-    "pct_doc_regime": 85.9
+    "pct_doc_regime": 85.9,
+    "cpc_org_didatico": 5.6,
+    "cpc_infraestrutura": 5.32,
+    "cpc_oportunidade": 4.84
   },
   "PARAISO DO TOCANTINS": {
     "nome_original": "Paraíso do Tocantins",

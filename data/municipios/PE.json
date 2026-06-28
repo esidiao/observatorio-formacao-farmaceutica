@@ -245,7 +245,10 @@
     ],
     "pct_doc_mestres": 68.2,
     "pct_doc_doutores": 36.4,
-    "pct_doc_regime": 0.0
+    "pct_doc_regime": 0.0,
+    "cpc_org_didatico": 5.56,
+    "cpc_infraestrutura": 5.19,
+    "cpc_oportunidade": 5.16
   },
   "BARREIROS": {
     "nome_original": "Barreiros",
@@ -344,7 +347,10 @@
     ],
     "pct_doc_mestres": 91.7,
     "pct_doc_doutores": 75.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.92,
+    "cpc_infraestrutura": 5.85,
+    "cpc_oportunidade": 5.58
   },
   "BEZERROS": {
     "nome_original": "Bezerros",
@@ -557,7 +563,10 @@
     ],
     "pct_doc_mestres": 85.7,
     "pct_doc_doutores": 42.9,
-    "pct_doc_regime": 78.6
+    "pct_doc_regime": 78.6,
+    "cpc_org_didatico": null,
+    "cpc_infraestrutura": null,
+    "cpc_oportunidade": null
   },
   "CAMARAGIBE": {
     "nome_original": "Camaragibe",
@@ -923,7 +932,10 @@
     ],
     "pct_doc_mestres": 91.0,
     "pct_doc_doutores": 46.1,
-    "pct_doc_regime": 75.0
+    "pct_doc_regime": 75.0,
+    "cpc_org_didatico": 5.64,
+    "cpc_infraestrutura": 5.59,
+    "cpc_oportunidade": 5.36
   },
   "CUSTODIA": {
     "nome_original": "Custódia",
@@ -999,7 +1011,10 @@
     ],
     "pct_doc_mestres": 75.0,
     "pct_doc_doutores": 35.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.35,
+    "cpc_infraestrutura": 5.11,
+    "cpc_oportunidade": 4.07
   },
   "EXU": {
     "nome_original": "Exu",
@@ -1161,7 +1176,10 @@
     ],
     "pct_doc_mestres": 80.4,
     "pct_doc_doutores": 35.2,
-    "pct_doc_regime": 89.7
+    "pct_doc_regime": 89.7,
+    "cpc_org_didatico": 5.29,
+    "cpc_infraestrutura": 5.02,
+    "cpc_oportunidade": 4.47
   },
   "GOIANA": {
     "nome_original": "Goiana",
@@ -1651,7 +1669,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 90.0,
-    "pct_doc_regime": 80.0
+    "pct_doc_regime": 80.0,
+    "cpc_org_didatico": 5.29,
+    "cpc_infraestrutura": 5.21,
+    "cpc_oportunidade": 4.59
   },
   "JUCATI": {
     "nome_original": "Jucati",
@@ -1860,7 +1881,10 @@
     ],
     "pct_doc_mestres": 88.5,
     "pct_doc_doutores": 26.9,
-    "pct_doc_regime": 76.9
+    "pct_doc_regime": 76.9,
+    "cpc_org_didatico": 5.69,
+    "cpc_infraestrutura": 5.64,
+    "cpc_oportunidade": 5.26
   },
   "OLINDA": {
     "nome_original": "Olinda",
@@ -1967,7 +1991,10 @@
     ],
     "pct_doc_mestres": 83.3,
     "pct_doc_doutores": 38.9,
-    "pct_doc_regime": 72.2
+    "pct_doc_regime": 72.2,
+    "cpc_org_didatico": 5.13,
+    "cpc_infraestrutura": 4.83,
+    "cpc_oportunidade": 4.28
   },
   "OURICURI": {
     "nome_original": "Ouricuri",
@@ -2252,7 +2279,10 @@
     ],
     "pct_doc_mestres": 79.2,
     "pct_doc_doutores": 37.5,
-    "pct_doc_regime": 79.2
+    "pct_doc_regime": 79.2,
+    "cpc_org_didatico": 5.8,
+    "cpc_infraestrutura": 5.69,
+    "cpc_oportunidade": 5.63
   },
   "PEDRA": {
     "nome_original": "Pedra",
@@ -2477,7 +2507,10 @@
     ],
     "pct_doc_mestres": 91.5,
     "pct_doc_doutores": 52.6,
-    "pct_doc_regime": 82.1
+    "pct_doc_regime": 82.1,
+    "cpc_org_didatico": 5.37,
+    "cpc_infraestrutura": 5.17,
+    "cpc_oportunidade": 4.91
   },
   "PETROLANDIA": {
     "nome_original": "Petrolândia",
@@ -2846,7 +2879,10 @@
     ],
     "pct_doc_mestres": 87.8,
     "pct_doc_doutores": 47.6,
-    "pct_doc_regime": 82.4
+    "pct_doc_regime": 82.4,
+    "cpc_org_didatico": 5.26,
+    "cpc_infraestrutura": 4.99,
+    "cpc_oportunidade": 4.36
   },
   "RIBEIRAO": {
     "nome_original": "Ribeirão",
@@ -3163,7 +3199,10 @@
     ],
     "pct_doc_mestres": 70.3,
     "pct_doc_doutores": 25.3,
-    "pct_doc_regime": 65.9
+    "pct_doc_regime": 65.9,
+    "cpc_org_didatico": 5.68,
+    "cpc_infraestrutura": 5.37,
+    "cpc_oportunidade": 4.74
   },
   "SERTANIA": {
     "nome_original": "Sertânia",
@@ -3696,7 +3735,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 76.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.34,
+    "cpc_infraestrutura": 5.14,
+    "cpc_oportunidade": 4.43
   },
   "AGUA PRETA": {
     "nome_original": "Água Preta",

@@ -208,7 +208,10 @@
     ],
     "pct_doc_mestres": 93.8,
     "pct_doc_doutores": 76.0,
-    "pct_doc_regime": 92.5
+    "pct_doc_regime": 92.5,
+    "cpc_org_didatico": 5.09,
+    "cpc_infraestrutura": 4.6,
+    "cpc_oportunidade": 4.09
   },
   "OIAPOQUE": {
     "nome_original": "Oiapoque",

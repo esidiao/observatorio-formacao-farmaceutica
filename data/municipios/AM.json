@@ -636,7 +636,10 @@
     ],
     "pct_doc_mestres": 77.1,
     "pct_doc_doutores": 68.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.09,
+    "cpc_infraestrutura": 4.79,
+    "cpc_oportunidade": 4.46
   },
   "JURUA": {
     "nome_original": "Juruá",
@@ -1114,7 +1117,10 @@
     ],
     "pct_doc_mestres": 94.3,
     "pct_doc_doutores": 63.2,
-    "pct_doc_regime": 87.8
+    "pct_doc_regime": 87.8,
+    "cpc_org_didatico": 5.45,
+    "cpc_infraestrutura": 5.25,
+    "cpc_oportunidade": 4.74
   },
   "MANICORE": {
     "nome_original": "Manicoré",

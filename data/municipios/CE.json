@@ -251,7 +251,10 @@
     ],
     "pct_doc_mestres": 62.5,
     "pct_doc_doutores": 37.5,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.7,
+    "cpc_infraestrutura": 5.66,
+    "cpc_oportunidade": 4.97
   },
   "ARACOIABA": {
     "nome_original": "Aracoiaba",
@@ -1564,7 +1567,10 @@
     ],
     "pct_doc_mestres": 95.5,
     "pct_doc_doutores": 66.2,
-    "pct_doc_regime": 88.6
+    "pct_doc_regime": 88.6,
+    "cpc_org_didatico": 5.43,
+    "cpc_infraestrutura": 5.31,
+    "cpc_oportunidade": 4.78
   },
   "GRANJA": {
     "nome_original": "Granja",
@@ -1868,7 +1874,10 @@
     ],
     "pct_doc_mestres": 82.0,
     "pct_doc_doutores": 11.3,
-    "pct_doc_regime": 48.6
+    "pct_doc_regime": 48.6,
+    "cpc_org_didatico": 5.84,
+    "cpc_infraestrutura": 5.78,
+    "cpc_oportunidade": 5.61
   },
   "INDEPENDENCIA": {
     "nome_original": "Independência",
@@ -2372,7 +2381,10 @@
     ],
     "pct_doc_mestres": 77.9,
     "pct_doc_doutores": 38.0,
-    "pct_doc_regime": 83.2
+    "pct_doc_regime": 83.2,
+    "cpc_org_didatico": 5.36,
+    "cpc_infraestrutura": 5.37,
+    "cpc_oportunidade": 4.56
   },
   "JUCAS": {
     "nome_original": "Jucás",
@@ -2575,7 +2587,10 @@
     ],
     "pct_doc_mestres": 90.0,
     "pct_doc_doutores": 45.0,
-    "pct_doc_regime": 80.0
+    "pct_doc_regime": 80.0,
+    "cpc_org_didatico": 6.0,
+    "cpc_infraestrutura": 6.0,
+    "cpc_oportunidade": 6.0
   },
   "MARANGUAPE": {
     "nome_original": "Maranguape",
@@ -3268,7 +3283,10 @@
     ],
     "pct_doc_mestres": 95.7,
     "pct_doc_doutores": 69.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.58,
+    "cpc_infraestrutura": 5.63,
+    "cpc_oportunidade": 5.32
   },
   "QUIXERAMOBIM": {
     "nome_original": "Quixeramobim",
@@ -3330,7 +3348,10 @@
     ],
     "pct_doc_mestres": 77.8,
     "pct_doc_doutores": 22.2,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.56,
+    "cpc_infraestrutura": 5.31,
+    "cpc_oportunidade": 4.92
   },
   "REDENCAO": {
     "nome_original": "Redenção",
@@ -3615,7 +3636,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 53.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.71,
+    "cpc_infraestrutura": 5.72,
+    "cpc_oportunidade": 5.17
   },
   "SOLONOPOLE": {
     "nome_original": "Solonópole",

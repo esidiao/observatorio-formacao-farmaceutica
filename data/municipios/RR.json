@@ -199,7 +199,10 @@
     ],
     "pct_doc_mestres": 88.2,
     "pct_doc_doutores": 29.4,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 6.0,
+    "cpc_infraestrutura": 5.99,
+    "cpc_oportunidade": 5.99
   },
   "CARACARAI": {
     "nome_original": "Caracaraí",

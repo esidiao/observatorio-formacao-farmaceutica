@@ -465,7 +465,10 @@
     ],
     "pct_doc_mestres": 84.6,
     "pct_doc_doutores": 30.8,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.69,
+    "cpc_infraestrutura": 5.64,
+    "cpc_oportunidade": 4.97
   },
   "FRONTEIRAS": {
     "nome_original": "Fronteiras",
@@ -742,7 +745,10 @@
     ],
     "pct_doc_mestres": 85.2,
     "pct_doc_doutores": 40.7,
-    "pct_doc_regime": 85.2
+    "pct_doc_regime": 85.2,
+    "cpc_org_didatico": 5.99,
+    "cpc_infraestrutura": 6.0,
+    "cpc_oportunidade": 6.0
   },
   "PAULISTANA": {
     "nome_original": "Paulistana",
@@ -982,7 +988,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 57.1,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.76,
+    "cpc_infraestrutura": 5.61,
+    "cpc_oportunidade": 5.76
   },
   "SEBASTIAO LEAL": {
     "nome_original": "Sebastião Leal",
@@ -1370,7 +1379,10 @@
     ],
     "pct_doc_mestres": 93.8,
     "pct_doc_doutores": 52.4,
-    "pct_doc_regime": 77.4
+    "pct_doc_regime": 77.4,
+    "cpc_org_didatico": 5.53,
+    "cpc_infraestrutura": 5.37,
+    "cpc_oportunidade": 4.87
   },
   "UNIAO": {
     "nome_original": "União",

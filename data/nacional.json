@@ -81,7 +81,10 @@
       "pct_doc_mestres": 80.8,
       "pct_doc_doutores": 15.9,
       "pct_doc_regime": 92.4,
-      "n_cursos_docente": 2
+      "n_cursos_docente": 2,
+      "cpc_org_didatico": 5.52,
+      "cpc_infraestrutura": 5.45,
+      "cpc_oportunidade": 4.63
     },
     "AL": {
       "vagas_total": 1636,
@@ -155,7 +158,10 @@
       "pct_doc_mestres": 94.2,
       "pct_doc_doutores": 62.5,
       "pct_doc_regime": 78.5,
-      "n_cursos_docente": 6
+      "n_cursos_docente": 6,
+      "cpc_org_didatico": 5.56,
+      "cpc_infraestrutura": 5.38,
+      "cpc_oportunidade": 4.87
     },
     "AM": {
       "vagas_total": 3887,
@@ -239,7 +245,10 @@
       "pct_doc_mestres": 93.8,
       "pct_doc_doutores": 63.4,
       "pct_doc_regime": 88.2,
-      "n_cursos_docente": 8
+      "n_cursos_docente": 8,
+      "cpc_org_didatico": 5.43,
+      "cpc_infraestrutura": 5.23,
+      "cpc_oportunidade": 4.73
     },
     "AP": {
       "vagas_total": 679,
@@ -292,7 +301,10 @@
       "pct_doc_mestres": 93.8,
       "pct_doc_doutores": 76.0,
       "pct_doc_regime": 92.5,
-      "n_cursos_docente": 3
+      "n_cursos_docente": 3,
+      "cpc_org_didatico": 5.09,
+      "cpc_infraestrutura": 4.6,
+      "cpc_oportunidade": 4.09
     },
     "BA": {
       "vagas_total": 8356,
@@ -484,7 +496,10 @@
       "pct_doc_mestres": 91.1,
       "pct_doc_doutores": 62.3,
       "pct_doc_regime": 93.2,
-      "n_cursos_docente": 44
+      "n_cursos_docente": 44,
+      "cpc_org_didatico": 5.33,
+      "cpc_infraestrutura": 5.07,
+      "cpc_oportunidade": 4.51
     },
     "CE": {
       "vagas_total": 6550,
@@ -628,7 +643,10 @@
       "pct_doc_mestres": 91.8,
       "pct_doc_doutores": 57.0,
       "pct_doc_regime": 89.7,
-      "n_cursos_docente": 19
+      "n_cursos_docente": 19,
+      "cpc_org_didatico": 5.5,
+      "cpc_infraestrutura": 5.42,
+      "cpc_oportunidade": 4.89
     },
     "DF": {
       "vagas_total": 3921,
@@ -674,7 +692,10 @@
       "pct_doc_mestres": 96.5,
       "pct_doc_doutores": 70.4,
       "pct_doc_regime": 89.2,
-      "n_cursos_docente": 17
+      "n_cursos_docente": 17,
+      "cpc_org_didatico": 5.54,
+      "cpc_infraestrutura": 5.41,
+      "cpc_oportunidade": 5.04
     },
     "ES": {
       "vagas_total": 2119,
@@ -754,7 +775,10 @@
       "pct_doc_mestres": 92.6,
       "pct_doc_doutores": 75.1,
       "pct_doc_regime": 95.1,
-      "n_cursos_docente": 15
+      "n_cursos_docente": 15,
+      "cpc_org_didatico": 5.45,
+      "cpc_infraestrutura": 5.34,
+      "cpc_oportunidade": 4.86
     },
     "GO": {
       "vagas_total": 7247,
@@ -874,7 +898,10 @@
       "pct_doc_mestres": 93.2,
       "pct_doc_doutores": 62.6,
       "pct_doc_regime": 95.2,
-      "n_cursos_docente": 29
+      "n_cursos_docente": 29,
+      "cpc_org_didatico": 5.46,
+      "cpc_infraestrutura": 5.19,
+      "cpc_oportunidade": 4.67
     },
     "MA": {
       "vagas_total": 4595,
@@ -1003,7 +1030,10 @@
       "pct_doc_mestres": 85.5,
       "pct_doc_doutores": 59.6,
       "pct_doc_regime": 91.8,
-      "n_cursos_docente": 11
+      "n_cursos_docente": 11,
+      "cpc_org_didatico": 5.62,
+      "cpc_infraestrutura": 5.45,
+      "cpc_oportunidade": 5.1
     },
     "MG": {
       "vagas_total": 8189,
@@ -1311,7 +1341,10 @@
       "pct_doc_mestres": 94.9,
       "pct_doc_doutores": 74.2,
       "pct_doc_regime": 91.8,
-      "n_cursos_docente": 60
+      "n_cursos_docente": 60,
+      "cpc_org_didatico": 5.47,
+      "cpc_infraestrutura": 5.34,
+      "cpc_oportunidade": 4.85
     },
     "MS": {
       "vagas_total": 952,
@@ -1393,7 +1426,10 @@
       "pct_doc_mestres": 98.6,
       "pct_doc_doutores": 82.5,
       "pct_doc_regime": 92.1,
-      "n_cursos_docente": 8
+      "n_cursos_docente": 8,
+      "cpc_org_didatico": 5.56,
+      "cpc_infraestrutura": 5.4,
+      "cpc_oportunidade": 4.95
     },
     "MT": {
       "vagas_total": 2606,
@@ -1493,7 +1529,10 @@
       "pct_doc_mestres": 90.6,
       "pct_doc_doutores": 59.3,
       "pct_doc_regime": 93.4,
-      "n_cursos_docente": 16
+      "n_cursos_docente": 16,
+      "cpc_org_didatico": 5.4,
+      "cpc_infraestrutura": 5.11,
+      "cpc_oportunidade": 4.65
     },
     "PA": {
       "vagas_total": 5484,
@@ -1632,7 +1671,10 @@
       "pct_doc_mestres": 92.9,
       "pct_doc_doutores": 47.0,
       "pct_doc_regime": 85.4,
-      "n_cursos_docente": 17
+      "n_cursos_docente": 17,
+      "cpc_org_didatico": 5.51,
+      "cpc_infraestrutura": 5.27,
+      "cpc_oportunidade": 4.87
     },
     "PB": {
       "vagas_total": 2915,
@@ -1710,7 +1752,10 @@
       "pct_doc_mestres": 92.6,
       "pct_doc_doutores": 65.5,
       "pct_doc_regime": 82.3,
-      "n_cursos_docente": 14
+      "n_cursos_docente": 14,
+      "cpc_org_didatico": 5.48,
+      "cpc_infraestrutura": 5.33,
+      "cpc_oportunidade": 4.76
     },
     "PE": {
       "vagas_total": 9623,
@@ -1835,7 +1880,10 @@
       "pct_doc_mestres": 87.9,
       "pct_doc_doutores": 49.6,
       "pct_doc_regime": 80.3,
-      "n_cursos_docente": 28
+      "n_cursos_docente": 28,
+      "cpc_org_didatico": 5.4,
+      "cpc_infraestrutura": 5.19,
+      "cpc_oportunidade": 4.69
     },
     "PI": {
       "vagas_total": 2256,
@@ -1915,7 +1963,10 @@
       "pct_doc_mestres": 92.8,
       "pct_doc_doutores": 50.2,
       "pct_doc_regime": 80.9,
-      "n_cursos_docente": 9
+      "n_cursos_docente": 9,
+      "cpc_org_didatico": 5.6,
+      "cpc_infraestrutura": 5.46,
+      "cpc_oportunidade": 5.04
     },
     "PR": {
       "vagas_total": 4730,
@@ -2157,7 +2208,10 @@
       "pct_doc_mestres": 95.3,
       "pct_doc_doutores": 68.5,
       "pct_doc_regime": 96.4,
-      "n_cursos_docente": 42
+      "n_cursos_docente": 42,
+      "cpc_org_didatico": 5.5,
+      "cpc_infraestrutura": 5.34,
+      "cpc_oportunidade": 4.81
     },
     "RJ": {
       "vagas_total": 11867,
@@ -2281,7 +2335,10 @@
       "pct_doc_mestres": 94.3,
       "pct_doc_doutores": 68.7,
       "pct_doc_regime": 86.9,
-      "n_cursos_docente": 36
+      "n_cursos_docente": 36,
+      "cpc_org_didatico": 5.28,
+      "cpc_infraestrutura": 4.98,
+      "cpc_oportunidade": 4.58
     },
     "RN": {
       "vagas_total": 1360,
@@ -2354,7 +2411,10 @@
       "pct_doc_mestres": 94.9,
       "pct_doc_doutores": 67.3,
       "pct_doc_regime": 95.9,
-      "n_cursos_docente": 8
+      "n_cursos_docente": 8,
+      "cpc_org_didatico": 5.18,
+      "cpc_infraestrutura": 4.96,
+      "cpc_oportunidade": 4.29
     },
     "RO": {
       "vagas_total": 2942,
@@ -2422,7 +2482,10 @@
       "pct_doc_mestres": 85.4,
       "pct_doc_doutores": 43.0,
       "pct_doc_regime": 97.4,
-      "n_cursos_docente": 11
+      "n_cursos_docente": 11,
+      "cpc_org_didatico": 5.64,
+      "cpc_infraestrutura": 5.53,
+      "cpc_oportunidade": 5.2
     },
     "RR": {
       "vagas_total": 1079,
@@ -2475,7 +2538,10 @@
       "pct_doc_mestres": 88.2,
       "pct_doc_doutores": 29.4,
       "pct_doc_regime": 100.0,
-      "n_cursos_docente": 2
+      "n_cursos_docente": 2,
+      "cpc_org_didatico": 6.0,
+      "cpc_infraestrutura": 5.99,
+      "cpc_oportunidade": 5.99
     },
     "RS": {
       "vagas_total": 3047,
@@ -2664,7 +2730,10 @@
       "pct_doc_mestres": 99.4,
       "pct_doc_doutores": 75.8,
       "pct_doc_regime": 87.8,
-      "n_cursos_docente": 33
+      "n_cursos_docente": 33,
+      "cpc_org_didatico": 5.5,
+      "cpc_infraestrutura": 5.39,
+      "cpc_oportunidade": 5.11
     },
     "SC": {
       "vagas_total": 2868,
@@ -2802,7 +2871,10 @@
       "pct_doc_mestres": 98.1,
       "pct_doc_doutores": 73.0,
       "pct_doc_regime": 88.8,
-      "n_cursos_docente": 19
+      "n_cursos_docente": 19,
+      "cpc_org_didatico": 5.27,
+      "cpc_infraestrutura": 5.1,
+      "cpc_oportunidade": 4.79
     },
     "SE": {
       "vagas_total": 1375,
@@ -2870,7 +2942,10 @@
       "pct_doc_mestres": 97.4,
       "pct_doc_doutores": 76.5,
       "pct_doc_regime": 86.3,
-      "n_cursos_docente": 5
+      "n_cursos_docente": 5,
+      "cpc_org_didatico": 5.15,
+      "cpc_infraestrutura": 4.91,
+      "cpc_oportunidade": 4.38
     },
     "SP": {
       "vagas_total": 27627,
@@ -3179,7 +3254,10 @@
       "pct_doc_mestres": 96.2,
       "pct_doc_doutores": 67.4,
       "pct_doc_regime": 81.3,
-      "n_cursos_docente": 124
+      "n_cursos_docente": 124,
+      "cpc_org_didatico": 5.33,
+      "cpc_infraestrutura": 5.16,
+      "cpc_oportunidade": 4.58
     },
     "TO": {
       "vagas_total": 811,
@@ -3245,7 +3323,10 @@
       "pct_doc_mestres": 80.5,
       "pct_doc_doutores": 34.1,
       "pct_doc_regime": 84.2,
-      "n_cursos_docente": 4
+      "n_cursos_docente": 4,
+      "cpc_org_didatico": 5.62,
+      "cpc_infraestrutura": 5.47,
+      "cpc_oportunidade": 5.06
     }
   }
 }

@@ -624,7 +624,10 @@
     ],
     "pct_doc_mestres": 92.5,
     "pct_doc_doutores": 57.0,
-    "pct_doc_regime": 93.9
+    "pct_doc_regime": 93.9,
+    "cpc_org_didatico": 4.98,
+    "cpc_infraestrutura": 4.88,
+    "cpc_oportunidade": 3.83
   },
   "NATAL": {
     "nome_original": "Natal",
@@ -866,7 +869,10 @@
     ],
     "pct_doc_mestres": 95.7,
     "pct_doc_doutores": 71.2,
-    "pct_doc_regime": 96.6
+    "pct_doc_regime": 96.6,
+    "cpc_org_didatico": 5.26,
+    "cpc_infraestrutura": 4.99,
+    "cpc_oportunidade": 4.46
   },
   "NOVA CRUZ": {
     "nome_original": "Nova Cruz",

@@ -146,7 +146,10 @@
     ],
     "pct_doc_mestres": 92.3,
     "pct_doc_doutores": 26.8,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.86,
+    "cpc_infraestrutura": 5.87,
+    "cpc_oportunidade": 5.78
   },
   "BURITIS": {
     "nome_original": "Buritis",
@@ -285,7 +288,10 @@
     ],
     "pct_doc_mestres": 66.2,
     "pct_doc_doutores": 25.2,
-    "pct_doc_regime": 89.2
+    "pct_doc_regime": 89.2,
+    "cpc_org_didatico": 5.99,
+    "cpc_infraestrutura": 5.99,
+    "cpc_oportunidade": 5.91
   },
   "CEREJEIRAS": {
     "nome_original": "Cerejeiras",
@@ -498,7 +504,10 @@
     ],
     "pct_doc_mestres": 78.6,
     "pct_doc_doutores": 35.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.67,
+    "cpc_infraestrutura": 5.53,
+    "cpc_oportunidade": 5.24
   },
   "JI-PARANA": {
     "nome_original": "Ji-Paraná",
@@ -596,7 +605,10 @@
     ],
     "pct_doc_mestres": 91.7,
     "pct_doc_doutores": 41.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.58,
+    "cpc_infraestrutura": 5.46,
+    "cpc_oportunidade": 5.29
   },
   "MACHADINHO D'OESTE": {
     "nome_original": "Machadinho D'Oeste",
@@ -754,7 +766,10 @@
     ],
     "pct_doc_mestres": 37.5,
     "pct_doc_doutores": 0.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.64,
+    "cpc_infraestrutura": 5.43,
+    "cpc_oportunidade": 4.71
   },
   "PIMENTA BUENO": {
     "nome_original": "Pimenta Bueno",
@@ -983,7 +998,10 @@
     ],
     "pct_doc_mestres": 92.8,
     "pct_doc_doutores": 63.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.56,
+    "cpc_infraestrutura": 5.39,
+    "cpc_oportunidade": 4.97
   },
   "ROLIM DE MOURA": {
     "nome_original": "Rolim de Moura",
@@ -1054,7 +1072,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 38.5,
-    "pct_doc_regime": 76.9
+    "pct_doc_regime": 76.9,
+    "cpc_org_didatico": 5.88,
+    "cpc_infraestrutura": 5.86,
+    "cpc_oportunidade": 5.8
   },
   "SAO FRANCISCO DO GUAPORE": {
     "nome_original": "São Francisco do Guaporé",
@@ -1189,6 +1210,9 @@
     ],
     "pct_doc_mestres": 71.4,
     "pct_doc_doutores": 33.3,
-    "pct_doc_regime": 95.2
+    "pct_doc_regime": 95.2,
+    "cpc_org_didatico": 5.0,
+    "cpc_infraestrutura": 4.99,
+    "cpc_oportunidade": 4.16
   }
 }

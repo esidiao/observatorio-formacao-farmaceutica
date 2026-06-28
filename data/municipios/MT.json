@@ -273,7 +273,10 @@
     ],
     "pct_doc_mestres": 76.9,
     "pct_doc_doutores": 30.8,
-    "pct_doc_regime": 92.3
+    "pct_doc_regime": 92.3,
+    "cpc_org_didatico": 5.96,
+    "cpc_infraestrutura": 5.99,
+    "cpc_oportunidade": 5.98
   },
   "BOM JESUS DO ARAGUAIA": {
     "nome_original": "Bom Jesus do Araguaia",
@@ -637,7 +640,10 @@
     ],
     "pct_doc_mestres": 75.0,
     "pct_doc_doutores": 0.0,
-    "pct_doc_regime": 50.0
+    "pct_doc_regime": 50.0,
+    "cpc_org_didatico": 5.48,
+    "cpc_infraestrutura": 5.38,
+    "cpc_oportunidade": 4.79
   },
   "COMODORO": {
     "nome_original": "Comodoro",
@@ -880,7 +886,10 @@
     ],
     "pct_doc_mestres": 94.5,
     "pct_doc_doutores": 65.1,
-    "pct_doc_regime": 97.3
+    "pct_doc_regime": 97.3,
+    "cpc_org_didatico": 5.16,
+    "cpc_infraestrutura": 4.72,
+    "cpc_oportunidade": 4.0
   },
   "CACERES": {
     "nome_original": "Cáceres",
@@ -924,7 +933,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 66.7,
-    "pct_doc_regime": 66.7
+    "pct_doc_regime": 66.7,
+    "cpc_org_didatico": null,
+    "cpc_infraestrutura": null,
+    "cpc_oportunidade": null
   },
   "DIAMANTINO": {
     "nome_original": "Diamantino",
@@ -982,7 +994,10 @@
     ],
     "pct_doc_mestres": 88.2,
     "pct_doc_doutores": 35.3,
-    "pct_doc_regime": 94.1
+    "pct_doc_regime": 94.1,
+    "cpc_org_didatico": 4.64,
+    "cpc_infraestrutura": 4.19,
+    "cpc_oportunidade": 3.88
   },
   "JACIARA": {
     "nome_original": "Jaciara",
@@ -1140,7 +1155,10 @@
     ],
     "pct_doc_mestres": 83.3,
     "pct_doc_doutores": 41.7,
-    "pct_doc_regime": 75.0
+    "pct_doc_regime": 75.0,
+    "cpc_org_didatico": null,
+    "cpc_infraestrutura": null,
+    "cpc_oportunidade": null
   },
   "LUCAS DO RIO VERDE": {
     "nome_original": "Lucas do Rio Verde",
@@ -1604,7 +1622,10 @@
     ],
     "pct_doc_mestres": 95.0,
     "pct_doc_doutores": 90.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.06,
+    "cpc_infraestrutura": 4.75,
+    "cpc_oportunidade": 4.43
   },
   "PONTES E LACERDA": {
     "nome_original": "Pontes e Lacerda",
@@ -1748,7 +1769,10 @@
     ],
     "pct_doc_mestres": 86.1,
     "pct_doc_doutores": 72.2,
-    "pct_doc_regime": 94.4
+    "pct_doc_regime": 94.4,
+    "cpc_org_didatico": 5.76,
+    "cpc_infraestrutura": 5.65,
+    "cpc_oportunidade": 5.64
   },
   "QUERENCIA": {
     "nome_original": "Querência",
@@ -1901,7 +1925,10 @@
     ],
     "pct_doc_mestres": 80.5,
     "pct_doc_doutores": 68.3,
-    "pct_doc_regime": 95.1
+    "pct_doc_regime": 95.1,
+    "cpc_org_didatico": 5.77,
+    "cpc_infraestrutura": 5.68,
+    "cpc_oportunidade": 4.83
   },
   "SAPEZAL": {
     "nome_original": "Sapezal",
@@ -2076,7 +2103,10 @@
     ],
     "pct_doc_mestres": 98.1,
     "pct_doc_doutores": 66.3,
-    "pct_doc_regime": 98.6
+    "pct_doc_regime": 98.6,
+    "cpc_org_didatico": 5.62,
+    "cpc_infraestrutura": 5.45,
+    "cpc_oportunidade": 5.11
   },
   "SORRISO": {
     "nome_original": "Sorriso",
@@ -2193,7 +2223,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 80.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.48,
+    "cpc_infraestrutura": 4.75,
+    "cpc_oportunidade": 3.95
   },
   "TANGARA DA SERRA": {
     "nome_original": "Tangará da Serra",
@@ -2273,7 +2306,10 @@
     ],
     "pct_doc_mestres": 85.3,
     "pct_doc_doutores": 79.4,
-    "pct_doc_regime": 94.1
+    "pct_doc_regime": 94.1,
+    "cpc_org_didatico": 4.72,
+    "cpc_infraestrutura": 3.72,
+    "cpc_oportunidade": 2.86
   },
   "TERRA NOVA DO NORTE": {
     "nome_original": "Terra Nova do Norte",
@@ -2385,7 +2421,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 93.3,
-    "pct_doc_regime": 93.3
+    "pct_doc_regime": 93.3,
+    "cpc_org_didatico": 5.76,
+    "cpc_infraestrutura": 5.77,
+    "cpc_oportunidade": 5.55
   },
   "AGUA BOA": {
     "nome_original": "Água Boa",

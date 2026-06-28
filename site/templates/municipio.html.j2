@@ -74,6 +74,23 @@
     <div class="kpi-fonte" title="% de docentes em regime integral ou parcial (não horista). Fonte: INEP, CPC 2023.">CPC INEP 2023</div>
   </div>
   {% endif %}
+  {% if d.cpc_infraestrutura is defined and d.cpc_infraestrutura is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.2f"|format(d.cpc_org_didatico) }}</div>
+    <div class="kpi-label">Org. didático-pedag. (1–6)</div>
+    <div class="kpi-fonte" title="Avaliação dos estudantes — ENADE/CPC 2023.">CPC INEP 2023</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.2f"|format(d.cpc_infraestrutura) }}</div>
+    <div class="kpi-label">Infraestrutura (1–6)</div>
+    <div class="kpi-fonte" title="Avaliação dos estudantes sobre instalações físicas — ENADE/CPC 2023.">CPC INEP 2023</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.2f"|format(d.cpc_oportunidade) }}</div>
+    <div class="kpi-label">Oportun. ampliação (1–6)</div>
+    <div class="kpi-fonte" title="Avaliação dos estudantes sobre pesquisa/extensão/monitoria — ENADE/CPC 2023.">CPC INEP 2023</div>
+  </div>
+  {% endif %}
 </div>
 
 <!-- Tabela de cursos/IES -->

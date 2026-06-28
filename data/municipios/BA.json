@@ -109,7 +109,10 @@
     ],
     "pct_doc_mestres": 86.0,
     "pct_doc_doutores": 57.8,
-    "pct_doc_regime": 79.0
+    "pct_doc_regime": 79.0,
+    "cpc_org_didatico": 5.2,
+    "cpc_infraestrutura": 4.78,
+    "cpc_oportunidade": 3.87
   },
   "AMARGOSA": {
     "nome_original": "Amargosa",
@@ -499,7 +502,10 @@
     ],
     "pct_doc_mestres": 94.8,
     "pct_doc_doutores": 64.2,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.18,
+    "cpc_infraestrutura": 4.88,
+    "cpc_oportunidade": 4.46
   },
   "BELO CAMPO": {
     "nome_original": "Belo Campo",
@@ -1081,7 +1087,10 @@
     ],
     "pct_doc_mestres": 81.8,
     "pct_doc_doutores": 27.3,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 4.99,
+    "cpc_infraestrutura": 4.59,
+    "cpc_oportunidade": 3.59
   },
   "CASA NOVA": {
     "nome_original": "Casa Nova",
@@ -1408,7 +1417,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 53.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.94,
+    "cpc_infraestrutura": 5.97,
+    "cpc_oportunidade": 5.85
   },
   "CICERO DANTAS": {
     "nome_original": "Cícero Dantas",
@@ -1896,7 +1908,10 @@
     ],
     "pct_doc_mestres": 99.4,
     "pct_doc_doutores": 74.6,
-    "pct_doc_regime": 91.5
+    "pct_doc_regime": 91.5,
+    "cpc_org_didatico": 5.55,
+    "cpc_infraestrutura": 5.28,
+    "cpc_oportunidade": 4.8
   },
   "FATIMA": {
     "nome_original": "Fátima",
@@ -2045,7 +2060,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 53.8,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.41,
+    "cpc_infraestrutura": 5.25,
+    "cpc_oportunidade": 4.88
   },
   "GUARATINGA": {
     "nome_original": "Guaratinga",
@@ -2272,7 +2290,10 @@
     ],
     "pct_doc_mestres": 69.0,
     "pct_doc_doutores": 27.6,
-    "pct_doc_regime": 93.1
+    "pct_doc_regime": 93.1,
+    "cpc_org_didatico": 5.62,
+    "cpc_infraestrutura": 5.54,
+    "cpc_oportunidade": 5.15
   },
   "IPIAU": {
     "nome_original": "Ipiaú",
@@ -2475,7 +2496,10 @@
     ],
     "pct_doc_mestres": 59.1,
     "pct_doc_doutores": 22.7,
-    "pct_doc_regime": 54.5
+    "pct_doc_regime": 54.5,
+    "cpc_org_didatico": 5.81,
+    "cpc_infraestrutura": 5.8,
+    "cpc_oportunidade": 5.56
   },
   "ITABERABA": {
     "nome_original": "Itaberaba",
@@ -2614,7 +2638,10 @@
     ],
     "pct_doc_mestres": 97.7,
     "pct_doc_doutores": 77.8,
-    "pct_doc_regime": 99.4
+    "pct_doc_regime": 99.4,
+    "cpc_org_didatico": 5.65,
+    "cpc_infraestrutura": 5.57,
+    "cpc_oportunidade": 4.79
   },
   "ITAMARAJU": {
     "nome_original": "Itamaraju",
@@ -2658,7 +2685,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 42.1,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.68,
+    "cpc_infraestrutura": 5.31,
+    "cpc_oportunidade": 4.91
   },
   "ITAMBE": {
     "nome_original": "Itambé",
@@ -2890,7 +2920,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 80.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.17,
+    "cpc_infraestrutura": 5.15,
+    "cpc_oportunidade": 4.56
   },
   "JAGUAQUARA": {
     "nome_original": "Jaguaquara",
@@ -3020,7 +3053,10 @@
     ],
     "pct_doc_mestres": 98.1,
     "pct_doc_doutores": 77.4,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.29,
+    "cpc_infraestrutura": 5.02,
+    "cpc_oportunidade": 4.32
   },
   "JEREMOABO": {
     "nome_original": "Jeremoabo",
@@ -3150,7 +3186,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 75.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.92,
+    "cpc_infraestrutura": 5.94,
+    "cpc_oportunidade": 5.79
   },
   "LAURO DE FREITAS": {
     "nome_original": "Lauro de Freitas",
@@ -3275,7 +3314,10 @@
     ],
     "pct_doc_mestres": 89.1,
     "pct_doc_doutores": 69.6,
-    "pct_doc_regime": 95.7
+    "pct_doc_regime": 95.7,
+    "cpc_org_didatico": 5.28,
+    "cpc_infraestrutura": 5.1,
+    "cpc_oportunidade": 3.94
   },
   "LIVRAMENTO DE NOSSA SENHORA": {
     "nome_original": "Livramento de Nossa Senhora",
@@ -3961,7 +4003,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 81.8,
-    "pct_doc_regime": 90.9
+    "pct_doc_regime": 90.9,
+    "cpc_org_didatico": 5.33,
+    "cpc_infraestrutura": 4.95,
+    "cpc_oportunidade": 4.66
   },
   "PAULO AFONSO": {
     "nome_original": "Paulo Afonso",
@@ -4415,7 +4460,10 @@
     ],
     "pct_doc_mestres": 50.0,
     "pct_doc_doutores": 10.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 4.89,
+    "cpc_infraestrutura": 4.57,
+    "cpc_oportunidade": 3.59
   },
   "RIO REAL": {
     "nome_original": "Rio Real",
@@ -4870,7 +4918,10 @@
     ],
     "pct_doc_mestres": 90.5,
     "pct_doc_doutores": 62.9,
-    "pct_doc_regime": 92.0
+    "pct_doc_regime": 92.0,
+    "cpc_org_didatico": 5.23,
+    "cpc_infraestrutura": 4.93,
+    "cpc_oportunidade": 4.42
   },
   "SANTA BARBARA": {
     "nome_original": "Santa Bárbara",
@@ -5826,7 +5877,10 @@
     ],
     "pct_doc_mestres": 74.4,
     "pct_doc_doutores": 69.2,
-    "pct_doc_regime": 97.4
+    "pct_doc_regime": 97.4,
+    "cpc_org_didatico": 5.25,
+    "cpc_infraestrutura": 4.9,
+    "cpc_oportunidade": 3.63
   },
   "TERRA NOVA": {
     "nome_original": "Terra Nova",
@@ -5971,7 +6025,10 @@
     ],
     "pct_doc_mestres": 85.7,
     "pct_doc_doutores": 42.9,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.65,
+    "cpc_infraestrutura": 5.32,
+    "cpc_oportunidade": 4.77
   },
   "VERA CRUZ": {
     "nome_original": "Vera Cruz",
@@ -6137,7 +6194,10 @@
     ],
     "pct_doc_mestres": 92.5,
     "pct_doc_doutores": 59.9,
-    "pct_doc_regime": 94.0
+    "pct_doc_regime": 94.0,
+    "cpc_org_didatico": 5.32,
+    "cpc_infraestrutura": 5.1,
+    "cpc_oportunidade": 4.54
   },
   "VARZEA DA ROCA": {
     "nome_original": "Várzea da Roça",

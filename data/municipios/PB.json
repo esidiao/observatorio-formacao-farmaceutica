@@ -305,7 +305,10 @@
     ],
     "pct_doc_mestres": 85.7,
     "pct_doc_doutores": 55.3,
-    "pct_doc_regime": 74.8
+    "pct_doc_regime": 74.8,
+    "cpc_org_didatico": 5.72,
+    "cpc_infraestrutura": 5.57,
+    "cpc_oportunidade": 5.14
   },
   "CAMPINA GRANDE": {
     "nome_original": "Campina Grande",
@@ -457,7 +460,10 @@
     ],
     "pct_doc_mestres": 88.8,
     "pct_doc_doutores": 55.1,
-    "pct_doc_regime": 82.3
+    "pct_doc_regime": 82.3,
+    "cpc_org_didatico": 5.21,
+    "cpc_infraestrutura": 4.91,
+    "cpc_oportunidade": 4.1
   },
   "CATOLE DO ROCHA": {
     "nome_original": "Catolé do Rocha",
@@ -547,7 +553,10 @@
     ],
     "pct_doc_mestres": 95.5,
     "pct_doc_doutores": 90.9,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.12,
+    "cpc_infraestrutura": 5.11,
+    "cpc_oportunidade": 4.04
   },
   "ESPERANCA": {
     "nome_original": "Esperança",
@@ -632,7 +641,10 @@
     ],
     "pct_doc_mestres": 86.7,
     "pct_doc_doutores": 46.7,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.44,
+    "cpc_infraestrutura": 5.1,
+    "cpc_oportunidade": 4.46
   },
   "ITABAIANA": {
     "nome_original": "Itabaiana",
@@ -911,7 +923,10 @@
     ],
     "pct_doc_mestres": 97.6,
     "pct_doc_doutores": 76.4,
-    "pct_doc_regime": 81.9
+    "pct_doc_regime": 81.9,
+    "cpc_org_didatico": 5.73,
+    "cpc_infraestrutura": 5.66,
+    "cpc_oportunidade": 5.59
   },
   "JURU": {
     "nome_original": "Juru",
@@ -1150,7 +1165,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 52.9,
-    "pct_doc_regime": 58.8
+    "pct_doc_regime": 58.8,
+    "cpc_org_didatico": 5.58,
+    "cpc_infraestrutura": 5.5,
+    "cpc_oportunidade": 4.27
   },
   "PICUI": {
     "nome_original": "Picuí",

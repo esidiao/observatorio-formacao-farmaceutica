@@ -46,7 +46,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 96.3,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.41,
+    "cpc_infraestrutura": 5.31,
+    "cpc_oportunidade": 4.84
   },
   "ANCHIETA": {
     "nome_original": "Anchieta",
@@ -322,7 +325,10 @@
     ],
     "pct_doc_mestres": 91.5,
     "pct_doc_doutores": 59.9,
-    "pct_doc_regime": 92.3
+    "pct_doc_regime": 92.3,
+    "cpc_org_didatico": 5.99,
+    "cpc_infraestrutura": 5.99,
+    "cpc_oportunidade": 5.97
   },
   "CARIACICA": {
     "nome_original": "Cariacica",
@@ -402,7 +408,10 @@
     ],
     "pct_doc_mestres": 94.1,
     "pct_doc_doutores": 82.4,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.87,
+    "cpc_infraestrutura": 5.85,
+    "cpc_oportunidade": 5.88
   },
   "CASTELO": {
     "nome_original": "Castelo",
@@ -487,7 +496,10 @@
     ],
     "pct_doc_mestres": 90.9,
     "pct_doc_doutores": 45.5,
-    "pct_doc_regime": 81.8
+    "pct_doc_regime": 81.8,
+    "cpc_org_didatico": 6.0,
+    "cpc_infraestrutura": 6.0,
+    "cpc_oportunidade": 6.0
   },
   "CONCEICAO DA BARRA": {
     "nome_original": "Conceição da Barra",
@@ -586,7 +598,10 @@
     ],
     "pct_doc_mestres": 91.9,
     "pct_doc_doutores": 78.4,
-    "pct_doc_regime": 91.9
+    "pct_doc_regime": 91.9,
+    "cpc_org_didatico": 5.38,
+    "cpc_infraestrutura": 5.18,
+    "cpc_oportunidade": 4.39
   },
   "GUACUI": {
     "nome_original": "Guaçuí",
@@ -749,7 +764,10 @@
     ],
     "pct_doc_mestres": 82.9,
     "pct_doc_doutores": 65.9,
-    "pct_doc_regime": 90.2
+    "pct_doc_regime": 90.2,
+    "cpc_org_didatico": 5.18,
+    "cpc_infraestrutura": 5.04,
+    "cpc_oportunidade": 4.41
   },
   "MARATAIZES": {
     "nome_original": "Marataízes",
@@ -1135,7 +1153,10 @@
     ],
     "pct_doc_mestres": 94.7,
     "pct_doc_doutores": 89.5,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 6.0,
+    "cpc_infraestrutura": 6.0,
+    "cpc_oportunidade": 6.0
   },
   "SAO GABRIEL DA PALHA": {
     "nome_original": "São Gabriel da Palha",
@@ -1229,7 +1250,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 96.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.13,
+    "cpc_infraestrutura": 4.65,
+    "cpc_oportunidade": 4.53
   },
   "VENDA NOVA DO IMIGRANTE": {
     "nome_original": "Venda Nova do Imigrante",
@@ -1454,7 +1478,10 @@
     ],
     "pct_doc_mestres": 98.9,
     "pct_doc_doutores": 90.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.26,
+    "cpc_infraestrutura": 5.4,
+    "cpc_oportunidade": 4.52
   },
   "VITORIA": {
     "nome_original": "Vitória",
@@ -1651,6 +1678,9 @@
     ],
     "pct_doc_mestres": 88.3,
     "pct_doc_doutores": 64.2,
-    "pct_doc_regime": 94.6
+    "pct_doc_regime": 94.6,
+    "cpc_org_didatico": 5.44,
+    "cpc_infraestrutura": 5.29,
+    "cpc_oportunidade": 4.76
   }
 }

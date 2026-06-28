@@ -297,6 +297,32 @@
 </div>
 {% endif %}
 
+<!-- Estrutura e organização (avaliação dos estudantes — CPC 2023) -->
+{% if d.cpc_infraestrutura is not none or d.cpc_org_didatico is not none %}
+<h2 class="section-title">Infraestrutura e organização do curso</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
+  Notas médias atribuídas pelos próprios estudantes no Questionário do Estudante (ENADE 2023),
+  em escala de 1 a 6 (maior = melhor), ponderadas por concluintes participantes.
+</p>
+<div class="kpi-grid">
+  <div class="kpi-card {% if d.cpc_org_didatico is not none and d.cpc_org_didatico >= 5.4 %}bom{% elif d.cpc_org_didatico is not none and d.cpc_org_didatico < 5.0 %}critico{% endif %}">
+    <div class="kpi-valor">{% if d.cpc_org_didatico is not none %}{{ "%.2f"|format(d.cpc_org_didatico) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">Org. didático-pedagógica</div>
+    <div class="kpi-fonte" title="Avaliação dos estudantes sobre organização didático-pedagógica (currículo, didática, avaliação). Escala 1–6. Fonte: INEP, CPC 2023.">CPC INEP 2023 · 1–6</div>
+  </div>
+  <div class="kpi-card {% if d.cpc_infraestrutura is not none and d.cpc_infraestrutura >= 5.3 %}bom{% elif d.cpc_infraestrutura is not none and d.cpc_infraestrutura < 4.8 %}critico{% endif %}">
+    <div class="kpi-valor">{% if d.cpc_infraestrutura is not none %}{{ "%.2f"|format(d.cpc_infraestrutura) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">Infraestrutura física</div>
+    <div class="kpi-fonte" title="Avaliação dos estudantes sobre infraestrutura e instalações físicas (laboratórios, biblioteca, salas). Escala 1–6. Fonte: INEP, CPC 2023.">CPC INEP 2023 · 1–6</div>
+  </div>
+  <div class="kpi-card {% if d.cpc_oportunidade is not none and d.cpc_oportunidade >= 5.0 %}bom{% elif d.cpc_oportunidade is not none and d.cpc_oportunidade < 4.4 %}critico{% endif %}">
+    <div class="kpi-valor">{% if d.cpc_oportunidade is not none %}{{ "%.2f"|format(d.cpc_oportunidade) }}{% else %}—{% endif %}</div>
+    <div class="kpi-label">Oportunidade de ampliação</div>
+    <div class="kpi-fonte" title="Avaliação dos estudantes sobre oportunidades de ampliação da formação (pesquisa, extensão, monitoria, internacionalização). Escala 1–6. Fonte: INEP, CPC 2023.">CPC INEP 2023 · 1–6</div>
+  </div>
+</div>
+{% endif %}
+
 <!-- Mapa municipal -->
 <h2 class="section-title">Mapa Municipal — {{ sigla }}</h2>
 <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">

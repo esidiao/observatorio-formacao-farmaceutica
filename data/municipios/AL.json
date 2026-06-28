@@ -158,7 +158,10 @@
     ],
     "pct_doc_mestres": 71.4,
     "pct_doc_doutores": 33.3,
-    "pct_doc_regime": 76.2
+    "pct_doc_regime": 76.2,
+    "cpc_org_didatico": 5.27,
+    "cpc_infraestrutura": 4.65,
+    "cpc_oportunidade": 4.14
   },
   "BATALHA": {
     "nome_original": "Batalha",
@@ -579,7 +582,10 @@
     ],
     "pct_doc_mestres": 96.7,
     "pct_doc_doutores": 65.8,
-    "pct_doc_regime": 78.8
+    "pct_doc_regime": 78.8,
+    "cpc_org_didatico": 5.6,
+    "cpc_infraestrutura": 5.47,
+    "cpc_oportunidade": 4.95
   },
   "MARAGOGI": {
     "nome_original": "Maragogi",

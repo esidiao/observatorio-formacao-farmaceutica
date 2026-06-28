@@ -387,7 +387,10 @@
     ],
     "pct_doc_mestres": 97.0,
     "pct_doc_doutores": 90.9,
-    "pct_doc_regime": 90.9
+    "pct_doc_regime": 90.9,
+    "cpc_org_didatico": 5.6,
+    "cpc_infraestrutura": 5.47,
+    "cpc_oportunidade": 4.37
   },
   "ARAPOTI": {
     "nome_original": "Arapoti",
@@ -1237,7 +1240,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 83.3,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.85,
+    "cpc_infraestrutura": 5.85,
+    "cpc_oportunidade": 5.56
   },
   "CANDOI": {
     "nome_original": "Candói",
@@ -1508,7 +1514,10 @@
     ],
     "pct_doc_mestres": 97.9,
     "pct_doc_doutores": 69.9,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.45,
+    "cpc_infraestrutura": 5.1,
+    "cpc_oportunidade": 4.85
   },
   "CASTRO": {
     "nome_original": "Castro",
@@ -2102,7 +2111,10 @@
     ],
     "pct_doc_mestres": 50.0,
     "pct_doc_doutores": 37.5,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.2,
+    "cpc_infraestrutura": 4.56,
+    "cpc_oportunidade": 4.17
   },
   "CORONEL DOMINGOS SOARES": {
     "nome_original": "Coronel Domingos Soares",
@@ -2580,7 +2592,10 @@
     ],
     "pct_doc_mestres": 93.8,
     "pct_doc_doutores": 63.2,
-    "pct_doc_regime": 89.4
+    "pct_doc_regime": 89.4,
+    "cpc_org_didatico": 5.44,
+    "cpc_infraestrutura": 5.29,
+    "cpc_oportunidade": 4.79
   },
   "CURIUVA": {
     "nome_original": "Curiúva",
@@ -3143,7 +3158,10 @@
     ],
     "pct_doc_mestres": 91.1,
     "pct_doc_doutores": 48.9,
-    "pct_doc_regime": 98.7
+    "pct_doc_regime": 98.7,
+    "cpc_org_didatico": 5.77,
+    "cpc_infraestrutura": 5.73,
+    "cpc_oportunidade": 5.4
   },
   "FRANCISCO ALVES": {
     "nome_original": "Francisco Alves",
@@ -3273,7 +3291,10 @@
     ],
     "pct_doc_mestres": 82.6,
     "pct_doc_doutores": 67.5,
-    "pct_doc_regime": 59.4
+    "pct_doc_regime": 59.4,
+    "cpc_org_didatico": 5.35,
+    "cpc_infraestrutura": 5.19,
+    "cpc_oportunidade": 4.5
   },
   "GOIOERE": {
     "nome_original": "Goioerê",
@@ -3444,7 +3465,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 79.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.71,
+    "cpc_infraestrutura": 5.54,
+    "cpc_oportunidade": 5.21
   },
   "GUARATUBA": {
     "nome_original": "Guaratuba",
@@ -4694,7 +4718,10 @@
     ],
     "pct_doc_mestres": 97.7,
     "pct_doc_doutores": 66.9,
-    "pct_doc_regime": 98.9
+    "pct_doc_regime": 98.9,
+    "cpc_org_didatico": 5.41,
+    "cpc_infraestrutura": 5.16,
+    "cpc_oportunidade": 4.49
   },
   "MALLET": {
     "nome_original": "Mallet",
@@ -5225,7 +5252,10 @@
     ],
     "pct_doc_mestres": 95.8,
     "pct_doc_doutores": 80.1,
-    "pct_doc_regime": 99.9
+    "pct_doc_regime": 99.9,
+    "cpc_org_didatico": 5.55,
+    "cpc_infraestrutura": 5.48,
+    "cpc_oportunidade": 4.97
   },
   "MARIOPOLIS": {
     "nome_original": "Mariópolis",
@@ -5730,7 +5760,10 @@
     ],
     "pct_doc_mestres": 85.7,
     "pct_doc_doutores": 28.6,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.61,
+    "cpc_infraestrutura": 5.31,
+    "cpc_oportunidade": 4.66
   },
   "PALMEIRA": {
     "nome_original": "Palmeira",
@@ -6010,7 +6043,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 100.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.4,
+    "cpc_infraestrutura": 5.47,
+    "cpc_oportunidade": 5.01
   },
   "PARAISO DO NORTE": {
     "nome_original": "Paraíso do Norte",
@@ -6630,7 +6666,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 86.2,
-    "pct_doc_regime": 93.9
+    "pct_doc_regime": 93.9,
+    "cpc_org_didatico": 5.45,
+    "cpc_infraestrutura": 5.13,
+    "cpc_oportunidade": 4.85
   },
   "PONTAL DO PARANA": {
     "nome_original": "Pontal do Paraná",
@@ -8399,7 +8438,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 100.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.69,
+    "cpc_infraestrutura": 5.6,
+    "cpc_oportunidade": 5.53
   },
   "TRES BARRAS DO PARANA": {
     "nome_original": "Três Barras do Paraná",
@@ -8666,7 +8708,10 @@
     ],
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 97.4,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.32,
+    "cpc_infraestrutura": 5.52,
+    "cpc_oportunidade": 4.6
   },
   "UNIAO DA VITORIA": {
     "nome_original": "União da Vitória",
@@ -8737,7 +8782,10 @@
     ],
     "pct_doc_mestres": 91.7,
     "pct_doc_doutores": 25.0,
-    "pct_doc_regime": 100.0
+    "pct_doc_regime": 100.0,
+    "cpc_org_didatico": 5.98,
+    "cpc_infraestrutura": 5.95,
+    "cpc_oportunidade": 5.96
   },
   "URAI": {
     "nome_original": "Uraí",
