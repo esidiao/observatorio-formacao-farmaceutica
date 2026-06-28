@@ -48,6 +48,21 @@ const GLOSSARIO = [
   { key:'ead_polos_registros', sigla:'Polos EaD (registros)', nome:'Total de registros de polo EaD', cat:'Território',
     oque:'Número total de registros de polo EaD de Farmácia no estado. Um mesmo município pode ter mais de um polo (de instituições diferentes), por isso este número é maior que o de municípios com polo.',
     escala:'registros', dir:'contextual', fonte:'Censo INEP', aliases:['polos ead (registr','polo ead (registr'] },
+  { key:'pct_mulheres', sigla:'% Mulheres', nome:'Mulheres entre ingressantes', cat:'Acesso & equidade',
+    oque:'Percentual de mulheres entre os ingressantes nos cursos de Farmácia. Indicador descritivo do perfil de gênero — a área é historicamente majoritariamente feminina.',
+    escala:'0 a 100%', dir:'contextual', fonte:'Censo INEP', aliases:['mulheres'] },
+  { key:'pct_ppi', sigla:'% Pretos/pardos/indígenas', nome:'Pretos, pardos e indígenas (PPI)', cat:'Acesso & equidade',
+    oque:'Percentual de pretos, pardos e indígenas entre os ingressantes que declararam cor/raça. Mede a diversidade racial do acesso. Varia muito por região, acompanhando a demografia local.',
+    escala:'0 a 100%', dir:'contextual', fonte:'Censo INEP', aliases:['pretos, pardos','ppi','pretos pardos'] },
+  { key:'pct_financiamento', sigla:'% FIES/PROUNI', nome:'Ingressantes com FIES ou PROUNI', cat:'Acesso & equidade',
+    oque:'Percentual de ingressantes que entraram com financiamento estudantil FIES ou bolsa PROUNI. Indica o peso das políticas públicas de acesso ao ensino superior privado.',
+    escala:'0 a 100%', dir:'contextual', fonte:'Censo INEP', aliases:['fies','prouni','financiamento'] },
+  { key:'pct_noturno', sigla:'% Vagas noturnas', nome:'Vagas no turno noturno', cat:'Acesso & equidade',
+    oque:'Percentual das vagas presenciais ofertadas à noite. Quanto maior, maior a possibilidade de acesso para quem trabalha durante o dia.',
+    escala:'0 a 100%', dir:'contextual', fonte:'Censo INEP', aliases:['noturn','vagas noturnas'] },
+  { key:'pct_rede_publica', sigla:'% Rede pública', nome:'Vagas em rede pública', cat:'Acesso & equidade',
+    oque:'Percentual das vagas em instituições públicas (federais, estaduais ou municipais). A formação em Farmácia é majoritariamente privada no Brasil.',
+    escala:'0 a 100%', dir:'contextual', fonte:'Censo INEP', aliases:['rede publica','vagas em rede','publica'] },
   { key:'municipios_oferta', sigla:'Municípios c/ oferta', nome:'Municípios com oferta formativa', cat:'Território',
     oque:'Municípios com ao menos um curso de Farmácia em funcionamento.',
     escala:'municípios', dir:'contextual', fonte:'Censo INEP', aliases:['c/ oferta','com oferta'] },
@@ -117,7 +132,7 @@ function _normTxt(s) {
 function renderGlossario() {
   const root = document.getElementById('glossario-lista');
   if (!root) return;
-  const cats = ['Território', 'Qualidade', 'Capacidade', 'Mercado'];
+  const cats = ['Território', 'Qualidade', 'Capacidade', 'Acesso & equidade', 'Mercado'];
   let html = '';
   cats.forEach(cat => {
     const itens = GLOSSARIO.filter(g => g.cat === cat);

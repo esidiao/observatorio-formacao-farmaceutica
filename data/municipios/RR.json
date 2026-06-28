@@ -20,7 +20,12 @@
         "categoria": "Privada",
         "organizacao": "Faculdade"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BOA VISTA": {
     "nome_original": "Boa Vista",
@@ -202,7 +207,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 6.0,
     "cpc_infraestrutura": 5.99,
-    "cpc_oportunidade": 5.99
+    "cpc_oportunidade": 5.99,
+    "pct_mulheres": 66.4,
+    "pct_ppi": 58.9,
+    "pct_financiamento": 4.4,
+    "pct_noturno": 69.5,
+    "pct_rede_publica": 0.0
   },
   "CARACARAI": {
     "nome_original": "Caracaraí",
@@ -234,7 +244,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 40.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MUCAJAI": {
     "nome_original": "Mucajaí",
@@ -257,7 +272,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PACARAIMA": {
     "nome_original": "Pacaraima",
@@ -280,7 +300,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "RORAINOPOLIS": {
     "nome_original": "Rorainópolis",
@@ -321,7 +346,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 76.9,
+    "pct_ppi": 87.5,
+    "pct_financiamento": 3.8,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO JOAO DA BALIZA": {
     "nome_original": "São João da Baliza",
@@ -344,7 +374,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 33.3,
+    "pct_ppi": 75.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO LUIZ": {
     "nome_original": "São Luiz",
@@ -367,6 +402,11 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 79.2,
+    "pct_ppi": 57.1,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   }
 }

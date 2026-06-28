@@ -29,7 +29,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 92.9,
+    "pct_financiamento": 6.7,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ACOPIARA": {
     "nome_original": "Acopiara",
@@ -61,7 +66,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "AIUABA": {
     "nome_original": "Aiuaba",
@@ -84,7 +94,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ALTO SANTO": {
     "nome_original": "Alto Santo",
@@ -107,7 +122,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "AMONTADA": {
     "nome_original": "Amontada",
@@ -157,7 +177,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 83.3,
+    "pct_ppi": 33.3,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "AQUIRAZ": {
     "nome_original": "Aquiraz",
@@ -198,7 +223,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ARACATI": {
     "nome_original": "Aracati",
@@ -254,7 +284,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.7,
     "cpc_infraestrutura": 5.66,
-    "cpc_oportunidade": 4.97
+    "cpc_oportunidade": 4.97,
+    "pct_mulheres": 77.8,
+    "pct_ppi": 71.8,
+    "pct_financiamento": 4.4,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "ARACOIABA": {
     "nome_original": "Aracoiaba",
@@ -277,7 +312,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ARARENDA": {
     "nome_original": "Ararendá",
@@ -300,7 +340,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ARATUBA": {
     "nome_original": "Aratuba",
@@ -323,7 +368,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ASSARE": {
     "nome_original": "Assaré",
@@ -346,7 +396,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "AURORA": {
     "nome_original": "Aurora",
@@ -369,7 +424,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BARBALHA": {
     "nome_original": "Barbalha",
@@ -401,7 +461,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BARREIRA": {
     "nome_original": "Barreira",
@@ -424,7 +489,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 80.0,
+    "pct_ppi": 60.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BATURITE": {
     "nome_original": "Baturité",
@@ -465,7 +535,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 81.8,
+    "pct_ppi": 63.6,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BEBERIBE": {
     "nome_original": "Beberibe",
@@ -488,7 +563,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BELA CRUZ": {
     "nome_original": "Bela Cruz",
@@ -511,7 +591,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BOA VIAGEM": {
     "nome_original": "Boa Viagem",
@@ -561,7 +646,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.4,
+    "pct_ppi": 30.0,
+    "pct_financiamento": 3.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BREJO SANTO": {
     "nome_original": "Brejo Santo",
@@ -593,7 +683,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 62.5,
+    "pct_ppi": 87.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CAMOCIM": {
     "nome_original": "Camocim",
@@ -634,7 +729,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 64.3,
+    "pct_ppi": 41.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CAMPOS SALES": {
     "nome_original": "Campos Sales",
@@ -657,7 +757,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CANINDE": {
     "nome_original": "Canindé",
@@ -716,7 +821,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 70.9,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 1.8,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CARIUS": {
     "nome_original": "Cariús",
@@ -739,7 +849,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CARNAUBAL": {
     "nome_original": "Carnaubal",
@@ -771,7 +886,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 89.3,
+    "pct_ppi": 96.4,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CASCAVEL": {
     "nome_original": "Cascavel",
@@ -821,7 +941,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CATARINA": {
     "nome_original": "Catarina",
@@ -844,7 +969,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CAUCAIA": {
     "nome_original": "Caucaia",
@@ -948,7 +1078,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 74.5,
+    "pct_ppi": 73.6,
+    "pct_financiamento": 7.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CEDRO": {
     "nome_original": "Cedro",
@@ -971,7 +1106,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "COREAU": {
     "nome_original": "Coreaú",
@@ -994,7 +1134,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CRATEUS": {
     "nome_original": "Crateús",
@@ -1044,7 +1189,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 71.4,
+    "pct_ppi": 72.3,
+    "pct_financiamento": 16.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CRATO": {
     "nome_original": "Crato",
@@ -1112,7 +1262,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 78.3,
+    "pct_ppi": 68.2,
+    "pct_financiamento": 21.7,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CROATA": {
     "nome_original": "Croatá",
@@ -1144,7 +1299,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "EUSEBIO": {
     "nome_original": "Eusébio",
@@ -1212,7 +1372,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 40.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "FARIAS BRITO": {
     "nome_original": "Farias Brito",
@@ -1235,7 +1400,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "FORTALEZA": {
     "nome_original": "Fortaleza",
@@ -1570,7 +1740,12 @@
     "pct_doc_regime": 88.6,
     "cpc_org_didatico": 5.43,
     "cpc_infraestrutura": 5.31,
-    "cpc_oportunidade": 4.78
+    "cpc_oportunidade": 4.78,
+    "pct_mulheres": 73.5,
+    "pct_ppi": 38.9,
+    "pct_financiamento": 7.6,
+    "pct_noturno": 44.7,
+    "pct_rede_publica": 2.6
   },
   "GRANJA": {
     "nome_original": "Granja",
@@ -1602,7 +1777,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GROAIRAS": {
     "nome_original": "Groaíras",
@@ -1625,7 +1805,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GUAIUBA": {
     "nome_original": "Guaiúba",
@@ -1648,7 +1833,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GUARACIABA DO NORTE": {
     "nome_original": "Guaraciaba do Norte",
@@ -1689,7 +1879,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 71.4,
+    "pct_ppi": 83.3,
+    "pct_financiamento": 14.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "HORIZONTE": {
     "nome_original": "Horizonte",
@@ -1721,7 +1916,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 71.4,
+    "pct_ppi": 42.9,
+    "pct_financiamento": 14.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "IBIAPINA": {
     "nome_original": "Ibiapina",
@@ -1744,7 +1944,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ICO": {
     "nome_original": "Icó",
@@ -1785,7 +1990,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 71.4,
+    "pct_ppi": 55.6,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "IGUATU": {
     "nome_original": "Iguatu",
@@ -1877,7 +2087,12 @@
     "pct_doc_regime": 48.6,
     "cpc_org_didatico": 5.84,
     "cpc_infraestrutura": 5.78,
-    "cpc_oportunidade": 5.61
+    "cpc_oportunidade": 5.61,
+    "pct_mulheres": 77.4,
+    "pct_ppi": 66.1,
+    "pct_financiamento": 34.5,
+    "pct_noturno": 62.6,
+    "pct_rede_publica": 0.0
   },
   "INDEPENDENCIA": {
     "nome_original": "Independência",
@@ -1900,7 +2115,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "IPU": {
     "nome_original": "Ipu",
@@ -1959,7 +2179,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 70.0,
+    "pct_ppi": 60.0,
+    "pct_financiamento": 40.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "IPUEIRAS": {
     "nome_original": "Ipueiras",
@@ -1991,7 +2216,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 57.1,
+    "pct_ppi": 78.9,
+    "pct_financiamento": 4.8,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ITAITINGA": {
     "nome_original": "Itaitinga",
@@ -2014,7 +2244,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ITAPAJE": {
     "nome_original": "Itapajé",
@@ -2046,7 +2281,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 78.3,
+    "pct_ppi": 47.8,
+    "pct_financiamento": 4.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ITAPIPOCA": {
     "nome_original": "Itapipoca",
@@ -2096,7 +2336,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 78.7,
+    "pct_ppi": 54.5,
+    "pct_financiamento": 3.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ITAREMA": {
     "nome_original": "Itarema",
@@ -2128,7 +2373,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JAGUARETAMA": {
     "nome_original": "Jaguaretama",
@@ -2151,7 +2401,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JAGUARIBE": {
     "nome_original": "Jaguaribe",
@@ -2183,7 +2438,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 40.0,
+    "pct_ppi": 40.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JAGUARUANA": {
     "nome_original": "Jaguaruana",
@@ -2215,7 +2475,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JIJOCA DE JERICOACOARA": {
     "nome_original": "Jijoca de Jericoacoara",
@@ -2247,7 +2512,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JUAZEIRO DO NORTE": {
     "nome_original": "Juazeiro do Norte",
@@ -2384,7 +2654,12 @@
     "pct_doc_regime": 83.2,
     "cpc_org_didatico": 5.36,
     "cpc_infraestrutura": 5.37,
-    "cpc_oportunidade": 4.56
+    "cpc_oportunidade": 4.56,
+    "pct_mulheres": 66.7,
+    "pct_ppi": 50.4,
+    "pct_financiamento": 11.8,
+    "pct_noturno": 67.7,
+    "pct_rede_publica": 0.0
   },
   "JUCAS": {
     "nome_original": "Jucás",
@@ -2407,7 +2682,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "LAVRAS DA MANGABEIRA": {
     "nome_original": "Lavras da Mangabeira",
@@ -2430,7 +2710,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "LIMOEIRO DO NORTE": {
     "nome_original": "Limoeiro do Norte",
@@ -2489,7 +2774,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 78.1,
+    "pct_ppi": 47.9,
+    "pct_financiamento": 4.1,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MARACANAU": {
     "nome_original": "Maracanaú",
@@ -2590,7 +2880,12 @@
     "pct_doc_regime": 80.0,
     "cpc_org_didatico": 6.0,
     "cpc_infraestrutura": 6.0,
-    "cpc_oportunidade": 6.0
+    "cpc_oportunidade": 6.0,
+    "pct_mulheres": 81.3,
+    "pct_ppi": 45.3,
+    "pct_financiamento": 6.2,
+    "pct_noturno": 42.7,
+    "pct_rede_publica": 0.0
   },
   "MARANGUAPE": {
     "nome_original": "Maranguape",
@@ -2649,7 +2944,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.6,
+    "pct_ppi": 75.0,
+    "pct_financiamento": 8.9,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MAURITI": {
     "nome_original": "Mauriti",
@@ -2672,7 +2972,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MILHA": {
     "nome_original": "Milhã",
@@ -2695,7 +3000,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MOMBACA": {
     "nome_original": "Mombaça",
@@ -2727,7 +3037,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 54.5,
+    "pct_ppi": 72.7,
+    "pct_financiamento": 27.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MORADA NOVA": {
     "nome_original": "Morada Nova",
@@ -2768,7 +3083,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 86.4,
+    "pct_ppi": 81.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MORRINHOS": {
     "nome_original": "Morrinhos",
@@ -2791,7 +3111,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "NOVA RUSSAS": {
     "nome_original": "Nova Russas",
@@ -2832,7 +3157,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "NOVO ORIENTE": {
     "nome_original": "Novo Oriente",
@@ -2855,7 +3185,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 80.0,
+    "pct_financiamento": 16.7,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "OCARA": {
     "nome_original": "Ocara",
@@ -2878,7 +3213,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "OROS": {
     "nome_original": "Orós",
@@ -2901,7 +3241,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.0,
+    "pct_ppi": 80.0,
+    "pct_financiamento": 20.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PACAJUS": {
     "nome_original": "Pacajus",
@@ -2933,7 +3278,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 57.1,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PACATUBA": {
     "nome_original": "Pacatuba",
@@ -2974,7 +3324,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PALHANO": {
     "nome_original": "Palhano",
@@ -2997,7 +3352,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PARACURU": {
     "nome_original": "Paracuru",
@@ -3020,7 +3380,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PARAIPABA": {
     "nome_original": "Paraipaba",
@@ -3052,7 +3417,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PARAMBU": {
     "nome_original": "Parambu",
@@ -3075,7 +3445,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PEDRA BRANCA": {
     "nome_original": "Pedra Branca",
@@ -3116,7 +3491,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 33.3,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PENTECOSTE": {
     "nome_original": "Pentecoste",
@@ -3148,7 +3528,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PORANGA": {
     "nome_original": "Poranga",
@@ -3171,7 +3556,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "QUITERIANOPOLIS": {
     "nome_original": "Quiterianópolis",
@@ -3194,7 +3584,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 33.3,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "QUIXADA": {
     "nome_original": "Quixadá",
@@ -3286,7 +3681,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.58,
     "cpc_infraestrutura": 5.63,
-    "cpc_oportunidade": 5.32
+    "cpc_oportunidade": 5.32,
+    "pct_mulheres": 67.7,
+    "pct_ppi": 67.8,
+    "pct_financiamento": 33.3,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "QUIXERAMOBIM": {
     "nome_original": "Quixeramobim",
@@ -3351,7 +3751,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.56,
     "cpc_infraestrutura": 5.31,
-    "cpc_oportunidade": 4.92
+    "cpc_oportunidade": 4.92,
+    "pct_mulheres": 72.4,
+    "pct_ppi": 41.7,
+    "pct_financiamento": 3.4,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "REDENCAO": {
     "nome_original": "Redenção",
@@ -3383,7 +3788,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 61.5,
+    "pct_ppi": 64.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 0.0,
+    "pct_rede_publica": 100.0
   },
   "RUSSAS": {
     "nome_original": "Russas",
@@ -3424,7 +3834,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SANTA QUITERIA": {
     "nome_original": "Santa Quitéria",
@@ -3465,7 +3880,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SANTANA DO ACARAU": {
     "nome_original": "Santana do Acaraú",
@@ -3488,7 +3908,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SENADOR POMPEU": {
     "nome_original": "Senador Pompeu",
@@ -3529,7 +3954,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 58.3,
+    "pct_ppi": 40.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SOBRAL": {
     "nome_original": "Sobral",
@@ -3639,7 +4069,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.71,
     "cpc_infraestrutura": 5.72,
-    "cpc_oportunidade": 5.17
+    "cpc_oportunidade": 5.17,
+    "pct_mulheres": 67.9,
+    "pct_ppi": 51.0,
+    "pct_financiamento": 21.2,
+    "pct_noturno": 66.7,
+    "pct_rede_publica": 0.0
   },
   "SOLONOPOLE": {
     "nome_original": "Solonópole",
@@ -3671,7 +4106,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO BENEDITO": {
     "nome_original": "São Benedito",
@@ -3712,7 +4152,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO GONCALO DO AMARANTE": {
     "nome_original": "São Gonçalo do Amarante",
@@ -3753,7 +4198,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 62.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TAUA": {
     "nome_original": "Tauá",
@@ -3803,7 +4253,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 86.4,
+    "pct_ppi": 43.9,
+    "pct_financiamento": 2.3,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TIANGUA": {
     "nome_original": "Tianguá",
@@ -3862,7 +4317,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 69.8,
+    "pct_ppi": 60.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TRAIRI": {
     "nome_original": "Trairi",
@@ -3894,7 +4354,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 80.0,
+    "pct_ppi": 37.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TURURU": {
     "nome_original": "Tururu",
@@ -3917,7 +4382,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "UMIRIM": {
     "nome_original": "Umirim",
@@ -3949,7 +4419,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "URUBURETAMA": {
     "nome_original": "Uruburetama",
@@ -3972,7 +4447,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "VARJOTA": {
     "nome_original": "Varjota",
@@ -3995,7 +4475,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "VICOSA DO CEARA": {
     "nome_original": "Viçosa do Ceará",
@@ -4027,7 +4512,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "VARZEA ALEGRE": {
     "nome_original": "Várzea Alegre",
@@ -4059,6 +4549,11 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 78.6,
+    "pct_ppi": 33.3,
+    "pct_financiamento": 3.6,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   }
 }

@@ -29,7 +29,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ASSIS BRASIL": {
     "nome_original": "Assis Brasil",
@@ -52,7 +57,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BRASILEIA": {
     "nome_original": "Brasiléia",
@@ -84,7 +94,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CAPIXABA": {
     "nome_original": "Capixaba",
@@ -107,7 +122,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CRUZEIRO DO SUL": {
     "nome_original": "Cruzeiro do Sul",
@@ -211,7 +231,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 74.7,
+    "pct_ppi": 71.2,
+    "pct_financiamento": 1.1,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "EPITACIOLANDIA": {
     "nome_original": "Epitaciolândia",
@@ -243,7 +268,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "FEIJO": {
     "nome_original": "Feijó",
@@ -275,7 +305,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.7,
+    "pct_ppi": 40.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MARECHAL THAUMATURGO": {
     "nome_original": "Marechal Thaumaturgo",
@@ -298,7 +333,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MANCIO LIMA": {
     "nome_original": "Mâncio Lima",
@@ -330,7 +370,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PLACIDO DE CASTRO": {
     "nome_original": "Plácido de Castro",
@@ -362,7 +407,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "RIO BRANCO": {
     "nome_original": "Rio Branco",
@@ -562,7 +612,12 @@
     "pct_doc_regime": 92.4,
     "cpc_org_didatico": 5.52,
     "cpc_infraestrutura": 5.45,
-    "cpc_oportunidade": 4.63
+    "cpc_oportunidade": 4.63,
+    "pct_mulheres": 69.8,
+    "pct_ppi": 60.4,
+    "pct_financiamento": 4.7,
+    "pct_noturno": 83.2,
+    "pct_rede_publica": 0.0
   },
   "RODRIGUES ALVES": {
     "nome_original": "Rodrigues Alves",
@@ -585,7 +640,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SENA MADUREIRA": {
     "nome_original": "Sena Madureira",
@@ -626,7 +686,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 70.6,
+    "pct_ppi": 60.0,
+    "pct_financiamento": 11.8,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SENADOR GUIOMARD": {
     "nome_original": "Senador Guiomard",
@@ -649,7 +714,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TARAUACA": {
     "nome_original": "Tarauacá",
@@ -690,6 +760,11 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   }
 }

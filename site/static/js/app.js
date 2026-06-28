@@ -55,6 +55,11 @@ const INDICADOR_META = {
   cpc_org_didatico:     { label: 'Org. didático-ped.', dec: 2, min: 1,   max: 6,   maiorMelhor: true  },
   cpc_infraestrutura:   { label: 'Infraestrutura',     dec: 2, min: 1,   max: 6,   maiorMelhor: true  },
   cpc_oportunidade:     { label: 'Oport. ampliação',   dec: 2, min: 1,   max: 6,   maiorMelhor: true  },
+  pct_mulheres:         { label: '% Mulheres',         dec: 1, min: null, max: null, maiorMelhor: null },
+  pct_ppi:              { label: '% Pretos/pardos/ind.',dec: 1, min: null, max: null, maiorMelhor: null },
+  pct_financiamento:    { label: '% FIES/PROUNI',      dec: 1, min: null, max: null, maiorMelhor: null },
+  pct_noturno:          { label: '% Vagas noturnas',   dec: 1, min: null, max: null, maiorMelhor: null },
+  pct_rede_publica:     { label: '% Rede pública',     dec: 1, min: null, max: null, maiorMelhor: null },
   ead_polos_municipios: { label: 'Municípios c/ polo', dec: 0, min: null, max: null, maiorMelhor: null },
 };
 
@@ -124,16 +129,18 @@ function _rangeIndicador(indicador) {
   return r;
 }
 
-// Cor do mapa nacional: RdBu (indicadores com direção) ou sequencial (magnitude)
+// Cor do mapa nacional: RdBu (indicadores com direção conhecida) ou sequencial
+// (magnitude OU indicador desconhecido — fallback robusto pela faixa dos dados).
 function corMapaNacional(indicador, val) {
   if (val === null || val === undefined || isNaN(val)) return NODATA_COLOR;
   const meta = INDICADOR_META[indicador];
-  if (meta && meta.maiorMelhor === null) {        // magnitude → escala sequencial pelos dados
-    const { min, max } = _rangeIndicador(indicador);
-    const norm = max > min ? (val - min) / (max - min) : 0.5;
-    return BLUES[Math.min(BLUES.length - 1, Math.floor(norm * BLUES.length))];
+  if (meta && meta.maiorMelhor != null && meta.min != null && meta.max != null) {
+    return getCor(indicador, val);                // direção definida → diverging RdBu
   }
-  return getCor(indicador, val);                  // direção → diverging RdBu
+  // magnitude (maiorMelhor null) ou indicador sem metadados → sequencial pelos dados
+  const { min, max } = _rangeIndicador(indicador);
+  const norm = max > min ? (val - min) / (max - min) : 0.5;
+  return BLUES[Math.min(BLUES.length - 1, Math.floor(norm * BLUES.length))];
 }
 
 function renderLegendaNacional(indicador) {
@@ -141,7 +148,7 @@ function renderLegendaNacional(indicador) {
   if (!el) return;
   const meta = INDICADOR_META[indicador] || {};
   const semDados = `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:#C9CDD2"></div> Sem dados</div>`;
-  if (meta.maiorMelhor === null) {                // magnitude: gradiente menor→maior
+  if (meta.maiorMelhor == null) {                 // magnitude/desconhecido: gradiente menor→maior
     const { min, max } = _rangeIndicador(indicador);
     const fmtv = v => fmtIndicador(indicador, v);
     const grad = `linear-gradient(90deg, ${BLUES[0]}, ${BLUES[BLUES.length-1]})`;

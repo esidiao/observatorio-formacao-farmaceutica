@@ -38,7 +38,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 76.5,
+    "pct_ppi": 82.4,
+    "pct_financiamento": 5.9,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MACAPA": {
     "nome_original": "Macapá",
@@ -211,7 +216,12 @@
     "pct_doc_regime": 92.5,
     "cpc_org_didatico": 5.09,
     "cpc_infraestrutura": 4.6,
-    "cpc_oportunidade": 4.09
+    "cpc_oportunidade": 4.09,
+    "pct_mulheres": 68.5,
+    "pct_ppi": 72.4,
+    "pct_financiamento": 4.9,
+    "pct_noturno": 53.0,
+    "pct_rede_publica": 7.4
   },
   "OIAPOQUE": {
     "nome_original": "Oiapoque",
@@ -234,7 +244,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PEDRA BRANCA DO AMAPARI": {
     "nome_original": "Pedra Branca do Amapari",
@@ -257,7 +272,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PORTO GRANDE": {
     "nome_original": "Porto Grande",
@@ -280,7 +300,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SANTANA": {
     "nome_original": "Santana",
@@ -330,7 +355,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 87.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TARTARUGALZINHO": {
     "nome_original": "Tartarugalzinho",
@@ -353,7 +383,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "VITORIA DO JARI": {
     "nome_original": "Vitória do Jari",
@@ -376,6 +411,11 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   }
 }

@@ -161,7 +161,12 @@
     "pct_doc_regime": 76.2,
     "cpc_org_didatico": 5.27,
     "cpc_infraestrutura": 4.65,
-    "cpc_oportunidade": 4.14
+    "cpc_oportunidade": 4.14,
+    "pct_mulheres": 72.2,
+    "pct_ppi": 38.5,
+    "pct_financiamento": 6.0,
+    "pct_noturno": 50.5,
+    "pct_rede_publica": 0.0
   },
   "BATALHA": {
     "nome_original": "Batalha",
@@ -184,7 +189,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CACIMBINHAS": {
     "nome_original": "Cacimbinhas",
@@ -207,7 +217,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 76.0,
+    "pct_ppi": 62.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CORURIPE": {
     "nome_original": "Coruripe",
@@ -239,7 +254,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "DELMIRO GOUVEIA": {
     "nome_original": "Delmiro Gouveia",
@@ -298,7 +318,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 70.8,
+    "pct_ppi": 65.0,
+    "pct_financiamento": 4.2,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "IGREJA NOVA": {
     "nome_original": "Igreja Nova",
@@ -330,7 +355,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 33.3,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JUNQUEIRO": {
     "nome_original": "Junqueiro",
@@ -353,7 +383,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "LIMOEIRO DE ANADIA": {
     "nome_original": "Limoeiro de Anadia",
@@ -376,7 +411,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MACEIO": {
     "nome_original": "Maceió",
@@ -585,7 +625,12 @@
     "pct_doc_regime": 78.8,
     "cpc_org_didatico": 5.6,
     "cpc_infraestrutura": 5.47,
-    "cpc_oportunidade": 4.95
+    "cpc_oportunidade": 4.95,
+    "pct_mulheres": 70.3,
+    "pct_ppi": 38.9,
+    "pct_financiamento": 5.5,
+    "pct_noturno": 49.6,
+    "pct_rede_publica": 5.5
   },
   "MARAGOGI": {
     "nome_original": "Maragogi",
@@ -617,7 +662,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 89.5,
+    "pct_ppi": 85.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MARECHAL DEODORO": {
     "nome_original": "Marechal Deodoro",
@@ -640,7 +690,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MATA GRANDE": {
     "nome_original": "Mata Grande",
@@ -663,7 +718,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 83.3,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MURICI": {
     "nome_original": "Murici",
@@ -695,7 +755,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 33.3,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "OLHO D'AGUA DAS FLORES": {
     "nome_original": "Olho d'Água das Flores",
@@ -727,7 +792,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 60.0,
+    "pct_ppi": 40.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PALMEIRA DOS INDIOS": {
     "nome_original": "Palmeira dos Índios",
@@ -795,7 +865,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 73.7,
+    "pct_ppi": 15.8,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PARIPUEIRA": {
     "nome_original": "Paripueira",
@@ -818,7 +893,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PENEDO": {
     "nome_original": "Penedo",
@@ -850,7 +930,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 62.5,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 25.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PILAR": {
     "nome_original": "Pilar",
@@ -873,7 +958,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PIRANHAS": {
     "nome_original": "Piranhas",
@@ -896,7 +986,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PAO DE ACUCAR": {
     "nome_original": "Pão de Açúcar",
@@ -919,7 +1014,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 25.0,
+    "pct_financiamento": 25.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "RIO LARGO": {
     "nome_original": "Rio Largo",
@@ -942,7 +1042,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SANTANA DO IPANEMA": {
     "nome_original": "Santana do Ipanema",
@@ -992,7 +1097,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 70.3,
+    "pct_ppi": 37.1,
+    "pct_financiamento": 2.7,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO JOSE DA TAPERA": {
     "nome_original": "São José da Tapera",
@@ -1024,7 +1134,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO MIGUEL DOS CAMPOS": {
     "nome_original": "São Miguel dos Campos",
@@ -1047,7 +1162,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO SEBASTIAO": {
     "nome_original": "São Sebastião",
@@ -1070,7 +1190,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TEOTONIO VILELA": {
     "nome_original": "Teotônio Vilela",
@@ -1093,7 +1218,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "UNIAO DOS PALMARES": {
     "nome_original": "União dos Palmares",
@@ -1125,7 +1255,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "VICOSA": {
     "nome_original": "Viçosa",
@@ -1148,7 +1283,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "AGUA BRANCA": {
     "nome_original": "Água Branca",
@@ -1180,6 +1320,11 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   }
 }

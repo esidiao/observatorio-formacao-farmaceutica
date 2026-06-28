@@ -20,7 +20,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 25.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ALEXANIA": {
     "nome_original": "Alexânia",
@@ -61,7 +66,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 88.9,
+    "pct_ppi": 62.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ALTO PARAISO DE GOIAS": {
     "nome_original": "Alto Paraíso de Goiás",
@@ -84,7 +94,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ANICUNS": {
     "nome_original": "Anicuns",
@@ -107,7 +122,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ANAPOLIS": {
     "nome_original": "Anápolis",
@@ -280,7 +300,12 @@
     "pct_doc_regime": 96.1,
     "cpc_org_didatico": 5.45,
     "cpc_infraestrutura": 5.07,
-    "cpc_oportunidade": 4.78
+    "cpc_oportunidade": 4.78,
+    "pct_mulheres": 69.7,
+    "pct_ppi": 54.1,
+    "pct_financiamento": 6.6,
+    "pct_noturno": 64.1,
+    "pct_rede_publica": 20.8
   },
   "APARECIDA DE GOIANIA": {
     "nome_original": "Aparecida de Goiânia",
@@ -399,7 +424,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.94,
     "cpc_infraestrutura": 5.96,
-    "cpc_oportunidade": 5.85
+    "cpc_oportunidade": 5.85,
+    "pct_mulheres": 68.1,
+    "pct_ppi": 63.2,
+    "pct_financiamento": 0.4,
+    "pct_noturno": 66.5,
+    "pct_rede_publica": 0.0
   },
   "ARUANA": {
     "nome_original": "Aruanã",
@@ -422,7 +452,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BARRO ALTO": {
     "nome_original": "Barro Alto",
@@ -445,7 +480,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "BELA VISTA DE GOIAS": {
     "nome_original": "Bela Vista de Goiás",
@@ -477,7 +517,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CALDAS NOVAS": {
     "nome_original": "Caldas Novas",
@@ -554,7 +599,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 67.1,
+    "pct_ppi": 27.4,
+    "pct_financiamento": 2.1,
+    "pct_noturno": 50.0,
+    "pct_rede_publica": 0.0
   },
   "CAMPINORTE": {
     "nome_original": "Campinorte",
@@ -577,7 +627,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CAMPOS BELOS": {
     "nome_original": "Campos Belos",
@@ -609,7 +664,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 73.7,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CATALAO": {
     "nome_original": "Catalão",
@@ -677,7 +737,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 77.8,
+    "pct_ppi": 34.6,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CAVALCANTE": {
     "nome_original": "Cavalcante",
@@ -700,7 +765,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CACU": {
     "nome_original": "Caçu",
@@ -723,7 +793,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CERES": {
     "nome_original": "Ceres",
@@ -779,7 +854,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 6.0,
     "cpc_infraestrutura": 6.0,
-    "cpc_oportunidade": 6.0
+    "cpc_oportunidade": 6.0,
+    "pct_mulheres": 79.2,
+    "pct_ppi": 29.2,
+    "pct_financiamento": 12.5,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "CIDADE OCIDENTAL": {
     "nome_original": "Cidade Ocidental",
@@ -838,7 +918,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CRISTALINA": {
     "nome_original": "Cristalina",
@@ -879,7 +964,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 75.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CRIXAS": {
     "nome_original": "Crixás",
@@ -902,7 +992,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "DAMIANOPOLIS": {
     "nome_original": "Damianópolis",
@@ -925,7 +1020,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "EDEIA": {
     "nome_original": "Edéia",
@@ -948,7 +1048,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 80.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "FLORES DE GOIAS": {
     "nome_original": "Flores de Goiás",
@@ -971,7 +1076,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "FORMOSA": {
     "nome_original": "Formosa",
@@ -1048,7 +1158,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 74.6,
+    "pct_ppi": 52.9,
+    "pct_financiamento": 1.4,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "GOIANIRA": {
     "nome_original": "Goianira",
@@ -1089,7 +1204,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GOIANAPOLIS": {
     "nome_original": "Goianápolis",
@@ -1112,7 +1232,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GOIANESIA": {
     "nome_original": "Goianésia",
@@ -1162,7 +1287,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 78.4,
+    "pct_ppi": 73.1,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GOIATUBA": {
     "nome_original": "Goiatuba",
@@ -1194,7 +1324,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GOIAS": {
     "nome_original": "Goiás",
@@ -1226,7 +1361,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GOIANIA": {
     "nome_original": "Goiânia",
@@ -1597,7 +1737,12 @@
     "pct_doc_regime": 89.7,
     "cpc_org_didatico": 5.4,
     "cpc_infraestrutura": 5.17,
-    "cpc_oportunidade": 4.43
+    "cpc_oportunidade": 4.43,
+    "pct_mulheres": 71.4,
+    "pct_ppi": 55.9,
+    "pct_financiamento": 10.5,
+    "pct_noturno": 56.6,
+    "pct_rede_publica": 2.7
   },
   "GUAPO": {
     "nome_original": "Guapó",
@@ -1620,7 +1765,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "HIDROLANDIA": {
     "nome_original": "Hidrolândia",
@@ -1643,7 +1793,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "INHUMAS": {
     "nome_original": "Inhumas",
@@ -1717,7 +1872,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.67,
     "cpc_infraestrutura": 5.55,
-    "cpc_oportunidade": 4.78
+    "cpc_oportunidade": 4.78,
+    "pct_mulheres": 75.5,
+    "pct_ppi": 35.6,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "IPAMERI": {
     "nome_original": "Ipameri",
@@ -1740,7 +1900,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "IPORA": {
     "nome_original": "Iporá",
@@ -1778,7 +1943,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.39,
     "cpc_infraestrutura": 4.96,
-    "cpc_oportunidade": 4.71
+    "cpc_oportunidade": 4.71,
+    "pct_mulheres": 78.6,
+    "pct_ppi": 45.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "ITABERAI": {
     "nome_original": "Itaberaí",
@@ -1828,7 +1998,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 61.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ITAPACI": {
     "nome_original": "Itapaci",
@@ -1851,7 +2026,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ITAPURANGA": {
     "nome_original": "Itapuranga",
@@ -1874,7 +2054,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 70.0,
+    "pct_ppi": 53.3,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ITUMBIARA": {
     "nome_original": "Itumbiara",
@@ -1957,7 +2142,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.42,
     "cpc_infraestrutura": 5.02,
-    "cpc_oportunidade": 4.53
+    "cpc_oportunidade": 4.53,
+    "pct_mulheres": 73.5,
+    "pct_ppi": 42.4,
+    "pct_financiamento": 1.0,
+    "pct_noturno": 0.0,
+    "pct_rede_publica": 100.0
   },
   "JARAGUA": {
     "nome_original": "Jaraguá",
@@ -1980,7 +2170,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JATAI": {
     "nome_original": "Jataí",
@@ -2039,7 +2234,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 25.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JUSSARA": {
     "nome_original": "Jussara",
@@ -2062,7 +2262,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "LUZIANIA": {
     "nome_original": "Luziânia",
@@ -2145,7 +2350,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.24,
     "cpc_infraestrutura": 4.65,
-    "cpc_oportunidade": 3.65
+    "cpc_oportunidade": 3.65,
+    "pct_mulheres": 63.2,
+    "pct_ppi": 60.5,
+    "pct_financiamento": 8.8,
+    "pct_noturno": 70.6,
+    "pct_rede_publica": 0.0
   },
   "MAMBAI": {
     "nome_original": "Mambaí",
@@ -2168,7 +2378,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MINACU": {
     "nome_original": "Minaçu",
@@ -2200,7 +2415,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MINEIROS": {
     "nome_original": "Mineiros",
@@ -2247,7 +2467,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.54,
     "cpc_infraestrutura": 5.46,
-    "cpc_oportunidade": 4.87
+    "cpc_oportunidade": 4.87,
+    "pct_mulheres": 69.0,
+    "pct_ppi": 32.0,
+    "pct_financiamento": 6.9,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "MORRINHOS": {
     "nome_original": "Morrinhos",
@@ -2288,7 +2513,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 69.0,
+    "pct_ppi": 19.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MOZARLANDIA": {
     "nome_original": "Mozarlândia",
@@ -2311,7 +2541,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "NEROPOLIS": {
     "nome_original": "Nerópolis",
@@ -2343,7 +2578,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "NIQUELANDIA": {
     "nome_original": "Niquelândia",
@@ -2366,7 +2606,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "NOVA CRIXAS": {
     "nome_original": "Nova Crixás",
@@ -2389,7 +2634,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "NOVO GAMA": {
     "nome_original": "Novo Gama",
@@ -2457,7 +2707,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 54.3,
+    "pct_financiamento": 5.6,
+    "pct_noturno": 50.0,
+    "pct_rede_publica": 0.0
   },
   "ORIZONA": {
     "nome_original": "Orizona",
@@ -2480,7 +2735,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PADRE BERNARDO": {
     "nome_original": "Padre Bernardo",
@@ -2512,7 +2772,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 50.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PALMEIRAS DE GOIAS": {
     "nome_original": "Palmeiras de Goiás",
@@ -2535,7 +2800,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PIRACANJUBA": {
     "nome_original": "Piracanjuba",
@@ -2558,7 +2828,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PIRENOPOLIS": {
     "nome_original": "Pirenópolis",
@@ -2581,7 +2856,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PIRES DO RIO": {
     "nome_original": "Pires do Rio",
@@ -2613,7 +2893,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 87.5,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PLANALTINA": {
     "nome_original": "Planaltina",
@@ -2699,7 +2984,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 70.8,
+    "pct_ppi": 65.2,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PORANGATU": {
     "nome_original": "Porangatu",
@@ -2764,7 +3054,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.31,
     "cpc_infraestrutura": 4.94,
-    "cpc_oportunidade": 4.66
+    "cpc_oportunidade": 4.66,
+    "pct_mulheres": 62.7,
+    "pct_ppi": 60.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "POSSE": {
     "nome_original": "Posse",
@@ -2805,7 +3100,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 79.2,
+    "pct_ppi": 45.8,
+    "pct_financiamento": 4.2,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "QUIRINOPOLIS": {
     "nome_original": "Quirinópolis",
@@ -2861,7 +3161,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.89,
     "cpc_infraestrutura": 5.89,
-    "cpc_oportunidade": 5.89
+    "cpc_oportunidade": 5.89,
+    "pct_mulheres": 83.3,
+    "pct_ppi": 75.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "RIO VERDE": {
     "nome_original": "Rio Verde",
@@ -2953,7 +3258,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.74,
     "cpc_infraestrutura": 5.62,
-    "cpc_oportunidade": 5.34
+    "cpc_oportunidade": 5.34,
+    "pct_mulheres": 72.5,
+    "pct_ppi": 42.9,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "SANTA HELENA DE GOIAS": {
     "nome_original": "Santa Helena de Goiás",
@@ -2994,7 +3304,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.0,
+    "pct_ppi": 75.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SANTA TEREZINHA DE GOIAS": {
     "nome_original": "Santa Terezinha de Goiás",
@@ -3026,7 +3341,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 82.1,
+    "pct_ppi": 73.5,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SANTO ANTONIO DO DESCOBERTO": {
     "nome_original": "Santo Antônio do Descoberto",
@@ -3067,7 +3387,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 54.5,
+    "pct_ppi": 30.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SENADOR CANEDO": {
     "nome_original": "Senador Canedo",
@@ -3126,7 +3451,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 79.4,
+    "pct_ppi": 46.4,
+    "pct_financiamento": 2.9,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SIMOLANDIA": {
     "nome_original": "Simolândia",
@@ -3149,7 +3479,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO DOMINGOS": {
     "nome_original": "São Domingos",
@@ -3172,7 +3507,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO LUIS DE MONTES BELOS": {
     "nome_original": "São Luís de Montes Belos",
@@ -3219,7 +3559,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.07,
     "cpc_infraestrutura": 4.56,
-    "cpc_oportunidade": 3.88
+    "cpc_oportunidade": 3.88,
+    "pct_mulheres": 75.0,
+    "pct_ppi": 44.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "SAO MIGUEL DO ARAGUAIA": {
     "nome_original": "São Miguel do Araguaia",
@@ -3242,7 +3587,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "TRINDADE": {
     "nome_original": "Trindade",
@@ -3325,7 +3675,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.44,
     "cpc_infraestrutura": 5.28,
-    "cpc_oportunidade": 4.19
+    "cpc_oportunidade": 4.19,
+    "pct_mulheres": 69.5,
+    "pct_ppi": 63.3,
+    "pct_financiamento": 9.5,
+    "pct_noturno": 37.5,
+    "pct_rede_publica": 0.0
   },
   "URUACU": {
     "nome_original": "Uruaçu",
@@ -3390,7 +3745,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.18,
     "cpc_infraestrutura": 5.26,
-    "cpc_oportunidade": 4.69
+    "cpc_oportunidade": 4.69,
+    "pct_mulheres": 60.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 5.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "VALPARAISO DE GOIAS": {
     "nome_original": "Valparaíso de Goiás",
@@ -3536,7 +3896,12 @@
     "pct_doc_regime": 96.5,
     "cpc_org_didatico": 5.8,
     "cpc_infraestrutura": 5.7,
-    "cpc_oportunidade": 5.36
+    "cpc_oportunidade": 5.36,
+    "pct_mulheres": 66.1,
+    "pct_ppi": 60.1,
+    "pct_financiamento": 1.6,
+    "pct_noturno": 57.9,
+    "pct_rede_publica": 0.0
   },
   "VIANOPOLIS": {
     "nome_original": "Vianópolis",
@@ -3559,7 +3924,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 85.7,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "AGUAS LINDAS DE GOIAS": {
     "nome_original": "Águas Lindas de Goiás",
@@ -3636,6 +4006,11 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 60.3,
+    "pct_ppi": 58.5,
+    "pct_financiamento": 3.2,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   }
 }

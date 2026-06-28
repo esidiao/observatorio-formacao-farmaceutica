@@ -91,6 +91,27 @@
     <div class="kpi-fonte" title="Avaliação dos estudantes sobre pesquisa/extensão/monitoria — ENADE/CPC 2023.">CPC INEP 2023</div>
   </div>
   {% endif %}
+  {% if d.pct_mulheres is defined and d.pct_mulheres is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(d.pct_mulheres) }}%</div>
+    <div class="kpi-label">Mulheres (ingress.)</div>
+    <div class="kpi-fonte" title="% de mulheres entre ingressantes. Censo INEP.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  {% endif %}
+  {% if d.pct_ppi is defined and d.pct_ppi is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(d.pct_ppi) }}%</div>
+    <div class="kpi-label">Pretos, pardos e indígenas</div>
+    <div class="kpi-fonte" title="% PPI entre quem declarou cor/raça. Censo INEP.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  {% endif %}
+  {% if d.pct_noturno is defined and d.pct_noturno is not none %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "%.1f"|format(d.pct_noturno) }}%</div>
+    <div class="kpi-label">Vagas noturnas</div>
+    <div class="kpi-fonte" title="% das vagas presenciais no turno noturno. Censo INEP.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  {% endif %}
 </div>
 
 <!-- Tabela de cursos/IES -->

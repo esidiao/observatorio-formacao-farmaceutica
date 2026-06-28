@@ -20,7 +20,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ALTO ALEGRE DOS PARECIS": {
     "nome_original": "Alto Alegre dos Parecis",
@@ -43,7 +48,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ALTO PARAISO": {
     "nome_original": "Alto Paraíso",
@@ -66,7 +76,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ARIQUEMES": {
     "nome_original": "Ariquemes",
@@ -149,7 +164,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.86,
     "cpc_infraestrutura": 5.87,
-    "cpc_oportunidade": 5.78
+    "cpc_oportunidade": 5.78,
+    "pct_mulheres": 85.2,
+    "pct_ppi": 53.4,
+    "pct_financiamento": 10.5,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "BURITIS": {
     "nome_original": "Buritis",
@@ -181,7 +201,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 90.9,
+    "pct_ppi": 45.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CACOAL": {
     "nome_original": "Cacoal",
@@ -291,7 +316,12 @@
     "pct_doc_regime": 89.2,
     "cpc_org_didatico": 5.99,
     "cpc_infraestrutura": 5.99,
-    "cpc_oportunidade": 5.91
+    "cpc_oportunidade": 5.91,
+    "pct_mulheres": 72.9,
+    "pct_ppi": 33.3,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 75.2,
+    "pct_rede_publica": 0.0
   },
   "CEREJEIRAS": {
     "nome_original": "Cerejeiras",
@@ -323,7 +353,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "CHUPINGUAIA": {
     "nome_original": "Chupinguaia",
@@ -346,7 +381,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 50.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "COSTA MARQUES": {
     "nome_original": "Costa Marques",
@@ -369,7 +409,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": null,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "ESPIGAO D'OESTE": {
     "nome_original": "Espigão D'Oeste",
@@ -392,7 +437,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 0.0,
+    "pct_ppi": 100.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "GUAJARA-MIRIM": {
     "nome_original": "Guajará-Mirim",
@@ -451,7 +501,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 68.1,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "JARU": {
     "nome_original": "Jaru",
@@ -507,7 +562,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.67,
     "cpc_infraestrutura": 5.53,
-    "cpc_oportunidade": 5.24
+    "cpc_oportunidade": 5.24,
+    "pct_mulheres": 78.6,
+    "pct_ppi": 38.9,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "JI-PARANA": {
     "nome_original": "Ji-Paraná",
@@ -608,7 +668,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.58,
     "cpc_infraestrutura": 5.46,
-    "cpc_oportunidade": 5.29
+    "cpc_oportunidade": 5.29,
+    "pct_mulheres": 80.2,
+    "pct_ppi": 54.8,
+    "pct_financiamento": 7.5,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "MACHADINHO D'OESTE": {
     "nome_original": "Machadinho D'Oeste",
@@ -658,7 +723,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 75.0,
+    "pct_ppi": 57.4,
+    "pct_financiamento": 1.7,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "MIRANTE DA SERRA": {
     "nome_original": "Mirante da Serra",
@@ -681,7 +751,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 83.3,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "NOVA MAMORE": {
     "nome_original": "Nova Mamoré",
@@ -713,7 +788,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "OURO PRETO DO OESTE": {
     "nome_original": "Ouro Preto do Oeste",
@@ -769,7 +849,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.64,
     "cpc_infraestrutura": 5.43,
-    "cpc_oportunidade": 4.71
+    "cpc_oportunidade": 4.71,
+    "pct_mulheres": 100.0,
+    "pct_ppi": 75.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "PIMENTA BUENO": {
     "nome_original": "Pimenta Bueno",
@@ -810,7 +895,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 66.7,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "PORTO VELHO": {
     "nome_original": "Porto Velho",
@@ -1001,7 +1091,12 @@
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.56,
     "cpc_infraestrutura": 5.39,
-    "cpc_oportunidade": 4.97
+    "cpc_oportunidade": 4.97,
+    "pct_mulheres": 72.2,
+    "pct_ppi": 54.8,
+    "pct_financiamento": 4.0,
+    "pct_noturno": 68.3,
+    "pct_rede_publica": 0.0
   },
   "ROLIM DE MOURA": {
     "nome_original": "Rolim de Moura",
@@ -1075,7 +1170,12 @@
     "pct_doc_regime": 76.9,
     "cpc_org_didatico": 5.88,
     "cpc_infraestrutura": 5.86,
-    "cpc_oportunidade": 5.8
+    "cpc_oportunidade": 5.8,
+    "pct_mulheres": 76.8,
+    "pct_ppi": 52.9,
+    "pct_financiamento": 5.3,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   },
   "SAO FRANCISCO DO GUAPORE": {
     "nome_original": "São Francisco do Guaporé",
@@ -1098,7 +1198,12 @@
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
-    ]
+    ],
+    "pct_mulheres": 100.0,
+    "pct_ppi": 75.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "SAO MIGUEL DO GUAPORE": {
     "nome_original": "São Miguel do Guaporé",
@@ -1121,7 +1226,12 @@
         "categoria": "Privada",
         "organizacao": "Universidade"
       }
-    ]
+    ],
+    "pct_mulheres": 66.7,
+    "pct_ppi": 0.0,
+    "pct_financiamento": 0.0,
+    "pct_noturno": null,
+    "pct_rede_publica": null
   },
   "VILHENA": {
     "nome_original": "Vilhena",
@@ -1213,6 +1323,11 @@
     "pct_doc_regime": 95.2,
     "cpc_org_didatico": 5.0,
     "cpc_infraestrutura": 4.99,
-    "cpc_oportunidade": 4.16
+    "cpc_oportunidade": 4.16,
+    "pct_mulheres": 74.4,
+    "pct_ppi": 31.4,
+    "pct_financiamento": 2.3,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0
   }
 }

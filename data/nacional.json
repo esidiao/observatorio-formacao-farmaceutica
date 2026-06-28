@@ -84,7 +84,12 @@
       "n_cursos_docente": 2,
       "cpc_org_didatico": 5.52,
       "cpc_infraestrutura": 5.45,
-      "cpc_oportunidade": 4.63
+      "cpc_oportunidade": 4.63,
+      "pct_mulheres": 69.8,
+      "pct_ppi": 59.7,
+      "pct_financiamento": 3.7,
+      "pct_noturno": 83.2,
+      "pct_rede_publica": 0.0
     },
     "AL": {
       "vagas_total": 1636,
@@ -161,7 +166,12 @@
       "n_cursos_docente": 6,
       "cpc_org_didatico": 5.56,
       "cpc_infraestrutura": 5.38,
-      "cpc_oportunidade": 4.87
+      "cpc_oportunidade": 4.87,
+      "pct_mulheres": 71.2,
+      "pct_ppi": 39.7,
+      "pct_financiamento": 5.3,
+      "pct_noturno": 49.9,
+      "pct_rede_publica": 3.8
     },
     "AM": {
       "vagas_total": 3887,
@@ -248,7 +258,12 @@
       "n_cursos_docente": 8,
       "cpc_org_didatico": 5.43,
       "cpc_infraestrutura": 5.23,
-      "cpc_oportunidade": 4.73
+      "cpc_oportunidade": 4.73,
+      "pct_mulheres": 72.0,
+      "pct_ppi": 65.2,
+      "pct_financiamento": 5.6,
+      "pct_noturno": 50.9,
+      "pct_rede_publica": 2.4
     },
     "AP": {
       "vagas_total": 679,
@@ -304,7 +319,12 @@
       "n_cursos_docente": 3,
       "cpc_org_didatico": 5.09,
       "cpc_infraestrutura": 4.6,
-      "cpc_oportunidade": 4.09
+      "cpc_oportunidade": 4.09,
+      "pct_mulheres": 68.8,
+      "pct_ppi": 73.1,
+      "pct_financiamento": 4.8,
+      "pct_noturno": 53.0,
+      "pct_rede_publica": 7.4
     },
     "BA": {
       "vagas_total": 8356,
@@ -499,7 +519,12 @@
       "n_cursos_docente": 44,
       "cpc_org_didatico": 5.33,
       "cpc_infraestrutura": 5.07,
-      "cpc_oportunidade": 4.51
+      "cpc_oportunidade": 4.51,
+      "pct_mulheres": 74.9,
+      "pct_ppi": 68.2,
+      "pct_financiamento": 7.0,
+      "pct_noturno": 63.2,
+      "pct_rede_publica": 6.5
     },
     "CE": {
       "vagas_total": 6550,
@@ -646,7 +671,12 @@
       "n_cursos_docente": 19,
       "cpc_org_didatico": 5.5,
       "cpc_infraestrutura": 5.42,
-      "cpc_oportunidade": 4.89
+      "cpc_oportunidade": 4.89,
+      "pct_mulheres": 73.0,
+      "pct_ppi": 48.5,
+      "pct_financiamento": 9.8,
+      "pct_noturno": 53.8,
+      "pct_rede_publica": 2.8
     },
     "DF": {
       "vagas_total": 3921,
@@ -695,7 +725,12 @@
       "n_cursos_docente": 17,
       "cpc_org_didatico": 5.54,
       "cpc_infraestrutura": 5.41,
-      "cpc_oportunidade": 5.04
+      "cpc_oportunidade": 5.04,
+      "pct_mulheres": 71.2,
+      "pct_ppi": 58.1,
+      "pct_financiamento": 4.9,
+      "pct_noturno": 48.5,
+      "pct_rede_publica": 7.3
     },
     "ES": {
       "vagas_total": 2119,
@@ -778,7 +813,12 @@
       "n_cursos_docente": 15,
       "cpc_org_didatico": 5.45,
       "cpc_infraestrutura": 5.34,
-      "cpc_oportunidade": 4.86
+      "cpc_oportunidade": 4.86,
+      "pct_mulheres": 71.1,
+      "pct_ppi": 54.6,
+      "pct_financiamento": 7.1,
+      "pct_noturno": 72.2,
+      "pct_rede_publica": 8.7
     },
     "GO": {
       "vagas_total": 7247,
@@ -901,7 +941,12 @@
       "n_cursos_docente": 29,
       "cpc_org_didatico": 5.46,
       "cpc_infraestrutura": 5.19,
-      "cpc_oportunidade": 4.67
+      "cpc_oportunidade": 4.67,
+      "pct_mulheres": 70.7,
+      "pct_ppi": 53.8,
+      "pct_financiamento": 5.6,
+      "pct_noturno": 61.0,
+      "pct_rede_publica": 6.9
     },
     "MA": {
       "vagas_total": 4595,
@@ -1033,7 +1078,12 @@
       "n_cursos_docente": 11,
       "cpc_org_didatico": 5.62,
       "cpc_infraestrutura": 5.45,
-      "cpc_oportunidade": 5.1
+      "cpc_oportunidade": 5.1,
+      "pct_mulheres": 74.2,
+      "pct_ppi": 66.8,
+      "pct_financiamento": 6.6,
+      "pct_noturno": 47.2,
+      "pct_rede_publica": 1.8
     },
     "MG": {
       "vagas_total": 8189,
@@ -1344,7 +1394,12 @@
       "n_cursos_docente": 60,
       "cpc_org_didatico": 5.47,
       "cpc_infraestrutura": 5.34,
-      "cpc_oportunidade": 4.85
+      "cpc_oportunidade": 4.85,
+      "pct_mulheres": 74.6,
+      "pct_ppi": 48.3,
+      "pct_financiamento": 4.0,
+      "pct_noturno": 70.7,
+      "pct_rede_publica": 12.4
     },
     "MS": {
       "vagas_total": 952,
@@ -1429,7 +1484,12 @@
       "n_cursos_docente": 8,
       "cpc_org_didatico": 5.56,
       "cpc_infraestrutura": 5.4,
-      "cpc_oportunidade": 4.95
+      "cpc_oportunidade": 4.95,
+      "pct_mulheres": 71.2,
+      "pct_ppi": 40.7,
+      "pct_financiamento": 1.8,
+      "pct_noturno": 64.5,
+      "pct_rede_publica": 6.4
     },
     "MT": {
       "vagas_total": 2606,
@@ -1532,7 +1592,12 @@
       "n_cursos_docente": 16,
       "cpc_org_didatico": 5.4,
       "cpc_infraestrutura": 5.11,
-      "cpc_oportunidade": 4.65
+      "cpc_oportunidade": 4.65,
+      "pct_mulheres": 75.1,
+      "pct_ppi": 56.5,
+      "pct_financiamento": 2.3,
+      "pct_noturno": 81.8,
+      "pct_rede_publica": 9.8
     },
     "PA": {
       "vagas_total": 5484,
@@ -1674,7 +1739,12 @@
       "n_cursos_docente": 17,
       "cpc_org_didatico": 5.51,
       "cpc_infraestrutura": 5.27,
-      "cpc_oportunidade": 4.87
+      "cpc_oportunidade": 4.87,
+      "pct_mulheres": 74.2,
+      "pct_ppi": 55.7,
+      "pct_financiamento": 5.2,
+      "pct_noturno": 53.9,
+      "pct_rede_publica": 2.3
     },
     "PB": {
       "vagas_total": 2915,
@@ -1755,7 +1825,12 @@
       "n_cursos_docente": 14,
       "cpc_org_didatico": 5.48,
       "cpc_infraestrutura": 5.33,
-      "cpc_oportunidade": 4.76
+      "cpc_oportunidade": 4.76,
+      "pct_mulheres": 70.5,
+      "pct_ppi": 48.6,
+      "pct_financiamento": 11.3,
+      "pct_noturno": 59.7,
+      "pct_rede_publica": 13.2
     },
     "PE": {
       "vagas_total": 9623,
@@ -1883,7 +1958,12 @@
       "n_cursos_docente": 28,
       "cpc_org_didatico": 5.4,
       "cpc_infraestrutura": 5.19,
-      "cpc_oportunidade": 4.69
+      "cpc_oportunidade": 4.69,
+      "pct_mulheres": 73.0,
+      "pct_ppi": 40.0,
+      "pct_financiamento": 7.1,
+      "pct_noturno": 53.7,
+      "pct_rede_publica": 4.1
     },
     "PI": {
       "vagas_total": 2256,
@@ -1966,7 +2046,12 @@
       "n_cursos_docente": 9,
       "cpc_org_didatico": 5.6,
       "cpc_infraestrutura": 5.46,
-      "cpc_oportunidade": 5.04
+      "cpc_oportunidade": 5.04,
+      "pct_mulheres": 69.7,
+      "pct_ppi": 44.8,
+      "pct_financiamento": 8.8,
+      "pct_noturno": 19.3,
+      "pct_rede_publica": 3.1
     },
     "PR": {
       "vagas_total": 4730,
@@ -2211,7 +2296,12 @@
       "n_cursos_docente": 42,
       "cpc_org_didatico": 5.5,
       "cpc_infraestrutura": 5.34,
-      "cpc_oportunidade": 4.81
+      "cpc_oportunidade": 4.81,
+      "pct_mulheres": 76.9,
+      "pct_ppi": 24.6,
+      "pct_financiamento": 3.8,
+      "pct_noturno": 66.0,
+      "pct_rede_publica": 10.4
     },
     "RJ": {
       "vagas_total": 11867,
@@ -2338,7 +2428,12 @@
       "n_cursos_docente": 36,
       "cpc_org_didatico": 5.28,
       "cpc_infraestrutura": 4.98,
-      "cpc_oportunidade": 4.58
+      "cpc_oportunidade": 4.58,
+      "pct_mulheres": 72.5,
+      "pct_ppi": 53.0,
+      "pct_financiamento": 3.0,
+      "pct_noturno": 67.6,
+      "pct_rede_publica": 7.8
     },
     "RN": {
       "vagas_total": 1360,
@@ -2414,7 +2509,12 @@
       "n_cursos_docente": 8,
       "cpc_org_didatico": 5.18,
       "cpc_infraestrutura": 4.96,
-      "cpc_oportunidade": 4.29
+      "cpc_oportunidade": 4.29,
+      "pct_mulheres": 67.6,
+      "pct_ppi": 40.5,
+      "pct_financiamento": 4.6,
+      "pct_noturno": 56.2,
+      "pct_rede_publica": 14.4
     },
     "RO": {
       "vagas_total": 2942,
@@ -2485,7 +2585,12 @@
       "n_cursos_docente": 11,
       "cpc_org_didatico": 5.64,
       "cpc_infraestrutura": 5.53,
-      "cpc_oportunidade": 5.2
+      "cpc_oportunidade": 5.2,
+      "pct_mulheres": 76.8,
+      "pct_ppi": 50.9,
+      "pct_financiamento": 4.4,
+      "pct_noturno": 88.6,
+      "pct_rede_publica": 0.0
     },
     "RR": {
       "vagas_total": 1079,
@@ -2541,7 +2646,12 @@
       "n_cursos_docente": 2,
       "cpc_org_didatico": 6.0,
       "cpc_infraestrutura": 5.99,
-      "cpc_oportunidade": 5.99
+      "cpc_oportunidade": 5.99,
+      "pct_mulheres": 66.6,
+      "pct_ppi": 60.5,
+      "pct_financiamento": 4.1,
+      "pct_noturno": 69.5,
+      "pct_rede_publica": 0.0
     },
     "RS": {
       "vagas_total": 3047,
@@ -2733,7 +2843,12 @@
       "n_cursos_docente": 33,
       "cpc_org_didatico": 5.5,
       "cpc_infraestrutura": 5.39,
-      "cpc_oportunidade": 5.11
+      "cpc_oportunidade": 5.11,
+      "pct_mulheres": 79.6,
+      "pct_ppi": 19.6,
+      "pct_financiamento": 3.4,
+      "pct_noturno": 63.4,
+      "pct_rede_publica": 14.9
     },
     "SC": {
       "vagas_total": 2868,
@@ -2874,7 +2989,12 @@
       "n_cursos_docente": 19,
       "cpc_org_didatico": 5.27,
       "cpc_infraestrutura": 5.1,
-      "cpc_oportunidade": 4.79
+      "cpc_oportunidade": 4.79,
+      "pct_mulheres": 78.5,
+      "pct_ppi": 23.1,
+      "pct_financiamento": 4.6,
+      "pct_noturno": 63.6,
+      "pct_rede_publica": 11.0
     },
     "SE": {
       "vagas_total": 1375,
@@ -2945,7 +3065,12 @@
       "n_cursos_docente": 5,
       "cpc_org_didatico": 5.15,
       "cpc_infraestrutura": 4.91,
-      "cpc_oportunidade": 4.38
+      "cpc_oportunidade": 4.38,
+      "pct_mulheres": 74.0,
+      "pct_ppi": 47.7,
+      "pct_financiamento": 9.2,
+      "pct_noturno": 46.5,
+      "pct_rede_publica": 16.6
     },
     "SP": {
       "vagas_total": 27627,
@@ -3257,7 +3382,12 @@
       "n_cursos_docente": 124,
       "cpc_org_didatico": 5.33,
       "cpc_infraestrutura": 5.16,
-      "cpc_oportunidade": 4.58
+      "cpc_oportunidade": 4.58,
+      "pct_mulheres": 73.5,
+      "pct_ppi": 41.7,
+      "pct_financiamento": 3.4,
+      "pct_noturno": 63.7,
+      "pct_rede_publica": 3.1
     },
     "TO": {
       "vagas_total": 811,
@@ -3326,7 +3456,12 @@
       "n_cursos_docente": 4,
       "cpc_org_didatico": 5.62,
       "cpc_infraestrutura": 5.47,
-      "cpc_oportunidade": 5.06
+      "cpc_oportunidade": 5.06,
+      "pct_mulheres": 71.3,
+      "pct_ppi": 63.8,
+      "pct_financiamento": 1.6,
+      "pct_noturno": 100.0,
+      "pct_rede_publica": 22.2
     }
   }
 }

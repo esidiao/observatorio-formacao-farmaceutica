@@ -323,6 +323,42 @@
 </div>
 {% endif %}
 
+<!-- Perfil de acesso e equidade (Censo 2024) -->
+{% if d.pct_mulheres is not none or d.pct_ppi is not none %}
+<h2 class="section-title">Perfil de acesso e equidade</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
+  Características dos ingressantes e das vagas, a partir dos microdados do Censo da Educação
+  Superior {{ meta.versao_censo }}. Indicadores descritivos (sem juízo de melhor/pior).
+</p>
+<div class="kpi-grid">
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.pct_mulheres is not none %}{{ "%.1f"|format(d.pct_mulheres) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Mulheres (ingressantes)</div>
+    <div class="kpi-fonte" title="% de mulheres entre os ingressantes. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.pct_ppi is not none %}{{ "%.1f"|format(d.pct_ppi) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Pretos, pardos e indígenas</div>
+    <div class="kpi-fonte" title="% de pretos, pardos e indígenas entre os ingressantes que declararam cor/raça. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.pct_financiamento is not none %}{{ "%.1f"|format(d.pct_financiamento) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Com FIES ou PROUNI</div>
+    <div class="kpi-fonte" title="% de ingressantes com financiamento FIES ou bolsa PROUNI. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.pct_noturno is not none %}{{ "%.1f"|format(d.pct_noturno) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Vagas noturnas (presencial)</div>
+    <div class="kpi-fonte" title="% das vagas presenciais ofertadas no turno noturno. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+  <div class="kpi-card">
+    <div class="kpi-valor">{% if d.pct_rede_publica is not none %}{{ "%.1f"|format(d.pct_rede_publica) }}%{% else %}—{% endif %}</div>
+    <div class="kpi-label">Vagas em rede pública</div>
+    <div class="kpi-fonte" title="% das vagas em instituições públicas. Fonte: Censo INEP {{ meta.versao_censo }}.">Censo {{ meta.versao_censo }}</div>
+  </div>
+</div>
+{% endif %}
+
 <!-- Mapa municipal -->
 <h2 class="section-title">Mapa Municipal — {{ sigla }}</h2>
 <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
