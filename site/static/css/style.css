@@ -153,6 +153,59 @@ a:hover { text-decoration: underline; }
    ============================================================ */
 main { padding: 24px 32px; max-width: 1280px; margin: 0 auto; }
 
+/* ============================================================
+   HERÓI EDITORIAL (home)
+   ============================================================ */
+.hero {
+  padding: 28px 0 30px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 28px;
+}
+.hero-eyebrow {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 14px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3.8vw, 2.7rem);
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  max-width: 18ch;
+  margin-bottom: 16px;
+}
+.hero-lead {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 62ch;
+  margin-bottom: 26px;
+}
+.hero-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 40px;
+  margin-bottom: 26px;
+}
+.lede { display: flex; flex-direction: column; }
+.lede-num {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 2.3rem;
+  line-height: 1;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.lede-num.accent-neg { color: var(--swot-weakness); }
+.lede-lab { font-size: 0.82rem; color: var(--text-muted); margin-top: 6px; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 10px; }
+
 .section-title {
   font-family: var(--font-serif);
   font-size: 1.35rem;

@@ -30,6 +30,27 @@
 
 {% block content %}
 
+<!-- Herói editorial -->
+<section class="hero">
+  <p class="hero-eyebrow">Observatório de dados · {{ n_ufs }} estados · Censo INEP {{ meta.versao_censo }}</p>
+  <h1 class="hero-title">Quem forma os farmacêuticos do Brasil — e com que qualidade?</h1>
+  <p class="hero-lead">
+    Um retrato baseado em dados oficiais da oferta de cursos de Farmácia: acesso ao território,
+    qualidade da formação, equidade e a acelerada expansão do ensino a distância.
+  </p>
+  <div class="hero-stats">
+    <div class="lede"><span class="lede-num">{{ "{:,}".format(total_vagas_real).replace(',','.') }}</span><span class="lede-lab">vagas por ano</span></div>
+    <div class="lede"><span class="lede-num">{{ pct_ead_nacional }}%</span><span class="lede-lab">são a distância</span></div>
+    <div class="lede"><span class="lede-num">{{ "{:,}".format(mun_com_oferta).replace(',','.') }}</span><span class="lede-lab">municípios com oferta</span></div>
+    <div class="lede"><span class="lede-num accent-neg">{{ "{:,}".format(mun_deserto).replace(',','.') }}</span><span class="lede-lab">desertos farmacêuticos</span></div>
+  </div>
+  <div class="hero-cta">
+    <a class="btn" href="#panorama">Explorar indicadores</a>
+    <a class="btn outline" href="correlacoes.html">Ver correlações</a>
+    <a class="btn outline" href="indice.html">Índice & ranking</a>
+  </div>
+</section>
+
 <!-- Barra de atualização -->
 <div class="update-bar" aria-live="polite">
   <span class="dot"></span>
@@ -45,7 +66,7 @@
 </div>
 
 <!-- KPIs nacionais -->
-<h2 class="section-title">Panorama Nacional — {{ n_ufs }} UFs</h2>
+<h2 class="section-title" id="panorama">Panorama Nacional — {{ n_ufs }} UFs</h2>
 <div class="kpi-grid">
   <div class="kpi-card">
     <div class="kpi-valor">{{ "{:,}".format(total_vagas_real).replace(',','.') }}</div>
