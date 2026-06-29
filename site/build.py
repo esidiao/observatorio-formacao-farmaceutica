@@ -462,6 +462,12 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     (path_out / "sitemap.xml").write_text("\n".join(sm), encoding="utf-8")
     print(f"[OK] robots.txt + sitemap.xml ({len(urls)} URLs)")
 
+    # ── PWA: copiar sw.js para raiz do dist (fora de /static/) ───────────────
+    sw_src = static_src / "sw.js"
+    if sw_src.exists():
+        shutil.copy2(sw_src, path_out / "sw.js")
+        print("[OK] sw.js (PWA service worker)")
+
     print(f"\n[BUILD] Site gerado em: {path_out.resolve()}")
     print(f"  Abra {path_out / 'index.html'} no browser para visualizar localmente.")
 

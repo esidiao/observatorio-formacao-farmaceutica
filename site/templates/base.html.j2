@@ -13,6 +13,11 @@
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#15314F">
   <link rel="icon" type="image/svg+xml" href="{{ depth }}static/img/favicon.svg">
+  <link rel="manifest" href="{{ depth }}static/manifest.json">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Obs. Farmácia">
+  <link rel="apple-touch-icon" href="{{ depth }}static/img/icon-192.png">
   <link rel="stylesheet" href="{{ depth }}static/fonts/fonts.css">
 
   <!-- SEO / compartilhamento -->
@@ -165,5 +170,13 @@
 <script src="{{ depth }}static/js/app.js"></script>
 <script src="{{ depth }}static/js/glossario.js"></script>
 {% block scripts %}{% endblock %}
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('{{ depth }}sw.js', {scope: '/observatorio-formacao-farmaceutica/'})
+      .catch(function (e) { console.warn('SW registro falhou:', e); });
+  });
+}
+</script>
 </body>
 </html>

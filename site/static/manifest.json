@@ -1,0 +1,59 @@
+{
+  "name": "Observatório Nacional da Formação Farmacêutica",
+  "short_name": "Obs. Farmácia",
+  "description": "Indicadores de qualidade, equidade e capacidade da formação em Farmácia nos 27 estados brasileiros.",
+  "start_url": "/observatorio-formacao-farmaceutica/",
+  "scope": "/observatorio-formacao-farmaceutica/",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "theme_color": "#15314F",
+  "background_color": "#FBFAF8",
+  "lang": "pt-BR",
+  "categories": ["education", "health", "government"],
+  "icons": [
+    {
+      "src": "static/img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "static/img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "static/img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "static/img/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "Mapa nacional de indicadores"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Mapa Nacional",
+      "url": "/observatorio-formacao-farmaceutica/",
+      "description": "Ver panorama dos 27 estados"
+    },
+    {
+      "name": "Comparar Estados",
+      "url": "/observatorio-formacao-farmaceutica/comparar.html",
+      "description": "Comparar indicadores entre UFs"
+    },
+    {
+      "name": "Correlações",
+      "url": "/observatorio-formacao-farmaceutica/correlacoes.html",
+      "description": "Análise de correlações"
+    }
+  ]
+}
