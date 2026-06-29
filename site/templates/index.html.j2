@@ -114,8 +114,8 @@
   a linha mostra os concluintes. Revela a <strong>explosão da EaD</strong> e o descolamento entre
   capacidade ofertada e formandos efetivos.
 </p>
-<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:14px">
-  <canvas id="grafico-historico" height="110"></canvas>
+<div class="chart-box">
+  <canvas id="grafico-historico"></canvas>
 </div>
 <div class="kpi-grid" id="hist-kpis" style="margin-bottom:28px"></div>
 
@@ -277,6 +277,7 @@ function renderHistorico() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       interaction: { mode: 'index', intersect: false },
       plugins: {
         legend: { position: 'bottom', labels: { font: { size: 11 } } },

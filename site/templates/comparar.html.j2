@@ -67,8 +67,8 @@
   </div>
   <span id="bar-multi-nota" style="font-size:0.78rem;color:var(--text-muted);display:none">Barras normalizadas (0 = pior · 1 = melhor) — os KPIs selecionados acima. Passe o mouse para ver o valor real.</span>
 </div>
-<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:28px">
-  <canvas id="grafico-barras" height="100"></canvas>
+<div class="chart-box">
+  <canvas id="grafico-barras"></canvas>
 </div>
 
 <!-- Tabela comparativa (dinâmica) -->
@@ -90,8 +90,8 @@
   Cada eixo é um indicador selecionado, normalizado de 0 a 1 onde <strong>mais distante do centro = melhor</strong>
   (indicadores "menor é melhor" são invertidos; descritivos seguem a própria escala).
 </p>
-<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:28px;max-width:640px">
-  <canvas id="grafico-radar" height="120"></canvas>
+<div class="chart-box radar">
+  <canvas id="grafico-radar"></canvas>
 </div>
 
 {% endblock %}
@@ -284,6 +284,7 @@ function renderBarra() {
       data: { labels: ufs, datasets },
       options: {
         responsive: true,
+      maintainAspectRatio: false,
         plugins: {
           legend: { position: 'bottom', labels: { font: { size: 11 } } },
           title: { display: true, text: 'Indicadores comparados (normalizado)' + sufMod, font: { size: 13 } },
@@ -315,6 +316,7 @@ function renderBarra() {
     data: { labels: ufs, datasets: [{ label: m.label, data: valores, backgroundColor: cores, borderWidth: 1 }] },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         title: { display: true, text: ((CAT_INFO[indicador] || {}).nome || indicador) + sufMod, font: { size: 13 } },
@@ -385,6 +387,7 @@ function renderRadar() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       scales: { r: { min: 0, max: 1, ticks: { stepSize: 0.25, font: { size: 10 } } } },
       plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } }
     }

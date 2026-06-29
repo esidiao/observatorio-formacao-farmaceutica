@@ -51,8 +51,8 @@
   <button class="btn outline" onclick="trocarEixos()" style="font-size:0.8rem">⇄ Trocar</button>
 </div>
 <div id="corr-resumo" style="font-size:0.92rem;margin-bottom:10px"></div>
-<div style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:20px;margin-bottom:32px">
-  <canvas id="grafico-scatter" height="120"></canvas>
+<div class="chart-box">
+  <canvas id="grafico-scatter"></canvas>
 </div>
 
 <!-- Matriz -->
@@ -312,6 +312,7 @@ function renderScatter() {
     },
     options: {
       responsive: true,
+      maintainAspectRatio: false,
       plugins: {
         legend: { display: false },
         tooltip: { callbacks: { label: c => c.raw.uf ? `${NOMES_UF[c.raw.uf] || c.raw.uf}: ${nx} ${fmtIndicador(kx, c.raw.x)} · ${ny} ${fmtIndicador(ky, c.raw.y)}` : '' } }

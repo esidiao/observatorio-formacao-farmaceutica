@@ -1,4 +1,4 @@
-const CACHE = 'onff-v2';
+const CACHE = 'onff-v3';
 const BASE = '/observatorio-formacao-farmaceutica/';
 
 const PRECACHE = [
@@ -8,18 +8,21 @@ const PRECACHE = [
   BASE + 'static/js/app.js',
   BASE + 'static/js/glossario.js',
   BASE + 'static/manifest.json',
-  BASE + 'static/img/logo-mark.svg',
-  BASE + 'static/img/favicon.svg',
+  BASE + 'static/img/logo.png',
   BASE + 'static/img/icon-192.png',
   BASE + 'static/img/icon-512.png',
-  'https://cdn.jsdelivr.net/npm/chart.js@4/dist/chart.umd.min.js',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js',
-  'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
+  BASE + 'static/vendor/chart.umd.min.js',
+  BASE + 'static/vendor/leaflet/leaflet.js',
+  BASE + 'static/vendor/leaflet/leaflet.css'
 ];
 
 self.addEventListener('install', e => {
+  // Cache resiliente: cada recurso individualmente; uma falha não aborta a
+  // instalação do service worker (essencial para a elegibilidade de instalação).
   e.waitUntil(
-    caches.open(CACHE).then(c => c.addAll(PRECACHE)).then(() => self.skipWaiting())
+    caches.open(CACHE).then(c =>
+      Promise.allSettled(PRECACHE.map(u => c.add(u)))
+    ).then(() => self.skipWaiting())
   );
 });
 
