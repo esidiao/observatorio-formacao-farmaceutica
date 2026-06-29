@@ -101,8 +101,6 @@
     {% block breadcrumb %}{% endblock %}
   </span>
   <span class="nav-menu">
-    <a href="{{ depth }}index.html" style="color:var(--text-muted);font-size:0.82rem">Início</a>
-    <span class="sep">·</span>
     <a href="{{ depth }}comparar.html" style="color:var(--text-muted);font-size:0.82rem">Comparar UFs</a>
     <span class="sep">·</span>
     <a href="{{ depth }}correlacoes.html" style="color:var(--text-muted);font-size:0.82rem">Correlações</a>
@@ -130,8 +128,13 @@
     if (href.charAt(0) === '#') return;
     var alvo = href.split('/').pop().split('#')[0].split('?')[0];
     if (alvo === atual) {
-      var sep = a.previousElementSibling;
-      if (sep && sep.classList && sep.classList.contains('sep')) sep.remove();
+      var sepPrev = a.previousElementSibling;
+      if (sepPrev && sepPrev.classList && sepPrev.classList.contains('sep')) {
+        sepPrev.remove();
+      } else {
+        var sepNext = a.nextElementSibling;
+        if (sepNext && sepNext.classList && sepNext.classList.contains('sep')) sepNext.remove();
+      }
       a.remove();
     }
   });
