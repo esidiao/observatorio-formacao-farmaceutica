@@ -8,7 +8,7 @@
   <meta name="description" content="{% block meta_description %}Indicadores de acesso territorial, qualidade e cobertura assistencial da formação farmacêutica no Brasil — 27 estados, dados oficiais INEP, IBGE e Ministério da Saúde.{% endblock %}">
 
   <!-- Segurança: política de conteúdo e privacidade do referenciador -->
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.cartocdn.com https://servicodados.ibge.gov.br; connect-src 'self' https://servicodados.ibge.gov.br; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.basemaps.cartocdn.com https://*.cartocdn.com https://servicodados.ibge.gov.br; connect-src 'self' https://servicodados.ibge.gov.br https://abacus.jasoncameron.dev; font-src 'self'; object-src 'none'; base-uri 'self'; frame-ancestors 'none'; upgrade-insecure-requests">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <meta name="robots" content="index, follow">
   <meta name="theme-color" content="#15314F">
@@ -168,6 +168,13 @@
     <a href="{{ depth }}aviso-legal.html" style="color:#cdd8ea;text-decoration:underline">Direitos Autorais e Condições de Uso</a>
   </p>
   <p style="margin-top:6px;opacity:0.8">Dados primários de fontes oficiais públicas; o tratamento, os indicadores e a análise são obra autoral original.</p>
+  <p id="contador-visitas" class="contador-visitas" hidden>
+    <svg viewBox="0 0 24 24" width="14" height="14" aria-hidden="true" style="vertical-align:-2px">
+      <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    </svg>
+    <span id="contador-num">—</span> visitas
+  </p>
 </footer>
 
 <script>window._GEO_BASE = '{{ depth }}';</script>
@@ -181,6 +188,26 @@ if ('serviceWorker' in navigator) {
       .catch(function (e) { console.warn('SW registro falhou:', e); });
   });
 }
+/* Contador de visitas — serviço externo gratuito, sem cadastro nem cookies.
+   Incrementa uma vez por sessão do navegador; nas demais páginas apenas lê.
+   Falha em silêncio (o elemento fica oculto) se o serviço estiver indisponível. */
+(function () {
+  var API = 'https://abacus.jasoncameron.dev';
+  var NS = 'obs-farmaceutica-esidiao', KEY = 'site';
+  var jaContou = false;
+  try { jaContou = sessionStorage.getItem('onff_visita') === '1'; } catch (e) {}
+  var url = API + (jaContou ? '/get/' : '/hit/') + NS + '/' + KEY;
+  fetch(url, { cache: 'no-store' })
+    .then(function (r) { return r.ok ? r.json() : null; })
+    .then(function (d) {
+      if (!d || typeof d.value !== 'number') return;
+      try { sessionStorage.setItem('onff_visita', '1'); } catch (e) {}
+      var el = document.getElementById('contador-num');
+      var box = document.getElementById('contador-visitas');
+      if (el && box) { el.textContent = d.value.toLocaleString('pt-BR'); box.hidden = false; }
+    })
+    .catch(function () { /* silêncio: mantém oculto */ });
+})();
 </script>
 </body>
 </html>

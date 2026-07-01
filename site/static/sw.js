@@ -1,4 +1,4 @@
-const CACHE = 'onff-v3';
+const CACHE = 'onff-v4';
 const BASE = '/observatorio-formacao-farmaceutica/';
 
 const PRECACHE = [

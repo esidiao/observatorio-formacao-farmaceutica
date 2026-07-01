@@ -604,6 +604,13 @@ tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-a
   text-align: center;
   margin-top: 40px;
 }
+.contador-visitas {
+  margin-top: 10px;
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.45);
+  letter-spacing: 0.02em;
+}
+.contador-visitas #contador-num { font-weight: 600; color: rgba(255,255,255,0.6); }
 
 /* ============================================================
    RESPONSIVIDADE
