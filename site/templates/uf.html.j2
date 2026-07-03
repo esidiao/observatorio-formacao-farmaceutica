@@ -78,7 +78,7 @@
     <div class="kpi-valor">{% if d.IAF is not none %}{{ "%.1f"|format(d.IAF) }}{% else %}—{% endif %}</div>
     <div class="kpi-label">IAF ↑ (0–100)</div>
     {{ delta('IAF', 1) }}
-    <div class="kpi-fonte" title="Índice de Adequação Formativa. Fonte: ENADE {{ meta.versao_censo }}.">ENADE {{ meta.versao_censo }}</div>
+    <div class="kpi-fonte" title="Índice de Adequação Formativa. Fonte: ENADE {{ meta.fontes.enade.ano }}.">ENADE {{ meta.fontes.enade.ano }}</div>
   </div>
 
   <div class="kpi-card">
@@ -228,7 +228,7 @@
   <div class="kpi-card">
     <div class="kpi-valor">{{ "%.2f"|format(d.CC) }}</div>
     <div class="kpi-label">CC (Conc. do Curso)</div>
-    <div class="kpi-fonte" title="Conceito do Curso — média dos cursos avaliados no ENADE.">ENADE {{ meta.versao_censo }}</div>
+    <div class="kpi-fonte" title="Conceito do Curso — média dos cursos avaliados no ENADE.">ENADE {{ meta.fontes.enade.ano }}</div>
   </div>
   {% endif %}
 </div>
