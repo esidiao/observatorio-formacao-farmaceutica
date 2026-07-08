@@ -55,7 +55,7 @@
 <div class="update-bar" aria-live="polite">
   <span class="dot"></span>
   Última extração de dados: {{ meta.data_extracao }} &nbsp;·&nbsp;
-  Censo {{ meta.versao_censo }} / ENADE {{ meta.versao_censo }} / Farmácia Popular
+  Censo {{ meta.versao_censo }} / ENADE {{ meta.fontes.enade.ano }} / Farmácia Popular
   <span style="flex:1"></span>
   <button class="btn outline" onclick="exportarCSV(DADOS_UFS, 'observatorio_nacional.csv')" style="font-size:0.78rem;padding:5px 10px">
     ↓ CSV
