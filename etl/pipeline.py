@@ -40,15 +40,17 @@ def salvar_proveniencia(p):
 URL_CENSO = "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_{ano}.zip"
 URL_ENADE = "https://download.inep.gov.br/microdados/microdados_enade_{ano}.zip"
 
+# Farmácia Popular: o portal dados.gov.br passou a exigir chave de API registrada
+# (401 sem credencial), mas o mesmo conjunto é espelhado sem autenticação no
+# Portal de Dados Abertos do SUS. O arquivo traz co_ibge/no_municipio/sg_uf com
+# competência mensal — a granularidade de que o ICON precisa — e devolve
+# Last-Modified, que serve de sinal de frescor sem baixar os 430 KB inteiros.
+URL_FARMACIA_POPULAR = "https://demas-dados-abertos.s3.amazonaws.com/csv/sntpbih.csv.zip"
+
 # Fontes cuja publicação NÃO é verificável automaticamente hoje, com o motivo
 # concreto. Ficam declaradas aqui para que a limitação seja visível no relatório
 # semanal em vez de virar um silêncio que passa por "tudo em dia".
 FONTES_SEM_SONDAGEM = {
-    "farmacia_popular": (
-        "dados.gov.br passou a exigir chave de API registrada (HTTP 401 sem "
-        "credencial). Automatizar exige cadastrar uma chave e guardá-la como "
-        "secret do repositório."
-    ),
     "e_mec": (
         "e-MEC não expõe API pública nem URL de arquivo estável; o portal é "
         "renderizado por JavaScript e não há endpoint de consulta documentado."
@@ -95,6 +97,83 @@ def _sondar(url, tentativas=3, espera=4):
         if tentativa < tentativas - 1:
             time.sleep(espera)
     return None, ultimo
+
+
+def _sondar_modificacao(url, tentativas=3, espera=4):
+    """
+    Como `_sondar`, mas devolve também a data de Last-Modified:
+        (existe, detalhe, data)  com `data` sendo um `date` ou None.
+
+    Serve para fontes sem versionamento por ano no nome do arquivo, cuja única
+    pista de frescor é o cabeçalho HTTP. O corpo não é baixado (Range de 1 byte).
+    """
+    import email.utils
+    import requests
+
+    ultimo = ""
+    for tentativa in range(tentativas):
+        try:
+            r = requests.get(url, timeout=30, allow_redirects=True, stream=True,
+                             headers={"Range": "bytes=0-0"})
+            r.close()
+            if r.status_code in (200, 206):
+                cabecalho = r.headers.get("Last-Modified")
+                quando = None
+                if cabecalho:
+                    try:
+                        quando = email.utils.parsedate_to_datetime(cabecalho).date()
+                    except (TypeError, ValueError):
+                        quando = None
+                return True, str(r.status_code), quando
+            if r.status_code == 404:
+                return False, "404", None
+            ultimo = f"HTTP {r.status_code}"
+        except requests.RequestException as e:
+            ultimo = type(e).__name__
+        if tentativa < tentativas - 1:
+            time.sleep(espera)
+    return None, ultimo, None
+
+
+def _checar_por_modificacao(rotulo, url, data_registrada):
+    """
+    Verifica frescor por Last-Modified. Devolve (novidades, indeterminados).
+
+    Sem `data_registrada` na proveniência ou sem o cabeçalho na resposta, o
+    resultado é INDETERMINADO — não dá para afirmar que está em dia sem ter
+    contra o que comparar.
+    """
+    existe, detalhe, modificado = _sondar_modificacao(url)
+
+    if existe is None:
+        print(f"[CHECK] INDETERMINADO: {rotulo} não pôde ser verificado ({detalhe}).")
+        return [], [f"{rotulo} ({detalhe})"]
+    if not existe:
+        print(f"[CHECK] INDETERMINADO: {rotulo} não encontrado na URL conhecida "
+              f"({detalhe}) — a fonte pode ter sido movida.")
+        return [], [f"{rotulo} (URL respondeu {detalhe})"]
+    if modificado is None:
+        print(f"[CHECK] INDETERMINADO: {rotulo} respondeu {detalhe} mas sem Last-Modified.")
+        return [], [f"{rotulo} (sem Last-Modified)"]
+    if not data_registrada:
+        print(f"[CHECK] INDETERMINADO: {rotulo} publicado em {modificado}, "
+              f"mas a proveniência não registra a data da extração usada.")
+        return [], [f"{rotulo} (proveniência sem data de referência)"]
+
+    try:
+        referencia = date.fromisoformat(str(data_registrada))
+    except ValueError:
+        print(f"[CHECK] INDETERMINADO: data de referência inválida para {rotulo} "
+              f"({data_registrada!r}).")
+        return [], [f"{rotulo} (data de referência inválida)"]
+
+    if modificado > referencia:
+        print(f"[CHECK] NOVIDADE: {rotulo} atualizado em {modificado} "
+              f"(extração usada: {referencia}).")
+        return [f"{rotulo} (atualizado em {modificado})"], []
+
+    print(f"[CHECK] {rotulo}: sem atualização desde {referencia}.")
+    return [], []
 
 
 def _checar_serie_anual(rotulo, url_padrao, ano_atual, ano_limite):
@@ -151,6 +230,11 @@ def check_fontes(prov):
 
     ano_enade = (prov.get("fontes", {}).get("enade", {}) or {}).get("ano")
     n, i = _checar_serie_anual("ENADE", URL_ENADE, ano_enade, ano_limite)
+    novidades += n
+    indeterminados += i
+
+    n, i = _checar_por_modificacao("Farmácia Popular", URL_FARMACIA_POPULAR,
+                                   prov.get("data_extracao_fp"))
     novidades += n
     indeterminados += i
 

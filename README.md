@@ -85,17 +85,27 @@ A sondagem usa `GET` com `Range: bytes=0-0`, não `HEAD` — o host do INEP derr
 cerca de 1 em 3 requisições `HEAD`, enquanto o `GET` com faixa respondeu de forma
 consistente.
 
-| Fonte | Verificação | Observação |
-|-------|-------------|------------|
-| Censo da Educação Superior | ✅ automática | `microdados_censo_da_educacao_superior_{ano}.zip` |
-| ENADE (microdados) | ✅ automática | `microdados_enade_{ano}.zip` |
-| Farmácia Popular | ❌ manual | dados.gov.br passou a exigir chave de API registrada (401 sem credencial) |
+| Fonte | Verificação | Como |
+|-------|-------------|------|
+| Censo da Educação Superior | ✅ automática | série anual: `microdados_censo_da_educacao_superior_{ano}.zip` |
+| ENADE (microdados) | ✅ automática | série anual: `microdados_enade_{ano}.zip` |
+| Farmácia Popular | ✅ automática | `Last-Modified` do arquivo no Portal de Dados Abertos do SUS |
 | e-MEC | ❌ manual | sem API pública nem URL de arquivo estável; portal renderizado por JavaScript |
 
-As duas últimas são declaradas em `FONTES_SEM_SONDAGEM` e **impressas a cada execução**,
-para que a lacuna apareça no relatório em vez de passar por normalidade. Automatizar a
-Farmácia Popular exigiria registrar uma chave em dados.gov.br e guardá-la como secret do
-repositório — decisão pendente.
+Duas estratégias, conforme a fonte versione ou não pelo nome do arquivo:
+
+- **Série anual** — procura a edição seguinte à registrada em `_proveniencia.json`.
+- **Last-Modified** — compara a data do cabeçalho HTTP com a data da extração usada.
+  Sem o cabeçalho, ou sem data de referência na proveniência, o resultado é
+  *indeterminado*: não dá para afirmar frescor sem ter contra o que comparar.
+
+Sobre a Farmácia Popular: o portal `dados.gov.br` passou a exigir chave de API registrada
+(401 sem credencial), mas o **mesmo conjunto é espelhado sem autenticação** no Portal de
+Dados Abertos do SUS, com granularidade municipal (`co_ibge`, `no_municipio`, `sg_uf`) e
+competência mensal. A verificação usa esse espelho — nenhuma credencial é necessária.
+
+O e-MEC segue em `FONTES_SEM_SONDAGEM` e é **impresso a cada execução**, para que a lacuna
+apareça no relatório em vez de passar por normalidade.
 
 ## Princípio inegociável
 

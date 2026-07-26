@@ -41,7 +41,7 @@ class SondaFalsa:
         return self.padrao
 
 
-def rodar(prov, sonda, ano_hoje=2026):
+def rodar(prov, sonda, ano_hoje=2026, sonda_modificacao=None):
     """Executa check_fontes com rede e data controladas; captura saída e outputs."""
     import io
     import contextlib
@@ -52,11 +52,17 @@ def rodar(prov, sonda, ano_hoje=2026):
         def today(cls):
             return date_real(ano_hoje, 7, 26)
 
+    # Por padrão a fonte por Last-Modified não traz novidade, para que cada teste
+    # exercite só o eixo que lhe interessa.
+    if sonda_modificacao is None:
+        def sonda_modificacao(url, **kwargs):
+            return True, "206", date_real(2024, 1, 1)
+
     outputs = {}
-    original_sondar = pipeline._sondar
-    original_date = pipeline.date
-    original_output = pipeline._github_output
+    originais = (pipeline._sondar, pipeline._sondar_modificacao,
+                 pipeline.date, pipeline._github_output)
     pipeline._sondar = sonda
+    pipeline._sondar_modificacao = sonda_modificacao
     pipeline.date = DataFalsa
     pipeline._github_output = lambda k, v: outputs.__setitem__(k, v)
     try:
@@ -65,12 +71,15 @@ def rodar(prov, sonda, ano_hoje=2026):
             resultado = pipeline.check_fontes(prov)
         return resultado, buffer.getvalue(), outputs
     finally:
-        pipeline._sondar = original_sondar
-        pipeline.date = original_date
-        pipeline._github_output = original_output
+        (pipeline._sondar, pipeline._sondar_modificacao,
+         pipeline.date, pipeline._github_output) = originais
 
 
-PROV = {"versao_censo": "2024", "fontes": {"enade": {"ano": 2023}}}
+PROV = {
+    "versao_censo": "2024",
+    "data_extracao_fp": "2024-12-01",
+    "fontes": {"enade": {"ano": 2023}},
+}
 
 
 def test_nada_novo():
@@ -138,10 +147,73 @@ def test_fontes_sem_sondagem_sao_declaradas():
                f"'{fonte}' deveria aparecer no relatório como não verificável")
 
 
+# ── Fonte verificada por Last-Modified (Farmácia Popular) ────────────────────
+
+from datetime import date as _date  # noqa: E402
+
+
+def test_last_modified_mais_novo_e_novidade():
+    def sonda_mod(url, **kwargs):
+        return True, "206", _date(2026, 7, 13)
+
+    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
+    checar(novo is True, "arquivo mais novo que a extração deveria ser novidade")
+    checar("Farmácia Popular" in outputs.get("fontes_novas_detalhe", ""),
+           "o detalhe deveria nomear a Farmácia Popular")
+
+
+def test_last_modified_mais_antigo_nao_e_novidade():
+    def sonda_mod(url, **kwargs):
+        return True, "206", _date(2024, 6, 1)
+
+    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
+    checar(novo is False, "arquivo anterior à extração não é novidade")
+    checar("verificacao_indeterminada" not in outputs,
+           "comparação bem-sucedida não é indeterminada")
+
+
+def test_sem_last_modified_e_indeterminado():
+    """Sem cabeçalho não há como afirmar frescor — não pode virar 'em dia'."""
+    def sonda_mod(url, **kwargs):
+        return True, "206", None
+
+    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
+    checar(novo is False, "ausência de Last-Modified não é novidade")
+    checar(outputs.get("verificacao_indeterminada") == "true",
+           "sem Last-Modified o resultado DEVE ser indeterminado")
+
+
+def test_url_movida_e_indeterminado():
+    """404 aqui significa 'a fonte mudou de lugar', não 'não há nada novo'."""
+    def sonda_mod(url, **kwargs):
+        return False, "404", None
+
+    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
+    checar(outputs.get("verificacao_indeterminada") == "true",
+           "URL que sumiu deve ser sinalizada, não tratada como ausência de novidade")
+    checar("movida" in saida or "movido" in saida,
+           "o relatório deveria sugerir que a fonte pode ter sido movida")
+
+
+def test_proveniencia_sem_data_e_indeterminado():
+    def sonda_mod(url, **kwargs):
+        return True, "206", _date(2026, 7, 13)
+
+    prov_sem_data = {"versao_censo": "2024", "fontes": {"enade": {"ano": 2023}}}
+    novo, _, outputs = rodar(prov_sem_data, SondaFalsa({}), sonda_modificacao=sonda_mod)
+    checar(outputs.get("verificacao_indeterminada") == "true",
+           "sem data de referência na proveniência não dá para afirmar frescor")
+
+
 def main():
     for teste in (test_nada_novo, test_censo_novo_detectado, test_enade_novo_detectado,
                   test_falha_de_rede_nao_vira_sem_novidade, test_nao_sonda_o_ano_corrente,
-                  test_fontes_sem_sondagem_sao_declaradas):
+                  test_fontes_sem_sondagem_sao_declaradas,
+                  test_last_modified_mais_novo_e_novidade,
+                  test_last_modified_mais_antigo_nao_e_novidade,
+                  test_sem_last_modified_e_indeterminado,
+                  test_url_movida_e_indeterminado,
+                  test_proveniencia_sem_data_e_indeterminado):
         antes = len(falhas)
         teste()
         print(f"  [{'OK' if len(falhas) == antes else 'FALHOU'}] {teste.__name__}")
