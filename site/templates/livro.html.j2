@@ -1,0 +1,290 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Formação Farmacêutica no Brasil (livro) — Observatório Nacional{% endblock %}
+
+{% block meta_description %}"Formação Farmacêutica no Brasil", de Edson Sidião de Souza Júnior: o diagnóstico completo do ensino farmacêutico nacional que deu origem a este Observatório. 180 páginas, dados oficiais das 27 UFs. Disponível na Amazon e na Afluente.{% endblock %}
+
+{% block breadcrumb %}
+<span class="sep">›</span>
+<span class="active">O Livro</span>
+{% endblock %}
+
+{% block livro_banner %}{% endblock %}
+
+{% block structured_data %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Book",
+  "name": "Formação Farmacêutica no Brasil",
+  "author": { "@id": "{{ meta.site_url }}/#autor" },
+  "isbn": "978-65-6200-004-7",
+  "numberOfPages": "180",
+  "inLanguage": "pt-BR",
+  "publisher": { "@type": "Organization", "name": "Ocabooks" },
+  "bookFormat": "https://schema.org/Paperback",
+  "offers": [
+    { "@type": "Offer", "url": "https://afluente.art/produtos/formacao-farmaceutica-no-brasil/", "priceCurrency": "BRL", "price": "99.00", "availability": "https://schema.org/InStock" },
+    { "@type": "Offer", "url": "https://www.amazon.com.br/dp/B0HB8ZC5ZZ", "priceCurrency": "BRL" }
+  ]
+}
+</script>
+{% endblock %}
+
+{% block head_extra %}
+<style>
+.livro-hero {
+  display: flex;
+  gap: 44px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 28px 0 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 32px;
+}
+.livro-capa {
+  flex-shrink: 0;
+  width: 240px;
+  border-radius: 6px;
+  box-shadow: 0 14px 34px rgba(22,48,79,0.28);
+  overflow: hidden;
+}
+.livro-capa img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+.livro-info { flex: 1; min-width: 280px; }
+.livro-info .hero-eyebrow { margin-bottom: 12px; }
+.livro-info h1 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--navy);
+  margin-bottom: 14px;
+}
+.livro-info .subtitulo {
+  font-size: 1rem;
+  color: var(--blue);
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+.livro-info .sinopse {
+  font-size: 0.95rem;
+  line-height: 1.7;
+  color: var(--text);
+  max-width: 62ch;
+  margin-bottom: 22px;
+  text-align: justify;
+}
+.livro-ficha {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px 32px;
+  margin-bottom: 24px;
+}
+.ficha-item { text-align: left; }
+.ficha-item .num {
+  font-family: var(--font-serif);
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: var(--navy);
+  display: block;
+  line-height: 1;
+}
+.ficha-item .leg {
+  font-size: 0.7rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+  display: block;
+}
+
+.compra-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 18px;
+  margin-bottom: 36px;
+}
+.compra-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 22px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.compra-card.destaque {
+  border-color: var(--accent);
+  box-shadow: 0 6px 20px rgba(14,124,102,0.10);
+}
+.compra-loja {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 700;
+  color: var(--accent);
+}
+.compra-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--navy);
+  margin: 0;
+}
+.compra-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+  margin: 0;
+}
+.compra-preco {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--navy);
+  font-family: var(--font-serif);
+}
+.compra-preco small {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-family: var(--font-sans, inherit);
+}
+.compra-card .btn { align-self: flex-start; margin-top: 4px; }
+
+.motivos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin-bottom: 32px;
+}
+.motivo-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--gold, #B07D22);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+.motivo-card h4 {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 6px;
+}
+.motivo-card p {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+
+<div class="livro-hero">
+  <div class="livro-capa">
+    <img src="{{ depth }}static/img/livro-capa.webp" alt="Capa do livro Formação Farmacêutica no Brasil, de Dr. Edson Sidião de Souza Júnior — Ocabooks" width="480" height="480">
+  </div>
+
+  <div class="livro-info">
+    <p class="hero-eyebrow">O livro por trás deste observatório</p>
+    <h1>Formação Farmacêutica no Brasil</h1>
+    <p class="subtitulo">
+      O diagnóstico que originou os indicadores que você está explorando agora.
+    </p>
+    <p class="sinopse">
+      Este Observatório nasceu da pesquisa reunida neste livro. A obra apresenta um
+      diagnóstico abrangente do ensino farmacêutico nacional, compilando dados oficiais
+      e indicadores inéditos das 27 unidades federativas — expansão do ensino a distância,
+      disparidades regionais, qualidade curricular, cobertura assistencial e vinculação
+      com o SUS. O argumento central: o desafio não está na quantidade de vagas, mas na
+      sua distribuição equilibrada e na qualidade da formação. Inclui análises estaduais,
+      comparações internacionais e propostas de direcionamento para instituições de ensino
+      e órgãos reguladores.
+    </p>
+
+    <div class="livro-ficha">
+      <div class="ficha-item"><span class="num">180</span><span class="leg">Páginas</span></div>
+      <div class="ficha-item"><span class="num">27</span><span class="leg">Estados analisados</span></div>
+      <div class="ficha-item"><span class="num">14×21</span><span class="leg">Formato (cm)</span></div>
+      <div class="ficha-item"><span class="num">2025</span><span class="leg">Ocabooks</span></div>
+    </div>
+
+    <div class="hero-cta">
+      <a class="btn" href="https://afluente.art/produtos/formacao-farmaceutica-no-brasil/" target="_blank" rel="noopener">Comprar agora — R$ 99,00</a>
+      <a class="btn outline" href="#comprar">Ver todas as lojas</a>
+    </div>
+  </div>
+</div>
+
+<h2 class="section-title" id="comprar">Onde comprar</h2>
+<div class="compra-grid">
+  <div class="compra-card destaque">
+    <span class="compra-loja">Loja oficial · direto do autor</span>
+    <h3>Afluente</h3>
+    <p class="compra-preco">R$ 99,00 <small>à vista</small></p>
+    <p>Pix, boleto ou cartão em até 4x sem juros. Compra direta, sem intermediários — o
+      canal que mais apoia a continuidade desta pesquisa e deste Observatório.</p>
+    <a class="btn" href="https://afluente.art/produtos/formacao-farmaceutica-no-brasil/" target="_blank" rel="noopener">
+      Comprar na Afluente ↗
+    </a>
+  </div>
+  <div class="compra-card">
+    <span class="compra-loja">Marketplace</span>
+    <h3>Amazon</h3>
+    <p class="compra-preco">Ver preço na Amazon</p>
+    <p>Para quem já compra na Amazon: entrega rastreada, frete Prime (quando elegível) e
+      a conveniência do checkout que você já conhece.</p>
+    <a class="btn outline" href="https://www.amazon.com.br/dp/B0HB8ZC5ZZ" target="_blank" rel="noopener">
+      Comprar na Amazon ↗
+    </a>
+  </div>
+</div>
+
+<h2 class="section-title">Por que ler este livro</h2>
+<div class="motivos-grid">
+  <div class="motivo-card">
+    <h4>Vá além dos gráficos</h4>
+    <p>Os indicadores ICT, IAF e ICON deste Observatório são recortes de dados. O livro
+      traz a análise, o contexto histórico e os porquês por trás de cada número.</p>
+  </div>
+  <div class="motivo-card">
+    <h4>Panorama completo das 27 UFs</h4>
+    <p>Análises estaduais detalhadas — não apenas o dado bruto, mas a interpretação de
+      cada realidade regional, incluindo os desertos farmacêuticos.</p>
+  </div>
+  <div class="motivo-card">
+    <h4>Expansão do EaD sob análise crítica</h4>
+    <p>Um exame aprofundado do crescimento acelerado da modalidade a distância e seus
+      efeitos sobre a qualidade e a equidade da formação.</p>
+  </div>
+  <div class="motivo-card">
+    <h4>Comparações internacionais</h4>
+    <p>O cenário brasileiro contextualizado frente a outros países, com propostas
+      concretas de direcionamento para instituições e órgãos reguladores.</p>
+  </div>
+  <div class="motivo-card">
+    <h4>Autoridade de quem avalia o sistema</h4>
+    <p>Escrito por avaliador <em>ad hoc</em> do INEP/MEC com mais de 15 anos de atuação
+      em autorização e reconhecimento de cursos de Farmácia em todo o país.</p>
+  </div>
+  <div class="motivo-card">
+    <h4>Referência para gestores e pesquisadores</h4>
+    <p>Material de apoio para coordenadores de curso, NDEs, órgãos reguladores e
+      pesquisadores da educação superior em saúde.</p>
+  </div>
+</div>
+
+<h2 class="section-title">Sobre o autor</h2>
+<p style="font-size:0.9rem;line-height:1.7;color:var(--text-muted);max-width:70ch;margin-bottom:14px">
+  Edson Sidião de Souza Júnior é Farmacêutico (UFG), Mestre e Doutor em Medicina Tropical,
+  avaliador <em>ad hoc</em> do INEP/MEC há mais de 15 anos e responsável por este
+  Observatório. Conheça sua trajetória completa e os demais trabalhos publicados.
+</p>
+<p style="margin-bottom:32px">
+  <a class="btn outline" href="{{ depth }}autor.html">Ver perfil completo do autor →</a>
+</p>
+
+{% endblock %}
