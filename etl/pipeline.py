@@ -36,26 +36,42 @@ def salvar_proveniencia(p):
         json.dump(p, f, ensure_ascii=False, indent=2)
 
 
+URL_CENSO = "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_{ano}.zip"
+
+
 def check_fontes(prov):
     """
-    Verifica se há versões novas nas fontes.
-    Por ora, compara o ano do Censo registrado com o ano atual.
-    Pode ser expandido para verificar hash/tamanho do arquivo.
+    Verifica se há versão nova do Censo. O candidato (ano atual - 1) só conta
+    como "nova versão" se o arquivo estiver de fato publicado no INEP (HTTP 200) —
+    nunca por suposição de calendário, para não disparar alertas meses antes da
+    publicação real (que costuma ocorrer em outubro).
     """
+    import requests
+
     versao_atual = prov.get("versao_censo", "0")
-    ano_atual = date.today().year - 1  # INEP publica o Censo do ano anterior
-    mudou = str(versao_atual) != str(ano_atual)
+    ano_candidato = date.today().year - 1  # INEP publica o Censo do ano anterior
+    mudou = False
+
+    if str(versao_atual) != str(ano_candidato):
+        url = URL_CENSO.format(ano=ano_candidato)
+        try:
+            r = requests.head(url, timeout=20, allow_redirects=True)
+            mudou = r.status_code == 200
+        except requests.RequestException as e:
+            print(f"[CHECK] Não foi possível verificar {url}: {e}")
+
     if mudou:
-        print(f"[CHECK] Nova versão disponível: Censo {ano_atual} (atual: {versao_atual})")
+        print(f"[CHECK] Nova versão disponível: Censo {ano_candidato} (atual: {versao_atual})")
         # GitHub Actions: exportar output
-        if Path("/tmp/github_output").exists() or "GITHUB_OUTPUT" in __import__("os").environ:
+        if "GITHUB_OUTPUT" in __import__("os").environ:
             import os
             gho = os.environ.get("GITHUB_OUTPUT", "")
             if gho:
                 with open(gho, "a") as f:
                     f.write("fontes_novas=true\n")
     else:
-        print(f"[CHECK] Fontes em dia (Censo {versao_atual}). Nenhuma ação necessária.")
+        print(f"[CHECK] Fontes em dia (Censo {versao_atual}). "
+              f"Censo {ano_candidato} ainda não publicado ou já extraído.")
     return mudou
 
 

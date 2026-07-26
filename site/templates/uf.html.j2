@@ -384,7 +384,7 @@
     </thead>
     <tbody>
       {% for mun in municipios_com_oferta %}
-      <tr {% if tem_drill %}onclick="window.location='{{ depth }}municipio/{{ sigla }}/{{ mun | upper | replace(' ','_') | replace('/','_') }}.html'" style="cursor:pointer"{% endif %}>
+      <tr {% if tem_drill %}onclick="window.location='{{ depth }}municipio/{{ sigla }}/{{ mun | upper | replace(' ','_') | replace('/','_') | replace("'", "\\'") }}.html'" style="cursor:pointer"{% endif %}>
         <td style="color:var(--text-muted);width:40px">{{ loop.index }}</td>
         <td>
           {% if tem_drill %}

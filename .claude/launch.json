@@ -5,7 +5,8 @@
       "name": "observatorio",
       "runtimeExecutable": "C:\\Users\\User\\AppData\\Local\\Programs\\Python\\Python312\\python.exe",
       "runtimeArgs": ["-m", "http.server", "7373", "--directory", "site/dist"],
-      "port": 7373
+      "port": 7373,
+      "autoPort": false
     }
   ]
 }
