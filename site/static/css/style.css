@@ -376,15 +376,15 @@ main { padding: 24px 32px; max-width: 1280px; margin: 0 auto; }
 .gloss-card:hover { box-shadow: 0 3px 12px rgba(22,48,79,0.08); }
 .gloss-card:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; }
 
-.gloss-head { display: flex; align-items: baseline; gap: 8px; }
+.gloss-head { display: flex; align-items: baseline; gap: 8px; flex-wrap: wrap; }
 .gloss-sigla {
   font-family: var(--font-mono);
   font-weight: 700;
   color: var(--navy);
   font-size: 0.92rem;
-  white-space: nowrap;
+  overflow-wrap: break-word;
 }
-.gloss-nome { flex: 1; font-size: 0.82rem; color: var(--text-muted); }
+.gloss-nome { flex: 1; min-width: 0; font-size: 0.82rem; color: var(--text-muted); overflow-wrap: break-word; }
 .gloss-toggle {
   font-size: 1.1rem;
   color: var(--blue);
