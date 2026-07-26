@@ -46,6 +46,9 @@ jobs:
       - name: "🧪 Testes de integridade"
         run: python tests/test_validacao.py
 
+      - name: "🛰️ Testes do verificador de fontes"
+        run: python tests/test_check_fontes.py
+
       - name: "🏗️ Gerar site estático"
         run: python site/build.py
 
@@ -103,12 +106,23 @@ jobs:
       - name: Criar issue se fontes atualizadas
         if: steps.check.outputs.fontes_novas == 'true'
         uses: actions/github-script@v9
+        env:
+          DETALHE: ${{ steps.check.outputs.fontes_novas_detalhe }}
         with:
           script: |
+            const detalhe = process.env.DETALHE || 'edição nova detectada';
             github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: '🔄 Fontes atualizadas — re-extração necessária',
-              body: 'O pipeline detectou novas versões dos dados. Rode `python etl/pipeline.py` para atualizar.',
+              title: `🔄 Fonte atualizada — ${detalhe}`,
+              body: [
+                `O verificador semanal encontrou: **${detalhe}**.`,
+                '',
+                'Para atualizar, baixe os microdados em',
+                'https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados',
+                'e rode `python etl/pipeline.py --censo <caminho do CSV>`.',
+                '',
+                'O pipeline só publica se o portão de qualidade e os testes passarem.',
+              ].join('\n'),
               labels: ['atualização-dados']
             })

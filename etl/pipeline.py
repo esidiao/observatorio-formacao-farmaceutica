@@ -38,6 +38,24 @@ def salvar_proveniencia(p):
 
 
 URL_CENSO = "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_{ano}.zip"
+URL_ENADE = "https://download.inep.gov.br/microdados/microdados_enade_{ano}.zip"
+
+# Farmácia Popular: o portal dados.gov.br passou a exigir chave de API registrada
+# (401 sem credencial), mas o mesmo conjunto é espelhado sem autenticação no
+# Portal de Dados Abertos do SUS. O arquivo traz co_ibge/no_municipio/sg_uf com
+# competência mensal — a granularidade de que o ICON precisa — e devolve
+# Last-Modified, que serve de sinal de frescor sem baixar os 430 KB inteiros.
+URL_FARMACIA_POPULAR = "https://demas-dados-abertos.s3.amazonaws.com/csv/sntpbih.csv.zip"
+
+# Fontes cuja publicação NÃO é verificável automaticamente hoje, com o motivo
+# concreto. Ficam declaradas aqui para que a limitação seja visível no relatório
+# semanal em vez de virar um silêncio que passa por "tudo em dia".
+FONTES_SEM_SONDAGEM = {
+    "e_mec": (
+        "e-MEC não expõe API pública nem URL de arquivo estável; o portal é "
+        "renderizado por JavaScript e não há endpoint de consulta documentado."
+    ),
+}
 
 
 def _github_output(chave, valor):
@@ -81,41 +99,163 @@ def _sondar(url, tentativas=3, espera=4):
     return None, ultimo
 
 
-def check_fontes(prov):
+def _sondar_modificacao(url, tentativas=3, espera=4):
     """
-    Verifica se há versão nova do Censo. O candidato (ano atual - 1) só conta como
-    "nova versão" se o arquivo estiver de fato publicado no INEP — nunca por
-    suposição de calendário, para não alertar meses antes da publicação real
-    (que costuma ocorrer em outubro).
+    Como `_sondar`, mas devolve também a data de Last-Modified:
+        (existe, detalhe, data)  com `data` sendo um `date` ou None.
 
-    Distingue três estados. "Não consegui verificar" NÃO é o mesmo que "não há
-    novidade": um erro de rede silencioso faria o alerta semanal nunca disparar.
+    Serve para fontes sem versionamento por ano no nome do arquivo, cuja única
+    pista de frescor é o cabeçalho HTTP. O corpo não é baixado (Range de 1 byte).
     """
-    versao_atual = prov.get("versao_censo", "0")
-    ano_candidato = date.today().year - 1  # INEP publica o Censo do ano anterior
+    import email.utils
+    import requests
 
-    if str(versao_atual) == str(ano_candidato):
-        print(f"[CHECK] Fontes em dia (Censo {versao_atual} já extraído).")
-        return False
+    ultimo = ""
+    for tentativa in range(tentativas):
+        try:
+            r = requests.get(url, timeout=30, allow_redirects=True, stream=True,
+                             headers={"Range": "bytes=0-0"})
+            r.close()
+            if r.status_code in (200, 206):
+                cabecalho = r.headers.get("Last-Modified")
+                quando = None
+                if cabecalho:
+                    try:
+                        quando = email.utils.parsedate_to_datetime(cabecalho).date()
+                    except (TypeError, ValueError):
+                        quando = None
+                return True, str(r.status_code), quando
+            if r.status_code == 404:
+                return False, "404", None
+            ultimo = f"HTTP {r.status_code}"
+        except requests.RequestException as e:
+            ultimo = type(e).__name__
+        if tentativa < tentativas - 1:
+            time.sleep(espera)
+    return None, ultimo, None
 
-    url = URL_CENSO.format(ano=ano_candidato)
-    existe, detalhe = _sondar(url)
+
+def _checar_por_modificacao(rotulo, url, data_registrada):
+    """
+    Verifica frescor por Last-Modified. Devolve (novidades, indeterminados).
+
+    Sem `data_registrada` na proveniência ou sem o cabeçalho na resposta, o
+    resultado é INDETERMINADO — não dá para afirmar que está em dia sem ter
+    contra o que comparar.
+    """
+    existe, detalhe, modificado = _sondar_modificacao(url)
 
     if existe is None:
-        print(f"[CHECK] INDETERMINADO: não foi possível verificar {url} ({detalhe}).")
-        print(f"::warning::Verificação de fontes inconclusiva — o INEP não respondeu "
-              f"após 3 tentativas ({detalhe}). O Censo {ano_candidato} pode ter sido "
-              f"publicado sem que este alerta detectasse. Confira manualmente.")
-        _github_output("verificacao_indeterminada", "true")
-        return False
+        print(f"[CHECK] INDETERMINADO: {rotulo} não pôde ser verificado ({detalhe}).")
+        return [], [f"{rotulo} ({detalhe})"]
+    if not existe:
+        print(f"[CHECK] INDETERMINADO: {rotulo} não encontrado na URL conhecida "
+              f"({detalhe}) — a fonte pode ter sido movida.")
+        return [], [f"{rotulo} (URL respondeu {detalhe})"]
+    if modificado is None:
+        print(f"[CHECK] INDETERMINADO: {rotulo} respondeu {detalhe} mas sem Last-Modified.")
+        return [], [f"{rotulo} (sem Last-Modified)"]
+    if not data_registrada:
+        print(f"[CHECK] INDETERMINADO: {rotulo} publicado em {modificado}, "
+              f"mas a proveniência não registra a data da extração usada.")
+        return [], [f"{rotulo} (proveniência sem data de referência)"]
 
-    if existe:
-        print(f"[CHECK] Nova versão disponível: Censo {ano_candidato} (atual: {versao_atual})")
+    try:
+        referencia = date.fromisoformat(str(data_registrada))
+    except ValueError:
+        print(f"[CHECK] INDETERMINADO: data de referência inválida para {rotulo} "
+              f"({data_registrada!r}).")
+        return [], [f"{rotulo} (data de referência inválida)"]
+
+    if modificado > referencia:
+        print(f"[CHECK] NOVIDADE: {rotulo} atualizado em {modificado} "
+              f"(extração usada: {referencia}).")
+        return [f"{rotulo} (atualizado em {modificado})"], []
+
+    print(f"[CHECK] {rotulo}: sem atualização desde {referencia}.")
+    return [], []
+
+
+def _checar_serie_anual(rotulo, url_padrao, ano_atual, ano_limite):
+    """
+    Procura uma edição mais recente que `ano_atual` numa fonte cujo arquivo segue
+    padrão anual de URL. Varre do ano seguinte ao registrado até `ano_limite`.
+
+    Devolve (novidades, indeterminados) — listas de textos para o relatório.
+    Um ano que não pôde ser verificado entra em `indeterminados`, nunca é
+    confundido com "não existe".
+    """
+    novidades, indeterminados = [], []
+    if not ano_atual:
+        return novidades, indeterminados
+
+    for ano in range(int(ano_atual) + 1, ano_limite + 1):
+        existe, detalhe = _sondar(url_padrao.format(ano=ano))
+        if existe:
+            novidades.append(f"{rotulo} {ano}")
+            print(f"[CHECK] NOVIDADE: {rotulo} {ano} publicado (atual: {ano_atual}).")
+        elif existe is None:
+            indeterminados.append(f"{rotulo} {ano} ({detalhe})")
+            print(f"[CHECK] INDETERMINADO: {rotulo} {ano} não pôde ser verificado ({detalhe}).")
+        else:
+            print(f"[CHECK] {rotulo} {ano}: confirmadamente não publicado (404).")
+    return novidades, indeterminados
+
+
+def check_fontes(prov):
+    """
+    Verifica se há edição nova das fontes com URL previsível — Censo e ENADE.
+
+    Uma edição só conta como publicada se o arquivo responder de fato no INEP,
+    nunca por suposição de calendário: o Censo costuma sair em outubro, e alertar
+    em janeiro produziria um alarme falso a cada virada de ano.
+
+    Três estados por fonte, e "não consegui verificar" jamais vira "sem novidade":
+    um erro de rede silencioso faria o alerta semanal nunca disparar.
+
+    As fontes sem URL previsível (Farmácia Popular, e-MEC) não são sondadas e são
+    listadas explicitamente ao final — a lacuna aparece no relatório em vez de
+    passar por normalidade.
+    """
+    # Nenhuma das duas fontes publica a edição do próprio ano: o Censo de N sai
+    # por volta de outubro de N+1 e o ENADE de N por volta de abril de N+2.
+    # Sondar o ano corrente só geraria requisições garantidamente 404.
+    ano_limite = date.today().year - 1
+    novidades, indeterminados = [], []
+
+    n, i = _checar_serie_anual("Censo", URL_CENSO,
+                               prov.get("versao_censo"), ano_limite)
+    novidades += n
+    indeterminados += i
+
+    ano_enade = (prov.get("fontes", {}).get("enade", {}) or {}).get("ano")
+    n, i = _checar_serie_anual("ENADE", URL_ENADE, ano_enade, ano_limite)
+    novidades += n
+    indeterminados += i
+
+    n, i = _checar_por_modificacao("Farmácia Popular", URL_FARMACIA_POPULAR,
+                                   prov.get("data_extracao_fp"))
+    novidades += n
+    indeterminados += i
+
+    if FONTES_SEM_SONDAGEM:
+        print("[CHECK] Sem verificação automática (conferir manualmente):")
+        for fonte, motivo in FONTES_SEM_SONDAGEM.items():
+            print(f"         · {fonte}: {motivo}")
+
+    if indeterminados:
+        print(f"::warning::Verificação inconclusiva para: {'; '.join(indeterminados)}. "
+              f"Pode haver edição nova sem que este alerta detecte — confira manualmente.")
+        _github_output("verificacao_indeterminada", "true")
+
+    if novidades:
+        print(f"[CHECK] Novidades: {', '.join(novidades)}")
         _github_output("fontes_novas", "true")
+        _github_output("fontes_novas_detalhe", ", ".join(novidades))
         return True
 
-    print(f"[CHECK] Fontes em dia (Censo {versao_atual}). "
-          f"Censo {ano_candidato} confirmadamente ainda não publicado (404).")
+    if not indeterminados:
+        print("[CHECK] Fontes em dia — nenhuma edição nova nas fontes sondáveis.")
     return False
 
 

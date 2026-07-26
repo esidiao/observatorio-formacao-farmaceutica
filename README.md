@@ -39,7 +39,8 @@ python etl/indices_observatorio.py --autoteste
 ### Todos os testes
 
 ```bash
-python tests/test_validacao.py
+python tests/test_validacao.py      # integridade dos dados publicados
+python tests/test_check_fontes.py   # verificador de frescor (rede mockada)
 # ou: python -m pytest tests/ -v
 ```
 
@@ -62,8 +63,49 @@ python etl/pipeline.py --censo caminho/MICRODADOS_CADASTRO_CURSOS_AAAA.CSV
 O arquivo `.github/workflows/ci.yml` define:
 
 - **Push/PR**: sempre roda portão GO + testes + build
-- **Segunda às 06h UTC** (`schedule`): roda `pipeline.py --check-only` e abre issue se detecta nova versão do Censo
+- **Segunda às 06h UTC** (`schedule`): roda `pipeline.py --check-only` e abre issue se detecta edição nova
 - **`workflow_dispatch`**: permite disparar manualmente com opção de forçar re-extração
+
+## Verificação de frescor das fontes
+
+`pipeline.py --check-only` sonda as fontes cujo arquivo segue padrão anual de URL e
+distingue **três estados** por edição:
+
+| Estado | Significado | Efeito |
+|--------|-------------|--------|
+| 200 / 206 | edição publicada | abre issue de re-extração |
+| 404 | confirmadamente não publicada | segue em silêncio |
+| erro de rede | **indeterminado** | emite `::warning::` no resumo da execução |
+
+A distinção é o ponto sensível: tratar falha de rede como "sem novidade" silencia o
+alerta por completo, e foi o que aconteceu em duas versões anteriores.
+`tests/test_check_fontes.py` trava esse comportamento.
+
+A sondagem usa `GET` com `Range: bytes=0-0`, não `HEAD` — o host do INEP derruba
+cerca de 1 em 3 requisições `HEAD`, enquanto o `GET` com faixa respondeu de forma
+consistente.
+
+| Fonte | Verificação | Como |
+|-------|-------------|------|
+| Censo da Educação Superior | ✅ automática | série anual: `microdados_censo_da_educacao_superior_{ano}.zip` |
+| ENADE (microdados) | ✅ automática | série anual: `microdados_enade_{ano}.zip` |
+| Farmácia Popular | ✅ automática | `Last-Modified` do arquivo no Portal de Dados Abertos do SUS |
+| e-MEC | ❌ manual | sem API pública nem URL de arquivo estável; portal renderizado por JavaScript |
+
+Duas estratégias, conforme a fonte versione ou não pelo nome do arquivo:
+
+- **Série anual** — procura a edição seguinte à registrada em `_proveniencia.json`.
+- **Last-Modified** — compara a data do cabeçalho HTTP com a data da extração usada.
+  Sem o cabeçalho, ou sem data de referência na proveniência, o resultado é
+  *indeterminado*: não dá para afirmar frescor sem ter contra o que comparar.
+
+Sobre a Farmácia Popular: o portal `dados.gov.br` passou a exigir chave de API registrada
+(401 sem credencial), mas o **mesmo conjunto é espelhado sem autenticação** no Portal de
+Dados Abertos do SUS, com granularidade municipal (`co_ibge`, `no_municipio`, `sg_uf`) e
+competência mensal. A verificação usa esse espelho — nenhuma credencial é necessária.
+
+O e-MEC segue em `FONTES_SEM_SONDAGEM` e é **impresso a cada execução**, para que a lacuna
+apareça no relatório em vez de passar por normalidade.
 
 ## Princípio inegociável
 
