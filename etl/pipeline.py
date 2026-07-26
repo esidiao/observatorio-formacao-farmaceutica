@@ -16,6 +16,7 @@ import argparse
 import json
 import subprocess
 import sys
+import time
 from datetime import date
 from pathlib import Path
 
@@ -39,40 +40,83 @@ def salvar_proveniencia(p):
 URL_CENSO = "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_{ano}.zip"
 
 
-def check_fontes(prov):
+def _github_output(chave, valor):
+    """Exporta um output para o GitHub Actions, se estivermos rodando nele."""
+    import os
+    caminho = os.environ.get("GITHUB_OUTPUT", "")
+    if caminho:
+        with open(caminho, "a") as f:
+            f.write(f"{chave}={valor}\n")
+
+
+def _sondar(url, tentativas=3, espera=4):
     """
-    Verifica se há versão nova do Censo. O candidato (ano atual - 1) só conta
-    como "nova versão" se o arquivo estiver de fato publicado no INEP (HTTP 200) —
-    nunca por suposição de calendário, para não disparar alertas meses antes da
-    publicação real (que costuma ocorrer em outubro).
+    Sonda a existência do arquivo. Devolve (existe, detalhe):
+        (True,  "200")   arquivo publicado
+        (False, "404")   confirmado ausente
+        (None,  "erro")  não foi possível verificar — estado INDETERMINADO
+
+    Usa GET com Range de 1 byte em vez de HEAD: o host do INEP derruba parte das
+    requisições HEAD (medido em ~1 de 3), enquanto o GET com Range respondeu 206
+    de forma consistente. Sem isso, uma falha de rede era lida como "sem novidade"
+    e o alerta semanal nunca dispararia quando o Censo novo saísse.
     """
     import requests
 
+    ultimo = ""
+    for tentativa in range(tentativas):
+        try:
+            r = requests.get(url, timeout=30, allow_redirects=True, stream=True,
+                             headers={"Range": "bytes=0-0"})
+            r.close()
+            if r.status_code in (200, 206):
+                return True, str(r.status_code)
+            if r.status_code == 404:
+                return False, "404"
+            ultimo = f"HTTP {r.status_code}"
+        except requests.RequestException as e:
+            ultimo = type(e).__name__
+        if tentativa < tentativas - 1:
+            time.sleep(espera)
+    return None, ultimo
+
+
+def check_fontes(prov):
+    """
+    Verifica se há versão nova do Censo. O candidato (ano atual - 1) só conta como
+    "nova versão" se o arquivo estiver de fato publicado no INEP — nunca por
+    suposição de calendário, para não alertar meses antes da publicação real
+    (que costuma ocorrer em outubro).
+
+    Distingue três estados. "Não consegui verificar" NÃO é o mesmo que "não há
+    novidade": um erro de rede silencioso faria o alerta semanal nunca disparar.
+    """
     versao_atual = prov.get("versao_censo", "0")
     ano_candidato = date.today().year - 1  # INEP publica o Censo do ano anterior
-    mudou = False
 
-    if str(versao_atual) != str(ano_candidato):
-        url = URL_CENSO.format(ano=ano_candidato)
-        try:
-            r = requests.head(url, timeout=20, allow_redirects=True)
-            mudou = r.status_code == 200
-        except requests.RequestException as e:
-            print(f"[CHECK] Não foi possível verificar {url}: {e}")
+    if str(versao_atual) == str(ano_candidato):
+        print(f"[CHECK] Fontes em dia (Censo {versao_atual} já extraído).")
+        return False
 
-    if mudou:
+    url = URL_CENSO.format(ano=ano_candidato)
+    existe, detalhe = _sondar(url)
+
+    if existe is None:
+        print(f"[CHECK] INDETERMINADO: não foi possível verificar {url} ({detalhe}).")
+        print(f"::warning::Verificação de fontes inconclusiva — o INEP não respondeu "
+              f"após 3 tentativas ({detalhe}). O Censo {ano_candidato} pode ter sido "
+              f"publicado sem que este alerta detectasse. Confira manualmente.")
+        _github_output("verificacao_indeterminada", "true")
+        return False
+
+    if existe:
         print(f"[CHECK] Nova versão disponível: Censo {ano_candidato} (atual: {versao_atual})")
-        # GitHub Actions: exportar output
-        if "GITHUB_OUTPUT" in __import__("os").environ:
-            import os
-            gho = os.environ.get("GITHUB_OUTPUT", "")
-            if gho:
-                with open(gho, "a") as f:
-                    f.write("fontes_novas=true\n")
-    else:
-        print(f"[CHECK] Fontes em dia (Censo {versao_atual}). "
-              f"Censo {ano_candidato} ainda não publicado ou já extraído.")
-    return mudou
+        _github_output("fontes_novas", "true")
+        return True
+
+    print(f"[CHECK] Fontes em dia (Censo {versao_atual}). "
+          f"Censo {ano_candidato} confirmadamente ainda não publicado (404).")
+    return False
 
 
 def rodar_etl(path_csv: Path, qualidade_csv: Path):
