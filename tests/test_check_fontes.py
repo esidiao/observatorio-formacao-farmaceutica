@@ -41,7 +41,7 @@ class SondaFalsa:
         return self.padrao
 
 
-def rodar(prov, sonda, ano_hoje=2026, sonda_modificacao=None):
+def rodar(prov, sonda, ano_hoje=2026, competencias=None):
     """Executa check_fontes com rede e data controladas; captura saída e outputs."""
     import io
     import contextlib
@@ -52,17 +52,17 @@ def rodar(prov, sonda, ano_hoje=2026, sonda_modificacao=None):
         def today(cls):
             return date_real(ano_hoje, 7, 26)
 
-    # Por padrão a fonte por Last-Modified não traz novidade, para que cada teste
+    # Por padrão a Farmácia Popular não traz novidade, para que cada teste
     # exercite só o eixo que lhe interessa.
-    if sonda_modificacao is None:
-        def sonda_modificacao(url, **kwargs):
-            return True, "206", date_real(2024, 1, 1)
+    if competencias is None:
+        competencias = {"202512": 4433}
 
     outputs = {}
-    originais = (pipeline._sondar, pipeline._sondar_modificacao,
+    originais = (pipeline._sondar, pipeline._competencias_disponiveis,
                  pipeline.date, pipeline._github_output)
     pipeline._sondar = sonda
-    pipeline._sondar_modificacao = sonda_modificacao
+    pipeline._competencias_disponiveis = lambda url, **kw: (
+        sorted(competencias), competencias, "ok")
     pipeline.date = DataFalsa
     pipeline._github_output = lambda k, v: outputs.__setitem__(k, v)
     try:
@@ -71,14 +71,16 @@ def rodar(prov, sonda, ano_hoje=2026, sonda_modificacao=None):
             resultado = pipeline.check_fontes(prov)
         return resultado, buffer.getvalue(), outputs
     finally:
-        (pipeline._sondar, pipeline._sondar_modificacao,
+        (pipeline._sondar, pipeline._competencias_disponiveis,
          pipeline.date, pipeline._github_output) = originais
 
 
 PROV = {
     "versao_censo": "2024",
-    "data_extracao_fp": "2024-12-01",
-    "fontes": {"enade": {"ano": 2023}},
+    "fontes": {
+        "enade": {"ano": 2023},
+        "farmacia_popular": {"competencia": "202512", "municipios_atendidos": 4433},
+    },
 }
 
 
@@ -147,73 +149,94 @@ def test_fontes_sem_sondagem_sao_declaradas():
                f"'{fonte}' deveria aparecer no relatório como não verificável")
 
 
-# ── Fonte verificada por Last-Modified (Farmácia Popular) ────────────────────
+# ── Farmácia Popular: verificada por competência ──────────────────────────────
+#
+# Esta fonte é uma série multi-competência que ganha um período por mês. Uma
+# versão anterior comparava Last-Modified com a data de extração — e como o
+# arquivo é tocado todo mês, isso alertava sempre, sobre um período que o site
+# nem consome. Os testes abaixo travam a lógica correta: comparar COMPETÊNCIAS.
 
-from datetime import date as _date  # noqa: E402
+def rodar_fp(competencia_usada, total_registrado, contagens):
+    """Executa só o eixo Farmácia Popular, com a fonte substituída por um duplo."""
+    import io
+    import contextlib
 
-
-def test_last_modified_mais_novo_e_novidade():
-    def sonda_mod(url, **kwargs):
-        return True, "206", _date(2026, 7, 13)
-
-    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
-    checar(novo is True, "arquivo mais novo que a extração deveria ser novidade")
-    checar("Farmácia Popular" in outputs.get("fontes_novas_detalhe", ""),
-           "o detalhe deveria nomear a Farmácia Popular")
-
-
-def test_last_modified_mais_antigo_nao_e_novidade():
-    def sonda_mod(url, **kwargs):
-        return True, "206", _date(2024, 6, 1)
-
-    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
-    checar(novo is False, "arquivo anterior à extração não é novidade")
-    checar("verificacao_indeterminada" not in outputs,
-           "comparação bem-sucedida não é indeterminada")
-
-
-def test_sem_last_modified_e_indeterminado():
-    """Sem cabeçalho não há como afirmar frescor — não pode virar 'em dia'."""
-    def sonda_mod(url, **kwargs):
-        return True, "206", None
-
-    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
-    checar(novo is False, "ausência de Last-Modified não é novidade")
-    checar(outputs.get("verificacao_indeterminada") == "true",
-           "sem Last-Modified o resultado DEVE ser indeterminado")
+    original = pipeline._competencias_disponiveis
+    pipeline._competencias_disponiveis = lambda url, **kw: (
+        (sorted(contagens), contagens, "ok") if contagens else (None, None, "ConnectionError"))
+    try:
+        buffer = io.StringIO()
+        with contextlib.redirect_stdout(buffer):
+            nov, ind = pipeline._checar_farmacia_popular(
+                "url-falsa", competencia_usada, total_registrado)
+        return nov, ind, buffer.getvalue()
+    finally:
+        pipeline._competencias_disponiveis = original
 
 
-def test_url_movida_e_indeterminado():
-    """404 aqui significa 'a fonte mudou de lugar', não 'não há nada novo'."""
-    def sonda_mod(url, **kwargs):
-        return False, "404", None
-
-    novo, saida, outputs = rodar(PROV, SondaFalsa({}), sonda_modificacao=sonda_mod)
-    checar(outputs.get("verificacao_indeterminada") == "true",
-           "URL que sumiu deve ser sinalizada, não tratada como ausência de novidade")
-    checar("movida" in saida or "movido" in saida,
-           "o relatório deveria sugerir que a fonte pode ter sido movida")
+def test_fp_competencia_mais_recente_em_uso():
+    nov, ind, saida = rodar_fp("202512", 4433, {"202412": 4433, "202512": 4433})
+    checar(not nov, f"nada mais novo que a competência em uso não é novidade: {nov}")
+    checar(not ind, f"comparação bem-sucedida não é indeterminada: {ind}")
+    checar("mais recente" in saida, "deveria informar que já está na mais recente")
 
 
-def test_proveniencia_sem_data_e_indeterminado():
-    def sonda_mod(url, **kwargs):
-        return True, "206", _date(2026, 7, 13)
+def test_fp_competencia_nova_disponivel():
+    nov, ind, saida = rodar_fp("202512", 4433,
+                               {"202512": 4433, "202606": 4466})
+    checar(len(nov) == 1, f"competência mais nova deveria gerar 1 novidade: {nov}")
+    checar("202606" in nov[0], "a novidade deveria nomear a competência nova")
+    checar("202512" in nov[0], "a novidade deveria dizer qual está em uso")
 
-    prov_sem_data = {"versao_censo": "2024", "fontes": {"enade": {"ano": 2023}}}
-    novo, _, outputs = rodar(prov_sem_data, SondaFalsa({}), sonda_modificacao=sonda_mod)
-    checar(outputs.get("verificacao_indeterminada") == "true",
-           "sem data de referência na proveniência não dá para afirmar frescor")
+
+def test_fp_retificacao_retroativa():
+    """Contagem do período JÁ EXTRAÍDO mudou — retificação, vale alertar."""
+    nov, ind, saida = rodar_fp("202512", 4433, {"202512": 4440})
+    checar(any("retificada" in x for x in nov),
+           f"mudança na competência em uso deveria ser sinalizada: {nov}")
+    checar("4433" in nov[0] and "4440" in nov[0],
+           "o alerta deveria mostrar o antes e o depois")
+
+
+def test_fp_last_modified_nao_e_usado():
+    """
+    Regressão: o arquivo muda todo mês. Se a lógica voltasse a olhar
+    Last-Modified, este caso — mesma competência, mesma contagem — alertaria.
+    """
+    nov, ind, _ = rodar_fp("202512", 4433, {"202512": 4433})
+    checar(not nov and not ind,
+           f"série tocada sem competência nova não pode alertar: {nov} {ind}")
+
+
+def test_fp_falha_de_rede_e_indeterminada():
+    nov, ind, saida = rodar_fp("202512", 4433, None)
+    checar(not nov, "falha de rede não é novidade")
+    checar(len(ind) == 1, f"falha de rede deve ser indeterminada: {ind}")
+
+
+def test_fp_sem_competencia_registrada():
+    nov, ind, _ = rodar_fp(None, None, {"202512": 4433})
+    checar(len(ind) == 1,
+           "sem competência na proveniência não há contra o que comparar")
+
+
+def test_fp_competencia_registrada_desapareceu():
+    nov, ind, saida = rodar_fp("202412", 4433, {"202512": 4433, "202606": 4466})
+    checar(len(ind) == 1,
+           f"competência registrada ausente da fonte é indeterminado: {ind}")
 
 
 def main():
     for teste in (test_nada_novo, test_censo_novo_detectado, test_enade_novo_detectado,
                   test_falha_de_rede_nao_vira_sem_novidade, test_nao_sonda_o_ano_corrente,
                   test_fontes_sem_sondagem_sao_declaradas,
-                  test_last_modified_mais_novo_e_novidade,
-                  test_last_modified_mais_antigo_nao_e_novidade,
-                  test_sem_last_modified_e_indeterminado,
-                  test_url_movida_e_indeterminado,
-                  test_proveniencia_sem_data_e_indeterminado):
+                  test_fp_competencia_mais_recente_em_uso,
+                  test_fp_competencia_nova_disponivel,
+                  test_fp_retificacao_retroativa,
+                  test_fp_last_modified_nao_e_usado,
+                  test_fp_falha_de_rede_e_indeterminada,
+                  test_fp_sem_competencia_registrada,
+                  test_fp_competencia_registrada_desapareceu):
         antes = len(falhas)
         teste()
         print(f"  [{'OK' if len(falhas) == antes else 'FALHOU'}] {teste.__name__}")

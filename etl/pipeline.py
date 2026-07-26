@@ -42,9 +42,14 @@ URL_ENADE = "https://download.inep.gov.br/microdados/microdados_enade_{ano}.zip"
 
 # Farmácia Popular: o portal dados.gov.br passou a exigir chave de API registrada
 # (401 sem credencial), mas o mesmo conjunto é espelhado sem autenticação no
-# Portal de Dados Abertos do SUS. O arquivo traz co_ibge/no_municipio/sg_uf com
-# competência mensal — a granularidade de que o ICON precisa — e devolve
-# Last-Modified, que serve de sinal de frescor sem baixar os 430 KB inteiros.
+# Portal de Dados Abertos do SUS, com granularidade municipal.
+#
+# ATENÇÃO ao verificar frescor daqui: o arquivo é uma SÉRIE multi-competência que
+# recebe um período novo por mês. Logo, Last-Modified muda todo mês mesmo quando
+# a competência que o site usa não mudou nada — comparar esse cabeçalho com a data
+# de extração produz falso positivo garantido. O ICON usa a competência alinhada
+# ao ano do Censo (dezembro daquele ano), então a pergunta certa é se ESSA
+# competência existe e mudou, não se o arquivo foi tocado.
 URL_FARMACIA_POPULAR = "https://demas-dados-abertos.s3.amazonaws.com/csv/sntpbih.csv.zip"
 
 # Fontes cuja publicação NÃO é verificável automaticamente hoje, com o motivo
@@ -99,83 +104,6 @@ def _sondar(url, tentativas=3, espera=4):
     return None, ultimo
 
 
-def _sondar_modificacao(url, tentativas=3, espera=4):
-    """
-    Como `_sondar`, mas devolve também a data de Last-Modified:
-        (existe, detalhe, data)  com `data` sendo um `date` ou None.
-
-    Serve para fontes sem versionamento por ano no nome do arquivo, cuja única
-    pista de frescor é o cabeçalho HTTP. O corpo não é baixado (Range de 1 byte).
-    """
-    import email.utils
-    import requests
-
-    ultimo = ""
-    for tentativa in range(tentativas):
-        try:
-            r = requests.get(url, timeout=30, allow_redirects=True, stream=True,
-                             headers={"Range": "bytes=0-0"})
-            r.close()
-            if r.status_code in (200, 206):
-                cabecalho = r.headers.get("Last-Modified")
-                quando = None
-                if cabecalho:
-                    try:
-                        quando = email.utils.parsedate_to_datetime(cabecalho).date()
-                    except (TypeError, ValueError):
-                        quando = None
-                return True, str(r.status_code), quando
-            if r.status_code == 404:
-                return False, "404", None
-            ultimo = f"HTTP {r.status_code}"
-        except requests.RequestException as e:
-            ultimo = type(e).__name__
-        if tentativa < tentativas - 1:
-            time.sleep(espera)
-    return None, ultimo, None
-
-
-def _checar_por_modificacao(rotulo, url, data_registrada):
-    """
-    Verifica frescor por Last-Modified. Devolve (novidades, indeterminados).
-
-    Sem `data_registrada` na proveniência ou sem o cabeçalho na resposta, o
-    resultado é INDETERMINADO — não dá para afirmar que está em dia sem ter
-    contra o que comparar.
-    """
-    existe, detalhe, modificado = _sondar_modificacao(url)
-
-    if existe is None:
-        print(f"[CHECK] INDETERMINADO: {rotulo} não pôde ser verificado ({detalhe}).")
-        return [], [f"{rotulo} ({detalhe})"]
-    if not existe:
-        print(f"[CHECK] INDETERMINADO: {rotulo} não encontrado na URL conhecida "
-              f"({detalhe}) — a fonte pode ter sido movida.")
-        return [], [f"{rotulo} (URL respondeu {detalhe})"]
-    if modificado is None:
-        print(f"[CHECK] INDETERMINADO: {rotulo} respondeu {detalhe} mas sem Last-Modified.")
-        return [], [f"{rotulo} (sem Last-Modified)"]
-    if not data_registrada:
-        print(f"[CHECK] INDETERMINADO: {rotulo} publicado em {modificado}, "
-              f"mas a proveniência não registra a data da extração usada.")
-        return [], [f"{rotulo} (proveniência sem data de referência)"]
-
-    try:
-        referencia = date.fromisoformat(str(data_registrada))
-    except ValueError:
-        print(f"[CHECK] INDETERMINADO: data de referência inválida para {rotulo} "
-              f"({data_registrada!r}).")
-        return [], [f"{rotulo} (data de referência inválida)"]
-
-    if modificado > referencia:
-        print(f"[CHECK] NOVIDADE: {rotulo} atualizado em {modificado} "
-              f"(extração usada: {referencia}).")
-        return [f"{rotulo} (atualizado em {modificado})"], []
-
-    print(f"[CHECK] {rotulo}: sem atualização desde {referencia}.")
-    return [], []
-
-
 def _checar_serie_anual(rotulo, url_padrao, ano_atual, ano_limite):
     """
     Procura uma edição mais recente que `ano_atual` numa fonte cujo arquivo segue
@@ -200,6 +128,106 @@ def _checar_serie_anual(rotulo, url_padrao, ano_atual, ano_limite):
         else:
             print(f"[CHECK] {rotulo} {ano}: confirmadamente não publicado (404).")
     return novidades, indeterminados
+
+
+def _competencias_disponiveis(url, tentativas=2, espera=4):
+    """
+    Baixa a série e devolve (competencias, contagem_por_competencia, detalhe).
+
+    Diferente das outras sondagens, aqui o corpo É baixado (430 KB): a informação
+    de que precisamos — quais competências existem e quantos municípios cada uma
+    cobre — está dentro do CSV, não em cabeçalho HTTP.
+
+    Devolve (None, None, detalhe) quando não foi possível verificar.
+    """
+    import collections
+    import csv as _csv
+    import io
+    import zipfile
+
+    import requests
+
+    ultimo = ""
+    for tentativa in range(tentativas):
+        try:
+            r = requests.get(url, timeout=120)
+            if r.status_code != 200:
+                ultimo = f"HTTP {r.status_code}"
+            else:
+                z = zipfile.ZipFile(io.BytesIO(r.content))
+                with z.open(z.namelist()[0]) as f:
+                    linhas = list(_csv.DictReader(
+                        io.TextIOWrapper(f, encoding="latin-1")))
+                atendidos = collections.defaultdict(set)
+                for x in linhas:
+                    try:
+                        if float(x["vl_indicador_calculado_mun"]) > 0:
+                            atendidos[x["co_anomes"]].add(x["co_ibge"])
+                    except (KeyError, TypeError, ValueError):
+                        continue
+                if not atendidos:
+                    return None, None, "layout inesperado (nenhuma competência lida)"
+                return (sorted(atendidos),
+                        {c: len(m) for c, m in atendidos.items()},
+                        "ok")
+        except Exception as e:  # rede, zip corrompido, layout mudado
+            ultimo = type(e).__name__
+        if tentativa < tentativas - 1:
+            time.sleep(espera)
+    return None, None, ultimo
+
+
+def _checar_farmacia_popular(url, competencia_usada, total_registrado):
+    """
+    Verifica a Farmácia Popular pela COMPETÊNCIA, não por Last-Modified.
+    Devolve (novidades, indeterminados).
+
+    O arquivo é uma série que ganha um período novo por mês, então Last-Modified
+    muda sempre — usá-lo como sinal dispararia alerta toda semana mesmo sem
+    novidade no período que o site consome. Duas perguntas úteis:
+
+      1. existe competência mais recente que a extraída? (dado novo disponível)
+      2. a competência extraída mudou de contagem? (retificação retroativa)
+
+    A escolha de adotar ou não uma competência mais nova é editorial: o ICON
+    pareia municípios atendidos (Farmácia Popular) com municípios que têm curso
+    (Censo), e adiantar só o numerador amplia a defasagem entre os dois. Por isso
+    o alerta informa, e a decisão fica com quem mantém.
+    """
+    if not competencia_usada:
+        return [], ["Farmácia Popular (proveniência sem competência registrada)"]
+
+    competencias, contagens, detalhe = _competencias_disponiveis(url)
+    if competencias is None:
+        print(f"[CHECK] INDETERMINADO: Farmácia Popular não pôde ser verificada ({detalhe}).")
+        return [], [f"Farmácia Popular ({detalhe})"]
+
+    usada = str(competencia_usada)
+    if usada not in contagens:
+        print(f"[CHECK] INDETERMINADO: a competência registrada ({usada}) não está "
+              f"mais na fonte. Disponíveis: {', '.join(competencias)}.")
+        return [], [f"Farmácia Popular (competência {usada} ausente na fonte)"]
+
+    novidades = []
+
+    atual = contagens[usada]
+    if total_registrado is not None and atual != total_registrado:
+        print(f"[CHECK] NOVIDADE: competência {usada} foi retificada — "
+              f"{total_registrado} -> {atual} municípios atendidos.")
+        novidades.append(f"Farmácia Popular {usada} retificada "
+                         f"({total_registrado} -> {atual})")
+
+    mais_novas = [c for c in competencias if c > usada]
+    if mais_novas:
+        recente = max(mais_novas)
+        print(f"[CHECK] NOVIDADE: Farmácia Popular tem competência {recente} "
+              f"({contagens[recente]} municípios); em uso: {usada} ({atual}).")
+        novidades.append(f"Farmácia Popular {recente} disponível (em uso: {usada})")
+    else:
+        print(f"[CHECK] Farmácia Popular: {usada} é a competência mais recente "
+              f"({atual} municípios atendidos).")
+
+    return novidades, []
 
 
 def check_fontes(prov):
@@ -233,8 +261,10 @@ def check_fontes(prov):
     novidades += n
     indeterminados += i
 
-    n, i = _checar_por_modificacao("Farmácia Popular", URL_FARMACIA_POPULAR,
-                                   prov.get("data_extracao_fp"))
+    fp = prov.get("fontes", {}).get("farmacia_popular", {}) or {}
+    n, i = _checar_farmacia_popular(URL_FARMACIA_POPULAR,
+                                    fp.get("competencia"),
+                                    fp.get("municipios_atendidos"))
     novidades += n
     indeterminados += i
 
@@ -283,15 +313,34 @@ def rodar_etl(path_csv: Path, qualidade_csv: Path):
     with open(DATA_DIR / "final_novo.json", encoding="utf-8") as f:
         ufs = json.load(f)
 
+    empacotar(ufs)
+    (DATA_DIR / "final_novo.json").unlink(missing_ok=True)
+
+
+def empacotar(ufs):
+    """
+    Junta os indicadores por UF aos metadados e grava data/nacional.json.
+
+    Os metadados vêm de _proveniencia.json, NUNCA do calendário. Uma versão
+    anterior desta função derivava o ano do ENADE de `date.today().year - 1` e
+    gravava `fontes` como strings planas — o que regredia duas correções de uma
+    vez: os templates leem `meta.fontes.enade.ano` (que sumiria) e o ciclo do
+    ENADE de Farmácia é trienal, então o ano do Censo não serve de proxy.
+    """
+    prov = carregar_proveniencia()
+    fontes = prov.get("fontes")
+    if not isinstance(fontes, dict) or "enade" not in fontes:
+        sys.exit("[ABORTADO] _proveniencia.json sem o bloco 'fontes' esperado. "
+                 "Os metadados do site vêm dele — corrija antes de publicar.")
+    if not isinstance(fontes.get("enade"), dict) or "ano" not in fontes["enade"]:
+        sys.exit("[ABORTADO] fontes.enade precisa ser um objeto com 'ano': os "
+                 "templates leem meta.fontes.enade.ano.")
+
     nacional = {
         "metadados": {
-            "versao_censo": str(date.today().year - 1),
+            "versao_censo": str(prov.get("versao_censo", "")),
             "data_extracao": str(date.today()),
-            "fontes": {
-                "censo": f"INEP/Censo da Educação Superior {date.today().year - 1}",
-                "enade": f"INEP/Microdados ENADE {date.today().year - 1}",
-                "farmacia_popular": "Ministério da Saúde/dados.gov.br",
-            },
+            "fontes": fontes,
         },
         "ufs": ufs,
     }
@@ -299,8 +348,9 @@ def rodar_etl(path_csv: Path, qualidade_csv: Path):
     with open(DATA_DIR / "nacional.json", "w", encoding="utf-8") as f:
         json.dump(nacional, f, ensure_ascii=False, indent=2)
 
-    print(f"[OK] data/nacional.json atualizado com {len(ufs)} UFs.")
-    (DATA_DIR / "final_novo.json").unlink(missing_ok=True)
+    print(f"[OK] data/nacional.json atualizado com {len(ufs)} UFs "
+          f"(Censo {nacional['metadados']['versao_censo']}, "
+          f"ENADE {fontes['enade']['ano']}).")
 
 
 def rodar_validacao():
