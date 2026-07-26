@@ -89,20 +89,31 @@ consistente.
 |-------|-------------|------|
 | Censo da Educação Superior | ✅ automática | série anual: `microdados_censo_da_educacao_superior_{ano}.zip` |
 | ENADE (microdados) | ✅ automática | série anual: `microdados_enade_{ano}.zip` |
-| Farmácia Popular | ✅ automática | `Last-Modified` do arquivo no Portal de Dados Abertos do SUS |
+| Farmácia Popular | ✅ automática | competência (`AAAAMM`) da série no Portal de Dados Abertos do SUS |
 | e-MEC | ❌ manual | sem API pública nem URL de arquivo estável; portal renderizado por JavaScript |
 
-Duas estratégias, conforme a fonte versione ou não pelo nome do arquivo:
+Duas estratégias, conforme como a fonte versiona:
 
-- **Série anual** — procura a edição seguinte à registrada em `_proveniencia.json`.
-- **Last-Modified** — compara a data do cabeçalho HTTP com a data da extração usada.
-  Sem o cabeçalho, ou sem data de referência na proveniência, o resultado é
-  *indeterminado*: não dá para afirmar frescor sem ter contra o que comparar.
+- **Série anual** (Censo, ENADE) — procura a edição seguinte à registrada em
+  `_proveniencia.json`.
+- **Competência** (Farmácia Popular) — o arquivo é uma série mensal; compara a
+  competência registrada com as disponíveis, alertando quando há período mais recente
+  ou quando o período em uso foi retificado.
 
 Sobre a Farmácia Popular: o portal `dados.gov.br` passou a exigir chave de API registrada
 (401 sem credencial), mas o **mesmo conjunto é espelhado sem autenticação** no Portal de
-Dados Abertos do SUS, com granularidade municipal (`co_ibge`, `no_municipio`, `sg_uf`) e
-competência mensal. A verificação usa esse espelho — nenhuma credencial é necessária.
+Dados Abertos do SUS, com granularidade municipal (`co_ibge`, `no_municipio`, `sg_uf`).
+Nenhuma credencial é necessária.
+
+**Não use `Last-Modified` para esta fonte.** O arquivo recebe um período novo por mês, então
+o cabeçalho muda sempre — inclusive quando a competência que o site consome não mudou nada.
+Comparar essa data com a extração produz alerta toda semana sobre um dado que o site nem usa.
+`etl/farmacia_popular.py` deriva `municipios_fp` de forma reproduzível e registra a
+competência na proveniência; rode-o com `--aplicar` ao adotar um período novo.
+
+Adotar uma competência mais recente é decisão **editorial**, não automática: o ICON pareia
+municípios atendidos (Farmácia Popular) com municípios que têm curso (Censo), e adiantar só
+o numerador amplia a defasagem entre os dois e desalinha o delta da série histórica.
 
 O e-MEC segue em `FONTES_SEM_SONDAGEM` e é **impresso a cada execução**, para que a lacuna
 apareça no relatório em vez de passar por normalidade.
