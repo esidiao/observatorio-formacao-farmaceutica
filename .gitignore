@@ -17,6 +17,9 @@ __pycache__/
 venv/
 .env
 
+# Dumps de depuração (conteúdo derivável de data/*.json)
+*_dump.txt
+
 # OS
 .DS_Store
 Thumbs.db
