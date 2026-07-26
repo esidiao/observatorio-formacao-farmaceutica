@@ -61,6 +61,17 @@ const INDICADOR_META = {
   pct_noturno:          { label: '% Vagas noturnas',   dec: 1, min: null, max: null, maiorMelhor: null },
   pct_rede_publica:     { label: '% Rede pública',     dec: 1, min: null, max: null, maiorMelhor: null },
   ead_polos_municipios: { label: 'Municípios c/ polo', dec: 0, min: null, max: null, maiorMelhor: null },
+  municipios_oferta:    { label: 'Municípios c/ oferta', dec: 0, min: null, max: null, maiorMelhor: null },
+  municipios_deserto:   { label: 'Desertos farmacêuticos', dec: 0, min: null, max: null, maiorMelhor: false },
+  n_ies:                { label: 'IES',                 dec: 0, min: null, max: null, maiorMelhor: null },
+  populacao:            { label: 'População',           dec: 0, min: null, max: null, maiorMelhor: null },
+  mun_ead_only:         { label: 'Municípios só EaD',   dec: 0, min: null, max: null, maiorMelhor: null },
+  ead_polos_registros:  { label: 'Polos EaD (registros)', dec: 0, min: null, max: null, maiorMelhor: null },
+  vagas_avaliadas:      { label: 'Vagas avaliadas',     dec: 0, min: null, max: null, maiorMelhor: null },
+  CR2:                  { label: 'CR2',                 dec: 1, min: 0,   max: 1,   maiorMelhor: false, mult: 100 },
+  CR10:                 { label: 'CR10',                dec: 1, min: 0,   max: 1,   maiorMelhor: false, mult: 100 },
+  CC:                   { label: 'CC (ENADE)',          dec: 2, min: 0,   max: 5,   maiorMelhor: true  },
+  ENADE:                { label: 'ENADE',               dec: 2, min: 0,   max: 5,   maiorMelhor: true  },
 };
 
 /* Cor diverging RdBu genérica para qualquer indicador com escala+direção. */
@@ -77,8 +88,9 @@ function corGenerica(val, min, max, maiorMelhor) {
 function fmtIndicador(indicador, val) {
   if (val === null || val === undefined) return '—';
   const m = INDICADOR_META[indicador] || { dec: 3 };
-  if (m.dec === 0) return Number(val).toLocaleString('pt-BR');
-  return Number(val).toFixed(m.dec);
+  const v = Number(val) * (m.mult || 1);
+  if (m.dec === 0) return v.toLocaleString('pt-BR');
+  return v.toFixed(m.dec);
 }
 
 function getCor(indicador, val) {

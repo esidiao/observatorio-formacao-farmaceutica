@@ -369,6 +369,17 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         (path_out / "autor.html").write_text(html_autor, encoding="utf-8")
         print(f"[OK] autor.html")
 
+    # ── Render página do livro ──────────────────────────────────────────────────
+    tmpl_livro = env.get_template("livro.html.j2") if (templates_dir / "livro.html.j2").exists() else None
+    if tmpl_livro:
+        html_livro = tmpl_livro.render(
+            depth="",
+            meta=meta,
+            meta_json=json.dumps(meta, ensure_ascii=False),
+        )
+        (path_out / "livro.html").write_text(html_livro, encoding="utf-8")
+        print(f"[OK] livro.html")
+
     # ── Render página de aviso legal / direitos autorais ───────────────────────
     ano_corrente = (meta.get("data_extracao") or "2026")[:4]
     registro_path = path_dados.parent / "registro_autoral.json"

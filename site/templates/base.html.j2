@@ -109,6 +109,8 @@
     <span class="sep">·</span>
     <a href="{{ depth }}autor.html" style="color:var(--text-muted);font-size:0.82rem">Sobre o Autor</a>
     <span class="sep">·</span>
+    <a href="{{ depth }}livro.html" style="color:var(--gold,#B07D22);font-weight:700;font-size:0.82rem">📖 O Livro</a>
+    <span class="sep">·</span>
     <a href="#glossario" class="nav-glossario" style="font-size:0.82rem"><svg class="ic"><use href="#i-book"/></svg> Entenda os indicadores</a>
     <span class="sep">·</span>
     <a href="{{ depth }}aviso-legal.html" style="color:var(--text-muted);font-size:0.82rem">© Direitos Autorais</a>
@@ -140,6 +142,17 @@
   });
 })();
 </script>
+
+{% block livro_banner %}
+<a class="livro-banner" href="{{ depth }}livro.html">
+  <span class="livro-banner-icone">📖</span>
+  <span class="livro-banner-texto">
+    <strong>Novo:</strong> conheça o livro <em>Formação Farmacêutica no Brasil</em>,
+    a pesquisa completa por trás deste Observatório
+  </span>
+  <span class="livro-banner-cta">Ver o livro →</span>
+</a>
+{% endblock %}
 
 <main>
   {% block content %}{% endblock %}

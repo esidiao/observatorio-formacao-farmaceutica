@@ -149,6 +149,35 @@ a:hover { text-decoration: underline; }
 .nav-menu::before { content: '·'; color: var(--border); margin-right: 2px; }
 
 /* ============================================================
+   BANNER DO LIVRO (site-wide, abaixo do nav)
+   ============================================================ */
+.livro-banner {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(90deg, var(--navy), var(--blue));
+  color: #fff;
+  padding: 9px 32px;
+  font-size: 0.82rem;
+  text-decoration: none;
+  transition: filter 0.12s;
+}
+.livro-banner:hover { filter: brightness(1.08); text-decoration: none; }
+.livro-banner-icone { font-size: 1rem; line-height: 1; flex-shrink: 0; }
+.livro-banner-texto { flex: 1; min-width: 0; }
+.livro-banner-texto em { font-style: italic; }
+.livro-banner-cta {
+  flex-shrink: 0;
+  font-weight: 700;
+  color: var(--gold, #D9A94A);
+  white-space: nowrap;
+}
+@media (max-width: 640px) {
+  .livro-banner { padding: 8px 16px; font-size: 0.76rem; }
+  .livro-banner-texto { display: none; }
+}
+
+/* ============================================================
    MAIN LAYOUT
    ============================================================ */
 main { padding: 24px 32px; max-width: 1280px; margin: 0 auto; }
