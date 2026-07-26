@@ -27,10 +27,10 @@ jobs:
   validar-e-construir:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: pip
@@ -57,7 +57,7 @@ jobs:
 
       - name: Upload artifact para Pages
         if: github.ref == 'refs/heads/main'
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v5
         with:
           path: site/dist
 
@@ -74,7 +74,7 @@ jobs:
     steps:
       - name: Deploy para GitHub Pages
         id: deployment
-        uses: actions/deploy-pages@v4
+        uses: actions/deploy-pages@v5
 
   # ────────────────────────────────────────────────────────────────
   # JOB 3: Verificação de versões das fontes (schedule semanal)
@@ -83,10 +83,10 @@ jobs:
     runs-on: ubuntu-latest
     if: github.event_name == 'schedule' || github.event.inputs.forcar_atualizacao == 'true'
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
       - name: Configurar Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: '3.11'
           cache: pip
@@ -102,7 +102,7 @@ jobs:
 
       - name: Criar issue se fontes atualizadas
         if: steps.check.outputs.fontes_novas == 'true'
-        uses: actions/github-script@v7
+        uses: actions/github-script@v9
         with:
           script: |
             github.rest.issues.create({
