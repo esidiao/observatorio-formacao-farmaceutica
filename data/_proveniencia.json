@@ -2,7 +2,7 @@
   "versao_censo": "2024",
   "data_extracao_censo": "2026-06-27",
   "data_extracao_enade": "2025-04-24",
-  "data_extracao_fp": "2024-12-01",
+  "data_extracao_fp": "2025-12-01",
   "fontes": {
     "censo": {
       "nome": "Microdados do Censo da Educação Superior",
@@ -24,7 +24,14 @@
       "nome": "Programa Farmácia Popular do Brasil — Beneficiários",
       "orgao": "Ministério da Saúde",
       "url": "https://dados.gov.br/dados/conjuntos-dados/beneficiarios-do-programa-farmacia-popular-do-brasil",
-      "data_publicacao": "2024-12-01"
+      "data_publicacao": "2025-12-01",
+      "url_espelho": "https://demas-dados-abertos.s3.amazonaws.com/csv/sntpbih.csv.zip",
+      "nota_espelho": "Espelho sem autenticacao no Portal de Dados Abertos do SUS; dados.gov.br exige chave de API registrada (401 sem credencial).",
+      "competencia": "202512",
+      "municipios_atendidos": 4433,
+      "definicao": "Municipio conta como atendido quando o indicador municipal da competencia e maior que zero.",
+      "nota_competencia": "A competencia e dezembro do ano do Censo, para o ICON pareiar numerador e denominador do mesmo periodo. Usar a competencia mais recente disponivel misturaria FP de 2026 com Censo 2024 e invalidaria o delta da serie historica.",
+      "nota_correcao": "A proveniencia registrava 2024-12-01. Conferido em 2026-07-26 contra a fonte: a competencia 202512 reproduz as 27 UFs exatamente (4433 municipios); 202412 reproduz apenas 3. A data anterior estava errada em um ano."
     }
   },
   "proxima_verificacao": "2027-01-01",
