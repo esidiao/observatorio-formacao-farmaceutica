@@ -289,10 +289,19 @@ def check_fontes(prov):
     return False
 
 
+ENRIQUECIMENTO = [
+    # (script, o que acrescenta) — rodam DEPOIS de empacotar(), sobre nacional.json
+    ("censo_perfil.py", "perfil de acesso e equidade (% mulheres, PPI, FIES/PROUNI, noturno)"),
+    ("modalidade_split.py", "por_modalidade (presencial x EaD)"),
+    ("docentes_cpc.py", "qualificação docente (% mestres, doutores, regime)"),
+    ("cpc_dimensoes.py", "dimensões avaliadas pelos estudantes (didático, infra, oportunidade)"),
+]
+
+
 def rodar_etl(path_csv: Path, qualidade_csv: Path):
-    """Roda ingestão + cálculo de índices."""
+    """Roda ingestão → índices → empacotamento → enriquecimento."""
     print(f"\n[ETL] Ingestão: {path_csv.name}")
-    r1 = subprocess.run(
+    subprocess.run(
         [sys.executable, str(REPO / "etl" / "ingestao_observatorio_nacional.py"),
          "--csv", str(path_csv),
          "--curso", "FARMÁCIA",
@@ -301,7 +310,7 @@ def rodar_etl(path_csv: Path, qualidade_csv: Path):
     )
 
     print("\n[ETL] Cálculo de índices...")
-    r2 = subprocess.run(
+    subprocess.run(
         [sys.executable, str(REPO / "etl" / "indices_observatorio.py"),
          "--dados", str(DATA_DIR / "observatorio_nacional_dados.json"),
          "--qualidade", str(qualidade_csv),
@@ -309,12 +318,33 @@ def rodar_etl(path_csv: Path, qualidade_csv: Path):
         check=True,
     )
 
-    # Empacotar com metadados → nacional.json
     with open(DATA_DIR / "final_novo.json", encoding="utf-8") as f:
         ufs = json.load(f)
 
     empacotar(ufs)
     (DATA_DIR / "final_novo.json").unlink(missing_ok=True)
+    rodar_enriquecimento()
+
+
+def rodar_enriquecimento():
+    """
+    Aplica os scripts que acrescentam campos ao nacional.json recém-gerado.
+
+    Sem esta etapa o pipeline publicava um JSON EMPOBRECIDO: ingestão + índices
+    produzem ~18 campos por UF, enquanto o site consome ~51. Medido em
+    2026-07-26, republicar sem enriquecimento perdia 33 campos nas 27 UFs
+    (vagas_ead, por_modalidade, IDD, populacao, perfil docente, dimensões CPC...).
+    Os scripts existiam, mas nunca haviam sido encadeados aqui.
+    """
+    print("\n[ETL] Enriquecimento...")
+    for script, descricao in ENRIQUECIMENTO:
+        caminho = REPO / "etl" / script
+        if not caminho.exists():
+            sys.exit(f"[ABORTADO] {script} não encontrado — o enriquecimento é "
+                     f"obrigatório: sem ele o site perde {descricao}.")
+        # ASCII: o console padrao do Windows (cp1252) quebra em setas.
+        print(f"  - {script}: {descricao}")
+        subprocess.run([sys.executable, str(caminho)], check=True)
 
 
 def empacotar(ufs):
@@ -351,6 +381,81 @@ def empacotar(ufs):
     print(f"[OK] data/nacional.json atualizado com {len(ufs)} UFs "
           f"(Censo {nacional['metadados']['versao_censo']}, "
           f"ENADE {fontes['enade']['ano']}).")
+
+
+# Campos presentes em data/nacional.json que NENHUM script do repositorio produz.
+# Levantado em 2026-07-26 cruzando as 51 chaves por UF contra todos os etl/*.py.
+# Foram gerados por trabalho que nunca foi versionado, entao nacional.json e em
+# parte ARTEFATO-FONTE, nao artefato de build: reprocessar do zero os apaga sem
+# forma conhecida de recuperar. Enquanto isso nao for resolvido, a guarda abaixo
+# e a unica protecao real contra perda permanente.
+CAMPOS_ORFAOS = [
+    "HHI_mantenedora", "concluintes_total", "ead_polos_municipios",
+    "ead_polos_registros", "matriculas_total", "mun_ead_only", "n_cursos_idd",
+    "n_mantenedoras", "pop_ano", "populacao", "taxa_retencao", "vagas_por_100k",
+]
+
+
+def _referencia_publicada():
+    """
+    Le data/nacional.json como esta no ultimo commit — nao no diretorio.
+
+    Usar o arquivo do diretorio como baseline e furado: uma execucao anterior que
+    falhou no meio ja o deixa empobrecido, e a comparacao seguinte passa a ser
+    "reduzido contra reduzido", aprovando a perda. Aconteceu exatamente isso ao
+    testar esta funcao. O commit e a unica referencia confiavel do que esta
+    publicado.
+    """
+    try:
+        saida = subprocess.run(
+            ["git", "show", "HEAD:data/nacional.json"],
+            cwd=str(REPO), check=True, capture_output=True,
+        )
+        return json.loads(saida.stdout.decode("utf-8"))
+    except Exception as e:
+        print(f"[GUARDA] Nao foi possivel ler a referencia do git ({type(e).__name__}).")
+        return None
+
+
+def conferir_riqueza():
+    """
+    Aborta se o nacional.json gerado perdeu campos frente ao ultimo commit.
+
+    Rede de seguranca contra o modo de falha que motivou tudo isto: o pipeline
+    rodava, todos os testes passavam (nenhum checava presenca de campo) e o site
+    ia ao ar sem metade dos indicadores. Um campo a menos e regressao silenciosa.
+    """
+    referencia = _referencia_publicada()
+    if not referencia:
+        sys.exit("[ABORTADO] Sem referencia publicada para comparar. "
+                 "Publicar as cegas pode apagar campos irrecuperaveis.")
+
+    with open(DATA_DIR / "nacional.json", encoding="utf-8") as f:
+        novo = json.load(f)
+
+    perdidos = {}
+    for uf, antes in referencia.get("ufs", {}).items():
+        faltando = set(antes) - set(novo.get("ufs", {}).get(uf, {}))
+        if faltando:
+            perdidos[uf] = sorted(faltando)
+
+    if perdidos:
+        exemplo = next(iter(perdidos.items()))
+        orfaos = sorted(set(exemplo[1]) & set(CAMPOS_ORFAOS))
+        linhas = [
+            f"[ABORTADO] O JSON gerado perdeu campos em {len(perdidos)} UFs.",
+            f"  Ex.: {exemplo[0]} sem {', '.join(exemplo[1][:8])}"
+            f"{'...' if len(exemplo[1]) > 8 else ''}",
+        ]
+        if orfaos:
+            linhas.append(
+                f"  {len(orfaos)} deles NAO tem script produtor "
+                f"({', '.join(orfaos[:4])}...) — a perda seria PERMANENTE.")
+        linhas.append("  Restaure com: git checkout HEAD -- data/")
+        linhas.append("  Os dados NAO foram publicados.")
+        sys.exit("\n".join(linhas))
+    print(f"[GUARDA] Riqueza preservada: nenhum campo perdido nas "
+          f"{len(referencia.get('ufs', {}))} UFs.")
 
 
 def rodar_validacao():
@@ -397,6 +502,7 @@ def main():
         sys.exit(f"[ERRO] Arquivo não encontrado: {path_csv}")
 
     rodar_etl(path_csv, Path(args.qualidade))
+    conferir_riqueza()
     rodar_validacao()
 
     # Atualizar proveniência

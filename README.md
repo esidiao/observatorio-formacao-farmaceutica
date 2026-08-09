@@ -50,13 +50,34 @@ python tests/test_check_fontes.py   # verificador de frescor (rede mockada)
 # 1. Baixar microdados do Censo em https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados
 # 2. Rodar o pipeline:
 python etl/pipeline.py --censo caminho/MICRODADOS_CADASTRO_CURSOS_AAAA.CSV
-
-# O pipeline:
-# - Verifica se há nova versão (--check-only para só verificar)
-# - Roda ingestão → cálculo de índices → validação
-# - Só atualiza data/nacional.json se a validação passar
-# - Atualiza _proveniencia.json com data da extração
 ```
+
+O pipeline roda, nesta ordem: ingestão → índices → empacotamento → **enriquecimento**
+(`censo_perfil`, `modalidade_split`, `docentes_cpc`, `cpc_dimensoes`) → **conferência de
+riqueza** → validação. Só publica se tudo passar.
+
+As fontes externas não versionadas são localizadas por variável de ambiente, com
+padrão apontando para o Google Drive do autor:
+
+```bash
+export OBS_CENSO_DIR=/caminho/para/microdados/dados   # diretório do CSV do Censo
+export OBS_CPC_XLSX=/caminho/para/CPC_2023.xlsx       # planilha CPC do INEP
+```
+
+### ⚠️ `data/nacional.json` é parcialmente artefato-fonte
+
+**12 dos 51 campos por UF não têm script produtor no repositório** — `populacao`,
+`pop_ano`, `vagas_por_100k`, `taxa_retencao`, `matriculas_total`, `concluintes_total`,
+`n_mantenedoras`, `HHI_mantenedora`, `n_cursos_idd`, `mun_ead_only`,
+`ead_polos_municipios`, `ead_polos_registros`. Foram gerados por trabalho que nunca foi
+versionado.
+
+Consequência prática: **reprocessar do zero apaga esses campos sem forma conhecida de
+recuperá-los**, a não ser pelo histórico do git. Por isso `conferir_riqueza()` compara o
+JSON gerado com o do último commit e **aborta a publicação** se algum campo sumir. Se
+isso acontecer, restaure com `git checkout HEAD -- data/` e investigue antes de insistir.
+
+Reconstituir os produtores desses 12 campos é dívida técnica em aberto.
 
 ## Como o cron funciona
 
