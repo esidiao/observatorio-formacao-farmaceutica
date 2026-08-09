@@ -13,8 +13,19 @@ import pandas as pd, json, sys, unicodedata
 sys.stdout.reconfigure(encoding="utf-8")
 from pathlib import Path
 
-BASE = Path("G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/censo2024/microdados_censo_da_educacao_superior_2024/dados")
-REPO = Path("G:/Meu Drive/Works/CLAUDE IA/observatorio-nacional")
+# Caminhos resolvidos em tempo de execucao. Ate 2026-07-26 estes scripts fixavam
+# REPO em "G:/Meu Drive/.../observatorio-nacional" — pasta que deixou de existir
+# quando o repositorio saiu do Google Drive, o que os deixou quebrados e os campos
+# que produzem sem forma de serem regenerados.
+REPO = Path(__file__).resolve().parent.parent
+
+
+def _fonte_externa(variavel, padrao):
+    """Caminho de fonte externa nao versionada: variavel de ambiente > padrao."""
+    import os
+    return Path(os.environ.get(variavel, padrao))
+
+BASE = _fonte_externa("OBS_CENSO_DIR", "G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/censo2024/microdados_censo_da_educacao_superior_2024/dados")
 
 def norm(s):
     s = unicodedata.normalize("NFD", str(s).upper())
