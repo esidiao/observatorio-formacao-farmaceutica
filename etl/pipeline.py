@@ -290,7 +290,11 @@ def check_fontes(prov):
 
 
 ENRIQUECIMENTO = [
-    # (script, o que acrescenta) — rodam DEPOIS de empacotar(), sobre nacional.json
+    # (script, o que acrescenta) — rodam DEPOIS de empacotar(), sobre nacional.json.
+    # A ORDEM IMPORTA: complementos.py vem primeiro porque produz vagas_presencial,
+    # vagas_ead e n_cursos_presencial, que modalidade_split.py depois consome.
+    # Invertida, aquele script grava None em por_modalidade sem reclamar.
+    ("complementos.py", "população IBGE, mantenedoras, polos EaD, matrículas, vagas e derivados"),
     ("censo_perfil.py", "perfil de acesso e equidade (% mulheres, PPI, FIES/PROUNI, noturno)"),
     ("modalidade_split.py", "por_modalidade (presencial x EaD)"),
     ("docentes_cpc.py", "qualificação docente (% mestres, doutores, regime)"),
@@ -344,7 +348,9 @@ def rodar_enriquecimento():
                      f"obrigatório: sem ele o site perde {descricao}.")
         # ASCII: o console padrao do Windows (cp1252) quebra em setas.
         print(f"  - {script}: {descricao}")
-        subprocess.run([sys.executable, str(caminho)], check=True)
+        # complementos.py so grava com --aplicar; sem a flag ele apenas confere.
+        extra = ["--aplicar"] if script == "complementos.py" else []
+        subprocess.run([sys.executable, str(caminho)] + extra, check=True)
 
 
 def empacotar(ufs):
@@ -381,19 +387,6 @@ def empacotar(ufs):
     print(f"[OK] data/nacional.json atualizado com {len(ufs)} UFs "
           f"(Censo {nacional['metadados']['versao_censo']}, "
           f"ENADE {fontes['enade']['ano']}).")
-
-
-# Campos presentes em data/nacional.json que NENHUM script do repositorio produz.
-# Levantado em 2026-07-26 cruzando as 51 chaves por UF contra todos os etl/*.py.
-# Foram gerados por trabalho que nunca foi versionado, entao nacional.json e em
-# parte ARTEFATO-FONTE, nao artefato de build: reprocessar do zero os apaga sem
-# forma conhecida de recuperar. Enquanto isso nao for resolvido, a guarda abaixo
-# e a unica protecao real contra perda permanente.
-CAMPOS_ORFAOS = [
-    "HHI_mantenedora", "concluintes_total", "ead_polos_municipios",
-    "ead_polos_registros", "matriculas_total", "mun_ead_only", "n_cursos_idd",
-    "n_mantenedoras", "pop_ano", "populacao", "taxa_retencao", "vagas_por_100k",
-]
 
 
 def _referencia_publicada():
@@ -441,21 +434,24 @@ def conferir_riqueza():
 
     if perdidos:
         exemplo = next(iter(perdidos.items()))
-        orfaos = sorted(set(exemplo[1]) & set(CAMPOS_ORFAOS))
         linhas = [
             f"[ABORTADO] O JSON gerado perdeu campos em {len(perdidos)} UFs.",
             f"  Ex.: {exemplo[0]} sem {', '.join(exemplo[1][:8])}"
             f"{'...' if len(exemplo[1]) > 8 else ''}",
         ]
-        if orfaos:
-            linhas.append(
-                f"  {len(orfaos)} deles NAO tem script produtor "
-                f"({', '.join(orfaos[:4])}...) — a perda seria PERMANENTE.")
+        linhas.append("  Provavel causa: alguma etapa de enriquecimento nao rodou.")
         linhas.append("  Restaure com: git checkout HEAD -- data/")
         linhas.append("  Os dados NAO foram publicados.")
         sys.exit("\n".join(linhas))
     print(f"[GUARDA] Riqueza preservada: nenhum campo perdido nas "
           f"{len(referencia.get('ufs', {}))} UFs.")
+
+
+def _ano_do_censo(path_csv):
+    """Extrai o ano do nome do arquivo de microdados (…_AAAA.CSV)."""
+    import re
+    achados = re.findall(r"(?:19|20)\d{2}", Path(path_csv).stem)
+    return achados[-1] if achados else None
 
 
 def rodar_validacao():
@@ -505,11 +501,18 @@ def main():
     conferir_riqueza()
     rodar_validacao()
 
-    # Atualizar proveniência
-    prov["versao_censo"] = str(date.today().year - 1)
+    # Atualizar proveniência. O ano vem do ARQUIVO processado, nunca do
+    # calendário: rodar em 2026 sobre o Censo 2024 gravava "versao_censo: 2025",
+    # rotulando o dado como uma edição que sequer existe.
+    ano = _ano_do_censo(path_csv)
+    if ano is None:
+        sys.exit(f"[ABORTADO] Não consegui extrair o ano de {path_csv.name}. "
+                 f"Esperado algo como MICRODADOS_CADASTRO_CURSOS_AAAA.CSV. "
+                 f"Os dados foram gerados, mas a proveniência NÃO foi atualizada.")
+    prov["versao_censo"] = ano
     prov["data_extracao_censo"] = str(date.today())
     salvar_proveniencia(prov)
-    print(f"[OK] _proveniencia.json atualizado.")
+    print(f"[OK] _proveniencia.json atualizado (Censo {ano}).")
 
 
 if __name__ == "__main__":
