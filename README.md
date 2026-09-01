@@ -64,20 +64,28 @@ export OBS_CENSO_DIR=/caminho/para/microdados/dados   # diretório do CSV do Cen
 export OBS_CPC_XLSX=/caminho/para/CPC_2023.xlsx       # planilha CPC do INEP
 ```
 
-### ⚠️ `data/nacional.json` é parcialmente artefato-fonte
+### Reprodutibilidade do `data/nacional.json`
 
-**12 dos 51 campos por UF não têm script produtor no repositório** — `populacao`,
-`pop_ano`, `vagas_por_100k`, `taxa_retencao`, `matriculas_total`, `concluintes_total`,
-`n_mantenedoras`, `HHI_mantenedora`, `n_cursos_idd`, `mun_ead_only`,
-`ead_polos_municipios`, `ead_polos_registros`. Foram gerados por trabalho que nunca foi
-versionado.
+O pipeline regenera **todos os 51 campos por UF** a partir das fontes. Conferido em
+2026: rodar o pipeline completo sobre o Censo 2024 reproduz o publicado sem
+divergência de valor em nenhuma UF.
 
-Consequência prática: **reprocessar do zero apaga esses campos sem forma conhecida de
-recuperá-los**, a não ser pelo histórico do git. Por isso `conferir_riqueza()` compara o
-JSON gerado com o do último commit e **aborta a publicação** se algum campo sumir. Se
-isso acontecer, restaure com `git checkout HEAD -- data/` e investigue antes de insistir.
+Até 2026 isso não era verdade: 20 campos vinham de trabalho que nunca foi versionado,
+e reprocessar do zero os apagava. `etl/complementos.py` fecha essa lacuna — cada
+derivação foi reconstituída por engenharia reversa e conferida contra o publicado
+(540/540 valores, 27 UFs × 20 campos). Rodado sem `--aplicar`, ele refaz essa
+conferência, então uma mudança de layout nas fontes aparece como divergência em vez
+de virar número errado publicado.
 
-Reconstituir os produtores desses 12 campos é dívida técnica em aberto.
+`conferir_riqueza()` segue como rede de segurança: compara o JSON gerado com o do
+último commit e **aborta a publicação** se algum campo sumir. Nenhum teste do projeto
+checa presença de campo, então sem ela o site poderia ir ao ar sem metade dos
+indicadores com tudo verde. Se ela disparar, restaure com `git checkout HEAD -- data/`
+e investigue antes de insistir.
+
+**A ordem do enriquecimento importa:** `complementos.py` roda primeiro porque produz
+`vagas_presencial`, `vagas_ead` e `n_cursos_presencial`, que `modalidade_split.py`
+depois consome. Invertida, aquele script grava `None` em `por_modalidade` sem reclamar.
 
 ## Como o cron funciona
 
