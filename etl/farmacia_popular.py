@@ -193,6 +193,59 @@ def atualizar_nacional(novo):
         print(f"       {linha}")
 
 
+def atualizar_historico(novo):
+    """
+    Recalcula o ICON de data/historico.json com o municipios_fp novo.
+
+    Convencao do arquivo, verificada em 54/54 pares UF-ano: o ICON de cada ano e
+    o municipios_fp ATUAL dividido pelo municipios_oferta DAQUELE ano. Ou seja, a
+    Farmacia Popular entra como retrato do presente, e o delta exibido no site
+    reflete a variacao do denominador (municipios com curso), nao uma mudanca de
+    cobertura assistencial entre os anos.
+
+    Por isso o historico precisa ser recalculado junto: sem isso o cartao passa a
+    exibir um ICON e a tooltip do delta outro, se contradizendo na mesma tela.
+    """
+    caminho = DATA_DIR / "historico.json"
+    if not caminho.exists():
+        print("[AVISO] historico.json ausente — delta do ICON nao recalculado.")
+        return
+
+    with open(caminho, encoding="utf-8") as f:
+        hist = json.load(f)
+
+    anos = hist.get("series", [])
+    alterados = 0
+    for uf, indicadores in hist.get("ufs", {}).items():
+        fp = novo.get(uf)
+        icon = indicadores.get("ICON")
+        ofertas = indicadores.get("municipios_oferta")
+        if fp is None or not icon or not ofertas:
+            continue
+
+        valores = {}
+        for ano in anos:
+            oferta = ofertas.get(ano)
+            valores[ano] = round(fp / oferta, 1) if oferta else None
+
+        if all(valores.get(a) == icon.get(a) for a in anos):
+            continue
+
+        for ano in anos:
+            icon[ano] = valores[ano]
+        if len(anos) == 2 and None not in (valores[anos[0]], valores[anos[1]]):
+            delta = round(valores[anos[1]] - valores[anos[0]], 4)
+            icon["delta"] = delta
+            # ICON: maior e melhor.
+            icon["tendencia"] = ("melhora" if delta > 0
+                                 else "piora" if delta < 0 else "estavel")
+        alterados += 1
+
+    with open(caminho, "w", encoding="utf-8") as f:
+        json.dump(hist, f, ensure_ascii=False, indent=2)
+    print(f"[OK] historico.json: ICON recalculado em {alterados} UFs.")
+
+
 def aplicar(atual, campos, novo, competencia, modificado, total_listados):
     for linha in atual:
         valor = novo.get(linha["UF"])
@@ -227,6 +280,7 @@ def aplicar(atual, campos, novo, competencia, modificado, total_listados):
     print(f"[OK] {PROV_FILE.name} atualizado (competência {competencia}).")
 
     atualizar_nacional(novo)
+    atualizar_historico(novo)
 
 
 def main():

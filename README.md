@@ -134,7 +134,21 @@ competência na proveniência; rode-o com `--aplicar` ao adotar um período novo
 
 Adotar uma competência mais recente é decisão **editorial**, não automática: o ICON pareia
 municípios atendidos (Farmácia Popular) com municípios que têm curso (Censo), e adiantar só
-o numerador amplia a defasagem entre os dois e desalinha o delta da série histórica.
+o numerador amplia a defasagem entre os dois.
+
+### Como o ICON entra na série histórica
+
+Verificado em 54/54 pares UF-ano: em `data/historico.json` o ICON de **cada** ano é o
+`municipios_fp` **atual** dividido pelo `municipios_oferta` **daquele** ano. A Farmácia
+Popular entra como retrato do presente, não como série.
+
+Consequência a ter em mente ao ler o site: a seta de variação do ICON reflete a mudança no
+**denominador** — quantos municípios passaram a ter curso — e não uma variação de cobertura
+assistencial entre os anos.
+
+Por isso `etl/farmacia_popular.py --aplicar` recalcula o `historico.json` junto com o
+`nacional.json`. Sem isso o cartão exibiria um ICON e a tooltip do delta outro, se
+contradizendo na mesma tela.
 
 O e-MEC segue em `FONTES_SEM_SONDAGEM` e é **impresso a cada execução**, para que a lacuna
 apareça no relatório em vez de passar por normalidade.
