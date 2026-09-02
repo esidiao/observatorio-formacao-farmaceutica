@@ -181,17 +181,23 @@ function renderLegendaNacional(indicador) {
 function iniciarMapaNacional(dadosUFs) {
   if (mapaNacional) return;
 
+  // maxZoom precisa vir aqui: sem camada de tiles, nada mais o define, e o
+  // fitBounds() nao consegue calcular um zoom valido.
+  //
+  // NAO defina center/zoom iniciais. Sem view previa, o Leaflet aplica o
+  // fitBounds pelo caminho sincrono (_resetView); com view previa ele usa o
+  // caminho ANIMADO, que depende de requestAnimationFrame e deixa o mapa preso
+  // no enquadramento inicial sempre que a aba esta oculta ou em background.
   mapaNacional = L.map('mapa-nacional', {
+    maxZoom: 12,
     zoomControl: true,
     scrollWheelZoom: false,
   });
 
-  // Tile neutro (OpenStreetMap Carto Light)
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-    attribution: '© <a href="https://carto.com/">CARTO</a>',
-    subdomains: 'abcd',
-    maxZoom: 12,
-  }).addTo(mapaNacional);
+  // Sem tile de fundo: a CARTO passou a exigir chave de API e devolvia um PNG
+  // com marca d'agua "API KEY REQUIRED" no lugar do mapa. A geometria que importa
+  // (malhas do IBGE) e servida localmente, entao o coropletico se sustenta sozinho
+  // — e o site deixa de depender de um terceiro para renderizar.
 
   carregarEstados(dadosUFs);
 }
@@ -297,13 +303,11 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCo
   if (mapaUF) return;
   municipiosMapa = municipiosMapa || {};
 
-  mapaUF = L.map('mapa-uf', { scrollWheelZoom: false });
+  // Idem: sem center/zoom iniciais, para o fitBounds sobre a malha municipal
+  // seguir o caminho sincrono. Ver nota em iniciarMapaNacional().
+  mapaUF = L.map('mapa-uf', { maxZoom: 14, scrollWheelZoom: false });
 
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png', {
-    attribution: '© CARTO',
-    subdomains: 'abcd',
-    maxZoom: 14,
-  }).addTo(mapaUF);
+  // Sem tile de fundo — ver nota em iniciarMapaNacional().
 
   // Malha municipal IBGE: cada feature tem codarea = código IBGE (7 dígitos).
   const urlLocal = (window._GEO_BASE || '') + `static/geo/estados/${codigoIBGE}.json`;
