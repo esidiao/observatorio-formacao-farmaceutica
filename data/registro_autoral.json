@@ -2,11 +2,11 @@
   "obra": "Observatório Nacional da Formação Farmacêutica",
   "autor": "Edson Sidião de Souza Júnior",
   "tipo": "Registro de Anterioridade e Integridade (prova de existência)",
-  "selado_em_utc": "2026-06-29T00:25:46+00:00",
+  "selado_em_utc": "2026-09-10T13:35:38+00:00",
   "algoritmo": "SHA-256",
-  "n_arquivos": 56,
-  "hash_raiz": "ca3cb5d1ed17e9b32bf0485035fa9599ff6cfe486fc99fcd72c9a8c54c283b58",
-  "git_commit_ancora": "32f151973930e60937bae9341f750c54d2e541c2",
+  "n_arquivos": 59,
+  "hash_raiz": "0195eb4ff631976af9f00319f824fcaf5b59bb6a69689164b8b30562d8ea3ed9",
+  "git_commit_ancora": "a40e2cc81be458c1fadc8bedf64fe51d45c12abb",
   "fundamento": "Lei 9.610/1998 e Lei 9.609/1998. O hash-raiz é impressão digital única do conjunto; o commit Git ancora a data de forma imutável.",
   "como_verificar": [
     "1. Baixe os arquivos listados em 'arquivos'.",
@@ -19,11 +19,11 @@
   "arquivos": [
     {
       "caminho": "data/_proveniencia.json",
-      "sha256": "d82d6081df53a78d0a587dbdd548e3655162fc8c2c0bfd4042d8ab7f88b96b90"
+      "sha256": "6ea151c536fb17b3d6c6887c5c658b57d2b095926cb74f34ca007f980fe7b923"
     },
     {
       "caminho": "data/historico.json",
-      "sha256": "7a4fb2e256a531116a42504ad932f1f899a9ce88651a7d8cce244dc6544b03aa"
+      "sha256": "9c7498ba861fb5c00c793c0f7c507da37b168b6cb8502334983909e39ecf2551"
     },
     {
       "caminho": "data/municipios/AC.json",
@@ -135,111 +135,123 @@
     },
     {
       "caminho": "data/nacional.json",
-      "sha256": "313ecb614d07d0cfa4602a7621af02638c20101e9d2fe842fad401cb6940810d"
+      "sha256": "61e971a73b2ebce01c56a5780abe83b9c066e531358be9f821c29a0db5cf7d3a"
     },
     {
       "caminho": "etl/baixar_geo.py",
-      "sha256": "f3345a584541a9b5054b2fc9932cde846add2a1a3d4d895acd36efe5c8b89019"
+      "sha256": "6543869d093a486f6e67f353956b60e26d24ec4030c0010d57ecf1de867d209f"
     },
     {
       "caminho": "etl/basedosdados_observatorio.py",
-      "sha256": "7a94df3774a219f251e8b152142a432b680f7726bc5c08cd2a72131de261fb0a"
+      "sha256": "39f3357e9a6d1780e0075b4a7c699641ff7c200229abc1101c1b06d2328c9b13"
     },
     {
       "caminho": "etl/censo_perfil.py",
-      "sha256": "dc058bec770ca01da8d0787f7f67d94e4ff60cfaee3aeec2accb6c738bd0814b"
+      "sha256": "6170672926dc87046fb0e352eda362f92fb42ea9b07b4b79682cb7c6fbf25914"
+    },
+    {
+      "caminho": "etl/complementos.py",
+      "sha256": "57fec2e0a0715fc88f9b9a0fc1996dd5e6d978ca2ebb0f8ebb35cbc8b854c410"
     },
     {
       "caminho": "etl/cpc_dimensoes.py",
-      "sha256": "ef870f349053317413a4428a383f6f4588672075164faeeed93a1d288fe7e24e"
+      "sha256": "2e77a95f8ff99535908a66b3f2f2584df464b5ce64fadaa147baf7fcff677e79"
     },
     {
       "caminho": "etl/docentes_cpc.py",
-      "sha256": "c3b8a88492acf95c1d73466166584f34d4d7ed2e415d29ef04231fbbd6af303e"
+      "sha256": "642267d4dfa5cba5af10c874dcee5825809b6b1386e87a9cc329ed6332964c52"
     },
     {
       "caminho": "etl/emec_cadastro_autorizada.py",
-      "sha256": "2df26d9555d295fda299cd3da12a93f24abbbfd1ac341b595260f0794d530de4"
+      "sha256": "ad8330f00c38fd72f7e086aa41913b7a1a54be6dc4fa5286cb9ce53e7ab72ace"
+    },
+    {
+      "caminho": "etl/farmacia_popular.py",
+      "sha256": "54ea66cf69fd03df99490918093825d5263d3f714d99f5b05a477391236543d6"
     },
     {
       "caminho": "etl/indices_observatorio.py",
-      "sha256": "7648bedd2edebca13ea37aa566deecb1b57ede5d5fef89b65277ee37af5534c9"
+      "sha256": "8d5ef551e325f42bd5885dbbb10a1093f733ae780305cbdd4383952ac5478679"
     },
     {
       "caminho": "etl/ingestao_observatorio_nacional.py",
-      "sha256": "57f01f6cae2155901e41b534e617fb4057906cdc48dd8ca908127fdb61cc05ca"
+      "sha256": "56a58e6fe2d854466ede06e9f97eebc7b0f3e5d59604f6883fee10a316c29edd"
     },
     {
       "caminho": "etl/modalidade_split.py",
-      "sha256": "2c9d15da261c0de7f3b82dd9320dbca70914c8dc2b53a567ac2cb6dcc6db0de5"
+      "sha256": "0fb55026e9729a843ac38fc482a4c9aff0baf178c5b966819756faee3c645a16"
     },
     {
       "caminho": "etl/municipios_etl.py",
-      "sha256": "a4eae6ff40478b8f513d705cb639221a2c38f6c3037acf2853bc76634a65fecf"
+      "sha256": "5a93149a0383b65da9f05a5ea94f9bcb09f5d0ec74d4c96ea164f2bdf5bc06ff"
     },
     {
       "caminho": "etl/pipeline.py",
-      "sha256": "00b8a5c29f608401881bb371653d969f3af1660ae64fb0347d2fc6917e8ca682"
+      "sha256": "f7146c0e25cdde6338aee10e1d636874aee0e3b96e5da013c45c8efdcd994b72"
     },
     {
       "caminho": "etl/registro_autoral.py",
-      "sha256": "1d7cbc2b29823e2e0b3a8756500084591f9c23fcad62148f8194e3d922bcb524"
+      "sha256": "99715840f6bb40827bfc451ea7f397258aeff18131940860ecfbcceb85659d30"
     },
     {
       "caminho": "etl/serie_historica.py",
-      "sha256": "87908d8ea8996310c6d39088d35512a1577e09fccc8e59fd81f94a889aee852d"
+      "sha256": "21b824716b3f05c2ae92bde7aa26216d88a82cb6e1f637d203fb4cfc9b8dc9b2"
     },
     {
       "caminho": "site/build.py",
-      "sha256": "a189eea0fead873f87e8bf4f77c511aa0e5d41727addb1b5f161607d874dcea5"
+      "sha256": "438a30cd0e7bd9c256ef8057151f1c4559bb77ac2a2ddacf9dd996accfde9391"
     },
     {
       "caminho": "site/static/css/style.css",
-      "sha256": "2c488e6aecbd407a21cc2dd8714ffe5c64b4f4f65d244737ae3c47f83dded809"
+      "sha256": "85735876b0b86167c33dd0580c0b59c88454643f5dde0192bd940c2c4899d1b0"
     },
     {
       "caminho": "site/static/js/app.js",
-      "sha256": "36f3e4308900b91a6cd314994718be499282c165cc5720dffa8c5590d33417b9"
+      "sha256": "fe67aa7f21c7a8bd55f7a647f8081dfd653f2e5f5f63d89b58e6d6767269f248"
     },
     {
       "caminho": "site/static/js/glossario.js",
-      "sha256": "cf7a53c4a051c415681a03f670d2d79b0f232cf238176680d5e777136fa2d108"
+      "sha256": "be5ab1119f3711f3c5e548c39a17ce3bc54ca6031625430c697747771db14f6e"
     },
     {
       "caminho": "site/templates/autor.html.j2",
-      "sha256": "d5ad1c76b105e48e8db3154cd4ee28add323abaff96d90d36e0932fb747beea2"
+      "sha256": "33dea7abc3aed141060f15a3ca196d648536147d9d1a21004300f2604874e1cd"
     },
     {
       "caminho": "site/templates/aviso-legal.html.j2",
-      "sha256": "67388bbad84e35f8851c0d82b3f3053e3397cda21c6b0a8ccc6e0e9869e111ec"
+      "sha256": "2d536dc098bfa59b32a77d184a5650974d7eaa6968bee1717676f6fa05dcdf4a"
     },
     {
       "caminho": "site/templates/base.html.j2",
-      "sha256": "980a716714a7b82e888d8334a00f64e8c1620c0f46a72f62620aba95b88e8568"
+      "sha256": "49e0d36d102ad55c9e8cce400e25e698a4ec78b6b505573727bcba18a672d295"
     },
     {
       "caminho": "site/templates/comparar.html.j2",
-      "sha256": "00c673be727850641644ec0c6a1f99ead1b7c5ab6825fcb966a2b53f71cc9555"
+      "sha256": "3eee4b5eca3ed3b7fbb7d8c5a03db44c6687e0002ac4e076fe0b009d84870825"
     },
     {
       "caminho": "site/templates/correlacoes.html.j2",
-      "sha256": "66ac88947104d4af83c1c30b5ea652237df2a6463000e0a6aa29fc1a2a6b089b"
+      "sha256": "44826f296ba300158d71164a1a36fe3f01761475e06507edf99f2ad536e2bc9f"
     },
     {
       "caminho": "site/templates/index.html.j2",
-      "sha256": "1bd3ae8145c3e747c67cf8fe3df2e69cc7d80a9f4faf7c4b898fc6a983da7426"
+      "sha256": "1be044d0cce0a107808ab1bd69ba7ac69c7e5751240bcaf1fadd173465191ceb"
     },
     {
       "caminho": "site/templates/indice.html.j2",
-      "sha256": "873ce4390cebe505a1375027af392abbe79a4256c502bf5fb23261c7d9b4a493"
+      "sha256": "9a19982e9f511ed17894ec6ab97782bd42070c86a5c1428ed24ab430061f8ba2"
+    },
+    {
+      "caminho": "site/templates/livro.html.j2",
+      "sha256": "1acdb16fddb7e1dcfa78c653f56c1bcf9dd75b53b8e493d91202f7e6f56ec30a"
     },
     {
       "caminho": "site/templates/municipio.html.j2",
-      "sha256": "9557b302f2bdf1d78f5896d117632d78dad26136c2f779eb0e0b41ebb5b1dd38"
+      "sha256": "e4e4a8d48327211e4af37714f03deecbf31dd5baa0acf5873b960655ca9bf77e"
     },
     {
       "caminho": "site/templates/uf.html.j2",
-      "sha256": "820a415b07e99d5b9459707f135cad9d9fd057c08d29093a7dd861c8ba8089d3"
+      "sha256": "0f036ec23539f64098e71a264c19a2f35733aeec3bd7c56c6e1b34d68fbc397f"
     }
   ]
 }
