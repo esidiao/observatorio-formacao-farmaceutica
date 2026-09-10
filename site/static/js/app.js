@@ -5,9 +5,37 @@
 
 /* ── Utilitários ─────────────────────────────────────────── */
 
-/** Escala RdBu (invertida: baixo ICT = azul = bom) */
-const RDBU = ['#2166AC','#4393C3','#92C5DE','#D1E5F0','#F7F7F7','#FDDBC7','#F4A582','#D6604D','#B2182B'];
-const NODATA_COLOR = '#C9CDD2';
+/* ── Cor: uma fonte só ───────────────────────────────────────
+   As escalas e as cores institucionais moram nas variáveis do CSS. Repeti-las
+   aqui como literal cria duas cópias da mesma informação, e duas cópias
+   divergem em silêncio: no observatório de Psicologia a paleta foi trocada no
+   CSS, esta cópia ficou para trás, e mapas e tabelas passaram a desenhar na
+   cor do projeto anterior sem erro nenhum no console.
+
+   As listas literais abaixo permanecem só como socorro: se o CSS não tiver
+   carregado quando isto rodar, um mapa em cor aproximada é melhor que um mapa
+   cinza. */
+function corToken(nome, reserva) {
+  const v = getComputedStyle(document.documentElement)
+    .getPropertyValue('--' + nome).trim();
+  return v || reserva;
+}
+
+function escalaDoCss(prefixo, n, reserva) {
+  const raiz = getComputedStyle(document.documentElement);
+  const cores = [];
+  for (let i = 1; i <= n; i++) {
+    const c = raiz.getPropertyValue('--' + prefixo + '-' + i).trim();
+    if (!c) return reserva;
+    cores.push(c);
+  }
+  return cores;
+}
+
+/** Escala RdBu (invertida: baixo ICT = azul = bom) — de `--rdbu-1..9`. */
+const RDBU = escalaDoCss('rdbu', 9,
+  ['#2166AC','#4393C3','#92C5DE','#D1E5F0','#F7F7F7','#FDDBC7','#F4A582','#D6604D','#B2182B']);
+const NODATA_COLOR = corToken('nodata', '#C9CDD2');
 
 function corICT(val) {
   if (val === null || val === undefined) return NODATA_COLOR;
@@ -77,7 +105,7 @@ const INDICADOR_META = {
 /* Cor diverging RdBu genérica para qualquer indicador com escala+direção. */
 function corGenerica(val, min, max, maiorMelhor) {
   if (val === null || val === undefined || min === null || max === null) return NODATA_COLOR;
-  if (maiorMelhor === null) return '#2E5496'; // sem juízo: azul neutro
+  if (maiorMelhor === null) return corToken('blue', '#2E5496'); // sem juízo: azul neutro
   let norm = (val - min) / (max - min);
   norm = Math.max(0, Math.min(1, norm));
   if (maiorMelhor) norm = 1 - norm;           // inverte: alto=bom → azul
@@ -170,10 +198,12 @@ function renderLegendaNacional(indicador) {
       `<span style="font-size:0.74rem;color:var(--text-muted)">${fmtv(max)}</span>` +
       `<span style="font-size:0.74rem;color:var(--text-muted);margin-left:4px">(menor → maior)</span>` + semDados;
   } else {                                        // direção: melhor/médio/pior
-    const melhorAzul = '#2166AC', piorVerm = '#B2182B';
+    /* Os extremos da própria RdBu, não dois literais soltos: assim a
+       legenda não pode discordar do mapa que ela explica. */
+    const melhorAzul = RDBU[0], piorVerm = RDBU[RDBU.length - 1];
     el.innerHTML =
       `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:${melhorAzul}"></div> Melhor</div>` +
-      `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:#F7F7F7;border:1px solid #ccc"></div> Médio</div>` +
+      `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:${RDBU[4]};border:1px solid #ccc"></div> Médio</div>` +
       `<div class="mapa-legenda-item"><div class="mapa-legenda-cor" style="background:${piorVerm}"></div> Pior</div>` + semDados;
   }
 }
@@ -340,7 +370,8 @@ async function iniciarMapaUF(codigoIBGE, municipiosComOferta, municipiosOfertaCo
 
   const camada = L.geoJSON(geo, {
     style: feature => ({
-      fillColor: temOfertaFeature(feature.properties) ? '#2E5496' : '#C9CDD2',
+      fillColor: temOfertaFeature(feature.properties)
+        ? corToken('blue', '#2E5496') : NODATA_COLOR,
       fillOpacity: 0.75,
       color: '#fff',
       weight: 0.5,
