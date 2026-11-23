@@ -70,7 +70,7 @@ CPC_XLSX = Path(os.environ.get(
     "G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/CPC_2023.xlsx"))
 
 CURSO = "FARMÁCIA"
-ANO_POPULACAO_PADRAO = 2025
+ANO_POPULACAO_PADRAO = 2026
 
 # Agregado 6579 = Populacao residente estimada; variavel 9324; nivel N3 = UF.
 URL_IBGE = ("https://servicodados.ibge.gov.br/api/v3/agregados/6579/periodos/"
