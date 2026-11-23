@@ -185,6 +185,14 @@ def atualizar_nacional(novo):
 
     nacional["metadados"]["data_extracao"] = str(date.today())
 
+    # metadados.fontes e um retrato de _proveniencia.json (pipeline.empacotar faz
+    # `"fontes": prov["fontes"]`). Sem esta copia, a adocao de uma competencia
+    # nova deixava o nacional.json publicado afirmando a competencia ANTERIOR —
+    # aconteceu com a 202607 e so foi pega depois, por revisao manual.
+    with open(PROV_FILE, encoding="utf-8") as f:
+        fp_prov = json.load(f)["fontes"]["farmacia_popular"]
+    nacional["metadados"].setdefault("fontes", {})["farmacia_popular"] = fp_prov
+
     with open(caminho, "w", encoding="utf-8") as f:
         json.dump(nacional, f, ensure_ascii=False, indent=2)
 
@@ -266,8 +274,6 @@ def aplicar(atual, campos, novo, competencia, modificado, total_listados):
         "nome": "Programa Farmácia Popular do Brasil — Beneficiários",
         "orgao": "Ministério da Saúde",
         "url": URL,
-        "espelho": ("Portal de Dados Abertos do SUS — espelho sem autenticação; "
-                    "dados.gov.br exige chave de API registrada"),
         "competencia": competencia,
         "data_publicacao": str(modificado) if modificado else None,
         "municipios_listados": total_listados,
