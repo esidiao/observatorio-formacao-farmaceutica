@@ -264,9 +264,29 @@ def _checar_farmacia_popular(url, competencia_usada, total_registrado):
 
     usada = str(competencia_usada)
     if usada not in contagens:
-        print(f"[CHECK] INDETERMINADO: a competência registrada ({usada}) não está "
-              f"mais na fonte. Disponíveis: {', '.join(competencias)}.")
-        return [], [f"Farmácia Popular (competência {usada} ausente na fonte)"]
+        # A fonte passou a reter só os dezembros e o mês corrente (medido em
+        # 2026-11-23: 202312, 202412, 202512 e 202610). Uma competência adotada num
+        # mês intermediário — como a 202607 — sai da série semanas depois. Isso NÃO
+        # é falha de verificação: o arquivo foi lido e a lista de competências é
+        # confiável, então a pergunta "há algo mais novo?" tem resposta.
+        # O que se perde é só a retificação retroativa e a reprodutibilidade.
+        mais_novas = [c for c in competencias if c > usada]
+        if not mais_novas:
+            # Nada mais novo e a em uso sumiu: a fonte regrediu ou mudou de layout.
+            print(f"[CHECK] INDETERMINADO: a competência registrada ({usada}) não está "
+                  f"mais na fonte e nada mais novo a substitui. "
+                  f"Disponíveis: {', '.join(competencias)}.")
+            return [], [f"Farmácia Popular (competência {usada} ausente na fonte)"]
+
+        recente = max(mais_novas)
+        print(f"[CHECK] NOTA: a competência em uso ({usada}) saiu da série pública — a "
+              f"fonte só retém dezembros e o mês corrente. Retificação retroativa dela "
+              f"não é mais verificável e `farmacia_popular.py --competencia {usada}` "
+              f"não a reproduz. Disponíveis: {', '.join(competencias)}.")
+        print(f"[CHECK] NOVIDADE: Farmácia Popular tem competência {recente} "
+              f"({contagens[recente]} municípios); em uso: {usada} (fora da série pública).")
+        return ([f"Farmácia Popular {recente} disponível "
+                 f"(em uso: {usada}, fora da série pública)"], [])
 
     novidades = []
 

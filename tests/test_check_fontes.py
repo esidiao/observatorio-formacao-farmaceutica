@@ -220,10 +220,43 @@ def test_fp_sem_competencia_registrada():
            "sem competência na proveniência não há contra o que comparar")
 
 
-def test_fp_competencia_registrada_desapareceu():
-    nov, ind, saida = rodar_fp("202412", 4433, {"202512": 4433, "202606": 4466})
+# A fonte passou a reter só os dezembros e o mês corrente (medido em 2026-11-23:
+# 202312, 202412, 202512 e 202610). Uma competência adotada num mês intermediário
+# (a 202607) sai da série semanas depois. Antes isso virava INDETERMINADO — e o
+# alerta de "há competência mais nova" ficava mudo pelo resto do tempo. Agora:
+# havendo algo mais novo, é NOVIDADE; só sem nada mais novo é que continua
+# indeterminado, porque aí a fonte regrediu ou mudou de layout.
+
+SERIE_ATUAL_DA_FONTE = {"202312": 4238, "202412": 4433, "202512": 4433, "202610": 4583}
+
+
+def test_fp_competencia_rotacionada_com_mais_nova_e_novidade():
+    nov, ind, saida = rodar_fp("202607", 4503, SERIE_ATUAL_DA_FONTE)
+    checar(not ind, f"havendo competência mais nova, não é indeterminado: {ind}")
+    checar(len(nov) == 1, f"deveria gerar exatamente 1 novidade: {nov}")
+    texto = nov[0] if nov else ""
+    checar("202610" in texto and "202607" in texto,
+           f"a novidade deveria nomear a nova e a que está em uso: {nov}")
+    checar("fora da série" in texto, "deveria dizer que a em uso saiu da série pública")
+    checar("não é mais verificável" in saida,
+           "deveria avisar que a retificação retroativa deixou de ser verificável")
+
+
+def test_fp_competencia_ausente_sem_nada_mais_novo_e_indeterminada():
+    nov, ind, _ = rodar_fp("202612", 4600, SERIE_ATUAL_DA_FONTE)
+    checar(not nov, f"sem nada mais novo não há novidade: {nov}")
     checar(len(ind) == 1,
-           f"competência registrada ausente da fonte é indeterminado: {ind}")
+           f"competência em uso sumiu e nada a substitui: indeterminado: {ind}")
+
+
+def test_fp_dezembro_adotado_continua_verificavel():
+    """O dezembro (convenção do projeto) segue na série: lógica normal, sem 'fora da série'."""
+    nov, ind, saida = rodar_fp("202512", 4433, SERIE_ATUAL_DA_FONTE)
+    checar(not ind, f"dezembro presente na série é verificável: {ind}")
+    texto = nov[0] if nov else ""
+    checar(len(nov) == 1 and "202610" in texto and "fora da série" not in texto,
+           f"deveria ser a novidade comum (202610 disponível): {nov}")
+    checar("saiu da série" not in saida, "não deveria alegar que saiu da série")
 
 
 # ── Cadeia TLS do INEP ────────────────────────────────────────────────────────
@@ -350,7 +383,9 @@ def main():
                   test_fp_last_modified_nao_e_usado,
                   test_fp_falha_de_rede_e_indeterminada,
                   test_fp_sem_competencia_registrada,
-                  test_fp_competencia_registrada_desapareceu,
+                  test_fp_competencia_rotacionada_com_mais_nova_e_novidade,
+                  test_fp_competencia_ausente_sem_nada_mais_novo_e_indeterminada,
+                  test_fp_dezembro_adotado_continua_verificavel,
                   test_inep_usa_bundle_com_o_intermediario,
                   test_outros_hosts_mantem_o_padrao_do_certifi,
                   test_verificacao_tls_nunca_e_desligada,
