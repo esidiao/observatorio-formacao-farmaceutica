@@ -72,6 +72,62 @@ def _github_output(chave, valor):
             f.write(f"{chave}={valor}\n")
 
 
+# Hosts cujo servidor envia a cadeia TLS INCOMPLETA (sem o certificado
+# intermediário). Para esses, e só para esses, a verificação usa um bundle com o
+# `certifi` MAIS os intermediários versionados em etl/certs/ — a verificação
+# continua ligada e ancorada numa raiz confiável. Ver etl/certs/LEIA-ME.md.
+#
+# Histórico: em 21/09/2026 o download.inep.gov.br renovou o certificado e passou
+# a omitir o intermediário. O `requests` deu SSLError, `_sondar` devolveu
+# INDETERMINADO, e o alerta semanal ficou cego sem que o CI ficasse vermelho.
+CERTS_DIR = REPO / "etl" / "certs"
+HOSTS_CADEIA_INCOMPLETA = {"download.inep.gov.br"}
+
+_bundle_ca_cache = None
+
+
+def _bundle_ca():
+    """Caminho de um PEM com certifi + intermediários de etl/certs/ (criado uma vez)."""
+    global _bundle_ca_cache
+    import atexit
+    import os
+    import tempfile
+
+    if _bundle_ca_cache and os.path.exists(_bundle_ca_cache):
+        return _bundle_ca_cache
+
+    import certifi
+
+    partes = [Path(certifi.where()).read_text(encoding="utf-8")]
+    for pem in sorted(CERTS_DIR.glob("*.pem")):
+        partes.append(pem.read_text(encoding="utf-8"))
+
+    fd, caminho = tempfile.mkstemp(prefix="obs-ca-", suffix=".pem")
+    with os.fdopen(fd, "w", encoding="utf-8") as f:
+        f.write("\n".join(partes))
+
+    def _limpar():
+        try:
+            os.remove(caminho)
+        except OSError:
+            pass
+
+    atexit.register(_limpar)
+    _bundle_ca_cache = caminho
+    return caminho
+
+
+def _verify_para(url):
+    """
+    Valor do parâmetro `verify` do requests para esta URL. NUNCA devolve False:
+    ou o bundle que completa a cadeia (hosts conhecidos), ou True (padrão do certifi).
+    """
+    from urllib.parse import urlparse
+
+    host = urlparse(url).hostname or ""
+    return _bundle_ca() if host in HOSTS_CADEIA_INCOMPLETA else True
+
+
 def _sondar(url, tentativas=3, espera=4):
     """
     Sonda a existência do arquivo. Devolve (existe, detalhe):
@@ -90,13 +146,17 @@ def _sondar(url, tentativas=3, espera=4):
     for tentativa in range(tentativas):
         try:
             r = requests.get(url, timeout=30, allow_redirects=True, stream=True,
-                             headers={"Range": "bytes=0-0"})
+                             headers={"Range": "bytes=0-0"}, verify=_verify_para(url))
             r.close()
             if r.status_code in (200, 206):
                 return True, str(r.status_code)
             if r.status_code == 404:
                 return False, "404"
             ultimo = f"HTTP {r.status_code}"
+        except requests.exceptions.SSLError:
+            # Mesmo com o bundle: o emissor mudou ou o certificado expirou.
+            # Nome específico para o alerta apontar a causa, não só "SSLError".
+            ultimo = "SSLError — cadeia TLS não validou (ver etl/certs/LEIA-ME.md)"
         except requests.RequestException as e:
             ultimo = type(e).__name__
         if tentativa < tentativas - 1:

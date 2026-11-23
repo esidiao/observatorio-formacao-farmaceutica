@@ -226,6 +226,120 @@ def test_fp_competencia_registrada_desapareceu():
            f"competência registrada ausente da fonte é indeterminado: {ind}")
 
 
+# ── Cadeia TLS do INEP ────────────────────────────────────────────────────────
+#
+# Em 21/09/2026 o download.inep.gov.br passou a enviar o certificado SEM o
+# intermediário. requests deu SSLError, _sondar devolveu INDETERMINADO, e o
+# alerta semanal ficou cego com o CI verde. A correção versiona o intermediário
+# (etl/certs/) e o usa SÓ para esse host — sem jamais desligar a verificação.
+# Estes testes travam: (a) o bundle é usado onde deve, (b) verify nunca é False,
+# (c) o certificado versionado é o que se pretende e não venceu.
+
+FINGERPRINTS_INTERMEDIARIOS = {
+    "rnp-icpedu-gr46-ov-tls-ca-2025.pem":
+        "E10747D4DA7BAB09CBA9952F019D3534CB9FBA070BF13D8791B1699CD2FF59DD",
+}
+VALIDADE_INTERMEDIARIOS = {
+    "rnp-icpedu-gr46-ov-tls-ca-2025.pem": (2030, 11, 19),
+}
+
+
+def capturar_verify(url):
+    """Roda _sondar com requests.get falso e devolve o `verify` que ele pediu."""
+    import requests
+
+    visto = {}
+
+    class RespostaFalsa:
+        status_code = 206
+
+        def close(self):
+            pass
+
+    def get_falso(u, **kwargs):
+        visto.update(kwargs)
+        return RespostaFalsa()
+
+    original = requests.get
+    requests.get = get_falso
+    try:
+        pipeline._sondar(url, tentativas=1, espera=0)
+    finally:
+        requests.get = original
+    return visto.get("verify", "AUSENTE")
+
+
+def test_inep_usa_bundle_com_o_intermediario():
+    import os
+
+    verify = capturar_verify("https://download.inep.gov.br/microdados/x.zip")
+    checar(isinstance(verify, str) and os.path.exists(verify),
+           f"para o INEP, verify deveria ser o caminho de um bundle existente: {verify!r}")
+    if isinstance(verify, str) and os.path.exists(verify):
+        conteudo = Path(verify).read_text(encoding="utf-8")
+        for nome in FINGERPRINTS_INTERMEDIARIOS:
+            pem = (pipeline.CERTS_DIR / nome).read_text(encoding="utf-8").strip()
+            checar(pem in conteudo, f"o bundle deveria conter {nome}")
+        import certifi
+        checar(conteudo.startswith(Path(certifi.where()).read_text(encoding="utf-8")[:200]),
+               "o bundle deveria começar pelas raízes do certifi (a âncora de confiança)")
+
+
+def test_outros_hosts_mantem_o_padrao_do_certifi():
+    verify = capturar_verify("https://demas-dados-abertos.s3.amazonaws.com/csv/x.zip")
+    checar(verify is True,
+           f"fora da lista de hosts, verify deveria ser True (padrão): {verify!r}")
+
+
+def test_verificacao_tls_nunca_e_desligada():
+    """Regressão de segurança: nenhum caminho pode produzir verify=False."""
+    for url in ("https://download.inep.gov.br/microdados/x.zip",
+                "https://demas-dados-abertos.s3.amazonaws.com/csv/x.zip",
+                "https://exemplo.gov.br/qualquer"):
+        verify = capturar_verify(url)
+        checar(verify is not False and verify != "AUSENTE",
+               f"verify nunca pode ser False nem omitido ({url}): {verify!r}")
+
+
+def test_ssl_persistente_aponta_a_causa():
+    """Se nem o bundle fecha a cadeia, o alerta deve dizer onde olhar."""
+    import requests
+
+    def get_ssl(u, **kwargs):
+        raise requests.exceptions.SSLError("cadeia")
+
+    original = requests.get
+    requests.get = get_ssl
+    try:
+        existe, detalhe = pipeline._sondar(
+            "https://download.inep.gov.br/microdados/x.zip", tentativas=1, espera=0)
+    finally:
+        requests.get = original
+    checar(existe is None, f"SSLError é indeterminado, nunca 'sem novidade': {existe!r}")
+    checar("LEIA-ME" in detalhe, f"o detalhe deveria apontar etl/certs/LEIA-ME.md: {detalhe!r}")
+
+
+def test_intermediarios_versionados_sao_os_esperados_e_nao_venceram():
+    import hashlib
+    import ssl
+    from datetime import date
+
+    pems = sorted(p.name for p in pipeline.CERTS_DIR.glob("*.pem"))
+    checar(pems == sorted(FINGERPRINTS_INTERMEDIARIOS),
+           f"etl/certs/ tem certificados sem fingerprint registrado aqui: {pems}")
+    for nome, esperado in FINGERPRINTS_INTERMEDIARIOS.items():
+        arquivo = pipeline.CERTS_DIR / nome
+        if not arquivo.exists():
+            checar(False, f"{nome} sumiu de etl/certs/")
+            continue
+        der = ssl.PEM_cert_to_DER_cert(arquivo.read_text(encoding="ascii"))
+        checar(hashlib.sha256(der).hexdigest().upper() == esperado,
+               f"{nome}: SHA-256 não confere — o arquivo foi alterado")
+        ano, mes, dia = VALIDADE_INTERMEDIARIOS[nome]
+        checar(date.today() < date(ano, mes, dia),
+               f"{nome} venceu em {ano}-{mes:02d}-{dia:02d}: renovar (etl/certs/LEIA-ME.md)")
+
+
 def main():
     for teste in (test_nada_novo, test_censo_novo_detectado, test_enade_novo_detectado,
                   test_falha_de_rede_nao_vira_sem_novidade, test_nao_sonda_o_ano_corrente,
@@ -236,7 +350,12 @@ def main():
                   test_fp_last_modified_nao_e_usado,
                   test_fp_falha_de_rede_e_indeterminada,
                   test_fp_sem_competencia_registrada,
-                  test_fp_competencia_registrada_desapareceu):
+                  test_fp_competencia_registrada_desapareceu,
+                  test_inep_usa_bundle_com_o_intermediario,
+                  test_outros_hosts_mantem_o_padrao_do_certifi,
+                  test_verificacao_tls_nunca_e_desligada,
+                  test_ssl_persistente_aponta_a_causa,
+                  test_intermediarios_versionados_sao_os_esperados_e_nao_venceram):
         antes = len(falhas)
         teste()
         print(f"  [{'OK' if len(falhas) == antes else 'FALHOU'}] {teste.__name__}")
