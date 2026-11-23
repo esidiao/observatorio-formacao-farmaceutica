@@ -28,7 +28,6 @@
   <meta property="og:description" content="Indicadores de acesso, qualidade e cobertura da formação farmacêutica nos 27 estados do Brasil.">
   <meta property="og:locale" content="pt_BR">
   <meta name="author" content="Edson Sidião de Souza Júnior">
-  <link rel="stylesheet" href="{{ depth }}static/css/style.css">
 
   <!-- Dados estruturados (schema.org) — site e autor -->
   <script type="application/ld+json">
@@ -63,6 +62,7 @@
   {% block structured_data %}{% endblock %}
   <!-- Leaflet (hospedado localmente — sem dependência de CDN externo) -->
   <link rel="stylesheet" href="{{ depth }}static/vendor/leaflet/leaflet.css">
+  <link rel="stylesheet" href="{{ depth }}static/css/style.css">
   <script src="{{ depth }}static/vendor/leaflet/leaflet.js"></script>
   <!-- Chart.js (local) -->
   <script src="{{ depth }}static/vendor/chart.umd.min.js"></script>

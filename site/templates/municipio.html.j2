@@ -117,15 +117,16 @@
 <h2 class="section-title">Cursos por IES</h2>
 <div class="tabela-wrap">
   <table>
+    <caption class="sr-only">Cursos de Farmácia ofertados no município</caption>
     <thead>
       <tr>
-        <th>#</th>
-        {% if tem_nome_ies %}<th>IES</th>{% endif %}
-        <th>Modalidade</th>
-        <th>Categoria</th>
-        <th>Organização</th>
-        <th title="Vagas anuais autorizadas em operação">Vagas</th>
-        {% if tem_matriculas %}<th title="Alunos matriculados">Matrículas</th>{% endif %}
+        <th scope="col">#</th>
+        {% if tem_nome_ies %}<th scope="col">IES</th>{% endif %}
+        <th scope="col">Modalidade</th>
+        <th scope="col">Categoria</th>
+        <th scope="col">Organização</th>
+        <th scope="col" title="Vagas anuais autorizadas em operação">Vagas</th>
+        {% if tem_matriculas %}<th scope="col" title="Alunos matriculados">Matrículas</th>{% endif %}
       </tr>
     </thead>
     <tbody>

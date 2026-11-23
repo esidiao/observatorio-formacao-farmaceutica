@@ -6,8 +6,11 @@
   /* Cores institucionais */
   --navy:  #16304F;
   --blue:  #2E5496;
-  --gold:  #B07D22;
-
+  --gold: #B07D22;
+  /* O ouro institucional mede 3,47 sobre o papel: serve para contorno e
+     marcador (minimo 3,0), nao para TEXTO (minimo 4,5). Este e o mesmo ouro
+     escurecido ate 5,24, e e ele que pinta texto. */
+  --gold-forte: #8A6219;
   /* Estado: sem dados */
   --nodata: #C9CDD2;
 
@@ -355,7 +358,7 @@ main { padding: 24px 32px; max-width: 1280px; margin: 0 auto; }
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--gold);
+  color: var(--gold-forte);
   margin-bottom: 10px;
 }
 .glossario-cards {
@@ -418,7 +421,7 @@ main { padding: 24px 32px; max-width: 1280px; margin: 0 auto; }
 }
 .gloss-card.flash { animation: glossFlash 1.6s ease; }
 
-.nav-glossario { color: var(--gold) !important; font-weight: 600; }
+.nav-glossario { color: var(--gold-forte) !important; font-weight: 600; }
 
 /* ============================================================
    MAPA
@@ -547,7 +550,7 @@ tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-a
 
 /* Valência de indicadores */
 .val-bom   { color: var(--swot-strength); font-weight: 600; }
-.val-medio { color: var(--gold); font-weight: 600; }
+.val-medio { color: var(--gold-forte); font-weight: 600; }
 .val-ruim  { color: var(--swot-weakness); font-weight: 600; }
 
 /* ============================================================
@@ -729,4 +732,19 @@ tbody td { padding: 9px 12px; border-bottom: 1px solid var(--border); vertical-a
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
+}
+
+/* Movimento reduzido.
+   Quem marca "reduzir movimento" no sistema operacional está pedindo isso por
+   um motivo — transtorno vestibular, enxaqueca com aura, epilepsia
+   fotossensivel. O navegador ja faz a pergunta ao sistema; cabe ao CSS
+   responder. Transicao vira instantanea, nao desaparece: o estado final tem
+   de continuar visivel. */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
 }

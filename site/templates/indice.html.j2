@@ -36,7 +36,9 @@
 
 <!-- Ranking -->
 <div class="tabela-wrap">
-  <table id="rank-tbl"></table>
+  <table id="rank-tbl">
+    <caption class="sr-only">Unidades da federação ordenadas pelo índice sintético, com os componentes</caption>
+  </table>
 </div>
 
 {% endblock %}
@@ -107,13 +109,15 @@ function corIdx(v) {
 function renderRank() {
   const linhas = UFS.map(uf => ({ uf, ...indiceDe(uf) }))
     .filter(r => r.valor != null).sort((a, b) => b.valor - a.valor);
-  let html = `<thead><tr><th>#</th><th>UF</th><th>IQFF</th>`
-    + DIM.map(d => `<th title="${d.rotulo}" style="font-size:0.7rem">${d.rotulo.split(' ')[0]}</th>`).join('')
+  let html = `<caption class="sr-only">Unidades da federação ordenadas pelo índice sintético, com os componentes</caption>`
+    + `<thead><tr><th scope="col">#</th><th scope="col">UF</th><th scope="col">IQFF</th>`
+    + DIM.map(d => `<th scope="col" title="${d.rotulo}" style="font-size:0.7rem">${d.rotulo.split(' ')[0]}</th>`).join('')
     + `</tr></thead><tbody>`;
   linhas.forEach((r, i) => {
     html += `<tr><td style="color:var(--text-muted)">${i + 1}º</td>`
       + `<td><a href="uf/${r.uf}.html" title="${NOMES[r.uf] || r.uf}"><span class="uf-tag">${r.uf}</span></a></td>`
-      + `<td style="font-weight:700;background:${corIdx(r.valor)}">${r.valor.toFixed(1)}</td>`
+      + (() => { const leg = fundoELegivel(corIdx(r.valor));
+           return `<td style="font-weight:700;background:${leg.fundo};color:${leg.cor}">${r.valor.toFixed(1)}</td>`; })()
       + DIM.map(d => { const n = r.comp[d.key]; return `<td style="font-size:0.78rem;color:var(--text-muted)">${n == null ? '–' : (n * 100).toFixed(0)}</td>`; }).join('')
       + `</tr>`;
   });

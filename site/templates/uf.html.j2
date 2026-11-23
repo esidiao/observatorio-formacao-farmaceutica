@@ -375,11 +375,12 @@
 {% endif %}
 <div class="tabela-wrap">
   <table>
+    <caption class="sr-only">Municípios do estado, com situação de oferta de Farmácia</caption>
     <thead>
       <tr>
-        <th>#</th>
-        <th>Município</th>
-        <th>Status</th>
+        <th scope="col">#</th>
+        <th scope="col">Município</th>
+        <th scope="col">Status</th>
       </tr>
     </thead>
     <tbody>
@@ -438,7 +439,8 @@
   </summary>
   <div style="background:var(--surface);border:1px solid var(--border);border-radius:8px;padding:16px;margin-top:8px;font-size:0.8rem">
     <table style="font-size:0.8rem">
-      <tr><th style="padding:4px 8px;text-align:left">Indicador</th><th style="padding:4px 8px;text-align:left">Fonte</th><th style="padding:4px 8px;text-align:left">Extração</th></tr>
+      <caption class="sr-only">Proveniência de cada indicador: fonte e data de extração</caption>
+      <tr><th scope="col" style="padding:4px 8px;text-align:left">Indicador</th><th scope="col" style="padding:4px 8px;text-align:left">Fonte</th><th scope="col" style="padding:4px 8px;text-align:left">Extração</th></tr>
       <tr><td style="padding:4px 8px">ICT, vagas, municípios</td><td>INEP/Censo {{ meta.versao_censo }}</td><td>{{ meta.data_extracao }}</td></tr>
       <tr><td style="padding:4px 8px">CC, ENADE</td><td>INEP/ENADE 2023</td><td>{{ meta.data_extracao }}</td></tr>
       <tr><td style="padding:4px 8px">IDD, CPC, vagas avaliadas</td><td>INEP/CPC 2023 (CPC_2023.xlsx)</td><td>2025-04-11</td></tr>
