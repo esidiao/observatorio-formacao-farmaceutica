@@ -2,7 +2,7 @@
   "versao_censo": "2024",
   "data_extracao_censo": "2026-06-27",
   "data_extracao_enade": "2025-04-24",
-  "data_extracao_fp": "2026-09-01",
+  "data_extracao_fp": "2026-11-23",
   "fontes": {
     "censo": {
       "nome": "Microdados do Censo da Educação Superior",
@@ -24,10 +24,10 @@
       "nome": "Programa Farmácia Popular do Brasil — Beneficiários",
       "orgao": "Ministério da Saúde",
       "url": "https://demas-dados-abertos.s3.amazonaws.com/csv/sntpbih.csv.zip",
-      "data_publicacao": "2026-08-21",
+      "data_publicacao": "2026-11-09",
       "nota_espelho": "Espelho sem autenticacao no Portal de Dados Abertos do SUS; dados.gov.br exige chave de API registrada (401 sem credencial).",
-      "competencia": "202607",
-      "municipios_atendidos": 4503,
+      "competencia": "202610",
+      "municipios_atendidos": 4583,
       "definicao": "município conta como atendido quando o indicador municipal da competência é maior que zero",
       "municipios_listados": 5571,
       "nota": "Espelho sem autenticacao no Portal de Dados Abertos do SUS; dados.gov.br exige chave de API registrada (401 sem credencial). A competencia adotada e a mais recente disponivel — adiantar so o numerador do ICON frente ao Censo e decisao editorial, registrada aqui para leitura correta do indicador."
