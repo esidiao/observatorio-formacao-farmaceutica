@@ -187,6 +187,68 @@ def test_semipresencial_so_existe_a_partir_de_2025():
                 assert v is None, f"{uf} {ano}: vagas_semipresencial = {v} (esperado null antes de 2025)"
 
 
+def test_capacidade_em_extincao_e_medida_e_separada():
+    """
+    A partir de 2025 a fonte distingue curso em atividade de curso em
+    extincao, e a serie tem de carregar essa distincao.
+
+    POR QUE ESTE TESTE EXISTE
+
+    A primeira publicacao do Censo 2025 afirmou que a EaD em Farmacia CRESCEU
+    de 286.860 para 314.778 vagas. Medido na fonte, as 314.778 eram,
+    integralmente, cursos "em extincao" — nenhum curso de Farmacia a
+    distancia continuou em atividade. O numero estava certo de conta e errado
+    de afirmacao: a linha dizia que a oferta a distancia se expandiu no ano em
+    que ela foi encerrada.
+
+    `TP_SITUACAO` e coluna nova de 2025, entao nao havia o que reparar antes.
+    Este teste existe para que a dimensao nao possa sumir de novo: se alguem
+    regenerar a serie com codigo que ignore a situacao, o campo some e isto
+    falha.
+    """
+    s = _serie_uf()
+    qualquer = next(iter(s["ufs"].values()))
+    assert "vagas_em_extincao" in qualquer, (
+        "a serie deixou de publicar vagas_em_extincao; sem esse campo, "
+        "capacidade encerrada volta a ser somada como oferta ativa")
+    for i, ano in enumerate(s["series"]):
+        for uf, u in s["ufs"].items():
+            v = u["vagas_em_extincao"][i]
+            if ano < 2025:
+                assert v is None, (
+                    f"{uf} {ano}: vagas_em_extincao = {v}; antes de 2025 a "
+                    "fonte nao distinguia situacao, entao e ausencia de "
+                    "categoria (null), nunca zero")
+            else:
+                assert v is not None, (
+                    f"{uf} {ano}: vagas_em_extincao ausente num ano em que a "
+                    "fonte publica TP_SITUACAO")
+
+
+def test_ead_publicada_nao_inclui_curso_encerrado():
+    """
+    Se um ano tem capacidade em extincao, ela nao pode estar dentro da EaD.
+
+    ATENCAO AO QUE ESTE TESTE NAO FAZ: ele NAO teria pego o defeito original.
+    Com a EaD inflada, `vagas_total_real` era calculado a partir dela mesma, e
+    a igualdade fechava. Esta conferencia e de COERENCIA INTERNA, e vale por
+    isso: impede que um conserto futuro tire a capacidade encerrada de um
+    campo e esqueca de tirar do outro, deixando o total sem bater com as
+    partes. Quem pega o defeito original e o teste acima, que exige a
+    dimensao publicada.
+    """
+    s = _serie_uf()
+    for i, ano in enumerate(s["series"]):
+        for uf, u in s["ufs"].items():
+            partes = [u["vagas_total"][i], u["vagas_ead"][i],
+                      u["vagas_semipresencial"][i] or 0]
+            total = u["vagas_total_real"][i]
+            assert sum(partes) == total, (
+                f"{uf} {ano}: presencial {partes[0]} + EaD {partes[1]} + "
+                f"semipresencial {partes[2]} = {sum(partes)}, mas "
+                f"vagas_total_real = {total}")
+
+
 if __name__ == "__main__":
     testes = [
         test_autoteste_go,
@@ -204,6 +266,8 @@ if __name__ == "__main__":
         test_serie_uf_termina_no_valor_publicado,
         test_serie_uf_soma_igual_a_serie_nacional,
         test_semipresencial_so_existe_a_partir_de_2025,
+        test_capacidade_em_extincao_e_medida_e_separada,
+        test_ead_publicada_nao_inclui_curso_encerrado,
     ]
     falhas = 0
     for t in testes:
