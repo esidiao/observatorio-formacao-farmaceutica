@@ -2,191 +2,587 @@
   "BRASILIA": {
     "nome_original": "Brasília",
     "cod_municipio": "5300108",
-    "vagas_total": 3921,
-    "vagas_presencial": 3921,
+    "vagas_total": 4488,
+    "vagas_presencial": 4488,
     "vagas_ead": 0,
-    "matriculas": 5624,
-    "ingressos": 2399,
-    "concluintes": 696,
-    "n_cursos": 51,
-    "n_ies": 41,
+    "matriculas": 5756,
+    "ingressos": 2460,
+    "concluintes": 756,
+    "n_cursos": 206,
+    "n_ies": 39,
     "cursos": [
       {
         "cod_ies": "1660",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
-        "vagas": 1040,
-        "matriculas": 161,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "518",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO DISTRITO FEDERAL",
-        "vagas": 362,
-        "matriculas": 569,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "3396",
-        "nome_ies": "Centro Universitário LS",
-        "vagas": 340,
-        "matriculas": 273,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1060",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO INSTITUTO DE EDUCAÇÃO SUPERIOR DE BRASÍLIA - IESB",
-        "vagas": 308,
-        "matriculas": 106,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1060",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO INSTITUTO DE EDUCAÇÃO SUPERIOR DE BRASÍLIA - IESB",
-        "vagas": 298,
-        "matriculas": 170,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1173",
-        "nome_ies": "FACULDADE ANHANGUERA DE BRASÍLIA",
-        "vagas": 221,
-        "matriculas": 175,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Faculdade"
-      },
-      {
-        "cod_ies": "4068",
-        "nome_ies": "FACULDADE ICESP",
-        "vagas": 200,
-        "matriculas": 27,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Faculdade"
-      },
-      {
-        "cod_ies": "403",
-        "nome_ies": "UNIVERSIDADE CATÓLICA DE BRASÍLIA",
-        "vagas": 167,
-        "matriculas": 196,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "322",
-        "nome_ies": "UNIVERSIDADE PAULISTA",
-        "vagas": 151,
-        "matriculas": 43,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "19219",
-        "nome_ies": "FACULDADE FASIPE DF",
-        "vagas": 150,
-        "matriculas": 3,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Faculdade"
-      },
-      {
-        "cod_ies": "5439",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO PLANALTO CENTRAL APPARECIDO DOS SANTOS",
-        "vagas": 130,
-        "matriculas": 42,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1446",
-        "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
-        "vagas": 120,
-        "matriculas": 6,
+        "nome_ies": "Centro Universitário Estácio De Brasília - Estácio Brasília",
+        "vagas": 1017,
+        "matriculas": 181,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "404",
-        "nome_ies": "FACULDADES INTEGRADAS DA UPIS",
-        "vagas": 120,
-        "matriculas": 42,
+        "nome_ies": "Faculdades Integradas Da Upis",
+        "vagas": 579,
+        "matriculas": 25,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 376,
+        "matriculas": 99,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 376,
+        "matriculas": 163,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "518",
+        "nome_ies": "Centro Universitário Do Distrito Federal",
+        "vagas": 350,
+        "matriculas": 641,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "3396",
+        "nome_ies": "Centro Universitário Ls",
+        "vagas": 302,
+        "matriculas": 213,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1173",
+        "nome_ies": "Faculdade Anhanguera De Brasília",
+        "vagas": 247,
+        "matriculas": 137,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "403",
+        "nome_ies": "Universidade Católica De Brasília",
+        "vagas": 170,
+        "matriculas": 221,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "5439",
+        "nome_ies": "Centro Universitário Do Planalto Central Apparecido Dos Santos",
+        "vagas": 170,
+        "matriculas": 18,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 150,
+        "matriculas": 14,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "19219",
+        "nome_ies": "Faculdade Fasipe Df",
+        "vagas": 150,
+        "matriculas": 0,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
       },
       {
         "cod_ies": "2",
-        "nome_ies": "UNIVERSIDADE DE BRASÍLIA",
-        "vagas": 116,
-        "matriculas": 570,
+        "nome_ies": "Universidade De Brasília",
+        "vagas": 126,
+        "matriculas": 539,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       },
       {
+        "cod_ies": "1446",
+        "nome_ies": "Centro Universitário Planalto Do Distrito Federal - Uniplan",
+        "vagas": 121,
+        "matriculas": 1,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
         "cod_ies": "2",
-        "nome_ies": "UNIVERSIDADE DE BRASÍLIA",
+        "nome_ies": "Universidade De Brasília",
+        "vagas": 103,
+        "matriculas": 485,
+        "modalidade": "Presencial",
+        "categoria": "Pública Federal",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "4068",
+        "nome_ies": "Faculdade Icesp",
         "vagas": 100,
-        "matriculas": 473,
+        "matriculas": 9,
         "modalidade": "Presencial",
-        "categoria": "Pública Federal",
-        "organizacao": "Universidade"
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
       },
       {
         "cod_ies": "2",
-        "nome_ies": "UNIVERSIDADE DE BRASÍLIA",
-        "vagas": 70,
-        "matriculas": 325,
+        "nome_ies": "Universidade De Brasília",
+        "vagas": 83,
+        "matriculas": 300,
         "modalidade": "Presencial",
         "categoria": "Pública Federal",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1113",
-        "nome_ies": "CENTRO UNIVERSITÁRIO EURO-AMERICANO",
-        "vagas": 27,
-        "matriculas": 68,
+        "nome_ies": "Centro Universitário Euro-Americano",
+        "vagas": 67,
+        "matriculas": 82,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1113",
-        "nome_ies": "CENTRO UNIVERSITÁRIO EURO-AMERICANO",
+        "nome_ies": "Centro Universitário Euro-Americano",
         "vagas": 1,
-        "matriculas": 16,
+        "matriculas": 4,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "nome_ies": "Universidade Estácio De Sá",
         "vagas": 0,
-        "matriculas": 78,
+        "matriculas": 8,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 32,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 16,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 159,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 10,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 52,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 31,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 11,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 19,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 14,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 44,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 21,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 58,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 26,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 10,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 14,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 11,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 28,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 10,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 12,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 45,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "221",
-        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
         "vagas": 0,
-        "matriculas": 545,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -195,212 +591,878 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 179,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 40,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 33,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 57,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "322",
-        "nome_ies": "UNIVERSIDADE PAULISTA",
+        "nome_ies": "Universidade Paulista",
         "vagas": 0,
-        "matriculas": 65,
-        "modalidade": "Semipresencial",
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 16,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "383",
+        "nome_ies": "Universidade Da Amazônia",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "403",
+        "nome_ies": "Universidade Católica De Brasília",
+        "vagas": 0,
+        "matriculas": 8,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "403",
+        "nome_ies": "Universidade Católica De Brasília",
+        "vagas": 0,
+        "matriculas": 211,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "403",
+        "nome_ies": "Universidade Católica De Brasília",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "403",
+        "nome_ies": "Universidade Católica De Brasília",
+        "vagas": 0,
+        "matriculas": 13,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "403",
+        "nome_ies": "Universidade Católica De Brasília",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "417",
-        "nome_ies": "UNIVERSIDADE CIDADE DE SÃO PAULO",
+        "nome_ies": "Universidade Cidade De São Paulo",
         "vagas": 0,
-        "matriculas": 12,
+        "matriculas": 11,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "417",
+        "nome_ies": "Universidade Cidade De São Paulo",
+        "vagas": 0,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "466",
-        "nome_ies": "UNIVERSIDADE ANHEMBI MORUMBI",
+        "nome_ies": "Universidade Anhembi Morumbi",
         "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "496",
-        "nome_ies": "UNIVERSIDADE DE FRANCA",
+        "nome_ies": "Universidade De Franca",
         "vagas": 0,
-        "matriculas": 6,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "671",
-        "nome_ies": "UNIVERSIDADE ANHANGUERA",
-        "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
-        "vagas": 0,
-        "matriculas": 172,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "823",
-        "nome_ies": "UNIVERSIDADE CEUMA",
-        "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "403",
-        "nome_ies": "UNIVERSIDADE CATÓLICA DE BRASÍLIA",
-        "vagas": 0,
-        "matriculas": 185,
-        "modalidade": "Semipresencial",
+        "matriculas": 4,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "515",
-        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Niterói",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar De Niterói",
         "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "823",
+        "nome_ies": "Universidade Ceuma",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "926",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar De Campo Grande",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "926",
-        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Campo Grande",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar De Campo Grande",
         "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1060",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO INSTITUTO DE EDUCAÇÃO SUPERIOR DE BRASÍLIA - IESB",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
         "vagas": 0,
-        "matriculas": 279,
-        "modalidade": "Semipresencial",
+        "matriculas": 139,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 72,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 8,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 20,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 11,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 10,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1060",
+        "nome_ies": "Centro Universitário Do Instituto De Educação Superior De Brasília - Iesb",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
+        "vagas": 0,
+        "matriculas": 71,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
+        "vagas": 0,
+        "matriculas": 23,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
+        "vagas": 0,
+        "matriculas": 16,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
+        "vagas": 0,
+        "matriculas": 26,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
+        "vagas": 0,
+        "matriculas": 45,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1205",
+        "nome_ies": "Centro Universitário Fael",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1205",
-        "nome_ies": "CENTRO UNIVERSITÁRIO FAEL",
+        "nome_ies": "Centro Universitário Fael",
         "vagas": 0,
-        "matriculas": 6,
-        "modalidade": "Semipresencial",
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1205",
+        "nome_ies": "Centro Universitário Fael",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1270",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
         "vagas": 0,
-        "matriculas": 67,
-        "modalidade": "Semipresencial",
+        "matriculas": 10,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 8,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 11,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 8,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 8,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 19,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1446",
-        "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
+        "nome_ies": "Centro Universitário Planalto Do Distrito Federal - Uniplan",
         "vagas": 0,
-        "matriculas": 117,
-        "modalidade": "Semipresencial",
+        "matriculas": 115,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
-        "matriculas": 62,
-        "modalidade": "Semipresencial",
+        "matriculas": 3,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "1487",
-        "nome_ies": "CENTRO UNIVERSITÁRIO UNIDOM - BOSCO",
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 9,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
         "matriculas": 2,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1491",
-        "nome_ies": "CENTRO UNIVERSITÁRIO INTERNACIONAL",
+        "nome_ies": "Centro Universitário Internacional",
         "vagas": 0,
-        "matriculas": 34,
-        "modalidade": "Semipresencial",
+        "matriculas": 29,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "1510",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
-        "vagas": 0,
-        "matriculas": 39,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1658",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
-        "vagas": 0,
-        "matriculas": 6,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1660",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
-        "vagas": 0,
-        "matriculas": 49,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1853",
-        "nome_ies": "Centro Universitário UNIBTA",
-        "vagas": 0,
-        "matriculas": 5,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "2222",
-        "nome_ies": "Centro Universitário do Rio São Francisco Unirios",
-        "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "2625",
-        "nome_ies": "CENTRO UNIVERSITÁRIO UFBRA",
+        "cod_ies": "1491",
+        "nome_ies": "Centro Universitário Internacional",
         "vagas": 0,
         "matriculas": 9,
         "modalidade": "Semipresencial",
@@ -408,26 +1470,8 @@
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "2835",
-        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
-        "vagas": 0,
-        "matriculas": 29,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "3610",
-        "nome_ies": "Centro Universitário ICESP",
-        "vagas": 0,
-        "matriculas": 15,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "3867",
-        "nome_ies": "CENTRO UNIVERSITÁRIO MAUÁ DE BRASÍLIA",
+        "cod_ies": "1491",
+        "nome_ies": "Centro Universitário Internacional",
         "vagas": 0,
         "matriculas": 1,
         "modalidade": "Semipresencial",
@@ -435,52 +1479,403 @@
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "4153",
-        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU DERBY",
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
         "vagas": 0,
         "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "4751",
-        "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
+        "cod_ies": "1510",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
         "vagas": 0,
-        "matriculas": 15,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "5439",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DO PLANALTO CENTRAL APPARECIDO DOS SANTOS",
-        "vagas": 0,
-        "matriculas": 194,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1538",
-        "nome_ies": "CENTRO UNIVERSITARIO PROJEÇÃO",
+        "nome_ies": "Centro Universitario Projeção",
         "vagas": 0,
         "matriculas": 179,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "Centro Universitário Da Grande Fortaleza",
+        "vagas": 0,
+        "matriculas": 38,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "Centro Universitário Da Grande Fortaleza",
+        "vagas": 0,
+        "matriculas": 9,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1660",
+        "nome_ies": "Centro Universitário Estácio De Brasília - Estácio Brasília",
+        "vagas": 0,
+        "matriculas": 85,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1660",
+        "nome_ies": "Centro Universitário Estácio De Brasília - Estácio Brasília",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1660",
+        "nome_ies": "Centro Universitário Estácio De Brasília - Estácio Brasília",
+        "vagas": 0,
+        "matriculas": 6,
         "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário Unibta Im",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário Unibta Im",
+        "vagas": 0,
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2222",
+        "nome_ies": "Centro Universitário Do Rio São Francisco Unirios",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "Centro Universitário Maurício De Nassau",
+        "vagas": 0,
+        "matriculas": 15,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "Centro Universitário Maurício De Nassau",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "Centro Universitário Maurício De Nassau",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "Centro Universitário Maurício De Nassau",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "3867",
+        "nome_ies": "Centro Universitário Mauá De Brasília",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "3867",
+        "nome_ies": "Centro Universitário Mauá De Brasília",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4153",
+        "nome_ies": "Centro Universitário Maurício De Nassau Derby",
+        "vagas": 0,
+        "matriculas": 8,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4153",
+        "nome_ies": "Centro Universitário Maurício De Nassau Derby",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 10,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "5439",
+        "nome_ies": "Centro Universitário Do Planalto Central Apparecido Dos Santos",
+        "vagas": 0,
+        "matriculas": 235,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "17854",
+        "nome_ies": "Centro Universitário Unifecaf",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "17854",
+        "nome_ies": "Centro Universitário Unifecaf",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
+    "pct_mulheres": 75.3,
+    "pct_ppi": 61.0,
+    "pct_financiamento": 7.5,
+    "pct_noturno": 48.1,
+    "pct_rede_publica": 7.0,
     "pct_doc_mestres": 96.5,
     "pct_doc_doutores": 70.4,
     "pct_doc_regime": 89.2,
     "cpc_org_didatico": 5.54,
     "cpc_infraestrutura": 5.41,
-    "cpc_oportunidade": 5.04,
-    "pct_mulheres": 71.2,
-    "pct_ppi": 58.1,
-    "pct_financiamento": 4.9,
-    "pct_noturno": 48.5,
-    "pct_rede_publica": 7.3
+    "cpc_oportunidade": 5.04
   }
 }
