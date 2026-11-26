@@ -1,23 +1,29 @@
 """
-Serie historica nacional da formacao farmaceutica (Censo INEP, 2015-2024).
+Serie historica nacional da formacao farmaceutica (Censo INEP, 2015-2025).
 Baixa os microdados de cursos de cada ano, filtra Farmacia e agrega totais
 nacionais por modalidade. Gera data/serie_historica.json.
 
+Para acrescentar so a edicao 2025 sem rebaixar as demais (que ja estao no JSON),
+aponte o arquivo gerado por etl/censo2025_adaptador.py:
+
+    python etl/serie_historica.py --so-ano 2025 --csv <dir>/MICRODADOS_CADASTRO_CURSOS_2025.CSV
+
 ATENCAO ao codigo de modalidade (TP_MODALIDADE_ENSINO):
-  - 2015-2023: 1=Presencial, 2=Semipresencial, 3=EaD
-  - 2024:      1=Presencial, 2=EaD
+  - 2015-2024: 1=Presencial, 2=EaD (so existem estes dois codigos; conferido ano a ano)
+  - 2025+:     1=Presencial, 2=EaD, 3=SEMIPRESENCIAL (Decreto 12.456/2025). O 3 deixou
+               de ser EaD: nao reaproveitar o codigo da serie antiga.
 """
 import sys, io, json, zipfile, unicodedata, subprocess
 sys.stdout.reconfigure(encoding="utf-8")
 import pandas as pd
 from pathlib import Path
 
-REPO = Path("G:/Meu Drive/Works/CLAUDE IA/observatorio-nacional")
+REPO = Path(__file__).resolve().parent.parent
 SCRATCH = Path("C:/Users/User/AppData/Local/Temp/claude/G--Meu-Drive-Works-CLAUDE-IA/32ed4a02-4992-4a2f-a1f4-f781538e80a6/scratchpad/histcenso")
 SCRATCH.mkdir(parents=True, exist_ok=True)
 LOCAL_2024 = Path("G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/censo2024/microdados_censo_da_educacao_superior_2024/dados/MICRODADOS_CADASTRO_CURSOS_2024.CSV")
 
-ANOS = list(range(2015, 2025))
+ANOS = list(range(2015, 2025))   # 2025 entra por --so-ano (layout novo do INEP)
 # Microdados de cursos usam 1=Presencial, 2=EaD em toda a serie (verificado).
 EAD_CODE = lambda ano: 2
 
@@ -55,12 +61,8 @@ def col(df, *cands):
             return c
     return None
 
-serie = []
-for ano in ANOS:
-    print(f"[{ano}] processando...", flush=True)
-    df = ler_cursos_df(ano)
-    c_curso = col(df, "NO_CINE_ROTULO", "NO_CURSO", "NO_CURSO_CINE")
-    farm = df[df[c_curso].apply(lambda x: "FARMACIA" in norm(x))].copy()
+def registro(farm, ano):
+    """Totais nacionais de um ano a partir das linhas de Farmacia."""
     c_vg = col(farm, "QT_VG_TOTAL", "QT_VAGAS_AUTORIZADAS")
     c_mod = col(farm, "TP_MODALIDADE_ENSINO")
     c_mat = col(farm, "QT_MAT", "QT_MATRICULA")
@@ -83,7 +85,51 @@ for ano in ANOS:
         "ingressos": int(farm[c_ing].sum()) if c_ing else None,
         "concluintes": int(farm[c_conc].sum()) if c_conc else None,
     }
+    if ano >= 2025:
+        semi = int(vg[farm[c_mod] == 3].sum())
+        reg["vagas_semipresencial"] = semi
+        # Guarda: toda vaga tem de cair em alguma modalidade conhecida.
+        resto = reg["vagas_total"] - reg["vagas_presencial"] - reg["vagas_ead"] - semi
+        if resto:
+            sys.exit(f"[ABORTADO] {resto} vagas fora de presencial/EaD/semipresencial em {ano}.")
     reg["pct_ead"] = round(reg["vagas_ead"] / reg["vagas_total"] * 100, 1) if reg["vagas_total"] else 0
+    return reg
+
+
+def so_ano(ano, csv):
+    """Acrescenta/substitui UM ano no serie_historica.json ja existente."""
+    caminho = REPO / "data/serie_historica.json"
+    out = json.load(open(caminho, encoding="utf-8"))
+    df = pd.read_csv(csv, sep=";", encoding="latin-1", dtype=str, low_memory=False)
+    c_curso = col(df, "NO_CINE_ROTULO", "NO_CURSO", "NO_CURSO_CINE")
+    farm = df[df[c_curso].apply(lambda x: "FARMACIA" in norm(x))].copy()
+    reg = registro(farm, ano)
+    out["nacional"] = [r for r in out["nacional"] if r["ano"] != ano] + [reg]
+    out["nacional"].sort(key=lambda r: r["ano"])
+    out["series"] = [r["ano"] for r in out["nacional"]]
+    out["fonte"] = f"INEP — Microdados do Censo da Educação Superior ({out['series'][0]}–{out['series'][-1]})"
+    out["nota_modalidade"] = ("EaD = TP_MODALIDADE 2 em toda a série (2015–2025); presencial = 1; "
+                              "a partir de 2025 o 3 é semipresencial (campo vagas_semipresencial, "
+                              "incluído em vagas_total). Vagas EaD registradas na sede. A mudança de "
+                              "definição em 2025 (Decreto 12.456/2025) limita a comparação da "
+                              "participação da EaD com os anos anteriores.")
+    json.dump(out, open(caminho, "w", encoding="utf-8"), ensure_ascii=False, indent=2)
+    print(f"[OK] {ano}: {reg}")
+
+
+if "--so-ano" in sys.argv:
+    _ano = int(sys.argv[sys.argv.index("--so-ano") + 1])
+    _csv = sys.argv[sys.argv.index("--csv") + 1]
+    so_ano(_ano, _csv)
+    sys.exit(0)
+
+serie = []
+for ano in ANOS:
+    print(f"[{ano}] processando...", flush=True)
+    df = ler_cursos_df(ano)
+    c_curso = col(df, "NO_CINE_ROTULO", "NO_CURSO", "NO_CURSO_CINE")
+    farm = df[df[c_curso].apply(lambda x: "FARMACIA" in norm(x))].copy()
+    reg = registro(farm, ano)
     serie.append(reg)
     print(f"    vagas={reg['vagas_total']:,} (EaD {reg['pct_ead']}%) | matric={reg['matriculas']:,} | conc={reg['concluintes']:,}")
 
@@ -91,7 +137,7 @@ out = {
     "series": [r["ano"] for r in serie],
     "nacional": serie,
     "fonte": "INEP — Microdados do Censo da Educação Superior (2015–2024)",
-    "nota_modalidade": "EaD = TP_MODALIDADE 3 (2015–2023) e 2 (2024); presencial = 1. Vagas EaD registradas na sede.",
+    "nota_modalidade": "EaD = TP_MODALIDADE 2 em toda a série; presencial = 1. Vagas EaD registradas na sede.",
 }
 json.dump(out, open(REPO / "data/serie_historica.json", "w", encoding="utf-8"), ensure_ascii=False, indent=2)
 print(f"\n[OK] data/serie_historica.json com {len(serie)} anos")

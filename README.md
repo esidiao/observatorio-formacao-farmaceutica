@@ -41,6 +41,7 @@ python etl/indices_observatorio.py --autoteste
 ```bash
 python tests/test_validacao.py      # integridade dos dados publicados
 python tests/test_check_fontes.py   # verificador de frescor (rede mockada)
+python tests/test_censo2025_adaptador.py   # tradução do Censo 2025 (tabelas sintéticas)
 # ou: python -m pytest tests/ -v
 ```
 
@@ -51,6 +52,56 @@ python tests/test_check_fontes.py   # verificador de frescor (rede mockada)
 # 2. Rodar o pipeline:
 python etl/pipeline.py --censo caminho/MICRODADOS_CADASTRO_CURSOS_AAAA.CSV
 ```
+
+### Série histórica por UF (`data/serie_uf.json`)
+
+Alimenta a página `serie.html` e a seção "Evolução" de cada UF. Usa a mesma definição de indicador do
+restante do ETL, e o último ponto coincide com o publicado (`tests/test_validacao.py` confere). Precisa de
+um par `MICRODADOS_CADASTRO_CURSOS_AAAA.CSV` + `MICRODADOS_ED_SUP_IES_AAAA.CSV` por ano, num único diretório
+(2015–2024 do INEP; 2025 pelo adaptador abaixo):
+
+```bash
+python etl/serie_uf.py --dir <diretório com um par por ano>
+```
+
+Ao carregar um Censo novo, acrescente o par do ano e rode de novo: o gerador recusa séries com anos faltando.
+
+### Censo 2025 em diante (layout novo do INEP)
+
+A partir da edição 2025 o INEP deixou de publicar `MICRODADOS_CADASTRO_CURSOS_AAAA.CSV` e passou a
+publicar **sete tabelas** (`ces2025_microdados_tabela_{curso,ies,aluno,docente,local_oferta,...}.csv`),
+com colunas renomeadas, o arquivo `microdados_censo_educacao_superior_2025.zip` (sem o "da" que existia
+até 2024) e **sem as linhas de polo EaD na tabela de cursos**. O ETL continua consumindo o layout
+antigo; `etl/censo2025_adaptador.py` o reconstrói e **aborta** se qualquer conferência não fechar
+(matrículas, vagas, cursos, FEM+MASC=ING):
+
+```bash
+python etl/censo2025_adaptador.py --origem <dir 'dados' do Censo 2025>     --saida <dir> --rotulo FARMACIA
+export OBS_CENSO_ANO=2025 OBS_CENSO_DIR=<dir>
+python etl/municipios_etl.py --csv <dir>/MICRODADOS_CADASTRO_CURSOS_2025.CSV
+python etl/pipeline.py --forcar --permitir-divergencia --censo <dir>/MICRODADOS_CADASTRO_CURSOS_2025.CSV
+python etl/historico.py --anterior data/nacional_2024.json      # deltas do site
+python etl/serie_historica.py --so-ano 2025 --csv <dir>/MICRODADOS_CADASTRO_CURSOS_2025.CSV
+```
+
+Atualize `data/_proveniencia.json` (`versao_censo`, `fontes.censo`) **antes** do pipeline: o
+`empacotar` copia os metadados de lá. Guarde o `nacional.json` do ciclo anterior como
+`data/nacional_AAAA.json` antes de rodar (é a base dos deltas).
+
+Armadilhas da edição 2025, todas tratadas e testadas (`tests/test_censo2025_adaptador.py`):
+1. **Separador de milhar dentro da célula** (`"9.731"` = 9.731) em colunas de recorte; lido como
+   número vira 9,731 sem erro algum.
+2. **Supressão** (`-`) de células ≤ 3 por local de oferta: nos polos EaD atinge quase todos os
+   recortes de perfil. É NaN, nunca 0. `censo_perfil.py` usa só as linhas com o recorte divulgado:
+   % mulheres inclui ~87% dos ingressantes de polo (viés medido em Farmácia: 74,6% contra 73,5%
+   exato, +1,1 p.p.); % cor/raça e % financiamento ficam restritos ao presencial, pois nenhum polo
+   tem esses recortes inteiros.
+3. **`TP_MODALIDADE_ENSINO` mudou de sentido**: é o formato de oferta (Decreto 12.456/2025), com
+   a categoria **3 = Semipresencial**. Em 2015–2024 só existiram os códigos 1 e 2; tratar o 3 como EaD (ou ignorá-lo) conta/perde
+   semipresencial como EaD. Os campos `vagas_semipresencial` e `n_cursos_semipresencial` são
+   próprios e `pct_ead` segue sendo só EaD.
+4. **`QT_VAGA_TOTAL` inclui vagas remanescentes** que alguns cursos declaram em milhares
+   (2.000 remanescentes contra 100 novas); variações de vagas por UF/IES podem vir daí.
 
 O pipeline roda, nesta ordem: ingestão → índices → empacotamento → **enriquecimento**
 (`censo_perfil`, `modalidade_split`, `docentes_cpc`, `cpc_dimensoes`) → **conferência de
