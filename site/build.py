@@ -143,12 +143,16 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     meta.setdefault("site_url", "https://esidiao.github.io/observatorio-formacao-farmaceutica")
     ufs = nacional.get("ufs", nacional)  # suporte a final.json sem wrapper
 
-    # Série histórica (deltas 2023→2024), opcional
+    # Série histórica (deltas entre os dois últimos Censos), opcional. Os anos vêm do
+    # próprio arquivo: o template nunca deve ter "2023→2024" escrito à mão.
     hist_path = path_dados.parent / "historico.json"
     historico = {}
+    hist_anos = []
     if hist_path.exists():
         with open(hist_path, encoding="utf-8") as f:
-            historico = json.load(f).get("ufs", {})
+            _h = json.load(f)
+        historico = _h.get("ufs", {})
+        hist_anos = [str(a) for a in _h.get("series", [])]
 
     # ICON ajustado (cobertura de desertos) — derivado em tempo de build
     for sigla, d in ufs.items():
@@ -179,6 +183,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     total_vagas_real = sum(d.get("vagas_total_real") or d.get("vagas_total") or 0 for d in ufs.values())
     total_vagas_pres = sum(d.get("vagas_presencial") or 0 for d in ufs.values())
     total_vagas_ead  = sum(d.get("vagas_ead") or 0 for d in ufs.values())
+    total_vagas_semi = sum(d.get("vagas_semipresencial") or 0 for d in ufs.values())
     total_ies   = sum(d.get("n_ies") or 0 for d in ufs.values())
     total_pop   = sum(d.get("populacao") or 0 for d in ufs.values())
     vagas_100k_nac = round(total_vagas_real / total_pop * 100000, 1) if total_pop else None
@@ -189,12 +194,19 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
 
     ufs_ordenados = sorted(ufs.items(), key=lambda kv: kv[1].get("ICT") or 1.0)
 
-    # ── Série histórica nacional (2015–2024) ───────────────────────────────────
+    # ── Série histórica nacional (primeiro a último ano do JSON) ───────────────────────────────────
     serie_path = path_dados.parent / "serie_historica.json"
     serie_historica = {}
     if serie_path.exists():
         with open(serie_path, encoding="utf-8") as f:
             serie_historica = json.load(f)
+
+    # ── Série histórica por UF (data/serie_uf.json), opcional ──────────────────
+    serie_uf = {}
+    serie_uf_path = path_dados.parent / "serie_uf.json"
+    if serie_uf_path.exists():
+        with open(serie_uf_path, encoding="utf-8") as f:
+            serie_uf = json.load(f)
 
     # ── Contexto de mercado por região (oferta × demanda) ──────────────────────
     contexto_path = path_dados.parent / "contexto_mercado.json"
@@ -236,6 +248,7 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         total_vagas_real=total_vagas_real,
         total_vagas_pres=total_vagas_pres,
         total_vagas_ead=total_vagas_ead,
+        total_vagas_semi=total_vagas_semi,
         pct_ead_nacional=round(total_vagas_ead / total_vagas_real * 100, 1) if total_vagas_real else 0,
         vagas_100k_nac=vagas_100k_nac,
         n_ies=total_ies,
@@ -316,6 +329,10 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
             swot=_gerar_swot(sigla, d),
             tem_drill=tem_drill,
             hist=historico.get(sigla, {}),
+            hist_anos=hist_anos,
+            serie_uf=({"series": serie_uf["series"]} if serie_uf.get("ufs", {}).get(sigla) else None),
+            serie_uf_json=json.dumps({"series": serie_uf["series"], "ufs": serie_uf["ufs"][sigla]}, ensure_ascii=False)
+                          if serie_uf.get("ufs", {}).get(sigla) else "null",
         )
         (path_out / "uf" / f"{sigla}.html").write_text(html_uf, encoding="utf-8")
 
@@ -413,6 +430,20 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         )
         (path_out / "comparar.html").write_text(html_comp, encoding="utf-8")
         print(f"[OK] comparar.html")
+
+    # ── Render página de série histórica por UF ────────────────────────────────
+    if serie_uf.get("ufs"):
+        html_serie = env.get_template("serie.html.j2").render(
+            depth="",
+            meta=meta,
+            meta_json=json.dumps(meta, ensure_ascii=False),
+            todas_ufs=sorted(serie_uf["ufs"].keys()),
+            serie_anos=serie_uf["series"],
+            serie_notas=serie_uf.get("notas", []),
+            serie_uf_json=json.dumps(serie_uf, ensure_ascii=False),
+        )
+        (path_out / "serie.html").write_text(html_serie, encoding="utf-8")
+        print("[OK] serie.html")
 
     # ── Render página de correlações ───────────────────────────────────────────
     tmpl_corr = env.get_template("correlacoes.html.j2") if (templates_dir / "correlacoes.html.j2").exists() else None

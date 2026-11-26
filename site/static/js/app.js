@@ -72,6 +72,7 @@ const INDICADOR_META = {
   vagas_total:          { label: 'Vagas presenciais',  dec: 0, min: null, max: null, maiorMelhor: null },
   vagas_total_real:     { label: 'Vagas totais',       dec: 0, min: null, max: null, maiorMelhor: null },
   vagas_ead:            { label: 'Vagas EaD',          dec: 0, min: null, max: null, maiorMelhor: null },
+  vagas_semipresencial: { label: 'Vagas semipresenciais', dec: 0, min: null, max: null, maiorMelhor: null },
   pct_ead:              { label: '% EaD',              dec: 1, min: 0,   max: 100, maiorMelhor: false },
   vagas_por_100k:       { label: 'Vagas / 100k hab.',  dec: 1, min: null, max: null, maiorMelhor: null },
   taxa_retencao:        { label: 'Conclusão %',        dec: 1, min: 0,   max: 20,  maiorMelhor: true  },

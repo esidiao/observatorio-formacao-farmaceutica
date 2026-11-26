@@ -1,0 +1,236 @@
+{% extends "base.html.j2" %}
+
+{% block title %}Série histórica por UF — Observatório Nacional da Formação Farmacêutica{% endblock %}
+
+{% block breadcrumb %}
+<span class="sep">›</span>
+<span class="active">Série histórica</span>
+{% endblock %}
+
+{% block content %}
+
+<h2 class="section-title" style="margin-bottom:6px">Série histórica por UF ({{ serie_anos[0] }}–{{ serie_anos[-1] }})</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:18px;max-width:85ch">
+  Como cada estado evoluiu, ano a ano, nos microdados do Censo da Educação Superior (INEP).
+  Escolha um <strong>indicador</strong> e as <strong>UFs</strong> a comparar; a linha tracejada é o
+  Brasil (soma das UFs). Em <strong>índice</strong>, o primeiro ano com dado vale 100, o que permite
+  comparar estados de tamanhos muito diferentes.
+</p>
+
+<div class="toolbar" style="flex-wrap:wrap;gap:10px;margin-bottom:12px">
+  <label for="sel-ind" style="font-weight:600;color:var(--navy);font-size:0.875rem">Indicador:</label>
+  <select id="sel-ind" style="font-size:0.875rem;max-width:100%"></select>
+  <span style="flex:1"></span>
+  <span role="group" aria-label="Forma de exibição" style="display:inline-flex;gap:6px">
+    <button class="btn modo-btn" data-modo="valor" type="button" style="font-size:0.8rem">Valor</button>
+    <button class="btn outline modo-btn" data-modo="indice" type="button" style="font-size:0.8rem">Índice (base = 100)</button>
+  </span>
+</div>
+
+<div class="toolbar" style="flex-wrap:wrap;gap:8px;margin-bottom:16px">
+  <label style="font-weight:600;color:var(--navy);font-size:0.875rem">UFs:</label>
+  <div id="uf-chips" style="display:flex;flex-wrap:wrap;gap:6px">
+    {% for sigla in todas_ufs %}
+    <button class="uf-chip btn outline" type="button" data-uf="{{ sigla }}" aria-pressed="false"
+      style="padding:4px 10px;font-size:0.8rem;font-family:var(--font-mono);font-weight:700">{{ sigla }}</button>
+    {% endfor %}
+  </div>
+  <div style="flex:1;min-width:100%"></div>
+  <button class="btn outline" id="btn-limpar" type="button" style="font-size:0.8rem">Limpar UFs</button>
+  <button class="btn outline" id="btn-regiao" type="button" style="font-size:0.8rem">5 maiores em vagas</button>
+  <span style="flex:1"></span>
+  <button class="btn outline" id="btn-csv" type="button" style="font-size:0.8rem">↓ CSV</button>
+</div>
+
+<div class="chart-box">
+  <canvas id="grafico-serie" role="img" aria-label="Série histórica do indicador selecionado, por UF"></canvas>
+</div>
+<p id="serie-nota" style="font-size:0.8rem;color:var(--text-muted);margin:-6px 0 18px"></p>
+
+<h2 class="section-title">Tabela</h2>
+<div class="tabela-wrap">
+  <table id="tabela-serie">
+    <thead><tr id="serie-thead"></tr></thead>
+    <tbody id="serie-tbody"></tbody>
+  </table>
+</div>
+
+<h3 style="font-size:0.95rem;color:var(--navy);margin:22px 0 6px">Notas metodológicas</h3>
+<ul style="font-size:0.82rem;color:var(--text-muted);max-width:90ch;padding-left:18px;line-height:1.5">
+  {% for n in serie_notas %}<li>{{ n }}</li>{% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block scripts %}
+<script>
+const SERIE = {{ serie_uf_json }};
+const ANOS = SERIE.series;
+const NF = new Intl.NumberFormat('pt-BR');
+const NF1 = new Intl.NumberFormat('pt-BR', { minimumFractionDigits: 1, maximumFractionDigits: 1 });
+
+/* tipo: 'soma' (Brasil = soma das UFs) | 'razao' (Brasil = razão entre somas) */
+const INDS = [
+  { key: 'vagas_total_real',    nome: 'Vagas totais (presencial + EaD + semipresencial)', un: 'vagas/ano', tipo: 'soma' },
+  { key: 'vagas_total',         nome: 'Vagas presenciais',                               un: 'vagas/ano', tipo: 'soma' },
+  { key: 'vagas_ead',           nome: 'Vagas EaD (sede da mantenedora)',                 un: 'vagas/ano', tipo: 'soma' },
+  { key: 'vagas_semipresencial', nome: 'Vagas semipresenciais (a partir de 2025)',       un: 'vagas/ano', tipo: 'soma' },
+  { key: 'pct_ead',             nome: '% EaD da capacidade',                             un: '%', tipo: 'razao', num: 'vagas_ead', den: 'vagas_total_real' },
+  { key: 'n_cursos_presencial', nome: 'Cursos presenciais',                              un: 'cursos', tipo: 'soma' },
+  { key: 'matriculas_total',    nome: 'Matrículas',                                      un: 'alunos', tipo: 'soma' },
+  { key: 'ingressantes_total',  nome: 'Ingressantes',                                    un: 'alunos', tipo: 'soma' },
+  { key: 'concluintes_total',   nome: 'Concluintes',                                     un: 'alunos', tipo: 'soma' },
+  { key: 'n_ies',               nome: 'IES com Farmácia',                                un: 'IES', tipo: 'soma', aviso: 'No Brasil, IES com polos em mais de uma UF contam em cada uma delas (soma das UFs).' },
+  { key: 'municipios_oferta',   nome: 'Municípios com oferta (inclui polos EaD)',        un: 'municípios', tipo: 'soma' },
+];
+const CORES = ['#2E5496', '#B23A2E', '#2E8B57', '#B07D22', '#6A4C93', '#1B998B', '#D1495B', '#4F6D7A', '#8D6E63', '#00798C'];
+
+let ind = INDS[0];
+let modo = 'valor';
+let sel = [];
+
+function serieUF(uf) { return (SERIE.ufs[uf] || {})[ind.key] || []; }
+
+function serieBrasil() {
+  if (ind.tipo === 'razao') {
+    const n = INDS_SOMA(ind.num), d = INDS_SOMA(ind.den);
+    return ANOS.map((_, i) => (d[i] ? Math.round(n[i] / d[i] * 1000) / 10 : null));
+  }
+  return INDS_SOMA(ind.key);
+}
+function INDS_SOMA(key) {
+  return ANOS.map((_, i) => {
+    let tem = false, s = 0;
+    Object.values(SERIE.ufs).forEach(u => { const v = (u[key] || [])[i]; if (v != null) { tem = true; s += v; } });
+    return tem ? s : null;
+  });
+}
+
+function aplicaModo(arr) {
+  if (modo !== 'indice') return arr;
+  const base = arr.find(v => v != null && v !== 0);
+  return arr.map(v => (v == null || base == null) ? null : Math.round(v / base * 1000) / 10);
+}
+
+function fmt(v) {
+  if (v == null) return '—';
+  if (modo === 'indice' || ind.un === '%') return NF1.format(v);
+  return NF.format(v);
+}
+
+function render() {
+  // Indice (base = 100) nao faz sentido para razoes: a base e ~0 e o indice explode.
+  const semIndice = ind.tipo === 'razao';
+  if (semIndice && modo === 'indice') modo = 'valor';
+  document.querySelectorAll('.modo-btn[data-modo=indice]').forEach(b => {
+    b.disabled = semIndice; b.title = semIndice ? 'Indisponível para percentuais: a base é próxima de zero.' : '';
+  });
+  const linhas = [{ rotulo: 'Brasil', dados: serieBrasil(), br: true }]
+    .concat(sel.map(u => ({ rotulo: u, dados: serieUF(u), br: false })));
+  const series = linhas.map(l => ({ ...l, plot: aplicaModo(l.dados) }));
+
+  // Gráfico
+  if (window._grafico) window._grafico.destroy();
+  window._grafico = new Chart(document.getElementById('grafico-serie').getContext('2d'), {
+    type: 'line',
+    data: {
+      labels: ANOS,
+      datasets: series.map((l, i) => ({
+        label: l.rotulo, data: l.plot, spanGaps: false,
+        borderColor: l.br ? '#444' : CORES[(i - 1) % CORES.length],
+        backgroundColor: l.br ? '#444' : CORES[(i - 1) % CORES.length],
+        borderDash: l.br ? [6, 4] : [], borderWidth: l.br ? 2 : 2.5, pointRadius: 3, tension: 0.2,
+      })),
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false,
+      interaction: { mode: 'index', intersect: false },
+      plugins: {
+        legend: { position: 'bottom', labels: { font: { size: 11 } } },
+        tooltip: { callbacks: { label: c => `${c.dataset.label}: ${fmt(c.parsed.y)}` } },
+      },
+      scales: { y: { title: { display: true, text: modo === 'indice' ? 'Índice (1º ano = 100)' : ind.un, font: { size: 10 } } } },
+    },
+  });
+
+  // Nota
+  const partes = [];
+  if (ind.aviso) partes.push(ind.aviso);
+  if (ind.key === 'vagas_semipresencial') partes.push('Categoria criada em 2025: antes disso não há série (—).');
+  if (ind.key === 'pct_ead' || ind.key.startsWith('vagas')) partes.push('A definição de modalidade mudou em 2025 (Decreto 12.456/2025): compare 2025 com os anos anteriores com cautela.');
+  document.getElementById('serie-nota').textContent = partes.join(' ');
+
+  // Tabela
+  const un = ind.un === '%' ? 'p.p.' : '%';
+  document.getElementById('serie-thead').innerHTML =
+    '<th>UF</th>' + ANOS.map(a => `<th style="text-align:right">${a}</th>`).join('') +
+    `<th style="text-align:right" title="Variação do último ano contra o anterior">Δ ${ANOS[ANOS.length - 1]} vs ${ANOS[ANOS.length - 2]}</th>` +
+    '<th style="text-align:right" title="Variação do primeiro ano com dado até o último">Δ acumulada</th>';
+  document.getElementById('serie-tbody').innerHTML = series.map(l => {
+    const d = l.dados, n = d.length;
+    const delta = (a, b) => {
+      if (a == null || b == null) return '—';
+      if (ind.un === '%') { const x = b - a; return (x > 0 ? '+' : '') + NF1.format(x) + ' p.p.'; }
+      if (a === 0) return '—';
+      const x = (b / a - 1) * 100; return (x > 0 ? '+' : '') + NF1.format(x) + '%';
+    };
+    const ini = d.find(v => v != null);
+    const exib = modo === 'indice' ? aplicaModo(d) : d;
+    const cor = l.br ? 'font-weight:700;background:var(--surface-2,#f4f6fa)' : '';
+    return `<tr style="${cor}"><td style="font-family:var(--font-mono);font-weight:700">${l.rotulo}</td>` +
+      exib.map(v => `<td style="text-align:right">${fmt(v)}</td>`).join('') +
+      `<td style="text-align:right">${delta(d[n - 2], d[n - 1])}</td>` +
+      `<td style="text-align:right">${delta(ini, d[n - 1])}</td></tr>`;
+  }).join('');
+
+  // Chips e botões de modo
+  document.querySelectorAll('.uf-chip').forEach(b => {
+    const on = sel.includes(b.dataset.uf);
+    b.setAttribute('aria-pressed', on ? 'true' : 'false');
+    b.style.background = on ? 'var(--blue)' : ''; b.style.color = on ? '#fff' : '';
+  });
+  document.querySelectorAll('.modo-btn').forEach(b => {
+    const on = b.dataset.modo === modo;
+    b.classList.toggle('outline', !on);
+  });
+  // Estado na URL (compartilhável)
+  const q = new URLSearchParams({ ind: ind.key, modo, uf: sel.join(',') });
+  history.replaceState(null, '', '?' + q.toString());
+}
+
+function csv() {
+  const linhas = [['indicador', 'uf'].concat(ANOS).join(';')];
+  const add = (r, d) => linhas.push([ind.key, r].concat(d.map(v => v == null ? '' : String(v).replace('.', ','))).join(';'));
+  add('Brasil', serieBrasil());
+  sel.forEach(u => add(u, serieUF(u)));
+  const blob = new Blob(['﻿' + linhas.join('\n')], { type: 'text/csv;charset=utf-8' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob); a.download = `serie_${ind.key}.csv`; a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  const s = document.getElementById('sel-ind');
+  s.innerHTML = INDS.map(i => `<option value="${i.key}">${i.nome}</option>`).join('');
+  const p = new URLSearchParams(location.search);
+  const pi = INDS.find(i => i.key === p.get('ind')); if (pi) ind = pi;
+  if (p.get('modo') === 'indice') modo = 'indice';
+  const ufs = (p.get('uf') || 'GO').split(',').filter(u => SERIE.ufs[u]);
+  sel = ufs.length ? ufs : ['GO'];
+  s.value = ind.key;
+  s.addEventListener('change', () => { ind = INDS.find(i => i.key === s.value); render(); });
+  document.querySelectorAll('.uf-chip').forEach(b => b.addEventListener('click', () => {
+    const u = b.dataset.uf; sel = sel.includes(u) ? sel.filter(x => x !== u) : sel.concat(u); render();
+  }));
+  document.querySelectorAll('.modo-btn').forEach(b => b.addEventListener('click', () => { modo = b.dataset.modo; render(); }));
+  document.getElementById('btn-limpar').addEventListener('click', () => { sel = []; render(); });
+  document.getElementById('btn-regiao').addEventListener('click', () => {
+    const i = ANOS.length - 1;
+    sel = Object.keys(SERIE.ufs).sort((a, b) => ((SERIE.ufs[b].vagas_total_real || [])[i] || 0) - ((SERIE.ufs[a].vagas_total_real || [])[i] || 0)).slice(0, 5);
+    render();
+  });
+  document.getElementById('btn-csv').addEventListener('click', csv);
+  render();
+});
+</script>
+{% endblock %}
