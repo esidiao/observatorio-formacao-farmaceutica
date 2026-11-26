@@ -6,17 +6,17 @@
     "vagas_presencial": 0,
     "vagas_ead": 0,
     "matriculas": 1,
-    "ingressos": 0,
+    "ingressos": 1,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
     "cursos": [
       {
         "cod_ies": "1487",
-        "nome_ies": "CENTRO UNIVERSITÁRIO UNIDOM - BOSCO",
+        "nome_ies": "Centro Universitário Unidom - Bosco",
         "vagas": 0,
         "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
@@ -33,72 +33,117 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 6,
+    "matriculas": 4,
     "ingressos": 5,
     "concluintes": 0,
-    "n_cursos": 2,
-    "n_ies": 2,
+    "n_cursos": 4,
+    "n_ies": 4,
     "cursos": [
       {
         "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "nome_ies": "Universidade Estácio De Sá",
         "vagas": 0,
-        "matriculas": 3,
-        "modalidade": "Semipresencial",
+        "matriculas": 4,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
-        "matriculas": 3,
-        "modalidade": "Semipresencial",
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 60.0,
-    "pct_ppi": 75.0,
-    "pct_financiamento": 0.0,
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
     "pct_noturno": null,
     "pct_rede_publica": null
   },
   "ARAGUAINA": {
     "nome_original": "Araguaína",
     "cod_municipio": "1702109",
-    "vagas_total": 104,
-    "vagas_presencial": 104,
+    "vagas_total": 141,
+    "vagas_presencial": 141,
     "vagas_ead": 0,
-    "matriculas": 803,
-    "ingressos": 319,
-    "concluintes": 72,
-    "n_cursos": 9,
-    "n_ies": 9,
+    "matriculas": 1037,
+    "ingressos": 470,
+    "concluintes": 36,
+    "n_cursos": 15,
+    "n_ies": 11,
     "cursos": [
       {
         "cod_ies": "4849",
-        "nome_ies": "Centro Universitário Tocantinense Presidente Antônio Carlos",
-        "vagas": 104,
-        "matriculas": 98,
+        "nome_ies": "Afya Centro Universitário Unitpac",
+        "vagas": 106,
+        "matriculas": 139,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
+        "cod_ies": "4786",
+        "nome_ies": "Instituto Federal De Educação, Ciência E Tecnologia Do Tocantins",
+        "vagas": 35,
+        "matriculas": 32,
+        "modalidade": "Presencial",
+        "categoria": "Pública Federal",
+        "organizacao": "Instituto Federal"
+      },
+      {
         "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "nome_ies": "Universidade Estácio De Sá",
         "vagas": 0,
-        "matriculas": 3,
-        "modalidade": "Semipresencial",
+        "matriculas": 4,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "221",
-        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 0,
+        "matriculas": 510,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 182,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 1,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -107,68 +152,95 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 595,
+        "matriculas": 8,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
-        "cod_ies": "1446",
-        "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
+        "cod_ies": "1255",
+        "nome_ies": "Centro Universitário Fbv Wyden",
         "vagas": 0,
-        "matriculas": 55,
-        "modalidade": "Semipresencial",
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1446",
+        "nome_ies": "Centro Universitário Planalto Do Distrito Federal - Uniplan",
+        "vagas": 0,
+        "matriculas": 48,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
-        "matriculas": 13,
-        "modalidade": "Semipresencial",
+        "matriculas": 12,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1510",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
         "vagas": 0,
-        "matriculas": 13,
-        "modalidade": "Semipresencial",
+        "matriculas": 16,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1658",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
+        "nome_ies": "Centro Universitário Da Grande Fortaleza",
         "vagas": 0,
-        "matriculas": 20,
-        "modalidade": "Semipresencial",
+        "matriculas": 79,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1853",
-        "nome_ies": "Centro Universitário UNIBTA",
+        "nome_ies": "Centro Universitário Unibta Im",
         "vagas": 0,
-        "matriculas": 6,
-        "modalidade": "Semipresencial",
+        "matriculas": 5,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário Unibta Im",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "Centro Universitário Maurício De Nassau",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
+    "pct_mulheres": 75.9,
+    "pct_ppi": 67.7,
+    "pct_financiamento": 2.9,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 24.8,
     "pct_doc_mestres": 100.0,
     "pct_doc_doutores": 72.7,
     "pct_doc_regime": 100.0,
     "cpc_org_didatico": 5.76,
     "cpc_infraestrutura": 5.77,
-    "cpc_oportunidade": 5.52,
-    "pct_mulheres": 72.1,
-    "pct_ppi": 74.7,
-    "pct_financiamento": 1.6,
-    "pct_noturno": 100.0,
-    "pct_rede_publica": 0.0
+    "cpc_oportunidade": 5.52
   },
   "AUGUSTINOPOLIS": {
     "nome_original": "Augustinópolis",
@@ -176,43 +248,34 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 33,
-    "ingressos": 24,
+    "matriculas": 40,
+    "ingressos": 23,
     "concluintes": 0,
-    "n_cursos": 3,
-    "n_ies": 3,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "nome_ies": "Universidade Cesumar",
         "vagas": 0,
-        "matriculas": 31,
-        "modalidade": "Semipresencial",
+        "matriculas": 40,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
-        "vagas": 0,
-        "matriculas": 2,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1660",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
         "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 87.5,
-    "pct_ppi": 41.7,
-    "pct_financiamento": 4.2,
+    "pct_mulheres": 60.9,
+    "pct_ppi": null,
+    "pct_financiamento": null,
     "pct_noturno": null,
     "pct_rede_publica": null
   },
@@ -223,24 +286,24 @@
     "vagas_presencial": 0,
     "vagas_ead": 0,
     "matriculas": 0,
-    "ingressos": 2,
+    "ingressos": 0,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
     "cursos": [
       {
         "cod_ies": "1510",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
         "vagas": 0,
         "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 100.0,
-    "pct_ppi": 100.0,
-    "pct_financiamento": 0.0,
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
     "pct_noturno": null,
     "pct_rede_publica": null
   },
@@ -250,9 +313,9 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 152,
-    "ingressos": 54,
-    "concluintes": 3,
+    "matriculas": 180,
+    "ingressos": 64,
+    "concluintes": 30,
     "n_cursos": 2,
     "n_ies": 2,
     "cursos": [
@@ -260,24 +323,24 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 150,
-        "modalidade": "Semipresencial",
+        "matriculas": 180,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
-        "matriculas": 2,
-        "modalidade": "Semipresencial",
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 70.4,
-    "pct_ppi": 65.6,
-    "pct_financiamento": 5.6,
+    "pct_mulheres": 71.9,
+    "pct_ppi": null,
+    "pct_financiamento": null,
     "pct_noturno": null,
     "pct_rede_publica": null
   },
@@ -287,36 +350,27 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 6,
-    "ingressos": 0,
-    "concluintes": 0,
-    "n_cursos": 3,
-    "n_ies": 3,
+    "matriculas": 7,
+    "ingressos": 2,
+    "concluintes": 1,
+    "n_cursos": 2,
+    "n_ies": 2,
     "cursos": [
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1660",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE BRASÍLIA - ESTÁCIO BRASÍLIA",
-        "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "matriculas": 2,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1853",
-        "nome_ies": "Centro Universitário UNIBTA",
+        "nome_ies": "Centro Universitário Unibta Im",
         "vagas": 0,
         "matriculas": 5,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
@@ -341,38 +395,10 @@
     "cursos": [
       {
         "cod_ies": "3294",
-        "nome_ies": "CENTRO UNIVERSITÁRIO FAVENI",
+        "nome_ies": "Centro Universitário Faveni",
         "vagas": 0,
         "matriculas": 1,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      }
-    ],
-    "pct_mulheres": null,
-    "pct_ppi": null,
-    "pct_financiamento": null,
-    "pct_noturno": null,
-    "pct_rede_publica": null
-  },
-  "FORMOSO DO ARAGUAIA": {
-    "nome_original": "Formoso do Araguaia",
-    "cod_municipio": "1708205",
-    "vagas_total": 0,
-    "vagas_presencial": 0,
-    "vagas_ead": 0,
-    "matriculas": 0,
-    "ingressos": 0,
-    "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
-    "cursos": [
-      {
-        "cod_ies": "1510",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
-        "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
@@ -386,20 +412,20 @@
   "GUARAI": {
     "nome_original": "Guaraí",
     "cod_municipio": "1709302",
-    "vagas_total": 60,
-    "vagas_presencial": 60,
+    "vagas_total": 125,
+    "vagas_presencial": 125,
     "vagas_ead": 0,
-    "matriculas": 80,
-    "ingressos": 26,
+    "matriculas": 96,
+    "ingressos": 37,
     "concluintes": 0,
     "n_cursos": 3,
     "n_ies": 3,
     "cursos": [
       {
         "cod_ies": "3363",
-        "nome_ies": "FACULDADE GUARAÍ",
-        "vagas": 60,
-        "matriculas": 77,
+        "nome_ies": "Faculdade Guaraí",
+        "vagas": 125,
+        "matriculas": 96,
         "modalidade": "Presencial",
         "categoria": "Privada",
         "organizacao": "Faculdade"
@@ -409,23 +435,23 @@
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
         "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
-        "matriculas": 3,
-        "modalidade": "Semipresencial",
+        "matriculas": 0,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 57.7,
-    "pct_ppi": 68.0,
-    "pct_financiamento": 0.0,
+    "pct_mulheres": 85.3,
+    "pct_ppi": 76.5,
+    "pct_financiamento": 20.6,
     "pct_noturno": 100.0,
     "pct_rede_publica": 0.0
   },
@@ -435,27 +461,27 @@
     "vagas_total": 180,
     "vagas_presencial": 180,
     "vagas_ead": 0,
-    "matriculas": 394,
+    "matriculas": 441,
     "ingressos": 155,
-    "concluintes": 48,
-    "n_cursos": 7,
-    "n_ies": 7,
+    "concluintes": 25,
+    "n_cursos": 9,
+    "n_ies": 8,
     "cursos": [
       {
         "cod_ies": "750",
-        "nome_ies": "UNIVERSIDADE DE GURUPI",
+        "nome_ies": "Universidade De Gurupi",
         "vagas": 180,
-        "matriculas": 164,
+        "matriculas": 132,
         "modalidade": "Presencial",
         "categoria": "Especial",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "221",
-        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
         "vagas": 0,
-        "matriculas": 3,
-        "modalidade": "Semipresencial",
+        "matriculas": 7,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
@@ -463,211 +489,23 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 84,
-        "modalidade": "Semipresencial",
+        "matriculas": 113,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1270",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
-        "vagas": 0,
-        "matriculas": 5,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1446",
-        "nome_ies": "CENTRO UNIVERSITÁRIO PLANALTO DO DISTRITO FEDERAL - UNIPLAN",
-        "vagas": 0,
-        "matriculas": 78,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
-        "vagas": 0,
-        "matriculas": 13,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1658",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
-        "vagas": 0,
-        "matriculas": 47,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      }
-    ],
-    "pct_doc_mestres": 45.7,
-    "pct_doc_doutores": 17.1,
-    "pct_doc_regime": 71.4,
-    "cpc_org_didatico": 5.55,
-    "cpc_infraestrutura": 5.43,
-    "cpc_oportunidade": 4.98,
-    "pct_mulheres": 72.9,
-    "pct_ppi": 75.2,
-    "pct_financiamento": 0.6,
-    "pct_noturno": 100.0,
-    "pct_rede_publica": 100.0
-  },
-  "MIRACEMA DO TOCANTINS": {
-    "nome_original": "Miracema do Tocantins",
-    "cod_municipio": "1713205",
-    "vagas_total": 0,
-    "vagas_presencial": 0,
-    "vagas_ead": 0,
-    "matriculas": 4,
-    "ingressos": 8,
-    "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
-    "cursos": [
-      {
-        "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
         "vagas": 0,
         "matriculas": 4,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      }
-    ],
-    "pct_mulheres": 75.0,
-    "pct_ppi": 25.0,
-    "pct_financiamento": 0.0,
-    "pct_noturno": null,
-    "pct_rede_publica": null
-  },
-  "PALMAS": {
-    "nome_original": "Palmas",
-    "cod_municipio": "1721000",
-    "vagas_total": 467,
-    "vagas_presencial": 467,
-    "vagas_ead": 0,
-    "matriculas": 1146,
-    "ingressos": 524,
-    "concluintes": 102,
-    "n_cursos": 18,
-    "n_ies": 18,
-    "cursos": [
-      {
-        "cod_ies": "4969",
-        "nome_ies": "Centro Universitário Itop",
-        "vagas": 200,
-        "matriculas": 163,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "453",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LUTERANO DE PALMAS",
-        "vagas": 200,
-        "matriculas": 88,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "2148",
-        "nome_ies": "FACULDADE DE PALMAS",
-        "vagas": 67,
-        "matriculas": 111,
-        "modalidade": "Presencial",
-        "categoria": "Privada",
-        "organizacao": "Faculdade"
-      },
-      {
-        "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
-        "vagas": 0,
-        "matriculas": 21,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "221",
-        "nome_ies": "UNIVERSIDADE CRUZEIRO DO SUL",
-        "vagas": 0,
-        "matriculas": 4,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "298",
-        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
-        "vagas": 0,
-        "matriculas": 293,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "322",
-        "nome_ies": "UNIVERSIDADE PAULISTA",
-        "vagas": 0,
-        "matriculas": 73,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
-        "vagas": 0,
-        "matriculas": 62,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Universidade"
-      },
-      {
-        "cod_ies": "515",
-        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar de Niterói",
-        "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1270",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
-        "vagas": 0,
-        "matriculas": 12,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
-        "vagas": 0,
-        "matriculas": 38,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1487",
-        "nome_ies": "CENTRO UNIVERSITÁRIO UNIDOM - BOSCO",
-        "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1491",
-        "nome_ies": "CENTRO UNIVERSITÁRIO INTERNACIONAL",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
         "vagas": 0,
         "matriculas": 2,
         "modalidade": "Semipresencial",
@@ -675,80 +513,189 @@
         "organizacao": "Centro Universitário"
       },
       {
+        "cod_ies": "1446",
+        "nome_ies": "Centro Universitário Planalto Do Distrito Federal - Uniplan",
+        "vagas": 0,
+        "matriculas": 63,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 19,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
         "cod_ies": "1658",
-        "nome_ies": "CENTRO UNIVERSITÁRIO DA GRANDE FORTALEZA",
+        "nome_ies": "Centro Universitário Da Grande Fortaleza",
         "vagas": 0,
-        "matriculas": 37,
-        "modalidade": "Semipresencial",
+        "matriculas": 100,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
-        "cod_ies": "1853",
-        "nome_ies": "Centro Universitário UNIBTA",
+        "cod_ies": "17854",
+        "nome_ies": "Centro Universitário Unifecaf",
         "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "2835",
-        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
-        "vagas": 0,
-        "matriculas": 208,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "4153",
-        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU DERBY",
-        "vagas": 0,
-        "matriculas": 26,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "4751",
-        "nome_ies": "CENTRO UNIVERSITÁRIO UNIFATECIE",
-        "vagas": 0,
-        "matriculas": 7,
-        "modalidade": "Semipresencial",
+        "matriculas": 1,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_doc_mestres": 100.0,
-    "pct_doc_doutores": 24.9,
-    "pct_doc_regime": 85.9,
-    "cpc_org_didatico": 5.6,
-    "cpc_infraestrutura": 5.32,
-    "cpc_oportunidade": 4.84,
-    "pct_mulheres": 68.9,
-    "pct_ppi": 56.0,
-    "pct_financiamento": 1.7,
+    "pct_mulheres": 64.1,
+    "pct_ppi": 60.0,
+    "pct_financiamento": 0.0,
     "pct_noturno": 100.0,
-    "pct_rede_publica": 0.0
+    "pct_rede_publica": 100.0,
+    "pct_doc_mestres": 45.7,
+    "pct_doc_doutores": 17.1,
+    "pct_doc_regime": 71.4,
+    "cpc_org_didatico": 5.55,
+    "cpc_infraestrutura": 5.43,
+    "cpc_oportunidade": 4.98
   },
-  "PARAISO DO TOCANTINS": {
-    "nome_original": "Paraíso do Tocantins",
-    "cod_municipio": "1716109",
+  "MIRACEMA DO TOCANTINS": {
+    "nome_original": "Miracema do Tocantins",
+    "cod_municipio": "1713205",
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 143,
-    "ingressos": 88,
+    "matriculas": 0,
+    "ingressos": 2,
     "concluintes": 0,
-    "n_cursos": 6,
-    "n_ies": 6,
+    "n_cursos": 1,
+    "n_ies": 1,
     "cursos": [
       {
-        "cod_ies": "163",
-        "nome_ies": "UNIVERSIDADE ESTÁCIO DE SÁ",
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
         "vagas": 0,
-        "matriculas": 7,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      }
+    ],
+    "pct_mulheres": null,
+    "pct_ppi": null,
+    "pct_financiamento": null,
+    "pct_noturno": null,
+    "pct_rede_publica": null
+  },
+  "PALMAS": {
+    "nome_original": "Palmas",
+    "cod_municipio": "1721000",
+    "vagas_total": 434,
+    "vagas_presencial": 434,
+    "vagas_ead": 0,
+    "matriculas": 1302,
+    "ingressos": 626,
+    "concluintes": 58,
+    "n_cursos": 25,
+    "n_ies": 18,
+    "cursos": [
+      {
+        "cod_ies": "453",
+        "nome_ies": "Centro Universitário Luterano De Palmas",
+        "vagas": 205,
+        "matriculas": 112,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4969",
+        "nome_ies": "Centro Universitário Itop",
+        "vagas": 165,
+        "matriculas": 232,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2148",
+        "nome_ies": "Faculdade De Palmas",
+        "vagas": 64,
+        "matriculas": 115,
+        "modalidade": "Presencial",
+        "categoria": "Privada",
+        "organizacao": "Faculdade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 10,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 16,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "221",
+        "nome_ies": "Universidade Cruzeiro Do Sul",
+        "vagas": 0,
+        "matriculas": 9,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 233,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 25,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 61,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 2,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
@@ -757,51 +704,220 @@
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 123,
+        "matriculas": 1,
+        "modalidade": "Semipresencial",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "322",
+        "nome_ies": "Universidade Paulista",
+        "vagas": 0,
+        "matriculas": 59,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "515",
+        "nome_ies": "Centro Universitário Anhanguera Pitágoras Unopar De Niterói",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1196",
+        "nome_ies": "Universidade Cesumar",
+        "vagas": 0,
+        "matriculas": 77,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "1270",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
+        "vagas": 0,
+        "matriculas": 17,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 35,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1472",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
+        "vagas": 0,
+        "matriculas": 1,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1487",
+        "nome_ies": "Centro Universitário Unidom - Bosco",
+        "vagas": 0,
+        "matriculas": 0,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1491",
+        "nome_ies": "Centro Universitário Internacional",
+        "vagas": 0,
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1658",
+        "nome_ies": "Centro Universitário Da Grande Fortaleza",
+        "vagas": 0,
+        "matriculas": 74,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "1853",
+        "nome_ies": "Centro Universitário Unibta Im",
+        "vagas": 0,
+        "matriculas": 2,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "2835",
+        "nome_ies": "Centro Universitário Maurício De Nassau",
+        "vagas": 0,
+        "matriculas": 165,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4153",
+        "nome_ies": "Centro Universitário Maurício De Nassau Derby",
+        "vagas": 0,
+        "matriculas": 36,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 11,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      }
+    ],
+    "pct_mulheres": 70.9,
+    "pct_ppi": 75.9,
+    "pct_financiamento": 1.1,
+    "pct_noturno": 100.0,
+    "pct_rede_publica": 0.0,
+    "pct_doc_mestres": 100.0,
+    "pct_doc_doutores": 24.9,
+    "pct_doc_regime": 85.9,
+    "cpc_org_didatico": 5.6,
+    "cpc_infraestrutura": 5.32,
+    "cpc_oportunidade": 4.84
+  },
+  "PARAISO DO TOCANTINS": {
+    "nome_original": "Paraíso do Tocantins",
+    "cod_municipio": "1716109",
+    "vagas_total": 0,
+    "vagas_presencial": 0,
+    "vagas_ead": 0,
+    "matriculas": 173,
+    "ingressos": 93,
+    "concluintes": 0,
+    "n_cursos": 7,
+    "n_ies": 6,
+    "cursos": [
+      {
+        "cod_ies": "163",
+        "nome_ies": "Universidade Estácio De Sá",
+        "vagas": 0,
+        "matriculas": 7,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 137,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 3,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "nome_ies": "Universidade Cesumar",
         "vagas": 0,
-        "matriculas": 8,
-        "modalidade": "Semipresencial",
+        "matriculas": 13,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1205",
-        "nome_ies": "CENTRO UNIVERSITÁRIO FAEL",
+        "nome_ies": "Centro Universitário Fael",
         "vagas": 0,
         "matriculas": 4,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
-      },
-      {
-        "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
-        "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "2835",
-        "nome_ies": "CENTRO UNIVERSITÁRIO MAURÍCIO DE NASSAU",
+        "nome_ies": "Centro Universitário Maurício De Nassau",
         "vagas": 0,
-        "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "matriculas": 6,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Centro Universitário"
+      },
+      {
+        "cod_ies": "4751",
+        "nome_ies": "Centro Universitário Unifatecie",
+        "vagas": 0,
+        "matriculas": 3,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 76.1,
-    "pct_ppi": 53.1,
-    "pct_financiamento": 1.1,
+    "pct_mulheres": 76.5,
+    "pct_ppi": null,
+    "pct_financiamento": null,
     "pct_noturno": null,
     "pct_rede_publica": null
   },
@@ -811,25 +927,25 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 13,
-    "ingressos": 5,
+    "matriculas": 21,
+    "ingressos": 10,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
     "cursos": [
       {
         "cod_ies": "1510",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE SANTA CATARINA - ESTÁCIO SANTA CATARINA",
+        "nome_ies": "Centro Universitário Estácio De Santa Catarina - Estácio Santa Catarina",
         "vagas": 0,
-        "matriculas": 13,
-        "modalidade": "Semipresencial",
+        "matriculas": 21,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 80.0,
-    "pct_ppi": 100.0,
-    "pct_financiamento": 0.0,
+    "pct_mulheres": 60.0,
+    "pct_ppi": null,
+    "pct_financiamento": null,
     "pct_noturno": null,
     "pct_rede_publica": null
   },
@@ -839,52 +955,61 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 70,
-    "ingressos": 61,
+    "matriculas": 131,
+    "ingressos": 96,
     "concluintes": 0,
-    "n_cursos": 4,
+    "n_cursos": 5,
     "n_ies": 4,
     "cursos": [
       {
         "cod_ies": "298",
         "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
         "vagas": 0,
-        "matriculas": 63,
+        "matriculas": 111,
+        "modalidade": "EaD",
+        "categoria": "Privada",
+        "organizacao": "Universidade"
+      },
+      {
+        "cod_ies": "298",
+        "nome_ies": "Universidade Pitágoras Unopar Anhanguera",
+        "vagas": 0,
+        "matriculas": 9,
         "modalidade": "Semipresencial",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "nome_ies": "Universidade Cesumar",
         "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "matriculas": 1,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
       },
       {
         "cod_ies": "1270",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
         "vagas": 0,
-        "matriculas": 6,
-        "modalidade": "Semipresencial",
+        "matriculas": 9,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       },
       {
         "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
+        "nome_ies": "Centro Universitário Leonardo Da Vinci",
         "vagas": 0,
         "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
     ],
-    "pct_mulheres": 77.0,
-    "pct_ppi": 63.6,
-    "pct_financiamento": 0.0,
+    "pct_mulheres": 77.4,
+    "pct_ppi": null,
+    "pct_financiamento": null,
     "pct_noturno": null,
     "pct_rede_publica": null
   },
@@ -894,18 +1019,18 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 0,
-    "ingressos": 0,
+    "matriculas": 1,
+    "ingressos": 2,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
     "cursos": [
       {
         "cod_ies": "1270",
-        "nome_ies": "CENTRO UNIVERSITÁRIO ESTÁCIO DE RIBEIRÃO PRETO",
+        "nome_ies": "Centro Universitário Estácio De Ribeirão Preto",
         "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
+        "matriculas": 1,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
@@ -930,10 +1055,10 @@
     "cursos": [
       {
         "cod_ies": "3294",
-        "nome_ies": "CENTRO UNIVERSITÁRIO FAVENI",
+        "nome_ies": "Centro Universitário Faveni",
         "vagas": 0,
         "matriculas": 1,
-        "modalidade": "Semipresencial",
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
@@ -950,7 +1075,7 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 2,
+    "matriculas": 1,
     "ingressos": 0,
     "concluintes": 0,
     "n_cursos": 1,
@@ -958,10 +1083,10 @@
     "cursos": [
       {
         "cod_ies": "3294",
-        "nome_ies": "CENTRO UNIVERSITÁRIO FAVENI",
+        "nome_ies": "Centro Universitário Faveni",
         "vagas": 0,
-        "matriculas": 2,
-        "modalidade": "Semipresencial",
+        "matriculas": 1,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Centro Universitário"
       }
@@ -978,48 +1103,20 @@
     "vagas_total": 0,
     "vagas_presencial": 0,
     "vagas_ead": 0,
-    "matriculas": 4,
-    "ingressos": 7,
+    "matriculas": 3,
+    "ingressos": 3,
     "concluintes": 0,
     "n_cursos": 1,
     "n_ies": 1,
     "cursos": [
       {
         "cod_ies": "1196",
-        "nome_ies": "UNIVERSIDADE CESUMAR",
+        "nome_ies": "Universidade Cesumar",
         "vagas": 0,
-        "matriculas": 4,
-        "modalidade": "Semipresencial",
+        "matriculas": 3,
+        "modalidade": "EaD",
         "categoria": "Privada",
         "organizacao": "Universidade"
-      }
-    ],
-    "pct_mulheres": 57.1,
-    "pct_ppi": 28.6,
-    "pct_financiamento": 0.0,
-    "pct_noturno": null,
-    "pct_rede_publica": null
-  },
-  "XAMBIOA": {
-    "nome_original": "Xambioá",
-    "cod_municipio": "1722107",
-    "vagas_total": 0,
-    "vagas_presencial": 0,
-    "vagas_ead": 0,
-    "matriculas": 0,
-    "ingressos": 0,
-    "concluintes": 0,
-    "n_cursos": 1,
-    "n_ies": 1,
-    "cursos": [
-      {
-        "cod_ies": "1472",
-        "nome_ies": "CENTRO UNIVERSITÁRIO LEONARDO DA VINCI",
-        "vagas": 0,
-        "matriculas": 0,
-        "modalidade": "Semipresencial",
-        "categoria": "Privada",
-        "organizacao": "Centro Universitário"
       }
     ],
     "pct_mulheres": null,

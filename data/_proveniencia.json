@@ -1,6 +1,6 @@
 {
-  "versao_censo": "2024",
-  "data_extracao_censo": "2026-06-27",
+  "versao_censo": "2025",
+  "data_extracao_censo": "2026-11-26",
   "data_extracao_enade": "2025-04-24",
   "data_extracao_fp": "2026-11-23",
   "fontes": {
@@ -8,9 +8,10 @@
       "nome": "Microdados do Censo da Educação Superior",
       "orgao": "INEP/MEC",
       "url": "https://www.gov.br/inep/pt-br/acesso-a-informacao/dados-abertos/microdados",
-      "ano": 2024,
-      "arquivo": "MICRODADOS_CADASTRO_CURSOS_2024.CSV",
-      "data_publicacao": "2025-10-01"
+      "ano": 2025,
+      "arquivo": "ces2025_microdados_tabela_curso.csv (+ aluno, ies); traduzido por etl/censo2025_adaptador.py",
+      "data_publicacao": "2026-11-26",
+      "nota": "A partir de 2025 o INEP publica sete tabelas em vez de MICRODADOS_CADASTRO_CURSOS. TP_MODALIDADE_ENSINO passa a ser o formato de oferta (Decreto 12.456/2025), com a categoria nova 3=Semipresencial; recortes por polo (sexo, cor, financiamento) sao suprimidos pelo INEP. Series 2024->2025 de modalidade e de perfil nao sao estritamente comparaveis."
     },
     "enade": {
       "nome": "Microdados do ENADE",

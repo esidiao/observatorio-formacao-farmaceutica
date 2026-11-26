@@ -9,7 +9,8 @@
     2021,
     2022,
     2023,
-    2024
+    2024,
+    2025
   ],
   "nacional": [
     {
@@ -121,8 +122,20 @@
       "ingressos": 96369,
       "concluintes": 24144,
       "pct_ead": 68.8
+    },
+    {
+      "ano": 2025,
+      "n_cursos": 856,
+      "vagas_total": 489801,
+      "vagas_presencial": 129259,
+      "vagas_ead": 314778,
+      "matriculas": 254696,
+      "ingressos": 113441,
+      "concluintes": 23824,
+      "vagas_semipresencial": 45764,
+      "pct_ead": 64.3
     }
   ],
-  "fonte": "INEP — Microdados do Censo da Educação Superior (2015–2024)",
-  "nota_modalidade": "EaD = TP_MODALIDADE 3 (2015–2023) e 2 (2024); presencial = 1. Vagas EaD registradas na sede."
+  "fonte": "INEP — Microdados do Censo da Educação Superior (2015–2025)",
+  "nota_modalidade": "EaD = TP_MODALIDADE 2 em toda a série (2015–2025); presencial = 1; a partir de 2025 o código 3 é semipresencial (campo vagas_semipresencial, incluído em vagas_total). Vagas EaD registradas na sede. A mudança de definição em 2025 (Decreto 12.456/2025) limita a comparação da participação da EaD com os anos anteriores."
 }
