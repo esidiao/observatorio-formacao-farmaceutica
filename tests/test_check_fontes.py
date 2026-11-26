@@ -373,6 +373,45 @@ def test_intermediarios_versionados_sao_os_esperados_e_nao_venceram():
                f"{nome} venceu em {ano}-{mes:02d}-{dia:02d}: renovar (etl/certs/LEIA-ME.md)")
 
 
+def test_censo_publicado_com_nome_de_arquivo_novo_e_detectado():
+    """
+    Em 2026-11-26 o INEP publicou o Censo 2025 como ..._censo_educacao_superior_2025.zip
+    (sem o "da"). Sondar so o nome antigo dava 404 "confirmado" com o arquivo no ar.
+    """
+    def responder(url, **kwargs):
+        if "censo_educacao_superior_2025" in url:
+            return (True, "206")
+        return (False, "404")
+
+    novo, saida, outputs = rodar(PROV, responder)
+    checar(novo is True, "Censo 2025 publicado sob o nome novo deveria ser detectado")
+    checar("Censo 2025" in outputs.get("fontes_novas_detalhe", ""),
+           "o detalhe deveria nomear o Censo 2025")
+
+
+def test_nome_novo_indeterminado_nao_vira_em_dia():
+    """404 no nome antigo + erro de rede no novo: nao ha como afirmar que esta em dia."""
+    def responder(url, **kwargs):
+        if "censo_educacao_superior_2025" in url:
+            return (None, "ConnectionError")
+        return (False, "404")
+
+    novo, saida, outputs = rodar(PROV, responder)
+    checar(novo is False, "indeterminado nao pode virar novidade")
+    checar(outputs.get("verificacao_indeterminada") == "true",
+           "um nome indeterminado deve sinalizar verificacao_indeterminada")
+    checar("em dia" not in saida, "nao pode declarar 'fontes em dia' com um nome indeterminado")
+
+
+def test_404_em_todos_os_nomes_continua_confirmado():
+    sonda = SondaFalsa({})  # tudo 404
+    novo, saida, outputs = rodar(PROV, sonda)
+    checar(novo is False and "verificacao_indeterminada" not in outputs,
+           "404 em todos os nomes conhecidos continua sendo 'sem novidade'")
+    checar(any("censo_educacao_superior_2025" in u for u in sonda.urls),
+           f"deveria sondar tambem o nome novo; sondou {sonda.urls}")
+
+
 def main():
     for teste in (test_nada_novo, test_censo_novo_detectado, test_enade_novo_detectado,
                   test_falha_de_rede_nao_vira_sem_novidade, test_nao_sonda_o_ano_corrente,
@@ -390,7 +429,10 @@ def main():
                   test_outros_hosts_mantem_o_padrao_do_certifi,
                   test_verificacao_tls_nunca_e_desligada,
                   test_ssl_persistente_aponta_a_causa,
-                  test_intermediarios_versionados_sao_os_esperados_e_nao_venceram):
+                  test_intermediarios_versionados_sao_os_esperados_e_nao_venceram,
+                  test_censo_publicado_com_nome_de_arquivo_novo_e_detectado,
+                  test_nome_novo_indeterminado_nao_vira_em_dia,
+                  test_404_em_todos_os_nomes_continua_confirmado):
         antes = len(falhas)
         teste()
         print(f"  [{'OK' if len(falhas) == antes else 'FALHOU'}] {teste.__name__}")
