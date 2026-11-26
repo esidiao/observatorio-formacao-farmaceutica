@@ -397,7 +397,7 @@ ENRIQUECIMENTO = [
 ]
 
 
-def rodar_etl(path_csv: Path, qualidade_csv: Path):
+def rodar_etl(path_csv: Path, qualidade_csv: Path, permitir_divergencia=False):
     """Roda ingestão → índices → empacotamento → enriquecimento."""
     print(f"\n[ETL] Ingestão: {path_csv.name}")
     subprocess.run(
@@ -422,10 +422,10 @@ def rodar_etl(path_csv: Path, qualidade_csv: Path):
 
     empacotar(ufs)
     (DATA_DIR / "final_novo.json").unlink(missing_ok=True)
-    rodar_enriquecimento()
+    rodar_enriquecimento(permitir_divergencia)
 
 
-def rodar_enriquecimento():
+def rodar_enriquecimento(permitir_divergencia=False):
     """
     Aplica os scripts que acrescentam campos ao nacional.json recém-gerado.
 
@@ -445,6 +445,10 @@ def rodar_enriquecimento():
         print(f"  - {script}: {descricao}")
         # complementos.py so grava com --aplicar; sem a flag ele apenas confere.
         extra = ["--aplicar"] if script == "complementos.py" else []
+        # Ao carregar uma EDICAO NOVA do Censo o complementos.py tem de divergir do
+        # publicado (e o sentido da atualizacao). So entao o pipeline o libera.
+        if script == "complementos.py" and permitir_divergencia:
+            extra.append("--permitir-divergencia")
         subprocess.run([sys.executable, str(caminho)] + extra, check=True)
 
 
@@ -568,6 +572,9 @@ def main():
                         help="Caminho para MICRODADOS_CADASTRO_CURSOS_AAAA.CSV")
     parser.add_argument("--qualidade", default=str(REPO / "etl" / "qualidade_uf.csv"),
                         help="CSV de qualidade (CC/ENADE/IDD por UF)")
+    parser.add_argument("--permitir-divergencia", action="store_true",
+                        help="Use SO ao carregar uma edicao nova do Censo: libera a "
+                             "conferencia de complementos.py contra o publicado")
     parser.add_argument("--forcar", action="store_true",
                         help="Forçar re-extração mesmo sem mudança nas fontes")
     args = parser.parse_args()
@@ -592,7 +599,7 @@ def main():
     if not path_csv.exists():
         sys.exit(f"[ERRO] Arquivo não encontrado: {path_csv}")
 
-    rodar_etl(path_csv, Path(args.qualidade))
+    rodar_etl(path_csv, Path(args.qualidade), args.permitir_divergencia)
     conferir_riqueza()
     rodar_validacao()
 

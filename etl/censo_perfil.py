@@ -1,5 +1,5 @@
 """
-Extrai do Censo 2024 (MICRODADOS_CADASTRO_CURSOS) indicadores de perfil de
+Extrai do Censo (MICRODADOS_CADASTRO_CURSOS_AAAA) indicadores de perfil de
 acesso e equidade dos cursos de Farmacia, agregados por UF e por municipio
 (oferta com localizacao municipal):
   - % mulheres entre ingressantes
@@ -25,7 +25,9 @@ def _fonte_externa(variavel, padrao):
     import os
     return Path(os.environ.get(variavel, padrao))
 
-BASE = _fonte_externa("OBS_CENSO_DIR", "G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/censo2024/microdados_censo_da_educacao_superior_2024/dados")
+import os
+ANO_CENSO = os.environ.get("OBS_CENSO_ANO", "2025")
+BASE = _fonte_externa("OBS_CENSO_DIR", "G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/censo2025/legado_farmacia")
 
 def norm(s):
     s = unicodedata.normalize("NFD", str(s).upper())
@@ -36,28 +38,49 @@ COLS = ["SG_UF", "CO_MUNICIPIO", "TP_REDE", "QT_VG_TOTAL", "QT_VG_TOTAL_DIURNO",
         "QT_ING_PRETA", "QT_ING_PARDA", "QT_ING_AMARELA", "QT_ING_INDIGENA",
         "QT_ING_FIES", "QT_ING_PROUNII", "QT_ING_PROUNIP", "NO_CINE_ROTULO"]
 
-print("[1] Lendo Censo 2024...")
-df = pd.read_csv(BASE / "MICRODADOS_CADASTRO_CURSOS_2024.CSV", sep=";", encoding="latin-1",
+print(f"[1] Lendo Censo {ANO_CENSO}...")
+df = pd.read_csv(BASE / f"MICRODADOS_CADASTRO_CURSOS_{ANO_CENSO}.CSV", sep=";", encoding="latin-1",
                  dtype=str, low_memory=False, usecols=lambda c: c in COLS)
 df = df[df["NO_CINE_ROTULO"].apply(lambda x: "FARMACIA" in norm(x))].copy()
 num = [c for c in COLS if c.startswith("QT_")]
 for c in num:
-    df[c] = pd.to_numeric(df[c], errors="coerce").fillna(0)
+    df[c] = pd.to_numeric(df[c], errors="coerce")   # NaN = suprimido/ausente, NUNCA 0
+# Vagas e ingressantes totais nunca sao suprimidos; so os RECORTES (sexo, cor,
+# financiamento) o sao, e a partir de 2025 isso atinge praticamente todas as
+# linhas de polo EaD. Contar "suprimido" como zero subestimaria o numerador e
+# deixaria o denominador inteiro (medido: % mulheres cairia de ~15 a ~65 conforme
+# o tratamento). Por isso o perfil usa so as linhas com o recorte DIVULGADO.
+RECORTES = ["QT_ING_FEM", "QT_ING_BRANCA", "QT_ING_PRETA", "QT_ING_PARDA",
+            "QT_ING_AMARELA", "QT_ING_INDIGENA", "QT_ING_FIES", "QT_ING_PROUNII",
+            "QT_ING_PROUNIP"]
+for c in [x for x in num if x not in RECORTES]:
+    df[c] = df[c].fillna(0)
 print(f"    {len(df)} registros de Farmacia")
 
+def _divulgado(g, cols):
+    """Linhas em que TODAS as colunas do recorte foram divulgadas (nao suprimidas)."""
+    return g[g[cols].notna().all(axis=1)]
+
+
 def indicadores(g):
+    # Cada percentual tem numerador e denominador sobre as MESMAS linhas.
+    sexo = _divulgado(g, ["QT_ING_FEM"])
+    cor_cols = ["QT_ING_BRANCA","QT_ING_PRETA","QT_ING_PARDA","QT_ING_AMARELA","QT_ING_INDIGENA"]
+    cor = _divulgado(g, cor_cols)
+    fin_cols = ["QT_ING_FIES","QT_ING_PROUNII","QT_ING_PROUNIP"]
+    finr = _divulgado(g, fin_cols)
     ing = g["QT_ING"].sum()
-    decl = g[["QT_ING_BRANCA","QT_ING_PRETA","QT_ING_PARDA","QT_ING_AMARELA","QT_ING_INDIGENA"]].sum().sum()
-    ppi = g[["QT_ING_PRETA","QT_ING_PARDA","QT_ING_INDIGENA"]].sum().sum()
-    fin = g[["QT_ING_FIES","QT_ING_PROUNII","QT_ING_PROUNIP"]].sum().sum()
+    decl = cor[cor_cols].sum().sum()
+    ppi = cor[["QT_ING_PRETA","QT_ING_PARDA","QT_ING_INDIGENA"]].sum().sum()
+    fin = finr[fin_cols].sum().sum()
     vg_pres = g["QT_VG_TOTAL_DIURNO"].sum() + g["QT_VG_TOTAL_NOTURNO"].sum()
     vg_tot = g["QT_VG_TOTAL"].sum()
     vg_pub = g[g["TP_REDE"] == "1"]["QT_VG_TOTAL"].sum()
     pct = lambda a, b: round(float(a) / float(b) * 100, 1) if b > 0 else None
     return {
-        "pct_mulheres":       pct(g["QT_ING_FEM"].sum(), ing),
+        "pct_mulheres":       pct(sexo["QT_ING_FEM"].sum(), sexo["QT_ING"].sum()),
         "pct_ppi":            pct(ppi, decl),
-        "pct_financiamento":  pct(fin, ing),
+        "pct_financiamento":  pct(fin, finr["QT_ING"].sum()),
         "pct_noturno":        pct(g["QT_VG_TOTAL_NOTURNO"].sum(), vg_pres),
         "pct_rede_publica":   pct(vg_pub, vg_tot),
     }

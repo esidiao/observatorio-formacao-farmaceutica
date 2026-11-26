@@ -23,8 +23,12 @@ except ImportError:
 REPO = Path(__file__).parent.parent
 DATA_DIR = REPO / "data" / "municipios"
 
-# Modalidade de ensino (TP_MODALIDADE_ENSINO)
-MODALIDADE = {1: "Presencial", 2: "Semipresencial", 3: "EaD"}
+# Modalidade de ensino (TP_MODALIDADE_ENSINO). Ate 2024 este dicionario dizia
+# 2="Semipresencial", 3="EaD" (codificacao herdada, que nao corresponde a nenhum
+# Censo de 2015 a 2024), o que rotulou as 6.477 linhas de polo EaD de 2024 como
+# "Semipresencial" nos municipios. O 2 e EaD em todos esses anos; o 3 so passa a
+# existir em 2025, e e semipresencial.
+MODALIDADE = {1: "Presencial", 2: "EaD", 3: "Semipresencial"}
 
 # Categoria administrativa
 CATEGORIA = {
@@ -70,7 +74,7 @@ def processar_uf(df_uf: "pd.DataFrame", sigla: str) -> dict:
                 v = int(sub["QT_VG_TOTAL"].sum())
                 if mod == 1:
                     vagas_presencial = v
-                elif mod == 3:
+                elif mod == 2:
                     vagas_ead = v
 
         # Lista de cursos/IES

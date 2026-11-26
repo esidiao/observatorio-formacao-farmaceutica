@@ -49,6 +49,9 @@ jobs:
       - name: "🛰️ Testes do verificador de fontes"
         run: python tests/test_check_fontes.py
 
+      - name: "🔁 Testes do adaptador do Censo 2025"
+        run: python tests/test_censo2025_adaptador.py
+
       - name: "🏗️ Gerar site estático"
         run: python site/build.py
 

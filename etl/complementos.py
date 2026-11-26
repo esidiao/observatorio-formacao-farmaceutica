@@ -21,8 +21,10 @@ aparece como divergencia em vez de virar numero errado publicado.
     ---------------------  -------------  ------------------------------------
     vagas_presencial       Censo          soma de QT_VG_TOTAL nas linhas presenciais
     vagas_ead              Censo + IES    vagas de sede EaD atribuidas a UF da mantenedora
-    vagas_total_real       derivado       presencial + EaD
-    pct_ead                derivado       vagas_ead / vagas_total_real * 100
+    vagas_semipresencial   Censo + IES    (2025+) vagas de sede semipresencial, UF da mantenedora
+    n_cursos_semipresencial Censo + IES   (2025+) QT_CURSO das sedes semipresenciais com vagas
+    vagas_total_real       derivado       presencial + EaD + semipresencial
+    pct_ead                derivado       vagas_ead / vagas_total_real * 100 (EaD estrita)
     n_cursos_presencial    Censo          soma de QT_CURSO nas linhas presenciais
     n_cursos_ead           Censo + IES    soma de QT_CURSO nas sedes EaD com vagas
     CPC_cont               CPC            media do CPC continuo ponderada por concluintes
@@ -61,10 +63,13 @@ REPO = Path(__file__).resolve().parent.parent
 DATA_DIR = REPO / "data"
 NACIONAL = DATA_DIR / "nacional.json"
 
+# Ano do Censo processado. Os nomes dos arquivos vem dele: ate 2024 sao os
+# MICRODADOS_* do INEP; para 2025 em diante, os gerados por censo2025_adaptador.py
+# a partir das tabelas novas (mesmo layout, mesmos nomes).
+ANO_CENSO = os.environ.get("OBS_CENSO_ANO", "2025")
 CENSO_DIR = Path(os.environ.get(
     "OBS_CENSO_DIR",
-    "G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/censo2024/"
-    "microdados_censo_da_educacao_superior_2024/dados"))
+    "G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/censo2025/legado_farmacia"))
 CPC_XLSX = Path(os.environ.get(
     "OBS_CPC_XLSX",
     "G:/Meu Drive/Works/CLAUDE IA/observatorio_farmaceutico/CPC_2023.xlsx"))
@@ -88,10 +93,15 @@ CAMPOS = ["populacao", "pop_ano", "vagas_por_100k", "taxa_retencao",
           "matriculas_total", "concluintes_total", "n_mantenedoras",
           "HHI_mantenedora", "n_cursos_idd", "mun_ead_only",
           "ead_polos_municipios", "ead_polos_registros",
-          "vagas_presencial", "vagas_ead", "vagas_total_real", "pct_ead",
-          "n_cursos_presencial", "n_cursos_ead", "CPC_cont", "IDD"]
+          "vagas_presencial", "vagas_ead", "vagas_semipresencial",
+          "vagas_total_real", "pct_ead", "n_cursos_presencial", "n_cursos_ead",
+          "n_cursos_semipresencial", "CPC_cont", "IDD"]
 
-MOD_PRESENCIAL, MOD_EAD = "1", "2"
+# A partir de 2025 TP_MODALIDADE_ENSINO e o formato de oferta do Decreto
+# 12.456/2025: 1=presencial, 2=a distancia, 3=SEMIPRESENCIAL (categoria nova).
+# Em 2015-2024 so existiram os codigos 1 e 2 (conferido em cada Censo). Nao tratar
+# o "3" como EaD nem deixa-lo cair fora: as vagas semipresenciais sumiriam.
+MOD_PRESENCIAL, MOD_EAD, MOD_SEMI = "1", "2", "3"
 
 
 def norm(s):
@@ -108,8 +118,8 @@ def _hhi(vagas_por_grupo):
 
 def ler_censo():
     """Le o Censo e o cadastro de IES, ja filtrados pelo curso."""
-    csv_cursos = CENSO_DIR / "MICRODADOS_CADASTRO_CURSOS_2024.CSV"
-    csv_ies = CENSO_DIR / "MICRODADOS_ED_SUP_IES_2024.CSV"
+    csv_cursos = CENSO_DIR / f"MICRODADOS_CADASTRO_CURSOS_{ANO_CENSO}.CSV"
+    csv_ies = CENSO_DIR / f"MICRODADOS_ED_SUP_IES_{ANO_CENSO}.CSV"
     for caminho in (csv_cursos, csv_ies):
         if not caminho.exists():
             sys.exit(f"[ERRO] Nao encontrei {caminho}.\n"
@@ -142,16 +152,37 @@ def ler_censo():
 
 def apurar_censo(df, uf_da_ies):
     """Calcula, por UF, os campos que saem do Censo."""
+    # Guarda: modalidade desconhecida jamais pode sumir calada. Foi exatamente
+    # assim que o "3 = semipresencial" de 2025 passaria despercebido.
+    conhecidas = {MOD_PRESENCIAL, MOD_EAD, MOD_SEMI}
+    desconhecidas = set(df["TP_MODALIDADE_ENSINO"].dropna()) - conhecidas
+    if desconhecidas:
+        sys.exit(f"[ABORTADO] TP_MODALIDADE_ENSINO com codigo(s) {sorted(desconhecidas)} "
+                 f"que este script nao conhece (esperado: {sorted(conhecidas)}). "
+                 f"Reveja o dicionario do Censo antes de publicar.")
+
     presencial = df[df["TP_MODALIDADE_ENSINO"] == MOD_PRESENCIAL].copy()
     ead = df[df["TP_MODALIDADE_ENSINO"] == MOD_EAD]
+    semi = df[df["TP_MODALIDADE_ENSINO"] == MOD_SEMI]
     polo = ead[ead["SG_UF"].notna()]
 
-    # Capacidade para concentracao de mercado: presencial da UF + EaD cuja
-    # mantenedora e sediada nela (as linhas de sede nao tem UF propria).
+    # Capacidade para concentracao de mercado: presencial da UF + EaD e
+    # semipresencial cuja mantenedora e sediada nela (as linhas de sede nao tem
+    # UF propria).
     sede = ead[ead["SG_UF"].isna()].copy()
     sede["UF_ATRIB"] = sede["CO_IES"].map(uf_da_ies)
+    sede_semi = semi[semi["SG_UF"].isna()].copy()
+    sede_semi["UF_ATRIB"] = sede_semi["CO_IES"].map(uf_da_ies)
     presencial["UF_ATRIB"] = presencial["SG_UF"]
-    capacidade = pd.concat([presencial, sede])
+    capacidade = pd.concat([presencial, sede, sede_semi])
+
+    # Vagas de sede sem UF atribuivel (IES fora do cadastro ou sem UF) nao entram
+    # em nenhuma UF: que ao menos apareca no relatorio.
+    for rotulo, d in (("EaD", sede), ("semipresencial", sede_semi)):
+        sem_uf = int(d[d["UF_ATRIB"].isna()]["QT_VG_TOTAL"].sum())
+        if sem_uf:
+            print(f"[AVISO] {sem_uf} vagas de {rotulo} sem UF atribuivel pela IES "
+                  f"ficaram fora das UFs.")
 
     saida = {}
     for uf in sorted(set(df["SG_UF"].dropna())):
@@ -171,19 +202,26 @@ def apurar_censo(df, uf_da_ies):
         concluintes = int(d_uf["QT_CONC"].sum())
 
         d_sede = sede[sede["UF_ATRIB"] == uf]
+        d_semi = sede_semi[sede_semi["UF_ATRIB"] == uf]
         vagas_presencial = int(d_pres["QT_VG_TOTAL"].sum())
         vagas_ead = int(d_sede["QT_VG_TOTAL"].sum())
-        vagas_total = vagas_presencial + vagas_ead
+        vagas_semi = int(d_semi["QT_VG_TOTAL"].sum())
+        vagas_total = vagas_presencial + vagas_ead + vagas_semi
 
         saida[uf] = {
             "vagas_presencial": vagas_presencial,
             "vagas_ead": vagas_ead,
+            # Semipresencial (nova em 2025): campo proprio, nunca somado a vagas_ead.
+            # O total real soma as tres; pct_ead segue sendo so a EaD estrita.
+            "vagas_semipresencial": vagas_semi,
             "vagas_total_real": vagas_total,
             "pct_ead": (round(vagas_ead / vagas_total * 100, 1)
                         if vagas_total else None),
             "n_cursos_presencial": int(d_pres["QT_CURSO"].sum()),
             # So sedes com vaga: uma sede zerada nao representa curso ofertado.
             "n_cursos_ead": int(d_sede[d_sede["QT_VG_TOTAL"] > 0]["QT_CURSO"].sum()),
+            "n_cursos_semipresencial": int(
+                d_semi[d_semi["QT_VG_TOTAL"] > 0]["QT_CURSO"].sum()),
             "matriculas_total": matriculas,
             "concluintes_total": concluintes,
             # Sem matriculados nao ha taxa: null, nunca zero.
