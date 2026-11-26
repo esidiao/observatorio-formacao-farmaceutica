@@ -40,7 +40,7 @@
 
 {% block content %}
 
-{# Macro: seta de variação 2023→2024 a partir do historico.json #}
+{# Macro: seta de variação entre os dois Censos de historico.json (anos em hist_anos) #}
 {% macro delta(ind, casas=3) %}
   {%- set h = hist.get(ind) -%}
   {%- if h and h.delta is not none -%}
@@ -48,8 +48,8 @@
     {%- set cor = 'var(--swot-strength)' if t == 'melhora' else ('var(--swot-threat)' if t == 'piora' else 'var(--text-muted)') -%}
     {%- set seta = '▲' if h.delta > 0 else ('▼' if h.delta < 0 else '▬') -%}
     <div class="kpi-delta" style="font-size:0.72rem;font-weight:600;color:{{ cor }};margin-top:2px"
-         title="2023: {{ h['2023'] }} → 2024: {{ h['2024'] }} ({{ t }})">
-      {{ seta }} {{ "%+.*f"|format(casas, h.delta) }} vs 2023
+         title="{{ hist_anos[0] }}: {{ h[hist_anos[0]] }} → {{ hist_anos[1] }}: {{ h[hist_anos[1]] }} ({{ t }})">
+      {{ seta }} {{ "%+.*f"|format(casas, h.delta) }} vs {{ hist_anos[0] }}
     </div>
   {%- endif -%}
 {% endmacro %}
@@ -138,8 +138,8 @@
 <div class="kpi-grid">
   <div class="kpi-card">
     <div class="kpi-valor">{{ "{:,}".format(d.vagas_total_real or 0).replace(',','.') }}</div>
-    <div class="kpi-label">Vagas totais (pres + EaD)</div>
-    <div class="kpi-fonte" title="Soma de vagas presenciais e EaD (sede da mantenedora).">Censo {{ meta.versao_censo }}</div>
+    <div class="kpi-label">Vagas totais (pres + EaD{% if d.vagas_semipresencial %} + semipres.{% endif %})</div>
+    <div class="kpi-fonte" title="Soma de vagas presenciais, EaD e semipresenciais (EaD e semipresencial: sede da mantenedora).">Censo {{ meta.versao_censo }}</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-valor">{{ "{:,}".format(d.vagas_presencial or 0).replace(',','.') }}</div>
@@ -151,6 +151,13 @@
     <div class="kpi-label">Vagas EaD</div>
     <div class="kpi-fonte">{{ d.n_cursos_ead or 0 }} cursos EaD (sede no estado)</div>
   </div>
+  {% if d.vagas_semipresencial is not none and meta.versao_censo|int >= 2025 %}
+  <div class="kpi-card">
+    <div class="kpi-valor">{{ "{:,}".format(d.vagas_semipresencial or 0).replace(',','.') }}</div>
+    <div class="kpi-label">Vagas semipresenciais</div>
+    <div class="kpi-fonte" title="Categoria nova do Censo 2025 (Decreto 12.456/2025), contada à parte da EaD. Sede da mantenedora no estado.">{{ d.n_cursos_semipresencial or 0 }} cursos semipresenciais</div>
+  </div>
+  {% endif %}
   <div class="kpi-card {% if d.pct_ead is not none and d.pct_ead >= 70 %}critico{% endif %}">
     <div class="kpi-valor">{% if d.pct_ead is not none %}{{ "%.1f"|format(d.pct_ead) }}%{% else %}—{% endif %}</div>
     <div class="kpi-label">% EaD da capacidade</div>
@@ -235,6 +242,73 @@
 
 <!-- Qualidade ENADE -->
 {% if d.CC is not none or d.ENADE is not none %}
+{% if serie_uf %}
+<!-- Evolução histórica da UF (data/serie_uf.json) -->
+<h2 class="section-title" id="evolucao">Evolução {{ serie_uf.series[0] }}–{{ serie_uf.series[-1] }}</h2>
+<p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px;max-width:85ch">
+  Trajetória de {{ nome_uf }} nos microdados do Censo (INEP). As barras são as vagas anuais por modalidade; a linha, os concluintes.
+  <a href="{{ depth }}serie.html?ind=vagas_total_real&uf={{ sigla }}">Comparar {{ sigla }} com outras UFs →</a>
+</p>
+<div class="chart-box"><canvas id="grafico-evolucao-uf" role="img" aria-label="Evolução de vagas por modalidade e de concluintes em {{ nome_uf }}"></canvas></div>
+<div class="tabela-wrap">
+  <table id="tabela-evolucao-uf">
+    <thead><tr id="evo-thead"></tr></thead>
+    <tbody id="evo-tbody"></tbody>
+  </table>
+</div>
+<p style="font-size:0.78rem;color:var(--text-muted);margin:6px 0 22px;max-width:90ch">
+  A definição de modalidade mudou em 2025 (Decreto 12.456/2025; a semipresencial passa a existir): compare a participação da EaD
+  com os anos anteriores com cautela. Em 2015 e 2016 o Censo não registra Farmácia EaD.
+</p>
+<script>
+(function () {
+  const S = {{ serie_uf_json }};
+  const A = S.series, D = S.ufs;
+  const NF = new Intl.NumberFormat('pt-BR');
+  const ctx = document.getElementById('grafico-evolucao-uf').getContext('2d');
+  new Chart(ctx, {
+    data: {
+      labels: A,
+      datasets: [
+        { type: 'bar', label: 'Vagas presenciais', data: D.vagas_total, backgroundColor: '#2E5496', stack: 'v', yAxisID: 'y' },
+        { type: 'bar', label: 'Vagas EaD', data: D.vagas_ead, backgroundColor: '#B07D22', stack: 'v', yAxisID: 'y' },
+        { type: 'bar', label: 'Vagas semipresenciais', data: D.vagas_semipresencial.map(v => v || 0), backgroundColor: '#6E8F5B', stack: 'v', yAxisID: 'y' },
+        { type: 'line', label: 'Concluintes', data: D.concluintes_total, borderColor: '#B23A2E', backgroundColor: '#B23A2E', borderWidth: 2.5, pointRadius: 3, yAxisID: 'y2', tension: 0.25 },
+      ],
+    },
+    options: {
+      responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+      plugins: { legend: { position: 'bottom', labels: { font: { size: 11 } } } },
+      scales: {
+        y: { stacked: true, title: { display: true, text: 'Vagas/ano', font: { size: 10 } } },
+        y2: { position: 'right', grid: { drawOnChartArea: false }, title: { display: true, text: 'Concluintes', font: { size: 10 } } },
+        x: { stacked: true },
+      },
+    },
+  });
+  const LINHAS = [
+    ['Vagas totais', 'vagas_total_real', 0], ['Vagas presenciais', 'vagas_total', 0], ['Vagas EaD', 'vagas_ead', 0],
+    ['Cursos presenciais', 'n_cursos_presencial', 0], ['Matrículas', 'matriculas_total', 0],
+    ['Ingressantes', 'ingressantes_total', 0], ['Concluintes', 'concluintes_total', 0],
+    ['IES com Farmácia', 'n_ies', 0], ['Municípios com oferta', 'municipios_oferta', 0], ['% EaD', 'pct_ead', 1],
+  ];
+  const n = A.length;
+  document.getElementById('evo-thead').innerHTML = '<th>Indicador</th>' + A.map(a => '<th style="text-align:right">' + a + '</th>').join('') +
+    '<th style="text-align:right" title="Variação do último ano contra o anterior">Δ ' + A[n - 1] + ' vs ' + A[n - 2] + '</th>';
+  document.getElementById('evo-tbody').innerHTML = LINHAS.map(([rot, k, pct]) => {
+    const d = D[k], a = d[n - 2], b = d[n - 1];
+    let delta = '—';
+    if (a != null && b != null) {
+      if (pct) { const x = b - a; delta = (x > 0 ? '+' : '') + x.toFixed(1).replace('.', ',') + ' p.p.'; }
+      else if (a !== 0) { const x = (b / a - 1) * 100; delta = (x > 0 ? '+' : '') + x.toFixed(1).replace('.', ',') + '%'; }
+    }
+    return '<tr><td>' + rot + '</td>' + d.map(v => '<td style="text-align:right">' + (v == null ? '—' : (pct ? v.toFixed(1).replace('.', ',') : NF.format(v))) + '</td>').join('') +
+      '<td style="text-align:right">' + delta + '</td></tr>';
+  }).join('');
+})();
+</script>
+{% endif %}
+
 <h2 class="section-title">Qualidade (ENADE 2023)
   <span style="display:inline-block;font-size:0.68rem;font-weight:600;color:#8a5a00;background:#fff3cd;border:1px solid #ffe08a;border-radius:10px;padding:2px 8px;vertical-align:middle;margin-left:8px"
         title="O ciclo ENADE de Farmácia é trienal. O resultado mais recente é de 2023 (publicado em abr/2025); o próximo ciclo ainda não foi divulgado. Os indicadores CC, ENADE, IDD e CPC referem-se a 2023, enquanto vagas/municípios são do Censo {{ meta.versao_censo }}.">
@@ -322,12 +396,17 @@
 </div>
 {% endif %}
 
-<!-- Perfil de acesso e equidade (Censo 2024) -->
+<!-- Perfil de acesso e equidade (Censo vigente) -->
 {% if d.pct_mulheres is not none or d.pct_ppi is not none %}
 <h2 class="section-title">Perfil de acesso e equidade</h2>
 <p style="font-size:0.85rem;color:var(--text-muted);margin-bottom:12px">
   Características dos ingressantes e das vagas, a partir dos microdados do Censo da Educação
   Superior {{ meta.versao_censo }}. Indicadores descritivos (sem juízo de melhor/pior).
+  {% if meta.versao_censo|int >= 2025 %}<br><strong>Nota metodológica:</strong> a partir de 2025 o INEP suprime as células com
+  até 3 ocorrências por polo de EaD. O percentual de mulheres usa as linhas com o recorte divulgado (inclui a maior parte dos
+  polos, com viés de ordem de 1 p.p.); os de cor/raça e de financiamento ficam restritos à oferta presencial, porque nenhum polo
+  tem esses recortes integralmente divulgados. Por isso estes indicadores <em>não são estritamente comparáveis</em> aos de 2024,
+  que incluíam todos os polos.{% endif %}
 </p>
 <div class="kpi-grid">
   <div class="kpi-card">
