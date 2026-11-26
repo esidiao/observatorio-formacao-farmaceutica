@@ -75,6 +75,7 @@
 <h2 class="section-title">Tabela de comparação</h2>
 <div class="tabela-wrap">
   <table id="tabela-comp">
+    <caption class="sr-only">Comparação de indicadores entre as unidades da federação escolhidas</caption>
     <thead><tr id="comp-thead-row"></tr></thead>
     <tbody id="tbody-comp"></tbody>
   </table>
@@ -335,13 +336,13 @@ function renderTabela() {
   if (!ufs.length || !keys.length) { thead.innerHTML = ''; tbody.innerHTML = ''; return; }
 
   // Cabeçalho dinâmico (UF + KPIs selecionados), ordenável
-  let th = `<th data-key="sigla" onclick="ordenarPor('sigla')" style="cursor:pointer;user-select:none">UF${sortKey === 'sigla' ? (sortDir === 'asc' ? ' ▲' : ' ▼') : ''}</th>`;
+  let th = `<th scope="col" data-key="sigla" onclick="ordenarPor('sigla')" style="cursor:pointer;user-select:none">UF${sortKey === 'sigla' ? (sortDir === 'asc' ? ' ▲' : ' ▼') : ''}</th>`;
   keys.forEach(k => {
     const g = CAT_INFO[k] || { sigla: k, nome: k };
     const seta = sortKey === k ? (sortDir === 'asc' ? ' ▲' : ' ▼') : '';
     const bg = sortKey === k ? 'background:var(--blue)' : '';
     const mod = (modalidade !== 'todas' && temModalidade(k)) ? ' <span style="font-size:0.7em;opacity:0.85">●</span>' : '';
-    th += `<th data-key="${k}" onclick="ordenarPor('${k}')" title="${g.nome}${(modalidade!=='todas'&&temModalidade(k))?' (valor por modalidade)':''} — clique para ordenar" style="cursor:pointer;user-select:none;${bg}">${g.sigla}${mod}${seta}</th>`;
+    th += `<th scope="col" data-key="${k}" onclick="ordenarPor('${k}')" title="${g.nome}${(modalidade!=='todas'&&temModalidade(k))?' (valor por modalidade)':''} — clique para ordenar" style="cursor:pointer;user-select:none;${bg}">${g.sigla}${mod}${seta}</th>`;
   });
   thead.innerHTML = th;
 

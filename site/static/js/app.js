@@ -37,6 +37,71 @@ const RDBU = escalaDoCss('rdbu', 9,
   ['#2166AC','#4393C3','#92C5DE','#D1E5F0','#F7F7F7','#FDDBC7','#F4A582','#D6604D','#B2182B']);
 const NODATA_COLOR = corToken('nodata', '#C9CDD2');
 
+/* ------------------------------------------------------------------
+ * Numero legivel sobre a cor da escala
+ *
+ * A RdBu e uma escala padrao, escolhida por seguranca para daltonismo, e nao
+ * se mexe nela. Mas ha tons intermediarios que nao carregam nem texto branco
+ * nem texto escuro a 4,5: medido, `#D6604D` da 3,72 com branco e 4,17 com
+ * escuro. Isso e geometria da luminancia, nao descuido de paleta — num
+ * degrade continuo sempre existe a faixa do meio.
+ *
+ * A saida nao e torcer a escala nem esvaziar a celula (o que interrompe o
+ * degrade e o leitor le como defeito): e clarear o FUNDO daquela celula em
+ * direcao ao papel ate o texto escuro passar. O degrade continua continuo e o
+ * numero continua legivel. Mesma solucao dos observatorios de Psicologia e
+ * Odontologia.
+ * ------------------------------------------------------------------ */
+
+const _TEXTO_ESCURO = '#1B2530';
+const _TEXTO_CLARO = '#FFFFFF';
+const _PAPEL = [251, 250, 248];
+
+function _canais(cor) {
+  const c = String(cor).trim();
+  if (c.startsWith('#')) {
+    const h = c.length === 4
+      ? c.slice(1).split('').map(x => x + x).join('')
+      : c.slice(1);
+    return [0, 2, 4].map(i => parseInt(h.slice(i, i + 2), 16));
+  }
+  const m = c.match(/-?\d+(\.\d+)?/g) || ['0', '0', '0'];
+  return m.slice(0, 3).map(Number);
+}
+
+function _luminancia(cor) {
+  const peso = [0.2126, 0.7152, 0.0722];
+  return _canais(cor).map(v => {
+    const s = v / 255;
+    return s <= 0.03928 ? s / 12.92 : Math.pow((s + 0.055) / 1.055, 2.4);
+  }).reduce((a, v, i) => a + v * peso[i], 0);
+}
+
+function _contraste(a, b) {
+  const la = _luminancia(a), lb = _luminancia(b);
+  return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05);
+}
+
+/** Devolve {fundo, cor} legiveis a `alvo` (padrao 4,5) para a cor dada. */
+function fundoELegivel(cor, alvo) {
+  alvo = alvo || 4.5;
+  const escuro = _contraste(_TEXTO_ESCURO, cor);
+  const claro = _contraste(_TEXTO_CLARO, cor);
+  if (Math.max(escuro, claro) >= alvo) {
+    return { fundo: cor, cor: escuro >= claro ? _TEXTO_ESCURO : _TEXTO_CLARO };
+  }
+  const base = _canais(cor);
+  for (let passo = 1; passo <= 20; passo++) {
+    const t = passo / 20;
+    const mistura = base.map((v, i) => Math.round(v + (_PAPEL[i] - v) * t));
+    const rgb = 'rgb(' + mistura.join(', ') + ')';
+    if (_contraste(_TEXTO_ESCURO, rgb) >= alvo) {
+      return { fundo: rgb, cor: _TEXTO_ESCURO };
+    }
+  }
+  return { fundo: 'rgb(' + _PAPEL.join(', ') + ')', cor: _TEXTO_ESCURO };
+}
+
 function corICT(val) {
   if (val === null || val === undefined) return NODATA_COLOR;
   // ICT: 0 = ótimo (azul), 1 = ruim (vermelho)

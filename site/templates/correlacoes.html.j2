@@ -64,7 +64,9 @@
   <br><span style="font-size:0.78rem">⚠ Muitos testes simultâneos inflam falsos positivos (problema das comparações múltiplas) — trate como exploratório.</span>
 </p>
 <div class="tabela-wrap">
-  <table id="matriz-corr" style="font-size:0.8rem"></table>
+  <table id="matriz-corr" style="font-size:0.8rem">
+    <caption class="sr-only">Matriz de correlação de Spearman entre os indicadores</caption>
+  </table>
 </div>
 
 <!-- Regressão múltipla -->
@@ -87,7 +89,9 @@
 </div>
 <div id="reg-resultado" style="margin-bottom:12px;font-size:0.9rem"></div>
 <div class="tabela-wrap" style="max-width:640px">
-  <table id="reg-tbl" style="font-size:0.85rem"></table>
+  <table id="reg-tbl" style="font-size:0.85rem">
+    <caption class="sr-only">Coeficientes da regressão múltipla escolhida</caption>
+  </table>
 </div>
 <p style="font-size:0.78rem;color:var(--text-muted);margin-top:10px;max-width:82ch">
   ⚠ Mínimos quadrados sobre variáveis padronizadas (z-score), exclusão por lista (só UFs com todos os
@@ -339,20 +343,23 @@ function renderScatter() {
 function renderMatriz() {
   const tbl = document.getElementById('matriz-corr');
   const sig = k => (INFO[k] || {}).sigla || k;
-  let html = '<thead><tr><th></th>' + MATRIZ_KEYS.map(k => `<th title="${(INFO[k] || {}).nome}" style="writing-mode:vertical-rl;transform:rotate(180deg);padding:4px;font-size:0.72rem">${sig(k)}</th>`).join('') + '</tr></thead><tbody>';
+  let html = '<caption class="sr-only">Matriz de correlação de Spearman entre os indicadores</caption><thead><tr><th scope="col"></th>' + MATRIZ_KEYS.map(k => `<th scope="col" title="${(INFO[k] || {}).nome}" style="writing-mode:vertical-rl;transform:rotate(180deg);padding:4px;font-size:0.72rem">${sig(k)}</th>`).join('') + '</tr></thead><tbody>';
   MATRIZ_KEYS.forEach(kr => {
-    html += `<tr><th style="text-align:left;padding:4px 8px;white-space:nowrap;font-size:0.72rem" title="${(INFO[kr] || {}).nome}">${sig(kr)}</th>`;
+    html += `<tr><th scope="row" style="text-align:left;padding:4px 8px;white-space:nowrap;font-size:0.72rem" title="${(INFO[kr] || {}).nome}">${sig(kr)}</th>`;
     MATRIZ_KEYS.forEach(kc => {
       if (kr === kc) { html += `<td style="background:#16304F"></td>`; return; }
       const pr = pares(kr, kc), r = coef(pr);
       const pv = r == null ? null : pPearson(r, pr.length);
       const signif = pv != null && pv < 0.05;
       const txt = r == null ? '' : r.toFixed(2).replace('0.', '.').replace('-0.', '-.') + estrelas(pv);
-      const escuro = r != null && Math.abs(r) >= 0.55;
+      /* Antes: `Math.abs(r) >= 0.55` — a cor do texto era escolhida pelo
+         VALOR, não pela cor que ele teria em cima. Em `#D6604D` isso
+         punha branco a 3,72. Agora quem decide é o contraste medido. */
+      const leg = fundoELegivel(corCorr(r));
       // não significativa: célula esmaecida e em itálico
       html += `<td onclick="abrirPar('${kc}','${kr}')" `
         + `title="${sig(kr)} × ${sig(kc)}: r=${r == null ? 's/d' : r.toFixed(2)}${pv == null ? '' : ', p=' + (pv < 0.001 ? '<0,001' : pv.toFixed(3))} (n=${pr.length})" `
-        + `style="cursor:pointer;text-align:center;padding:5px;background:${corCorr(r)};color:${escuro ? '#fff' : '#222'};`
+        + `style="cursor:pointer;text-align:center;padding:5px;background:${leg.fundo};color:${leg.cor};`
         + `font-size:0.72rem;${signif ? '' : 'opacity:0.45;font-style:italic'}">${txt}</td>`;
     });
     html += '</tr>';
@@ -424,7 +431,7 @@ function renderRegressao() {
     + `n = ${n} · <strong>R² = ${r2.toFixed(2)}</strong> (ajustado ${r2adj.toFixed(2)}) — `
     + `${(r2 * 100).toFixed(0)}% da variação explicada pelo modelo.`;
   const ord = preds.map((p, a) => ({ p, b: beta[a] })).sort((x, z) => Math.abs(z.b) - Math.abs(x.b));
-  let html = `<thead><tr><th>Preditor</th><th>β padronizado</th><th>Influência</th></tr></thead><tbody>`;
+  let html = `<thead><tr><th scope="col">Preditor</th><th scope="col">β padronizado</th><th scope="col">Influência</th></tr></thead><tbody>`;
   const maxb = Math.max(...ord.map(o => Math.abs(o.b))) || 1;
   ord.forEach(o => {
     const w = Math.round(Math.abs(o.b) / maxb * 100);
