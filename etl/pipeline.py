@@ -38,6 +38,13 @@ def salvar_proveniencia(p):
 
 
 URL_CENSO = "https://download.inep.gov.br/microdados/microdados_censo_da_educacao_superior_{ano}.zip"
+# O INEP mudou o NOME do arquivo na edicao 2025 (sem o "da": ..._censo_educacao_superior_2025.zip).
+# Sondar so o nome antigo devolvia 404 "confirmado" para um Censo que ja estava publicado:
+# em 2026-11-26 o alerta semanal diria "em dia" com o arquivo no ar. Um 404 so prova
+# ausencia nos nomes testados, entao ha uma lista e o relatorio diz quais.
+URL_CENSO_ALTERNATIVAS = (
+    "https://download.inep.gov.br/microdados/microdados_censo_educacao_superior_{ano}.zip",
+)
 URL_ENADE = "https://download.inep.gov.br/microdados/microdados_enade_{ano}.zip"
 
 # Farmácia Popular: o portal dados.gov.br passou a exigir chave de API registrada
@@ -164,10 +171,14 @@ def _sondar(url, tentativas=3, espera=4):
     return None, ultimo
 
 
-def _checar_serie_anual(rotulo, url_padrao, ano_atual, ano_limite):
+def _checar_serie_anual(rotulo, url_padrao, ano_atual, ano_limite, alternativas=()):
     """
     Procura uma edição mais recente que `ano_atual` numa fonte cujo arquivo segue
     padrão anual de URL. Varre do ano seguinte ao registrado até `ano_limite`.
+
+    `alternativas` são outros nomes de arquivo já usados pela fonte. Um ano conta como
+    publicado se QUALQUER nome responder; só é "confirmadamente não publicado" se TODOS
+    derem 404 — um 404 prova a ausência do nome testado, não do Censo.
 
     Devolve (novidades, indeterminados) — listas de textos para o relatório.
     Um ano que não pôde ser verificado entra em `indeterminados`, nunca é
@@ -177,16 +188,19 @@ def _checar_serie_anual(rotulo, url_padrao, ano_atual, ano_limite):
     if not ano_atual:
         return novidades, indeterminados
 
+    modelos = (url_padrao,) + tuple(alternativas)
     for ano in range(int(ano_atual) + 1, ano_limite + 1):
-        existe, detalhe = _sondar(url_padrao.format(ano=ano))
-        if existe:
+        respostas = [_sondar(m.format(ano=ano)) for m in modelos]
+        if any(existe for existe, _ in respostas):
             novidades.append(f"{rotulo} {ano}")
             print(f"[CHECK] NOVIDADE: {rotulo} {ano} publicado (atual: {ano_atual}).")
-        elif existe is None:
+        elif any(existe is None for existe, _ in respostas):
+            detalhe = next(d for existe, d in respostas if existe is None)
             indeterminados.append(f"{rotulo} {ano} ({detalhe})")
             print(f"[CHECK] INDETERMINADO: {rotulo} {ano} não pôde ser verificado ({detalhe}).")
         else:
-            print(f"[CHECK] {rotulo} {ano}: confirmadamente não publicado (404).")
+            print(f"[CHECK] {rotulo} {ano}: não publicado em nenhum dos {len(modelos)} "
+                  f"nome(s) de arquivo conhecido(s) (404).")
     return novidades, indeterminados
 
 
@@ -332,7 +346,8 @@ def check_fontes(prov):
     novidades, indeterminados = [], []
 
     n, i = _checar_serie_anual("Censo", URL_CENSO,
-                               prov.get("versao_censo"), ano_limite)
+                               prov.get("versao_censo"), ano_limite,
+                               alternativas=URL_CENSO_ALTERNATIVAS)
     novidades += n
     indeterminados += i
 
