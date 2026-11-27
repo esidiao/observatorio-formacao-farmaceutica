@@ -72,12 +72,28 @@ def registro(farm, ano):
         if c:
             farm[c] = pd.to_numeric(farm[c], errors="coerce").fillna(0)
     ead = EAD_CODE(ano)
-    vg = farm[c_vg]
+    # SITUACAO DO CURSO: coluna que so existe de 2025 em diante.
+    #
+    # Sem ela esta serie somava na capacidade os cursos que a regulacao
+    # encerrou, e o resultado foi uma divergencia de 489.801 contra 174.793
+    # vagas entre a serie nacional e a soma das UFs em 2025 — a diferenca eram,
+    # integralmente, cursos em extincao. A ausencia da coluna vira "tudo em
+    # atividade", que e o que as edicoes anteriores significavam: elas nao
+    # distinguiam situacao.
+    c_sit = col(farm, "TP_SITUACAO")
+    if c_sit:
+        ativo = farm[c_sit].astype(str).str.strip().replace("", "1") == "1"
+    else:
+        ativo = farm[c_vg].notna()      # tudo, nas edicoes sem a coluna
+    vg = farm[c_vg].where(ativo, 0)
+    vg_extin = farm[c_vg].where(~ativo, 0)
     pres_mask = farm[c_mod] == 1
     ead_mask = farm[c_mod] == ead
     reg = {
         "ano": ano,
-        "n_cursos": int((farm[c_vg] > 0).sum()),
+        # Curso com vaga EM ATIVIDADE. Curso em extincao continua existindo e
+        # aparece em `cursos_em_extincao`, nao aqui.
+        "n_cursos": int(((farm[c_vg] > 0) & ativo).sum()),
         "vagas_total": int(vg.sum()),
         "vagas_presencial": int(vg[pres_mask].sum()),
         "vagas_ead": int(vg[ead_mask].sum()),
@@ -88,7 +104,10 @@ def registro(farm, ano):
     if ano >= 2025:
         semi = int(vg[farm[c_mod] == 3].sum())
         reg["vagas_semipresencial"] = semi
-        # Guarda: toda vaga tem de cair em alguma modalidade conhecida.
+        # Fora da capacidade ativa, publicada ao lado: nao desaparece.
+        reg["vagas_em_extincao"] = int(vg_extin.sum())
+        reg["cursos_em_extincao"] = int(((farm[c_vg] > 0) & ~ativo).sum())
+        # Guarda: toda vaga ATIVA tem de cair em alguma modalidade conhecida.
         resto = reg["vagas_total"] - reg["vagas_presencial"] - reg["vagas_ead"] - semi
         if resto:
             sys.exit(f"[ABORTADO] {resto} vagas fora de presencial/EaD/semipresencial em {ano}.")

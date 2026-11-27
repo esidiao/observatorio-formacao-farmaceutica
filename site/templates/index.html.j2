@@ -34,13 +34,37 @@
 <section class="hero">
   <p class="hero-eyebrow">Observatório de dados · {{ n_ufs }} estados · Censo INEP {{ meta.versao_censo }}</p>
   <h1 class="hero-title">Quem forma os farmacêuticos do Brasil — e com que qualidade?</h1>
+  {#
+    O FIM DESTA FRASE VINHA ESCRITO À MÃO, E ENVELHECEU COM A LEI.
+    Ela dizia "a acelerada expansão do ensino a distância" — texto redigido
+    quando a EaD crescia — e ficou no ar ao lado do dado de 2025, que é 0,0%.
+    O Decreto 12.456/2025 encerrou a graduação em saúde inteiramente a
+    distância. Agora o fecho vem do dado, com ramo para os dois mundos.
+  #}
   <p class="hero-lead">
     Um retrato baseado em dados oficiais da oferta de cursos de Farmácia: acesso ao território,
-    qualidade da formação, equidade e a acelerada expansão do ensino a distância.
+    qualidade da formação, equidade e
+    {%- if total_vagas_ead %} a acelerada expansão do ensino a distância.
+    {%- elif total_vagas_extincao %} o encerramento do ensino a distância por
+    decreto, com {{ "{:,}".format(total_vagas_extincao).replace(',','.') }}
+    vagas em cursos em extinção.
+    {%- else %} a composição da oferta por formato.
+    {%- endif %}
   </p>
   <div class="hero-stats">
     <div class="lede"><span class="lede-num">{{ "{:,}".format(total_vagas_real).replace(',','.') }}</span><span class="lede-lab">vagas por ano</span></div>
+    {#
+      "0,0% são a distância" sozinho parece erro de medida. Com a lei por trás,
+      é o achado — e o que ficou no lugar (semipresencial) e o que saiu da
+      capacidade (extinção) aparecem junto.
+    #}
+    {% if total_vagas_ead %}
     <div class="lede"><span class="lede-num">{{ pct_ead_nacional }}%</span><span class="lede-lab">são a distância</span></div>
+    {% elif total_vagas_semi %}
+    <div class="lede"><span class="lede-num">{{ pct_nao_presencial }}%</span><span class="lede-lab">não são inteiramente presenciais</span></div>
+    {% else %}
+    <div class="lede"><span class="lede-num">{{ pct_ead_nacional }}%</span><span class="lede-lab">são a distância</span></div>
+    {% endif %}
     <div class="lede"><span class="lede-num">{{ "{:,}".format(mun_com_oferta).replace(',','.') }}</span><span class="lede-lab">municípios com oferta</span></div>
     <div class="lede"><span class="lede-num accent-neg">{{ "{:,}".format(mun_deserto).replace(',','.') }}</span><span class="lede-lab">desertos farmacêuticos</span></div>
   </div>
@@ -70,8 +94,8 @@
 <div class="kpi-grid">
   <div class="kpi-card">
     <div class="kpi-valor">{{ "{:,}".format(total_vagas_real).replace(',','.') }}</div>
-    <div class="kpi-label">Vagas totais (pres + EaD{% if total_vagas_semi %} + semipres.{% endif %})</div>
-    <div class="kpi-fonte" title="Presencial {{ "{:,}".format(total_vagas_pres).replace(',','.') }} + EaD {{ "{:,}".format(total_vagas_ead).replace(',','.') }}{% if total_vagas_semi %} + semipresencial {{ "{:,}".format(total_vagas_semi).replace(',','.') }}{% endif %} ({{ pct_ead_nacional }}% EaD). Fonte: INEP/Censo {{ meta.versao_censo }}.">{{ pct_ead_nacional }}% EaD · Censo {{ meta.versao_censo }}</div>
+    <div class="kpi-label">Capacidade ativa (pres{% if total_vagas_ead %} + EaD{% endif %}{% if total_vagas_semi %} + semipres.{% endif %})</div>
+    <div class="kpi-fonte" title="Presencial {{ "{:,}".format(total_vagas_pres).replace(',','.') }} + EaD {{ "{:,}".format(total_vagas_ead).replace(',','.') }}{% if total_vagas_semi %} + semipresencial {{ "{:,}".format(total_vagas_semi).replace(',','.') }}{% endif %} ({{ pct_ead_nacional }}% EaD){% if total_vagas_extincao %}. Fora da capacidade ativa: {{ "{:,}".format(total_vagas_extincao).replace(',','.') }} vagas em cursos encerrados ou em extinção, que a regulação já encerrou e que continuam com estudante matriculado{% endif %}. Fonte: INEP/Censo {{ meta.versao_censo }}.">{% if total_vagas_extincao and not total_vagas_ead %}EaD encerrada · {{ "{:,}".format(total_vagas_extincao).replace(',','.') }} em extinção{% else %}{{ pct_ead_nacional }}% EaD{% endif %} · Censo {{ meta.versao_censo }}</div>
   </div>
   <div class="kpi-card">
     <div class="kpi-valor">{{ n_ies }}</div>

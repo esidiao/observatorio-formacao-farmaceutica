@@ -103,6 +103,17 @@ CAMPOS = ["populacao", "pop_ano", "vagas_por_100k", "taxa_retencao",
 # o "3" como EaD nem deixa-lo cair fora: as vagas semipresenciais sumiriam.
 MOD_PRESENCIAL, MOD_EAD, MOD_SEMI = "1", "2", "3"
 
+# SITUACAO DO CURSO: coluna que so existe de 2025 em diante.
+#
+# Sem ela, a capacidade publicada soma curso que a regulacao encerrou. Foi
+# assim que a pagina afirmou que a EaD em Farmacia cresceu de 286.860 para
+# 314.778 vagas no ano em que ela acabou: as 314.778 eram, integralmente,
+# cursos em extincao.
+#
+# Vaga de curso em extincao nao entra na capacidade e nao desaparece — sai em
+# `vagas_em_extincao`. Pessoas nao se filtram por situacao.
+SITUACAO_ATIVIDADE = "1"
+
 
 def norm(s):
     s = unicodedata.normalize("NFD", str(s).upper())
@@ -126,11 +137,23 @@ def ler_censo():
                      f"       Defina OBS_CENSO_DIR com o diretorio dos microdados.")
 
     print(f"[CENSO] Lendo {csv_cursos.name} ...")
-    df = pd.read_csv(
-        csv_cursos, sep=";", encoding="latin-1", dtype=str, low_memory=False,
-        usecols=["SG_UF", "NO_MUNICIPIO", "CO_IES", "NO_CINE_ROTULO",
-                 "TP_MODALIDADE_ENSINO", "QT_VG_TOTAL", "QT_CURSO",
-                 "QT_MAT", "QT_CONC"])
+    cols = ["SG_UF", "NO_MUNICIPIO", "CO_IES", "NO_CINE_ROTULO",
+            "TP_MODALIDADE_ENSINO", "QT_VG_TOTAL", "QT_CURSO",
+            "QT_MAT", "QT_CONC"]
+    # TP_SITUACAO so existe de 2025 em diante. Pedir a coluna num arquivo
+    # antigo levanta ValueError, entao a leitura tenta COM e cai para SEM — e a
+    # ausencia vira "tudo em atividade", que e o que as edicoes anteriores
+    # significavam: elas nao distinguiam situacao de curso.
+    try:
+        df = pd.read_csv(
+            csv_cursos, sep=";", encoding="latin-1", dtype=str, low_memory=False,
+            usecols=cols + ["TP_SITUACAO"])
+    except ValueError:
+        df = pd.read_csv(
+            csv_cursos, sep=";", encoding="latin-1", dtype=str, low_memory=False,
+            usecols=cols)
+        df["TP_SITUACAO"] = SITUACAO_ATIVIDADE
+    df["TP_SITUACAO"] = df["TP_SITUACAO"].fillna(SITUACAO_ATIVIDADE)
 
     # Mesmo filtro da ingestao principal (substring sobre o rotulo CINE
     # normalizado), para que os recortes coincidam exatamente.
@@ -161,10 +184,36 @@ def apurar_censo(df, uf_da_ies):
                  f"que este script nao conhece (esperado: {sorted(conhecidas)}). "
                  f"Reveja o dicionario do Censo antes de publicar.")
 
-    presencial = df[df["TP_MODALIDADE_ENSINO"] == MOD_PRESENCIAL].copy()
-    ead = df[df["TP_MODALIDADE_ENSINO"] == MOD_EAD]
-    semi = df[df["TP_MODALIDADE_ENSINO"] == MOD_SEMI]
-    polo = ead[ead["SG_UF"].notna()]
+    ativo = df["TP_SITUACAO"] == SITUACAO_ATIVIDADE
+    presencial = df[(df["TP_MODALIDADE_ENSINO"] == MOD_PRESENCIAL) & ativo].copy()
+    ead = df[(df["TP_MODALIDADE_ENSINO"] == MOD_EAD) & ativo]
+    semi = df[(df["TP_MODALIDADE_ENSINO"] == MOD_SEMI) & ativo]
+    # POLO: DUAS REDES, CONTADAS SEPARADAMENTE.
+    #
+    # Polo e alcance de oferta nao presencial com endereco. Em 2025 ha duas
+    # populacoes dentro da mesma marca, e somar as duas publica um alcance que
+    # nao corresponde a rede nenhuma:
+    #
+    #   rede ativa        polos de curso nao presencial EM ATIVIDADE. Em
+    #                     Farmacia 2025 isso e o semipresencial: 938 registros
+    #                     em 465 municipios.
+    #   rede em extincao  polos dos cursos a distancia que o decreto encerrou:
+    #                     8.456 registros em 1.951 municipios.
+    #
+    # Contar so a modalidade 2, como antes, publicaria ZERO alcance ativo —
+    # porque nenhum curso de Farmacia a distancia continuou em atividade — e
+    # faria desaparecer a rede que ainda atende as turmas em extincao.
+    nao_presencial = df[df["TP_MODALIDADE_ENSINO"].isin([MOD_EAD, MOD_SEMI])]
+    com_endereco = nao_presencial[nao_presencial["SG_UF"].notna()]
+    polo = com_endereco[com_endereco["TP_SITUACAO"] == SITUACAO_ATIVIDADE]
+    polo_extin = com_endereco[com_endereco["TP_SITUACAO"] != SITUACAO_ATIVIDADE]
+
+    # Capacidade em extincao: de qualquer modalidade, com ou sem UF propria.
+    # Atribuida a UF do registro quando existe, e a da mantenedora quando nao.
+    extin = df[~ativo].copy()
+    extin["UF_ATRIB"] = [
+        uf if isinstance(uf, str) and uf else uf_da_ies.get(ies)
+        for uf, ies in zip(extin["SG_UF"], extin["CO_IES"])]
 
     # Capacidade para concentracao de mercado: presencial da UF + EaD e
     # semipresencial cuja mantenedora e sediada nela (as linhas de sede nao tem
@@ -189,6 +238,7 @@ def apurar_censo(df, uf_da_ies):
         d_uf = df[df["SG_UF"] == uf]
         d_pres = presencial[presencial["SG_UF"] == uf]
         d_polo = polo[polo["SG_UF"] == uf]
+        d_polo_extin = polo_extin[polo_extin["SG_UF"] == uf]
 
         muns_polo = set(d_polo["NO_MUNICIPIO"].dropna())
         muns_pres = set(d_pres["NO_MUNICIPIO"].dropna())
@@ -203,14 +253,20 @@ def apurar_censo(df, uf_da_ies):
 
         d_sede = sede[sede["UF_ATRIB"] == uf]
         d_semi = sede_semi[sede_semi["UF_ATRIB"] == uf]
+        d_extin = extin[extin["UF_ATRIB"] == uf]
         vagas_presencial = int(d_pres["QT_VG_TOTAL"].sum())
         vagas_ead = int(d_sede["QT_VG_TOTAL"].sum())
         vagas_semi = int(d_semi["QT_VG_TOTAL"].sum())
+        vagas_extin = int(d_extin["QT_VG_TOTAL"].sum())
         vagas_total = vagas_presencial + vagas_ead + vagas_semi
 
         saida[uf] = {
             "vagas_presencial": vagas_presencial,
             "vagas_ead": vagas_ead,
+            # Fora da capacidade ativa, e publicada ao lado dela: sao cursos
+            # que a instituicao declarou em extincao e que continuam com
+            # estudante matriculado.
+            "vagas_em_extincao": vagas_extin,
             # Semipresencial (nova em 2025): campo proprio, nunca somado a vagas_ead.
             # O total real soma as tres; pct_ead segue sendo so a EaD estrita.
             "vagas_semipresencial": vagas_semi,
@@ -229,6 +285,10 @@ def apurar_censo(df, uf_da_ies):
                               if matriculas else None),
             "ead_polos_registros": int(len(d_polo)),
             "ead_polos_municipios": len(muns_polo),
+            # A rede que esta sendo desmontada, publicada ao lado da ativa.
+            "polos_em_extincao": int(len(d_polo_extin)),
+            "polos_em_extincao_municipios": len(
+                set(d_polo_extin["NO_MUNICIPIO"].dropna())),
             "mun_ead_only": len(muns_polo - muns_pres),
             "n_mantenedoras": len(vagas_por_mant),
             "HHI_mantenedora": _hhi(vagas_por_mant),

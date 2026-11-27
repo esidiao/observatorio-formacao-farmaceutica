@@ -125,17 +125,19 @@
     },
     {
       "ano": 2025,
-      "n_cursos": 856,
-      "vagas_total": 489801,
-      "vagas_presencial": 129259,
-      "vagas_ead": 314778,
+      "n_cursos": 747,
+      "vagas_total": 174793,
+      "vagas_presencial": 129029,
+      "vagas_ead": 0,
       "matriculas": 254696,
       "ingressos": 113441,
       "concluintes": 23824,
       "vagas_semipresencial": 45764,
-      "pct_ead": 64.3
+      "vagas_em_extincao": 315008,
+      "cursos_em_extincao": 109,
+      "pct_ead": 0.0
     }
   ],
   "fonte": "INEP — Microdados do Censo da Educação Superior (2015–2025)",
-  "nota_modalidade": "EaD = TP_MODALIDADE 2 em toda a série (2015–2025); presencial = 1; a partir de 2025 o código 3 é semipresencial (campo vagas_semipresencial, incluído em vagas_total). Vagas EaD registradas na sede. A mudança de definição em 2025 (Decreto 12.456/2025) limita a comparação da participação da EaD com os anos anteriores."
+  "nota_modalidade": "EaD = TP_MODALIDADE 2 em toda a série (2015–2025); presencial = 1; a partir de 2025 o 3 é semipresencial (campo vagas_semipresencial, incluído em vagas_total). Vagas EaD registradas na sede. A mudança de definição em 2025 (Decreto 12.456/2025) limita a comparação da participação da EaD com os anos anteriores."
 }
