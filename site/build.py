@@ -184,6 +184,9 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
     total_vagas_pres = sum(d.get("vagas_presencial") or 0 for d in ufs.values())
     total_vagas_ead  = sum(d.get("vagas_ead") or 0 for d in ufs.values())
     total_vagas_semi = sum(d.get("vagas_semipresencial") or 0 for d in ufs.values())
+    # Capacidade que a regulação encerrou: fora do total ativo, publicada ao
+    # lado dele. Zero nas edições que não distinguiam situação de curso.
+    total_vagas_extincao = sum(d.get("vagas_em_extincao") or 0 for d in ufs.values())
     total_ies   = sum(d.get("n_ies") or 0 for d in ufs.values())
     total_pop   = sum(d.get("populacao") or 0 for d in ufs.values())
     vagas_100k_nac = round(total_vagas_real / total_pop * 100000, 1) if total_pop else None
@@ -249,6 +252,13 @@ def construir_site(path_dados: Path, path_out: Path, templates_dir: Path):
         total_vagas_pres=total_vagas_pres,
         total_vagas_ead=total_vagas_ead,
         total_vagas_semi=total_vagas_semi,
+        total_vagas_extincao=total_vagas_extincao,
+        # Quanto da capacidade ATIVA não exige presença integral. Até 2024 isso
+        # é a própria EaD; de 2025 em diante é o semipresencial, formato para
+        # onde a oferta a distância migrou.
+        pct_nao_presencial=(
+            round((total_vagas_ead + total_vagas_semi) / total_vagas_real * 100, 1)
+            if total_vagas_real else 0),
         pct_ead_nacional=round(total_vagas_ead / total_vagas_real * 100, 1) if total_vagas_real else 0,
         vagas_100k_nac=vagas_100k_nac,
         n_ies=total_ies,

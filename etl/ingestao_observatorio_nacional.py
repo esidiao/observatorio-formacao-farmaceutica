@@ -164,6 +164,25 @@ def main():
     mask = df[col_curso].apply(lambda x: normalizar_nome(str(x))).str.contains(curso_norm, na=False)
     df = df[mask].copy()
     df[col_vagas] = pd.to_numeric(df[col_vagas], errors="coerce").fillna(0).astype(int)
+
+    # SITUACAO DO CURSO: coluna que so existe de 2025 em diante.
+    #
+    # VAGA de curso em extincao nao e capacidade: e oferta que a regulacao
+    # encerrou. Sem esta separacao, `vagas_total` somava os dois e a serie por
+    # UF passou a discordar do publicado (SP: 26.515 contra 26.745) — foi assim
+    # que a divergencia apareceu.
+    #
+    # O que NAO se filtra aqui: municipio com oferta e IES distintas, que
+    # respondem "onde existe curso" e nao "quanta capacidade ha". Um curso em
+    # extincao continua existindo naquele municipio, com estudante dentro.
+    #
+    # A ausencia da coluna vira "tudo em atividade", que e o que as edicoes
+    # anteriores a 2025 significavam: elas nao distinguiam situacao.
+    if "TP_SITUACAO" in df.columns:
+        situacao = df["TP_SITUACAO"].astype(str).str.strip().replace("", "1")
+    else:
+        situacao = pd.Series("1", index=df.index)
+    df["_ATIVO"] = situacao == "1"
     print(f"[INFO] {len(df)} registros de {args.curso} encontrados.")
 
     if len(df) == 0:
@@ -179,33 +198,45 @@ def main():
         if uf not in MUN_TOTAL_UF:
             continue  # ignora UFs inválidas
 
-        vagas_total = int(grp[col_vagas].sum())
+        ativos = grp[grp["_ATIVO"]]
+        vagas_total = int(ativos[col_vagas].sum())
+        vagas_em_extincao = int(grp[~grp["_ATIVO"]][col_vagas].sum())
         muns = grp[col_mun].apply(normalizar_nome).unique().tolist()
 
         # usa flag IN_CAPITAL se disponível, senão match por nome
         if col_capital:
-            vagas_capital = int(grp[grp[col_capital] == "1"][col_vagas].sum())
+            vagas_capital = int(ativos[ativos[col_capital] == "1"][col_vagas].sum())
         else:
             capital_norm = normalizar_nome(CAPITAIS.get(uf, ""))
             vagas_capital = int(
-                grp[grp[col_mun].apply(normalizar_nome) == capital_norm][col_vagas].sum()
+                ativos[ativos[col_mun].apply(normalizar_nome) == capital_norm][col_vagas].sum()
             )
         mun_com_oferta = grp[col_mun].apply(normalizar_nome).nunique()
         mun_total = MUN_TOTAL_UF[uf]
         mun_deserto = mun_total - mun_com_oferta
 
         # concentração por IES
+        # Duas contagens, de propósito. `n_ies` responde "quantas instituicoes
+        # tem curso nesta UF" e nao se filtra por situacao — instituicao com
+        # curso em extincao continua presente, com estudante dentro.
+        # Concentracao, ao contrario, e sobre CAPACIDADE: medir o mercado
+        # incluindo oferta que a regulacao encerrou descreve um mercado que
+        # nao existe mais.
         vagas_por_ies = {}
+        vagas_ativas_por_ies = {}
         if col_ies:
             for ies, sub in grp.groupby(col_ies):
                 vagas_por_ies[str(ies)] = int(sub[col_vagas].sum())
+                vagas_ativas_por_ies[str(ies)] = int(sub[sub["_ATIVO"]][col_vagas].sum())
         n_ies = len(vagas_por_ies)
-        hhi = calcular_hhi(vagas_por_ies) if vagas_por_ies else None
-        cr2 = calcular_cr(vagas_por_ies, 2) if vagas_por_ies else None
-        cr10 = calcular_cr(vagas_por_ies, 10) if vagas_por_ies else None
+        hhi = calcular_hhi(vagas_ativas_por_ies) if vagas_ativas_por_ies else None
+        cr2 = calcular_cr(vagas_ativas_por_ies, 2) if vagas_ativas_por_ies else None
+        cr10 = calcular_cr(vagas_ativas_por_ies, 10) if vagas_ativas_por_ies else None
 
         resultado[uf] = {
             "vagas_total": vagas_total,
+            # Fora da capacidade, publicada ao lado dela.
+            "vagas_em_extincao": vagas_em_extincao,
             "vagas_capital": vagas_capital,
             "municipios_total": mun_total,
             "municipios_oferta": mun_com_oferta,

@@ -50,10 +50,30 @@ except ImportError:
 REPO = Path(__file__).resolve().parent.parent
 SAIDA = REPO / "data" / "serie_uf.json"
 
-INDICADORES = ["vagas_total", "vagas_ead", "vagas_semipresencial", "vagas_total_real",
+INDICADORES = ["vagas_total", "vagas_ead", "vagas_semipresencial",
+               "vagas_em_extincao", "vagas_total_real",
                "pct_ead", "n_cursos_presencial", "matriculas_total",
                "ingressantes_total", "concluintes_total", "n_ies", "municipios_oferta"]
 ANO_PRIMEIRO_SEMIPRESENCIAL = 2025
+
+# SITUACAO DO CURSO: coluna que so existe de 2025 em diante.
+#
+# Sem ela, a serie afirmou que a EaD em Farmacia CRESCEU em 2025 — de 286.860
+# para 314.778 vagas. Medido na fonte: as 314.778 sao, integralmente, cursos
+# "em extincao". Nao sobrou nenhum curso de Farmacia a distancia em atividade,
+# e o mesmo vale para Fisioterapia, Nutricao, Enfermagem e Fonoaudiologia,
+# enquanto Administracao manteve 419 ativos — o recorte e de curso de saude,
+# pelo Decreto 12.456/2025.
+#
+# O numero nao estava errado de conta: era mesmo a soma das vagas de formato
+# 2. Estava errado de AFIRMACAO. A linha dizia ao leitor que a oferta a
+# distancia se expandiu no ano em que ela foi encerrada.
+#
+# Regra adotada, a mesma do observatorio de Fisioterapia: vaga de curso em
+# extincao NAO entra na capacidade (e oferta que a regulacao ja encerrou) e
+# NAO some (sai num campo proprio, porque esses cursos continuam cheios e, no
+# ano da virada, ainda receberam ingressante).
+SITUACAO_ATIVIDADE = "1"
 
 
 def norm(s):
@@ -74,8 +94,19 @@ def apurar_ano(diretorio, ano):
     d = Path(diretorio)
     cols = ["SG_UF", "NO_MUNICIPIO", "CO_IES", "NO_CINE_ROTULO", "TP_MODALIDADE_ENSINO",
             "QT_VG_TOTAL", "QT_CURSO", "QT_MAT", "QT_ING", "QT_CONC"]
-    df = pd.read_csv(d / f"MICRODADOS_CADASTRO_CURSOS_{ano}.CSV", sep=";", encoding="latin-1",
-                     dtype=str, low_memory=False, usecols=cols)
+    arquivo = d / f"MICRODADOS_CADASTRO_CURSOS_{ano}.CSV"
+    # TP_SITUACAO so existe de 2025 em diante. Pedir a coluna num arquivo
+    # antigo levanta ValueError, entao a leitura tenta COM e cai para SEM —
+    # e a ausencia vira "tudo em atividade", que e exatamente o que as
+    # edicoes anteriores significavam: elas nao distinguiam situacao.
+    try:
+        df = pd.read_csv(arquivo, sep=";", encoding="latin-1", dtype=str,
+                         low_memory=False, usecols=cols + ["TP_SITUACAO"])
+    except ValueError:
+        df = pd.read_csv(arquivo, sep=";", encoding="latin-1", dtype=str,
+                         low_memory=False, usecols=cols)
+        df["TP_SITUACAO"] = SITUACAO_ATIVIDADE
+    df["TP_SITUACAO"] = df["TP_SITUACAO"].fillna(SITUACAO_ATIVIDADE)
     df = df[df["NO_CINE_ROTULO"].map(lambda x: "FARMACIA" in norm(x))].copy()
     if df.empty:
         sys.exit(f"[ERRO] {ano}: nenhum curso de Farmacia. Layout mudou?")
@@ -92,11 +123,20 @@ def apurar_ano(diretorio, ano):
     uf_da_ies = dict(zip(ies["CO_IES"], ies["SG_UF_IES"]))
 
     com_uf = df[df["SG_UF"].notna()]
-    pres = df[(df["TP_MODALIDADE_ENSINO"] == "1") & df["SG_UF"].notna()]
+    ativo = df["TP_SITUACAO"] == SITUACAO_ATIVIDADE
+    pres = df[(df["TP_MODALIDADE_ENSINO"] == "1") & df["SG_UF"].notna() & ativo]
     sede = df[df["SG_UF"].isna()].copy()
     sede["UF_ATRIB"] = sede["CO_IES"].map(uf_da_ies)
-    sede_ead = sede[sede["TP_MODALIDADE_ENSINO"] == "2"]
-    sede_semi = sede[sede["TP_MODALIDADE_ENSINO"] == "3"]
+    sede_ativa = sede[sede["TP_SITUACAO"] == SITUACAO_ATIVIDADE]
+    sede_ead = sede_ativa[sede_ativa["TP_MODALIDADE_ENSINO"] == "2"]
+    sede_semi = sede_ativa[sede_ativa["TP_MODALIDADE_ENSINO"] == "3"]
+
+    # Em extincao: de qualquer formato, com ou sem UF propria. Atribuido a UF
+    # do local quando existe, e a UF da mantenedora quando nao.
+    extin = df[df["TP_SITUACAO"] != SITUACAO_ATIVIDADE].copy()
+    extin["UF_ATRIB"] = [
+        uf if isinstance(uf, str) and uf else uf_da_ies.get(ies)
+        for uf, ies in zip(extin["SG_UF"], extin["CO_IES"])]
 
     perdidas = int(sede[sede["UF_ATRIB"].isna()]["QT_VG_TOTAL"].sum())
     saida = {}
@@ -105,12 +145,16 @@ def apurar_ano(diretorio, ano):
         vp = int(pres[pres["SG_UF"] == uf]["QT_VG_TOTAL"].sum())
         ve = int(sede_ead[sede_ead["UF_ATRIB"] == uf]["QT_VG_TOTAL"].sum())
         vs = int(sede_semi[sede_semi["UF_ATRIB"] == uf]["QT_VG_TOTAL"].sum())
+        vx = int(extin[extin["UF_ATRIB"] == uf]["QT_VG_TOTAL"].sum())
         total = vp + ve + vs
         saida[uf] = {
             "vagas_total": vp,
             "vagas_ead": ve,
             # Nao existe antes de 2025: ausencia de categoria e null, nao zero.
             "vagas_semipresencial": vs if ano >= ANO_PRIMEIRO_SEMIPRESENCIAL else None,
+            # Idem: antes de 2025 a fonte nao distinguia situacao, entao nao e
+            # zero (que afirmaria "nenhum curso em extincao"), e sim ausencia.
+            "vagas_em_extincao": vx if ano >= ANO_PRIMEIRO_SEMIPRESENCIAL else None,
             "vagas_total_real": total,
             "pct_ead": round(ve / total * 100, 1) if total else None,
             "n_cursos_presencial": int(pres[pres["SG_UF"] == uf]["QT_CURSO"].sum()),
